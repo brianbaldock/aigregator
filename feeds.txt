@@ -1,0 +1,42 @@
+# AIgregator RSS feed list
+#
+# Format: one feed per line, "Name | URL | credibility"
+# Lines starting with # are comments. Blank lines ignored.
+# Credibility: 1-5 (matches the digest scoring rubric)
+#
+# Reuters and AP have killed their public RSS feeds, so we proxy them via
+# Google News RSS with a site: filter. This returns clean XML.
+# Anthropic, Mistral, Meta AI, AISI have no public RSS — the digest job
+# falls back to web_search for those.
+
+# ── Tier 1: Primary press (credibility 5) ─────────────────────
+Reuters AI 24h | https://news.google.com/rss/search?q=AI+when:1d+site:reuters.com&hl=en-US&gl=US&ceid=US:en | 5
+AP AI 24h | https://news.google.com/rss/search?q=AI+when:1d+site:apnews.com&hl=en-US&gl=US&ceid=US:en | 5
+FT Technology | https://www.ft.com/technology?format=rss | 5
+Bloomberg Technology | https://feeds.bloomberg.com/technology/news.rss | 5
+
+# ── Tier 1: Lab blogs (credibility 5) ─────────────────────────
+OpenAI blog | https://openai.com/blog/rss.xml | 5
+DeepMind blog | https://deepmind.google/blog/rss.xml | 5
+HuggingFace blog | https://huggingface.co/blog/feed.xml | 5
+
+# ── Tier 2: Established tech press (credibility 4) ────────────
+Ars Technica | https://feeds.arstechnica.com/arstechnica/technology-lab | 4
+The Verge AI | https://www.theverge.com/rss/ai-artificial-intelligence/index.xml | 4
+TechCrunch AI | https://techcrunch.com/category/artificial-intelligence/feed/ | 4
+Wired AI | https://www.wired.com/feed/tag/ai/latest/rss | 4
+MIT Tech Review | https://www.technologyreview.com/feed/ | 4
+SemiAnalysis | https://www.semianalysis.com/feed | 4
+Stratechery | https://stratechery.com/feed/ | 4
+
+# ── Tier 2: Trusted independent analysts (credibility 4) ──────
+Simon Willison | https://simonwillison.net/atom/everything/ | 4
+Interconnects (Nathan Lambert) | https://www.interconnects.ai/feed | 4
+One Useful Thing (Ethan Mollick) | https://www.oneusefulthing.org/feed | 4
+Zvi Mowshowitz | https://thezvi.wordpress.com/feed/ | 4
+
+# ── Tier 2: Responsible AI / Safety / Policy (credibility 4) ──
+NIST Cybersecurity Insights | https://www.nist.gov/blogs/cybersecurity-insights/rss.xml | 4
+
+# ── Wide-net catchall (credibility 3 by default) ──────────────
+Google News AI 24h | https://news.google.com/rss/search?q=artificial+intelligence+when:1d&hl=en-US&gl=US&ceid=US:en | 3
