@@ -82,17 +82,17 @@ body::after {
 .banner-text { flex: 1; }
 .banner h1 {
   font-family: 'VT323', monospace;
-  font-size: 56px;
+  font-size: 88px;
   line-height: 1;
   margin: 0;
   color: var(--green);
   text-shadow: 3px 3px 0 var(--magenta), 0 0 12px var(--green);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 .banner .tag {
   color: var(--amber);
-  font-size: 14px;
-  margin-top: 6px;
+  font-size: 18px;
+  margin-top: 10px;
 }
 .banner .blink::after {
   content: "_";
@@ -261,6 +261,6 @@ pre.ascii {
 
 @media (max-width: 720px) {
   .banner { flex-direction: column; text-align: center; }
-  .banner h1 { font-size: 40px; }
+  .banner h1 { font-size: 56px; }
   .banner img { width: 100px; height: 100px; }
 }

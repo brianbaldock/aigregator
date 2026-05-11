@@ -61,7 +61,6 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
   <div class="banner-text">
     <h1>AIGREGATOR</h1>
     <div class="tag">// daily AI signal, scored and cited <span class="blink"></span></div>
-    <pre class="ascii">{ASCII_BANNER}</pre>
   </div>
 </div>
 
