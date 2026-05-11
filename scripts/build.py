@@ -39,7 +39,9 @@ ASCII_BANNER = r"""
 """
 
 
-def html_shell(title: str, body: str, page_class: str = "") -> str:
+def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> str:
+    """depth=0 for pages in docs/ (index, archive, about). depth=1 for docs/digests/*."""
+    prefix = "../" * depth
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     digest_count = len(list(DIGESTS_DIR.glob("*.md")))
     return f"""<!doctype html>
@@ -48,14 +50,14 @@ def html_shell(title: str, body: str, page_class: str = "") -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} :: AIGREGATOR</title>
-<link rel="stylesheet" href="/AIgregator/assets/base.css">
-<link rel="icon" href="/AIgregator/assets/aigregator-logo.png">
+<link rel="stylesheet" href="{prefix}assets/base.css">
+<link rel="icon" href="{prefix}assets/aigregator-logo.png">
 </head>
 <body class="{page_class}">
 <div class="wrap">
 
 <div class="banner">
-  <img src="/AIgregator/assets/aigregator-logo.png" alt="AIgregator mascot">
+  <img src="{prefix}assets/aigregator-logo.png" alt="AIgregator mascot">
   <div class="banner-text">
     <h1>AIGREGATOR</h1>
     <div class="tag">// daily AI signal, scored and cited <span class="blink"></span></div>
@@ -71,9 +73,9 @@ def html_shell(title: str, body: str, page_class: str = "") -> str:
 </div>
 
 <nav class="menu">
-  [ <a href="/AIgregator/">LATEST</a> ]
-  [ <a href="/AIgregator/archive.html">ARCHIVE</a> ]
-  [ <a href="/AIgregator/about.html">ABOUT</a> ]
+  [ <a href="{prefix}index.html">LATEST</a> ]
+  [ <a href="{prefix}archive.html">ARCHIVE</a> ]
+  [ <a href="{prefix}about.html">ABOUT</a> ]
   [ <a href="https://github.com/brianbaldock/AIgregator">SRC</a> ]
 </nav>
 
@@ -134,6 +136,7 @@ def build_digest_pages() -> list[tuple[str, str, str]]:
             title=slug,
             body=f'<article class="digest">{body_html}</article>',
             page_class="digest-page",
+            depth=1,
         )
         out = DOCS_DIGESTS / f"{slug}.html"
         out.write_text(page, encoding="utf-8")
@@ -163,7 +166,7 @@ def build_index(entries: list[tuple[str, str, str]]) -> None:
 
 def build_archive(entries: list[tuple[str, str, str]]) -> None:
     rows = "\n".join(
-        f'<tr><td>{slug}</td><td><a href="/AIgregator/digests/{slug}.html">{title}</a></td></tr>'
+        f'<tr><td>{slug}</td><td><a href="digests/{slug}.html">{title}</a></td></tr>'
         for slug, title, _ in entries
     )
     if not rows:
