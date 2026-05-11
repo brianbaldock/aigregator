@@ -196,6 +196,37 @@ nav.menu a:hover {
   background: #0a0014;
 }
 
+/* Dashboard strip: the first blockquote at the top of each digest */
+.digest > blockquote:first-of-type {
+  border: 1px solid var(--amber);
+  border-left-width: 3px;
+  background: #14100a;
+  color: var(--amber);
+  padding: 10px 14px;
+  margin: 14px 0 22px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.digest > blockquote:first-of-type strong {
+  color: var(--green);
+}
+.digest > blockquote:first-of-type p {
+  margin: 2px 0;
+}
+
+/* Per-section stat lines (the italic line right under each h2) */
+.digest h2 + p > em:only-child,
+.digest h2 + p em:first-child:last-child {
+  display: inline-block;
+  font-style: normal;
+  color: var(--green-dim);
+  font-size: 12px;
+  letter-spacing: 1px;
+  border: 1px dotted var(--green-dim);
+  padding: 2px 8px;
+  margin-top: 4px;
+}
+
 /* Score badges */
 .score {
   display: inline-block;
