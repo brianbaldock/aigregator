@@ -83,7 +83,7 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
 
 <footer>
   <div class="counter">VISITORS :: 0x{abs(hash(now)) % 0xFFFFFF:06X}</div>
-  <p>compiled by hermes :: built {now} :: <a href="https://github.com/brianbaldock/AIgregator" style="color:var(--green-dim)">view source</a></p>
+  <p>compiled by brian &amp; hermes :: built {now} :: <a href="https://github.com/brianbaldock/AIgregator" style="color:var(--green-dim)">view source</a></p>
   <p>no cookies. no trackers. no LLMs were harmed in the making of this page.</p>
 </footer>
 
