@@ -60,6 +60,20 @@ def cmd_enrich_web(query: str) -> None:
 
 
 def cmd_summarize(url: str, engine: str = "cecil") -> None:
+    # Disabled by default — Kagi Summarizer is billed by input size and can
+    # cost $0.05-$0.10 per long page. Re-enable by setting
+    # KAGI_SUMMARIZER_ENABLED=1 in ~/.config/aigregator/secrets.env.
+    if os.environ.get("KAGI_SUMMARIZER_ENABLED") != "1":
+        # Re-load secrets in case caller didn't source it
+        if SECRETS.exists():
+            for line in SECRETS.read_text().splitlines():
+                if line.strip().startswith("KAGI_SUMMARIZER_ENABLED="):
+                    val = line.split("=", 1)[1].strip().strip('"').strip("'")
+                    if val == "1":
+                        break
+            else:
+                print(json.dumps({"error": "disabled", "msg": "summarize is disabled for cost control; set KAGI_SUMMARIZER_ENABLED=1 in ~/.config/aigregator/secrets.env to enable"}))
+                sys.exit(2)
     r = call("/summarize", {"url": url, "summary_type": "summary", "engine": engine})
     print(json.dumps(r, indent=2))
 
