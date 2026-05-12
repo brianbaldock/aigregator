@@ -176,10 +176,66 @@
     termEl = document.createElement("div");
     termEl.id = "term";
     termEl.innerHTML = `
-      <div id="term-output"></div>
-      <div id="term-prompt-line">
-        <span id="term-prompt"></span>
-        <input id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" />
+      <div id="term-desk"></div>
+      <svg class="floppies" viewBox="0 0 130 110" xmlns="http://www.w3.org/2000/svg">
+        <!-- pile of 3.5" floppies -->
+        <g>
+          <rect x="6"  y="78" width="118" height="22" rx="2" fill="#1a3a8a" stroke="#0a1a3a" stroke-width="1"/>
+          <rect x="62" y="80" width="48"  height="4"  fill="#cccccc"/>
+          <rect x="84" y="83" width="14"  height="14" rx="1" fill="#888"/>
+        </g>
+        <g transform="translate(-4,-16)">
+          <rect x="6"  y="78" width="118" height="22" rx="2" fill="#aa0a0a" stroke="#3a0606" stroke-width="1"/>
+          <rect x="62" y="80" width="48"  height="4"  fill="#cccccc"/>
+          <rect x="84" y="83" width="14"  height="14" rx="1" fill="#888"/>
+        </g>
+        <g transform="translate(8,-32)">
+          <rect x="6"  y="78" width="118" height="22" rx="2" fill="#e8b830" stroke="#7a5a10" stroke-width="1"/>
+          <rect x="62" y="80" width="48"  height="4"  fill="#cccccc"/>
+          <rect x="84" y="83" width="14"  height="14" rx="1" fill="#888"/>
+        </g>
+        <g transform="translate(-2,-48)">
+          <rect x="6"  y="78" width="118" height="22" rx="2" fill="#1a8a3a" stroke="#0a3a18" stroke-width="1"/>
+          <rect x="62" y="80" width="48"  height="4"  fill="#cccccc"/>
+          <rect x="84" y="83" width="14"  height="14" rx="1" fill="#888"/>
+        </g>
+        <g transform="translate(6,-64)">
+          <rect x="6"  y="78" width="118" height="22" rx="2" fill="#1a1a1a" stroke="#000" stroke-width="1"/>
+          <rect x="62" y="80" width="48"  height="4"  fill="#dddddd"/>
+          <rect x="84" y="83" width="14"  height="14" rx="1" fill="#aaa"/>
+        </g>
+      </svg>
+      <svg class="coffee" viewBox="0 0 90 120" xmlns="http://www.w3.org/2000/svg">
+        <!-- ceramic mug -->
+        <path d="M 14 36 L 14 100 Q 14 110 24 110 L 58 110 Q 68 110 68 100 L 68 36 Z"
+              fill="#e8e2d4" stroke="#6a5a4a" stroke-width="1.5"/>
+        <!-- coffee surface -->
+        <ellipse cx="41" cy="38" rx="27" ry="5" fill="#3a1f0c"/>
+        <ellipse cx="41" cy="37" rx="24" ry="3" fill="#5a2f12"/>
+        <!-- handle -->
+        <path d="M 68 50 Q 86 50 86 68 Q 86 86 68 86"
+              fill="none" stroke="#6a5a4a" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 68 50 Q 86 50 86 68 Q 86 86 68 86"
+              fill="none" stroke="#e8e2d4" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="steam"><span></span><span></span><span></span></div>
+      <div id="term-scene">
+        <div class="monitor">
+          <div class="bezel">
+            <div class="screen">
+              <div id="term-output-wrap">
+                <div id="term-output"></div>
+                <div id="term-prompt-line">
+                  <span id="term-prompt"></span>
+                  <input id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="powerbtn"></div>
+          <div class="led"></div>
+          <div class="nameplate">AIGREGATOR-1000</div>
+        </div>
       </div>
     `;
     document.body.appendChild(termEl);
@@ -188,7 +244,11 @@
     updatePrompt();
 
     inputEl.addEventListener("keydown", onKey);
-    termEl.addEventListener("click", () => inputEl.focus());
+    termEl.addEventListener("click", () => {
+      if (inputEl && document.getElementById("term-scene").classList.contains("zoomed")) {
+        inputEl.focus();
+      }
+    });
   }
 
   function destroyTerminal() {
@@ -199,9 +259,17 @@
     parseDigest();
     createTerm();
     outEl.innerHTML = "";
-    typeLines(BOOT, () => {
-      inputEl.focus();
-    });
+    // Brief beat to let the desk scene render, then trigger zoom
+    const scene = document.getElementById("term-scene");
+    setTimeout(() => {
+      scene.classList.add("zoomed");
+    }, 600);
+    // Once zoom is roughly done, type the boot sequence
+    setTimeout(() => {
+      typeLines(BOOT, () => {
+        inputEl.focus();
+      });
+    }, 2400);
   }
 
   function updatePrompt() {

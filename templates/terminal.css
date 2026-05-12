@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   TERMINAL MODE — fake CRT with shell-like navigation
+   TERMINAL MODE — Amiga-style CRT on a desk
    ═══════════════════════════════════════════════════════════ */
 
 body[data-theme="terminal"] {
@@ -10,30 +10,190 @@ body[data-theme="terminal"] {
   height: 100vh;
 }
 
-/* Hide all the normal page chrome in terminal mode */
+/* Hide normal page chrome in terminal mode */
 body[data-theme="terminal"] .wrap > *:not(#term),
 body[data-theme="terminal"] .theme-switch { display: none !important; }
 
-/* CRT shell */
+/* Dark room shell */
 #term {
-  display: flex;
-  flex-direction: column;
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at center, #001a05 0%, #000000 90%);
+  z-index: 50;
+  background:
+    radial-gradient(ellipse at 30% 80%, #1a0f05 0%, #050302 60%, #000 100%),
+    #000;
+  overflow: hidden;
+  perspective: 1400px;
+}
+
+/* The whole desk scene we animate */
+#term-scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 50% 42%;     /* zoom toward the monitor screen */
+  transform: scale(0.55) translateY(3vh);
+  transition: transform 2.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+#term-scene.zoomed {
+  transform: scale(1.95) translateY(-1vh);
+}
+
+/* The wooden desk surface */
+#term-desk {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -20vh;
+  height: 60vh;
+  background:
+    linear-gradient(180deg, #3a2616 0%, #2a1a0e 40%, #1a0f08 100%);
+  box-shadow: inset 0 6px 0 #5a3a22, inset 0 -2px 0 #100804;
+}
+/* desk grain */
+#term-desk::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background:
+    repeating-linear-gradient(90deg,
+      transparent 0px, transparent 22px,
+      rgba(0,0,0,0.4) 22px, rgba(0,0,0,0.4) 23px);
+}
+
+/* ── The chunky beige monitor ───────────────────────────── */
+.monitor {
+  position: relative;
+  width: 640px;
+  height: 480px;
+  background: linear-gradient(180deg, #d8caa0 0%, #c4b48a 50%, #a89972 100%);
+  border-radius: 28px 28px 18px 18px;
+  box-shadow:
+    inset 0 -6px 12px rgba(0,0,0,0.35),
+    inset 0 4px 8px rgba(255,255,255,0.35),
+    0 14px 28px rgba(0,0,0,0.7),
+    0 4px 0 #6a5a3a;
+  z-index: 2;
+}
+
+/* Vents on top */
+.monitor::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 60px;
+  right: 60px;
+  height: 4px;
+  background:
+    repeating-linear-gradient(90deg,
+      #6a5a3a 0px, #6a5a3a 2px,
+      transparent 2px, transparent 8px);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* Nameplate */
+.monitor .nameplate {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: #5a4a2a;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.4);
+}
+
+/* Power LED */
+.monitor .led {
+  position: absolute;
+  bottom: 22px;
+  right: 26px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a0606;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.6);
+}
+#term-scene.zoomed .monitor .led {
+  background: #ff2a2a;
+  box-shadow: 0 0 6px #ff2a2a, 0 0 12px rgba(255,42,42,0.6);
+}
+
+/* Power button */
+.monitor .powerbtn {
+  position: absolute;
+  bottom: 18px;
+  right: 50px;
+  width: 22px;
+  height: 8px;
+  background: linear-gradient(180deg, #8a7a52 0%, #6a5a3a 100%);
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.4);
+}
+
+/* Bezel inset around screen */
+.bezel {
+  position: absolute;
+  top: 36px;
+  left: 36px;
+  right: 36px;
+  bottom: 70px;
+  background: #2a2418;
+  border-radius: 14px;
+  box-shadow:
+    inset 0 4px 8px rgba(0,0,0,0.7),
+    inset 0 -1px 2px rgba(255,255,255,0.1);
+  padding: 12px;
+}
+
+/* The actual screen */
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, #001a05 0%, #000 90%);
+  border-radius: 8px;
+  overflow: hidden;
+  /* Subtle CRT curvature */
+  box-shadow:
+    inset 0 0 40px rgba(0,0,0,0.6),
+    inset 0 0 8px rgba(0,255,65,0.1);
+}
+
+/* Screen glow when zoomed in (powers on) */
+#term-scene.zoomed .screen {
+  background: radial-gradient(ellipse at center, #002510 0%, #000 95%);
+  box-shadow:
+    inset 0 0 40px rgba(0,0,0,0.6),
+    inset 0 0 30px rgba(0,255,65,0.18),
+    0 0 22px rgba(0,255,65,0.25);
+}
+
+/* The terminal content lives inside .screen */
+#term-output-wrap {
+  position: absolute;
+  inset: 14px;
+  display: flex;
+  flex-direction: column;
   color: #00ff41;
   font-family: 'VT323', monospace;
   font-size: 20px;
   line-height: 1.25;
-  padding: 24px 32px;
-  z-index: 50;
   text-shadow: 0 0 4px #00ff41, 0 0 12px rgba(0, 255, 65, 0.4);
+  opacity: 0;
+  transition: opacity 0.6s ease-out 1.6s;  /* fades in mid-zoom */
 }
+#term-scene.zoomed #term-output-wrap { opacity: 1; }
 
-/* Heavy scanlines */
-#term::before {
+/* Heavy scanlines, only when zoomed (otherwise screen looks black from distance) */
+.screen::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
   background: repeating-linear-gradient(
@@ -43,44 +203,45 @@ body[data-theme="terminal"] .theme-switch { display: none !important; }
     transparent 1px,
     transparent 3px
   );
-  z-index: 51;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.8s ease-out 1.6s;
 }
-/* CRT curvature vignette */
-#term::after {
+#term-scene.zoomed .screen::before { opacity: 1; }
+/* CRT vignette */
+.screen::after {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%);
-  z-index: 52;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.65) 100%);
+  z-index: 3;
 }
 /* Flicker */
 @keyframes term-flicker {
   0%, 100% { opacity: 0.97; }
   50% { opacity: 1; }
 }
-#term { animation: term-flicker 0.18s infinite; }
+#term-scene.zoomed #term-output-wrap { animation: term-flicker 0.18s infinite; }
 
+/* Output column */
 #term-output {
   flex: 1;
   overflow-y: auto;
   white-space: pre-wrap;
   scrollbar-width: thin;
   scrollbar-color: #00ff41 transparent;
+  padding-right: 4px;
 }
-#term-output::-webkit-scrollbar { width: 8px; }
+#term-output::-webkit-scrollbar { width: 6px; }
 #term-output::-webkit-scrollbar-thumb { background: #00ff41; }
 
 #term-prompt-line {
   display: flex;
   align-items: baseline;
-  margin-top: 8px;
+  margin-top: 4px;
 }
-#term-prompt {
-  color: #ffb000;
-  margin-right: 8px;
-  white-space: pre;
-}
+#term-prompt { color: #ffb000; margin-right: 6px; white-space: pre; }
 #term-input {
   background: transparent;
   border: none;
@@ -92,17 +253,56 @@ body[data-theme="terminal"] .theme-switch { display: none !important; }
   caret-color: #00ff41;
   text-shadow: inherit;
 }
-.term-cursor {
-  display: inline-block;
-  width: 0.6em;
-  height: 1em;
-  background: #00ff41;
-  vertical-align: text-bottom;
-  animation: term-blink 1s steps(2) infinite;
-}
-@keyframes term-blink { 50% { opacity: 0; } }
 
-/* Output styling */
+/* ── Props on the desk ───────────────────────────────────── */
+.coffee {
+  position: absolute;
+  left: calc(50% + 380px);
+  bottom: -8px;
+  width: 90px;
+  z-index: 1;
+  filter: drop-shadow(0 6px 4px rgba(0,0,0,0.6));
+}
+.floppies {
+  position: absolute;
+  right: calc(50% + 360px);
+  bottom: -14px;
+  width: 130px;
+  z-index: 1;
+  filter: drop-shadow(0 6px 6px rgba(0,0,0,0.7));
+}
+
+/* Steam */
+.steam {
+  position: absolute;
+  left: calc(50% + 410px);
+  bottom: 90px;
+  width: 40px;
+  height: 60px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease-out 1.6s;
+}
+#term-scene.zoomed .steam { opacity: 0.5; }
+.steam span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: steam 3s ease-in infinite;
+}
+.steam span:nth-child(2) { animation-delay: 1s; left: 40%; }
+.steam span:nth-child(3) { animation-delay: 2s; left: 60%; }
+@keyframes steam {
+  0% { transform: translate(-50%, 0) scale(0.5); opacity: 0; }
+  20% { opacity: 0.7; }
+  100% { transform: translate(-50%, -50px) scale(2); opacity: 0; }
+}
+
+/* Text styling inside terminal */
 .term-line { padding: 0; margin: 0; }
 .term-cmd { color: #00ff41; }
 .term-err { color: #ff4040; }
@@ -111,11 +311,16 @@ body[data-theme="terminal"] .theme-switch { display: none !important; }
 .term-muted { color: #4a7a4a; }
 .term-link { color: #ff00aa; text-decoration: underline; cursor: pointer; }
 .term-link:hover { background: #ff00aa; color: #000; }
-.term-fire { color: #ff4040; }
-.term-fresh { color: #ffb000; }
-.term-score { display: inline-block; min-width: 2ch; color: #ffb000; }
-.term-banner {
-  color: #00ff41;
-  white-space: pre;
-  text-shadow: 0 0 8px #00ff41;
+
+/* On exit, scene scales back down then fades out */
+#term-scene.unzoom {
+  transform: scale(0.55) translateY(3vh);
+}
+
+/* Mobile fallback: smaller monitor */
+@media (max-width: 760px) {
+  .monitor { width: 92vw; height: 70vw; max-height: 65vh; }
+  .bezel { top: 5%; left: 5%; right: 5%; bottom: 14%; }
+  .coffee, .floppies { display: none; }
+  #term-output-wrap { font-size: 16px; }
 }
