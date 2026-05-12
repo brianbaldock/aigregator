@@ -18,16 +18,18 @@
   }
 
   function buildSwitcher() {
-    const div = document.createElement("div");
-    div.className = "theme-switch";
-    div.innerHTML = `<label>theme:</label><select id="theme-select">
+    const nav = document.querySelector("nav.menu");
+    if (!nav) return;
+    const span = document.createElement("span");
+    span.className = "theme-switch";
+    span.innerHTML = ` [ theme: <select id="theme-select">
       <option value="phosphor">phosphor</option>
       <option value="light">light</option>
       <option value="geocities">geocities</option>
       <option value="terminal">terminal</option>
-    </select>`;
-    document.body.appendChild(div);
-    div.querySelector("select").addEventListener("change", e => applyTheme(e.target.value));
+    </select> ]`;
+    nav.appendChild(span);
+    span.querySelector("select").addEventListener("change", e => applyTheme(e.target.value));
   }
 
   // ─── DIGEST EXTRACTION ───────────────────────────────────
@@ -204,7 +206,7 @@
 
   function updatePrompt() {
     const p = document.getElementById("term-prompt");
-    if (p) p.textContent = `aigregator:${cwd}$ `;
+    if (p) p.textContent = `user@aigregator:${cwd}$ `;
   }
 
   function print(line, cls) {
@@ -236,7 +238,7 @@
     if (e.key === "Enter") {
       e.preventDefault();
       const cmd = inputEl.value;
-      print(`<span style="color:#ffb000">aigregator:${cwd}$</span> ${escapeHTML(cmd)}`);
+      print(`<span style="color:#ffb000">user@aigregator:${cwd}$</span> ${escapeHTML(cmd)}`);
       inputEl.value = "";
       if (cmd.trim()) {
         history.push(cmd);
@@ -283,7 +285,7 @@
       case "themes": print("available themes: phosphor, light, geocities, terminal. usage: theme <name>", "term-info"); break;
       case "archive": doArchive(); break;
       case "date": print(new Date().toString()); break;
-      case "whoami": print("guest@aigregator", "term-muted"); break;
+      case "whoami": print("user@aigregator", "term-muted"); break;
       case "clear": outEl.innerHTML = ""; break;
       case "exit": applyTheme("phosphor"); break;
       // ── easter eggs ─────────────────────────────────────
@@ -297,7 +299,7 @@
       case "wargames": case "shall_we_play_a_game": print("a strange game. the only winning move is not to play.", "term-info"); break;
       case "matrix": doMatrix(); break;
       case "uname": print("AIgregator 1.0.0-phosphor #1 SMP (vibes) GNU/hermes", "term-muted"); break;
-      case "ps": print("  PID TTY          TIME CMD\n  1   ?        00:00:01 aigregator\n  42  ?        00:00:00 hermes\n  1337 pts/0    00:00:00 you", "term-muted"); break;
+      case "ps": print("  PID TTY          TIME CMD\n  1   ?        00:00:01 aigregator\n  42  ?        00:00:00 hermes\n  1337 pts/0    00:00:00 user", "term-muted"); break;
       case "top": print("load: vibes high. cpu: 100% pondering. ram: out of cheese.", "term-muted"); break;
       case "echo": print(escapeHTML(arg)); break;
       case "history": print(history.map((h, i) => `  ${i + 1}  ${h}`).join("\n"), "term-muted"); break;
@@ -336,10 +338,10 @@
     if (cwd === "/") {
       if (long) {
         d.sections.forEach(s => {
-          print(`drwxr-xr-x  ${String(s.items.length).padStart(3)} hermes hermes  ${escapeHTML(s.title)}/`);
+          print(`drwxr-xr-x  ${String(s.items.length).padStart(3)} user  user  ${escapeHTML(s.title)}/`);
         });
-        print(`-rw-r--r--   1  hermes hermes  README.txt`, "term-muted");
-        print(`-rw-r--r--   1  hermes hermes  dashboard.json`, "term-muted");
+        print(`-rw-r--r--   1  user  user  README.txt`, "term-muted");
+        print(`-rw-r--r--   1  user  user  dashboard.json`, "term-muted");
       } else {
         const out = d.sections.map(s => s.slug + "/").join("  ");
         print(out + "  README.txt  dashboard.json");
