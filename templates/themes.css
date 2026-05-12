@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════════════════
+   AIGREGATOR theme system
+   default = phosphor (loaded via base.css)
+   alt themes activate via body[data-theme="..."]
+   ═══════════════════════════════════════════════════════════ */
+
+/* ────────── LIGHT ────────── */
+body[data-theme="light"] {
+  --bg: #f4efe1;
+  --bg-soft: #e8e1cc;
+  --green: #1a5a1a;
+  --green-dim: #4a7a4a;
+  --amber: #8a5a00;
+  --magenta: #a02060;
+  --cyan: #0a6080;
+  --red: #b22222;
+  --border: #1a5a1a;
+  color: var(--green);
+  background: var(--bg);
+}
+body[data-theme="light"]::before,
+body[data-theme="light"]::after { display: none; }
+body[data-theme="light"] .banner h1 {
+  color: var(--green);
+  text-shadow: 2px 2px 0 var(--magenta);
+}
+body[data-theme="light"] .digest p,
+body[data-theme="light"] .digest li { color: #2a2a2a; }
+body[data-theme="light"] footer .counter {
+  background: var(--bg-soft);
+  color: var(--amber);
+}
+
+/* ────────── GEOCITIES ────────── */
+body[data-theme="geocities"] {
+  --bg: #000033;
+  --bg-soft: #1a0033;
+  --green: #00ff00;
+  --green-dim: #00aa00;
+  --amber: #ffff00;
+  --magenta: #ff00ff;
+  --cyan: #00ffff;
+  --red: #ff0000;
+  font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+  background: #000033 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='5' cy='5' r='1' fill='%23ffffff'/><circle cx='25' cy='15' r='1' fill='%23ffff00'/><circle cx='15' cy='30' r='1' fill='%2300ffff'/></svg>");
+}
+body[data-theme="geocities"]::before,
+body[data-theme="geocities"]::after { display: none; }
+body[data-theme="geocities"] .banner h1 {
+  font-family: "Comic Sans MS", cursive;
+  background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s linear infinite;
+  text-shadow: none;
+}
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+body[data-theme="geocities"] .banner {
+  background: var(--bg-soft);
+  border: 4px ridge #ffff00;
+}
+body[data-theme="geocities"] nav.menu {
+  background: #330033;
+  border: 3px outset #ff00ff;
+}
+body[data-theme="geocities"] nav.menu a { color: #ffff00; font-weight: bold; }
+body[data-theme="geocities"] nav.menu a:hover { color: #ff00ff; background: #ffff00; }
+body[data-theme="geocities"] .digest h2 {
+  color: #ffff00;
+  font-family: "Comic Sans MS", cursive;
+  text-shadow: 2px 2px 0 #ff00ff;
+}
+body[data-theme="geocities"] .digest a { color: #00ffff; }
+body[data-theme="geocities"] .digest a:visited { color: #ff00ff; }
+body[data-theme="geocities"] .statusbar {
+  background: #330000;
+  border: 2px groove #ffff00;
+  color: #ffff00;
+}
+body[data-theme="geocities"] .digest > blockquote:first-of-type {
+  background: linear-gradient(45deg, #330033, #003333);
+  border: 3px ridge #ff00ff;
+}
+body[data-theme="geocities"] footer { color: #ffff00; }
+body[data-theme="geocities"] footer .counter {
+  background: #000;
+  color: #00ff00;
+  border: 2px inset #ffff00;
+  font-family: "Comic Sans MS", cursive;
+}
+body[data-theme="geocities"] .geocities-extras { display: block !important; }
+body[data-theme="geocities"] pre.ascii { display: none; }
+
+/* ────────── THEME SWITCHER UI ────────── */
+.theme-switch {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid var(--green);
+  padding: 4px 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  color: var(--green);
+}
+.theme-switch label {
+  color: var(--amber);
+  margin-right: 6px;
+}
+.theme-switch select {
+  background: #000;
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+body[data-theme="light"] .theme-switch {
+  background: rgba(244, 239, 225, 0.95);
+  color: var(--green);
+}
+body[data-theme="light"] .theme-switch select {
+  background: var(--bg-soft);
+  color: var(--green);
+}
+
+/* hidden by default, geocities reveals */
+.geocities-extras { display: none; }

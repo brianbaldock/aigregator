@@ -26,8 +26,15 @@ ROOT = Path(__file__).resolve().parent.parent
 DIGESTS_DIR = ROOT / "digests"
 DOCS_DIR = ROOT / "docs"
 DOCS_DIGESTS = DOCS_DIR / "digests"
-CSS_SRC = ROOT / "templates" / "base.css"
-CSS_DST = DOCS_DIR / "assets" / "base.css"
+TEMPLATES = ROOT / "templates"
+CSS_FILES = [
+    (TEMPLATES / "base.css", DOCS_DIR / "assets" / "base.css"),
+    (TEMPLATES / "themes.css", DOCS_DIR / "assets" / "themes.css"),
+    (TEMPLATES / "terminal.css", DOCS_DIR / "assets" / "terminal.css"),
+]
+JS_FILES = [
+    (TEMPLATES / "app.js", DOCS_DIR / "assets" / "app.js"),
+]
 LOGO = DOCS_DIR / "assets" / "aigregator-logo.png"
 
 ASCII_BANNER = r"""
@@ -51,9 +58,11 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} :: AIGREGATOR</title>
 <link rel="stylesheet" href="{prefix}assets/base.css">
+<link rel="stylesheet" href="{prefix}assets/themes.css">
+<link rel="stylesheet" href="{prefix}assets/terminal.css">
 <link rel="icon" href="{prefix}assets/aigregator-logo.png">
 </head>
-<body class="{page_class}">
+<body class="{page_class}" data-theme="phosphor">
 <div class="wrap">
 
 <div class="banner">
@@ -61,6 +70,7 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
   <div class="banner-text">
     <h1>AIGREGATOR</h1>
     <div class="tag">// daily AI signal, scored and cited <span class="blink"></span></div>
+    <div class="geocities-extras"><marquee scrollamount="6" style="color:#ffff00">★ WELCOME TO AIGREGATOR ★ EST. 2026 ★ BEST VIEWED IN NETSCAPE NAVIGATOR 4 ★ SIGN MY GUESTBOOK ★ NOW WITH 90% MORE TACOS ★</marquee></div>
   </div>
 </div>
 
@@ -68,7 +78,6 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
   <span><b>UPLINK:</b> {now}</span>
   <span><b>PACKETS:</b> {digest_count:03d}</span>
   <span><b>STATUS:</b> <span style="color:#00ff41">ONLINE</span></span>
-  <span><b>OPERATOR:</b> hermes@aigregator</span>
 </div>
 
 <nav class="menu">
@@ -87,6 +96,7 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
 </footer>
 
 </div>
+<script src="{prefix}assets/app.js"></script>
 </body>
 </html>
 """
@@ -228,8 +238,9 @@ Source: <a href="https://github.com/brianbaldock/AIgregator">github.com/brianbal
 def main() -> int:
     DOCS_DIR.mkdir(exist_ok=True)
     (DOCS_DIR / "assets").mkdir(exist_ok=True)
-    if CSS_SRC.exists():
-        shutil.copy2(CSS_SRC, CSS_DST)
+    for src, dst in CSS_FILES + JS_FILES:
+        if src.exists():
+            shutil.copy2(src, dst)
     # Ensure no Jekyll
     (DOCS_DIR / ".nojekyll").touch()
 
