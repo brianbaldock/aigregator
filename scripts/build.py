@@ -46,23 +46,58 @@ ASCII_BANNER = r"""
 """
 
 
-def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> str:
+def html_shell(
+    title: str,
+    body: str,
+    page_class: str = "",
+    depth: int = 0,
+    description: str = "Daily AI news digest, scored and cited. Generated each morning by an autonomous Hermes agent.",
+    canonical_path: str = "",
+    og_image: str = "assets/aigregator-logo.png",
+    extra_head: str = "",
+) -> str:
     """depth=0 for pages in docs/ (index, archive, about). depth=1 for docs/digests/*."""
     prefix = "../" * depth
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     digest_count = len(list(DIGESTS_DIR.glob("*.md")))
+    canonical_url = f"{SITE_URL}/{canonical_path.lstrip('/')}" if canonical_path else f"{SITE_URL}/"
+    og_image_url = og_image if og_image.startswith("http") else f"{SITE_URL}/{og_image.lstrip('/')}"
+    full_title = f"{title} :: AIGREGATOR"
+    desc_escaped = description.replace('"', "&quot;")
     return f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title} :: AIGREGATOR</title>
+<title>{full_title}</title>
+<meta name="description" content="{desc_escaped}">
+<meta name="author" content="Brian Baldock">
+<link rel="canonical" href="{canonical_url}">
+<meta name="theme-color" content="#000000">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AIGREGATOR">
+<meta property="og:title" content="{full_title}">
+<meta property="og:description" content="{desc_escaped}">
+<meta property="og:url" content="{canonical_url}">
+<meta property="og:image" content="{og_image_url}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{full_title}">
+<meta name="twitter:description" content="{desc_escaped}">
+<meta name="twitter:image" content="{og_image_url}">
+
 <link rel="stylesheet" href="{prefix}assets/base.css">
 <link rel="stylesheet" href="{prefix}assets/themes.css">
 <link rel="stylesheet" href="{prefix}assets/terminal.css">
 <link rel="icon" href="{prefix}assets/aigregator-logo.png">
+<link rel="apple-touch-icon" href="{prefix}assets/aigregator-logo.png">
+<link rel="manifest" href="{prefix}manifest.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="AIgregator RSS" href="{prefix}feed.xml">
 <link rel="alternate" type="application/atom+xml" title="AIgregator Atom" href="{prefix}atom.xml">
+{extra_head}
 </head>
 <body class="{page_class}" data-theme="phosphor">
 <div class="wrap">
@@ -246,11 +281,39 @@ def build_digest_pages() -> list[dict]:
         title = title_match.group(1).strip() if title_match else slug
         first_line = re.sub(r"[#*_`\[\]()]", "", text.split("\n", 1)[0]).strip()[:120]
 
+        # Real subtitle for SEO description (the italic line right under # title)
+        subtitle_match = re.search(r"^[*_]([^*_\n]{20,300})[*_]\s*$", text, re.MULTILINE)
+        description = subtitle_match.group(1).strip() if subtitle_match else f"AI daily digest for {slug}"
+        description = description[:280]
+
+        # JSON-LD Article schema
+        import json as _json
+        ld = {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": title,
+            "datePublished": f"{slug}T07:00:00-07:00",
+            "dateModified": f"{slug}T14:00:00Z",
+            "author": {"@type": "Person", "name": "Brian Baldock + Hermes (autonomous agent)"},
+            "publisher": {
+                "@type": "Organization",
+                "name": "AIGREGATOR",
+                "logo": {"@type": "ImageObject", "url": f"{SITE_URL}/assets/aigregator-logo.png"},
+            },
+            "description": description,
+            "url": f"{SITE_URL}/digests/{slug}.html",
+            "wordCount": word_count,
+        }
+        ld_script = f'<script type="application/ld+json">{_json.dumps(ld)}</script>'
+
         page = html_shell(
             title=slug,
             body=f'<article class="digest" data-pagefind-body>{body_html}</article>',
             page_class="digest-page",
             depth=1,
+            description=description,
+            canonical_path=f"digests/{slug}.html",
+            extra_head=ld_script,
         )
         out = DOCS_DIGESTS / f"{slug}.html"
         out.write_text(page, encoding="utf-8")
@@ -283,7 +346,12 @@ def build_index(entries: list[dict]) -> None:
         m = re.search(r'(<article class="digest"[^>]*>.*?</article>)', latest_html, re.DOTALL)
         body = m.group(1) if m else "<p>render error</p>"
 
-    page = html_shell(title="latest", body=body)
+    page = html_shell(
+        title="latest",
+        body=body,
+        canonical_path="",
+        description="The latest AIgregator daily AI news digest. Frontier-lab releases, policy moves, prediction markets, and cool projects — scored and cited.",
+    )
     (DOCS_DIR / "index.html").write_text(page, encoding="utf-8")
 
 
@@ -363,7 +431,12 @@ def build_archive(entries: list[dict]) -> None:
 </table>
 </article>
 """
-    page = html_shell(title="archive", body=body)
+    page = html_shell(
+        title="archive",
+        body=body,
+        canonical_path="archive.html",
+        description="Browse every AIgregator daily AI news digest. Filter by theme or full-text search across the archive.",
+    )
     (DOCS_DIR / "archive.html").write_text(page, encoding="utf-8")
 
 
@@ -529,6 +602,15 @@ def extract_digest_meta(text: str) -> dict:
             if tm:
                 tldr.append(tm.group(1).strip().rstrip("."))
 
+    # Overall sentiment (first occurrence in the dashboard line)
+    sentiment = 0.0
+    sm = re.search(r"([+-][0-9]+\.[0-9]+)\s+sentiment", text)
+    if sm:
+        try:
+            sentiment = float(sm.group(1))
+        except ValueError:
+            pass
+
     return {
         "themes": dict(themes.most_common(10)),
         "sources": dict(sources.most_common(10)),
@@ -537,6 +619,7 @@ def extract_digest_meta(text: str) -> dict:
         "total_sources": len(sources),
         "total_links": total_links,
         "tldr": tldr,
+        "sentiment": sentiment,
     }
 
 
@@ -593,17 +676,56 @@ The transmission you requested either never existed or has decayed into the nois
 </p>
 </article>
 """
-    page = html_shell(title="404", body=body)
+    page = html_shell(
+        title="404",
+        body=body,
+        canonical_path="404.html",
+        description="404 — packet not found in uplink queue.",
+    )
     (DOCS_DIR / "404.html").write_text(page, encoding="utf-8")
 
 
-def build_about() -> None:
-    body = """
+def build_about(entries: list[dict]) -> None:
+    # Sentiment sparkline — last 30 digests, oldest -> newest
+    points = list(reversed(entries))[-30:]
+    sparkline_svg = ""
+    if points:
+        W, H, PAD = 600, 80, 8
+        n = len(points)
+        x_step = (W - 2 * PAD) / max(1, n - 1) if n > 1 else 0
+        # Sentiment range is -1..+1; clamp and map
+        def y_for(s: float) -> float:
+            s = max(-1.0, min(1.0, s))
+            return H - PAD - ((s + 1.0) / 2.0) * (H - 2 * PAD)
+        zero_y = y_for(0)
+        coords = [(PAD + i * x_step, y_for(p["meta"]["sentiment"])) for i, p in enumerate(points)]
+        line_path = " ".join(f"{'M' if i == 0 else 'L'}{x:.1f},{y:.1f}" for i, (x, y) in enumerate(coords))
+        # Color dots by sentiment
+        dots = "".join(
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3" fill="{("#00ff41" if p["meta"]["sentiment"] > 0.15 else "#ff2a2a" if p["meta"]["sentiment"] < -0.15 else "#ffb000")}">'
+            f'<title>{p["slug"]}: {p["meta"]["sentiment"]:+.2f}</title></circle>'
+            for (x, y), p in zip(coords, points)
+        )
+        first_label = points[0]["slug"]
+        last_label = points[-1]["slug"]
+        avg = sum(p["meta"]["sentiment"] for p in points) / len(points)
+        sparkline_svg = f"""
+<h3>SENTIMENT TREND ({len(points)}d)</h3>
+<div class="sparkline-wrap">
+<svg viewBox="0 0 {W} {H}" preserveAspectRatio="none" class="sparkline" aria-label="sentiment trend">
+  <line x1="{PAD}" y1="{zero_y:.1f}" x2="{W-PAD}" y2="{zero_y:.1f}" stroke="#008f17" stroke-dasharray="3,3" stroke-width="1"/>
+  <path d="{line_path}" fill="none" stroke="#00e0ff" stroke-width="2"/>
+  {dots}
+</svg>
+<div class="sparkline-axis"><span>{first_label}</span><span>avg {avg:+.2f}</span><span>{last_label}</span></div>
+</div>"""
+
+    body = f"""
 <article class="digest">
 <h2>// ABOUT.TXT</h2>
 <p><b>AIGREGATOR</b> is a daily AI news digest, scored and cited.
 Generated each morning at 0700 Pacific by an autonomous Hermes agent.</p>
-
+{sparkline_svg}
 <h3>HOW IT WORKS</h3>
 <ul>
 <li>Agent scours primary lab blogs, reputable press, social signal, and arXiv every morning.</li>
@@ -633,8 +755,89 @@ Generated each morning at 0700 Pacific by an autonomous Hermes agent.</p>
 Source: <a href="https://github.com/brianbaldock/AIgregator">github.com/brianbaldock/AIgregator</a></p>
 </article>
 """
-    page = html_shell(title="about", body=body)
+    page = html_shell(
+        title="about",
+        body=body,
+        canonical_path="about.html",
+        description="About AIgregator: how the daily AI digest is generated, scored, and cited.",
+    )
     (DOCS_DIR / "about.html").write_text(page, encoding="utf-8")
+
+
+def build_pwa() -> None:
+    """Generate manifest.webmanifest + service worker for PWA install + offline."""
+    import json as _json
+    manifest = {
+        "name": "AIgregator",
+        "short_name": "AIgregator",
+        "description": "Daily AI news digest, scored and cited.",
+        "start_url": "/aigregator/",
+        "scope": "/aigregator/",
+        "display": "standalone",
+        "background_color": "#000000",
+        "theme_color": "#000000",
+        "icons": [
+            {"src": "assets/aigregator-logo.png", "sizes": "192x192", "type": "image/png"},
+            {"src": "assets/aigregator-logo.png", "sizes": "512x512", "type": "image/png"},
+        ],
+    }
+    (DOCS_DIR / "manifest.webmanifest").write_text(_json.dumps(manifest, indent=2), encoding="utf-8")
+
+    # Tiny service worker: cache-first for chrome, network-first for HTML
+    sw = """// AIgregator service worker — minimal cache-first for assets, network-first for HTML
+const CACHE = "aigregator-v1";
+const ASSETS = [
+  "./",
+  "./index.html",
+  "./archive.html",
+  "./about.html",
+  "./assets/base.css",
+  "./assets/themes.css",
+  "./assets/terminal.css",
+  "./assets/app.js",
+  "./assets/aigregator-logo.png",
+];
+
+self.addEventListener("install", e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS).catch(() => {})));
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", e => {
+  e.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
+});
+
+self.addEventListener("fetch", e => {
+  const req = e.request;
+  if (req.method !== "GET") return;
+  const url = new URL(req.url);
+  // Network-first for HTML so users see fresh digests
+  if (req.headers.get("accept")?.includes("text/html")) {
+    e.respondWith(
+      fetch(req).then(r => {
+        const copy = r.clone();
+        caches.open(CACHE).then(c => c.put(req, copy));
+        return r;
+      }).catch(() => caches.match(req).then(c => c || caches.match("./index.html")))
+    );
+    return;
+  }
+  // Cache-first for everything else
+  e.respondWith(
+    caches.match(req).then(c => c || fetch(req).then(r => {
+      const copy = r.clone();
+      if (r.ok) caches.open(CACHE).then(c => c.put(req, copy));
+      return r;
+    }))
+  );
+});
+"""
+    (DOCS_DIR / "sw.js").write_text(sw, encoding="utf-8")
 
 
 def main() -> int:
@@ -649,11 +852,12 @@ def main() -> int:
     entries = build_digest_pages()
     build_index(entries)
     build_archive(entries)
-    build_about()
+    build_about(entries)
     build_404()
     build_feeds(entries)
     build_sitemap(entries)
-    print(f"built {len(entries)} digest page(s) + feeds + sitemap + 404")
+    build_pwa()
+    print(f"built {len(entries)} digest page(s) + feeds + sitemap + 404 + pwa")
     return 0
 
 

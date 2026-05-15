@@ -415,6 +415,29 @@ pre.ascii {
 }
 tr.hidden { display: none; }
 
+/* Sentiment sparkline */
+.sparkline-wrap {
+  border: 1px solid var(--green-dim);
+  background: var(--bg-soft);
+  padding: 10px;
+  margin: 10px 0 18px;
+}
+.sparkline {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+}
+.sparkline-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--green-dim);
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+.sparkline-axis span:nth-child(2) { color: var(--cyan); }
+
 /* Pagefind full-text search panel */
 .fulltext-search {
   margin-bottom: 10px;

@@ -1,0 +1,44 @@
+name: Link check
+
+on:
+  pull_request:
+    paths:
+      - 'digests/**'
+      - 'docs/**'
+      - 'scripts/build.py'
+  workflow_dispatch:
+  schedule:
+    # Weekly sweep, Sundays 09:00 UTC
+    - cron: '0 9 * * 0'
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lychee link checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Check generated docs (citations live there) + digests/ markdown
+          args: >-
+            --no-progress
+            --max-concurrency 8
+            --timeout 20
+            --retry-wait-time 4
+            --max-retries 2
+            --accept 200,206,429
+            --exclude-path docs/_pagefind
+            --exclude 'twitter.com/intent'
+            --exclude 'bsky.app/intent'
+            --exclude 'linkedin.com/sharing'
+            './docs/**/*.html'
+            './digests/**/*.md'
+          fail: true
+          format: markdown
+          output: ./lychee-report.md
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: lychee-report.md
