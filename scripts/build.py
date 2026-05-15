@@ -178,9 +178,17 @@ def build_digest_pages() -> list[tuple[str, str, str]]:
     """Render each markdown digest. Returns list of (slug, title, first_line)."""
     DOCS_DIGESTS.mkdir(parents=True, exist_ok=True)
     entries: list[tuple[str, str, str]] = []
+    total_warnings = 0
     for md in sorted(DIGESTS_DIR.glob("*.md"), reverse=True):
         slug = slug_for(md)
         text = md.read_text(encoding="utf-8")
+        # Strip bare-domain citations (homepage placeholders)
+        text, warns = strip_bare_domain_citations(text)
+        if warns:
+            print(f"[{slug}] cleaned {len(warns)} bare-domain citation(s):")
+            for w in warns:
+                print(w)
+            total_warnings += len(warns)
         body_html = render_digest_md(text)
 
         # Extract first heading as title
@@ -245,6 +253,53 @@ def build_archive(entries: list[tuple[str, str, str]]) -> None:
 
 
 SITE_URL = "https://brianbaldock.github.io/aigregator"
+
+# Domains where a bare URL (root path only) is almost certainly a "I couldn't
+# find the deep link" placeholder rather than a real citation.
+BARE_DOMAIN_BLOCKLIST = {
+    "reuters.com", "www.reuters.com",
+    "apnews.com", "www.apnews.com", "ap.org",
+    "bloomberg.com", "www.bloomberg.com",
+    "news.google.com",
+    "ft.com", "www.ft.com",
+    "wsj.com", "www.wsj.com",
+    "nytimes.com", "www.nytimes.com",
+    "cnbc.com", "www.cnbc.com",
+    "techcrunch.com",
+    "theverge.com", "www.theverge.com",
+    "wired.com", "www.wired.com",
+    "arstechnica.com",
+}
+
+
+def strip_bare_domain_citations(md_text: str) -> tuple[str, list[str]]:
+    """Remove markdown link refs that point at bare-domain homepages.
+    Returns (cleaned_md, warnings)."""
+    from urllib.parse import urlparse
+    warnings: list[str] = []
+
+    def link_repl(m: re.Match) -> str:
+        label, url = m.group(1), m.group(2)
+        try:
+            p = urlparse(url)
+        except ValueError:
+            return m.group(0)
+        host = p.netloc.lower()
+        path = p.path.strip("/")
+        # Bare = no path or path is just a slash
+        if host in BARE_DOMAIN_BLOCKLIST and not path:
+            warnings.append(f"  bare-domain citation stripped: [{label}]({url})")
+            # Replace with plain label so the sentence still reads
+            return label
+        return m.group(0)
+
+    cleaned = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", link_repl, md_text)
+    # Tidy up dangling ", " or "(  )" left by removed links
+    cleaned = re.sub(r",\s*,", ",", cleaned)
+    cleaned = re.sub(r"\(\s*,\s*", "(", cleaned)
+    cleaned = re.sub(r",\s*\)", ")", cleaned)
+    cleaned = re.sub(r"\(\s*\)", "", cleaned)
+    return cleaned, warnings
 
 
 def build_feeds(entries: list[tuple[str, str, str]]) -> None:
