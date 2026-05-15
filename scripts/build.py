@@ -61,6 +61,8 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
 <link rel="stylesheet" href="{prefix}assets/themes.css">
 <link rel="stylesheet" href="{prefix}assets/terminal.css">
 <link rel="icon" href="{prefix}assets/aigregator-logo.png">
+<link rel="alternate" type="application/rss+xml" title="AIgregator RSS" href="{prefix}feed.xml">
+<link rel="alternate" type="application/atom+xml" title="AIgregator Atom" href="{prefix}atom.xml">
 </head>
 <body class="{page_class}" data-theme="phosphor">
 <div class="wrap">
@@ -84,6 +86,7 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
   [ <a href="{prefix}index.html">LATEST</a> ]
   [ <a href="{prefix}archive.html">ARCHIVE</a> ]
   [ <a href="{prefix}about.html">ABOUT</a> ]
+  [ <a href="{prefix}feed.xml">RSS</a> ]
   [ <a href="https://github.com/brianbaldock/AIgregator">SRC</a> ]
 </nav>
 
@@ -102,8 +105,8 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
 """
 
 
-def render_digest_md(md_text: str) -> str:
-    """Render markdown to HTML, then post-process to add score badges."""
+def render_digest_md(md_text: str, slug: str = "") -> str:
+    """Render markdown to HTML, then post-process to add score badges and per-story anchors."""
     html = markdown.markdown(md_text, extensions=["extra", "sane_lists"])
 
     # Score badges: turn [N] at start of list item or paragraph into a span
@@ -117,6 +120,35 @@ def render_digest_md(md_text: str) -> str:
         return f'<span class="{cls}">{n:02d}</span>'
 
     html = re.sub(r"\[(\d+)\]", score_repl, html)
+
+    # Per-story permalinks: add id + copy-link anchor to <li> items in the first <ol>
+    # (the TL;DR list). Pattern: <li>...<strong>Title.</strong>... -> id="story-N"
+    story_counter = {"n": 0}
+
+    def li_with_anchor(m: re.Match) -> str:
+        story_counter["n"] += 1
+        n = story_counter["n"]
+        anchor_id = f"story-{n}"
+        link_html = f' <a class="story-link" href="#{anchor_id}" title="Permalink to this story">¶</a>'
+        return f'<li id="{anchor_id}">{m.group(1)}{link_html}'
+
+    # Only process the first <ol> (TL;DR section) — find it and rewrite its <li>s
+    ol_match = re.search(r"(<ol>)(.*?)(</ol>)", html, re.DOTALL)
+    if ol_match:
+        ol_inner = re.sub(r"<li>(.*?)(?=</li>)", li_with_anchor, ol_match.group(2), flags=re.DOTALL)
+        html = html[: ol_match.start()] + ol_match.group(1) + ol_inner + ol_match.group(3) + html[ol_match.end():]
+
+    # Add ids to h2/h3 so section deep-links work
+    def heading_id(m: re.Match) -> str:
+        tag, content = m.group(1), m.group(2)
+        # slug from content: strip tags, lowercase, keep word chars
+        plain = re.sub(r"<[^>]+>", "", content)
+        plain = re.sub(r"[^\w\s-]", "", plain).strip().lower()
+        hid = re.sub(r"[\s_]+", "-", plain)[:48] or f"section-{hash(content) & 0xffff:x}"
+        link = f' <a class="permalink" href="#{hid}" title="Permalink">#</a>'
+        return f'<{tag} id="{hid}">{content}{link}</{tag}>'
+
+    html = re.sub(r"<(h[123])>(.*?)</\1>", heading_id, html)
     return html
 
 
@@ -195,6 +227,84 @@ def build_archive(entries: list[tuple[str, str, str]]) -> None:
     (DOCS_DIR / "archive.html").write_text(page, encoding="utf-8")
 
 
+SITE_URL = "https://brianbaldock.github.io/aigregator"
+
+
+def build_feeds(entries: list[tuple[str, str, str]]) -> None:
+    """Generate RSS 2.0 feed.xml and Atom 1.0 atom.xml from digests."""
+    from xml.sax.saxutils import escape as xml_escape
+
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    now_rfc822 = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
+
+    rss_items = []
+    atom_entries = []
+    for slug, title, preview in entries[:30]:  # cap feed at 30 most recent
+        url = f"{SITE_URL}/digests/{slug}.html"
+        # Use slug date as pub date (00:00 UTC of that day) — predictable, no clock drift
+        try:
+            pub_dt = datetime.strptime(slug, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+        except ValueError:
+            pub_dt = datetime.now(timezone.utc)
+        pub_rfc822 = pub_dt.strftime("%a, %d %b %Y %H:%M:%S +0000")
+        pub_iso = pub_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        # Pull article HTML for full-content feed
+        digest_path = DOCS_DIGESTS / f"{slug}.html"
+        article_html = ""
+        if digest_path.exists():
+            m = re.search(r'(<article class="digest">.*?</article>)', digest_path.read_text(encoding="utf-8"), re.DOTALL)
+            if m:
+                article_html = m.group(1)
+
+        rss_items.append(f"""    <item>
+      <title>{xml_escape(title)}</title>
+      <link>{url}</link>
+      <guid isPermaLink="true">{url}</guid>
+      <pubDate>{pub_rfc822}</pubDate>
+      <description>{xml_escape(preview)}</description>
+      <content:encoded><![CDATA[{article_html}]]></content:encoded>
+    </item>""")
+
+        atom_entries.append(f"""  <entry>
+    <title>{xml_escape(title)}</title>
+    <link href="{url}"/>
+    <id>{url}</id>
+    <updated>{pub_iso}</updated>
+    <summary>{xml_escape(preview)}</summary>
+    <content type="html"><![CDATA[{article_html}]]></content>
+  </entry>""")
+
+    rss = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AIGREGATOR</title>
+    <link>{SITE_URL}/</link>
+    <atom:link href="{SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Daily AI signal, scored and cited.</description>
+    <language>en-us</language>
+    <lastBuildDate>{now_rfc822}</lastBuildDate>
+{chr(10).join(rss_items)}
+  </channel>
+</rss>
+"""
+
+    atom = f"""<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>AIGREGATOR</title>
+  <link href="{SITE_URL}/"/>
+  <link rel="self" href="{SITE_URL}/atom.xml"/>
+  <id>{SITE_URL}/</id>
+  <updated>{now_iso}</updated>
+  <subtitle>Daily AI signal, scored and cited.</subtitle>
+{chr(10).join(atom_entries)}
+</feed>
+"""
+
+    (DOCS_DIR / "feed.xml").write_text(rss, encoding="utf-8")
+    (DOCS_DIR / "atom.xml").write_text(atom, encoding="utf-8")
+
+
 def build_about() -> None:
     body = """
 <article class="digest">
@@ -248,7 +358,8 @@ def main() -> int:
     build_index(entries)
     build_archive(entries)
     build_about()
-    print(f"built {len(entries)} digest page(s)")
+    build_feeds(entries)
+    print(f"built {len(entries)} digest page(s) + feeds")
     return 0
 
 

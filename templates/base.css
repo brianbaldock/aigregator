@@ -290,8 +290,123 @@ pre.ascii {
   margin: 0;
 }
 
+/* Permalink anchor affordance */
+.digest h1, .digest h2, .digest h3 { position: relative; }
+.permalink {
+  opacity: 0;
+  margin-left: 8px;
+  color: var(--green-dim);
+  text-decoration: none;
+  font-size: 0.7em;
+  transition: opacity 0.15s;
+}
+.digest h1:hover .permalink,
+.digest h2:hover .permalink,
+.digest h3:hover .permalink,
+.permalink:focus { opacity: 1; }
+.permalink:hover { color: var(--magenta); }
+.digest li[id] { scroll-margin-top: 80px; }
+.digest h1[id], .digest h2[id], .digest h3[id] { scroll-margin-top: 80px; }
+.story-link {
+  display: inline-block;
+  margin-left: 6px;
+  opacity: 0.35;
+  color: var(--green-dim);
+  text-decoration: none;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+.story-link:hover { opacity: 1; color: var(--magenta); }
+
+/* ============================================================
+   MOBILE — comprehensive pass
+   ============================================================ */
 @media (max-width: 720px) {
-  .banner { flex-direction: column; text-align: center; }
-  .banner h1 { font-size: 56px; }
-  .banner img { width: 100px; height: 100px; }
+  html, body { font-size: 15px; }
+  .wrap { padding: 12px; }
+
+  /* Banner stacks, logo shrinks, marquee tames */
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 12px;
+  }
+  .banner img { width: 80px; height: 80px; }
+  .banner h1 {
+    font-size: clamp(2.4rem, 11vw, 4rem);
+    text-shadow: 2px 2px 0 var(--magenta), 0 0 8px var(--green);
+    letter-spacing: 2px;
+  }
+  .banner .tag { font-size: 14px; }
+  .geocities-extras marquee { font-size: 12px; }
+
+  /* Status bar wraps gracefully */
+  .statusbar {
+    font-size: 11px;
+    gap: 8px 12px;
+    padding: 6px 8px;
+  }
+  .statusbar span { white-space: normal; }
+
+  /* Nav: drop brackets, make it a wrapping flex row */
+  nav.menu {
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    padding: 6px 8px;
+  }
+  nav.menu a {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: 8px 6px;
+    margin: 0;
+    border: 1px solid var(--green-dim);
+    min-width: 70px;
+  }
+
+  /* Body type scales */
+  .digest h1 { font-size: clamp(1.4rem, 6vw, 1.9rem); }
+  .digest h2 { font-size: 22px; margin-top: 22px; }
+  .digest h3 { font-size: 16px; }
+  .digest p, .digest li { line-height: 1.65; }
+  .digest li { padding: 3px 0; }
+
+  /* Blockquote / dashboard strip — let it breathe */
+  .digest blockquote,
+  .digest > blockquote:first-of-type {
+    padding: 8px 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+
+  /* Archive table: collapse to cards */
+  .archive { padding: 10px; }
+  .archive table, .archive thead, .archive tbody,
+  .archive tr, .archive th, .archive td { display: block; width: 100%; }
+  .archive thead { display: none; }
+  .archive tr {
+    border-bottom: 1px dotted var(--green-dim);
+    padding: 8px 0;
+  }
+  .archive td {
+    padding: 2px 0;
+    border: none;
+  }
+  .archive td:first-child { color: var(--amber); font-size: 12px; }
+
+  /* Permalinks visible on touch (no hover) */
+  .permalink, .story-link { opacity: 0.5; }
+
+  /* ASCII art shrinks */
+  pre.ascii { font-size: 9px; }
+}
+
+@media (max-width: 420px) {
+  .banner h1 { letter-spacing: 1px; }
+  nav.menu a { font-size: 12px; min-width: 60px; }
+  .statusbar { font-size: 10px; }
+  .digest a { word-break: break-word; }
 }
