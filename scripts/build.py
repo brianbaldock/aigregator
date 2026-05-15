@@ -248,7 +248,7 @@ def build_digest_pages() -> list[dict]:
 
         page = html_shell(
             title=slug,
-            body=f'<article class="digest">{body_html}</article>',
+            body=f'<article class="digest" data-pagefind-body>{body_html}</article>',
             page_class="digest-page",
             depth=1,
         )
@@ -329,11 +329,26 @@ def build_archive(entries: list[dict]) -> None:
     rows = "\n".join(rows_list)
     if not rows:
         rows = '<tr><td colspan="2"><em>// no transmissions logged yet</em></td></tr>'
+    pagefind_ui = """  <details class="fulltext-search">
+    <summary>🔎 full-text search across all digests</summary>
+    <link rel="stylesheet" href="_pagefind/pagefind-ui.css">
+    <script src="_pagefind/pagefind-ui.js"></script>
+    <div id="search"></div>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        if (window.PagefindUI) {
+          new PagefindUI({ element: "#search", showSubResults: true, resetStyles: false });
+        }
+      });
+    </script>
+  </details>"""
+
     body = f"""
 <article class="archive">
 <h2 style="font-family:'VT323',monospace;color:var(--amber);font-size:28px;margin-top:0;">// ARCHIVE.DIR</h2>
 <div class="archive-controls">
-  <input type="search" id="archive-search" placeholder="filter by keyword..." autocomplete="off">
+  <input type="search" id="archive-search" placeholder="filter by date/title (live)..." autocomplete="off">
+{pagefind_ui}
   <div class="filter-chips">
     <button class="filter-chip filter-clear" data-theme="">all</button>
     {theme_chips}

@@ -16,6 +16,11 @@ git config user.email "brian@aigregator.local"
 # Build
 "${REPO}/.venv/bin/python" scripts/build.py
 
+# Pagefind search index — best-effort, never fails the publish
+if command -v npx >/dev/null 2>&1; then
+  npx --yes pagefind --site docs --output-subdir _pagefind 2>&1 | tail -5 || echo "pagefind: skipped (failed)"
+fi
+
 # Commit + push if there are changes
 if [[ -n "$(git status --porcelain)" ]]; then
   git add -A

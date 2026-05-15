@@ -415,6 +415,24 @@ pre.ascii {
 }
 tr.hidden { display: none; }
 
+/* Pagefind full-text search panel */
+.fulltext-search {
+  margin-bottom: 10px;
+  border: 1px dashed var(--green-dim);
+  padding: 6px 10px;
+  background: var(--bg-soft);
+}
+.fulltext-search summary {
+  cursor: pointer;
+  color: var(--cyan);
+  font-size: 13px;
+  letter-spacing: 1px;
+  user-select: none;
+}
+.fulltext-search summary:hover { color: var(--amber); }
+.fulltext-search[open] summary { margin-bottom: 8px; }
+#search { --pagefind-ui-primary: var(--green); --pagefind-ui-text: var(--green); --pagefind-ui-background: var(--bg); --pagefind-ui-border: var(--green-dim); --pagefind-ui-tag: var(--bg-soft); --pagefind-ui-border-width: 1px; --pagefind-ui-border-radius: 0; --pagefind-ui-font: 'Share Tech Mono', monospace; }
+
 /* Permalink anchor affordance */
 .digest h1, .digest h2, .digest h3 { position: relative; }
 .permalink {
