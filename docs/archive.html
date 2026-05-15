@@ -24,7 +24,7 @@
 </div>
 
 <div class="statusbar">
-  <span><b>UPLINK:</b> 2026-05-15 21:14 UTC</span>
+  <span><b>UPLINK:</b> 2026-05-15 21:16 UTC</span>
   <span><b>PACKETS:</b> 005</span>
   <span><b>STATUS:</b> <span style="color:#00ff41">ONLINE</span></span>
 </div>
@@ -40,22 +40,30 @@
 
 <article class="archive">
 <h2 style="font-family:'VT323',monospace;color:var(--amber);font-size:28px;margin-top:0;">// ARCHIVE.DIR</h2>
+<div class="archive-controls">
+  <input type="search" id="archive-search" placeholder="filter by keyword..." autocomplete="off">
+  <div class="filter-chips">
+    <button class="filter-chip filter-clear" data-theme="">all</button>
+    <button class="filter-chip" data-theme="policy">policy <span class="chip-count">5</span></button><button class="filter-chip" data-theme="agents">agents <span class="chip-count">5</span></button><button class="filter-chip" data-theme="opensource">opensource <span class="chip-count">5</span></button><button class="filter-chip" data-theme="inference">inference <span class="chip-count">5</span></button><button class="filter-chip" data-theme="safety">safety <span class="chip-count">5</span></button><button class="filter-chip" data-theme="funding">funding <span class="chip-count">5</span></button><button class="filter-chip" data-theme="enterprise">enterprise <span class="chip-count">5</span></button><button class="filter-chip" data-theme="models">models <span class="chip-count">4</span></button><button class="filter-chip" data-theme="code">code <span class="chip-count">4</span></button><button class="filter-chip" data-theme="apps">apps <span class="chip-count">3</span></button><button class="filter-chip" data-theme="evals">evals <span class="chip-count">2</span></button><button class="filter-chip" data-theme="hardware">hardware <span class="chip-count">1</span></button><button class="filter-chip" data-theme="alignment">alignment <span class="chip-count">1</span></button>
+  </div>
+  <div class="archive-stats"><span id="archive-count">5</span> / 5 transmissions</div>
+</div>
 <table>
 <thead><tr><th>DATE</th><th>TRANSMISSION</th></tr></thead>
-<tbody>
-<tr><td>2026-05-15</td><td><a href="digests/2026-05-15.html">2026-05-15 :: AI DAILY DIGEST</a></td></tr>
-<tr><td>2026-05-14</td><td><a href="digests/2026-05-14.html">2026-05-14 :: AI DAILY DIGEST</a></td></tr>
-<tr><td>2026-05-13</td><td><a href="digests/2026-05-13.html">2026-05-13 :: AI DAILY DIGEST</a></td></tr>
-<tr><td>2026-05-12</td><td><a href="digests/2026-05-12.html">2026-05-12 :: AI DAILY DIGEST</a></td></tr>
-<tr><td>2026-05-11</td><td><a href="digests/2026-05-11.html">2026-05-11 :: AI DAILY DIGEST</a></td></tr>
+<tbody id="archive-body">
+<tr data-themes="policy,agents,opensource,models,inference,safety,apps,code,funding,enterprise" data-slug="2026-05-15"><td>2026-05-15</td><td><a href="digests/2026-05-15.html">2026-05-15 :: AI DAILY DIGEST</a> <span class="archive-meta">📖 8m · 📡 16</span></td></tr>
+<tr data-themes="apps,agents,safety,enterprise,code,inference,hardware,funding,opensource,policy" data-slug="2026-05-14"><td>2026-05-14</td><td><a href="digests/2026-05-14.html">2026-05-14 :: AI DAILY DIGEST</a> <span class="archive-meta">📖 10m · 📡 22</span></td></tr>
+<tr data-themes="agents,models,enterprise,inference,policy,safety,funding,code,opensource,evals" data-slug="2026-05-13"><td>2026-05-13</td><td><a href="digests/2026-05-13.html">2026-05-13 :: AI DAILY DIGEST</a> <span class="archive-meta">📖 10m · 📡 16</span></td></tr>
+<tr data-themes="policy,enterprise,agents,safety,opensource,models,evals,inference,alignment,funding" data-slug="2026-05-12"><td>2026-05-12</td><td><a href="digests/2026-05-12.html">2026-05-12 :: AI DAILY DIGEST</a> <span class="archive-meta">📖 9m · 📡 16</span></td></tr>
+<tr data-themes="opensource,models,policy,safety,funding,inference,agents,apps,code,enterprise" data-slug="2026-05-11"><td>2026-05-11</td><td><a href="digests/2026-05-11.html">2026-05-11 :: AI DAILY DIGEST</a> <span class="archive-meta">📖 9m · 📡 17</span></td></tr>
 </tbody>
 </table>
 </article>
 
 
 <footer>
-  <div class="counter">VISITORS :: 0xEBE816</div>
-  <p>compiled by brian &amp; hermes :: built 2026-05-15 21:14 UTC :: <a href="https://github.com/brianbaldock/AIgregator" style="color:var(--green-dim)">view source</a></p>
+  <div class="counter">VISITORS :: 0xBBDC0F</div>
+  <p>compiled by brian &amp; hermes :: built 2026-05-15 21:16 UTC :: <a href="https://github.com/brianbaldock/AIgregator" style="color:var(--green-dim)">view source</a></p>
   <p>no cookies. no trackers. no LLMs were harmed in the making of this page.</p>
 </footer>
 

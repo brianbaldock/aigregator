@@ -610,6 +610,44 @@
     });
   }
 
+  function wireArchiveFilter() {
+    const search = document.getElementById("archive-search");
+    const body = document.getElementById("archive-body");
+    if (!search || !body) return;
+    const rows = Array.from(body.querySelectorAll("tr[data-themes]"));
+    const countEl = document.getElementById("archive-count");
+    let activeTheme = "";
+    let activeQuery = "";
+
+    function apply() {
+      let visible = 0;
+      rows.forEach(row => {
+        const themes = (row.getAttribute("data-themes") || "").toLowerCase();
+        const text = row.textContent.toLowerCase();
+        const themeOk = !activeTheme || themes.split(",").includes(activeTheme);
+        const qOk = !activeQuery || text.includes(activeQuery);
+        const show = themeOk && qOk;
+        row.classList.toggle("hidden", !show);
+        if (show) visible++;
+      });
+      if (countEl) countEl.textContent = visible;
+    }
+
+    search.addEventListener("input", e => {
+      activeQuery = e.target.value.trim().toLowerCase();
+      apply();
+    });
+
+    document.querySelectorAll(".filter-chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        document.querySelectorAll(".filter-chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        activeTheme = (chip.getAttribute("data-theme") || "").toLowerCase();
+        apply();
+      });
+    });
+  }
+
   // ─── INIT ────────────────────────────────────────────────
   function init() {
     buildSwitcher();
@@ -617,6 +655,7 @@
     applyTheme(saved);
     wireCopyLinks();
     wireKonami();
+    wireArchiveFilter();
   }
 
   if (document.readyState === "loading") {

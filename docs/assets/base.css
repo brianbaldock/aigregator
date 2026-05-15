@@ -331,6 +331,90 @@ pre.ascii {
 }
 .copy-link.copied { background: var(--amber); color: var(--bg); border-color: var(--amber); }
 
+/* Yesterday-diff strip */
+.diff-strip {
+  border: 1px dashed var(--cyan);
+  background: var(--bg-soft);
+  padding: 4px 12px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--cyan);
+}
+.diff-new { color: var(--amber); font-weight: bold; }
+.diff-carry { color: var(--green-dim); }
+
+/* Source diversity warning */
+.diversity-badge {
+  border: 1px solid var(--red);
+  background: var(--bg-soft);
+  color: var(--red);
+  padding: 6px 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.diversity-tag { color: var(--red); margin-left: 4px; }
+
+/* Archive controls */
+.archive-controls {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--green-dim);
+}
+#archive-search {
+  width: 100%;
+  background: var(--bg);
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+  padding: 6px 10px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#archive-search:focus { outline: none; border-color: var(--green); }
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.filter-chip {
+  background: var(--bg);
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+  padding: 2px 8px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.filter-chip:hover { background: var(--green-dim); color: var(--bg); }
+.filter-chip.active {
+  background: var(--amber);
+  color: var(--bg);
+  border-color: var(--amber);
+}
+.chip-count {
+  color: var(--green-dim);
+  font-size: 10px;
+  margin-left: 2px;
+}
+.filter-chip.active .chip-count { color: var(--bg); }
+.archive-stats {
+  font-size: 11px;
+  color: var(--green-dim);
+  text-align: right;
+  letter-spacing: 1px;
+}
+.archive-meta {
+  color: var(--green-dim);
+  font-size: 11px;
+  margin-left: 8px;
+}
+tr.hidden { display: none; }
+
 /* Permalink anchor affordance */
 .digest h1, .digest h2, .digest h3 { position: relative; }
 .permalink {
