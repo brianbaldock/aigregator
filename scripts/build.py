@@ -440,7 +440,7 @@ def build_archive(entries: list[dict]) -> None:
     (DOCS_DIR / "archive.html").write_text(page, encoding="utf-8")
 
 
-SITE_URL = "https://brianbaldock.github.io/aigregator"
+SITE_URL = "https://aigregator.news"
 
 # Domains where a bare URL (root path only) is almost certainly a "I couldn't
 # find the deep link" placeholder rather than a real citation.
@@ -771,8 +771,8 @@ def build_pwa() -> None:
         "name": "AIgregator",
         "short_name": "AIgregator",
         "description": "Daily AI news digest, scored and cited.",
-        "start_url": "/aigregator/",
-        "scope": "/aigregator/",
+        "start_url": "/",
+        "scope": "/",
         "display": "standalone",
         "background_color": "#000000",
         "theme_color": "#000000",
