@@ -280,7 +280,7 @@ def build_index(entries: list[dict]) -> None:
     else:
         latest_slug = entries[0]["slug"]
         latest_html = (DOCS_DIGESTS / f"{latest_slug}.html").read_text(encoding="utf-8")
-        m = re.search(r'(<article class="digest">.*?</article>)', latest_html, re.DOTALL)
+        m = re.search(r'(<article class="digest"[^>]*>.*?</article>)', latest_html, re.DOTALL)
         body = m.group(1) if m else "<p>render error</p>"
 
     page = html_shell(title="latest", body=body)
@@ -441,7 +441,7 @@ def build_feeds(entries: list[dict]) -> None:
         digest_path = DOCS_DIGESTS / f"{slug}.html"
         article_html = ""
         if digest_path.exists():
-            m = re.search(r'(<article class="digest">.*?</article>)', digest_path.read_text(encoding="utf-8"), re.DOTALL)
+            m = re.search(r'(<article class="digest"[^>]*>.*?</article>)', digest_path.read_text(encoding="utf-8"), re.DOTALL)
             if m:
                 article_html = m.group(1)
 
