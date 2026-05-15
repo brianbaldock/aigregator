@@ -111,7 +111,7 @@ body::after {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  background: #050505;
+  background: var(--bg-soft);
 }
 .statusbar span { white-space: nowrap; }
 .statusbar b { color: var(--green); }
@@ -119,7 +119,7 @@ body::after {
 /* Marquee */
 .marquee {
   border: 1px solid var(--green-dim);
-  background: #050505;
+  background: var(--bg-soft);
   color: var(--cyan);
   padding: 6px 0;
   margin-bottom: 20px;
@@ -143,16 +143,24 @@ nav.menu {
   padding: 8px 12px;
   margin-bottom: 20px;
   font-size: 14px;
-  background: #050505;
+  background: var(--bg-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 nav.menu a {
   color: var(--green);
   text-decoration: none;
-  margin-right: 12px;
+  padding: 6px 14px;
+  border: 1px solid var(--green-dim);
+  background: var(--bg);
+  letter-spacing: 1px;
+  transition: background 0.1s, color 0.1s;
 }
 nav.menu a:hover {
   background: var(--green);
   color: var(--bg);
+  border-color: var(--green);
 }
 
 /* Content */
@@ -170,7 +178,7 @@ nav.menu a:hover {
   color: var(--cyan);
   margin-top: 18px;
 }
-.digest p, .digest li { color: #c8ffd2; }
+.digest p, .digest li { color: var(--text, #c8ffd2); }
 .digest a {
   color: var(--magenta);
   text-decoration: underline;
@@ -181,8 +189,9 @@ nav.menu a:hover {
   text-decoration: none;
 }
 .digest ul { padding-left: 20px; }
+.digest ul li { margin-bottom: 8px; }
 .digest code {
-  background: #001f08;
+  background: var(--bg-soft);
   padding: 2px 5px;
   color: var(--amber);
   border: 1px solid var(--green-dim);
@@ -193,14 +202,14 @@ nav.menu a:hover {
   margin: 12px 0;
   padding: 4px 12px;
   color: var(--cyan);
-  background: #0a0014;
+  background: var(--bg-soft);
 }
 
 /* Dashboard strip: the first blockquote at the top of each digest */
 .digest > blockquote:first-of-type {
   border: 1px solid var(--amber);
   border-left-width: 3px;
-  background: #14100a;
+  background: var(--bg-soft);
   color: var(--amber);
   padding: 10px 14px;
   margin: 14px 0 22px;
@@ -271,7 +280,7 @@ footer {
 }
 footer .counter {
   display: inline-block;
-  background: #000;
+  background: var(--bg);
   color: var(--amber);
   border: 1px solid var(--amber);
   padding: 2px 8px;

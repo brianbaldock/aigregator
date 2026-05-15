@@ -15,7 +15,8 @@ body[data-theme="light"] {
   --cyan: #0a6080;
   --red: #b22222;
   --border: #1a5a1a;
-  color: var(--green);
+  --text: #2a2a2a;
+  color: var(--text);
   background: var(--bg);
 }
 body[data-theme="light"]::before,
@@ -25,10 +26,76 @@ body[data-theme="light"] .banner h1 {
   text-shadow: 2px 2px 0 var(--magenta);
 }
 body[data-theme="light"] .digest p,
-body[data-theme="light"] .digest li { color: #2a2a2a; }
+body[data-theme="light"] .digest li,
+body[data-theme="light"] .digest strong,
+body[data-theme="light"] .digest em { color: var(--text); }
+body[data-theme="light"] .digest h2 {
+  text-shadow: none;
+  color: var(--amber);
+}
+body[data-theme="light"] .digest h3 { color: var(--cyan); }
+body[data-theme="light"] .digest blockquote {
+  background: var(--bg-soft);
+  color: #3a3a3a;
+}
+body[data-theme="light"] .digest > blockquote:first-of-type {
+  background: var(--bg-soft);
+  color: #3a3a3a;
+}
+body[data-theme="light"] .digest > blockquote:first-of-type strong {
+  color: var(--green);
+}
+body[data-theme="light"] .digest code {
+  background: var(--bg-soft);
+  color: var(--amber);
+}
+body[data-theme="light"] .statusbar {
+  background: var(--bg-soft);
+  color: var(--amber);
+}
+body[data-theme="light"] nav.menu { background: var(--bg-soft); }
+body[data-theme="light"] nav.menu a {
+  background: var(--bg);
+  color: var(--green);
+  border-color: var(--green-dim);
+}
+body[data-theme="light"] nav.menu a:hover {
+  background: var(--green);
+  color: var(--bg);
+}
+body[data-theme="light"] .archive { background: var(--bg-soft); }
+body[data-theme="light"] .archive a { color: var(--cyan); }
+body[data-theme="light"] .score {
+  background: var(--green);
+  color: #fff;
+}
+body[data-theme="light"] .score.hot {
+  background: var(--magenta);
+  color: #fff;
+}
+body[data-theme="light"] .score.fresh {
+  background: var(--amber);
+  color: #fff;
+}
+body[data-theme="light"] .banner img {
+  border-color: var(--green);
+  background: var(--bg);
+}
+body[data-theme="light"] .banner {
+  background: var(--bg-soft);
+  border-color: var(--green);
+}
+body[data-theme="light"] pre.ascii {
+  color: var(--green);
+  text-shadow: none;
+}
 body[data-theme="light"] footer .counter {
   background: var(--bg-soft);
   color: var(--amber);
+}
+body[data-theme="light"] .permalink,
+body[data-theme="light"] .story-link {
+  color: var(--green-dim);
 }
 
 /* ────────── GEOCITIES ────────── */
@@ -100,7 +167,9 @@ body[data-theme="geocities"] pre.ascii { display: none; }
 .theme-switch {
   color: var(--green);
   font-family: 'Share Tech Mono', monospace;
-  margin-left: 8px;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
 }
 .theme-switch select {
   background: #000;

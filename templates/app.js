@@ -22,12 +22,12 @@
     if (!nav) return;
     const span = document.createElement("span");
     span.className = "theme-switch";
-    span.innerHTML = ` [ theme: <select id="theme-select">
+    span.innerHTML = `<label for="theme-select" style="margin-right:6px;color:var(--green-dim);font-size:0.85em;">theme:</label><select id="theme-select">
       <option value="phosphor">phosphor</option>
       <option value="light">light</option>
       <option value="geocities">geocities</option>
       <option value="terminal">terminal</option>
-    </select> ]`;
+    </select>`;
     nav.appendChild(span);
     span.querySelector("select").addEventListener("change", e => applyTheme(e.target.value));
   }

@@ -83,11 +83,11 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
 </div>
 
 <nav class="menu">
-  [ <a href="{prefix}index.html">LATEST</a> ]
-  [ <a href="{prefix}archive.html">ARCHIVE</a> ]
-  [ <a href="{prefix}about.html">ABOUT</a> ]
-  [ <a href="{prefix}feed.xml">RSS</a> ]
-  [ <a href="https://github.com/brianbaldock/AIgregator">SRC</a> ]
+  <a href="{prefix}index.html">LATEST</a>
+  <a href="{prefix}archive.html">ARCHIVE</a>
+  <a href="{prefix}about.html">ABOUT</a>
+  <a href="{prefix}feed.xml">RSS</a>
+  <a href="https://github.com/brianbaldock/AIgregator">SRC</a>
 </nav>
 
 {body}
@@ -107,6 +107,23 @@ def html_shell(title: str, body: str, page_class: str = "", depth: int = 0) -> s
 
 def render_digest_md(md_text: str, slug: str = "") -> str:
     """Render markdown to HTML, then post-process to add score badges and per-story anchors."""
+    # Preprocess: ensure a blank line before any list that follows a non-blank,
+    # non-list line. The digest format puts "_stat line_\n- item" with no
+    # gap, which sane_lists treats as paragraph continuation and collapses
+    # the whole section into one <p>.
+    fixed_lines: list[str] = []
+    prev = ""
+    for line in md_text.split("\n"):
+        stripped = line.lstrip()
+        is_list = stripped.startswith(("- ", "* ", "+ ")) or re.match(r"\d+\.\s", stripped)
+        prev_stripped = prev.strip()
+        prev_is_list = prev_stripped.startswith(("- ", "* ", "+ ")) or bool(re.match(r"\d+\.\s", prev_stripped))
+        if is_list and prev_stripped and not prev_is_list:
+            fixed_lines.append("")
+        fixed_lines.append(line)
+        prev = line
+    md_text = "\n".join(fixed_lines)
+
     html = markdown.markdown(md_text, extensions=["extra", "sane_lists"])
 
     # Score badges: turn [N] at start of list item or paragraph into a span
