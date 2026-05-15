@@ -299,6 +299,38 @@ pre.ascii {
   margin: 0;
 }
 
+/* Meta strip: reading time + share buttons */
+.meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid var(--green-dim);
+  background: var(--bg-soft);
+  padding: 6px 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--amber);
+}
+.meta-item { color: var(--cyan); }
+.meta-share { display: inline-flex; gap: 6px; align-items: center; }
+.meta-label { color: var(--green-dim); margin-right: 4px; font-size: 11px; }
+.meta-share a {
+  color: var(--green);
+  text-decoration: none;
+  border: 1px solid var(--green-dim);
+  padding: 2px 8px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.meta-share a:hover {
+  background: var(--green);
+  color: var(--bg);
+  border-color: var(--green);
+}
+.copy-link.copied { background: var(--amber); color: var(--bg); border-color: var(--amber); }
+
 /* Permalink anchor affordance */
 .digest h1, .digest h2, .digest h3 { position: relative; }
 .permalink {

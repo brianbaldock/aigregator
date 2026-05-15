@@ -563,11 +563,60 @@
     }, 80);
   }
 
+  // ─── COPY LINK + KONAMI CODE ─────────────────────────────
+  function wireCopyLinks() {
+    document.querySelectorAll("a.copy-link").forEach(a => {
+      a.addEventListener("click", e => {
+        e.preventDefault();
+        const url = a.getAttribute("data-url") || location.href;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(url).then(() => {
+            const original = a.textContent;
+            a.textContent = "OK!";
+            a.classList.add("copied");
+            setTimeout(() => {
+              a.textContent = original;
+              a.classList.remove("copied");
+            }, 1500);
+          });
+        }
+      });
+    });
+  }
+
+  function wireKonami() {
+    const SEQ = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown",
+                 "ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+    let idx = 0;
+    document.addEventListener("keydown", e => {
+      const expected = SEQ[idx];
+      if (e.key === expected || e.key.toLowerCase() === expected) {
+        idx++;
+        if (idx === SEQ.length) {
+          idx = 0;
+          applyTheme("geocities");
+          // Brief on-screen toast
+          const toast = document.createElement("div");
+          toast.textContent = "★ KONAMI ACCEPTED · GEOCITIES MODE ★";
+          toast.style.cssText = "position:fixed;top:20px;left:50%;transform:translateX(-50%);" +
+            "background:#ff00ff;color:#fff;padding:8px 16px;font-family:'Comic Sans MS',cursive;" +
+            "font-size:14px;font-weight:bold;border:3px ridge #ffff00;z-index:10000;letter-spacing:1px;";
+          document.body.appendChild(toast);
+          setTimeout(() => toast.remove(), 2500);
+        }
+      } else {
+        idx = 0;
+      }
+    });
+  }
+
   // ─── INIT ────────────────────────────────────────────────
   function init() {
     buildSwitcher();
     const saved = localStorage.getItem(STORAGE_KEY) || "phosphor";
     applyTheme(saved);
+    wireCopyLinks();
+    wireKonami();
   }
 
   if (document.readyState === "loading") {

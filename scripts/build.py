@@ -191,6 +191,24 @@ def build_digest_pages() -> list[tuple[str, str, str]]:
             total_warnings += len(warns)
         body_html = render_digest_md(text)
 
+        # Reading time (200 wpm) + share strip
+        word_count = len(re.findall(r"\b\w+\b", text))
+        read_min = max(1, round(word_count / 200))
+        share_url = f"{SITE_URL}/digests/{slug}.html"
+        from urllib.parse import quote
+        share_text = quote(f"AIgregator daily digest — {slug}")
+        meta_strip = f"""<div class="meta-strip">
+  <span class="meta-item">📖 {read_min} min read · {word_count:,} words</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text={share_text}&amp;url={quote(share_url)}" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text={share_text}%20{quote(share_url)}" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={quote(share_url)}" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="{share_url}" title="Copy link">COPY</a>
+  </span>
+</div>"""
+        body_html = meta_strip + body_html
+
         # Extract first heading as title
         title_match = re.search(r"^#\s+(.+)$", text, re.MULTILINE)
         title = title_match.group(1).strip() if title_match else slug
@@ -377,6 +395,63 @@ def build_feeds(entries: list[tuple[str, str, str]]) -> None:
     (DOCS_DIR / "atom.xml").write_text(atom, encoding="utf-8")
 
 
+def build_sitemap(entries: list[tuple[str, str, str]]) -> None:
+    """Generate sitemap.xml + robots.txt."""
+    from xml.sax.saxutils import escape as xml_escape
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    urls = [
+        (f"{SITE_URL}/", today, "daily", "1.0"),
+        (f"{SITE_URL}/archive.html", today, "daily", "0.8"),
+        (f"{SITE_URL}/about.html", today, "monthly", "0.5"),
+    ]
+    for slug, _, _ in entries:
+        urls.append((f"{SITE_URL}/digests/{slug}.html", slug, "never", "0.7"))
+    body = "\n".join(
+        f"  <url><loc>{xml_escape(u)}</loc><lastmod>{lm}</lastmod>"
+        f"<changefreq>{cf}</changefreq><priority>{pr}</priority></url>"
+        for u, lm, cf, pr in urls
+    )
+    sitemap = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{body}
+</urlset>
+"""
+    (DOCS_DIR / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+    (DOCS_DIR / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n",
+        encoding="utf-8",
+    )
+
+
+def build_404() -> None:
+    """Custom 404 in the AIgregator terminal aesthetic."""
+    body = """
+<article class="digest" style="text-align:center;">
+<pre class="ascii" style="color:var(--magenta);text-shadow:0 0 8px var(--magenta);font-size:14px;line-height:1.2;">
+  ╔══════════════════════════════════════╗
+  ║   ERR 404 :: SIGNAL LOST             ║
+  ║   PACKET NOT FOUND IN UPLINK QUEUE   ║
+  ╚══════════════════════════════════════╝
+</pre>
+<p style="color:var(--amber);font-size:18px;margin-top:24px;">
+&gt; traceroute target.unknown<br>
+&gt; hop 01 ... <span style="color:var(--green)">aigregator.gw</span> ... 12ms<br>
+&gt; hop 02 ... <span style="color:var(--green)">net.transit</span> ... 28ms<br>
+&gt; hop 03 ... <span style="color:var(--cyan)">??.??.??.??</span> ... <span style="color:var(--red)">* * *</span><br>
+&gt; hop 04 ... <span style="color:var(--red)">DESTINATION UNREACHABLE</span>
+</p>
+<p style="margin-top:24px;">
+The transmission you requested either never existed or has decayed into the noise floor.
+</p>
+<p style="margin-top:16px;">
+[ <a href="/">RETURN TO LATEST</a> ] &nbsp; [ <a href="/archive.html">BROWSE ARCHIVE</a> ]
+</p>
+</article>
+"""
+    page = html_shell(title="404", body=body)
+    (DOCS_DIR / "404.html").write_text(page, encoding="utf-8")
+
+
 def build_about() -> None:
     body = """
 <article class="digest">
@@ -430,8 +505,10 @@ def main() -> int:
     build_index(entries)
     build_archive(entries)
     build_about()
+    build_404()
     build_feeds(entries)
-    print(f"built {len(entries)} digest page(s) + feeds")
+    build_sitemap(entries)
+    print(f"built {len(entries)} digest page(s) + feeds + sitemap + 404")
     return 0
 
 
