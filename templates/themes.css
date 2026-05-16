@@ -163,6 +163,301 @@ body[data-theme="geocities"] footer .counter {
 body[data-theme="geocities"] .geocities-extras { display: block !important; }
 body[data-theme="geocities"] pre.ascii { display: none; }
 
+/* ────────── TRON ────────── */
+body[data-theme="tron"] {
+  --bg: #000810;
+  --bg-soft: #001828;
+  --green: #6ef0ff;        /* electric cyan stands in as the "primary" accent */
+  --green-dim: #2a8aaa;
+  --amber: #ffd24a;
+  --magenta: #ff5ad6;
+  --cyan: #6ef0ff;
+  --red: #ff4060;
+  --border: #6ef0ff;
+  --text: #cfeaff;
+  color: var(--text);
+  background:
+    linear-gradient(rgba(110,240,255,0.08) 1px, transparent 1px) 0 0 / 100% 32px,
+    linear-gradient(90deg, rgba(110,240,255,0.08) 1px, transparent 1px) 0 0 / 32px 100%,
+    radial-gradient(ellipse at 50% 0%, #002238 0%, #000810 70%);
+}
+body[data-theme="tron"]::before,
+body[data-theme="tron"]::after { display: none; }
+body[data-theme="tron"] .banner {
+  background: rgba(0,16,28,0.85);
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 14px rgba(110,240,255,0.45), inset 0 0 24px rgba(110,240,255,0.15);
+}
+body[data-theme="tron"] .banner h1 {
+  color: var(--cyan);
+  text-shadow: 0 0 6px rgba(110,240,255,0.9), 0 0 18px rgba(110,240,255,0.5);
+}
+body[data-theme="tron"] .banner img { border-color: var(--cyan); background: var(--bg); }
+body[data-theme="tron"] nav.menu {
+  background: rgba(0,20,36,0.8);
+  border: 1px solid var(--cyan);
+  box-shadow: 0 0 8px rgba(110,240,255,0.3);
+}
+body[data-theme="tron"] nav.menu a {
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="tron"] nav.menu a:hover {
+  background: var(--cyan);
+  color: #001020;
+  box-shadow: 0 0 10px var(--cyan);
+}
+body[data-theme="tron"] .digest p,
+body[data-theme="tron"] .digest li,
+body[data-theme="tron"] .digest strong,
+body[data-theme="tron"] .digest em { color: var(--text); }
+body[data-theme="tron"] .digest h2 {
+  color: var(--cyan);
+  text-shadow: 0 0 6px rgba(110,240,255,0.7);
+}
+body[data-theme="tron"] .digest h3 { color: var(--amber); }
+body[data-theme="tron"] .digest a { color: var(--cyan); }
+body[data-theme="tron"] .digest a:hover { text-shadow: 0 0 6px var(--cyan); }
+body[data-theme="tron"] .digest blockquote,
+body[data-theme="tron"] .digest > blockquote:first-of-type {
+  background: rgba(0,28,48,0.7);
+  border-left: 2px solid var(--cyan);
+  box-shadow: inset 0 0 10px rgba(110,240,255,0.12);
+  color: var(--text);
+}
+body[data-theme="tron"] .digest code {
+  background: rgba(0,28,48,0.85);
+  color: var(--cyan);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="tron"] .statusbar {
+  background: rgba(0,16,28,0.9);
+  color: var(--cyan);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="tron"] .archive { background: rgba(0,20,36,0.6); }
+body[data-theme="tron"] .archive a { color: var(--cyan); }
+body[data-theme="tron"] .score { background: var(--cyan); color: #001020; box-shadow: 0 0 6px rgba(110,240,255,0.6); }
+body[data-theme="tron"] .score.hot { background: var(--magenta); color: #200018; box-shadow: 0 0 6px rgba(255,90,214,0.6); }
+body[data-theme="tron"] .score.fresh { background: var(--amber); color: #201600; }
+body[data-theme="tron"] pre.ascii {
+  color: var(--cyan);
+  text-shadow: 0 0 6px rgba(110,240,255,0.7);
+}
+body[data-theme="tron"] footer .counter {
+  background: rgba(0,20,36,0.85);
+  color: var(--cyan);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="tron"] .permalink,
+body[data-theme="tron"] .story-link { color: var(--green-dim); }
+
+/* ────────── MATRIX ────────── */
+body[data-theme="matrix"] {
+  --bg: #000300;
+  --bg-soft: #001a05;
+  --green: #00ff41;
+  --green-dim: #008f25;
+  --amber: #aaff66;
+  --magenta: #66ffaa;
+  --cyan: #88ffbb;
+  --red: #ff5577;
+  --border: #00ff41;
+  --text: #b6ffcc;
+  color: var(--text);
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  background: #000300;
+  position: relative;
+}
+/* faint vertical "rain" gradient overlay — performance-cheap, no JS */
+body[data-theme="matrix"]::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,255,65,0.06) 0px,
+      rgba(0,255,65,0.06) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(ellipse at 50% -10%, rgba(0,255,65,0.18) 0%, transparent 60%);
+}
+body[data-theme="matrix"]::after { display: none; }
+body[data-theme="matrix"] > * { position: relative; z-index: 1; }
+body[data-theme="matrix"] .banner h1 {
+  color: var(--green);
+  text-shadow: 0 0 4px rgba(0,255,65,0.85), 0 0 14px rgba(0,255,65,0.45);
+  letter-spacing: 2px;
+}
+body[data-theme="matrix"] .banner {
+  background: rgba(0,8,2,0.8);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="matrix"] .banner img { border-color: var(--green); background: var(--bg); }
+body[data-theme="matrix"] nav.menu {
+  background: rgba(0,12,4,0.85);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="matrix"] nav.menu a {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="matrix"] nav.menu a:hover {
+  background: var(--green);
+  color: #000;
+  text-shadow: none;
+}
+body[data-theme="matrix"] .digest p,
+body[data-theme="matrix"] .digest li,
+body[data-theme="matrix"] .digest strong,
+body[data-theme="matrix"] .digest em { color: var(--text); }
+body[data-theme="matrix"] .digest h2 {
+  color: var(--green);
+  text-shadow: 0 0 4px rgba(0,255,65,0.7);
+}
+body[data-theme="matrix"] .digest h3 { color: var(--cyan); }
+body[data-theme="matrix"] .digest a { color: var(--green); }
+body[data-theme="matrix"] .digest a:visited { color: #4fbf6a; }
+body[data-theme="matrix"] .digest blockquote,
+body[data-theme="matrix"] .digest > blockquote:first-of-type {
+  background: rgba(0,20,8,0.75);
+  border-left: 2px solid var(--green);
+  color: var(--text);
+}
+body[data-theme="matrix"] .digest code {
+  background: rgba(0,20,8,0.9);
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="matrix"] .statusbar { background: rgba(0,16,6,0.9); color: var(--green); border: 1px solid var(--green-dim); }
+body[data-theme="matrix"] .archive { background: rgba(0,16,6,0.6); }
+body[data-theme="matrix"] .archive a { color: var(--green); }
+body[data-theme="matrix"] .score { background: var(--green); color: #000; }
+body[data-theme="matrix"] .score.hot { background: #aaff66; color: #000; }
+body[data-theme="matrix"] .score.fresh { background: #66ffaa; color: #000; }
+body[data-theme="matrix"] pre.ascii {
+  color: var(--green);
+  text-shadow: 0 0 4px rgba(0,255,65,0.7);
+}
+body[data-theme="matrix"] footer .counter {
+  background: rgba(0,16,6,0.9);
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="matrix"] .permalink,
+body[data-theme="matrix"] .story-link { color: var(--green-dim); }
+
+/* ────────── CANADIAN ────────── */
+/* True flag red, maple-syrup amber accents, parchment background. */
+body[data-theme="canadian"] {
+  --bg: #fff8ec;           /* warm parchment */
+  --bg-soft: #f4e4c4;      /* light maple */
+  --green: #ff0000;        /* Canadian flag red as primary accent */
+  --green-dim: #b00020;
+  --amber: #b97324;        /* maple syrup */
+  --magenta: #ff0000;
+  --cyan: #6b4423;         /* dark syrup brown */
+  --red: #ff0000;
+  --border: #ff0000;
+  --text: #2a1810;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255,0,0,0.07) 0 12px, transparent 13px) 0 0/180px 180px,
+    radial-gradient(circle at 78% 64%, rgba(185,115,36,0.06) 0 10px, transparent 11px) 0 0/240px 240px,
+    var(--bg);
+}
+body[data-theme="canadian"]::before,
+body[data-theme="canadian"]::after { display: none; }
+body[data-theme="canadian"] .banner {
+  background: #fff;
+  border: 2px solid var(--green);
+  box-shadow: 0 2px 0 var(--green);
+}
+body[data-theme="canadian"] .banner h1 {
+  color: var(--green);
+  text-shadow: none;
+  letter-spacing: 0.5px;
+}
+body[data-theme="canadian"] .banner h1::before { content: "🍁 "; }
+body[data-theme="canadian"] .banner h1::after { content: " 🍁"; }
+body[data-theme="canadian"] .banner img {
+  border-color: var(--green);
+  background: #fff;
+}
+body[data-theme="canadian"] nav.menu {
+  background: #fff;
+  border: 1px solid var(--green);
+}
+body[data-theme="canadian"] nav.menu a {
+  background: var(--bg);
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="canadian"] nav.menu a:hover {
+  background: var(--green);
+  color: #fff;
+}
+body[data-theme="canadian"] .digest p,
+body[data-theme="canadian"] .digest li,
+body[data-theme="canadian"] .digest strong,
+body[data-theme="canadian"] .digest em { color: var(--text); }
+body[data-theme="canadian"] .digest h2 {
+  color: var(--green);
+  text-shadow: none;
+  border-bottom: 2px solid var(--green);
+  padding-bottom: 4px;
+}
+body[data-theme="canadian"] .digest h3 { color: var(--cyan); }
+body[data-theme="canadian"] .digest a { color: var(--green-dim); }
+body[data-theme="canadian"] .digest a:hover { color: var(--green); }
+body[data-theme="canadian"] .digest blockquote,
+body[data-theme="canadian"] .digest > blockquote:first-of-type {
+  background: #fff;
+  border-left: 4px solid var(--green);
+  color: var(--text);
+}
+body[data-theme="canadian"] .digest > blockquote:first-of-type strong {
+  color: var(--green);
+}
+body[data-theme="canadian"] .digest code {
+  background: var(--bg-soft);
+  color: var(--green-dim);
+  border: 1px solid #d8c8b8;
+}
+body[data-theme="canadian"] .statusbar {
+  background: var(--bg-soft);
+  color: var(--green-dim);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="canadian"] .archive { background: #fff; }
+body[data-theme="canadian"] .archive a { color: var(--green-dim); }
+body[data-theme="canadian"] .score { background: var(--green); color: #fff; }
+body[data-theme="canadian"] .score.hot { background: var(--green-dim); color: #fff; }
+body[data-theme="canadian"] .score.fresh { background: var(--amber); color: #fff; }
+body[data-theme="canadian"] pre.ascii {
+  color: var(--green);
+  text-shadow: none;
+}
+body[data-theme="canadian"] footer .counter {
+  background: #fff;
+  color: var(--green-dim);
+  border: 1px solid var(--green-dim);
+}
+body[data-theme="canadian"] footer::after {
+  content: "Sorry, eh. 🍁";
+  display: block;
+  margin-top: 6px;
+  color: var(--green-dim);
+  font-size: 0.85em;
+  letter-spacing: 0.5px;
+}
+body[data-theme="canadian"] .permalink,
+body[data-theme="canadian"] .story-link { color: var(--green-dim); }
+
 /* ────────── THEME SWITCHER (inline in nav) ────────── */
 .theme-switch {
   color: var(--green);
@@ -188,6 +483,22 @@ body[data-theme="geocities"] .theme-switch select {
   background: #000;
   color: #ffff00;
   border: 2px outset #ff00ff;
+}
+body[data-theme="tron"] .theme-switch select {
+  background: #001020;
+  color: #6ef0ff;
+  border: 1px solid #6ef0ff;
+  box-shadow: 0 0 4px rgba(110,240,255,0.5);
+}
+body[data-theme="matrix"] .theme-switch select {
+  background: #000;
+  color: #00ff41;
+  border: 1px solid #00ff41;
+}
+body[data-theme="canadian"] .theme-switch select {
+  background: #fff;
+  color: #ff0000;
+  border: 1px solid #ff0000;
 }
 
 /* hidden by default, geocities reveals */

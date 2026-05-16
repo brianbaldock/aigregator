@@ -4,17 +4,62 @@
 (function () {
   "use strict";
 
-  const THEMES = ["phosphor", "light", "geocities", "terminal"];
+  // Selectable themes. 'terminal' is shown to users as 'nostalgia' (it's the
+  // C64-boot interactive shell mode; the friendlier label fits the vibe).
+  // The internal value stays 'terminal' so all CSS/JS keeps working.
+  const PICKER_THEMES = ["phosphor", "light", "geocities", "tron", "matrix", "canadian", "terminal"];
+  const THEME_LABELS = {
+    phosphor: "phosphor",
+    light: "light",
+    geocities: "geocities",
+    tron: "tron",
+    matrix: "matrix",
+    canadian: "canadian",
+    terminal: "nostalgia",
+  };
+  // Per-theme banner logo. phosphor uses the default site logo (no override).
+  // 'terminal' (nostalgia) hides the banner entirely via the C64 scene takeover,
+  // so it doesn't need its own logo.
+  const THEME_LOGOS = {
+    light: "assets/themes/aigregator-logo-light.png",
+    geocities: "assets/themes/aigregator-logo-geocities.png",
+    tron: "assets/themes/aigregator-logo-tron.png",
+    matrix: "assets/themes/aigregator-logo-matrix.png",
+    canadian: "assets/themes/aigregator-logo-canadian.png",
+  };
+  const THEMES = PICKER_THEMES;
   const STORAGE_KEY = "aigregator_theme";
 
-  function applyTheme(theme) {
+  function applyTheme(theme, opts) {
+    opts = opts || {};
     if (!THEMES.includes(theme)) theme = "phosphor";
     document.body.setAttribute("data-theme", theme);
-    localStorage.setItem(STORAGE_KEY, theme);
+    if (!opts.skipPersist) {
+      localStorage.setItem(STORAGE_KEY, theme);
+    }
     const sel = document.getElementById("theme-select");
     if (sel) sel.value = theme;
+    swapBannerLogo(theme);
     if (theme === "terminal") initTerminal();
     else destroyTerminal();
+  }
+
+  // Banner logo swap. Remembers the original src on first run so we can
+  // restore it for themes that don't override (phosphor, terminal).
+  let DEFAULT_LOGO = null;
+  function swapBannerLogo(theme) {
+    const img = document.querySelector(".banner img");
+    if (!img) return;
+    if (DEFAULT_LOGO === null) DEFAULT_LOGO = img.getAttribute("src");
+    // Resolve a relative path correctly whether we're on /index.html or /digests/X.html
+    const override = THEME_LOGOS[theme];
+    if (override) {
+      // Pages under /digests/ need to go up one level
+      const prefix = location.pathname.includes("/digests/") ? "../" : "";
+      img.src = prefix + override;
+    } else {
+      img.src = DEFAULT_LOGO;
+    }
   }
 
   function buildSwitcher() {
@@ -22,12 +67,8 @@
     if (!nav) return;
     const span = document.createElement("span");
     span.className = "theme-switch";
-    span.innerHTML = `<label for="theme-select" style="margin-right:6px;color:var(--green-dim);font-size:0.85em;">theme:</label><select id="theme-select">
-      <option value="phosphor">phosphor</option>
-      <option value="light">light</option>
-      <option value="geocities">geocities</option>
-      <option value="terminal">terminal</option>
-    </select>`;
+    const opts = PICKER_THEMES.map(t => `<option value="${t}">${THEME_LABELS[t] || t}</option>`).join("");
+    span.innerHTML = `<label for="theme-select" style="margin-right:6px;color:var(--green-dim);font-size:0.85em;">theme:</label><select id="theme-select">${opts}</select>`;
     nav.appendChild(span);
     span.querySelector("select").addEventListener("change", e => applyTheme(e.target.value));
   }
@@ -350,7 +391,7 @@
       case "open": doOpen(arg); break;
       case "dash": doDash(); break;
       case "theme": doTheme(arg); break;
-      case "themes": print("available themes: phosphor, light, geocities, terminal. usage: theme <name>", "term-info"); break;
+      case "themes": print("available themes: phosphor, light, geocities, tron, matrix, canadian, terminal. usage: theme <name>", "term-info"); break;
       case "archive": doArchive(); break;
       case "date": print(new Date().toString()); break;
       case "whoami": print("user@aigregator", "term-muted"); break;
@@ -492,7 +533,7 @@
   }
 
   function doTheme(name) {
-    if (!name) { print("usage: theme <phosphor|light|geocities|terminal>", "term-info"); return; }
+    if (!name) { print("usage: theme <phosphor|light|geocities|tron|matrix|canadian|terminal>", "term-info"); return; }
     if (!THEMES.includes(name)) { print(`theme: unknown theme '${name}'`, "term-err"); return; }
     print(`switching to ${name}...`, "term-info");
     setTimeout(() => applyTheme(name), 400);
