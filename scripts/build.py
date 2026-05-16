@@ -767,6 +767,20 @@ Source: <a href="https://github.com/brianbaldock/AIgregator">github.com/brianbal
 def build_pwa() -> None:
     """Generate manifest.webmanifest + service worker for PWA install + offline."""
     import json as _json
+    import subprocess as _sp
+
+    # Cache version: short git SHA when available, timestamp fallback.
+    # Bumping this on every meaningful change forces browsers to fetch fresh
+    # assets — without it the service worker happily serves yesterday's CSS/JS
+    # until users hard-reload (which is exactly the bug we hit on the
+    # tron/matrix/canadian theme rollout).
+    try:
+        cache_version = _sp.check_output(
+            ["git", "rev-parse", "--short=10", "HEAD"],
+            cwd=str(ROOT), stderr=_sp.DEVNULL,
+        ).decode().strip() or "dev"
+    except Exception:
+        cache_version = datetime.now(timezone.utc).strftime("%Y%m%d%H%M%S")
     manifest = {
         "name": "AIgregator",
         "short_name": "AIgregator",
@@ -785,7 +799,7 @@ def build_pwa() -> None:
 
     # Tiny service worker: cache-first for chrome, network-first for HTML
     sw = """// AIgregator service worker — minimal cache-first for assets, network-first for HTML
-const CACHE = "aigregator-v1";
+const CACHE = "aigregator-__CACHE_VERSION__";
 const ASSETS = [
   "./",
   "./index.html",
@@ -837,7 +851,7 @@ self.addEventListener("fetch", e => {
   );
 });
 """
-    (DOCS_DIR / "sw.js").write_text(sw, encoding="utf-8")
+    (DOCS_DIR / "sw.js").write_text(sw.replace("__CACHE_VERSION__", cache_version), encoding="utf-8")
 
 
 def main() -> int:
