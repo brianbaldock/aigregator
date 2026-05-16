@@ -6,7 +6,103 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 May 2026 04:40:45 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2026 14:05:14 +0000</lastBuildDate>
+    <item>
+      <title>2026-05-16 :: AI DAILY DIGEST</title>
+      <link>https://aigregator.news/digests/2026-05-16.html</link>
+      <guid isPermaLink="true">https://aigregator.news/digests/2026-05-16.html</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
+      <description>2026-05-16 :: AI DAILY DIGEST</description>
+      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 8 min read · 1,544 words · 📡 18 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-16&amp;url=https%3A//aigregator.news/digests/2026-05-16.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-16%20https%3A//aigregator.news/digests/2026-05-16.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-16.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-16.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 5 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-16-ai-daily-digest">2026-05-16 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-16-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>OpenAI plugs ChatGPT into your bank account, the Vatican spins up an AI commission, arXiv tightens slop rules, and Anthropic keeps printing on prediction markets.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 16 stories · 19 sources · 🟡 +0.0 sentiment · 🔥 4 cross-source · <strong>TOP MENTION:</strong> OpenAI ×7<br />
+<strong>🏷️ THEMES:</strong> policy×6, agents×5, models×4, enterprise×4, safety×4<br />
+<strong>📈 MARKET PULSE:</strong> "Gemini 3.5 by May 31" 81% Yes (▼4.5pp) · 9 AI markets tracked</p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">5 🔥 🟡 <strong>OpenAI wires ChatGPT into bank accounts via Plaid.</strong> New "ChatGPT for personal finance" lets users connect checking/savings to get spending breakdowns and advice — biggest expansion of ChatGPT's data surface this year. (<a href="https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts/">TechCrunch</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/931122/openai-chatgpt-financial-accounts-plaid-c">The Verge</a>, <a href="https://firethering.com/chatgpt-bank-account-plaid-openai/">HN</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">5 🔥 🛡️ 🔴 <strong>Pope Leo XIV creates Interdicasterial Commission on AI</strong> ahead of his first encyclical. Standing Vatican body to coordinate doctrinal, ethical, and policy positions on AI across curial offices. (<a href="https://www.vaticannews.va/en/pope/news/2026-05/pope-leo-interdicasterial-commission-ai.html">Vatican News</a>, <a href="https://www.technologyreview.com/2026/05/15/1137341/the-download-china-short-drama-ai-who-health-tar">MIT Tech Review</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">4 🔥 🛡️ 🟡 <strong>arXiv will ban researchers who upload AI-slop papers.</strong> One-year submission ban for cs.* papers with unchecked LLM-generated content; backlash already swirling among researchers. (<a href="https://www.theverge.com/science/931766/arxiv-ai-slop-ban-researchers">The Verge</a>, <a href="https://old.reddit.com/r/MachineLearning/comments/1tdje2d/">r/MachineLearning</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">4 🔥 🟡 <strong>OpenAI reshuffles executives; Greg Brockman takes product control.</strong> Latest in a string of org changes as OpenAI bets its agent stack against Anthropic. (<a href="https://www.wired.com/story/openai-reorg-greg-brockman-product/">Wired</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/931544/openai-keeps-shuffling-its-executives-in-">The Verge</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">4 🛡️ 🔴 <strong>UK government tells firms to harden against frontier AI risks.</strong> First post-AISI advisory aimed at enterprise risk owners; voluntary today, expected to harden into regulation. (<a href="https://www.reuters.com/world/uk/uk-firms-should-take-steps-limit-risks-frontier-ai-models-uk-says-2026-05-15/">Reuters</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>2 stories · 3 sources · 🟢 +0.3 sentiment</em></p>
+<ul>
+<li>4 🌱 🟢 ▤×2 🏷️ models, opensource, video <strong>SANA-WM: NVIDIA Labs open-sources a 2.6B world model that generates 1-min 720p video.</strong> Tiny-for-its-class video world model with code and weights on the project page. Sources: <a href="https://nvlabs.github.io/Sana/WM/">NVIDIA Labs</a>, <a href="https://news.ycombinator.com/from?site=nvlabs.github.io">HN</a></li>
+<li>4 🟢 ▤×1 🏷️ models, enterprise, apps <strong>OpenAI + Malta: ChatGPT Plus for every Maltese citizen.</strong> First country-wide ChatGPT Plus access deal; template for national-scale AI deployments. Sources: <a href="https://openai.com/index/malta-chatgpt-plus-partnership">OpenAI</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>2 stories · 2 sources · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>4 🌱 🟢 ▤×1 🏷️ models, opensource, code <strong>Needle: distilling Gemini tool-calling into a 26M-param model.</strong> Show HN project claims surprising tool-use fidelity at &lt;1% the parameter count. Sources: <a href="https://github.com/cactus-compute/needle">GitHub – cactus-compute/needle</a></li>
+<li>3 🟡 ▤×1 🏷️ training, evals <strong>Orthrus-Qwen3-8B: up to 7.8× tokens/forward via dual-view diffusion</strong> on a frozen Qwen3 backbone, provably identical to the base distribution. Sources: <a href="https://old.reddit.com/r/LocalLLaMA/r/LocalLLaMA/top/.rss">r/LocalLLaMA</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>5 stories · 7 sources · 🔴 -0.3 sentiment</em></p>
+<ul>
+<li>5 🔥 🛡️ 🔴 ▤×2 🏷️ policy, safety <strong>Pope Leo XIV creates Interdicasterial Commission on AI.</strong> Vatican formalizes cross-office coordination ahead of the AI encyclical. Sources: <a href="https://www.vaticannews.va/en/pope/news/2026-05/pope-leo-interdicasterial-commission-ai.html">Vatican News</a>, <a href="https://www.technologyreview.com/2026/05/15/1137341/the-download-china-short-drama-ai-who-health-tar">MIT Tech Review</a></li>
+<li>4 🛡️ 🟡 ▤×2 🏷️ policy, evals <strong>arXiv institutes 1-year submission ban for AI-slop papers</strong> in cs.* categories — first hard policy lever against generative-AI noise in preprints. Sources: <a href="https://www.theverge.com/science/931766/arxiv-ai-slop-ban-researchers">The Verge</a>, <a href="https://old.reddit.com/r/MachineLearning/">r/MachineLearning</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ policy, safety <strong>UK: firms must take steps to limit frontier-AI risk.</strong> Reuters reports new guidance from UK government and AISI aimed at enterprise risk owners. Sources: <a href="https://www.reuters.com/world/uk/uk-firms-should-take-steps-limit-risks-frontier-ai-models-uk-says-2026-05-15/">Reuters</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ policy, bias <strong>YouTube expands AI deepfake-detection / likeness-protection tool to all adult creators.</strong> First platform-wide rollout of the likeness-takedown pipeline. Sources: <a href="https://www.theverge.com/news/931884/youtube-likeness-detection-ai-deepfake-expansion-all-adults">The Verge</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ policy, safety <strong>Zvi Mowshowitz: "Cyber Lack of Security and AI Governance" [via Kagi].</strong> Argues current AI governance has a cybersecurity blind spot you could drive a botnet through. Sources: <a href="https://thezvi.wordpress.com/2026/05/13/cyber-lack-of-security-and-ai-governance/">Zvi Mowshowitz</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>3 stories · 3 sources · 🟢 +0.7 sentiment</em></p>
+<ul>
+<li>4 🎨 🌱 🟢 ▤×1 🏷️ apps, opensource, agents <strong>AIMX: a self-hosted, open-source email server designed for AI agents [via Kagi].</strong> SMTP/IMAP with native MCP hooks and per-agent mailboxes. Sources: <a href="https://uzyn.com/2026/introducing-aimx/">uzyn.com</a></li>
+<li>4 🎨 🌱 🟢 ▤×1 🏷️ agents, opensource, code <strong>Airweave: open-source context-retrieval layer for AI agents [via Kagi].</strong> Python framework for agent memory across heterogeneous data sources. Sources: <a href="https://github.com/airweave-ai/airweave">GitHub – airweave-ai/airweave</a></li>
+<li>4 🎨 🌱 🟢 ▤×1 🏷️ agents, robotics, opensource <strong>Offline suitcase robot built around a Jetson Orin NX SUPER 16GB</strong> running Gemma 4 E4B at ~200 t/s — no cloud, in a suitcase. Sources: <a href="https://old.reddit.com/r/LocalLLaMA/">r/LocalLLaMA</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>3 stories · 4 sources · 🟢 +0.1 sentiment</em></p>
+<ul>
+<li>4 🔥 🟡 ▤×2 🏷️ enterprise, agents, apps <strong>Runway pivots from filmmaker tool to general-purpose AI play, looking to "beat Google."</strong> Same cap table, much broader product surface. Sources: <a href="https://techcrunch.com/2026/05/15/runway-started-by-helping-filmmakers-now-it-wants-to-beat-google-a/">TechCrunch</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ enterprise, bias <strong>EY retracts a study after researchers find AI hallucinations inside it.</strong> Big-4 firm caught shipping LLM-fabricated stats. Sources: <a href="https://www.ft.com/content/a61cbcae-95e4-4449-86e1-ef40fb306f4e">FT</a></li>
+<li>4 🟢 ▤×1 🏷️ hardware, funding <strong>Japanese flash-memory maker books surging profits on AI demand.</strong> Storage tier of the AI buildout finally showing up in earnings. Sources: <a href="https://www.ft.com/content/1e2641ba-14ba-403d-86eb-e484df00964b">FT</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 stories · 2 sources · 🟢 +0.5 sentiment</em></p>
+<ul>
+<li>4 🟢 ▤×1 🏷️ agents, code, apps <strong>Osaurus: local + cloud AI models in one Mac app.</strong> Tab-and-switch UX for hybrid workflows. Sources: <a href="https://techcrunch.com/2026/05/15/osaurus-brings-both-local-and-cloud-ai-models-to-your-mac/">TechCrunch</a></li>
+<li>4 🟢 ▤×1 🏷️ agents, code, enterprise <strong>Anthropic ships Claude for Legal</strong> (open repo of prompts + workflows for legal teams). Sources: <a href="https://github.com/anthropics/claude-for-legal">GitHub – anthropics/claude-for-legal</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>2 stories · 2 sources · 🟢 +0.5 sentiment</em></p>
+<ul>
+<li>4 🌱 🟢 ▤×1 🏷️ models, opensource <strong>DeepSeek V4 lands.</strong> "Open-source model frontier labs feared" — benchmarks claim parity with closed flagships at full open weights. Sources: <a href="https://helloai.com/articles/deepseek-v4-open-source-frontier-parity">helloai.com</a></li>
+<li>4 🌱 🟢 ▤×1 🏷️ opensource, inference, code <strong>MTP (multi-token-prediction) support merged into llama.cpp.</strong> Speculative-style throughput win lands in the most-used local-inference runtime. Sources: <a href="https://old.reddit.com/r/LocalLLaMA/">r/LocalLLaMA</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 AI markets tracked · biggest mover: Gemini 3.5 by May 31 (▼4.5pp)</em></p>
+<ul>
+<li><strong>"Gemini 3.5 released by May 31, 2026?"</strong> Yes 81% (▼4.5pp) · $354K vol · <a href="https://polymarket.com/event/gemini-3pt5-released-by-june-30">Polymarket</a></li>
+<li><strong>"Will Anthropic have the best AI model at the end of May 2026?"</strong> Yes 82% (▲3.0pp) · $593K vol · <a href="https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"Will Google have the best AI model at the end of May 2026?"</strong> Yes 17% (▼3.0pp) · $508K vol · <a href="https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"Will OpenAI not IPO by December 31, 2026?"</strong> Yes 69% (▼2.5pp) · $305K vol · <a href="https://polymarket.com/event/openai-ipo-closing-market-cap">Polymarket</a></li>
+<li><strong>"Will Anthropic have the best AI model at the end of June 2026?"</strong> Yes 69% (▲1.5pp) · $833K vol · <a href="https://polymarket.com/event/which-company-has-best-ai-model-end-of-june">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<ul>
+<li><strong>@mitchellh:</strong> "I believe there are entire companies right now under AI psychosis." 1.5K+ HN upvotes; viral take on agent-overhype rollouts. (<a href="https://twitter.com/mitchellh/status/2055380239711457578">X</a>)</li>
+<li><strong>@steipete:</strong> OpenClaw creator says he burned <strong>$1.3M on OpenAI tokens in 30 days</strong> running agents at scale. (<a href="https://twitter.com/steipete/status/2055346265869721905">X</a>)</li>
+<li><strong>Mistral founder to French Parliament:</strong> "Engineers at Mistral no longer write a single line [of code by hand]." (<a href="https://old.reddit.com/r/singularity/">r/singularity</a>)</li>
+<li><strong>r/LocalLLaMA:</strong> MTP merged into llama.cpp — throughput thread blowing up. (<a href="https://old.reddit.com/r/LocalLLaMA/">Reddit</a>)</li>
+<li><strong>r/MachineLearning:</strong> Heated debate over arXiv's 1-year ban for AI-slop submissions. (<a href="https://old.reddit.com/r/MachineLearning/">Reddit</a>)</li>
+<li><strong>r/singularity:</strong> Anthropic's "Mythos" benchmark thread — claims big cybersecurity gains vs. Claude 5.5. (<a href="https://old.reddit.com/r/singularity/">Reddit</a>)</li>
+</ul></article>]]></content:encoded>
+    </item>
     <item>
       <title>2026-05-15 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-05-15.html</link>
