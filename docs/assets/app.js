@@ -39,7 +39,9 @@
     opts = opts || {};
     if (!THEMES.includes(theme)) theme = "phosphor";
     document.body.setAttribute("data-theme", theme);
-    if (!opts.skipPersist) {
+    // Nostalgia is a "try it" theme — never persist it as the saved default.
+    // Other themes persist normally unless explicitly skipped.
+    if (!opts.skipPersist && theme !== "terminal") {
       localStorage.setItem(STORAGE_KEY, theme);
     }
     const sel = document.getElementById("theme-select");
@@ -719,7 +721,11 @@
   // ─── INIT ────────────────────────────────────────────────
   function init() {
     buildSwitcher();
-    const saved = localStorage.getItem(STORAGE_KEY) || "phosphor";
+    let saved = localStorage.getItem(STORAGE_KEY) || "phosphor";
+    // Coerce stale/unsupported themes (e.g. `terminal` from before it was
+    // removed from the picker) back to default so reloads don't lock users
+    // into a theme they can't change from the picker.
+    if (!PICKER_THEMES.includes(saved)) saved = "phosphor";
     applyTheme(saved);
     wireCopyLinks();
     wireKonami();

@@ -18,6 +18,11 @@
 .bbs-accent  { color: var(--bbs-accent); }
 
 .bbs-row   { display: block; }
+.bbs-selected {
+  background: rgba(140, 220, 150, 0.18);
+  color: var(--bbs-fg-bright);
+  text-shadow: 0 0 6px rgba(140, 220, 150, 0.7);
+}
 .bbs-active {
   color: var(--bbs-fg-bright);
   background: rgba(140, 220, 150, 0.12);
@@ -70,3 +75,13 @@
   border-radius: 4px;
 }
 .mobile-link:hover { background: rgba(140, 220, 150, 0.08); }
+
+/* Pre-formatted board (TTT, ASCII art) — preserve monospace alignment. */
+.bbs-board {
+  font-family: "VT323", "Courier New", ui-monospace, monospace;
+  font-size: 28px;
+  line-height: 1.0;
+  margin: 0;
+  padding: 0;
+  color: var(--bbs-fg-bright);
+}

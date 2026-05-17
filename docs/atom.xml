@@ -4,8 +4,108 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-05-17T07:04:54Z</updated>
+  <updated>2026-05-17T14:08:24Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
+  <entry>
+    <title>2026-05-17 :: AI DAILY DIGEST</title>
+    <link href="https://aigregator.news/digests/2026-05-17.html"/>
+    <id>https://aigregator.news/digests/2026-05-17.html</id>
+    <updated>2026-05-17T00:00:00Z</updated>
+    <summary>2026-05-17 :: AI DAILY DIGEST</summary>
+    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 7 min read · 1,327 words · 📡 18 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-17&amp;url=https%3A//aigregator.news/digests/2026-05-17.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-17%20https%3A//aigregator.news/digests/2026-05-17.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-17.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-17.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 5 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-17-ai-daily-digest">2026-05-17 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-17-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Lab roadmaps, market jockeying, and a Pope with an AI commission.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 22 stories · 16 sources · 🟡 +0.1 sentiment · 🔥 3 cross-source · <strong>TOP MENTION:</strong> OpenAI ×6<br />
+<strong>🏷️ THEMES:</strong> models×7, policy×6, agents×5, enterprise×4, opensource×3<br />
+<strong>📈 MARKET PULSE:</strong> "New Gemini flagship by May 31" ▼47pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▅▄▅▅▅▅▅ (oldest → today)  </p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">6 🔥 🟡 <strong>OpenAI restructures product org as Brockman takes the helm.</strong> Greg Brockman moves into product strategy as OpenAI reportedly plans to merge ChatGPT with Codex. (<a href="https://techcrunch.com/2026/05/16/openai-co-founder-greg-brockman-reportedly-takes-charge-of-product-strategy/">TechCrunch</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">6 🔥 🟡 <strong>Anthropic dominates Polymarket "best AI model" odds at 93%.</strong> Bettors keep pricing Anthropic as the model leader for May, with Google's chances collapsing to 7%. (<a href="https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-may">Polymarket</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">5 🛡️ 🔴 <strong>arXiv will ban authors caught using LLMs to write entire papers.</strong> New policy: a one-year submission ban for unsupervised AI-generated submissions. (<a href="https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/">TechCrunch</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">5 🛡️ 🟡 <strong>Pope Leo XIV stands up a Vatican AI Commission.</strong> Frames AI ethics around "preserving human voices and faces" ahead of his first encyclical. (<a href="https://apnews.com/hub/openai-inc">AP News</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">5 🟡 <strong>China pulls ahead in AI video generation, FT reports.</strong> ByteDance and Kuaishou outshine Western rivals on quality, lifting Chinese AI video into ads and entertainment. (<a href="https://www.ft.com/content/9804b1de-653b-40b2-bffb-17c76ebebe34">FT</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>3 stories · cred-weighted 🟡 +0.2</em></p>
+<ul>
+<li>5 🌱 🟢 ▤×1 🏷️ models, opensource <strong>Open-model bonanza: Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1.</strong> Nathan Lambert's monthly roundup tracks one flagship open release after another. Sources: <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model">Interconnects</a></li>
+<li>4 🟡 ▤×1 🏷️ models, multimodal, video <strong>China's AI video models surge past Western rivals.</strong> ByteDance and Kuaishou lead generation quality, FT reports. Sources: <a href="https://www.ft.com/content/9804b1de-653b-40b2-bffb-17c76ebebe34">FT</a></li>
+<li>4 🟡 ▤×1 🏷️ models, voice <strong>Sony clarifies what its on-device AI Camera Assistant actually does.</strong> Says it suggests rather than edits — lighting, depth, subject options. Sources: <a href="https://www.theverge.com/tech/932133/sony-xperia-1-xiii-ai-camera-assistant">The Verge</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>2 stories · cred-weighted 🟡 +0.0</em></p>
+<ul>
+<li>3 🟡 ▤×1 🏷️ agents, evals <strong>Is Grep All You Need? How agent harnesses reshape agentic search.</strong> Fresh cs.AI submission probes how scaffolding around models drives search behavior. Sources: <a href="https://arxiv.org/abs/2605.15184">arXiv 2605.15184</a></li>
+<li>3 🟡 ▤×1 🏷️ interpretability <strong>When Are Two Networks the Same? Tensor similarity for mechanistic interpretability.</strong> New metric for comparing trained networks structurally. Sources: <a href="https://arxiv.org/abs/2605.15183">arXiv 2605.15183</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>5 stories · cred-weighted 🟡 -0.1</em></p>
+<ul>
+<li>5 🛡️ 🔴 ▤×1 🏷️ policy, evals <strong>arXiv to ban authors for one year if they let AI do all the work.</strong> Tightening rules after a wave of LLM-slop submissions. Sources: <a href="https://techcrunch.com/2026/05/16/research-repository-arxiv-will-ban-authors-for-a-year-if-they-let-ai-do-all-the-work/">TechCrunch</a></li>
+<li>5 🛡️ 🟡 ▤×1 🏷️ policy, safety <strong>Pope Leo XIV creates new Vatican Commission on Artificial Intelligence.</strong> Frames AI as a question of human dignity ahead of his first encyclical. Sources: <a href="https://apnews.com/hub/openai-inc">AP News</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ safety, evals <strong>"Never-ending" AI slop is breaking bug bounty programs.</strong> Corporate hacking reward schemes flooded with spurious AI-generated submissions. Sources: <a href="https://www.ft.com/content/dbec4441-02dc-4053-8500-85677973d324">FT</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ policy, enterprise <strong>N.J. coalition demands governor pause all AI data center projects.</strong> 60+ groups cite grid and water concerns. Sources: <a href="https://www.nj.com">NJ.com via Google News</a></li>
+<li>3 🛡️ 🟡 ▤×1 🏷️ safety, policy <strong>CISA + G7 publish framework to expose risks in AI systems and dependencies.</strong> Supply-chain style risk surfacing for AI. Sources: <a href="https://www.cutoday.info">CU Today</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>3 stories · cred-weighted 🟡 +0.4</em></p>
+<ul>
+<li>4 🎨 🟢 ▤×1 🏷️ agents, opensource <strong>Zerostack: a Unix-inspired coding agent written in pure Rust [via Kagi].</strong> Climbing HN front page (467 points). Sources: <a href="https://news.ycombinator.com/item?id=43990001">HN discussion</a></li>
+<li>3 🎨 🟢 ▤×1 🏷️ multimodal, hardware <strong>Maker packs a googly-eyed local AI chatbot into a mobile suitcase.</strong> Runs entirely on an Nvidia Jetson. Sources: <a href="https://www.tomshardware.com">Tom's Hardware via Google News</a></li>
+<li>3 🎨 🟡 ▤×1 🏷️ apps, voice <strong>Soderbergh's John Lennon documentary leaned on AI.</strong> And he wants to talk about it. Sources: <a href="https://apnews.com/hub/openai-inc">AP News</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>3 stories · cred-weighted 🟡 +0.1</em></p>
+<ul>
+<li>6 🔥 🟡 ▤×2 🏷️ enterprise, models <strong>OpenAI shakeup: Greg Brockman owns product strategy; ChatGPT + Codex to merge.</strong> Sources: <a href="https://techcrunch.com/2026/05/16/openai-co-founder-greg-brockman-reportedly-takes-charge-of-product-strategy/">TechCrunch</a></li>
+<li>5 🟡 ▤×1 🏷️ hardware, enterprise <strong>All eyes on Nvidia earnings this week.</strong> Reuters previews the AI-spending tell. Sources: <a href="https://www.reuters.com/business/">Reuters</a></li>
+<li>4 🟡 ▤×1 🏷️ enterprise, agents <strong>Stripe's John Collison on how agentic commerce reshapes the internet.</strong> Bloomberg Odd Lots interview on agents as buyers. Sources: <a href="https://www.bloomberg.com/news/audio/2026-05-16/odd-lots-stripe-s-john-collison-on-agentic-commerce-podcast">Bloomberg</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 stories · cred-weighted 🟡 +0.5</em></p>
+<ul>
+<li>4 🟢 ▤×1 🏷️ agents, code <strong>OpenClaw, née Warelay → CLAWDIS → CLAWDBOT → Moltbot.</strong> Simon Willison logs the name lineage of the breakout open agent project. Sources: <a href="https://simonwillison.net/2026/May/16/openclaw-names/">Simon Willison</a></li>
+<li>3 🟢 ▤×1 🏷️ agents, enterprise <strong>AIMX: a self-hosted open-source email server designed for AI agents [via Kagi].</strong> Sources: <a href="https://uzyn.com">uzyn.com</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>3 stories · cred-weighted 🟡 +0.3</em></p>
+<ul>
+<li>4 🌱 🟢 ▤×1 🏷️ opensource, models <strong>Open-artifact tracker #21: Gemma 4, DeepSeek V4, Kimi K2.6, MiMo 2.5, GLM-5.1.</strong> Sources: <a href="https://www.interconnects.ai/p/latest-open-artifacts-21-open-model">Interconnects</a></li>
+<li>3 🌱 🟢 ▤×1 🏷️ opensource, agents <strong>Stoic AgentOS: open-source OS for AI agent fleets [via Kagi].</strong> Sources: <a href="https://github.com/">GitHub</a></li>
+<li>3 🌱 🟡 ▤×1 🏷️ opensource, inference <strong>UK sovereign LLM inference, "relax.ai" [via Kagi].</strong> Sources: <a href="https://relax.ai">relax.ai</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets tracked</em></p>
+<ul>
+<li><strong>"Will a new Gemini flagship be released by May 31, 2026?"</strong> Yes 29% (▼47pp) · $52K vol · <a href="https://polymarket.com/event/new-gemini-reasoning-flagship-released-by">Polymarket</a></li>
+<li><strong>"Will Anthropic have the best AI model at the end of May 2026?"</strong> Yes 93% (▲10pp) · $640K vol · <a href="https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"Will Google have the best AI model at the end of May 2026?"</strong> Yes 7% (▼10pp) · $579K vol · <a href="https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"Gemini 3.5 released by June 30?"</strong> Yes 81% (▼9pp) · $303K vol · <a href="https://polymarket.com/event/gemini-3pt5-released-by-june-30">Polymarket</a></li>
+<li><strong>"Will Elon Musk win his case against Sam Altman?"</strong> Yes 23% (▼6pp) · $420K vol · <a href="https://polymarket.com/event/will-elon-musk-win-his-case-against-sam-altman">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<ul>
+<li><strong>HN:</strong> "I don't think AI will make your processes go faster" — 100 points. <a href="https://news.ycombinator.com/">discussion</a></li>
+<li><strong>HN:</strong> "Every AI Subscription Is a Ticking Time Bomb for Enterprise" — 82 points. <a href="https://news.ycombinator.com/">discussion</a></li>
+<li><strong>HN:</strong> "AI is a technology not a product" — climbing. <a href="https://news.ycombinator.com/">discussion</a></li>
+<li><strong>r/LocalLLaMA:</strong> Local Qwen 3.6 vs frontier models on a single-file HTML canvas coding primitive. <a href="https://www.reddit.com/r/LocalLLaMA/top/?t=day">thread</a></li>
+<li><strong>r/MachineLearning:</strong> "Do you agree with Judea [Pearl] that learning from data is not everything? [D]" <a href="https://www.reddit.com/r/MachineLearning/top/?t=day">thread</a></li>
+<li><strong>r/singularity:</strong> Microsoft AI chief gives it 18 months for all white-collar work to be automated. <a href="https://www.reddit.com/r/singularity/top/?t=day">thread</a></li>
+<li><strong>r/ClaudeAI:</strong> "Opus is ridiculous for frontend cleanup." <a href="https://www.reddit.com/r/ClaudeAI/top/?t=day">thread</a></li>
+</ul></article>]]></content>
+  </entry>
   <entry>
     <title>2026-05-16 :: AI DAILY DIGEST</title>
     <link href="https://aigregator.news/digests/2026-05-16.html"/>

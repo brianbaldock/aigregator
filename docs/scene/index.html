@@ -304,6 +304,12 @@
 </svg>
 
 <a id="skip" href="/">Skip ▸</a>
+<script>
+  // Retarget Skip link if we're in walk-in mode for /bbs/.
+  if (location.search.includes('then=bbs')) {
+    document.getElementById('skip').setAttribute('href', '/bbs/?from=scene');
+  }
+</script>
 
 <div id="stage">
   <div class="video-wrap">
@@ -693,6 +699,15 @@
   gate.addEventListener('click', start, { once: true });
   gate.addEventListener('touchstart', start, { once: true, passive: true });
 
+  // Walk-in mode: auto-fire start() since the click that brought us here
+  // (the START NOSTALGIA MODE button) was a user gesture. If autoplay
+  // is blocked, the gate stays visible as a fallback.
+  if (location.search.includes('then=bbs')) {
+    setTimeout(() => {
+      if (!gate.classList.contains('hide')) start();
+    }, 100);
+  }
+
   intro.addEventListener('timeupdate', () => {
     if (intro.duration && intro.currentTime > intro.duration - 0.5) {
       if (!ambient.classList.contains('on')) {
@@ -707,15 +722,27 @@
     intro.style.opacity = '0';
     if (!bootStarted) {
       bootStarted = true;
-      setTimeout(() => {
+      setTimeout(async () => {
         screenL.classList.add('on');
-        runSequence();
+        await runSequence();
+        // Handoff to /bbs/ after the modem+typing sequence completes.
+        if (location.search.includes('then=bbs')) {
+          setTimeout(() => location.replace('/bbs/?from=scene'), 800);
+        }
       }, 500);
     }
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') window.location.href = '/';
+    if (e.key === 'Escape') {
+      // If we're playing the walk-in for BBS, ESC jumps straight there.
+      // Otherwise (standalone /scene/ visit), ESC exits to home.
+      if (location.search.includes('then=bbs')) {
+        window.location.replace('/bbs/?from=scene');
+      } else {
+        window.location.href = '/';
+      }
+    }
   });
 
   // ====================================================================

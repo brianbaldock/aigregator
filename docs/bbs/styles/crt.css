@@ -84,7 +84,9 @@ video {
   line-height: 1.20;
   letter-spacing: 0.5px;
   white-space: pre-wrap;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
   filter: blur(0.5px) url(#crt-curve);
   animation: flicker 4.6s infinite steps(2, end);
   pointer-events: auto;
@@ -150,3 +152,18 @@ video {
   background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
 }
 #skip:hover { color: #fff; border-color: #666; }
+#bbs-root::-webkit-scrollbar { display: none; }
+
+/* While a door game is active, lock bbs-root scrolling so the mouse wheel
+   doesn't accidentally pan past the game viewport. */
+body.in-door #bbs-root { overflow-y: hidden; }
+
+/* Inner scroll pane used by door games (Wargames output, Quest log).
+   Sized to fit within the CRT viewport. Mouse wheel is blocked globally,
+   so users scroll via ↑/↓ or PgUp/PgDn handled by each game's keyHandler. */
+.bbs-scroll-pane {
+  max-height: 60vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.bbs-scroll-pane::-webkit-scrollbar { display: none; }
