@@ -331,6 +331,83 @@ def build_digest_pages() -> list[dict]:
     return entries
 
 
+def build_bbs_manifest(entries: list[dict]) -> None:
+    """Emit docs/bbs/manifest.json — articles as plaintext BBS messages.
+
+    Consumed by /bbs/ (the Nostalgia theme interactive experience). Boards
+    are hard-coded for now since AIgregator only has one content type.
+    Add more boards (e.g. "lab releases" / "policy") later by filtering
+    entries by tags.
+    """
+    import json as _json
+
+    bbs_dir = DOCS_DIR / "bbs"
+    bbs_dir.mkdir(parents=True, exist_ok=True)
+
+    boards = [
+        {"id": "news",    "name": "AI NEWS",        "description": "Daily digest, freshest first"},
+        {"id": "archive", "name": "ARCHIVES",       "description": "All past issues"},
+        {"id": "about",   "name": "ABOUT THIS BBS", "description": "Sysop, history, credits"},
+    ]
+
+    articles = []
+    # entries are newest-first from build_digest_pages
+    for i, e in enumerate(entries):
+        slug = e["slug"]
+        md_path = DIGESTS_DIR / f"{slug}.md"
+        if not md_path.exists():
+            continue
+        text = md_path.read_text(encoding="utf-8")
+
+        # Strip the H1 title line (we expose title separately)
+        body_md = re.sub(r"^#\s+.+\n", "", text, count=1)
+        # Plaintext: drop images, drop link URLs (keep text), drop bold/italic/code chars
+        plain = body_md
+        plain = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", plain)                # images
+        plain = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1 [\1]", plain)       # links → "text [text]"
+        plain = re.sub(r"`{1,3}([^`]*)`{1,3}", r"\1", plain)              # inline + fenced code
+        plain = re.sub(r"\*\*([^*]+)\*\*", r"\1", plain)                  # bold
+        plain = re.sub(r"(?<!\*)\*([^*\n]+)\*(?!\*)", r"\1", plain)       # italic
+        plain = re.sub(r"_([^_\n]+)_", r"\1", plain)                      # alt italic
+        plain = re.sub(r"^>\s?", "    ", plain, flags=re.MULTILINE)       # blockquote → indent
+        plain = re.sub(r"\n{3,}", "\n\n", plain).strip()
+
+        # Summary: first non-empty paragraph after stripping H1
+        summary = ""
+        for para in plain.split("\n\n"):
+            p = para.strip()
+            if p and not p.startswith("#") and not p.startswith("---"):
+                summary = re.sub(r"\s+", " ", p)[:240]
+                break
+
+        # Themes/tags pulled from existing meta extraction
+        tags = list((e.get("meta") or {}).get("themes", {}).keys())[:8]
+
+        articles.append({
+            "id": slug,
+            "board": "news" if i == 0 else "archive",  # newest in NEWS, rest in ARCHIVES
+            "title": e["title"],
+            "date": slug,                              # YYYY-MM-DD slug
+            "summary": summary,
+            "body_text": plain,
+            "tags": tags,
+            "word_count": e.get("word_count", 0),
+            "read_min": e.get("read_min", 1),
+            "url": f"/digests/{slug}.html",
+        })
+
+    payload = {
+        "version": 1,
+        "generated_at": __import__("datetime").datetime.utcnow().isoformat() + "Z",
+        "site": SITE_URL,
+        "boards": boards,
+        "articles": articles,
+    }
+    out = bbs_dir / "manifest.json"
+    out.write_text(_json.dumps(payload, indent=2), encoding="utf-8")
+    print(f"built bbs/manifest.json — {len(articles)} article(s), {len(boards)} board(s)")
+
+
 def build_index(entries: list[dict]) -> None:
     if not entries:
         body = """
@@ -864,6 +941,7 @@ def main() -> int:
     (DOCS_DIR / ".nojekyll").touch()
 
     entries = build_digest_pages()
+    build_bbs_manifest(entries)
     build_index(entries)
     build_archive(entries)
     build_about(entries)

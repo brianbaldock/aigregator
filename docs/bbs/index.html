@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIgregator BBS — Nostalgia Mode</title>
+<meta name="robots" content="noindex,follow">
+<link rel="stylesheet" href="styles/crt.css">
+<link rel="stylesheet" href="styles/bbs.css">
+</head>
+<body>
+
+<!-- SVG filters lifted from /scene/ — barrel curvature + film grain -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <filter id="crt-curve" x="-5%" y="-5%" width="110%" height="110%">
+      <feImage result="map" preserveAspectRatio="none"
+        xlink:href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><defs><radialGradient id='g' cx='50%' cy='50%' fx='50%' fy='50%' r='80%' gradientTransform='matrix(0.65 0 0 1 0.175 0)'><stop offset='0%' stop-color='rgb(128,128,0)'/><stop offset='35%' stop-color='rgb(128,128,0)'/><stop offset='100%' stop-color='rgb(185,160,0)'/></radialGradient></defs><rect width='200' height='200' fill='url(%23g)'/></svg>"/>
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="film-grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="1" stitchTiles="stitch">
+        <animate attributeName="seed" values="1;2;3;4;5;6;7;8;9;10" dur="0.6s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.28 0"/>
+    </filter>
+  </defs>
+</svg>
+
+<a id="skip" href="/">Exit ▸</a>
+
+<div id="stage">
+  <div class="video-wrap">
+    <!-- For /bbs/ we only need the ambient loop — the walk-in intro is
+         played once on first visit (handled in Phase 5). For now skip
+         straight to ambient. -->
+    <video id="v-ambient" src="../scene/video/bedroom-ambient.mp4"
+           muted playsinline preload="auto" loop autoplay></video>
+
+    <div id="screen-layer" class="on">
+      <div id="screen-quad">
+        <div id="bbs-root"></div>
+      </div>
+    </div>
+
+    <div id="grain-overlay"></div>
+  </div>
+</div>
+
+<!-- Desktop-only gate. Mobile gets a friendly redirect. -->
+<div id="mobile-gate" hidden>
+  <div class="mobile-card">
+    <div class="mobile-title">NOSTALGIA MODE</div>
+    <p class="mobile-body">This experience is designed for desktop browsers. The
+       BBS interface uses keyboard navigation and a 1:1 framed monitor that
+       doesn't fit a phone screen.</p>
+    <p class="mobile-body">Visit on a laptop or desktop to enter.</p>
+    <a class="mobile-link" href="/">▸ BACK TO AIGREGATOR</a>
+  </div>
+</div>
+
+<script type="module" src="app/main.js"></script>
+
+</body>
+</html>

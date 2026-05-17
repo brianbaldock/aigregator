@@ -1,0 +1,72 @@
+/* === BBS layout primitives ==========================================
+   Generic classes used by screen renderers (Phase 3+). Keep this file
+   layout/typography only; CRT visual treatment lives in crt.css.
+=================================================================== */
+
+.bbs-screen { display: block; }
+
+.bbs-header {
+  color: var(--bbs-fg-bright);
+  margin-bottom: 0.6em;
+}
+
+.bbs-prompt { color: var(--bbs-fg-bright); }
+.bbs-prompt-input { color: var(--bbs-fg-bright); }
+
+.bbs-dim     { color: var(--bbs-fg-dim); }
+.bbs-bright  { color: var(--bbs-fg-bright); }
+.bbs-accent  { color: var(--bbs-accent); }
+
+.bbs-row   { display: block; }
+.bbs-active {
+  color: var(--bbs-fg-bright);
+  background: rgba(140, 220, 150, 0.12);
+}
+
+.bbs-rule {
+  color: var(--bbs-fg-dim);
+}
+
+/* Cursor (blinking block) */
+.bbs-cursor {
+  display: inline-block;
+  width: 0.55em; height: 1em;
+  background: var(--bbs-fg-bright);
+  vertical-align: -0.15em;
+  box-shadow: 0 0 6px var(--bbs-glow);
+  animation: bbs-blink 1s steps(2, end) infinite;
+}
+@keyframes bbs-blink { 50% { opacity: 0; } }
+
+/* ====================================================================
+   Mobile gate — full-page card shown when viewport too small.
+==================================================================== */
+#mobile-gate {
+  position: fixed; inset: 0; z-index: 100;
+  background: #000;
+  display: grid; place-items: center;
+  padding: 24px;
+}
+.mobile-card {
+  max-width: 360px;
+  font-family: ui-monospace, monospace;
+  color: rgba(140, 220, 150, 0.9);
+  text-align: center;
+}
+.mobile-title {
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  margin-bottom: 14px;
+  text-shadow: 0 0 8px rgba(140, 220, 150, 0.5);
+}
+.mobile-body { color: rgba(200, 200, 200, 0.8); margin: 10px 0; }
+.mobile-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: rgba(140, 220, 150, 0.9);
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1px solid rgba(140, 220, 150, 0.4);
+  border-radius: 4px;
+}
+.mobile-link:hover { background: rgba(140, 220, 150, 0.08); }

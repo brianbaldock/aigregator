@@ -4,10 +4,13 @@
 (function () {
   "use strict";
 
-  // Selectable themes. 'terminal' is shown to users as 'nostalgia' (it's the
-  // C64-boot interactive shell mode; the friendlier label fits the vibe).
-  // The internal value stays 'terminal' so all CSS/JS keeps working.
-  const PICKER_THEMES = ["phosphor", "light", "geocities", "tron", "matrix", "canadian", "terminal"];
+  // Selectable themes. 'terminal' is shown as 'nostalgia' — desktop only.
+  // On mobile we hide it from the picker; the legacy in-page terminal is
+  // replaced by a launcher that links to /bbs/ (the BBS experience).
+  const IS_MOBILE = window.innerWidth < 900 || matchMedia("(pointer: coarse)").matches;
+  const PICKER_THEMES_DESKTOP = ["phosphor", "light", "geocities", "tron", "matrix", "canadian", "terminal"];
+  const PICKER_THEMES_MOBILE  = ["phosphor", "light", "geocities", "tron", "matrix", "canadian"];
+  const PICKER_THEMES = IS_MOBILE ? PICKER_THEMES_MOBILE : PICKER_THEMES_DESKTOP;
   const THEME_LABELS = {
     phosphor: "phosphor",
     light: "light",
@@ -40,8 +43,38 @@
     const sel = document.getElementById("theme-select");
     if (sel) sel.value = theme;
     swapBannerLogo(theme);
-    if (theme === "terminal") initTerminal();
-    else destroyTerminal();
+    if (theme === "terminal") showBbsLauncher();
+    else destroyBbsLauncher();
+  }
+
+  // ─── BBS LAUNCHER (replaces legacy in-page terminal) ─────
+  // Selecting the Nostalgia theme used to spin up the C64 terminal
+  // directly in the page. Now it shows a launcher card that links to
+  // /bbs/ — the real interactive BBS lives there with the bedroom +
+  // CRT video stage.
+  let bbsLauncherEl = null;
+  function showBbsLauncher() {
+    if (bbsLauncherEl) return;
+    bbsLauncherEl = document.createElement("div");
+    bbsLauncherEl.id = "nostalgia-launcher";
+    bbsLauncherEl.innerHTML = `
+      <div class="nl-card">
+        <div class="nl-title">NOSTALGIA MODE</div>
+        <pre class="nl-art">    ╔═══════════════════════════════════╗
+    ║   AIGREGATOR BBS — NODE 1         ║
+    ║   56K MODEM · ANSI COLOR · 1995   ║
+    ╚═══════════════════════════════════╝</pre>
+        <p class="nl-body">Step into a 1990s teenager's bedroom. Sit at the Commodore 64.
+        Dial into the AIgregator BBS and browse today's AI news the way
+        we used to — phosphor green text, modem handshake, door games.</p>
+        <a class="nl-cta" href="/bbs/">▸ START NOSTALGIA MODE</a>
+        <div class="nl-foot">Desktop experience · keyboard recommended</div>
+      </div>
+    `;
+    document.body.appendChild(bbsLauncherEl);
+  }
+  function destroyBbsLauncher() {
+    if (bbsLauncherEl) { bbsLauncherEl.remove(); bbsLauncherEl = null; }
   }
 
   // Banner logo swap. Remembers the original src on first run so we can

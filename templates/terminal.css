@@ -324,3 +324,85 @@ body[data-theme="terminal"] .theme-switch { display: none !important; }
   .coffee, .floppies { display: none; }
   #term-output-wrap { font-size: 16px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   Nostalgia launcher — shown when the theme picker selects 'nostalgia'
+   on the main site. Replaces the legacy in-page C64 terminal; the
+   real BBS experience lives at /bbs/.
+   ═══════════════════════════════════════════════════════════════════ */
+body[data-theme="terminal"] .banner,
+body[data-theme="terminal"] .digest,
+body[data-theme="terminal"] .archive,
+body[data-theme="terminal"] main > article,
+body[data-theme="terminal"] .meta-strip,
+body[data-theme="terminal"] .diff-strip,
+body[data-theme="terminal"] .diversity-badge,
+body[data-theme="terminal"] .copy-link {
+  display: none !important;
+}
+body[data-theme="terminal"] {
+  background: #000;
+  color: #cfffd2;
+  min-height: 100vh;
+}
+
+#nostalgia-launcher {
+  position: fixed; inset: 0;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(ellipse at center, rgba(40, 90, 50, 0.15) 0%, #000 70%),
+    #000;
+  z-index: 50;
+  padding: 24px;
+}
+.nl-card {
+  max-width: 560px;
+  font-family: "VT323", "Courier New", ui-monospace, monospace;
+  color: rgba(140, 220, 150, 0.85);
+  text-align: center;
+  text-shadow: 0 0 6px rgba(140, 220, 150, 0.4);
+}
+.nl-title {
+  font-size: 28px;
+  letter-spacing: 0.22em;
+  margin-bottom: 18px;
+}
+.nl-art {
+  color: rgba(140, 220, 150, 0.65);
+  font-size: 14px;
+  line-height: 1.2;
+  margin: 0 auto 22px;
+  white-space: pre;
+  overflow-x: auto;
+}
+.nl-body {
+  color: rgba(200, 220, 200, 0.75);
+  font-family: ui-monospace, monospace;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0 auto 26px;
+  max-width: 480px;
+}
+.nl-cta {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid rgba(140, 220, 150, 0.55);
+  border-radius: 4px;
+  color: rgba(170, 240, 175, 0.95);
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  background: rgba(140, 220, 150, 0.05);
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.nl-cta:hover {
+  background: rgba(140, 220, 150, 0.14);
+  border-color: rgba(170, 240, 175, 0.9);
+}
+.nl-foot {
+  margin-top: 20px;
+  color: rgba(140, 220, 150, 0.45);
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
