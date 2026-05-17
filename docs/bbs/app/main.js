@@ -6,10 +6,10 @@
 import { route, start, navigate } from "./router.js";
 
 // ====================================================================
-// Mobile gate — desktop only per design call. Hide BBS, show card.
-// ====================================================================
-const MIN_VW = 900;
-if (window.innerWidth < MIN_VW || matchMedia("(pointer: coarse)").matches) {
+// Mobile gate — desktop only per design call. Strict width gate;
+// `pointer: coarse` false-positives on touchscreen laptops.
+const MIN_VW = 768;
+if (window.innerWidth < MIN_VW) {
   document.getElementById("mobile-gate").hidden = false;
   document.getElementById("stage").style.display = "none";
   throw new Error("mobile-gate: bailing");

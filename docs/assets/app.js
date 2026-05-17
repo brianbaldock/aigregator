@@ -7,7 +7,9 @@
   // Selectable themes. 'terminal' is shown as 'nostalgia' — desktop only.
   // On mobile we hide it from the picker; the legacy in-page terminal is
   // replaced by a launcher that links to /bbs/ (the BBS experience).
-  const IS_MOBILE = window.innerWidth < 900 || matchMedia("(pointer: coarse)").matches;
+  // Strict width gate only — `pointer: coarse` false-positives on
+  // touchscreen laptops, hybrids, and dev tools device emulation.
+  const IS_MOBILE = window.innerWidth < 768;
   const PICKER_THEMES_DESKTOP = ["phosphor", "light", "geocities", "tron", "matrix", "canadian", "terminal"];
   const PICKER_THEMES_MOBILE  = ["phosphor", "light", "geocities", "tron", "matrix", "canadian"];
   const PICKER_THEMES = IS_MOBILE ? PICKER_THEMES_MOBILE : PICKER_THEMES_DESKTOP;
@@ -59,14 +61,6 @@
     bbsLauncherEl.id = "nostalgia-launcher";
     bbsLauncherEl.innerHTML = `
       <div class="nl-card">
-        <div class="nl-title">NOSTALGIA MODE</div>
-        <pre class="nl-art">    ╔═══════════════════════════════════╗
-    ║   AIGREGATOR BBS — NODE 1         ║
-    ║   56K MODEM · ANSI COLOR · 1995   ║
-    ╚═══════════════════════════════════╝</pre>
-        <p class="nl-body">Step into a 1990s teenager's bedroom. Sit at the Commodore 64.
-        Dial into the AIgregator BBS and browse today's AI news the way
-        we used to — phosphor green text, modem handshake, door games.</p>
         <a class="nl-cta" href="/bbs/">▸ START NOSTALGIA MODE</a>
         <div class="nl-foot">Desktop experience · keyboard recommended</div>
       </div>
