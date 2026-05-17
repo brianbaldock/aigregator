@@ -7,9 +7,9 @@
   // Selectable themes. 'terminal' is shown as 'nostalgia' — desktop only.
   // On mobile we hide it from the picker; the legacy in-page terminal is
   // replaced by a launcher that links to /bbs/ (the BBS experience).
-  // Strict width gate only — `pointer: coarse` false-positives on
-  // touchscreen laptops, hybrids, and dev tools device emulation.
-  const IS_MOBILE = window.innerWidth < 768;
+  // UA sniff. Spoofable, and iPadOS lies (reports as Mac), but if a
+  // user gets past it they get past it — that's on them.
+  const IS_MOBILE = /Android|iPhone|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
   const PICKER_THEMES_DESKTOP = ["phosphor", "light", "geocities", "tron", "matrix", "canadian", "terminal"];
   const PICKER_THEMES_MOBILE  = ["phosphor", "light", "geocities", "tron", "matrix", "canadian"];
   const PICKER_THEMES = IS_MOBILE ? PICKER_THEMES_MOBILE : PICKER_THEMES_DESKTOP;
