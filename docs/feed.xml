@@ -6,7 +6,7 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 May 2026 14:08:24 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2026 18:15:14 +0000</lastBuildDate>
     <item>
       <title>2026-05-17 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-05-17.html</link>
@@ -114,7 +114,7 @@
       <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
       <description>2026-05-16 :: AI DAILY DIGEST</description>
       <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 8 min read · 1,544 words · 📡 18 unique sources</span>
+  <span class="meta-item">📖 8 min read · 1,540 words · 📡 18 unique sources</span>
   <span class="meta-share">
     <span class="meta-label">SHARE:</span>
     <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-16&amp;url=https%3A//aigregator.news/digests/2026-05-16.html" target="_blank" rel="noopener" title="Share on X">X</a>
@@ -147,7 +147,7 @@
 <p><em>2 stories · 2 sources · 🟡 +0.0 sentiment</em></p>
 <ul>
 <li>4 🌱 🟢 ▤×1 🏷️ models, opensource, code <strong>Needle: distilling Gemini tool-calling into a 26M-param model.</strong> Show HN project claims surprising tool-use fidelity at &lt;1% the parameter count. Sources: <a href="https://github.com/cactus-compute/needle">GitHub – cactus-compute/needle</a></li>
-<li>3 🟡 ▤×1 🏷️ training, evals <strong>Orthrus-Qwen3-8B: up to 7.8× tokens/forward via dual-view diffusion</strong> on a frozen Qwen3 backbone, provably identical to the base distribution. Sources: <a href="https://old.reddit.com/r/LocalLLaMA/r/LocalLLaMA/top/.rss">r/LocalLLaMA</a></li>
+<li>3 🟡 ▤×1 🏷️ training, evals <strong>Orthrus-Qwen3-8B: up to 7.8× tokens/forward via dual-view diffusion</strong> on a frozen Qwen3 backbone, provably identical to the base distribution. Sources: <a href="https://old.reddit.com/r/LocalLLaMA/">r/LocalLLaMA</a></li>
 </ul>
 <h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
 <p><em>5 stories · 7 sources · 🔴 -0.3 sentiment</em></p>

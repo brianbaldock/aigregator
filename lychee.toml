@@ -1,0 +1,38 @@
+# lychee config for AIgregator link checking.
+#
+# Many news/social sites bot-block lychee's user-agent and return 401/403/429
+# even when the URLs are perfectly valid in a real browser. Accepting those
+# status codes prevents weekly false-positive failures while still catching
+# real 404s and DNS failures.
+
+# HTTP statuses considered OK.
+#   200/206/429 — normal + rate-limit (transient)
+#   401/403     — anti-bot walls (URL is fine, lychee just can't fetch it)
+accept = ["200", "206", "401", "403", "429"]
+
+# Skip URL classes that are paywalled, anti-bot, or share-intent shims.
+exclude = [
+  '^https?://(www\.|old\.)?reddit\.com/',
+  '^https?://(www\.)?x\.com/',
+  '^https?://(www\.)?twitter\.com/',
+  '^https?://(www\.)?ft\.com/',
+  '^https?://(www\.)?wsj\.com/',
+  '^https?://(www\.)?nytimes\.com/',
+  '^https?://(www\.)?bloomberg\.com/',
+  '^https?://(www\.)?reuters\.com/',
+  '^https?://(www\.)?economist\.com/',
+  '^https?://(www\.)?linkedin\.com/sharing',
+  '^https?://(www\.)?twitter\.com/intent',
+  '^https?://(www\.)?bsky\.app/intent',
+]
+
+exclude_path = ["docs/_pagefind"]
+
+max_concurrency = 8
+timeout = 20
+retry_wait_time = 4
+max_retries = 2
+no_progress = true
+
+# Pretend to be a real browser — cuts a lot of 403 noise.
+user_agent = "Mozilla/5.0 (compatible; AIgregator-LinkCheck/1.0; +https://aigregator.news)"

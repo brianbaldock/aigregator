@@ -248,23 +248,20 @@ function parse(input) {
 }
 
 let inputBuf = "";
-let questScrollEl = null;
-let stickToBottom = true;
 function render() {
-  // Render the full log inside a scrollable pane. Stick to bottom unless
-  // the user has scrolled up to read history.
+  // Render the full log directly — no inner scroll pane. Overflow falls
+  // to #bbs-root which the global scroll handler in main.js drives.
   const lines = state.log.map(l => `<div class="bbs-row ${l.cls}">${escapeHtml(l.line)}</div>`).join("");
   mountEl.innerHTML = `<div class="bbs-screen">
 <div class="bbs-header">AIGREGATOR QUEST</div>
-<div id="quest-log" class="bbs-scroll-pane">${lines}</div>
+${lines}
 <div class="bbs-row">────────────────────────────────────────────</div>
 <div class="bbs-row">&gt; <span class="bbs-bright">${escapeHtml(inputBuf)}</span><span class="bbs-cursor"></span></div>
 <div class="bbs-row bbs-dim">type commands  ·  ENTER submit  ·  ↑/↓ PgUp/PgDn scroll  ·  ESC back</div>
 </div>`;
-  questScrollEl = mountEl.querySelector("#quest-log");
-  if (questScrollEl && stickToBottom) {
-    questScrollEl.scrollTop = questScrollEl.scrollHeight;
-  }
+  // Auto-scroll viewport to bottom so the latest line + prompt are visible.
+  const root = document.getElementById("bbs-root");
+  if (root) root.scrollTop = root.scrollHeight;
 }
 
 function escapeHtml(s) {
@@ -273,21 +270,11 @@ function escapeHtml(s) {
 
 function keyHandler(e) {
   if (e.key === "Escape") { onNavigate("/doors"); return true; }
-  // Scroll keys for log history.
-  if (questScrollEl) {
-    const pane = questScrollEl;
-    const scrollBy = (px) => {
-      pane.scrollTop += px;
-      // If user scrolled up, stop auto-sticking to bottom.
-      stickToBottom = (pane.scrollTop + pane.clientHeight >= pane.scrollHeight - 4);
-    };
-    const lineH = 28;
-    if (e.key === "ArrowUp")   { e.preventDefault(); scrollBy(-lineH * 2); return true; }
-    if (e.key === "ArrowDown") { e.preventDefault(); scrollBy(lineH * 2);  return true; }
-    if (e.key === "PageUp")    { e.preventDefault(); scrollBy(-pane.clientHeight); return true; }
-    if (e.key === "PageDown")  { e.preventDefault(); scrollBy(pane.clientHeight);  return true; }
-    if (e.key === "Home")      { e.preventDefault(); pane.scrollTop = 0; stickToBottom = false; return true; }
-    if (e.key === "End")       { e.preventDefault(); pane.scrollTop = pane.scrollHeight; stickToBottom = true; return true; }
+  // Scroll keys fall through to the global #bbs-root scroller in main.js.
+  if (e.key === "ArrowUp" || e.key === "ArrowDown" ||
+      e.key === "PageUp"  || e.key === "PageDown"  ||
+      e.key === "Home"    || e.key === "End") {
+    return false;
   }
   if (state.gameOver) return true;
   if (e.key === "Enter") {

@@ -61,8 +61,9 @@ function append(line, cls) {
   d.className = "bbs-row" + (cls ? " " + cls : "");
   d.textContent = line;
   STATE.scrollEl.appendChild(d);
-  // Auto-scroll to bottom on new output.
-  STATE.scrollEl.scrollTop = STATE.scrollEl.scrollHeight;
+  // Auto-scroll the CRT viewport to bottom so new output is visible.
+  const root = document.getElementById("bbs-root");
+  if (root) root.scrollTop = root.scrollHeight;
 }
 
 function renderShell(title, footer) {
@@ -262,17 +263,9 @@ function keyHandler(e) {
     onNavigate("/doors");
     return true;
   }
-  // Scroll keys work in any phase except menu (which uses ↑/↓ for target).
-  if (STATE.scrollEl && STATE.phase !== "menu") {
-    const pane = STATE.scrollEl;
-    const lineH = 28; // approx VT323 line at 22px
-    if (e.key === "ArrowUp")   { e.preventDefault(); pane.scrollTop -= lineH * 2; return true; }
-    if (e.key === "ArrowDown") { e.preventDefault(); pane.scrollTop += lineH * 2; return true; }
-    if (e.key === "PageUp")    { e.preventDefault(); pane.scrollTop -= pane.clientHeight; return true; }
-    if (e.key === "PageDown")  { e.preventDefault(); pane.scrollTop += pane.clientHeight; return true; }
-    if (e.key === "Home")      { e.preventDefault(); pane.scrollTop = 0; return true; }
-    if (e.key === "End")       { e.preventDefault(); pane.scrollTop = pane.scrollHeight; return true; }
-  }
+  // Scroll keys (↑/↓ PgUp/PgDn Home/End) fall through to the global
+  // #bbs-root scroller in main.js — except during target select where
+  // ↑/↓ pick a target.
   if (STATE.phase === "menu") {
     if (e.key === "ArrowDown") {
       e.preventDefault();
@@ -305,7 +298,7 @@ function keyHandler(e) {
       return true;
     }
   }
-  return true; // swallow everything while inside the door
+  return false; // unhandled — let main.js scroll the viewport
 }
 
 function cleanup() {

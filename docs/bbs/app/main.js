@@ -212,6 +212,7 @@ BOARDS:          <span class="bbs-bright">${ctx.manifest.boards.length}</span>`,
 
 // Per-board cursor state — tracks selected article index for arrow nav.
 const boardCursor = {};
+let lastBoard = null;
 
 route(/^board\/([\w-]+)$/, ([boardId]) => {
   const board = ctx.manifest.boards.find(b => b.id === boardId);
@@ -219,6 +220,7 @@ route(/^board\/([\w-]+)$/, ([boardId]) => {
   const arts = ctx.manifest.articles.filter(a => a.board === boardId);
   if (boardCursor[boardId] == null) boardCursor[boardId] = 0;
   if (boardCursor[boardId] >= arts.length) boardCursor[boardId] = Math.max(0, arts.length - 1);
+  lastBoard = boardId;
   const sel = boardCursor[boardId];
   const list = arts.length
     ? arts.map((a, i) => {
@@ -272,6 +274,11 @@ function scrollSelectedIntoView() {
 route(/^article\/(.+)$/, ([id]) => {
   const a = ctx.manifest.articles.find(x => x.id === id);
   if (!a) return `<div>ARTICLE NOT FOUND: ${id}</div>`;
+  // Remember which board owns this article so [B], [N], [P] return there.
+  // Prefer the board the user came from (lastBoard), fall back to the
+  // article's own .board field.
+  const board = lastBoard || a.board || "news";
+  lastBoard = board;
   return placeholder(
     `${a.title}`,
     `${a.date}  ·  ${a.read_min} min  ·  ${a.word_count} words
@@ -280,7 +287,7 @@ route(/^article\/(.+)$/, ([id]) => {
 
 ${a.summary}`,
     [
-      { key: "B", label: "BACK TO BOARD" },
+      { key: "B", label: `BACK TO ${board.toUpperCase()}` },
       { key: "N", label: "NEXT ARTICLE" },
       { key: "P", label: "PREVIOUS" },
     ]
@@ -445,7 +452,18 @@ function keymapFor(path) {
     return map;
   }
   if (path.startsWith("article/")) {
-    return { "B": "/board/news" };
+    const id = path.split("/")[1];
+    const board = lastBoard || "news";
+    const arts = (ctx.manifest.articles || []).filter(a => a.board === board);
+    const idx = arts.findIndex(a => a.id === id);
+    const map = { "B": `/board/${board}` };
+    if (idx >= 0 && arts.length > 1) {
+      const next = arts[(idx + 1) % arts.length];
+      const prev = arts[(idx - 1 + arts.length) % arts.length];
+      map["N"] = `/article/${next.id}`;
+      map["P"] = `/article/${prev.id}`;
+    }
+    return map;
   }
   if (path === "doors") {
     const map = {
@@ -585,6 +603,24 @@ document.addEventListener("keydown", e => {
   if (e.key === "Enter" && map["ENTER"]) { navigate(map["ENTER"]); return; }
   const k = e.key.length === 1 ? e.key.toUpperCase() : e.key;
   if (map[k]) { e.preventDefault(); navigate(map[k]); }
+});
+
+// Universal arrow-key / PgUp / PgDn / Home / End scrolling of the CRT viewport.
+// Runs BEFORE route-specific handlers, but only fires when the route/door
+// hasn't claimed the key for navigation. We detect "claimed" by checking
+// e.defaultPrevented after the route handler runs — so install this as a
+// second listener that scrolls only if nothing else preventDefault'd.
+document.addEventListener("keydown", e => {
+  // Let the route/door handlers run first (they're registered earlier).
+  // If they preventDefault'd, treat the key as consumed and don't scroll.
+  if (e.defaultPrevented) return;
+  const lineH = 28;
+  if (e.key === "ArrowUp")   { e.preventDefault(); bbsRoot.scrollTop -= lineH * 2; return; }
+  if (e.key === "ArrowDown") { e.preventDefault(); bbsRoot.scrollTop += lineH * 2; return; }
+  if (e.key === "PageUp")    { e.preventDefault(); bbsRoot.scrollTop -= bbsRoot.clientHeight * 0.85; return; }
+  if (e.key === "PageDown")  { e.preventDefault(); bbsRoot.scrollTop += bbsRoot.clientHeight * 0.85; return; }
+  if (e.key === "Home")      { e.preventDefault(); bbsRoot.scrollTop = 0; return; }
+  if (e.key === "End")       { e.preventDefault(); bbsRoot.scrollTop = bbsRoot.scrollHeight; return; }
 });
 
 // Door games register their own keydown handler via this hook.

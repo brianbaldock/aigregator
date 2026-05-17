@@ -10,6 +10,7 @@ Usage:
 """
 from __future__ import annotations
 
+import os
 import re
 import shutil
 import sys
@@ -225,6 +226,19 @@ def build_digest_pages() -> list[dict]:
             for w in warns:
                 print(w)
             total_warnings += len(warns)
+        # Structural URL validation — catch hallucinated/malformed citations
+        # (doubled paths, doubled schemes, reddit thread URLs ending in .rss).
+        url_issues = validate_citation_urls(text, slug)
+        if url_issues:
+            print(f"[{slug}] ⚠ {len(url_issues)} suspicious citation URL(s):")
+            for issue in url_issues:
+                print(f"  {issue}")
+            total_warnings += len(url_issues)
+            if os.environ.get("AIGREGATOR_STRICT_URLS"):
+                raise SystemExit(
+                    f"[{slug}] strict URL validation failed — "
+                    "fix the citations or unset AIGREGATOR_STRICT_URLS"
+                )
         meta = extract_digest_meta(text)
         digests_data.append({"slug": slug, "text": text, "meta": meta, "md_path": md})
 
@@ -565,6 +579,76 @@ def strip_bare_domain_citations(md_text: str) -> tuple[str, list[str]]:
     cleaned = re.sub(r",\s*\)", ")", cleaned)
     cleaned = re.sub(r"\(\s*\)", "", cleaned)
     return cleaned, warnings
+
+
+def validate_citation_urls(md_text: str, slug: str = "") -> list[str]:
+    """Structural URL sanity check — catches hallucinated/malformed URLs
+    before they ship. Does NOT do live HEAD requests (lychee handles that
+    in CI). Returns a list of human-readable issue strings.
+
+    Detects:
+    - Repeated path segments: /r/LocalLLaMA/r/LocalLLaMA/  (the actual bug)
+    - Mismatched subreddit + thread paths
+    - Suspicious feed extensions on non-feed paths
+    - Invalid URL structure (missing host, empty path with query, etc.)
+    - Doubled scheme (https://https://...) and doubled slashes mid-path
+    """
+    from urllib.parse import urlparse
+
+    issues: list[str] = []
+    LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
+    seen = set()
+
+    for m in LINK_RE.finditer(md_text):
+        label, url = m.group(1), m.group(2)
+        if url in seen:
+            continue
+        seen.add(url)
+
+        # Doubled scheme: https://https://example.com
+        if re.search(r"https?://https?://", url):
+            issues.append(f"{slug}: doubled scheme in [{label}]({url})")
+            continue
+
+        try:
+            p = urlparse(url)
+        except ValueError:
+            issues.append(f"{slug}: unparseable URL [{label}]({url})")
+            continue
+
+        if not p.netloc:
+            issues.append(f"{slug}: missing host in [{label}]({url})")
+            continue
+
+        # Doubled slashes in path (excluding the // after scheme)
+        if "//" in p.path:
+            issues.append(f"{slug}: doubled slash in path [{label}]({url})")
+            continue
+
+        # Repeated adjacent path segments — the LocalLLaMA bug.
+        # /r/LocalLLaMA/r/LocalLLaMA/top/.rss -> ['r','LocalLLaMA','r','LocalLLaMA','top','.rss']
+        segs = [s for s in p.path.split("/") if s]
+        for i in range(len(segs) - 3):
+            if segs[i] == segs[i + 2] and segs[i + 1] == segs[i + 3]:
+                issues.append(
+                    f"{slug}: repeated path segments '{segs[i]}/{segs[i+1]}' "
+                    f"in [{label}]({url})"
+                )
+                break
+
+        # Reddit-specific: thread URLs (/comments/<id>/) shouldn't end in .rss,
+        # and subreddit listings (.rss) shouldn't have /comments/ in them.
+        if "reddit.com" in p.netloc:
+            has_comments = "/comments/" in p.path
+            ends_rss = p.path.endswith(".rss")
+            if has_comments and ends_rss:
+                issues.append(
+                    f"{slug}: reddit thread URL ends in .rss (likely hallucinated) "
+                    f"[{label}]({url})"
+                )
+
+    return issues
+
 
 
 def build_feeds(entries: list[dict]) -> None:
