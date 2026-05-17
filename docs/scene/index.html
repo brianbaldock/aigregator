@@ -58,6 +58,22 @@
   }
   #screen-layer.on { opacity: 1; }
 
+  /* === Film grain overlay ============================================
+     Top of the stack inside .video-wrap. The element itself just hosts
+     the SVG turbulence filter applied to a transparent backdrop. */
+  #grain-overlay {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    background: rgba(255,255,255,1);
+    filter: url(#film-grain);
+    /* The filter writes per-frame noise as white pixels with alpha=0.13;
+       we use screen blend so the noise brightens the whole frame
+       uniformly without tinting. */
+    mix-blend-mode: overlay;
+    opacity: 0.85;
+  }
+
   /* The screen quad is a rectangle that gets warped via matrix3d to land
      exactly on the 4 monitor corners. Its natural size is a reference
      resolution; we render boot text inside at "correct" CRT scale. */
@@ -102,8 +118,8 @@
     animation: flicker 4.6s infinite steps(2, end);
   }
   /* Scanlines layer — sits inside the warped quad so it follows
-     curvature + motion track. Since the quad is transparent we paint
-     dark stripes directly (no multiply blend needed). */
+     curvature + motion track. Masked to fade out at edges so the
+     rectangle outline doesn't show against the monitor bezel. */
   #screen-quad::after {
     content: ""; position: absolute; inset: 0;
     background: repeating-linear-gradient(
@@ -115,6 +131,36 @@
     );
     pointer-events: none;
     animation: scanRoll 8s linear infinite;
+    /* Soft elliptical mask — full opacity in center, fade to zero
+       before the rectangle edges so no hard outline shows. */
+    -webkit-mask-image: radial-gradient(
+      ellipse 78% 78% at 50% 50%,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,1) 55%,
+      rgba(0,0,0,0) 100%
+    );
+            mask-image: radial-gradient(
+      ellipse 78% 78% at 50% 50%,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,1) 55%,
+      rgba(0,0,0,0) 100%
+    );
+  }
+  /* Also softly mask the text container itself so glow at the corners
+     doesn't paint a faint rectangle. */
+  #crt-text {
+    -webkit-mask-image: radial-gradient(
+      ellipse 90% 90% at 50% 50%,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,1) 70%,
+      rgba(0,0,0,0) 100%
+    );
+            mask-image: radial-gradient(
+      ellipse 90% 90% at 50% 50%,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,1) 70%,
+      rgba(0,0,0,0) 100%
+    );
   }
   @keyframes scanRoll {
     0%   { background-position: 0 0; }
@@ -238,18 +284,21 @@
 </head>
 <body>
 
-<!-- SVG filter: barrel/pincushion warp for CRT curvature.
-     The displacement map is a radial gradient: black (no shift) in the
-     center, fading to red+green at corners. feDisplacementMap reads R→x,
-     G→y and shifts each pixel by (R-0.5)*scale, (G-0.5)*scale. With this
-     gradient the result is gentle outward bulge — text appears to wrap
-     around a convex CRT face. -->
+<!-- SVG filters: barrel curvature + animated film grain.
+     #crt-curve  → displacement map for the screen-quad text
+     #film-grain → fractal noise animated for the whole-frame overlay -->
 <svg width="0" height="0" style="position:absolute;">
   <defs>
     <filter id="crt-curve" x="-5%" y="-5%" width="110%" height="110%">
       <feImage result="map" preserveAspectRatio="none"
         xlink:href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><defs><radialGradient id='g' cx='50%' cy='50%' fx='50%' fy='50%' r='80%' gradientTransform='matrix(0.65 0 0 1 0.175 0)'><stop offset='0%' stop-color='rgb(128,128,0)'/><stop offset='35%' stop-color='rgb(128,128,0)'/><stop offset='100%' stop-color='rgb(185,160,0)'/></radialGradient></defs><rect width='200' height='200' fill='url(%23g)'/></svg>"/>
       <feDisplacementMap in="SourceGraphic" in2="map" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="film-grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="1" stitchTiles="stitch">
+        <animate attributeName="seed" values="1;2;3;4;5;6;7;8;9;10" dur="0.6s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.28 0"/>
     </filter>
   </defs>
 </svg>
@@ -266,6 +315,10 @@
         <div id="crt-text"></div>
       </div>
     </div>
+    <!-- Film grain overlay — sits above video AND CRT text so per-frame
+         noise dusts the whole composition uniformly. This is the magic
+         glue that makes the overlay feel like part of the video. -->
+    <div id="grain-overlay"></div>
   </div>
 </div>
 
@@ -389,10 +442,14 @@
     .then(t => { TRACK = t; if (t) console.log(`[track] loaded ${t.frame_count} frames`); })
     .catch(err => console.warn('[track] not available:', err));
 
+  // Smoothed motion — raw track is too jumpy 1:1; dampen + low-pass.
+  const MOTION_DAMP = 0.27;        // 0 = no motion, 1 = full raw
+  const MOTION_SMOOTH = 0.18;      // per-frame blend toward target
+  let smA = 1, smB = 0, smC = 0, smD = 1, smE = 0, smF = 0;
+
   function applyTrackedTransform() {
     if (!BASE_MATRIX3D) return;
     if (!TRACK || ambient.paused || intro.style.opacity !== '0') {
-      // No track yet, or ambient not currently the active video. Use base.
       screenQ.style.transform = BASE_MATRIX3D;
       return;
     }
@@ -400,17 +457,26 @@
     const idx = Math.min(TRACK.frames.length - 1, Math.max(0, Math.round(t * TRACK.fps)));
     const f = TRACK.frames[idx];
     if (!f) { screenQ.style.transform = BASE_MATRIX3D; return; }
-    // Affine in video pixel space (TRACK.width × TRACK.height).
-    // Scale translation to current wrap pixel space.
     const r = wrap.getBoundingClientRect();
     const sx = r.width  / TRACK.width;
     const sy = r.height / TRACK.height;
+    // Damp the affine toward identity, then scale translation to stage px.
     const [a, b, c2, d2, e, fY] = f.m;
-    const eS = e * sx;
-    const fS = fY * sy;
-    // Apply delta BEFORE the base warp so it acts in stage pixel space.
+    const tA = 1 + (a  - 1) * MOTION_DAMP;
+    const tB =     b       * MOTION_DAMP;
+    const tC =     c2      * MOTION_DAMP;
+    const tD = 1 + (d2 - 1) * MOTION_DAMP;
+    const tE = e * sx * MOTION_DAMP;
+    const tF = fY * sy * MOTION_DAMP;
+    // Low-pass for buttery motion (no per-frame snap)
+    smA += (tA - smA) * MOTION_SMOOTH;
+    smB += (tB - smB) * MOTION_SMOOTH;
+    smC += (tC - smC) * MOTION_SMOOTH;
+    smD += (tD - smD) * MOTION_SMOOTH;
+    smE += (tE - smE) * MOTION_SMOOTH;
+    smF += (tF - smF) * MOTION_SMOOTH;
     screenQ.style.transform =
-      `matrix(${a}, ${b}, ${c2}, ${d2}, ${eS}, ${fS}) ${BASE_MATRIX3D}`;
+      `matrix(${smA}, ${smB}, ${smC}, ${smD}, ${smE}, ${smF}) ${BASE_MATRIX3D}`;
   }
 
   // Tracking loop — rAF, runs whenever ambient is the active video.
