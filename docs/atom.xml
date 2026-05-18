@@ -4,8 +4,105 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-05-17T18:15:14Z</updated>
+  <updated>2026-05-18T14:08:51Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
+  <entry>
+    <title>2026-05-18 :: AI DAILY DIGEST</title>
+    <link href="https://aigregator.news/digests/2026-05-18.html"/>
+    <id>https://aigregator.news/digests/2026-05-18.html</id>
+    <updated>2026-05-18T00:00:00Z</updated>
+    <summary>2026-05-18 :: AI DAILY DIGEST</summary>
+    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 8 min read · 1,583 words · 📡 14 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-18&amp;url=https%3A//aigregator.news/digests/2026-05-18.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-18%20https%3A//aigregator.news/digests/2026-05-18.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-18.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-18.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 5 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-18-ai-daily-digest">2026-05-18 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-18-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Pope's AI encyclical lands with Anthropic at his side, Baidu's AI sales eclipse legacy ads, and xAI stiffs staff on tax-return-for-Grok bounties.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 18 stories · 14 sources · 🟡 +0.0 sentiment · 🔥 5 cross-source · <strong>TOP MENTION:</strong> OpenAI ×6<br />
+<strong>🏷️ THEMES:</strong> policy×7, enterprise×6, models×4, agents×4, opensource×4<br />
+<strong>📈 MARKET PULSE:</strong> "Gemini 3.5 by May 31" ▲13.4pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▄▆▆▆▅▅▅ (oldest → today)  </p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">7 🔥 🛡️ 🟡 <strong>Pope Leo XIV launches first encyclical on AI alongside Anthropic co-founder.</strong> Vatican formalizes its AI doctrine with Jack Clark on stage — a striking signal of how mainstream the alignment conversation has become. (<a href="https://www.bloomberg.com/news/articles/2026-05-18/anthropic-s-co-founder-to-launch-encyclical-on-ai-with-pope-leo">Bloomberg</a>, <a href="https://www.ft.com/content/7d309f94-3618-4511-9778-d1447799c5e4">FT</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">6 🔥 🟢 <strong>Baidu's AI revenue overtakes legacy ads for the first time.</strong> Inflection moment for Chinese big-tech: agentic AI is now the larger line item. (<a href="https://www.bloomberg.com/news/articles/2026-05-18/baidu-tops-sales-estimates-in-endorsement-of-agentic-ai-pivot">Bloomberg</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">6 🔥 🟡 <strong>OpenAI's $1tn IPO partly hinges on an Oakland jury room.</strong> The Musk vs. OpenAI trial opens; jurors will weigh trust questions central to the company's valuation. (<a href="https://www.ft.com/content/846479c8-4ab0-4812-a1d5-08abdd8b952b">FT</a>, <a href="https://techcrunch.com/2026/05/17/why-trust-is-a-big-question-at-the-elon-musk-openai-trial/">TechCrunch</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">5 🛡️ 🔴 <strong>Anthropic to brief global financial watchdog on Mythos cyber flaws.</strong> Anthropic engaging the FSB after Mythos-exposed model vulnerabilities — RAI rubber meets road. (<a href="https://www.ft.com/content/7d309f94-3618-4511-9778-d1447799c5e4">FT</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">5 🌱 🟢 <strong>Kioxia's AI-fueled profit surge hits a new share-price high.</strong> Storage demand from AI training continues to outrun supply. (<a href="https://www.bloomberg.com/news/articles/2026-05-18/kioxia-shares-awash-in-buy-orders-after-ai-driven-profit-surge">Bloomberg</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>2 stories · cred-weighted 🟡 +0.1</em></p>
+<ul>
+<li>5 🟡 ▤×1 🏷️ models, apps <strong>Apple's revamped Siri app will ship with auto-deleting chats.</strong> Bloomberg's iOS 27 leak: a ChatGPT-shaped Siri designed around privacy defaults. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-05-17/ios-27-siri-app-to-have-auto-deleting-chats-siri-may-be-a-beta-genmoji-mp9udydr">Bloomberg</a>, <a href="https://www.theverge.com/tech/932207/siri-apple-intelligence-auto-deleting-chats">The Verge</a></li>
+<li>4 🟡 ▤×1 🏷️ models, opensource <strong>OpenAI partners with Malta to give all citizens ChatGPT Plus.</strong> First country-wide ChatGPT Plus rollout, paired with national AI training. Sources: <a href="https://openai.com/index/malta-chatgpt-plus-partnership">OpenAI blog</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>(quiet today — arXiv API throttled this run)</em></p>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>5 stories · cred-weighted 🟡 -0.1</em></p>
+<ul>
+<li>7 🔥 🛡️ 🟡 ▤×2 🏷️ policy, safety, alignment <strong>Pope Leo XIV's first encyclical addresses AI, launched with Anthropic co-founder Jack Clark.</strong> Catholic doctrine on AI lands with an industry imprimatur — read both ways: legitimacy for safety, or capture. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-18/anthropic-s-co-founder-to-launch-encyclical-on-ai-with-pope-leo">Bloomberg</a></li>
+<li>5 🛡️ 🔴 ▤×1 🏷️ safety, policy <strong>Anthropic to brief global financial watchdog on Mythos cyber flaws.</strong> First major coordination with the FSB on model-driven security exposure. Sources: <a href="https://www.ft.com/content/7d309f94-3618-4511-9778-d1447799c5e4">FT</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ policy, enterprise <strong>Eric Schmidt booed during University of Arizona commencement for AI cheerleading.</strong> Backlash against techno-optimist messaging hits new venues. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/932203/university-of-arizona-students-boo-eric-schmidt-ai-commencement">The Verge</a>, <a href="https://techcrunch.com/2026/05/17/if-youre-giving-a-commencement-speech-in-2026-maybe-dont-mention-ai/">TechCrunch</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ policy, enterprise <strong>Stratechery: data-center discontent is becoming a political constraint.</strong> Ben Thompson maps the local-opposition pattern and proposes mitigations. Sources: <a href="https://stratechery.com/2026/data-center-discontent-understanding-the-opposition-fixing-the-problem/">Stratechery</a></li>
+<li>4 🛡️ 🟡 ▤×1 🏷️ policy, opensource <strong>UK GDS weighs in on NHS retreat from open source.</strong> Simon Willison flags the broader procurement signal as AI vendors push proprietary stacks. Sources: <a href="https://simonwillison.net/2026/May/17/gds-weighs-in/#atom-everything">Simon Willison</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>3 stories · cred-weighted 🟢 +0.3</em></p>
+<ul>
+<li>4 🎨 🟢 ▤×1 🏷️ multimodal, art <strong>Kore-eda's Cannes contender explores AI's role in grief.</strong> Japanese director uses AI as a narrative device, not a gimmick. Sources: <a href="https://www.reuters.com/lifestyle/japans-kore-eda-explores-ais-role-grief-cannes-contender-2026-05-18/">Reuters via Google News</a></li>
+<li>3 🎨 🟢 ▤×1 🏷️ agents, opensource <strong>Airweave: open-source context retrieval layer for AI agents [via Kagi].</strong> Python project surfacing as a clean drop-in for agent memory plumbing. Sources: <a href="https://github.com/airweave-ai/airweave">GitHub</a></li>
+<li>3 🎨 🟢 ▤×1 🏷️ apps, agents <strong>AI Memory Reader: native macOS app for browsing Claude Code memory files [via Kagi].</strong> Small, useful, surfaces something nobody else built yet. Sources: <a href="https://github.com/nvwalj/ai-memory-reader">GitHub</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>5 stories · cred-weighted 🟡 +0.1</em></p>
+<ul>
+<li>6 🔥 🟢 ▤×1 🏷️ enterprise, agents <strong>Baidu AI sales eclipse waning legacy ads for the first time.</strong> Earnings beat, with agentic products the headline driver. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-18/baidu-tops-sales-estimates-in-endorsement-of-agentic-ai-pivot">Bloomberg</a></li>
+<li>6 🔥 🟡 ▤×2 🏷️ funding, enterprise <strong>OpenAI's $1tn IPO fate may turn on the Musk trial in Oakland.</strong> Jury deliberations begin; trust narrative becomes a valuation input. Sources: <a href="https://www.ft.com/content/846479c8-4ab0-4812-a1d5-08abdd8b952b">FT</a>, <a href="https://techcrunch.com/2026/05/17/why-trust-is-a-big-question-at-the-elon-musk-openai-trial/">TechCrunch</a></li>
+<li>5 🟢 ▤×1 🏷️ hardware, enterprise <strong>Kioxia shares hit new high on AI-driven profit surge.</strong> Memory cycle still pointing up. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-18/kioxia-shares-awash-in-buy-orders-after-ai-driven-profit-surge">Bloomberg</a></li>
+<li>5 🟡 ▤×1 🏷️ funding, enterprise <strong>Publicis to buy a US data company for $2.2bn to deepen AI marketing push.</strong> Ad-tech consolidation continues around training-data positions. Sources: <a href="https://www.ft.com/content/fa33f1b3-ea8b-474b-9f75-a70536c8d2cb">FT</a></li>
+<li>5 🟡 ▤×1 🏷️ policy, enterprise <strong>US and Philippines moving "very quickly" on a 4,000-acre AI hub plan.</strong> Cebu site eyed for combined data-center and chip footprint. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-18/us-philippines-moving-very-quickly-on-4-000-acre-ai-hub-plan">Bloomberg</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 stories · cred-weighted 🟢 +0.3</em></p>
+<ul>
+<li>4 🟢 ▤×1 🏷️ inference, opensource <strong>datasette-llm-limits 0.1a0: Simon Willison ships a tiny LLM-budget plugin [via Kagi].</strong> Drop-in spend caps for Datasette + LLM workflows. Sources: <a href="https://simonwillison.net/2026/May/15/datasette-llm-limits/">simonwillison.net</a></li>
+<li>3 🟡 ▤×1 🏷️ agents, code <strong>Semble: code search for agents using 98% fewer tokens than grep.</strong> New Show HN aimed at agent-tooling cost reduction. Sources: <a href="https://github.com/MinishLab/semble">GitHub</a>, <a href="https://news.ycombinator.com/item?id=44021337">HN</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>3 stories · cred-weighted 🟢 +0.3</em></p>
+<ul>
+<li>4 🌱 🟢 ▤×1 🏷️ opensource, models <strong>Hugging Face spotlights this week's open-model drops on its blog.</strong> Weekly community thread surfaces fresh releases and fine-tunes. Sources: <a href="https://huggingface.co/blog">Hugging Face</a></li>
+<li>3 🌱 🟢 ▤×1 🏷️ opensource, agents <strong>Acontext: context-data platform for AI agents in TypeScript [via Kagi].</strong> New entry in the open agent-memory stack. Sources: <a href="https://github.com/memodb-io/Acontext">GitHub</a></li>
+<li>3 🌱 🟡 ▤×1 🏷️ enterprise, agents <strong>LetinAR builds the optical stack behind AI glasses in South Korea.</strong> Quiet supplier, loud customer list. Sources: <a href="https://techcrunch.com/2026/05/18/south-koreas-letinar-is-building-the-optics-behind-ai-glasses/">TechCrunch</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets tracked</em></p>
+<ul>
+<li><strong>"Gemini 3.5 released by May 31?"</strong> Yes 91% (▲13.4pp) · $447K vol · <a href="https://polymarket.com/event/gemini-35-released-by-may-31">Polymarket</a></li>
+<li><strong>"Will a new Gemini flagship be released by May 31, 2026?"</strong> Yes 15% (▼15.0pp) · $59K vol · <a href="https://polymarket.com/event/will-a-new-gemini-flagship-be-released-by-may-31-2026">Polymarket</a></li>
+<li><strong>"Gemini 3.5 released by June 30?"</strong> Yes 91% (▲11.1pp) · $317K vol · <a href="https://polymarket.com/event/gemini-35-released-by-june-30">Polymarket</a></li>
+<li><strong>"Will a new Gemini flagship be released by May 22, 2026?"</strong> Yes 10% (▼10.5pp) · $79K vol · <a href="https://polymarket.com/event/will-a-new-gemini-flagship-be-released-by-may-22-2026">Polymarket</a></li>
+<li><strong>"Will OpenAI release a social network in 2026?"</strong> Yes 28% (▼9.0pp) · $55K vol · <a href="https://polymarket.com/event/will-openai-release-a-social-network-in-2026">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<ul>
+<li><a href="https://bsky.app/profile/stephenkb.bsky.social/post/3lpiqjqdtsk2u">@stephenkb on Bluesky</a>: industry insider venting at AI executives' messaging — sharp inside-baseball take, 624 likes.</li>
+<li><a href="https://bsky.app/profile/cfiesler.bsky.social/post/3lpib2x4qek2v">@cfiesler on Bluesky</a>: on the appropriate crackdowns on LLM-generated academic papers, 362 likes / 114 reposts.</li>
+<li><a href="https://bsky.app/profile/questauthority.bsky.social/post/3lpht4l3vyk2g">@questauthority on Bluesky</a>: wry meta-commentary on chained LLM agents cleaning up after each other.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/">r/LocalLLaMA discussion</a>: community spotlighting llama.cpp b9200 release fixing MTP memory-traffic overhead — significant local-inference speedup.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1sskmhv/recent_open_models_from_last_6_months_nov_2025/">r/LocalLLaMA recap</a>: six-month open-model chart making the rounds.</li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1sml5fo/failure_to_reproduce_modern_paper_claims_d/">r/MachineLearning thread</a>: reproducibility post — 4-of-7 modern paper claims irreproducible this year — getting traction again.</li>
+<li><a href="https://news.ycombinator.com/item?id=44021337">HN discussion</a>: Benedict Evans' "AI eats the world (Spring 26)" deck climbing the front page.</li>
+</ul></article>]]></content>
+  </entry>
   <entry>
     <title>2026-05-17 :: AI DAILY DIGEST</title>
     <link href="https://aigregator.news/digests/2026-05-17.html"/>
