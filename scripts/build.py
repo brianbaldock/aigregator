@@ -229,6 +229,7 @@ def build_digest_pages() -> list[dict]:
         # Structural URL validation — catch hallucinated/malformed citations
         # (doubled paths, doubled schemes, reddit thread URLs ending in .rss).
         url_issues = validate_citation_urls(text, slug)
+        url_issues += validate_bluesky_urls(text, slug)
         if url_issues:
             print(f"[{slug}] ⚠ {len(url_issues)} suspicious citation URL(s):")
             for issue in url_issues:
@@ -579,6 +580,66 @@ def strip_bare_domain_citations(md_text: str) -> tuple[str, list[str]]:
     cleaned = re.sub(r",\s*\)", ")", cleaned)
     cleaned = re.sub(r"\(\s*\)", "", cleaned)
     return cleaned, warnings
+
+
+def validate_bluesky_urls(md_text: str, slug: str = "") -> list[str]:
+    """Live-check Bluesky post URLs against the public AppView API to catch
+    hallucinated rkeys. The web UI returns HTTP 200 for any rkey (SPA shell)
+    so lychee can't detect these — but the JSON API correctly returns
+    `{"error":"NotFound"}`. Cheap, no auth, ~50ms per post.
+
+    Disabled if AIGREGATOR_SKIP_LIVE_CHECKS=1 (offline builds, fast local
+    iteration). Failures are warnings unless AIGREGATOR_STRICT_URLS=1.
+    """
+    if os.environ.get("AIGREGATOR_SKIP_LIVE_CHECKS"):
+        return []
+    import json as _json
+    import urllib.parse, urllib.request
+    issues: list[str] = []
+    BSKY_RE = re.compile(
+        r"\[([^\]]+)\]\(https?://bsky\.app/profile/([^/\s]+)/post/([^)\s]+)\)"
+    )
+    seen = set()
+    for m in BSKY_RE.finditer(md_text):
+        label, handle, rkey = m.group(1), m.group(2), m.group(3)
+        key = (handle, rkey)
+        if key in seen:
+            continue
+        seen.add(key)
+        # Resolve handle → DID
+        try:
+            req = urllib.request.Request(
+                f"https://api.bsky.app/xrpc/com.atproto.identity.resolveHandle"
+                f"?handle={urllib.parse.quote(handle)}",
+                headers={"User-Agent": "AIgregator-LinkCheck/1.0"},
+            )
+            with urllib.request.urlopen(req, timeout=8) as r:
+                did = _json.loads(r.read()).get("did")
+        except Exception as e:
+            issues.append(f"{slug}: bsky handle unresolvable @{handle}: {e}")
+            continue
+        if not did:
+            issues.append(f"{slug}: bsky handle returned no DID: @{handle}")
+            continue
+        # Verify post exists
+        uri = f"at://{did}/app.bsky.feed.post/{rkey}"
+        try:
+            req = urllib.request.Request(
+                f"https://api.bsky.app/xrpc/app.bsky.feed.getPostThread"
+                f"?uri={urllib.parse.quote(uri)}",
+                headers={"User-Agent": "AIgregator-LinkCheck/1.0"},
+            )
+            with urllib.request.urlopen(req, timeout=8) as r:
+                body = r.read().decode("utf-8", errors="replace")
+        except Exception as e:
+            issues.append(f"{slug}: bsky API error for [{label}]: {e}")
+            continue
+        if '"error":"NotFound"' in body or '"error": "NotFound"' in body:
+            issues.append(
+                f"{slug}: HALLUCINATED bsky post (handle exists, rkey doesn't): "
+                f"[{label}](https://bsky.app/profile/{handle}/post/{rkey})"
+            )
+    return issues
 
 
 def validate_citation_urls(md_text: str, slug: str = "") -> list[str]:
