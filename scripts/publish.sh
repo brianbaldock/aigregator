@@ -14,7 +14,7 @@ git config user.name "brianbaldock"
 git config user.email "brian@aigregator.local"
 
 # Build
-"${REPO}/.venv/bin/python" scripts/build.py
+AIGREGATOR_STRICT_URLS=1 "${REPO}/.venv/bin/python" scripts/build.py
 
 # Pagefind search index — best-effort, never fails the publish
 if command -v npx >/dev/null 2>&1; then
