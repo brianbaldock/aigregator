@@ -4,7 +4,7 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-05-19T02:30:01Z</updated>
+  <updated>2026-05-19T02:42:35Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
   <entry>
     <title>2026-05-18 :: AI DAILY DIGEST</title>
@@ -13,7 +13,7 @@
     <updated>2026-05-18T00:00:00Z</updated>
     <summary>2026-05-18 :: AI DAILY DIGEST</summary>
     <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 9 min read · 1,787 words · 📡 15 unique sources</span>
+  <span class="meta-item">📖 9 min read · 1,726 words · 📡 15 unique sources</span>
   <span class="meta-share">
     <span class="meta-label">SHARE:</span>
     <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-18&amp;url=https%3A//aigregator.news/digests/2026-05-18.html" target="_blank" rel="noopener" title="Share on X">X</a>
@@ -41,7 +41,7 @@
 <p><em>2 stories · cred-weighted 🟡 +0.1</em></p>
 <ul>
 <li>5 🟡 ▤×1 🏷️ models, apps <strong>Apple's revamped Siri app will ship with auto-deleting chats.</strong> Bloomberg's iOS 27 leak: a ChatGPT-shaped Siri designed around privacy defaults. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-05-17/ios-27-siri-app-to-have-auto-deleting-chats-siri-may-be-a-beta-genmoji-mp9udydr">Bloomberg</a>, <a href="https://www.theverge.com/tech/932207/siri-apple-intelligence-auto-deleting-chats">The Verge</a></li>
-<li>4 🟡 ▤×1 🏷️ models, opensource <strong>OpenAI partners with Malta to give all citizens ChatGPT Plus.</strong> First country-wide ChatGPT Plus rollout, paired with national AI training. Sources: <a href="https://openai.com/index/malta-chatgpt-plus-partnership">OpenAI blog</a></li>
+<li>4 🟡 ▤×1 🏷️ models, opensource <strong>OpenAI partners with Malta to give all citizens ChatGPT Plus.</strong> First country-wide ChatGPT Plus rollout, paired with national AI training. Sources: <a href="https://openai.com/index/malta-chatgpt-plus-partnership/">OpenAI blog</a></li>
 </ul>
 <h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
 <p><em>5 stories · cred-weighted 🟡 +0.0</em></p>
@@ -81,7 +81,7 @@
 <p><em>2 stories · cred-weighted 🟢 +0.3</em></p>
 <ul>
 <li>4 🟢 ▤×1 🏷️ inference, opensource <strong>datasette-llm-limits 0.1a0: Simon Willison ships a tiny LLM-budget plugin [via Kagi].</strong> Drop-in spend caps for Datasette + LLM workflows. Sources: <a href="https://simonwillison.net/2026/May/15/datasette-llm-limits/">simonwillison.net</a></li>
-<li>3 🟡 ▤×1 🏷️ agents, code <strong>Semble: code search for agents using 98% fewer tokens than grep.</strong> New Show HN aimed at agent-tooling cost reduction. Sources: <a href="https://github.com/MinishLab/semble">GitHub</a>, <a href="https://news.ycombinator.com/item?id=44021337">HN</a></li>
+<li>3 🟡 ▤×1 🏷️ agents, code <strong>Semble: code search for agents using 98% fewer tokens than grep.</strong> New Show HN aimed at agent-tooling cost reduction. Sources: <a href="https://github.com/MinishLab/semble">GitHub</a>, <a href="https://news.ycombinator.com/item?id=48169874">HN</a></li>
 </ul>
 <h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
 <p><em>3 stories · cred-weighted 🟢 +0.3</em></p>
@@ -93,11 +93,11 @@
 <h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
 <p><em>5 markets tracked</em></p>
 <ul>
-<li><strong>"Gemini 3.5 released by May 31?"</strong> Yes 91% (▲13.4pp) · $447K vol · <a href="https://polymarket.com/event/gemini-35-released-by-may-31">Polymarket</a></li>
-<li><strong>"Will a new Gemini flagship be released by May 31, 2026?"</strong> Yes 15% (▼15.0pp) · $59K vol · <a href="https://polymarket.com/event/will-a-new-gemini-flagship-be-released-by-may-31-2026">Polymarket</a></li>
-<li><strong>"Gemini 3.5 released by June 30?"</strong> Yes 91% (▲11.1pp) · $317K vol · <a href="https://polymarket.com/event/gemini-35-released-by-june-30">Polymarket</a></li>
-<li><strong>"Will a new Gemini flagship be released by May 22, 2026?"</strong> Yes 10% (▼10.5pp) · $79K vol · <a href="https://polymarket.com/event/will-a-new-gemini-flagship-be-released-by-may-22-2026">Polymarket</a></li>
-<li><strong>"Will OpenAI release a social network in 2026?"</strong> Yes 28% (▼9.0pp) · $55K vol · <a href="https://polymarket.com/event/will-openai-release-a-social-network-in-2026">Polymarket</a></li>
+<li><strong>"Gemini 3.5 released by June 30?"</strong> <a href="https://polymarket.com/event/gemini-3pt5-released-by-june-30">Polymarket</a></li>
+<li><strong>"Which company has best AI model end of June?"</strong> <a href="https://polymarket.com/event/which-company-has-best-ai-model-end-of-june">Polymarket</a></li>
+<li><strong>"Claude 5 released by…?"</strong> <a href="https://polymarket.com/event/claude-5-released-by">Polymarket</a></li>
+<li><strong>"OpenAI IPO by…?"</strong> <a href="https://polymarket.com/event/openai-ipo-by">Polymarket</a></li>
+<li><strong>"Anthropic IPO closing market cap"</strong> <a href="https://polymarket.com/event/anthropic-ipo-closing-market-cap">Polymarket</a></li>
 </ul>
 <h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
 <ul>
@@ -107,7 +107,7 @@
 <li><a href="https://www.reddit.com/r/LocalLLaMA/">r/LocalLLaMA discussion</a>: community spotlighting llama.cpp b9200 release fixing MTP memory-traffic overhead — significant local-inference speedup.</li>
 <li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1sskmhv/recent_open_models_from_last_6_months_nov_2025/">r/LocalLLaMA recap</a>: six-month open-model chart making the rounds.</li>
 <li><a href="https://www.reddit.com/r/MachineLearning/comments/1sml5fo/failure_to_reproduce_modern_paper_claims_d/">r/MachineLearning thread</a>: reproducibility post — 4-of-7 modern paper claims irreproducible this year — getting traction again.</li>
-<li><a href="https://news.ycombinator.com/item?id=44021337">HN discussion</a>: Benedict Evans' "AI eats the world (Spring 26)" deck climbing the front page.</li>
+<li><a href="https://news.ycombinator.com/item?id=48179021">HN discussion</a>: Benedict Evans' "AI eats the world (Spring 26)" deck climbing the front page.</li>
 </ul></article>]]></content>
   </entry>
   <entry>

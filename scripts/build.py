@@ -230,6 +230,13 @@ def build_digest_pages() -> list[dict]:
         # (doubled paths, doubled schemes, reddit thread URLs ending in .rss).
         url_issues = validate_citation_urls(text, slug)
         url_issues += validate_bluesky_urls(text, slug)
+        # Live HEAD/GET check of every cited URL — only on the NEWEST digest
+        # to keep builds fast. Older digests already passed this check when
+        # they were first built and live-link rot is monitored separately
+        # by the weekly lychee cron.
+        is_newest = (md == sorted(DIGESTS_DIR.glob("*.md"))[-1])
+        if is_newest:
+            url_issues += validate_links_live(text, slug)
         if url_issues:
             print(f"[{slug}] ⚠ {len(url_issues)} suspicious citation URL(s):")
             for issue in url_issues:
@@ -639,6 +646,136 @@ def validate_bluesky_urls(md_text: str, slug: str = "") -> list[str]:
                 f"{slug}: HALLUCINATED bsky post (handle exists, rkey doesn't): "
                 f"[{label}](https://bsky.app/profile/{handle}/post/{rkey})"
             )
+    return issues
+
+
+# Domains that aggressively bot-block. We don't trust their non-200 responses
+# as proof of a dead link — humans see the URL fine in a real browser.
+# For these, 401/403/405/429 are ACCEPTED. Real 404 from them is still a 404.
+BOT_WALLED_DOMAINS = {
+    "reddit.com", "old.reddit.com", "www.reddit.com",
+    "x.com", "twitter.com", "www.twitter.com",
+    "ft.com", "www.ft.com",
+    "wsj.com", "www.wsj.com",
+    "nytimes.com", "www.nytimes.com",
+    "bloomberg.com", "www.bloomberg.com",
+    "reuters.com", "www.reuters.com",
+    "economist.com", "www.economist.com",
+    "linkedin.com", "www.linkedin.com",
+    "stratechery.com",
+    "openai.com", "www.openai.com",
+    "anthropic.com", "www.anthropic.com",
+    "news.ycombinator.com",
+}
+
+
+def _check_one_url(url: str, label: str, timeout: int = 12) -> tuple[str, str | None]:
+    """HEAD-then-GET fallback. Returns (url, None) on OK or (url, reason)."""
+    import urllib.parse, urllib.request, urllib.error
+    try:
+        host = urllib.parse.urlparse(url).netloc.lower()
+    except Exception:
+        return url, "unparseable URL"
+    bot_walled = host in BOT_WALLED_DOMAINS
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (X11; Linux x86_64; rv:120.0) "
+            "Gecko/20100101 Firefox/120.0"
+        ),
+        "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    }
+
+    def try_method(method: str):
+        try:
+            req = urllib.request.Request(url, headers=headers, method=method)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.status, None
+        except urllib.error.HTTPError as e:
+            return e.code, None
+        except Exception as e:
+            return None, f"{type(e).__name__}: {e}"
+
+    status, err = try_method("HEAD")
+    if status is None or status in (405, 501):
+        status, err = try_method("GET")
+
+    if err and status is None:
+        return url, f"transient: {err}"
+    if status in (200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308):
+        return url, None
+    if status in (401, 403, 405, 429):
+        if bot_walled:
+            return url, None
+        return url, f"HTTP {status} (possible bot wall — verify manually)"
+    if status in (404, 410):
+        return url, f"HTTP {status} DEAD"
+    if status and 500 <= status < 600:
+        return url, f"HTTP {status} server error (transient?)"
+    return url, f"HTTP {status} unexpected"
+
+
+def validate_links_live(md_text: str, slug: str = "") -> list[str]:
+    """Live HEAD/GET every non-bsky citation URL. Cached for 7 days to keep
+    builds fast. Skipped entirely if AIGREGATOR_SKIP_LIVE_CHECKS=1.
+    """
+    if os.environ.get("AIGREGATOR_SKIP_LIVE_CHECKS"):
+        return []
+
+    LINK_RE = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
+    targets: dict[str, str] = {}
+    for m in LINK_RE.finditer(md_text):
+        label, url = m.group(1), m.group(2)
+        if "bsky.app/profile/" in url and "/post/" in url:
+            continue  # handled by validate_bluesky_urls
+        targets.setdefault(url, label)
+    if not targets:
+        return []
+
+    cache_path = ROOT / ".link-check-cache.json"
+    cache: dict[str, dict] = {}
+    if cache_path.exists():
+        try:
+            import json as _json
+            cache = _json.loads(cache_path.read_text())
+        except Exception:
+            cache = {}
+    import time as _time
+    now = _time.time()
+    CACHE_TTL = 7 * 24 * 3600
+
+    to_check: list[tuple[str, str]] = []
+    issues: list[str] = []
+    for url, label in targets.items():
+        entry = cache.get(url)
+        if entry and (now - entry.get("ts", 0)) < CACHE_TTL:
+            msg = entry.get("issue")
+            if msg and ("DEAD" in msg or "HALLUCINATED" in msg):
+                issues.append(f"{slug}: {msg}: [{label}]({url})")
+            continue
+        to_check.append((url, label))
+
+    if to_check:
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        with ThreadPoolExecutor(max_workers=8) as ex:
+            futs = {ex.submit(_check_one_url, u, l): (u, l) for u, l in to_check}
+            for fut in as_completed(futs):
+                url, label = futs[fut]
+                try:
+                    _u, problem = fut.result()
+                except Exception as e:
+                    problem = f"check raised: {e}"
+                cache[url] = {"ts": now, "issue": problem}
+                if not problem:
+                    continue
+                if problem.startswith("transient:") or "server error" in problem:
+                    continue
+                issues.append(f"{slug}: {problem}: [{label}]({url})")
+        try:
+            import json as _json
+            cache_path.write_text(_json.dumps(cache, indent=2, sort_keys=True))
+        except Exception:
+            pass
     return issues
 
 
