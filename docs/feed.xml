@@ -6,7 +6,107 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 May 2026 02:42:35 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 14:10:32 +0000</lastBuildDate>
+    <item>
+      <title>2026-05-19 :: AI DAILY DIGEST</title>
+      <link>https://aigregator.news/digests/2026-05-19.html</link>
+      <guid isPermaLink="true">https://aigregator.news/digests/2026-05-19.html</guid>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+      <description>2026-05-19 :: AI DAILY DIGEST</description>
+      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 8 min read · 1,527 words · 📡 13 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-19&amp;url=https%3A//aigregator.news/digests/2026-05-19.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-19%20https%3A//aigregator.news/digests/2026-05-19.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-19.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-19.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 5 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-19-ai-daily-digest">2026-05-19 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-19-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Musk loses the OpenAI lawsuit in two hours, Google and Blackstone spin up an AI cloud co, and StanChart frames AI as a substitute for "lower-value human capital."</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 20 stories · 13 sources · 🟡 +0.0 sentiment · 🔥 6 cross-source · <strong>TOP MENTION:</strong> OpenAI ×7<br />
+<strong>🏷️ THEMES:</strong> policy×6, enterprise×6, models×4, agents×4, hardware×4<br />
+<strong>📈 MARKET PULSE:</strong> "Will OpenAI release a social network in 2026?" ▼9.5pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▄▆▆▆▅▅▅ (oldest → today)  </p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">7 🔥 🟢 <strong>Musk loses lawsuit against OpenAI after two hours of jury deliberations.</strong> California jury sides with OpenAI; the IPO overhang clears. (<a href="https://www.ft.com/content/cfc4de0d-0c45-42ee-843d-c2abf7638733">FT</a>, <a href="https://techcrunch.com/2026/05/18/elon-musk-has-lost-his-lawsuit-against-sam-altman-and-openai/">TechCrunch</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">6 🔥 🟡 <strong>Google and Blackstone form a joint AI cloud company.</strong> New vehicle aims at the AI compute backlog, with chip and capacity commitments. (<a href="https://www.ft.com/content/5730b605-8fb2-4973-a188-b4a587ce3580">FT</a>, <a href="https://www.bloomberg.com/news/videos/2026-05-19/google-agrees-to-create-ai-cloud-firm-with-blackstone-video">Bloomberg</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">6 🔥 🔴 <strong>StanChart to cut 7,000+ jobs and replace "lower-value human capital" with AI.</strong> One of the bluntest framings yet from a major bank. (<a href="https://www.ft.com/content/ff678495-2a99-4a70-a340-31c0f8094b4c">FT</a>, <a href="https://www.bloomberg.com/news/videos/2026-05-19/stanchart-to-cut-thousands-of-jobs-in-ai-push-video">Bloomberg</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">6 🔥 🟡 <strong>NextEra and Dominion announce $420B merger framed around AI power demand.</strong> Largest US utility deal of the cycle, explicitly pitched as an AI build-out vehicle. (<a href="https://www.ft.com/content/a17f615a-cf05-4079-92a8-a8ab6370ae98">FT</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">5 🌱 🟢 <strong>Anthropic acquires Stainless to own its SDK pipeline.</strong> Vertical integration on developer surface area ahead of IPO. (<a href="https://news.ycombinator.com/item?id=48182281">Anthropic via HN</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>3 stories · cred-weighted 🟢 +0.3</em></p>
+<ul>
+<li>4 🟢 ▤×1 🏷️ models, opensource <strong>Simon Willison: "The last six months in LLMs in five minutes."</strong> Compressed survey of frontier and open-weight progress since November. Sources: <a href="https://simonwillison.net/2026/May/19/5-minute-llms/">Simon Willison</a></li>
+<li>4 🌱 🟢 ▤×1 🏷️ multimodal, opensource <strong>HF: fine-tuning NVIDIA Cosmos Predict 2.5 with LoRA/DoRA for robot video generation.</strong> End-to-end recipe for adapting Cosmos to embodied data. Sources: <a href="https://huggingface.co/blog/nvidia/cosmos-fine-tuning-for-robot-video-generation">HuggingFace blog</a></li>
+<li>3 🌱 🟢 ▤×1 🏷️ multimodal, opensource <strong>PaddleOCR 3.5 ships a Transformers backend for OCR and doc parsing.</strong> Drop-in pipeline for layout + text extraction. Sources: <a href="https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers">HuggingFace blog</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>4 stories · cred-weighted 🟡 +0.0</em></p>
+<ul>
+<li>4 🔬 🔴 ▤×1 🏷️ agents, safety <strong>AI Agents May Always Fall for Prompt Injections.</strong> Argues no current defense is robust; positions prompt injection as a structural property of LLM agents. Sources: <a href="https://arxiv.org/abs/2605.17634">arXiv 2605.17634</a></li>
+<li>3 🔬 🟡 ▤×1 🏷️ alignment, evals <strong>Alignment pretraining: AI discourse creates self-fulfilling (mis)alignment.</strong> Pretraining on doom discourse can prime models toward the behaviors it warns about. Sources: <a href="https://arxiv.org/abs/2601.10160">arXiv 2601.10160</a></li>
+<li>3 🔬 🟡 ▤×1 🏷️ bias, policy <strong>Diagnosing Korean-Language LLM Political Bias via Census-Grounded Agent Simulation.</strong> Operationalizes bias measurement against demographic ground truth rather than vibes. Sources: <a href="https://arxiv.org/abs/2605.18395">arXiv 2605.18395</a></li>
+<li>3 🔬 🟡 ▤×1 🏷️ agents, safety <strong>You Can't Fool Us: resilience of LLM-driven agent communities to adversaries.</strong> Multi-agent setups show emergent robustness when populations exceed a threshold. Sources: <a href="https://arxiv.org/abs/2605.17353">arXiv 2605.17353</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>4 stories · cred-weighted 🟡 -0.1</em></p>
+<ul>
+<li>5 🛡️ 🔴 ▤×1 🏷️ safety, enterprise <strong>Anthropic will let partners share Mythos cybersecurity findings with others.</strong> Coordinated-disclosure pipeline widens beyond Anthropic's direct customers. Sources: <a href="https://news.ycombinator.com/from?site=reuters.com">Reuters via HN</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ policy, enterprise <strong>StanChart "lower-value human capital" framing draws backlash.</strong> Labor groups call out the language as a tell on how banks are pitching AI to investors. Sources: <a href="https://www.ft.com/content/ff678495-2a99-4a70-a340-31c0f8094b4c">FT</a></li>
+<li>4 🛡️ 🟡 ▤×1 🏷️ policy, hardware <strong>NYSE owner ICE plans a futures market for compute power.</strong> Financialization of GPU-hours as a tradable commodity, with safety/concentration implications. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-19/nyse-s-owner-plans-its-own-futures-market-for-computing-power">Bloomberg</a></li>
+<li>3 🛡️ 🟡 ▤×1 🏷️ policy, safety <strong>REBAR: Reference Ethical Benchmark for Autonomy Readiness.</strong> Proposes a standardized benchmark for evaluating autonomy claims before deployment. Sources: <a href="https://arxiv.org/abs/2605.18423">arXiv 2605.18423</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>3 stories · cred-weighted 🟢 +0.5</em></p>
+<ul>
+<li>5 🎨 🟢 ▤×1 🏷️ voice, agents <strong>Andon Labs let AIs run real radio stations and logged what broke.</strong> Funny, sharp write-up of agent failure modes in a low-stakes live setting. Sources: <a href="https://andonlabs.com/blog/andon-fm">Andon Labs</a></li>
+<li>4 🎨 🟢 ▤×1 🏷️ multimodal, agents <strong>Agora-1: a multi-agent world model from Odyssey.</strong> Generative world simulator with multi-agent interaction as a first-class primitive. Sources: <a href="https://odyssey.ml/introducing-agora-1">Odyssey</a></li>
+<li>3 🎨 🟢 ▤×1 🏷️ apps, agents <strong>Repo team stopped AI-bot spam on GitHub using git's --author flag.</strong> Tiny defensive trick that turns out to filter most LLM-authored PR noise. Sources: <a href="https://news.ycombinator.com/item?id=48183301">HN thread</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>4 stories · cred-weighted 🟡 +0.1</em></p>
+<ul>
+<li>6 🔥 🟡 ▤×2 🏷️ enterprise, hardware <strong>Google + Blackstone launch joint AI cloud venture.</strong> New entity to absorb AI compute demand the hyperscalers can't or won't serve themselves. Sources: <a href="https://www.ft.com/content/5730b605-8fb2-4973-a188-b4a587ce3580">FT</a>, <a href="https://www.bloomberg.com/news/videos/2026-05-19/google-agrees-to-create-ai-cloud-firm-with-blackstone-video">Bloomberg</a></li>
+<li>6 🔥 🟡 ▤×1 🏷️ funding, enterprise <strong>NextEra-Dominion $420B merger framed as the AI power play.</strong> Bankers expect copycats across the utility sector. Sources: <a href="https://www.ft.com/content/a17f615a-cf05-4079-92a8-a8ab6370ae98">FT</a></li>
+<li>5 🟢 ▤×1 🏷️ enterprise, hardware <strong>Meta defends $200B AI data-center bet to skeptical investors.</strong> Zuckerberg pitches the capex curve as a durable moat. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-05-19/meta-bets-that-200-billion-ai-data-center-in-rural-louisiana-will-pay-off-mawnl9wd">Bloomberg</a></li>
+<li>4 🟡 ▤×1 🏷️ funding, enterprise <strong>Mistral acquires an Austrian physics-AI startup for industrial push.</strong> Vertical move into simulation and process modeling. Sources: <a href="https://www.ft.com/content/cfc4de0d-0c45-42ee-843d-c2abf7638733">FT</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 stories · cred-weighted 🟢 +0.5</em></p>
+<ul>
+<li>5 🌱 🟢 ▤×1 🏷️ opensource, code <strong>Anthropic acquires Stainless to own the SDK generation layer.</strong> Cleaner Claude SDKs and a defensive moat around the developer experience. Sources: <a href="https://news.ycombinator.com/item?id=48182281">HN thread</a></li>
+<li>4 🟢 ▤×1 🏷️ models, opensource <strong>HF: Open Agent Leaderboard updates with new tool-use evals.</strong> Tracks open-weight progress on agentic benchmarks. Sources: <a href="https://huggingface.co/blog/ibm-research/open-agent-leaderboard">HuggingFace blog</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>2 stories · cred-weighted 🟢 +0.5</em></p>
+<ul>
+<li>4 🌱 🟢 ▤×1 🏷️ opensource, agents <strong>Sandboxing AI agents without buying anything [via Kagi].</strong> Practical write-up using nsjail and friends to isolate agent shells on a single box. Sources: <a href="https://llbbl.blog/2026/05/16/sandboxing-ai-agents-without-buying.html">llbbl blog</a></li>
+<li>3 🌱 🟢 ▤×1 🏷️ opensource, agents <strong>GateGraph: deterministic governance for AI agents [via Kagi].</strong> Policy-as-code layer for constraining agent transitions, MIT-licensed. Sources: <a href="https://github.com/humancoreai/Gategraph">GitHub</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets tracked</em></p>
+<ul>
+<li><strong>"Will OpenAI release a social network in 2026?"</strong> Yes 18.5% (▼9.5pp) · $56K vol · <a href="https://polymarket.com/event/will-openai-release-a-social-network-in-2026">Polymarket</a>  </li>
+<li><strong>"Gemini 3.5 released by May 31?"</strong> Yes 99.0% (▲8.4pp) · $547K vol · <a href="https://polymarket.com/event/gemini-3pt5-released-by-june-30">Polymarket</a>  </li>
+<li><strong>"Trump orders federal review of AI model releases by May 31?"</strong> Yes 8.5% (▼7.5pp) · $69K vol · <a href="https://polymarket.com/event/trump-orders-federal-review-for-ai-model-releases-by-may-31">Polymarket</a>  </li>
+<li><strong>"OpenAI not IPO by Dec 31, 2026?"</strong> Yes 72.5% (▲5.5pp) · $305K vol · <a href="https://polymarket.com/event/openai-ipo-closing-market-cap">Polymarket</a>  </li>
+<li><strong>"OpenAI IPO closing market cap above $1T?"</strong> Yes 62.5% (▲3.0pp) · $1.04M vol · <a href="https://polymarket.com/event/openai-ipo-closing-market-cap-above">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<ul>
+<li><strong>Simon Willison</strong> — "The last six months in LLMs in five minutes": Simon's compressed tour of frontier and open-weight model progress since November. (<a href="https://simonwillison.net/2026/May/19/5-minute-llms/">blog post</a>)</li>
+<li><strong>Anthropic</strong> — Anthropic announces acquisition of SDK-generator Stainless, signaling intent to control the developer surface. (<a href="https://www.anthropic.com/news/anthropic-acquires-stainless">news</a>)</li>
+<li><strong>Andon Labs</strong> — Team published a postmortem on letting LLM agents run live radio stations; concrete failure-mode taxonomy. (<a href="https://andonlabs.com/blog/andon-fm">blog</a>)</li>
+<li><strong>r/LocalLLaMA</strong> — Reddit was geoblocking us today; HN's discussion of Simon's "five minutes" post is the active substitute thread. (<a href="https://news.ycombinator.com/item?id=48188183">HN thread</a>)</li>
+<li><strong>r/MachineLearning</strong> — Same; HN discussion of the Anthropic + Stainless acquisition stood in as the most active researcher-adjacent thread. (<a href="https://news.ycombinator.com/item?id=48182281">HN thread</a>)</li>
+<li><strong>r/OpenAI</strong> — Reddit unreachable; HN's Musk-loses-OpenAI megathread carried the bulk of the day's discussion. (<a href="https://news.ycombinator.com/item?id=48182754">HN thread</a>)</li>
+</ul></article>]]></content:encoded>
+    </item>
     <item>
       <title>2026-05-18 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-05-18.html</link>
