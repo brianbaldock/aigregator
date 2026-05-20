@@ -25,8 +25,10 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parent.parent
 DIGESTS_DIR = ROOT / "digests"
+WEEKLY_DIR = ROOT / "weekly"
 DOCS_DIR = ROOT / "docs"
 DOCS_DIGESTS = DOCS_DIR / "digests"
+DOCS_WEEKLY = DOCS_DIR / "weekly"
 TEMPLATES = ROOT / "templates"
 CSS_FILES = [
     (TEMPLATES / "base.css", DOCS_DIR / "assets" / "base.css"),
@@ -120,6 +122,7 @@ def html_shell(
 
 <nav class="menu">
   <a href="{prefix}index.html">LATEST</a>
+  <a href="{prefix}weekly/">WEEKLY</a>
   <a href="{prefix}archive.html">ARCHIVE</a>
   <a href="{prefix}about.html">ABOUT</a>
   <a href="{prefix}feed.xml">RSS</a>
@@ -1213,6 +1216,128 @@ self.addEventListener("fetch", e => {
     (DOCS_DIR / "sw.js").write_text(sw.replace("__CACHE_VERSION__", cache_version), encoding="utf-8")
 
 
+def build_weekly() -> list[dict]:
+    """Render weekly roundup pages from weekly/*.md.
+
+    Each file is named YYYY-Www.md (ISO week). Produces:
+      - docs/weekly/<slug>.html for every roundup
+      - docs/weekly/index.html  archive listing of all roundups
+      - docs/weekly/feed.xml    RSS for roundups
+    Returns list of entries: [{slug, title, subtitle, read_min, week_label}, ...]
+    """
+    if not WEEKLY_DIR.exists():
+        return []
+    DOCS_WEEKLY.mkdir(parents=True, exist_ok=True)
+
+    # Copy theme banner logos for weekly pages
+    weekly_logo_src = ROOT / "docs" / "assets" / "themes" / "weekly"
+    # (Already in docs/assets/themes/weekly/ — no copy needed; they're served as-is.)
+
+    entries: list[dict] = []
+    for md in sorted(WEEKLY_DIR.glob("*.md"), reverse=True):
+        slug = md.stem  # e.g. 2026-W21
+        text = md.read_text(encoding="utf-8")
+        # Title from H1
+        h1 = re.search(r"^#\s+(.+)$", text, re.MULTILINE)
+        title = h1.group(1).strip() if h1 else slug
+        # Subtitle = first italic _..._ block after title
+        sub_match = re.search(r"^_(.+?)_\s*$", text, re.MULTILINE)
+        subtitle = sub_match.group(1).strip() if sub_match else ""
+        # Week label for archive: "Week 21, 2026"
+        wm = re.match(r"(\d{4})-W(\d{2})", slug)
+        week_label = f"Week {int(wm.group(2))}, {wm.group(1)}" if wm else slug
+
+        html_body = render_digest_md(text, slug=slug)
+        read_min = max(1, len(text.split()) // 200)
+
+        # Use the weekly banner image (per-theme swap handled in app.js)
+        og_img = "assets/themes/weekly/weekly-roundup-phosphor.png"
+        body = f"""
+<article class="digest weekly-roundup">
+{html_body}
+</article>
+<p style="margin-top:32px;text-align:center;">
+[ <a href="./">ALL ROUNDUPS</a> ] &nbsp; [ <a href="../">LATEST DAILY</a> ]
+</p>
+"""
+        page = html_shell(
+            title=title,
+            body=body,
+            page_class="weekly-page",
+            depth=1,
+            description=subtitle or f"AI Weekly Roundup for {week_label}",
+            canonical_path=f"weekly/{slug}.html",
+            og_image=og_img,
+            extra_head='<meta name="aig:page-type" content="weekly">',
+        )
+        (DOCS_WEEKLY / f"{slug}.html").write_text(page, encoding="utf-8")
+        entries.append({
+            "slug": slug,
+            "title": title,
+            "subtitle": subtitle,
+            "read_min": read_min,
+            "week_label": week_label,
+        })
+
+    # Latest roundup also written as index.html (in docs/weekly/)
+    if entries:
+        latest = entries[0]
+        latest_md = (WEEKLY_DIR / f"{latest['slug']}.md").read_text(encoding="utf-8")
+        latest_html = render_digest_md(latest_md, slug=latest["slug"])
+        # Build the archive listing below the latest roundup
+        rows = "\n".join(
+            f'<li><a href="{e["slug"]}.html"><b>{e["week_label"]}</b> :: {e["title"].split("::",1)[-1].strip()}</a>'
+            f' <span class="archive-meta">📖 {e["read_min"]}m</span></li>'
+            for e in entries
+        )
+        idx_body = f"""
+<article class="digest weekly-roundup">
+{latest_html}
+</article>
+
+<section class="weekly-archive" style="margin-top:48px;">
+  <h2 style="font-family:'VT323',monospace;color:var(--amber);font-size:24px;">// ROUNDUP.ARCHIVE</h2>
+  <ul style="list-style:none;padding-left:0;">
+{rows}
+  </ul>
+</section>
+"""
+        idx_page = html_shell(
+            title="ai weekly roundup",
+            body=idx_body,
+            page_class="weekly-page",
+            depth=1,
+            description="Weekly roundup of the most important AI news and social threads. Compiled every Sunday.",
+            canonical_path="weekly/",
+            og_image="assets/themes/weekly/weekly-roundup-phosphor.png",
+            extra_head='<meta name="aig:page-type" content="weekly">',
+        )
+        (DOCS_WEEKLY / "index.html").write_text(idx_page, encoding="utf-8")
+
+        # RSS feed for weekly
+        from xml.sax.saxutils import escape as xml_escape
+        items_xml = []
+        for e in entries[:20]:
+            link = f"{SITE_URL}/weekly/{e['slug']}.html"
+            items_xml.append(
+                f"<item><title>{xml_escape(e['title'])}</title>"
+                f"<link>{link}</link><guid>{link}</guid>"
+                f"<description>{xml_escape(e['subtitle'])}</description></item>"
+            )
+        feed = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>AIgregator :: Weekly Roundup</title>
+<link>{SITE_URL}/weekly/</link>
+<description>Weekly AI news and social-thread roundup.</description>
+{chr(10).join(items_xml)}
+</channel></rss>
+"""
+        (DOCS_WEEKLY / "feed.xml").write_text(feed, encoding="utf-8")
+
+    print(f"built {len(entries)} weekly roundup page(s)")
+    return entries
+
+
 def main() -> int:
     DOCS_DIR.mkdir(exist_ok=True)
     (DOCS_DIR / "assets").mkdir(exist_ok=True)
@@ -1229,9 +1354,10 @@ def main() -> int:
     build_about(entries)
     build_404()
     build_feeds(entries)
+    weekly_entries = build_weekly()
     build_sitemap(entries)
     build_pwa()
-    print(f"built {len(entries)} digest page(s) + feeds + sitemap + 404 + pwa")
+    print(f"built {len(entries)} digest page(s) + {len(weekly_entries)} weekly + feeds + sitemap + 404 + pwa")
     return 0
 
 

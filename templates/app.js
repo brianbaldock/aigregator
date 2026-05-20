@@ -32,6 +32,16 @@
     matrix: "assets/themes/aigregator-logo-matrix.png",
     canadian: "assets/themes/aigregator-logo-canadian.png",
   };
+  // Weekly Roundup pages get a themed alligator-rodeo banner.
+  // phosphor is the default for weekly (no override means use phosphor variant explicitly).
+  const WEEKLY_THEME_LOGOS = {
+    phosphor: "assets/themes/weekly/weekly-roundup-phosphor.png",
+    light: "assets/themes/weekly/weekly-roundup-light.png",
+    geocities: "assets/themes/weekly/weekly-roundup-geocities.png",
+    tron: "assets/themes/weekly/weekly-roundup-tron.png",
+    matrix: "assets/themes/weekly/weekly-roundup-matrix.png",
+    canadian: "assets/themes/weekly/weekly-roundup-canadian.png",
+  };
   const THEMES = PICKER_THEMES;
   const STORAGE_KEY = "aigregator_theme";
 
@@ -80,11 +90,16 @@
     const img = document.querySelector(".banner img");
     if (!img) return;
     if (DEFAULT_LOGO === null) DEFAULT_LOGO = img.getAttribute("src");
-    // Resolve a relative path correctly whether we're on /index.html or /digests/X.html
+    const isWeekly = location.pathname.includes("/weekly/");
+    // Resolve a relative path correctly whether we're on /index.html, /digests/X.html, or /weekly/X.html
+    const prefix = (location.pathname.includes("/digests/") || location.pathname.includes("/weekly/")) ? "../" : "";
+    if (isWeekly) {
+      const w = WEEKLY_THEME_LOGOS[theme] || WEEKLY_THEME_LOGOS.phosphor;
+      img.src = prefix + w;
+      return;
+    }
     const override = THEME_LOGOS[theme];
     if (override) {
-      // Pages under /digests/ need to go up one level
-      const prefix = location.pathname.includes("/digests/") ? "../" : "";
       img.src = prefix + override;
     } else {
       img.src = DEFAULT_LOGO;
