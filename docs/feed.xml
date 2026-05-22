@@ -6,7 +6,100 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2026 23:37:52 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 14:09:35 +0000</lastBuildDate>
+    <item>
+      <title>2026-05-22 :: AI DAILY DIGEST</title>
+      <link>https://aigregator.news/digests/2026-05-22.html</link>
+      <guid isPermaLink="true">https://aigregator.news/digests/2026-05-22.html</guid>
+      <pubDate>Fri, 22 May 2026 00:00:00 +0000</pubDate>
+      <description>2026-05-22 :: AI DAILY DIGEST</description>
+      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 9 min read · 1,725 words · 📡 13 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-22&amp;url=https%3A//aigregator.news/digests/2026-05-22.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-22%20https%3A//aigregator.news/digests/2026-05-22.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-22.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-22.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 4 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-22-ai-daily-digest">2026-05-22 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-22-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Trump shelves the AI executive order, Anthropic locks up $15B/year of Musk's compute, and EU–Anthropic talks stall.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 18 stories · 16 sources · 🟡 +0.1 sentiment · 🔥 6 cross-source · <strong>TOP MENTION:</strong> Anthropic ×7<br />
+<strong>🏷️ THEMES:</strong> policy×6, funding×5, agents×4, enterprise×4, multimodal×3<br />
+<strong>📈 MARKET PULSE:</strong> "Trump orders federal review of AI model releases by May 31" 8.5% (▼73.5pp) · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▆▅▅▅▅▅▅ (oldest → today)</p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">7 🔥 🛡️ 🟡 <strong>Trump postpones the AI security executive order, citing competition with China.</strong> White House pulled a draft order that would have tightened model-release review after internal pushback that it would "get in the way" of US labs. (<a href="https://www.reuters.com/world/us/trump-postpones-ai-executive-order-cites-need-compete-with-china-2026-05-21/">Reuters</a>, <a href="https://www.ft.com/content/14213cb0-8d11-4118-bac0-12a403696185">FT</a>, <a href="https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/">TechCrunch</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">7 🔥 🟢 <strong>Anthropic to pay ~$15B/year for SpaceX/Colossus compute capacity.</strong> Multi-year deal positions Anthropic ahead of an IPO and ties it to Musk's data-center buildout — strange bedfellows given the Altman/Musk fight. (<a href="https://www.theverge.com/science/935229/spacex-anthropic-ipo-ai-capacity-deal-colossus">The Verge</a>, <a href="https://www.reuters.com/technology/anthropic-talks-use-microsofts-ai-chips-information-reports-2026-05-21/">Reuters</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">6 🛡️ 🔴 <strong>EU–Anthropic talks over Mythos concerns stall, Spain says.</strong> European regulators and Anthropic are deadlocked over the Mythos model's deployment terms; Spain confirmed no movement in the latest round. (<a href="https://www.bloomberg.com/news/articles/2026-05-22/eu-anthropic-talks-over-mythos-concerns-are-stalled-spain-says">Bloomberg</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">6 🔥 🟢 <strong>Spotify + Universal Music strike fan-made AI cover/remix deal.</strong> First major-label framework allowing licensed AI covers, plus an "AI Studio" daily-podcast agent. Sets a template the rest of the labels will have to answer. (<a href="https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/">TechCrunch</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/935379/spotify-umg-ai-covers-remix">The Verge</a>, <a href="https://www.ft.com/content/016f7ee9-b71d-439d-9f48-2a66de0dd623">FT</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>2 stories · 2 sources · 🟢 +0.3 sentiment</em></p>
+<ul>
+<li>5 🟢 🏷️ multimodal, enterprise <strong>Anthropic's Code with Claude event sketches the next coding workflow.</strong> MIT Tech Review's read: agentic IDE behavior, longer-horizon tasks, and a clear signal that "vibe coding" is becoming an industry posture, not a meme. Sources: <a href="https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/">MIT Tech Review</a></li>
+<li>4 🌱 🟢 🏷️ opensource, code <strong>Simon Willison ships <code>llm-gemini 0.32</code> and <code>Datasette Agent</code>.</strong> Plugin updates plus a new agent harness that lets Datasette query itself via tool calls. Sources: <a href="https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything">Simon Willison</a>, <a href="https://simonwillison.net/2026/May/19/llm-gemini-2/#atom-everything">Simon Willison</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>2 stories · 2 sources · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>4 🟡 🏷️ science, multimodal <strong>Google I/O reframes "AI-driven science" — less moonshot, more workflow.</strong> MIT TR argues the path to AI in science is narrower than promised: better lit-review and hypothesis tooling, not autonomous discovery. Sources: <a href="https://www.technologyreview.com/2026/05/22/1137813/google-i-o-showed-how-the-path-for-ai-science-is-shifting/">MIT Tech Review</a></li>
+<li>4 🟡 🏷️ alignment, safety <strong>Zvi: AI #169 — "New Knowledge".</strong> Roundup covers model behavior shifts, safety-bill politics, and a long take on the Trump EO postponement. Sources: <a href="https://thezvi.wordpress.com/2026/05/21/ai-169-new-knowledge/">Zvi Mowshowitz</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>3 stories · 5 sources · 🔴 -0.2 sentiment</em></p>
+<ul>
+<li>7 🔥 🛡️ 🟡 ▤×3 🏷️ policy, safety <strong>Trump postpones AI executive order.</strong> Industry got the delay it asked for; safety advocates lost a draft that would have required pre-release federal review. China-competition framing replaces the prior "secure by default" language. Sources: <a href="https://www.reuters.com/world/us/trump-postpones-ai-executive-order-cites-need-compete-with-china-2026-05-21/">Reuters</a>, <a href="https://www.ft.com/content/14213cb0-8d11-4118-bac0-12a403696185">FT</a>, <a href="https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/">TechCrunch</a></li>
+<li>6 🛡️ 🔴 🏷️ policy, safety <strong>EU–Anthropic Mythos talks stalled, Spain says.</strong> Regulatory friction over a frontier model's deployment terms; Spain publicly confirmed the impasse. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-22/eu-anthropic-talks-over-mythos-concerns-are-stalled-spain-says">Bloomberg</a></li>
+<li>4 🛡️ 🔴 🏷️ policy, enterprise <strong>StanChart CEO walks back AI remarks after regulator queries.</strong> Bank's CEO apologized for "upset caused" by comments framing AI as a near-term headcount tool; UK regulators followed up. Sources: <a href="https://www.reuters.com/business/finance/stanchart-ceo-apologises-upset-caused-by-ai-comments-2026-05-21/">Reuters</a>, <a href="https://www.bloomberg.com/news/videos/2026-05-22/stanchart-fields-regulator-queries-after-ceo-s-ai-remark-video">Bloomberg</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>3 stories · 3 sources · 🟢 +0.3 sentiment</em></p>
+<ul>
+<li>4 🎨 🟢 🏷️ multimodal, art <strong>Polyend's "Endless" AI guitar pedal lets you roll your own effects.</strong> A standalone hardware pedal that synthesizes new effects on-device from text prompts. Niche, but the most genuinely indie hardware-AI thing this week. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/935219/polyend-endless-ai-guitar-effects-pedal">The Verge</a></li>
+<li>4 🎨 🟡 🏷️ multimodal, video <strong>AI video moves beyond "clip slop".</strong> Verge column on Luma/Hollywood pipelines — short-form AI video is starting to look like staged production, not random montage. Sources: <a href="https://www.theverge.com/column/935310/ai-video-luma-hollywood">The Verge</a></li>
+<li>3 🎨 🟢 🏷️ multimodal <strong>I cloned myself with Gemini's AI avatar tool.</strong> Wired test of Gemini's avatar feature — unnervingly accurate likeness, weird in the way you'd expect. Sources: <a href="https://www.wired.com/story/i-cloned-myself-with-geminis-ai-avatar-tool-the-result-was-unnervingly-me/">Wired</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>5 stories · 6 sources · 🟢 +0.4 sentiment</em></p>
+<ul>
+<li>7 🔥 🟢 ▤×2 🏷️ funding, hardware <strong>Anthropic locks in ~$15B/year SpaceX Colossus compute.</strong> Multi-year capacity guarantee ahead of an IPO; complements separate reporting on Anthropic talks to use Microsoft's custom AI chips. Sources: <a href="https://www.theverge.com/science/935229/spacex-anthropic-ipo-ai-capacity-deal-colossus">The Verge</a>, <a href="https://www.reuters.com/technology/anthropic-talks-use-microsofts-ai-chips-information-reports-2026-05-21/">Reuters</a></li>
+<li>5 🟢 🏷️ funding, code <strong>Modal Labs valued at $4.65B as AI-coding infra heats up.</strong> Exclusive Reuters: serverless GPU runtime now a unicorn-plus, riding the agentic-coding wave. Sources: <a href="https://www.reuters.com/technology/modal-labs-valued-465-billion-ai-coding-takes-off-2026-05-21/">Reuters</a></li>
+<li>4 🟢 🏷️ funding, agents <strong>Hark raises $700M Series A for a "universal AI interface".</strong> Secretive Series A; the price implies an agentic-UI thesis with marquee backers. Sources: <a href="https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/">TechCrunch</a></li>
+<li>5 🟢 🏷️ enterprise, agents <strong>JPMorgan rolls out AI tools across investment banking globally.</strong> Senior banker confirms firmwide deployment in pitch-prep and modeling workflows. Sources: <a href="https://www.reuters.com/business/finance/jpmorgan-rolls-out-ai-tools-investment-banking-globally-senior-banker-says-2026-05-22/">Reuters</a></li>
+<li>5 🟢 🏷️ hardware, robotics <strong>Kawasaki Heavy + Nvidia plan Silicon Valley robotics center.</strong> Joint robotics lab tied to Nvidia's industrial-AI stack; KHI shares rallied on the news. Sources: <a href="https://www.reuters.com/business/autos-transportation/kawasaki-heavy-nvidia-plan-silicon-valley-robotics-center-nikkei-2026-05-22/">Reuters</a>, <a href="https://www.bloomberg.com/news/articles/2026-05-22/kawasaki-heavy-shares-rally-on-ai-tie-up-plan-with-nvidia">Bloomberg</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 stories · 2 sources · 🟢 +0.3 sentiment</em></p>
+<ul>
+<li>5 🟢 🏷️ enterprise, apps <strong>OpenAI x AdventHealth — whole-person care deployment.</strong> Major US health system standardizes on OpenAI for clinical-summary and patient-comms workflows. Sources: <a href="https://openai.com/index/adventhealth">OpenAI</a></li>
+<li>4 🟢 🏷️ multimodal, voice <strong>Spotify ships AI Q&amp;A and briefing generation for podcasts.</strong> Per-episode Q&amp;A and auto-briefings, plus an AI Studio agent that builds a personalized daily podcast. Sources: <a href="https://techcrunch.com/2026/05/21/spotify-adds-ai-powered-qa-and-briefing-generation-features-to-podcasts/">TechCrunch</a>, <a href="https://www.theverge.com/entertainment/935390/spotify-studio-ai-app-personal-podcasts">The Verge</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>2 stories · 2 sources · 🟢 +0.4 sentiment</em></p>
+<ul>
+<li>5 🌱 🟢 🏷️ opensource, science <strong>DeepMind launches Asia-Pacific Accelerator for environmental-risk projects.</strong> Free compute + DeepMind mentorship for APAC teams working on climate, biodiversity, and disaster-resilience models. Sources: <a href="https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/">DeepMind</a></li>
+<li>4 🌱 🟢 🏷️ opensource, agents <strong>Datasette Agent + llm-gemini 0.32 [via Kagi].</strong> Simon Willison's Datasette gets a self-querying agent; llm-gemini plugin updated for Gemini 2.x. Tight, working open-source release. Sources: <a href="https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything">Simon Willison</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 AI markets tracked · biggest mover dominates</em></p>
+<ul>
+<li><strong>"Trump orders federal review of AI model releases by May 31?"</strong> Yes 8.5% (▼73.5pp) · $135K vol · <a href="https://polymarket.com/event/trump-orders-federal-review-for-ai-model-releases-by-may-31">Polymarket</a> — collapsed on today's EO postponement.</li>
+<li><strong>"Will OpenAI's market cap be $1.25T–$1.5T at IPO close?"</strong> Yes 11.6% (▼7.1pp) · $502K vol · <a href="https://polymarket.com/event/openai-ipo-closing-market-cap">Polymarket</a></li>
+<li><strong>"Will Google Gemini score ≥55% on Humanity's Last Exam?"</strong> Yes 33.5% (▲6.5pp) · $63K vol · <a href="https://polymarket.com/event/google-gemini-score-on-humanitys-last-exam-by-june-30">Polymarket</a></li>
+<li><strong>"OpenAI $1T+ IPO before 2027?"</strong> Yes 67.5% (▼4.5pp) · $273K vol · <a href="https://polymarket.com/event/openai-1t-ipo-before-2027">Polymarket</a></li>
+<li><strong>"US enacts AI safety bill before 2027?"</strong> Yes 49.5% (▲4.0pp) · $99K vol · <a href="https://polymarket.com/event/us-enacts-ai-safety-bill-before-2027">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<p><strong>Bluesky</strong></p>
+<ul>
+<li><a href="https://bsky.app/profile/chrisdeleon.bsky.social/post/3mmfjgouaak2r">@chrisdeleon.bsky.social on Bluesky</a> (472♥, 136🔁) — "congratulations to every indie game developer I know who has a more profitable business than OpenAI" — the joke that captures the week's mood about AI economics.</li>
+<li><a href="https://bsky.app/profile/astrra.space/post/3mmfyfnh5wk2w">@astrra.space on Bluesky</a> (62♥, 4🔁) — riff on framing an LLM as "a translation model that translates from question to answer" — useful intuition pump for the architecture debate.</li>
+</ul></article>]]></content:encoded>
+    </item>
     <item>
       <title>2026-05-21 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-05-21.html</link>
