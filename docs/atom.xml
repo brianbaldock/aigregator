@@ -4,8 +4,104 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-05-22T14:09:35Z</updated>
+  <updated>2026-05-23T14:11:42Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
+  <entry>
+    <title>2026-05-23 :: AI DAILY DIGEST</title>
+    <link href="https://aigregator.news/digests/2026-05-23.html"/>
+    <id>https://aigregator.news/digests/2026-05-23.html</id>
+    <updated>2026-05-23T00:00:00Z</updated>
+    <summary>2026-05-23 :: AI DAILY DIGEST</summary>
+    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 8 min read · 1,685 words · 📡 14 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-23&amp;url=https%3A//aigregator.news/digests/2026-05-23.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-23%20https%3A//aigregator.news/digests/2026-05-23.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-23.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-23.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 3 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-23-ai-daily-digest">2026-05-23 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-23-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Anthropic closes in on a $900B round, DeepSeek locks in its price cut, and Google Search trips over the word "disregard."</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 17 stories · 13 sources · 🟡 +0.1 sentiment · 🔥 4 cross-source · <strong>TOP MENTION:</strong> Anthropic ×6<br />
+<strong>🏷️ THEMES:</strong> funding×6, models×5, policy×4, opensource×3, agents×3<br />
+<strong>📈 MARKET PULSE:</strong> "Google #1 AI model end of May" 0.75% (▼4.95pp) · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▅▅▅▅▅▅▅▅ (oldest → today)</p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1"><strong>7</strong> 🔥 🟢 <strong>Anthropic set to close &gt;$30B round at &gt;$900B valuation as soon as next week.</strong> Bloomberg reports the round may price Anthropic above a trillion-dollar OpenAI in valuation-per-dollar-revenue. (<a href="https://www.bloomberg.com/news/articles/2026-05-22/anthropic-to-close-over-30-billion-round-as-soon-as-next-week">Bloomberg</a>, <a href="https://www.ft.com/content/ae9bb47d-bd1d-473c-b4c5-abae0420cc12">FT</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2"><strong>6</strong> 🔥 🟡 <strong>DeepSeek makes 75% V4-Pro discount permanent.</strong> Chinese frontier lab signals a sustained price war on flagship inference; rivals are now competing against a permanent floor, not a promo. (<a href="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model">Bloomberg</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3"><strong>6</strong> 🔥 🔴 <strong>Google's AI Overviews choke on the word "disregard."</strong> Search returns garbled or empty results for the term, exposing how brittle the LLM-rewritten SERP layer has become. (<a href="https://www.theverge.com/tech/936176/google-ai-overviews-search-disregard">The Verge</a>, <a href="https://techcrunch.com/2026/05/22/you-can-no-longer-google-the-word-disregard/">TechCrunch</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4"><strong>5</strong> 🛡️ 🔴 <strong>A hacker group is poisoning open-source code at unprecedented scale.</strong> Ars details "TeamPCP," running a multi-year software-supply-chain campaign hitting GitHub and beyond — a foundational risk to every agent/LLM dev pipeline. (<a href="https://arstechnica.com/information-technology/2026/05/a-hacker-group-is-poisoning-open-source-code-at-an-unprecedented-scale/">Ars Technica</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5"><strong>5</strong> 🌱 🟢 <strong>Cohere releases its most powerful model as open source.</strong> Canadian frontier lab keeps doubling down on weights-out releases as commercial differentiator. (<a href="https://betakit.com/cohere-releases-its-most-powerful-ai-model-as-open-source/">BetaKit</a> [via Kagi]) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>3 stories · 🟡 +0.3 sentiment</em></p>
+<ul>
+<li><strong>5</strong> 🟢 ▤×1 🏷️ models, inference, opensource <strong>Nemotron-Labs Diffusion Language Models target "speed-of-light" text generation.</strong> NVIDIA's research blog details a diffusion-based LM architecture aimed at extreme throughput, positioning Nemotron as Nvidia's answer to inference-bound autoregressive incumbents. Sources: <a href="https://huggingface.co/blog/nvidia/nemotron-labs-diffusion">Hugging Face / NVIDIA</a></li>
+<li><strong>5</strong> 🌱 🟢 ▤×1 🏷️ opensource, models <strong>Cohere releases its most powerful AI model as open source [via Kagi].</strong> Continues the trend of mid-tier frontier labs differentiating via open weights rather than chasing closed-model parity. Sources: <a href="https://betakit.com/cohere-releases-its-most-powerful-ai-model-as-open-source/">BetaKit</a></li>
+<li><strong>4</strong> 🟡 ▤×1 🏷️ models, evals <strong>Gemini 3.5 Flash looks good for how fast it is.</strong> Zvi's review: best-in-class at its speed tier, but not a generational jump. Sources: <a href="https://thezvi.wordpress.com/2026/05/22/gemini-3-5-flash-looks-good-for-how-fast-it-is/">Don't Worry About the Vase</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li><strong>3</strong> 🟡 ▤×1 🏷️ training, evals <strong>Vector Policy Optimization: Training for Diversity Improves Test-Time Search.</strong> New arXiv paper argues that diversity-aware policy training meaningfully improves AlphaProof-style inference-scaling search. Sources: <a href="https://arxiv.org/abs/2605.22817">arXiv 2605.22817</a></li>
+<li><strong>3</strong> 🟡 ▤×1 🏷️ training, multimodal <strong>Tokenisation via Convex Relaxations.</strong> Reframes BPE/Unigram as locally-greedy and proposes a convex-relaxation alternative. Sources: <a href="https://arxiv.org/abs/2605.22821">arXiv 2605.22821</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>4 stories · 🔴 -0.4 sentiment</em></p>
+<ul>
+<li><strong>5</strong> 🛡️ 🔴 ▤×1 🏷️ safety, opensource <strong>A hacker group is poisoning open source code at an unprecedented scale.</strong> "TeamPCP" supply-chain campaign hits GitHub; AI-assisted dev pipelines pulling unaudited deps are particularly exposed. Sources: <a href="https://arstechnica.com/information-technology/2026/05/a-hacker-group-is-poisoning-open-source-code-at-an-unprecedented-scale/">Ars Technica</a></li>
+<li><strong>4</strong> 🛡️ 🔴 ▤×1 🏷️ policy, enterprise <strong>Texas AG sues Meta over claims WhatsApp doesn't actually provide E2EE.</strong> Critics note the filing is thin on evidence, but the precedent — a US state AG attacking encrypted-by-default messaging — is what to watch. Sources: <a href="https://arstechnica.com/security/2026/05/texas-ag-sues-meta-over-claims-that-whatsapp-doesnt-provide-end-to-end-encryption/">Ars Technica</a></li>
+<li><strong>4</strong> 🛡️ 🔴 ▤×1 🏷️ policy, bias <strong>Inside Trump's AI 'slopaganda' machine.</strong> FT investigation into AI-generated political content pipelines being weaponized in 2026 election prep. Sources: <a href="https://www.ft.com/content/ae9bb47d-bd1d-473c-b4c5-abae0420cc12">Financial Times</a></li>
+<li><strong>3</strong> 🛡️ 🟡 ▤×1 🏷️ policy, hardware <strong>Nvidia CEO urges Super Micro to tighten up on compliance amid Taiwan crackdown.</strong> Three SMCI-linked individuals detained over alleged sanctions evasion; Huang's public nudge is itself the story. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-23/nvidia-ceo-urges-super-micro-to-tighten-up-amid-taiwan-crackdown">Bloomberg</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>3 stories · 🟢 +0.7 sentiment</em></p>
+<ul>
+<li><strong>4</strong> 🎨 🟢 ▤×1 🏷️ apps, multimodal <strong>We tried Google's AI glasses and they're almost there.</strong> TechCrunch hands-on with Android XR prototype — Gemini overlays for translation, navigation, ambient context. Sources: <a href="https://techcrunch.com/2026/05/22/we-tried-googles-ai-glasses-and-theyre-almost-there/">TechCrunch</a></li>
+<li><strong>3</strong> 🎨 🟢 ▤×1 🏷️ apps, agents <strong>Most "AI agents" don't need AI in the loop [via Kagi].</strong> Sharp essay arguing that ~80% of production "agent" deployments are deterministic workflows wearing an LLM hat. Sources: <a href="https://avelino.run/most-ai-agents-dont-need-ai-in-the-loop/">avelino.run</a></li>
+<li><strong>3</strong> 🎨 🟡 ▤×1 🏷️ art, video <strong>AI film 'Critterz' looks for a new tech partner after OpenAI shut Sora access.</strong> The flagship Sora-era animated feature misses Cannes; OpenAI's Sora deprecation reshapes indie AI filmmaking economics. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-22/ai-cartoon-critterz-misses-cannes-debut-after-openai-shut-sora">Bloomberg</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>5 stories · 🟢 +0.4 sentiment</em></p>
+<ul>
+<li><strong>7</strong> 🔥 🟢 ▤×2 🏷️ funding, enterprise <strong>Anthropic closing &gt;$30B round at &gt;$900B valuation.</strong> Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-22/anthropic-to-close-over-30-billion-round-as-soon-as-next-week">Bloomberg</a>, <a href="https://www.ft.com/content/ae9bb47d-bd1d-473c-b4c5-abae0420cc12">FT</a></li>
+<li><strong>5</strong> 🟢 ▤×1 🏷️ funding, enterprise <strong>Zoom's Anthropic investment has netted ~$1B.</strong> Quiet 2023 strategic check turns into a meaningful balance-sheet event as Anthropic's valuation steps up. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-22/zoom-s-anthropic-investment-has-netted-the-company-1-billion">Bloomberg</a></li>
+<li><strong>5</strong> 🟢 ▤×1 🏷️ enterprise, funding <strong>SpaceX, OpenAI and Anthropic IPOs set to test limits of the AI boom.</strong> Musk, Altman and Amodei now openly competing for the same late-stage capital pool. Sources: <a href="https://www.ft.com/content/ae9bb47d-bd1d-473c-b4c5-abae0420cc12">Financial Times</a></li>
+<li><strong>5</strong> 🟢 ▤×1 🏷️ enterprise, hardware <strong>Lenovo soars on strong AI-related earnings.</strong> AI-server demand offsets component-pricing headwinds; CFO talks growth on Bloomberg TV. Sources: <a href="https://www.bloomberg.com/news/videos/2026-05-22/lenovo-cfo-weighs-in-on-strong-ai-growth-video">Bloomberg</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟡 -0.5 sentiment</em></p>
+<ul>
+<li><strong>6</strong> 🔥 🔴 ▤×2 🏷️ models, evals <strong>Google's AI search is so broken it can "disregard" what you're looking for.</strong> A single token name routes the AI Overview layer into nonsense — pointed reminder that search is no longer deterministic. Sources: <a href="https://www.theverge.com/tech/936176/google-ai-overviews-search-disregard">The Verge</a>, <a href="https://techcrunch.com/2026/05/22/you-can-no-longer-google-the-word-disregard/">TechCrunch</a></li>
+<li><strong>4</strong> 🟡 ▤×1 🏷️ enterprise, hardware <strong>The Gulf's AI boom has an undersea cable problem.</strong> Hyperscalers pushing GCC governments to harden subsea routes as AI workloads concentrate east-of-Suez capacity. Sources: <a href="https://www.wired.com/story/the-gulfs-ai-boom-has-an-undersea-cable-problem/">Wired</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>3 stories · 🟢 +0.3 sentiment</em></p>
+<ul>
+<li><strong>5</strong> 🌱 🟢 ▤×1 🏷️ opensource, inference <strong>DeepSeek makes 75% V4-Pro price cut permanent.</strong> Open-weights lab using sustained inference pricing as a structural wedge against US closed-model incumbents. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model">Bloomberg</a></li>
+<li><strong>4</strong> 🌱 🟡 ▤×1 🏷️ opensource, agents <strong>Specialization Beats Scale: a strategic variable most AI procurement decisions overlook.</strong> Argues enterprise buyers are over-paying for general models when targeted small models would deliver better unit economics. Sources: <a href="https://huggingface.co/blog/Dharma-AI/specialization-beats-scale">Hugging Face</a></li>
+<li><strong>4</strong> 🌱 🟡 ▤×1 🏷️ policy, opensource <strong>Stratechery: The Data Center Veto.</strong> Ben Thompson on local-government pushback against AI data centers becoming the load-bearing political constraint on US compute buildout. Sources: <a href="https://stratechery.com/2026/the-data-center-veto/">Stratechery</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets tracked · skewing bearish on Google/Gemini timing</em></p>
+<ul>
+<li><strong>"Will Google have the best AI model at the end of May 2026?"</strong> Yes 75.0% (▼4.95pp) · $917K vol · <a href="https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"Will a new Gemini flagship be released by May 22, 2026?"</strong> Yes 95.0% (▼5.40pp) · $116K vol · <a href="https://polymarket.com/event/new-gemini-reasoning-flagship-released-by">Polymarket</a></li>
+<li><strong>"Will a new Gemini flagship be released by May 31, 2026?"</strong> Yes 87.5% (▼8.75pp) · $82K vol · <a href="https://polymarket.com/event/new-gemini-reasoning-flagship-released-by">Polymarket</a></li>
+<li><strong>"Gemini 4.0 released by June 30, 2026?"</strong> Yes 87.5% (▼7.75pp) · $69K vol · <a href="https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026">Polymarket</a></li>
+<li><strong>"Will Google have the #1 AI model end of May (Style Control On)?"</strong> Yes 65.0% (▼4.20pp) · $89K vol · <a href="https://polymarket.com/event/which-company-has-the-1-ai-model-end-of-may-style-control-on">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<p><strong>Bluesky</strong></p>
+<ul>
+<li><a href="https://bsky.app/profile/tressiemcphd.bsky.social/post/3mm7cx7dp7k2b">@tressiemcphd on Bluesky</a> — "1100 words is only very long if you're an amoeba. Asking an LLM a question is not a skill. One dead teen is actually too many unless you are a sociopath." (2,562♥/347↻) — sharp pushback on the "AI-literacy" framing dominating ed-tech discourse this week.</li>
+<li><a href="https://bsky.app/profile/artcandee.bsky.social/post/3mm7n4aqx2s25">@artcandee on Bluesky</a> — "I'm still smiling that Elon Musk lost his case against OpenAI." (569♥/70↻) — the schadenfreude beat on this week's Musk v. OpenAI ruling.</li>
+</ul></article>]]></content>
+  </entry>
   <entry>
     <title>2026-05-22 :: AI DAILY DIGEST</title>
     <link href="https://aigregator.news/digests/2026-05-22.html"/>
