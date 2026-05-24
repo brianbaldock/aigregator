@@ -17,18 +17,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # News links rot. Once a digest is published it's archival — we don't
+      # rewrite history, so 404s on old digests aren't actionable. The sweep
+      # only checks the last 3 days of digests, which catches build-time
+      # issues and links that died almost immediately. Anything older is
+      # treated as archival drift. The site-wide docs/ pages (index, archive,
+      # BBS, scene, 404) are always checked since those are navigation and
+      # should never break.
+      - name: Collect recent digest files
+        id: files
+        run: |
+          set -euo pipefail
+          cutoff=$(date -u -d '3 days ago' +%Y-%m-%d)
+          {
+            echo 'docs/index.html'
+            echo 'docs/404.html'
+            echo 'docs/archive.html'
+            find docs/bbs docs/scene -type f -name '*.html' 2>/dev/null || true
+            find digests -type f -name '*.md' | awk -v c="$cutoff" -F'/' '{
+              name=$NF; sub(/\.md$/, "", name);
+              if (name >= c) print $0;
+            }'
+            find docs/digests -type f -name '*.html' | awk -v c="$cutoff" -F'/' '{
+              name=$NF; sub(/\.html$/, "", name);
+              if (name >= c) print $0;
+            }'
+          } | sort -u > .lychee-inputs.txt
+          echo "Checking $(wc -l < .lychee-inputs.txt) files (digests since $cutoff):"
+          cat .lychee-inputs.txt
+
       - name: Lychee link checker
         uses: lycheeverse/lychee-action@v2
         with:
+          # --base lets lychee resolve root-relative hrefs (/, /archive.html)
+          # the same way the browser does on aigregator.news.
           # Config (accept-list, excludes, user-agent) lives in lychee.toml at
           # the repo root so local `lychee` runs see the same rules as CI.
           args: >-
             --config lychee.toml
-            './docs/**/*.html'
-            './digests/**/*.md'
+            --base ./docs
+            $(cat .lychee-inputs.txt)
           fail: true
           format: markdown
           output: ./lychee-report.md
+
       - name: Upload report
         if: always()
         uses: actions/upload-artifact@v4
