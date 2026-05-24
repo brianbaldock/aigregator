@@ -6,7 +6,92 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 May 2026 14:11:42 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2026 14:19:51 +0000</lastBuildDate>
+    <item>
+      <title>2026-05-24 :: AI DAILY DIGEST</title>
+      <link>https://aigregator.news/digests/2026-05-24.html</link>
+      <guid isPermaLink="true">https://aigregator.news/digests/2026-05-24.html</guid>
+      <pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate>
+      <description>2026-05-24 :: AI DAILY DIGEST</description>
+      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 6 min read · 1,214 words · 📡 6 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-24&amp;url=https%3A//aigregator.news/digests/2026-05-24.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-24%20https%3A//aigregator.news/digests/2026-05-24.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-24.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-24.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 1 new</span> · <span class="diff-carry">↻ 2 carryover from yesterday</span></div><h1 id="2026-05-24-ai-daily-digest">2026-05-24 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-24-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>DeepSeek locks in its 75% V4-Pro discount, Google's anything-to-anything Gemini ships hands-on, and Anthropic quietly takes the lead on Polymarket's June "best model" race.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 14 stories · 9 sources · 🟢 +0.2 sentiment · 🔥 1 cross-source · <strong>TOP MENTION:</strong> OpenAI ×4<br />
+<strong>🏷️ THEMES:</strong> models×5, hardware×3, safety×3, opensource×3, multimodal×2<br />
+<strong>📈 MARKET PULSE:</strong> "Anthropic best AI model end of June" 77.0% (▲5.6pp) · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▅▅▅▅▅▅▅▅ (oldest → today)</p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1"><strong>6</strong> 🟢 <strong>DeepSeek makes 75% V4-Pro discount permanent.</strong> Chinese frontier lab signals a sustained price war on flagship inference; rivals now compete against a permanent floor, not a promo. (<a href="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model">Bloomberg</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2"><strong>5</strong> 🎨 🟢 <strong>Google's new anything-to-anything Gemini Omni is wild.</strong> Verge hands-on: text/image/audio/video in and out, near-real-time editing — the multimodal stack is consolidating fast. (<a href="https://www.theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video">The Verge</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3"><strong>5</strong> 🛡️ 🔴 <strong>Hackers are learning to exploit chatbot "personalities."</strong> Persona system prompts widen the jailbreak surface; same system, different mask, different leakage. (<a href="https://www.theverge.com/column/935545/hackers-ai-chatbots">The Verge</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4"><strong>5</strong> 🟡 <strong>Nvidia CEO urges Super Micro to tighten up on compliance.</strong> After Taiwan detains three SMCI-linked individuals over alleged false declarations, Huang's public nudge is itself the story for hyperscaler supply chains. (<a href="https://www.bloomberg.com/news/articles/2026-05-23/nvidia-ceo-urges-super-micro-to-tighten-up-amid-taiwan-crackdown">Bloomberg</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5"><strong>4</strong> 🟡 <strong>MOSS: self-evolving agents via source-level rewriting.</strong> New arXiv paper — agents that edit their own code, not just their prompts or memory. (<a href="https://arxiv.org/abs/2605.22794">arXiv 2605.22794</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟢 +0.5 sentiment</em></p>
+<ul>
+<li><strong>5</strong> 🎨 🟢 ▤×1 🏷️ multimodal, video, models <strong>Google's new anything-to-anything Gemini model is wild.</strong> Verge hands-on with Gemini Omni — text, image, audio, video in and out, plus near-real-time editing. Closes the gap to a true unified multimodal frontier. Sources: <a href="https://www.theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video">The Verge</a></li>
+<li><strong>6</strong> 🌱 🟢 ▤×1 🏷️ opensource, inference, models <strong>DeepSeek makes 75% V4-Pro price cut permanent.</strong> Open-weights lab using sustained inference pricing as a structural wedge against US closed-model incumbents. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model">Bloomberg</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>4 stories · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li><strong>4</strong> 🟡 ▤×1 🏷️ agents, training <strong>MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems.</strong> Agents extend themselves by editing their own source, not just prompts/memory — moves the static-after-deployment ceiling further out. Sources: <a href="https://arxiv.org/abs/2605.22794">arXiv 2605.22794</a></li>
+<li><strong>4</strong> 🟡 ▤×1 🏷️ inference, training <strong>Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention.</strong> Refines the gating of a linear-attention recurrence so writes don't scramble existing memory — claimed perplexity parity with Transformers at sub-quadratic cost. Sources: <a href="https://arxiv.org/abs/2605.22791">arXiv 2605.22791</a></li>
+<li><strong>3</strong> 🟡 ▤×1 🏷️ alignment, evals <strong>Reducing Political Manipulation with Consistency Training.</strong> Trains LLMs to give the same factual answer regardless of partisan framing in the prompt — a sharper objective than preference-soup RLHF. Sources: <a href="https://arxiv.org/abs/2605.22771">arXiv 2605.22771</a></li>
+<li><strong>3</strong> 🟡 ▤×1 🏷️ evals, multimodal <strong>Evaluating Commercial AI Chatbots as News Intermediaries.</strong> Systematic study of how proprietary chatbot search/retrieval handles emerging facts across languages and regions — first audit of this surface at scale. Sources: <a href="https://arxiv.org/abs/2605.22785">arXiv 2605.22785</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>2 stories · 🔴 -0.5 sentiment</em></p>
+<ul>
+<li><strong>5</strong> 🛡️ 🔴 ▤×1 🏷️ safety, agents <strong>Hackers are learning to exploit chatbot personalities.</strong> Persona-tuned LLMs widen the jailbreak surface; "helpful assistant" and "edgy roleplay character" leak differently from the same base model. Sources: <a href="https://www.theverge.com/column/935545/hackers-ai-chatbots">The Verge</a></li>
+<li><strong>3</strong> 🛡️ 🟡 ▤×1 🏷️ alignment, policy <strong>Vector Policy Optimization: Training for Diversity Improves Test-Time Search.</strong> Argues diversity-aware policy training meaningfully improves AlphaEvolve-style inference-scaling search — implications for how reward design affects red-teaming coverage. Sources: <a href="https://arxiv.org/abs/2605.22817">arXiv 2605.22817</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>1 story · 🟢 +1.0 sentiment</em></p>
+<ul>
+<li><strong>4</strong> 🎨 🟢 ▤×1 🏷️ multimodal, video, apps <strong>Google Gemini Omni hands-on.</strong> Beyond the headline, what's interesting is the integrated editor surface — voice-driven storyboard, image-to-video in seconds, lip sync good enough to ship. Sources: <a href="https://www.theverge.com/tech/936507/gemini-omni-hands-on-deepfake-ai-video">The Verge</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li><strong>5</strong> 🟡 ▤×1 🏷️ hardware, policy, enterprise <strong>Nvidia CEO urges Super Micro to tighten up on compliance.</strong> Three SMCI-linked individuals detained in Taiwan for alleged fraudulent declarations on AI-chip shipments; Huang's public nudge is the AI-supply-chain story of the day. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-23/nvidia-ceo-urges-super-micro-to-tighten-up-amid-taiwan-crackdown">Bloomberg</a></li>
+<li><strong>3</strong> 🟡 ▤×1 🏷️ hardware, enterprise <strong>Elon Musk has given up on solar power (on Earth).</strong> TechCrunch on xAI going all-in on gas turbines while SpaceX pursues orbital data centers — the "solar-electric economy" pitch is quietly dead inside Muskworld. Sources: <a href="https://techcrunch.com/2026/05/23/elon-musk-has-given-up-on-solar-power-on-earth/">TechCrunch</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>1 story · 🟢 +1.0 sentiment</em></p>
+<ul>
+<li><strong>6</strong> 🌱 🟢 ▤×1 🏷️ opensource, inference <strong>DeepSeek's permanent 75% discount on V4-Pro reframes open-weights economics.</strong> Sustained sub-quarter pricing turns "open weights" from a research-credit play into a structural pricing wedge. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-23/deepseek-to-make-permanent-75-discount-on-flagship-ai-model">Bloomberg</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets tracked · big swings on lab-vs-lab June ranking</em></p>
+<ul>
+<li><strong>"Will Google Gemini score ≥45% on FrontierMath?"</strong> Yes 49.0% (▲17.0pp) · $50K vol · <a href="https://polymarket.com/event/gemini-3-score-on-frontiermath-benchmark-by-june-30">Polymarket</a></li>
+<li><strong>"Will a Claude Mythos model be released by June 30, 2026?"</strong> Yes 21.0% (▲10.5pp) · $113K vol · <a href="https://polymarket.com/event/claude-mythos-released-by">Polymarket</a></li>
+<li><strong>"OpenAI IPO closing market cap above $1T?"</strong> Yes 83.0% (▲7.0pp) · $1.04M vol · <a href="https://polymarket.com/event/openai-ipo-closing-market-cap-above">Polymarket</a></li>
+<li><strong>"Will Anthropic have the best AI model at the end of June 2026?"</strong> Yes 77.0% (▲5.6pp) · $1.02M vol · <a href="https://polymarket.com/event/which-company-has-best-ai-model-end-of-june">Polymarket</a></li>
+<li><strong>"Will Google have the best AI model at the end of June 2026?"</strong> Yes 19.5% (▼5.0pp) · $670K vol · <a href="https://polymarket.com/event/which-company-has-best-ai-model-end-of-june">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<p><strong>Bluesky</strong></p>
+<ul>
+<li><a href="https://bsky.app/profile/wired.com/post/3mmm2almedn2z">@wired.com on Bluesky</a> — "The nine-member panel took only two hours to return a verdict in favor of OpenAI on Monday, which the judge quickly adopted." (103♥/22↻) — note on how fast the OpenAI jury moved.</li>
+<li><a href="https://bsky.app/profile/sarahgooding.bsky.social/post/3mmkaoelqnc2v">@sarahgooding.bsky.social on Bluesky</a> — "AI is now driving both the production and consumption of open source software. AI-generated music ends in human ears..." (13♥/5↻) — clean framing of the feedback loop closing around OSS.</li>
+</ul></article>]]></content:encoded>
+    </item>
     <item>
       <title>2026-05-23 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-05-23.html</link>
