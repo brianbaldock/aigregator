@@ -6,7 +6,90 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2026 14:19:51 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2026 14:19:58 +0000</lastBuildDate>
+    <item>
+      <title>2026-05-25 :: AI DAILY DIGEST</title>
+      <link>https://aigregator.news/digests/2026-05-25.html</link>
+      <guid isPermaLink="true">https://aigregator.news/digests/2026-05-25.html</guid>
+      <pubDate>Mon, 25 May 2026 00:00:00 +0000</pubDate>
+      <description>2026-05-25 :: AI DAILY DIGEST</description>
+      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 7 min read · 1,329 words · 📡 8 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-25&amp;url=https%3A//aigregator.news/digests/2026-05-25.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-25%20https%3A//aigregator.news/digests/2026-05-25.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-25.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-25.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 1 new</span> · <span class="diff-carry">↻ 3 carryover from yesterday</span></div><h1 id="2026-05-25-ai-daily-digest">2026-05-25 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-25-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Pope Leo XIV drops a 100-page AI encyclical, FT shows Meta and Google guardrails fall in minutes, and the ECB hauls in banks over fresh AI-model failures.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 14 stories · 7 sources · 🟡 +0.0 sentiment · 🔥 2 cross-source · <strong>TOP MENTION:</strong> Pope Leo XIV ×4<br />
+<strong>🏷️ THEMES:</strong> policy×5, safety×5, models×3, enterprise×3, agents×2<br />
+<strong>📈 MARKET PULSE:</strong> "OpenAI federal backstop before July" 11.3% (▲6.1pp) · 8 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▅▅▅▅▅▅▅ (oldest → today)</p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1"><strong>7</strong> 🔥 🛡️ 🟡 <strong>Pope Leo XIV publishes AI encyclical, says AI "needs to be disarmed."</strong> A 100-page document calls for binding global regulation and warns autonomous weapons are slipping past human control. Picked up by every major wire. (<a href="https://www.ft.com/content/12313f08-991d-4079-9631-9ce7ae70c3e3">FT</a>, <a href="https://www.bloomberg.com/news/articles/2026-05-25/pope-leo-warns-ai-should-be-prevented-from-dominating-humanity">Bloomberg</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2"><strong>6</strong> 🛡️ 🔴 <strong>FT: safety guardrails on Meta and Google frontier models stripped in minutes.</strong> Independent researchers walked through both vendors' alignment layers using off-the-shelf jailbreaks; the gap between deployed safety and lab-claimed safety is widening. (<a href="https://www.ft.com/content/5630ed79-a263-41ed-9a1a-321617ae310e">FT</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3"><strong>6</strong> 🔥 🛡️ 🔴 <strong>ECB summons European banks to fix flaws exposed by latest AI models.</strong> Supervisors want fresh stress tests after model-driven risk systems failed under recent market regimes. (<a href="https://www.ft.com/content/482c56aa-6d2b-4456-9d33-b42dc30788bd">FT</a>, <a href="https://www.bloomberg.com/news/articles/2026-05-24/ecb-convenes-banks-to-fix-flaws-exposed-by-ai-models-ft-says">Bloomberg</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4"><strong>5</strong> 🟢 <strong>SoftBank shares hit record on OpenAI IPO hopes.</strong> Masa's bet keeps marking up as the Street prices in an OpenAI listing; Polymarket has $1T+ IPO before 2027 at 65%. (<a href="https://www.bloomberg.com/news/articles/2026-05-25/softbank-shares-hit-record-high-with-lift-from-openai-ipo-hopes">Bloomberg</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5"><strong>4</strong> 🛡️ 🟡 <strong>The AI era is creating a bug-hunting arms race.</strong> Defenders and attackers are both shipping LLM-driven vuln pipelines; the asymmetry favors whoever can spend more on inference. (<a href="https://www.wired.com/story/the-ai-era-is-creating-a-bug-hunting-arms-race/">Wired</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>3 stories · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li><strong>3</strong> 🟡 ▤×1 🏷️ agents, training <strong>SkillOpt: Executive Strategy for Self-Evolving Agent Skills.</strong> Treats agent skill acquisition as a deep-learning-style optimization problem instead of hand-crafting or one-shot generation — closer to a real optimizer over the skill itself. Sources: <a href="https://arxiv.org/abs/2605.23904">arXiv 2605.23904</a></li>
+<li><strong>3</strong> 🟡 ▤×1 🏷️ training, evals <strong>LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws.</strong> Reframes scaling laws via channel capacity to explain non-monotonic effects like catastrophic overtraining and quantization collapse. Sources: <a href="https://arxiv.org/abs/2605.23901">arXiv 2605.23901</a></li>
+<li><strong>3</strong> 🟡 ▤×1 🏷️ training, opensource <strong>Strong Teacher Not Needed? On Distillation in LLM Pretraining.</strong> Empirical pushback on the "stronger teacher → stronger student" assumption for pretraining distillation — implications for open-weights teams without frontier teachers. Sources: <a href="https://arxiv.org/abs/2605.23857">arXiv 2605.23857</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>5 stories · 🔴 -0.2 sentiment</em></p>
+<ul>
+<li><strong>7</strong> 🔥 🛡️ 🟡 ▤×2 🏷️ policy, safety <strong>Pope Leo XIV's "Magnifica Humanitas" calls for binding global AI regulation.</strong> First papal document devoted to AI; explicitly endorses oversight of autonomous weapons, labor protection, and intergovernmental treaties. Sources: <a href="https://www.ft.com/content/12313f08-991d-4079-9631-9ce7ae70c3e3">FT</a>, <a href="https://www.bloomberg.com/news/articles/2026-05-25/pope-leo-warns-ai-should-be-prevented-from-dominating-humanity">Bloomberg</a></li>
+<li><strong>6</strong> 🛡️ 🔴 ▤×1 🏷️ safety, models <strong>AI guardrails stripped from Meta and Google models in minutes.</strong> FT investigation shows that publicly deployed alignment layers on flagship Meta and Google models fall to standard jailbreak corpora — vendors and red-teamers offer conflicting claims about what's actually shipping. Sources: <a href="https://www.ft.com/content/5630ed79-a263-41ed-9a1a-321617ae310e">FT</a></li>
+<li><strong>6</strong> 🔥 🛡️ 🔴 ▤×2 🏷️ policy, enterprise, safety <strong>ECB summons banks to fix flaws exposed by latest AI models.</strong> Supervisors want documented mitigations on AI-driven risk models that misbehaved under recent macro stress; expect this template to spread to other regulators. Sources: <a href="https://www.ft.com/content/482c56aa-6d2b-4456-9d33-b42dc30788bd">FT</a>, <a href="https://www.bloomberg.com/news/articles/2026-05-24/ecb-convenes-banks-to-fix-flaws-exposed-by-ai-models-ft-says">Bloomberg</a></li>
+<li><strong>5</strong> 🛡️ 🟡 ▤×1 🏷️ policy, enterprise <strong>Tech giants need oversight to protect national security.</strong> FT op-ed argues current voluntary commitments from frontier labs don't survive contact with state-level adversaries; calls for statutory model-release review. Sources: <a href="https://www.ft.com/content/b5dfdd31-ccc3-4f49-a166-3aa9f8621f12">FT</a></li>
+<li><strong>5</strong> 🛡️ 🔴 ▤×1 🏷️ safety, agents <strong>Hackers are learning to exploit chatbot "personalities."</strong> Verge column: persona scaffolding (system prompts, character tuning) widens the jailbreak surface — same base model leaks different things behind different masks. Sources: <a href="https://www.theverge.com/column/935545/hackers-ai-chatbots">The Verge</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟢 +1.0 sentiment</em></p>
+<ul>
+<li><strong>4</strong> 🎨 🟢 ▤×1 🏷️ robotics, apps <strong>Robots are making meals for a Tenderloin nonprofit in San Francisco.</strong> Quietly-deployed kitchen robotics at scale for a charity context — small story, but a clean example of AI/robotics in a non-extractive use case. Sources: <a href="https://www.wired.com/story/these-robots-are-making-meals-for-a-nonprofit-in-san-franciscos-tenderloin/">Wired</a></li>
+<li><strong>3</strong> 🎨 🟡 ▤×1 🏷️ apps, multimodal <strong>I tried Amazon's Bee wearable.</strong> TechCrunch hands-on with the always-listening "life-log" wearable — half useful, half deeply uncomfortable. Sources: <a href="https://techcrunch.com/2026/05/24/i-tried-amazons-bee-wearable-and-am-both-intrigued-and-slightly-creeped-out/">TechCrunch</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟢 +0.5 sentiment</em></p>
+<ul>
+<li><strong>5</strong> 🟢 ▤×1 🏷️ funding, enterprise <strong>SoftBank shares hit record on OpenAI IPO hopes.</strong> Mark-to-market on the OpenAI stake keeps lifting SoftBank's NAV; the Street is pricing the listing as a near-certainty within 18 months. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-25/softbank-shares-hit-record-high-with-lift-from-openai-ipo-hopes">Bloomberg</a></li>
+<li><strong>4</strong> 🟡 ▤×1 🏷️ enterprise, hardware <strong>Sakura Internet eyes more spending to meet Japan's AI demand.</strong> Domestic cloud provider expanding GPU capacity as Japanese enterprises move workloads off US hyperscalers — a small data point in the sovereign-cloud trend. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-25/sakura-internet-eyes-more-spending-to-meet-ai-demand">Bloomberg</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>1 story · 🟢 +1.0 sentiment</em></p>
+<ul>
+<li><strong>4</strong> 🌱 🟢 ▤×1 🏷️ opensource, agents, apps <strong>Datasette 1.0a30 + datasette-agent 0.1a4.</strong> Simon Willison ships the latest alpha of the long-running Datasette platform alongside an LLM-driven agent companion that drives SQL exploration from natural language. Sources: <a href="https://simonwillison.net/2026/May/24/datasette/">datasette 1.0a30</a>, <a href="https://simonwillison.net/2026/May/24/datasette-agent/">datasette-agent 0.1a4</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>1 story · 🟢 +1.0 sentiment</em></p>
+<ul>
+<li><strong>4</strong> 🌱 🟢 ▤×1 🏷️ opensource, agents <strong>Datasette-agent goes alpha.</strong> Open-source LLM-over-SQL companion to Datasette gets a working agent loop — useful template for anyone wiring tool-use on top of an existing data stack. Sources: <a href="https://simonwillison.net/2026/May/24/datasette-agent/">datasette-agent 0.1a4</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>8 markets tracked · OpenAI IPO and federal-backstop questions doing the moving</em></p>
+<ul>
+<li><strong>"OpenAI receives federal backstop for infrastructure before July?"</strong> Yes 11.3% (▲6.1pp) · $108K vol · <a href="https://polymarket.com/event/openai-receives-federal-backstop-for-infrastructure-before-july">Polymarket</a></li>
+<li><strong>"Will Elon Musk win his case against Sam Altman?"</strong> Yes 5.6% (▲3.7pp) · $907K vol · <a href="https://polymarket.com/event/will-elon-musk-win-his-case-against-sam-altman">Polymarket</a></li>
+<li><strong>"OpenAI $1T+ IPO before 2027?"</strong> Yes 65.5% (▼2.5pp) · $274K vol · <a href="https://polymarket.com/event/openai-1t-ipo-before-2027">Polymarket</a></li>
+<li><strong>"Will Claude 5 be released by May 31, 2026?"</strong> Yes 1.0% (▼1.9pp) · $518K vol · <a href="https://polymarket.com/event/claude-5-released-by">Polymarket</a></li>
+<li><strong>"Will Google have the best AI model at the end of June 2026?"</strong> Yes 18.5% (▼1.0pp) · $676K vol · <a href="https://polymarket.com/event/which-company-has-best-ai-model-end-of-june">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p></article>]]></content:encoded>
+    </item>
     <item>
       <title>2026-05-24 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-05-24.html</link>
