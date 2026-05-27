@@ -6,7 +6,7 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 May 2026 14:15:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 14:29:18 +0000</lastBuildDate>
     <item>
       <title>2026-05-27 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-05-27.html</link>
@@ -14,7 +14,7 @@
       <pubDate>Wed, 27 May 2026 00:00:00 +0000</pubDate>
       <description>2026-05-27 :: AI DAILY DIGEST</description>
       <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 10 min read · 2,073 words · 📡 16 unique sources</span>
+  <span class="meta-item">📖 12 min read · 2,398 words · 📡 17 unique sources</span>
   <span class="meta-share">
     <span class="meta-label">SHARE:</span>
     <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-27&amp;url=https%3A//aigregator.news/digests/2026-05-27.html" target="_blank" rel="noopener" title="Share on X">X</a>
@@ -108,6 +108,17 @@
 <li><a href="https://bsky.app/profile/danielvanstrien.bsky.social/post/3mmcdqgumc22s">@danielvanstrien.bsky.social on Bluesky</a> — "NuExtract3 (4B, Apache-2.0) does OCR <em>and</em> structured extraction. Point it at a dataset of scanned index cards + a JSON schema → clean catalog." (41♥, 13🔁) — small-model OSS release worth tracking.</li>
 <li><a href="https://bsky.app/profile/edzitron.com/post/3mmq5uhj5lc2q">@edzitron.com on Bluesky</a> — "Anthropic and OpenAI account for 50% of Microsoft, Google and Amazon's revenues, and OpenAI's ability to pay as much as $70 billion a year…" (409♥, 24🔁) — circular-capital critique landing as memory-chip valuations spike.</li>
 <li><a href="https://bsky.app/profile/avengingfem.me/post/3mmacwpk36224">@avengingfem.me on Bluesky</a> — "- A Threadripper system (PCIe lanes) - Plenty of time to debug Qwen's loopy ass - Plenty of time to configure vLLM - dgmw i love local LLM" (106♥, 7🔁) — local-LLM war story.</li>
+</ul>
+<h3 id="reddit">Reddit <a class="permalink" href="#reddit" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/ClaudeAI/comments/1tob45x/company_gave_us_all_unlimited_claude_code_sonnet/">r/ClaudeAI: "Company gave us all unlimited Claude Code Sonnet 4.6 — and now posts a weekly leaderboard"</a> (1066↑, 460c) — gamifying coding-agent usage as a productivity metric; comment thread splits hard on whether it measures anything real.</li>
+<li><a href="https://www.reddit.com/r/ClaudeAI/comments/1tonzj9/im_a_software_engineer_with_a_decade_of/">r/ClaudeAI: "I'm a software engineer with a decade of experience. This is how I'd approach learning to code today"</a> (666↑, 52c) — practitioner take on agent-assisted learning that's getting traction across r/ClaudeAI and r/ExperiencedDevs.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1togflk/prismml_just_released_binary_and_ternary_bonsai/">r/LocalLLaMA: "PrismML just released Binary and Ternary Bonsai Image 4B"</a> (551↑, 70c) — 1-bit/ternary text-to-image diffusion at 4B params, complementing today's Models section.</li>
+<li><a href="https://www.reddit.com/r/OpenAI/comments/1toeclb/i_clustered_every_sam_altman_interview_from/">r/OpenAI: "I clustered every Sam Altman interview from 2024-2026 and 73% of his answers come from the same 12 talking points"</a> (550↑, 107c) — embedding-clustered transcript analysis; methodology in comments worth a look.</li>
+<li><a href="https://www.reddit.com/r/OpenAI/comments/1tofu5t/chatgpt_just_gave_me_temporary_full_access_to_a/">r/OpenAI: "ChatGPT just gave me temporary full access to a stranger's account"</a> (386↑, 103c) — session-leak report with screenshots; OpenAI response pending.</li>
+<li><a href="https://www.reddit.com/r/singularity/comments/1toeft6/price_wars_begin_mimo_25_pro_now_costs_the_same/">r/singularity: "Price wars begin. MiMo 2.5 Pro now costs the same as DeepSeek V4 Pro"</a> (339↑, 58c) — frontier-Chinese-model pricing collapse continues; relevant to Industry section.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1toychi/new_deepswe_benchmark_finds_claude_opus_cheats/">r/LocalLLaMA: "New DeepSWE benchmark finds Claude Opus cheats"</a> (141↑, 39c) — eval-gaming claim with reproducible setup; ties into the broader benchmark-trust thread.</li>
+<li><a href="https://www.reddit.com/r/artificial/comments/1tomozc/anthropic_just_published_how_they_contain_claude/">r/artificial: "Anthropic just published how they contain Claude agents, including two security incidents"</a> (19↑, 12c) — primary-source link to Anthropic's agent-containment writeup; pairs with today's Ars Technica supply-chain story.</li>
 </ul></article>]]></content:encoded>
     </item>
     <item>

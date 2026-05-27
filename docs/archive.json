@@ -17,12 +17,12 @@
     "sources": [
       "reuters.com",
       "bloomberg.com",
+      "reddit.com",
       "ft.com",
-      "techcrunch.com",
-      "polymarket.com"
+      "techcrunch.com"
     ],
     "diversity_warn": false,
-    "read_min": 10
+    "read_min": 12
   },
   {
     "slug": "2026-05-26",
