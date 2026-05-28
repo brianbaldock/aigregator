@@ -4,8 +4,114 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-05-27T14:29:18Z</updated>
+  <updated>2026-05-28T14:22:23Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
+  <entry>
+    <title>2026-05-28 :: AI DAILY DIGEST</title>
+    <link href="https://aigregator.news/digests/2026-05-28.html"/>
+    <id>https://aigregator.news/digests/2026-05-28.html</id>
+    <updated>2026-05-28T00:00:00Z</updated>
+    <summary>2026-05-28 :: AI DAILY DIGEST</summary>
+    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 9 min read · 1,860 words · 📡 12 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-28&amp;url=https%3A//aigregator.news/digests/2026-05-28.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-28%20https%3A//aigregator.news/digests/2026-05-28.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-28.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-28.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-28-ai-daily-digest">2026-05-28 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-28-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Cognition raises $1B at $25B, Snowflake lands $6B AWS deal, and Illinois passes the strongest US state AI safety law.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 26 stories · 16 sources · 🟡 +0.0 sentiment · 🔥 7 cross-source · <strong>TOP MENTION:</strong> Anthropic ×7<br />
+<strong>🏷️ THEMES:</strong> enterprise×9, agents×8, policy×7, hardware×6, safety×6<br />
+<strong>📈 MARKET PULSE:</strong> "Claude 4.8 by May 31" ▲+42.0pp · 10 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▅▅▅▆▅▅▅ (oldest → today)</p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">7 🔥 🟢 <strong>Snowflake signs $6B AWS deal, raises guidance, and lights the enterprise-AI tape.</strong> Cross-covered by Reuters, Bloomberg, TechCrunch; biggest single-day Snowflake move since 2020. (<a href="https://www.bloomberg.com/news/articles/2026-05-27/snowflake-raises-sales-outlook-touts-impact-of-ai-demand">Bloomberg</a>, <a href="https://techcrunch.com/2026/05/27/in-more-good-news-for-amazon-snowflake-signs-6b-deal-with-aws-for-ai-cpu-chips/">TechCrunch</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">6 🔥 🟢 <strong>Cognition raises $1B at $25B pre-money on Devin/coding-agent momentum.</strong> Among the highest pre-revenue-grade valuations of the cycle; signals coding agents are still the most fundable thesis. (<a href="https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/">TechCrunch</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">6 🔥 🛡️ 🟡 <strong>Illinois passes America's strongest state AI safety bill.</strong> Requires third-party safety confirmations from frontier labs; Pritzker expected to sign. Heads off federal vacuum. (<a href="https://www.wired.com/story/illinois-pass-major-ai-safety-law-pritzker/">Wired</a>, <a href="https://bsky.app/profile/wired.com/post/3mmuqlhnwaj2y">Bluesky</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">6 🔥 🟡 <strong>Robinhood opens stock trading to AI agent permissions.</strong> Cross-covered by FT, Bloomberg, The Verge, TechCrunch; first major retail broker to formally hand the keys to agentic systems. (<a href="https://www.ft.com/content/a5f5f1c6-9992-4946-b130-a0cffb2d6aca">FT</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/938095/robinhood-ai-agent-stock-trading">The Verge</a>, <a href="https://techcrunch.com/2026/05/27/robinhood-now-lets-your-ai-agents-trade-stocks/">TechCrunch</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">5 🔥 🔴 <strong>Salesforce's outlook disappoints; market reads it as the first AI-disruption print in enterprise SaaS.</strong> Same week Capgemini says AI is <em>widening</em> client wallets — splitting the consulting/SaaS narrative cleanly. (<a href="https://www.bloomberg.com/news/videos/2026-05-28/salesforce-s-lukewarm-outlook-fuels-ai-disruption-fear-video">Bloomberg</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+<li id="story-6">5 🔥 🛡️ 🔴 <strong>Pope Leo's <em>Magnifica Humanitas</em> keeps reshaping the policy discourse; Mistral publicly rejects the encyclical's military-AI critique.</strong> First frontier lab to push back on the Vatican on the record. (<a href="https://www.theverge.com/ai-artificial-intelligence/937933/pope-ai-encyclical-tech-industry-reactions">The Verge</a>, <a href="https://www.ft.com/content/09089fa8-d2d8-4328-92b5-5a4a186e6523">FT</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>3 stories · 🟡 +0.1 sentiment</em></p>
+<ul>
+<li>4 🟢 ▤×1 🏷️ multimodal, voice <strong>ElevenLabs ships a music-generation model that can switch genres mid-track.</strong> Continuous-style-transfer is becoming a first-class control surface. Sources: <a href="https://techcrunch.com/2026/05/27/elevenlabss-new-music-generation-model-can-switch-genres-mid-track/">TechCrunch</a></li>
+<li>4 🌱 🟢 ▤×1 🏷️ models, opensource <strong>China's MiniMax doubles ARR ahead of new model launch.</strong> Open-weights challenger continues to undercut frontier pricing. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-28/china-ai-upstart-minimax-doubles-sales-ahead-of-new-model-launch">Bloomberg</a></li>
+<li>3 🟡 ▤×1 🏷️ apps, multimodal <strong>Apple previews iOS 27 with a redesigned Siri and broader on-device AI features.</strong> WWDC tee-up; Siri overhaul has slipped twice already. Sources: <a href="https://www.bloomberg.com/news/features/2026-05-28/apple-ios-27-photos-screenshots-revamped-siri-pro-camera-app-new-ai-f">Bloomberg</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>3 stories · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>4 🛡️ 🔴 ▤×1 🏷️ safety, evals <strong>ITBench-AA: frontier models score &lt;50% on the first benchmark for agentic enterprise IT tasks.</strong> Sharp reality-check on agent-in-production claims. Sources: <a href="https://huggingface.co/blog/ibm-research/itbench-aa">HuggingFace</a></li>
+<li>3 🟡 ▤×1 🏷️ evals, alignment <strong>arXiv: investigating how prompt politeness affects LLM accuracy.</strong> Reopens the "tone-as-feature" debate with cleaner methodology. Sources: <a href="https://arxiv.org/abs/2510.04950">arXiv</a></li>
+<li>3 🛡️ 🟡 ▤×1 🏷️ safety, code <strong>arXiv: multi-agent LLM system for automated vulnerability discovery and reproduction.</strong> Defensive-research framing; reproduction pipeline is the novel contribution. Sources: <a href="https://arxiv.org/abs/2605.21779">arXiv</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>6 stories · 🔴 -0.3 sentiment</em></p>
+<ul>
+<li>6 🔥 🛡️ 🟡 ▤×2 🏷️ policy, safety <strong>Illinois passes the strongest US state AI safety bill.</strong> Third-party safety confirmations for frontier labs; pairs with House NDAA AI-incident disclosure language moving in parallel. Sources: <a href="https://www.wired.com/story/illinois-pass-major-ai-safety-law-pritzker/">Wired</a></li>
+<li>5 🔥 🛡️ 🔴 ▤×2 🏷️ policy, safety <strong>Pope Leo's encyclical continues to drive coverage; Mistral rejects Vatican critique of military-AI use.</strong> First frontier lab on-the-record pushback. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/937933/pope-ai-encyclical-tech-industry-reactions">The Verge</a>, <a href="https://www.ft.com/content/09089fa8-d2d8-4328-92b5-5a4a186e6523">FT</a></li>
+<li>5 🔥 🛡️ 🔴 ▤×2 🏷️ policy, multimodal <strong>YouTube will auto-label AI-generated video where viewers actually see it.</strong> Platform-level provenance shifting from opt-in to default. Sources: <a href="https://www.theverge.com/streaming/937915/youtube-ai-labels-shorts-automatic-identification-updates">The Verge</a>, <a href="https://techcrunch.com/2026/05/27/youtube-will-now-automatically-label-ai-videos/">TechCrunch</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ safety, bias <strong>NYT Tech Guild fights AI monitoring of journalist performance.</strong> Union-vs-AI-management is the new labor flashpoint. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/937689/new-york-times-tech-guild-ai-monitoring-performance-union-con">The Verge</a></li>
+<li>4 🛡️ 🔴 ▤×1 🏷️ policy, safety <strong>Tech CEOs reportedly suffering from "AI psychosis," per TechCrunch.</strong> Picked up across r/ArtificialInteligence and HN front page (671↑). Sources: <a href="https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis/">TechCrunch</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>1 story · 🟢 +0.3 sentiment</em></p>
+<ul>
+<li>3 🎨 🟢 ▤×1 🏷️ agents, apps <strong>Ex-Google/Apple researchers launch a startup to give AI a "missing feedback loop."</strong> Continual-learning-as-product; small team, clean thesis. Sources: <a href="https://www.wired.com/story/ex-google-apple-ai-researchers-want-to-make-ai-that-gets-smarter-as-you-use-it/">Wired</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>6 stories · 🟢 +0.4 sentiment</em></p>
+<ul>
+<li>7 🔥 🟢 ▤×3 🏷️ enterprise, funding <strong>Snowflake guidance + $6B AWS deal lights up enterprise-AI tape.</strong> Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-27/snowflake-raises-sales-outlook-touts-impact-of-ai-demand">Bloomberg</a>, <a href="https://techcrunch.com/2026/05/27/in-more-good-news-for-amazon-snowflake-signs-6b-deal-with-aws-for-ai-cpu-chips/">TechCrunch</a></li>
+<li>6 🔥 🟢 ▤×1 🏷️ funding, agents, code <strong>Cognition raises $1B at $25B pre-money.</strong> Coding agents remain the most fundable AI thesis. Sources: <a href="https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/">TechCrunch</a></li>
+<li>5 🔥 🟢 ▤×2 🏷️ enterprise, funding <strong>OpenAI Foundation commits $250M to study AI's impact on workers and the economy.</strong> Cross-covered by Reuters and FT; first concrete spend from the restructured foundation. Sources: <a href="https://www.ft.com/content/12bdee09-c212-420e-8e9a-3c57c3254e53">FT</a></li>
+<li>4 🔴 ▤×1 🏷️ enterprise <strong>Salesforce's lukewarm forecast fuels AI-disruption fears in SaaS.</strong> Sources: <a href="https://www.bloomberg.com/news/videos/2026-05-28/salesforce-s-lukewarm-outlook-fuels-ai-disruption-fear-video">Bloomberg</a></li>
+<li>4 🟡 ▤×1 🏷️ funding, hardware <strong>Architect to launch US-listed compute futures, challenging CME and ICE.</strong> Compute-as-commodity infrastructure layer is being built. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-28/architect-set-to-launch-us-listed-compute-futures-in-challenge-to-cme">Bloomberg</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>3 stories · 🟡 +0.1 sentiment</em></p>
+<ul>
+<li>5 🔥 🟡 ▤×2 🏷️ agents, enterprise <strong>Mistral signs Airbus and BMW for industrial-AI deployments.</strong> Sovereign-EU lab landing flagship manufacturers — the European AI thesis getting actual customers. Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-28/mistral-signs-airbus-and-bmw-as-it-brings-ai-to-manufacturing">Bloomberg</a></li>
+<li>4 🟢 ▤×1 🏷️ agents, enterprise <strong>Visa invests in Replit to power agentic payments for developers.</strong> Payment rails getting first-party agent support. Sources: <a href="https://techcrunch.com/2026/05/28/visa-invests-in-replit-to-power-agentic-payments-for-developers/">TechCrunch</a></li>
+<li>4 🟡 ▤×1 🏷️ apps, agents <strong>YouTube will let you ask AI to make a custom video feed.</strong> Search-bar-as-recommendation primitive arriving on the biggest video site. Sources: <a href="https://www.theverge.com/streaming/938759/youtube-custom-ai-feed-prompt-availability">The Verge</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟢 +0.4 sentiment</em></p>
+<ul>
+<li>4 🌱 🟢 ▤×1 🏷️ opensource, code <strong>Simon Willison: "I think Anthropic and OpenAI have found product-market fit."</strong> Sharpest take of the day on revenue-vs-vibes; 974↑ on HN front page. Sources: <a href="https://simonwillison.net/2026/May/27/product-market-fit/">Simon Willison</a></li>
+<li>3 🌱 🟡 ▤×1 🏷️ opensource, policy <strong>Ripgrep publishes an explicit AI-usage policy; Zig Foundation goes further with a no-AI policy.</strong> Maintainer-led pushback on LLM-authored contributions is hardening into governance. Sources: <a href="https://news.ycombinator.com/item?id=48292718">HN</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>10 markets tracked · biggest movers below</em></p>
+<ul>
+<li><strong>"Claude 4.8 released by May 31?"</strong> Yes 67.5% (▲+42.0pp) · $167K vol · <a href="https://polymarket.com/event/claude-4pt8-released-by">Polymarket</a></li>
+<li><strong>"Anthropic has third-best AI model end-of-May?"</strong> Yes 97.5% (▲+26.6pp) · $51K vol · <a href="https://polymarket.com/event/which-company-has-the-third-best-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"OpenAI market cap ≥$1.5T at IPO close?"</strong> Yes 28.8% (▼-4.2pp) · $111K vol · <a href="https://polymarket.com/event/openai-ipo-closing-market-cap">Polymarket</a></li>
+<li><strong>"Google has best Math AI model end-of-May?"</strong> Yes 83.5% (▲+4.0pp) · $78K vol · <a href="https://polymarket.com/event/which-company-has-the-best-math-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"Claude Mythos model released by June 30, 2026?"</strong> Yes 19.5% (▲+3.5pp) · $117K vol · <a href="https://polymarket.com/event/claude-mythos-released-by">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://bsky.app/profile/edzitron.com/post/3mmv7oscy3k2c">@edzitron.com on Bluesky</a> — "The Ellisons are testing the very limits of even their incredible funds and the entire thing is held together with duct tape." (495♥, 92🔁) — sharpest take of the day on the Oracle/Stargate capital structure.</li>
+<li><a href="https://bsky.app/profile/wired.com/post/3mmuqlhnwaj2y">@wired.com on Bluesky</a> — "The bill requires companies like OpenAI, Anthropic, and Google to have third parties confirm safety…" (308♥, 70🔁) — Wired's own promo for the Illinois AI safety bill, useful as a one-line precis.</li>
+<li><a href="https://bsky.app/profile/masnick.com/post/3mmtvsnlm7s2e">@masnick.com on Bluesky</a> — "For anyone in the trust and safety space this is big. A powerful, but small, <em>open source</em>…" (90♥, 21🔁) — T&amp;S practitioner flagging a small-OSS release worth following.</li>
+</ul>
+<h3 id="reddit">Reddit <a class="permalink" href="#reddit" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/OpenAI/comments/1tpc2b5/anthropic_researcher_we_keep_finding_things/">r/OpenAI: "Anthropic researcher: 'We keep finding things [inside AI models] that are unsettling'"</a> (366↑, 334c) — interpretability comments thread; ties directly to today's safety section.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1tpp2th/vulnerability_found_in_framework_used_by_vllm/">r/LocalLLaMA: "Vulnerability found in framework used by vLLM, many MCP servers, and other LLM tools"</a> (394↑, 66c) — supply-chain risk landing on the local-inference stack; pairs with yesterday's open-source-package CVE thread.</li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1tpaw6x/aigenerated_cuda_kernels_silently_break_training/">r/MachineLearning: "AI-generated CUDA kernels silently break training and inference [R]"</a> (231↑, 19c) — concrete failure-mode report on LLM-generated GPU code; methodology reproducible.</li>
+<li><a href="https://www.reddit.com/r/ClaudeAI/comments/1tph5u4/anthropic_just_confirmed_why_90_of_noncoding_ai/">r/ClaudeAI: "Anthropic just confirmed why 90% of non-coding AI agents fail in production"</a> (252↑, 69c) — primary-source unpack of Anthropic's agent-deployment writeup.</li>
+</ul></article>]]></content>
+  </entry>
   <entry>
     <title>2026-05-27 :: AI DAILY DIGEST</title>
     <link href="https://aigregator.news/digests/2026-05-27.html"/>
