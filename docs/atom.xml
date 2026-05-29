@@ -4,8 +4,81 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-05-28T22:08:57Z</updated>
+  <updated>2026-05-29T14:11:13Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
+  <entry>
+    <title>2026-05-29 :: AI DAILY DIGEST</title>
+    <link href="https://aigregator.news/digests/2026-05-29.html"/>
+    <id>https://aigregator.news/digests/2026-05-29.html</id>
+    <updated>2026-05-29T00:00:00Z</updated>
+    <summary>2026-05-29 :: AI DAILY DIGEST</summary>
+    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 4 min read · 769 words · 📡 5 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-29&amp;url=https%3A//aigregator.news/digests/2026-05-29.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-29%20https%3A//aigregator.news/digests/2026-05-29.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-29.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-29.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 1 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-29-ai-daily-digest">2026-05-29 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-29-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Dell's AI server boom, Anthropic's $965B valuation, Claude Opus 4.8 ships, and the EU keeps swinging the regulatory hammer.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 28 stories · 4 sources · 🟡 +0.2 sentiment · 🔥 0 cross-source · <strong>TOP MENTION:</strong> Anthropic ×6<br />
+<strong>🏷️ THEMES:</strong> models×15, hardware×7, funding×6, code×2, art×1<br />
+<strong>📈 MARKET PULSE:</strong> "GPT-5.6 released by July 31, 2026?" ▲ +17.4 pp · 99 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▅▅▆▅▅▅▅▆ (oldest → today)  </p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">5  🟡 <strong>Who decides which jobs AI will take?.</strong> Different models are producing very different assessments of exposure levels… (<a href="https://www.ft.com/content/8ddc4bcb-b2d7-4e0a-b8d2-0f0dc7374f85">ft.com</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟢 +0.5 sentiment</em></p>
+<ul>
+<li>5  🟢 ▤×1 🏷️ models, funding <strong>Anthropic finalises $65bn funding deal to surpass OpenAI’s valuation.</strong> New round values Claude AI maker at $965bn including the latest money… Sources: <a href="https://www.ft.com/content/fd0aec4a-50d1-4594-b489-7420bd0b4268">ft.com</a></li>
+<li>5  🟡 ▤×1 🏷️ models <strong>Strengthening societal resilience with Rosalind Biodefense.</strong> OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense, public health, and pandemic preparedness through … Sources: <a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense">openai.com</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>1 stories · 🔴 -1.0 sentiment</em></p>
+<ul>
+<li>5 🛡️ 🔴 ▤×1 🏷️ policy, hardware <strong>EU wants crisis powers to seize control of chip supplies.</strong> Chipmakers could be forced to override existing contracts under draft law… Sources: <a href="https://www.ft.com/content/9d7d6204-4fc7-4f1d-af05-473c3649efcd">ft.com</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>2 stories · 🔴 -0.5 sentiment</em></p>
+<ul>
+<li>5  🟡 ▤×1 🏷️ models, enterprise <strong>SpaceX IPO boldly steps into the unknown of AI economics.</strong> We still need to learn many things about the basic business model of frontier models… Sources: <a href="https://www.ft.com/content/f757f67f-a7b4-45ec-a42e-026b986631e0">ft.com</a></li>
+<li>5  🔴 ▤×1 🏷️ training, funding <strong>SpaceX Said to Cut IPO Value Goal to at Least $1.8 Trillion.</strong> SpaceX is currently targeting a valuation of at least $1.8 trillion in its initial public offering, according to people familiar with the matter, as Elon Musk’s rocket and artificial intelligence comp… Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-29/spacex-lowers-ipo-valuation-target-to-at-least-1-8-trillion">bloomberg.com</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 stories · 🟢 +0.5 sentiment</em></p>
+<ul>
+<li>5  🟡 ▤×1 🏷️ models <strong>Who decides which jobs AI will take?.</strong> Different models are producing very different assessments of exposure levels… Sources: <a href="https://www.ft.com/content/8ddc4bcb-b2d7-4e0a-b8d2-0f0dc7374f85">ft.com</a></li>
+<li>5  🟢 ▤×1 🏷️ models <strong>Musk’s tweet undermines SpaceX’s claims about Anthropic data centre deal.</strong> Billionaire says the arrangement, described in IPO filings as a three-year agreement, only lasts for 180 days… Sources: <a href="https://www.ft.com/content/7df0906c-6d9b-4440-b94e-65af0a785f7b">ft.com</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets · sorted by 24h movement</em></p>
+<ul>
+<li><strong>"GPT-5.6 released by July 31, 2026?"</strong> Yes 93.2% (▲ +17.4 pp) · $58K vol · <a href="https://polymarket.com/event/gpt-5pt6-released-by">Polymarket</a></li>
+<li><strong>"Will a Claude Mythos model be released by June 30, 2026?"</strong> Yes 36.5% (▲ +17.0 pp) · $168K vol · <a href="https://polymarket.com/event/claude-mythos-released-by">Polymarket</a></li>
+<li><strong>"U.S. enacts AI safety bill before 2027?"</strong> Yes 29.5% (▼ -11.5 pp) · $99K vol · <a href="https://polymarket.com/event/us-enacts-ai-safety-bill-before-2027">Polymarket</a></li>
+<li><strong>"Will Anthropic have the best Math AI model at the end of May 2026?"</strong> Yes 7.5% (▼ -9.5 pp) · $135K vol · <a href="https://polymarket.com/event/which-company-has-the-best-math-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"Will Google have the best Math AI model at the end of May 2026?"</strong> Yes 93.0% (▲ +9.5 pp) · $94K vol · <a href="https://polymarket.com/event/which-company-has-the-best-math-ai-model-end-of-may">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://bsky.app/profile/catacalypto.bsky.social/post/3mmx4ut2m3k2b">@catacalypto.bsky.social on Bluesky</a> (245♥, 26🔁): "so first, lol, but second, I do think it’s interesting how some people’s only conception of a bot is an LLM- or NN-driven conversation-shape"</li>
+<li><a href="https://bsky.app/profile/abgeordnetenwatch.de/post/3mmwdyfkrm22v">@abgeordnetenwatch.de on Bluesky</a> (122♥, 37🔁): "OpenAI, Apple, Meta: Mit diesen Tech-Lobbyisten traf sich Kanzler #Merz und seine Regierung dserver.bundestag.de/btd/21/060/2..."</li>
+<li><a href="https://bsky.app/profile/onebigboss.bsky.social/post/3mmwx6ayav22v">@onebigboss.bsky.social on Bluesky</a> (138♥, 20🔁): "If yall don’t stop using Chat GPT and other BS AI crap, gaming systems will reach over $1000 and then you’ll be back to playing these again"</li>
+</ul></article>]]></content>
+  </entry>
   <entry>
     <title>2026-05-28 :: AI DAILY DIGEST</title>
     <link href="https://aigregator.news/digests/2026-05-28.html"/>
