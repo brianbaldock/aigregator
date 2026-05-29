@@ -4,7 +4,7 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-05-29T14:11:13Z</updated>
+  <updated>2026-05-29T17:21:01Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
   <entry>
     <title>2026-05-29 :: AI DAILY DIGEST</title>
@@ -13,7 +13,7 @@
     <updated>2026-05-29T00:00:00Z</updated>
     <summary>2026-05-29 :: AI DAILY DIGEST</summary>
     <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 4 min read · 769 words · 📡 5 unique sources</span>
+  <span class="meta-item">📖 11 min read · 2,185 words · 📡 11 unique sources</span>
   <span class="meta-share">
     <span class="meta-label">SHARE:</span>
     <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-05-29&amp;url=https%3A//aigregator.news/digests/2026-05-29.html" target="_blank" rel="noopener" title="Share on X">X</a>
@@ -21,62 +21,97 @@
     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-05-29.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
     <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-05-29.html" title="Copy link">COPY</a>
   </span>
-</div><div class="diff-strip"><span class="diff-new">↑ 1 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-29-ai-daily-digest">2026-05-29 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-29-ai-daily-digest" title="Permalink">#</a></h1>
-<p><em>Dell's AI server boom, Anthropic's $965B valuation, Claude Opus 4.8 ships, and the EU keeps swinging the regulatory hammer.</em></p>
+</div><div class="diff-strip"><span class="diff-new">↑ 5 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-05-29-ai-daily-digest">2026-05-29 :: AI DAILY DIGEST <a class="permalink" href="#2026-05-29-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Profiling in PyTorch (Part 1): A Beginner's Guide to torch.p; Anthropic Raises at $965 Billion Valuation, Eclipsing OpenAI.</em></p>
 <blockquote>
-<p><strong>📊 TODAY:</strong> 28 stories · 4 sources · 🟡 +0.2 sentiment · 🔥 0 cross-source · <strong>TOP MENTION:</strong> Anthropic ×6<br />
-<strong>🏷️ THEMES:</strong> models×15, hardware×7, funding×6, code×2, art×1<br />
-<strong>📈 MARKET PULSE:</strong> "GPT-5.6 released by July 31, 2026?" ▲ +17.4 pp · 99 AI markets tracked<br />
-<strong>📉 7D SENTIMENT:</strong> ▅▅▆▅▅▅▅▆ (oldest → today)  </p>
+<p><strong>📊 TODAY:</strong> 71 stories · 21 sources · 🟡 +0.1 sentiment · 🔥 0 cross-source · <strong>TOP MENTION:</strong> Anthropic ×12<br />
+<strong>🏷️ THEMES:</strong> apps×31, agents×10, funding×9, models×6, code×5<br />
+<strong>📈 MARKET PULSE:</strong> "Will Anthropic have the best Math AI model at t..." ▼14.5pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▅▅▆▅▅▅▅ (oldest → today)</p>
 </blockquote>
 <h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
 <ol>
-<li id="story-1">5  🟡 <strong>Who decides which jobs AI will take?.</strong> Different models are producing very different assessments of exposure levels… (<a href="https://www.ft.com/content/8ddc4bcb-b2d7-4e0a-b8d2-0f0dc7374f85">ft.com</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-1"><span class="score fresh">06</span> 🌱 🟡 <strong>Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler.</strong>  (<a href="https://huggingface.co/blog/torch-profiler">HuggingFace blog</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2"><span class="score fresh">06</span> 🟡 <strong>Anthropic Raises at $965 Billion Valuation, Eclipsing OpenAI.</strong> Anthropic PBC raised $65 billion in a funding round that valued the artificial intelligence company at $965 billion i... (<a href="https://www.bloomberg.com/news/videos/2026-05-29/anthropic-raises-at-965b-valuation-eclipsing-openai-video">Bloomberg Technology</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3"><span class="score fresh">06</span> 🟡 <strong>Gap Lowers Sales Outlook; Dell Soars on AI Demand | Stock Movers.</strong> On this episode of Stock Movers with Alexis Christoforous: - Dell (DELL) shares are soaring after the company gave an... (<a href="https://www.bloomberg.com/news/videos/2026-05-29/gap-lowers-sales-outlook-dell-soars-on-ai-demand-video">Bloomberg Technology</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4"><span class="score fresh">06</span> 🟢 <strong>Markets Are Betting Big on AI. This Harvard Professor Isn’t So Sure.</strong> With markets near record highs, driven by demand for artificial intelligence, it certainly seems that investors are b... (<a href="https://www.bloomberg.com/news/videos/2026-05-29/markets-are-betting-big-on-ai-this-harvard-professor-isn-t-so-sure">Bloomberg Technology</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5"><span class="score fresh">06</span> 🟡 <strong>A Brand Built on Truth: NASA in the Generative Era.</strong> Bloomberg’s Christina Ruffini sits down with NASA's David Rager at Artist and the Machine's AI &amp; Creativity Summit in... (<a href="https://www.bloomberg.com/news/videos/2026-05-29/a-brand-built-on-truth-nasa-in-the-generative-era-video">Bloomberg Technology</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
 </ol>
 <h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
-<p><em>2 stories · 🟢 +0.5 sentiment</em></p>
+<p><em>5 items · +0.2 sentiment · avg cred 5.6</em></p>
 <ul>
-<li>5  🟢 ▤×1 🏷️ models, funding <strong>Anthropic finalises $65bn funding deal to surpass OpenAI’s valuation.</strong> New round values Claude AI maker at $965bn including the latest money… Sources: <a href="https://www.ft.com/content/fd0aec4a-50d1-4594-b489-7420bd0b4268">ft.com</a></li>
-<li>5  🟡 ▤×1 🏷️ models <strong>Strengthening societal resilience with Rosalind Biodefense.</strong> OpenAI launches Rosalind Biodefense, expanding trusted access to GPT-Rosalind for vetted developers and U.S. government partners advancing biodefense, public health, and pandemic preparedness through … Sources: <a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense">openai.com</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ models <strong>It’s Summertime and AI Means Internships Aren’t Easy.</strong> With chatbots like Claude around, more companies are cutting back on internships. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-05-29/how-ai-is-making-it-tougher-for-students-to-land-summer-internships">Bloomberg Technology</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ hardware <strong>Key Themes to Watch at Asia’s Biggest AI Tech Show.</strong> Nvidia Corp.’s Jensen Huang leads a parade of AI computing leaders in Taiwan for Asia’s biggest technology showcase, Computex. Over a jam-packed week, the ha... Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-29/computex-2026-what-to-watch-from-nvidia-intel-at-asia-s-top-ai-tech-show">Bloomberg Technology</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ hardware <strong>The chip and memory stock frenzy.</strong> As software lags, semiconductors catch up to the AI spending Sources: <a href="https://www.ft.com/content/e6e2228a-1f94-4afb-b165-ce3c2daaa084">FT Technology</a></li>
+<li><span class="score fresh">05</span> 🟡 ▤×2 🏷️ hardware <strong>This chip startup just raised $135M on a bet that AI’s biggest bottleneck isn’t compute — it’s memory.</strong> South Korean chip startup XCENA is betting that AI's real bottleneck is not compute, but memory. Sources: <a href="https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/">TechCrunch AI</a></li>
+<li><span class="score fresh">05</span> 🟢 ▤×2 🏷️ training <strong>This AI startup will clean your home for free to train future robots.</strong> AI training startup Shift wants to clean your home for free. The catch - because, despite what its website says, there's always a catch - is that it will rec... Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/939765/ai-training-data-startup-shift-free-cleaning">The Verge AI</a></li>
 </ul>
 <h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
-<p><em>(quiet today)</em></p>
-<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
-<p><em>1 stories · 🔴 -1.0 sentiment</em></p>
+<p><em>5 items · +0.0 sentiment · avg cred 3.0</em></p>
 <ul>
-<li>5 🛡️ 🔴 ▤×1 🏷️ policy, hardware <strong>EU wants crisis powers to seize control of chip supplies.</strong> Chipmakers could be forced to override existing contracts under draft law… Sources: <a href="https://www.ft.com/content/9d7d6204-4fc7-4f1d-af05-473c3649efcd">ft.com</a></li>
+<li><span class="score">03</span> 🟡 ▤×1 🏷️ agents <strong>Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software.</strong> Are AI agents tools, co-authors, or researchers? We present a quantified case study ($N=1$): a physicist supervising an AI coding agent (Claude Code, Sonnet ... Sources: <a href="https://arxiv.org/abs/2605.30353v1">arXiv cs.AI</a></li>
+<li><span class="score">03</span> 🟡 ▤×1 🏷️ agents <strong>VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion.</strong> Long-rollout causal video diffusion has converged on a fixed-size sliding-window KV cache, with recent progress innovating within this layout by changing whi... Sources: <a href="https://arxiv.org/abs/2605.30351v1">arXiv cs.AI</a></li>
+<li><span class="score">03</span> 🟡 ▤×1 🏷️ agents <strong>LLMSurgeon: Diagnosing Data Mixture of Large Language Models.</strong> The pretraining data mixture of Large Language Models (LLMs) constitutes their "digital DNA", shaping model behaviors, capabilities, and failure modes. Yet t... Sources: <a href="https://arxiv.org/abs/2605.30348v1">arXiv cs.AI</a></li>
+<li><span class="score">03</span> 🟡 ▤×1 🏷️ agents <strong>SchGen: PCB Schematic Generation with Semantic-Grounded Code Representations.</strong> Printed circuit board (PCB) schematic design defines nearly all electronic hardware, but it remains manual and expertise-intensive. While generative AI has a... Sources: <a href="https://arxiv.org/abs/2605.30345v1">arXiv cs.AI</a></li>
+<li><span class="score">03</span> 🟡 ▤×1 🏷️ agents <strong>Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection.</strong> Recent advances in Vision-Language Models (VLMs) have achieved impressive performance across many tasks, yet prior studies report unsatisfactory performance ... Sources: <a href="https://arxiv.org/abs/2605.30344v1">arXiv cs.AI</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>4 items · +0.0 sentiment · avg cred 5.0</em></p>
+<ul>
+<li><span class="score fresh">05</span> 🛡️ 🟡 ▤×2 🏷️ policy <strong>AI #170: Lack of Executive Order.</strong> Last week ended on a cliffhanger of sorts. What’s in the Executive Order coming later today? What will be in the Magnifica Humanitas? The Executive Order was... Sources: <a href="https://thezvi.wordpress.com/2026/05/28/ai-170-lack-of-executive-order/">Zvi Mowshowitz</a></li>
+<li><span class="score fresh">05</span> 🛡️ 🟡 ▤×2 🏷️ models, alignment <strong>Claude’s new model is more ‘honest’ when it messes up.</strong> Anthropic is releasing Claude Opus 4.8 on Thursday, and the company is touting the model's "honesty." According to Anthropic, it trains "all [its] models to ... Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/939094/anthropic-claude-4-8-opus-honesty-effort">The Verge AI</a></li>
+<li><span class="score fresh">05</span> 🛡️ 🟡 ▤×2 🏷️ agents, safety, training <strong>Concrete AI Safety Problems [via Kagi].</strong> For example, can we build an agent that tries to clean a room in the way the user would be happiest with, even though feedback from the user is very rare and... Sources: <a href="https://openai.com/blog/concrete-ai-safety-problems/">Kagi</a></li>
+<li><span class="score fresh">05</span> 🛡️ 🟡 ▤×2 🏷️ safety <strong>AI Safety via Debate [via Kagi].</strong> We&#39;re proposing an AI safety technique which trains agents to debate topics with one another, using a human to judge who wins. We believe that this or a ... Sources: <a href="https://openai.com/blog/debate/">Kagi</a></li>
 </ul>
 <h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
-<p><em>(quiet today)</em></p>
-<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
-<p><em>2 stories · 🔴 -0.5 sentiment</em></p>
+<p><em>3 items · +0.0 sentiment · avg cred 5.3</em></p>
 <ul>
-<li>5  🟡 ▤×1 🏷️ models, enterprise <strong>SpaceX IPO boldly steps into the unknown of AI economics.</strong> We still need to learn many things about the basic business model of frontier models… Sources: <a href="https://www.ft.com/content/f757f67f-a7b4-45ec-a42e-026b986631e0">ft.com</a></li>
-<li>5  🔴 ▤×1 🏷️ training, funding <strong>SpaceX Said to Cut IPO Value Goal to at Least $1.8 Trillion.</strong> SpaceX is currently targeting a valuation of at least $1.8 trillion in its initial public offering, according to people familiar with the matter, as Elon Musk’s rocket and artificial intelligence comp… Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-29/spacex-lowers-ipo-valuation-target-to-at-least-1-8-trillion">bloomberg.com</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ science, art <strong>A Brand Built on Truth: NASA in the Generative Era.</strong> Bloomberg’s Christina Ruffini sits down with NASA's David Rager at Artist and the Machine's AI &amp; Creativity Summit in New York on May 14 to discuss how his r... Sources: <a href="https://www.bloomberg.com/news/videos/2026-05-29/a-brand-built-on-truth-nasa-in-the-generative-era-video">Bloomberg Technology</a></li>
+<li><span class="score fresh">05</span> 🟡 ▤×2 🏷️ agents, multimodal, art <strong>Adobe’s conversational AI agent is a mediocre design intern.</strong> AI image tools rarely make me feel like I'm part of the creative process. They are, after all, mostly designed so that people with no design experience can t... Sources: <a href="https://www.theverge.com/tech/939686/adobes-conversational-ai-agent-is-a-mediocre-design-intern">The Verge AI</a></li>
+<li><span class="score fresh">05</span> 🟡 ▤×2 🏷️ code, art <strong>Microsoft 365 Copilot gets a speed boost and cleaner design.</strong> Microsoft is launching a revamped version of Microsoft 365 Copilot, offering a cleaner design that the company claims loads twice as fast. As part of this up... Sources: <a href="https://www.theverge.com/tech/939273/microsoft-365-copilot-redesign">The Verge AI</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>4 items · +0.0 sentiment · avg cred 6.0</em></p>
+<ul>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ funding <strong>Anthropic Raises at $965 Billion Valuation, Eclipsing OpenAI.</strong> Anthropic PBC raised $65 billion in a funding round that valued the artificial intelligence company at $965 billion including the new investment, eclipsing r... Sources: <a href="https://www.bloomberg.com/news/videos/2026-05-29/anthropic-raises-at-965b-valuation-eclipsing-openai-video">Bloomberg Technology</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ funding <strong>SpaceX Said to Cut IPO Value Goal to at Least $1.8 Trillion.</strong> SpaceX is currently targeting a valuation of at least $1.8 trillion in its initial public offering, according to people familiar with the matter, as Elon Mus... Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-29/spacex-lowers-ipo-valuation-target-to-at-least-1-8-trillion">Bloomberg Technology</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ models, funding <strong>Anthropic finalises $65bn funding deal to surpass OpenAI’s valuation.</strong> New round values Claude AI maker at $965bn including the latest money Sources: <a href="https://www.ft.com/content/fd0aec4a-50d1-4594-b489-7420bd0b4268">FT Technology</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ funding <strong>Solar Company Nextpower Hits All-Time High on AI Battery Deal.</strong> Nextpower Inc. shares briefly touched an all-time high after the solar tracking provider agreed to buy battery company Prevalon Energy for as much as $365 mi... Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-28/solar-company-nextpower-eyes-ai-s-power-needs-with-battery-deal">Bloomberg Technology</a></li>
 </ul>
 <h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
-<p><em>2 stories · 🟢 +0.5 sentiment</em></p>
+<p><em>4 items · +0.2 sentiment · avg cred 6.0</em></p>
 <ul>
-<li>5  🟡 ▤×1 🏷️ models <strong>Who decides which jobs AI will take?.</strong> Different models are producing very different assessments of exposure levels… Sources: <a href="https://www.ft.com/content/8ddc4bcb-b2d7-4e0a-b8d2-0f0dc7374f85">ft.com</a></li>
-<li>5  🟢 ▤×1 🏷️ models <strong>Musk’s tweet undermines SpaceX’s claims about Anthropic data centre deal.</strong> Billionaire says the arrangement, described in IPO filings as a three-year agreement, only lasts for 180 days… Sources: <a href="https://www.ft.com/content/7df0906c-6d9b-4440-b94e-65af0a785f7b">ft.com</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ apps <strong>Gap Lowers Sales Outlook; Dell Soars on AI Demand | Stock Movers.</strong> On this episode of Stock Movers with Alexis Christoforous: - Dell (DELL) shares are soaring after the company gave an outlook for annual sales that far surpa... Sources: <a href="https://www.bloomberg.com/news/videos/2026-05-29/gap-lowers-sales-outlook-dell-soars-on-ai-demand-video">Bloomberg Technology</a></li>
+<li><span class="score fresh">06</span> 🟢 ▤×2 🏷️ apps <strong>Markets Are Betting Big on AI. This Harvard Professor Isn’t So Sure.</strong> With markets near record highs, driven by demand for artificial intelligence, it certainly seems that investors are betting big on AI growth. On this episode... Sources: <a href="https://www.bloomberg.com/news/videos/2026-05-29/markets-are-betting-big-on-ai-this-harvard-professor-isn-t-so-sure">Bloomberg Technology</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ apps <strong>AI Used to Be Generative. Now It’s All About Agents.</strong> Corporate speak has changed when it comes to describing the evolving technology Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-05-29/the-corporate-lexicon-on-ai-has-changed-from-generative-to-agentic">Bloomberg Technology</a></li>
+<li><span class="score fresh">06</span> 🟡 ▤×2 🏷️ apps <strong>The Nightmare of Finding a Summer Internship in the Age of AI.</strong> <p>An important rite of passage for college students is slipping away as companies use AI for more busywork and prepare for a future with fewer entry-level p... Sources: <a href="https://www.bloomberg.com/news/articles/2026-05-29/ai-is-both-friend-and-foe-to-college-students-seeking-summer-internships">Bloomberg Technology</a></li>
 </ul>
 <h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
-<p><em>(quiet today)</em></p>
-<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
-<p><em>5 markets · sorted by 24h movement</em></p>
+<p><em>1 items · +0.0 sentiment · avg cred 6.0</em></p>
 <ul>
-<li><strong>"GPT-5.6 released by July 31, 2026?"</strong> Yes 93.2% (▲ +17.4 pp) · $58K vol · <a href="https://polymarket.com/event/gpt-5pt6-released-by">Polymarket</a></li>
-<li><strong>"Will a Claude Mythos model be released by June 30, 2026?"</strong> Yes 36.5% (▲ +17.0 pp) · $168K vol · <a href="https://polymarket.com/event/claude-mythos-released-by">Polymarket</a></li>
-<li><strong>"U.S. enacts AI safety bill before 2027?"</strong> Yes 29.5% (▼ -11.5 pp) · $99K vol · <a href="https://polymarket.com/event/us-enacts-ai-safety-bill-before-2027">Polymarket</a></li>
-<li><strong>"Will Anthropic have the best Math AI model at the end of May 2026?"</strong> Yes 7.5% (▼ -9.5 pp) · $135K vol · <a href="https://polymarket.com/event/which-company-has-the-best-math-ai-model-end-of-may">Polymarket</a></li>
-<li><strong>"Will Google have the best Math AI model at the end of May 2026?"</strong> Yes 93.0% (▲ +9.5 pp) · $94K vol · <a href="https://polymarket.com/event/which-company-has-the-best-math-ai-model-end-of-may">Polymarket</a></li>
+<li><span class="score fresh">06</span> 🌱 🟡 ▤×2 🏷️ apps <strong>Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler.</strong> Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler Sources: <a href="https://huggingface.co/blog/torch-profiler">HuggingFace blog</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 active AI markets</em></p>
+<ul>
+<li><strong>"Will Anthropic have the best Math AI model at the end of May 2026?"</strong> Yes 9.0% (▼14.5pp) · $135K vol · <a href="https://polymarket.com/event/which-company-has-the-best-math-ai-model-end-of-may">Polymarket</a></li>
+<li><strong>"Trump orders federal review of AI model releases by May 31?"</strong> Yes 12.2% (▲6.8pp) · $157K vol · <a href="https://polymarket.com/event/trump-orders-federal-review-for-ai-model-releases-by-may-31">Polymarket</a></li>
+<li><strong>"U.S. enacts AI safety bill before 2027?"</strong> Yes 37.0% (▼4.0pp) · $99K vol · <a href="https://polymarket.com/event/us-enacts-ai-safety-bill-before-2027">Polymarket</a></li>
+<li><strong>"Will Google Gemini score at least 55% on Humanity’s Last Exam?"</strong> Yes 21.5% (▼4.0pp) · $63K vol · <a href="https://polymarket.com/event/google-gemini-score-on-humanitys-last-exam-by-june-30">Polymarket</a></li>
+<li><strong>"GPT-5.6 released by May 31, 2026?"</strong> Yes 13.9% (▲3.9pp) · $66K vol · <a href="https://polymarket.com/event/gpt-5pt6-released-by">Polymarket</a></li>
 </ul>
 <h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
-<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
+<p><strong>Reddit</strong></p>
 <ul>
-<li><a href="https://bsky.app/profile/catacalypto.bsky.social/post/3mmx4ut2m3k2b">@catacalypto.bsky.social on Bluesky</a> (245♥, 26🔁): "so first, lol, but second, I do think it’s interesting how some people’s only conception of a bot is an LLM- or NN-driven conversation-shape"</li>
-<li><a href="https://bsky.app/profile/abgeordnetenwatch.de/post/3mmwdyfkrm22v">@abgeordnetenwatch.de on Bluesky</a> (122♥, 37🔁): "OpenAI, Apple, Meta: Mit diesen Tech-Lobbyisten traf sich Kanzler #Merz und seine Regierung dserver.bundestag.de/btd/21/060/2..."</li>
-<li><a href="https://bsky.app/profile/onebigboss.bsky.social/post/3mmwx6ayav22v">@onebigboss.bsky.social on Bluesky</a> (138♥, 20🔁): "If yall don’t stop using Chat GPT and other BS AI crap, gaming systems will reach over $1000 and then you’ll be back to playing these again"</li>
+<li><a href="https://www.reddit.com/r/ArtificialInteligence/comments/1tqvz9i">r/ArtificialInteligence: "Spent a month testing Claude on top of Obsidian, Recall, and Notion. The base matters more than the model"</a></li>
+<li><a href="https://www.reddit.com/r/OpenAI/comments/1tqvjd0">r/OpenAI: "It’s taking a very long time for the new version of ChatGPT Voice Mode to be released. Do you think OpenAI will do a goo"</a></li>
+<li><a href="https://www.reddit.com/r/singularity/comments/1tqaq7p">r/singularity: "Emergence AI ran a simulated society on Claude, Gemini, Grok and GPT for two weeks. The results are… scary?"</a></li>
+</ul>
+<p><strong>Bluesky</strong></p>
+<ul>
+<li><a href="https://bsky.app/profile/catacalypto.bsky.social/post/3mmx4ut2m3k2b">@catacalypto.bsky.social on Bluesky</a> — "so first, lol, but second, I do think it’s interesting how some people’s only conception of a bot is an LLM- or NN-driven conversation-shape" (251♥, 26↻)</li>
+<li><a href="https://bsky.app/profile/onebigboss.bsky.social/post/3mmwx6ayav22v">@onebigboss.bsky.social on Bluesky</a> — "If yall don’t stop using Chat GPT and other BS AI crap, gaming systems will reach over $1000 and then you’ll be back to playing these again" (145♥, 22↻)</li>
+<li><a href="https://bsky.app/profile/timkellogg.me/post/3mmykkxcyqs2j">@timkellogg.me on Bluesky</a> — "GPT-5.5 has abandoned "the smoking gun" for new terminology" (157♥, 11↻)</li>
 </ul></article>]]></content>
   </entry>
   <entry>

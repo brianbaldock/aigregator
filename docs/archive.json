@@ -3,22 +3,26 @@
     "slug": "2026-05-29",
     "title": "2026-05-29 :: AI DAILY DIGEST",
     "themes": [
-      "models",
+      "agents",
+      "apps",
       "funding",
-      "policy",
+      "models",
       "hardware",
-      "enterprise",
-      "training"
+      "art",
+      "training",
+      "safety",
+      "policy",
+      "alignment"
     ],
     "sources": [
-      "ft.com",
+      "bloomberg.com",
+      "arxiv.org",
       "polymarket.com",
-      "bsky.app",
-      "openai.com",
-      "bloomberg.com"
+      "theverge.com",
+      "reddit.com"
     ],
     "diversity_warn": false,
-    "read_min": 4
+    "read_min": 11
   },
   {
     "slug": "2026-05-28",
