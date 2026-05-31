@@ -941,11 +941,21 @@ def extract_digest_meta(text: str) -> dict:
             if t and len(t) < 30:
                 themes[t] += 1
 
-    # Source domains from markdown links
+    # Source domains from markdown links. Dedup by URL first so an article
+    # cited under multiple themes only counts once toward source dominance —
+    # otherwise outlets that get cross-referenced (Bloomberg, Reuters, arXiv)
+    # look more dominant than they are and trip the THIN SIGNAL badge.
     sources: Counter = Counter()
+    seen_urls: set[str] = set()
     for m in re.finditer(r"\]\((https?://[^)]+)\)", text):
+        url = m.group(1).strip()
+        # Normalize trailing punctuation/fragments for dedup
+        url_key = url.rstrip(".,);:").split("#")[0]
+        if url_key in seen_urls:
+            continue
+        seen_urls.add(url_key)
         try:
-            host = urlparse(m.group(1)).netloc.lower().lstrip("www.")
+            host = urlparse(url).netloc.lower().lstrip("www.")
             if host and "." in host:
                 sources[host] += 1
         except ValueError:
