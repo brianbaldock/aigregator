@@ -10,8 +10,8 @@
 # falls back to web_search for those.
 
 # ── Tier 1: Primary press (credibility 5) ─────────────────────
-Reuters AI 24h | https://news.google.com/rss/search?q=AI+when:1d+site:reuters.com&hl=en-US&gl=US&ceid=US:en | 5
-AP AI 24h | https://news.google.com/rss/search?q=AI+when:1d+site:apnews.com&hl=en-US&gl=US&ceid=US:en | 5
+Reuters AI 24h | https://news.google.com/rss/search?q=%22artificial+intelligence%22+OR+%22AI+model%22+OR+LLM+OR+OpenAI+OR+Anthropic+OR+Nvidia+when:1d+site:reuters.com&hl=en-US&gl=US&ceid=US:en | 5
+AP AI 48h | https://news.google.com/rss/search?q=intitle:AI+OR+intitle:LLM+OR+intitle:OpenAI+OR+intitle:Anthropic+OR+intitle:Nvidia+OR+intitle:%22artificial+intelligence%22+when:2d+site:apnews.com&hl=en-US&gl=US&ceid=US:en | 5
 FT Technology | https://www.ft.com/technology?format=rss | 5
 Bloomberg Technology | https://feeds.bloomberg.com/technology/news.rss | 5
 
