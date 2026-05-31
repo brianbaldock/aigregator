@@ -16,10 +16,10 @@
     ],
     "sources": [
       "bloomberg.com",
-      "ft.com",
       "theverge.com",
       "polymarket.com",
-      "reddit.com"
+      "reddit.com",
+      "bsky.app"
     ],
     "diversity_warn": true,
     "read_min": 11
@@ -69,7 +69,7 @@
       "bloomberg.com",
       "theverge.com",
       "polymarket.com",
-      "bsky.app"
+      "reddit.com"
     ],
     "diversity_warn": false,
     "read_min": 9
@@ -90,9 +90,9 @@
       "inference"
     ],
     "sources": [
+      "reddit.com",
       "reuters.com",
       "bloomberg.com",
-      "reddit.com",
       "ft.com",
       "techcrunch.com"
     ],
@@ -116,10 +116,10 @@
     ],
     "sources": [
       "bloomberg.com",
-      "news.ycombinator.com",
       "polymarket.com",
-      "reuters.com",
-      "openai.com"
+      "news.ycombinator.com",
+      "openai.com",
+      "reuters.com"
     ],
     "diversity_warn": false,
     "read_min": 9
@@ -140,11 +140,11 @@
       "robotics"
     ],
     "sources": [
+      "polymarket.com",
       "ft.com",
       "bloomberg.com",
-      "polymarket.com",
       "arxiv.org",
-      "simonwillison.net"
+      "ired.com"
     ],
     "diversity_warn": false,
     "read_min": 7
@@ -166,9 +166,9 @@
     ],
     "sources": [
       "arxiv.org",
+      "polymarket.com",
       "bloomberg.com",
       "theverge.com",
-      "polymarket.com",
       "bsky.app"
     ],
     "diversity_warn": false,
@@ -192,9 +192,9 @@
     "sources": [
       "bloomberg.com",
       "polymarket.com",
-      "ft.com",
       "techcrunch.com",
-      "arstechnica.com"
+      "arstechnica.com",
+      "huggingface.co"
     ],
     "diversity_warn": false,
     "read_min": 8
@@ -217,8 +217,8 @@
     "sources": [
       "reuters.com",
       "theverge.com",
-      "techcrunch.com",
       "polymarket.com",
+      "techcrunch.com",
       "bloomberg.com"
     ],
     "diversity_warn": false,
@@ -240,11 +240,11 @@
       "code"
     ],
     "sources": [
-      "techcrunch.com",
-      "theverge.com",
       "huggingface.co",
-      "deepmind.google",
-      "bsky.app"
+      "theverge.com",
+      "techcrunch.com",
+      "bsky.app",
+      "polymarket.com"
     ],
     "diversity_warn": false,
     "read_min": 10
@@ -290,11 +290,11 @@
       "alignment"
     ],
     "sources": [
-      "ft.com",
       "news.ycombinator.com",
-      "bloomberg.com",
       "arxiv.org",
-      "polymarket.com"
+      "polymarket.com",
+      "ft.com",
+      "bloomberg.com"
     ],
     "diversity_warn": false,
     "read_min": 8
@@ -316,10 +316,10 @@
     ],
     "sources": [
       "bloomberg.com",
-      "ft.com",
       "arxiv.org",
       "polymarket.com",
-      "techcrunch.com"
+      "github.com",
+      "ft.com"
     ],
     "diversity_warn": false,
     "read_min": 9
@@ -341,10 +341,10 @@
     ],
     "sources": [
       "polymarket.com",
-      "techcrunch.com",
-      "news.ycombinator.com",
       "reddit.com",
-      "apnews.com"
+      "techcrunch.com",
+      "ft.com",
+      "arxiv.org"
     ],
     "diversity_warn": false,
     "read_min": 7
@@ -365,8 +365,8 @@
       "bias"
     ],
     "sources": [
-      "old.reddit.com",
       "theverge.com",
+      "old.reddit.com",
       "polymarket.com",
       "techcrunch.com",
       "github.com"
@@ -392,9 +392,9 @@
     "sources": [
       "reddit.com",
       "polymarket.com",
-      "techcrunch.com",
       "news.ycombinator.com",
-      "ft.com"
+      "techcrunch.com",
+      "openai.com"
     ],
     "diversity_warn": false,
     "read_min": 8
@@ -417,9 +417,9 @@
     "sources": [
       "news.google.com",
       "reddit.com",
-      "techcrunch.com",
       "arxiv.org",
-      "ft.com"
+      "ft.com",
+      "techcrunch.com"
     ],
     "diversity_warn": false,
     "read_min": 10
@@ -466,10 +466,10 @@
     ],
     "sources": [
       "news.google.com",
-      "x.com",
       "polymarket.com",
-      "github.com",
-      "arxiv.org"
+      "x.com",
+      "arxiv.org",
+      "reddit.com"
     ],
     "diversity_warn": false,
     "read_min": 9
@@ -491,10 +491,10 @@
     ],
     "sources": [
       "techcrunch.com",
-      "simonwillison.net",
       "huggingface.co",
+      "reddit.com",
       "polymarket.com",
-      "reddit.com"
+      "openai.com"
     ],
     "diversity_warn": false,
     "read_min": 9
