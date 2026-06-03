@@ -3,26 +3,25 @@
     "slug": "2026-06-03",
     "title": "2026-06-03 :: AI DAILY DIGEST",
     "themes": [
-      "models",
-      "apps",
+      "agents",
+      "policy",
       "hardware",
-      "science",
+      "models",
+      "research",
       "funding",
-      "interpretability",
-      "code",
       "safety",
-      "voice",
-      "policy"
+      "robotics",
+      "multimodal"
     ],
     "sources": [
-      "theguardian.com",
-      "bbc.com",
       "github.com",
+      "apnews.com",
       "polymarket.com",
-      "arstechnica.com"
+      "theverge.com",
+      "ft.com"
     ],
     "diversity_warn": false,
-    "read_min": 14
+    "read_min": 12
   },
   {
     "slug": "2026-06-02",
