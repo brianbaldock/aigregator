@@ -260,13 +260,60 @@ def main():
     # drop garbage: no title, no url, or obvious archive
     items = [i for i in items if i["title"] and i["url"] and i["domain"] not in ("web.archive.org",)]
 
-    merged = cluster_and_score(items)[: args.limit]
+    scored = cluster_and_score(items)
+
+    # Section quotas: news ranks dominate, but reserve seats so the community
+    # tier (Reddit/Bsky/HN) and research tier (arXiv) always appear in the
+    # digest regardless of credibility score.
+    SOCIAL_QUOTA = 15   # Reddit + Bsky + HN combined
+    SUB_QUOTAS = {"reddit": 6, "bsky": 4, "hn": 5}
+    RESEARCH_QUOTA = 5  # arXiv
+
+    def is_social(it):
+        s = it["source"]
+        return s.startswith("r/") or s.startswith("bsky:") or s == "HN"
+    def social_kind(it):
+        s = it["source"]
+        if s.startswith("r/"): return "reddit"
+        if s.startswith("bsky:"): return "bsky"
+        return "hn"
+    def is_research(it):
+        return it["source"].startswith("arXiv")
+
+    # Tag section so build.py can render groupings
+    for it in scored:
+        if is_social(it): it["tier"] = "social"
+        elif is_research(it): it["tier"] = "research"
+        else: it["tier"] = "news"
+
+    news = [i for i in scored if i["tier"] == "news"]
+    social = [i for i in scored if i["tier"] == "social"]
+    research = [i for i in scored if i["tier"] == "research"]
+
+    # Pull each social sub-source up to its quota, in score order
+    social_pick = []
+    for kind, q in SUB_QUOTAS.items():
+        picks = [i for i in social if social_kind(i) == kind][:q]
+        social_pick.extend(picks)
+    # Backfill remaining social slots from leftovers (any source)
+    chosen_urls = {i["url"] for i in social_pick}
+    leftover_social = [i for i in social if i["url"] not in chosen_urls]
+    while len(social_pick) < SOCIAL_QUOTA and leftover_social:
+        social_pick.append(leftover_social.pop(0))
+
+    research_pick = research[:RESEARCH_QUOTA]
+    remaining = max(0, args.limit - len(social_pick) - len(research_pick))
+    news_pick = news[:remaining]
+
+    # Final order: news first (already sorted by score), then research, then social
+    merged = news_pick + research_pick + social_pick
 
     # stats
     by_dom = defaultdict(int)
     for m in merged: by_dom[m["domain"]] += 1
     wire_count = sum(by_dom[d] for d in WIRE_DOMAINS)
     cross = sum(1 for m in merged if "cross_source" in m["flags"])
+    print(f"[merge_score] tiers: news={len(news_pick)} research={len(research_pick)} social={len(social_pick)}")
 
     os.makedirs(os.path.dirname(args.outfp), exist_ok=True)
     with open(args.outfp, "w") as f:
