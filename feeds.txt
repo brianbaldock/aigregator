@@ -4,15 +4,18 @@
 # Lines starting with # are comments. Blank lines ignored.
 # Credibility: 1-5 (matches the digest scoring rubric)
 #
-# Reuters has no public RSS — we use the personalized /my-news/feed/
-# endpoint, which requires a session cookie pinned in
-# ~/.config/aigregator/secrets.env (REUTERS_COOKIE=...). Refresh every
-# 3-4 weeks before expiry.
+# Reuters and AP have no usable public RSS and are DataDome/cookie-walled
+# from datacenter IPs. They are surfaced via Kagi v1 `site:` search in
+# Phase 1C of the cron prompt instead. Do NOT re-add a Reuters or AP RSS
+# entry here — every attempt to date has either 404'd, returned a bot
+# challenge page, or required a session cookie that expires in days.
+# Google News RSS proxies were tried and retired: the redirect URLs
+# fragment dedup and the consent interstitial blocks extract.
+#
 # Anthropic, Mistral, Meta AI, AISI have no public RSS — the digest job
 # falls back to web_search for those.
 
 # ── Tier 1: Primary press (credibility 5) ─────────────────────
-Reuters my-news | https://www.reuters.com/my-news/feed/ | 5
 BBC Technology | https://feeds.bbci.co.uk/news/technology/rss.xml | 5
 Guardian AI | https://www.theguardian.com/technology/artificialintelligenceai/rss | 5
 FT Technology | https://www.ft.com/technology?format=rss | 5
