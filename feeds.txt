@@ -4,14 +4,17 @@
 # Lines starting with # are comments. Blank lines ignored.
 # Credibility: 1-5 (matches the digest scoring rubric)
 #
-# Reuters and AP have killed their public RSS feeds, so we proxy them via
-# Google News RSS with a site: filter. This returns clean XML.
+# Reuters has no public RSS — we use the personalized /my-news/feed/
+# endpoint, which requires a session cookie pinned in
+# ~/.config/aigregator/secrets.env (REUTERS_COOKIE=...). Refresh every
+# 3-4 weeks before expiry.
 # Anthropic, Mistral, Meta AI, AISI have no public RSS — the digest job
 # falls back to web_search for those.
 
 # ── Tier 1: Primary press (credibility 5) ─────────────────────
-Reuters AI 24h | https://news.google.com/rss/search?q=%22artificial+intelligence%22+OR+%22AI+model%22+OR+LLM+OR+OpenAI+OR+Anthropic+OR+Nvidia+when:1d+site:reuters.com&hl=en-US&gl=US&ceid=US:en | 5
-AP AI 48h | https://news.google.com/rss/search?q=intitle:AI+OR+intitle:LLM+OR+intitle:OpenAI+OR+intitle:Anthropic+OR+intitle:Nvidia+OR+intitle:%22artificial+intelligence%22+when:2d+site:apnews.com&hl=en-US&gl=US&ceid=US:en | 5
+Reuters my-news | https://www.reuters.com/my-news/feed/ | 5
+BBC Technology | https://feeds.bbci.co.uk/news/technology/rss.xml | 5
+Guardian AI | https://www.theguardian.com/technology/artificialintelligenceai/rss | 5
 FT Technology | https://www.ft.com/technology?format=rss | 5
 Bloomberg Technology | https://feeds.bloomberg.com/technology/news.rss | 5
 
@@ -38,6 +41,4 @@ Zvi Mowshowitz | https://thezvi.wordpress.com/feed/ | 4
 # ── Tier 2: Responsible AI / Safety / Policy (credibility 4) ──
 NIST Cybersecurity Insights | https://www.nist.gov/blogs/cybersecurity-insights/rss.xml | 4
 The Hacker News | https://feeds.feedburner.com/TheHackersNews | 4
-
-# ── Wide-net catchall (credibility 3 by default) ──────────────
-Google News AI 24h | https://news.google.com/rss/search?q=artificial+intelligence+when:1d&hl=en-US&gl=US&ceid=US:en | 3
+Slashdot | https://rss.slashdot.org/Slashdot/slashdotMain | 3
