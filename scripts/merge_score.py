@@ -134,9 +134,10 @@ def load_rss(indir: str):
     if not os.path.exists(fp): return []
     out = []
     for r in json.load(open(fp)):
-        out.append(_item(r.get("source","RSS"), r.get("cred", 3),
-                         r.get("title"), r.get("link") or r.get("url",""),
-                         r.get("desc"), r.get("pub")))
+        out.append(_item(r.get("source","RSS"), r.get("credibility", r.get("cred", 3)),
+                         r.get("title"), r.get("url") or r.get("link",""),
+                         r.get("summary") or r.get("desc",""),
+                         r.get("published") or r.get("pub")))
     return out
 
 def load_arxiv(indir: str):
@@ -144,9 +145,11 @@ def load_arxiv(indir: str):
     if not os.path.exists(fp): return []
     out = []
     for r in json.load(open(fp)):
-        out.append(_item(f"arXiv:{r.get('cat','')}", 4,
-                         r.get("title"), r.get("link",""),
-                         r.get("desc"), None))
+        cat = r.get("category") or r.get("cat","")
+        out.append(_item(r.get("source") or f"arXiv:{cat}", r.get("credibility", 4),
+                         r.get("title"), r.get("url") or r.get("link",""),
+                         r.get("summary") or r.get("desc",""),
+                         r.get("published")))
     return out
 
 def load_reddit(indir: str):
@@ -154,8 +157,10 @@ def load_reddit(indir: str):
     if not os.path.exists(fp): return []
     out = []
     for r in json.load(open(fp)):
-        out.append(_item(f"r/{r.get('sub','')}", 2,
-                         r.get("title"), r.get("url",""), "", None))
+        sub = r.get("subreddit") or r.get("sub","")
+        out.append(_item(f"r/{sub}", r.get("credibility", 2),
+                         r.get("title"), r.get("url",""),
+                         r.get("summary",""), r.get("published")))
     return out
 
 def load_bsky(indir: str):
@@ -163,10 +168,10 @@ def load_bsky(indir: str):
     if not os.path.exists(fp): return []
     out = []
     for r in json.load(open(fp)):
-        text = r.get("text","")
-        title = (text[:120] + "…") if len(text) > 120 else text
-        out.append(_item(f"bsky:{r.get('handle','')}", 2,
-                         title, r.get("url",""), text, None))
+        text = r.get("summary") or r.get("text","") or r.get("title","")
+        title = r.get("title") or ((text[:120] + "…") if len(text) > 120 else text)
+        out.append(_item(f"bsky:{r.get('handle','')}", r.get("credibility", 2),
+                         title, r.get("url",""), text, r.get("published")))
     return out
 
 def load_hn(indir: str):
@@ -174,10 +179,23 @@ def load_hn(indir: str):
     for fp in sorted(glob.glob(os.path.join(indir, "hn*.json"))):
         try: d = json.load(open(fp))
         except Exception: continue
-        for h in (d.get("hits") or []):
-            url = h.get("url") or f"https://news.ycombinator.com/item?id={h.get('objectID','')}"
-            out.append(_item("HN", 3, h.get("title"), url, "",
-                             h.get("created_at")))
+        # Two shapes seen in the wild:
+        #   1) Algolia raw: {"hits": [...]} — each hit has objectID/title/url/created_at
+        #   2) Pre-normalized list of items the agent dumped this morning
+        if isinstance(d, dict):
+            hits = d.get("hits") or []
+            for h in hits:
+                url = h.get("url") or f"https://news.ycombinator.com/item?id={h.get('objectID','')}"
+                out.append(_item("HN", 3, h.get("title"), url, "",
+                                 h.get("created_at")))
+        elif isinstance(d, list):
+            for h in d:
+                if not isinstance(h, dict): continue
+                url = h.get("url") or ""
+                title = h.get("title") or ""
+                if not title: continue
+                out.append(_item("HN", 3, title, url, h.get("summary","") or "",
+                                 h.get("created_at") or h.get("published")))
     return out
 
 # -------- cluster + score --------
