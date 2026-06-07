@@ -1,0 +1,2097 @@
+[
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "Artificial Intelligence - AI News - Reuters",
+    "url": "https://www.reuters.com/technology/artificial-intelligence/",
+    "domain": "reuters.com",
+    "summary": "Explore the latest artificial intelligence news with Reuters - from AI breakthroughs and technology trends to regulation, ethics, business and global ... Explore the latest artificial intelligence news with Reuters - from AI breakthroughs and technology trends to regulation, ethics, business and global impact.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com",
+      "bloomberg.com",
+      "news.crunchbase.com",
+      "reuters.com",
+      "wsj.com"
+    ],
+    "sources": [
+      "AP News",
+      "Bloomberg",
+      "Kagi:news.crunchbase.com",
+      "Reuters",
+      "WSJ"
+    ],
+    "source_count": 5,
+    "sentiment": 1,
+    "sdot": 5,
+    "score": 23,
+    "flags": [
+      "cross_source",
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "Trump AI Policy Adviser Krishnan Is Giving Up White House Role",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-06/trump-ai-policy-adviser-krishnan-is-giving-up-white-house-role",
+    "domain": "bloomberg.com",
+    "summary": "A former Andreessen Horowitz partner, Krishnan was tapped by President Donald Trump to help shape AI policy during his second term. He was a key ...",
+    "published": "2026-06-06T19:02:53Z",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com",
+      "reuters.com",
+      "techcrunch.com"
+    ],
+    "sources": [
+      "Bloomberg",
+      "Reuters",
+      "TechCrunch AI"
+    ],
+    "source_count": 3,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 17,
+    "flags": [
+      "cross_source",
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "Anthropic Urges Global Pause in AI Development, Flags ‘Self-Improvement ...",
+    "url": "https://www.wsj.com/tech/ai/anthropic-urges-global-pause-in-ai-development-flags-self-improvement-risk-99cefb73",
+    "domain": "wsj.com",
+    "summary": "The ability to slow global AI development would “likely be a good thing,” the company said Thursday in a blog post that disclosed internal data documenting how quickly its most advanced models ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reddit.com",
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ",
+      "r/OpenAI"
+    ],
+    "source_count": 2,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 14,
+    "flags": [
+      "cross_source",
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "SpaceX, Anthropic and OpenAI’s Sprint to Go Public Defines the AI Boom ...",
+    "url": "https://www.wsj.com/tech/ai/spacex-anthropic-and-openais-sprint-to-go-public-defines-the-ai-booms-big-day-d462bf7b",
+    "domain": "wsj.com",
+    "summary": "Silicon Valley’s hottest startups are competing fiercely as big tech companies contend with fickle investors and hard choices.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bsky.app",
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ",
+      "bsky:carnage4life.bsky.social",
+      "bsky:doener.eurosky.social",
+      "bsky:jenlucpiquant.bsky.social"
+    ],
+    "source_count": 2,
+    "sentiment": -1,
+    "sdot": -5,
+    "score": 14,
+    "flags": [
+      "cross_source",
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Kagi:computingforgeeks.com",
+    "credibility": 2,
+    "title": "Open Source LLM Comparison Table (2026) - ComputingForGeeks",
+    "url": "https://computingforgeeks.com/open-source-llm-comparison/",
+    "domain": "computingforgeeks.com",
+    "summary": "The open-source LLM landscape has shifted dramatically. Models like Qwen 3.5, DeepSeek V3.2, GLM-5, and Llama 4 now match or beat proprietary alternatives on key benchmarks, and you can run them on your own hardware. Two years ago, open-weight models were curiosities. Today, they power production workloads at companies that don’t want to send their data to someone else’s API. This ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "computingforgeeks.com",
+      "llm-stats.com",
+      "llmleaderboard.in",
+      "vellum.ai"
+    ],
+    "sources": [
+      "Kagi:computingforgeeks.com",
+      "Kagi:llm-stats.com",
+      "Kagi:llmleaderboard.in",
+      "Kagi:vellum.ai"
+    ],
+    "source_count": 4,
+    "sentiment": 1,
+    "sdot": 2,
+    "score": 13,
+    "flags": [
+      "cross_source",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "A Guide to the Circular Deals Underpinning the AI Boom",
+    "url": "https://www.bloomberg.com/graphics/2026-ai-circular-deals/",
+    "domain": "bloomberg.com",
+    "summary": "A web of interlinked investments raises the risk of cascading losses if AI falls short of its potential.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "AI - Bloomberg",
+    "url": "https://www.bloomberg.com/ai",
+    "domain": "bloomberg.com",
+    "summary": "Understanding how AI impacts business. The latest news on advancements in artificial intelligence, how to use AI, and how to invest in AI. ... Understanding how AI impacts business. The latest news on advancements in artificial intelligence, how to use AI, and how to invest in AI.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "AI - Bloomberg.com",
+    "url": "https://www.bloomberg.com/ai",
+    "domain": "bloomberg.com",
+    "summary": "Understanding how AI impacts business. The latest news on advancements in artificial intelligence, how to use AI, and how to invest in AI. ... Understanding how AI impacts business. The latest news on advancements in artificial intelligence, how to use AI, and how to invest in AI.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "AI - Bloomberg.com",
+    "url": "https://www.bloomberg.com/ai",
+    "domain": "bloomberg.com",
+    "summary": "Understanding how AI impacts business. The latest news on advancements in artificial intelligence, how to use AI, and how to invest in AI. ... Understanding how AI impacts business. The latest news on advancements in artificial intelligence, how to use AI, and how to invest in AI.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "AI IRL - Bloomberg.com",
+    "url": "https://www.bloomberg.com/originals/series/ai-irl",
+    "domain": "bloomberg.com",
+    "summary": "How is AI infiltrating real life? Bloomberg journalists Jackie Davalos and Nate Lanxon take a deeper dive into AI and how it may soon change every aspect of our ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "AI Is Cannibalizing Human Intelligence. Here’s How to Stop It.",
+    "url": "https://www.wsj.com/tech/ai/is-ai-smarter-than-humans-cyborg-956e0f0e",
+    "domain": "wsj.com",
+    "summary": "AI Is Cannibalizing Human Intelligence. Here’s How to Stop It. As a neuroscientist, I conducted research into artificial versus human intelligence.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "AI promised a revolution. Companies are still waiting. | Reuters",
+    "url": "https://www.reuters.com/business/business-leaders-agree-ai-is-future-they-just-wish-it-worked-right-now-2025-12-16/",
+    "domain": "reuters.com",
+    "summary": "Executives say they still believe generative AI will eventually transform their businesses, but they are reconsidering how quickly that will happen within their organizations.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "AI&amp;Us - Reuters",
+    "url": "https://www.reuters.com/technology/ai-and-us/",
+    "domain": "reuters.com",
+    "summary": "From writing sermons to simulating conversations with Jesus, religious leaders and worshippers alike are experimenting with AI — though not without controversy.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "AI&amp;Us - Reuters",
+    "url": "https://www.reuters.com/technology/ai-and-us/",
+    "domain": "reuters.com",
+    "summary": "From writing sermons to simulating conversations with Jesus, religious leaders and worshippers alike are experimenting with AI — though not without controversy.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "Anthropic Says World Needs System to Decide on AI Work Pause",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-05/anthropic-calls-for-ai-pause-button-to-let-humans-take-stock",
+    "domain": "bloomberg.com",
+    "summary": "“It would be good for the world to have the option to show or temporarily pause” AI work that may be dangerous, the company said in a ...",
+    "published": "2026-06-05T14:02:57Z",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "Anthropic says AI labs need coordinated plan to halt development if ...",
+    "url": "https://www.reuters.com/business/anthropic-says-ai-labs-need-coordinated-plan-halt-development-if-risks-rise-2026-06-04/",
+    "domain": "reuters.com",
+    "summary": "Anthropic said on Thursday frontier AI developers should establish a coordinated, verifiable way to slow down or temporarily pause ... Anthropic said on Thursday frontier AI developers should establish a coordinated, verifiable way to slow down or temporarily pause development if advanced systems begin improving themselves faster ...",
+    "published": "2026-06-05T00:02:17Z",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": -1,
+    "sdot": -5,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "AP News",
+    "credibility": 5,
+    "title": "Anthropic urges industry coordination as AI risks grow ... - AP News",
+    "url": "https://apnews.com/article/anthropic-artificial-intelligence-ai-938c99158e5953601cf3322f1cec12af",
+    "domain": "apnews.com",
+    "summary": "Anthropic is proposing that top AI companies coordinate a way to pause the development of advanced AI systems if they become too dangerous.",
+    "published": "2026-06-05T17:02:57Z",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com"
+    ],
+    "sources": [
+      "AP News"
+    ],
+    "source_count": 1,
+    "sentiment": -1,
+    "sdot": -5,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "Apple’s Plan for AI Dominance Rests on Fixing Its Much-Maligned Chatbot ...",
+    "url": "https://www.wsj.com/tech/ai/apples-plan-for-ai-dominance-rests-on-fixing-its-much-maligned-chatbot-9f2309cb",
+    "domain": "wsj.com",
+    "summary": "The iPhone maker has clear advantages to lead in consumer AI, but only if it can finally modernize Siri.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "Artificial Intelligence (AI) | Bloomberg L.P. | About, Careers, Products ...",
+    "url": "https://www.bloomberg.com/company/values/tech-at-bloomberg/artificial-intelligence-ai/",
+    "domain": "bloomberg.com",
+    "summary": "Artificial intelligence (AI) disciplines, such as natural language processing (NLP) and machine learning (ML), play a central role at Bloomberg.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "Artificial Intelligence Report",
+    "url": "https://www.wsj.com/news/collection/artificial-intelligence-report-e48d5827",
+    "domain": "wsj.com",
+    "summary": "The latest coverage on artificial intelligence from The Wall Street Journal.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "B100QAI:IND | Bloomberg US 20 AI Select Price Return Index | Indices",
+    "url": "https://www.bloomberg.com/professional/products/indices/quote/B100QAI:IND",
+    "domain": "bloomberg.com",
+    "summary": "Bloomberg US 20 AI Select Price Return Index is constructed to track the performance of top 20 companies from Bloomberg US 100 Index.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "Canada says AI strategy will help create 250000 jobs, boost GDP by ...",
+    "url": "https://www.reuters.com/business/world-at-work/canada-says-ai-strategy-will-help-create-250000-jobs-boost-gdp-by-3-2026-06-04/",
+    "domain": "reuters.com",
+    "summary": "Canada unveiled a new artificial intelligence strategy on Thursday that it says will help create 250000 jobs by 2031 and includes a new ...",
+    "published": "2026-06-04T16:02:17Z",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "From OpenAI to Nvidia, firms channel billions into AI infrastructure as ...",
+    "url": "https://www.reuters.com/business/autos-transportation/companies-pouring-billions-advance-ai-infrastructure-2026-04-21/",
+    "domain": "reuters.com",
+    "summary": "Amazon said it will invest up to $25 billion in Anthropic, as the AI startup commits to spending more than $100 billion over the next 10 years on Amazon&#39;s cloud technologies.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "AP News",
+    "credibility": 5,
+    "title": "Google I/O 2026: AI advances announced for search and Gemini | AP News",
+    "url": "https://apnews.com/article/google-io-gemini-developers-conference-a984e6756032dc4af260f8fa27e8f4a9",
+    "domain": "apnews.com",
+    "summary": "Google is introducing a range of new AI tools, including an AI assistant called Gemini Spark, which proactively performs tasks for users.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com"
+    ],
+    "sources": [
+      "AP News"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "Hospitals Are a Proving Ground for What AI Can Do, and What It Can’t",
+    "url": "https://www.wsj.com/tech/ai/hospitals-are-a-proving-ground-for-what-ai-can-do-and-what-it-cant-60e4020c",
+    "domain": "wsj.com",
+    "summary": "Hospitals Are a Proving Ground for What AI Can Do, and What It Can’t Healthcare is going all-in on artificial intelligence, from reading patient scans to fighting insurance denials",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "How AI Firms Are Redesigning Data Centers to Meet Energy Demand",
+    "url": "https://www.bloomberg.com/graphics/2026-ai-data-center-redesign/",
+    "domain": "bloomberg.com",
+    "summary": "With energy demand already straining infrastructure, AI players are reimagining the data center from the ground up.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "Just how big is the AI investment wave? - reuters.com",
+    "url": "https://www.reuters.com/graphics/USA-ECONOMY/AI-INVESTMENT/gkvlqbgxkpb/",
+    "domain": "reuters.com",
+    "summary": "Investment in AI has not just outstripped government-led initiatives like the Manhattan Project and the Apollo program. It has also exceeded the capital put into other, more recent, market-driven ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "The AI Boom’s Next Test: Is the ROI Worth the Cost? - Bloomberg",
+    "url": "https://www.bloomberg.com/opinion/articles/2026-06-04/the-ai-boom-s-next-test-is-the-roi-worth-the-cost",
+    "domain": "bloomberg.com",
+    "summary": "In the coming months, some of the world’s biggest AI labs — including OpenAI and Anthropic PBC — will debut on the public markets at valuations close to $1 trillion each. Alphabet Inc. is ...",
+    "published": "2026-06-04T00:00:00Z",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg",
+    "credibility": 5,
+    "title": "The AI Race: Trending News, Latest Updates, Analysis",
+    "url": "https://www.bloomberg.com/latest/the-ai-race",
+    "domain": "bloomberg.com",
+    "summary": "See the latest on The AI Race. From breaking news to in-depth reporting, Bloomberg tracks the full story in real time.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "The First Class of AI Natives Is Graduating. Offices Are Getting Ready.",
+    "url": "https://www.wsj.com/tech/ai/ai-natives-graduates-job-cuts-6bab8ac9",
+    "domain": "wsj.com",
+    "summary": "Emma Kanjorski doesn’t consider herself an advanced AI user—at least compared with some of her fellow 2026 graduates. She avoided ChatGPT for much of her time at the University of Vermont ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "AP News",
+    "credibility": 5,
+    "title": "The OpenAI trial raised questions about what&#39;s driving AI&#39;s development ...",
+    "url": "https://apnews.com/article/openai-trial-musk-altman-ipo-776743f032d8e5ac4faf85088db8bfc0",
+    "domain": "apnews.com",
+    "summary": "The trial pitting Elon Musk against OpenAI CEO Sam Altman made clear the two billionaires agreed on one thing: building artificial intelligence would require significant resources — and enormous amounts of money.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com"
+    ],
+    "sources": [
+      "AP News"
+    ],
+    "source_count": 1,
+    "sentiment": 1,
+    "sdot": 5,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "The great AI buildout shows no sign of slowing | Reuters",
+    "url": "https://www.reuters.com/legal/transactional/great-ai-buildout-shows-no-sign-slowing-2025-10-31/",
+    "domain": "reuters.com",
+    "summary": "A momentous week in the technology sector made it clear there is no sign the boom in building artificial intelligence infrastructure is slowing — despite the bubble talk.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "Trump administration to ask US AI firms to voluntarily submit models ...",
+    "url": "https://www.reuters.com/world/trump-signed-order-promote-advanced-ai-innovation-security-white-house-says-2026-06-02/",
+    "domain": "reuters.com",
+    "summary": "The Trump administration will ask leading AI developers to voluntarily submit their most capable models for government cybersecurity tests before ‌releasing them to the public, according to an ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "AP News",
+    "credibility": 5,
+    "title": "Trump calls for military to accelerate use of AI | AP News",
+    "url": "https://apnews.com/article/artificial-intelligence-ai-military-trump-weapons-1078e23edada2bc16db12dba109015c0",
+    "domain": "apnews.com",
+    "summary": "President Donald Trump is calling for the U.S. military and national security agencies to accelerate their use of artificial intelligence.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com"
+    ],
+    "sources": [
+      "AP News"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "AP News",
+    "credibility": 5,
+    "title": "Trump pulls back AI order over fears it could slow US technology | AP News",
+    "url": "https://apnews.com/article/trump-ai-executive-order-ee318f35acc8a2c43e47f3ebf26cb459",
+    "domain": "apnews.com",
+    "summary": "President Donald Trump has called off plans to sign a new executive order on artificial intelligence hours before an expected White House ceremony.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com"
+    ],
+    "sources": [
+      "AP News"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "AP News",
+    "credibility": 5,
+    "title": "Trump signs order to block state AI regulations | AP News",
+    "url": "https://apnews.com/article/trump-ai-regulation-executive-order-state-laws-9cb4dd1bc249e404260b3dc233217388",
+    "domain": "apnews.com",
+    "summary": "The executive order directs the Attorney General to create a new task force to challenge state laws, and directs the Commerce Department to draw up a list of problematic regulations. It also threatens to restrict funding from a broadband deployment program and other grant programs to states with AI laws. David Sacks, a venture capitalist with extensive AI investments who is leading Trump’s ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com"
+    ],
+    "sources": [
+      "AP News"
+    ],
+    "source_count": 1,
+    "sentiment": -2,
+    "sdot": -10,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "U.S. Officials Discuss Taking Financial Stakes in AI Industry",
+    "url": "https://www.wsj.com/tech/ai/u-s-officials-discuss-taking-financial-stakes-in-ai-industry-b654d41a",
+    "domain": "wsj.com",
+    "summary": "WASHINGTON—Senior U.S. officials have discussed having the federal government take stakes in major artificial-intelligence companies, according to people familiar with the matter, after OpenAI ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "US House lawmakers release draft bill to prohibit state AI rules",
+    "url": "https://www.reuters.com/business/us-house-lawmakers-release-draft-bill-regulate-ai-2026-06-04/",
+    "domain": "reuters.com",
+    "summary": "A bipartisan pair of U.S. House lawmakers released draft legislation on Thursday that would prohibit states from regulating the development of artificial intelligence models, a move praised by ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 1,
+    "sdot": 5,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "US officials eye government stakes in AI companies, NOTUS reports",
+    "url": "https://www.reuters.com/legal/transactional/us-officials-eye-government-stakes-ai-companies-notus-reports-2026-06-05/",
+    "domain": "reuters.com",
+    "summary": "Trump signed an executive order on Tuesday asking leading AI developers to voluntarily submit their most capable models ⁠for ​government ...",
+    "published": "2026-06-05T00:02:17Z",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Reuters",
+    "credibility": 5,
+    "title": "US says it will speed development and use of AI for national security",
+    "url": "https://www.reuters.com/technology/us-says-it-will-speed-development-use-ai-national-security-2026-06-05/",
+    "domain": "reuters.com",
+    "summary": "The White House said on Friday it would accelerate the development and use of AI for national security applications, while stressing that the technology should not ‌be used to carry out unlawful ...",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "reuters.com"
+    ],
+    "sources": [
+      "Reuters"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "WSJ",
+    "credibility": 5,
+    "title": "We’re Using So Much AI That Computing Firepower Is Running Out",
+    "url": "https://www.wsj.com/tech/ai/ai-is-using-so-much-energy-that-computing-firepower-is-running-out-156e5c85",
+    "domain": "wsj.com",
+    "summary": "AI companies are rationing their offerings and products, rankling users—a warning sign for a boom that depends on rapid adoption.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "wsj.com"
+    ],
+    "sources": [
+      "WSJ"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "AP News",
+    "credibility": 5,
+    "title": "White House says no need to restrict &#39;open-source&#39; artificial ...",
+    "url": "https://apnews.com/article/ai-open-source-white-house-f62009172c46c5003ddd9481aa49f7c3",
+    "domain": "apnews.com",
+    "summary": "The White House is coming out in favor of “open-source” artificial intelligence technology, arguing in a report Tuesday that there’s no need right now for restrictions on companies making key components of their powerful AI systems widely available.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com"
+    ],
+    "sources": [
+      "AP News"
+    ],
+    "source_count": 1,
+    "sentiment": 1,
+    "sdot": 5,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "AP News",
+    "credibility": 5,
+    "title": "Why many Americans are turning to AI for health advice ... - AP News",
+    "url": "https://apnews.com/article/ai-chatbots-health-care-poll-0ea249aa0db3fa351efa2a76af3a2348",
+    "domain": "apnews.com",
+    "summary": "Many Americans are turning to artificial intelligence tools such as ChatGPT for health advice. A Gallup poll out Wednesday found that about 1 in 4 U.S. adults had used AI for health information in the past month.",
+    "published": "",
+    "via_kagi": true,
+    "source_domains": [
+      "apnews.com"
+    ],
+    "sources": [
+      "AP News"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 11,
+    "flags": [
+      "wire",
+      "kagi"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "AI’s Mega Stock Deals Raise Specter of More Shares Than Buyers",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-07/ai-s-mega-stock-deals-raise-specter-of-more-shares-than-buyers",
+    "domain": "bloomberg.com",
+    "summary": "A flood of new shares from companies looking to fund their artificial intelligence ambitions is raising questions on Wall Street about whether there will be enough buyers to soak them all up and what this pile of fresh equity will mean for stock prices more broadly.",
+    "published": "2026-06-07T13:00:07+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "FT Technology",
+    "credibility": 5,
+    "title": "Are we at the start of a new investment super-cycle?",
+    "url": "https://www.ft.com/content/d91cf0b4-2ed6-47b6-a9b1-46f87c52efc1",
+    "domain": "ft.com",
+    "summary": "AI, clean energy and defence spending are reinforcing each other, amplifying potential spend",
+    "published": "2026-06-07T12:00:04+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "ft.com"
+    ],
+    "sources": [
+      "FT Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Guardian AI",
+    "credibility": 5,
+    "title": "Billions spent and hypothetical returns: the AI boom explained with six charts",
+    "url": "https://www.theguardian.com/technology/2026/jun/07/billions-spent-hypothetical-returns-the-ai-boom-explained-with-six-charts",
+    "domain": "theguardian.com",
+    "summary": "Expenditure is growing fast and consumer take-up accelerating. But alarm bells are sounding The race is very much on. Elon Musk’s SpaceX, which makes AI models as well as space rockets, announced last week it is seeking a $1.77tn (£1.31tn) valuation on the US stock market while Anthropic, the startup behind the Claude chatbot, said it had filed for an initial public offering . OpenAI, the develope",
+    "published": "2026-06-07T11:00:31+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "theguardian.com"
+    ],
+    "sources": [
+      "Guardian AI"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "Bitcoin Drop Tests Retail Investor Strength",
+    "url": "https://www.bloomberg.com/news/videos/2026-06-06/bitcoin-drop-test-retail-investor-strength-video",
+    "domain": "bloomberg.com",
+    "summary": "For years, Wall Street has benefited from one of the most reliable forces in modern markets: a retail-trader army willing to buy almost anything. Friday offered a glimpse of what happens when several of those trades come under pressure at the same time. Artificial-intelligence stocks suffered their sharpest selloff in months, Bitcoin fell below $60,000 and bond yields surged as traders revived bet",
+    "published": "2026-06-06T12:08:21+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "FT Technology",
+    "credibility": 5,
+    "title": "Britain’s questionable reliance on Palantir",
+    "url": "https://www.ft.com/content/e54519ad-9f88-45b3-a4e8-dd64cefceb8f",
+    "domain": "ft.com",
+    "summary": "Government should use the best technology for any task, but be wary of ‘lock-ins’",
+    "published": "2026-06-07T09:09:33+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "ft.com"
+    ],
+    "sources": [
+      "FT Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "China Puts EVs on a Diet as Battery Boom Adds Bulk, CCTV Reports",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-07/china-puts-evs-on-a-diet-as-battery-boom-adds-bulk-cctv-reports",
+    "domain": "bloomberg.com",
+    "summary": "China wants slimmer electric vehicles after years of bigger batteries and rising demand for space and features helped make passenger cars significantly larger and heavier, state broadcaster China Central Television reported on Sunday.",
+    "published": "2026-06-07T04:16:24+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "China Starts Prefabricated Power Hub for Data Centers, CCTV Says",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-07/china-starts-prefabricated-power-hub-for-data-centers-cctv-says",
+    "domain": "bloomberg.com",
+    "summary": "China’s first prefabricated computing power hub has started operations, offering a faster and lower-cost way to build and supply electricity to data centers, according to a report from China Central Television.",
+    "published": "2026-06-07T05:53:04+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "Elon Musk to Attend ASML’s Private Tech Event to Discuss Terafab",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-06/elon-musk-to-attend-asml-s-private-tech-event-to-discuss-terafab",
+    "domain": "bloomberg.com",
+    "summary": "Elon Musk will virtually attend a closed door technology conference run by ASML Holding NV to discuss his Terafab project, which the chip-equipment maker considers a “serious endeavor.”",
+    "published": "2026-06-06T14:53:16+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "Grindr Growing From Just Dating App to Politics, AI",
+    "url": "https://www.bloomberg.com/news/videos/2026-06-06/grindr-growing-from-just-dating-app-to-politics-ai-video",
+    "domain": "bloomberg.com",
+    "summary": "Grindr Inc. unveiled a handful of new app features and shared more details around its premium subscription tier as part of a larger effort to integrate artificial intelligence across its LGBTQ dating platform. The premium plan unlocks access to new AI features and deeper personalization, Grindr said Monday in a statement. The company is also investing further in AI-powered safety tools and in behi",
+    "published": "2026-06-06T13:54:10+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "Inside Apple’s Secret Meeting That Led It to Finally Take AI Seriously",
+    "url": "https://www.bloomberg.com/news/newsletters/2026-06-07/wwdc-2026-apple-s-secret-meeting-that-led-it-to-take-ai-seriously-ios-27",
+    "domain": "bloomberg.com",
+    "summary": "Also: What to expect at WWDC 2026.",
+    "published": "2026-06-07T14:00:01+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "FT Technology",
+    "credibility": 5,
+    "title": "Nato narrowly beats Russia-style enemy in cyber attack simulation",
+    "url": "https://www.ft.com/content/cda17cca-a651-41c5-9ac7-75dcde998c66",
+    "domain": "ft.com",
+    "summary": "Alliance tests government response to online propaganda mirroring Moscow’s wartime tactics",
+    "published": "2026-06-07T04:00:02+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "ft.com"
+    ],
+    "sources": [
+      "FT Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 1,
+    "sdot": 5,
+    "score": 10,
+    "flags": [],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "Nvidia’s CEO Says New Vera Chip Will Use SK Hynix’s Memory Chips",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-07/nvidia-s-ceo-says-new-vera-chip-will-use-sk-hynix-s-memory-chips",
+    "domain": "bloomberg.com",
+    "summary": "Nvidia Corp. Chief Executive Officer Jensen Huang said its new Vera central processing units will use SK Hynix Inc.’s memory chips as the two companies prepare to do more business in the coming year.",
+    "published": "2026-06-07T13:15:24+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "FT Technology",
+    "credibility": 5,
+    "title": "OpenAI plots biggest ChatGPT overhaul since launch",
+    "url": "https://www.ft.com/content/ca0f5f5e-fb9a-41a0-a2a9-0127e15b7db9",
+    "domain": "ft.com",
+    "summary": "$850bn start-up to recast hit chatbot as a route to higher-margin products before a potential IPO",
+    "published": "2026-06-07T04:00:11+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "ft.com"
+    ],
+    "sources": [
+      "FT Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 1,
+    "sdot": 5,
+    "score": 10,
+    "flags": [],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Bloomberg Technology",
+    "credibility": 5,
+    "title": "SKorea’s Lee Nominates Tech Guru Han as PM to Lead AI Growth",
+    "url": "https://www.bloomberg.com/news/articles/2026-06-07/lee-nominates-tech-guru-han-as-prime-minister-to-lead-ai-growth",
+    "domain": "bloomberg.com",
+    "summary": "South Korean President Lee Jae Myung nominated SME and Startup Minister Han Seong-sook as prime minister, betting the tech industry veteran will help the country realize its artificial intelligence ambitions.",
+    "published": "2026-06-07T05:58:50+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bloomberg.com"
+    ],
+    "sources": [
+      "Bloomberg Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [
+      "wire"
+    ],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "HuggingFace blog",
+    "credibility": 5,
+    "title": "Sponsors especially OPENAI CODEX voucher usage for codex - openAI challange",
+    "url": "https://huggingface.co/blog/build-small-hackathon/sponsors-vouchers",
+    "domain": "huggingface.co",
+    "summary": "",
+    "published": "2026-06-07T11:38:54+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "huggingface.co"
+    ],
+    "sources": [
+      "HuggingFace blog"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "Guardian AI",
+    "credibility": 5,
+    "title": "Suit filed against controversial planned Stratos datacenter project in Utah",
+    "url": "https://www.theguardian.com/us-news/2026/jun/06/stratos-datacenter-utah-suit",
+    "domain": "theguardian.com",
+    "summary": "Plan backed by Shark Tank’s Kevin O’Leary had footprint reduced but concerns remain over its health impacts Utah residents have teamed up with a progressive non-profit organization to sue over an under-development AI datacenter backed by celebrity investor Kevin O’Leary, claiming the planned Stratos project facility “irrevocably” cuts off citizens’ rights by not allowing sufficient public input. F",
+    "published": "2026-06-06T20:07:35+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "theguardian.com"
+    ],
+    "sources": [
+      "Guardian AI"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "FT Technology",
+    "credibility": 5,
+    "title": "The coming rise of anti-AI populism",
+    "url": "https://www.ft.com/content/b4429ea0-4a0a-4a28-96f5-debf4f3eb339",
+    "domain": "ft.com",
+    "summary": "Anxiety about the technology is set to generate a political backlash",
+    "published": "2026-06-07T11:00:04+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "ft.com"
+    ],
+    "sources": [
+      "FT Technology"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 10,
+    "flags": [],
+    "section": "top",
+    "themes": [],
+    "tier": "news"
+  },
+  {
+    "source": "arXiv:cs.CL",
+    "credibility": 4,
+    "title": "\"Chi nas dal soch el sent de legn\" -- Auditing Text Corpora for Lombard",
+    "url": "http://arxiv.org/abs/2606.06349v1",
+    "domain": "arxiv.org",
+    "summary": "Several of the world's languages are still under-resourced in terms of Natural Language Processing (NLP) tools. This is mostly due to the lack of high-quality datasets to train, develop, and evaluate systems and models for several tasks, such as Machine Translation (MT). We conduct a manual audit of the parallel and monolingual corpora available for Lombard, an under-resourced language continuum f",
+    "published": "2026-06-04T16:20:14+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "arxiv.org"
+    ],
+    "sources": [
+      "arXiv:cs.CL"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 8,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "research"
+  },
+  {
+    "source": "arXiv:cs.CL",
+    "credibility": 4,
+    "title": "A Komi-Yazva--Russian Parallel Corpus and Evaluation Protocol for Zero- and Few-Shot LLM Translation",
+    "url": "http://arxiv.org/abs/2606.06420v1",
+    "domain": "arxiv.org",
+    "summary": "We present the first Komi-Yazva--Russian parallel corpus together with an explicit evaluation protocol for studying LLM translation in an endangered, extremely low-resource setting. The dataset contains 457 aligned sentence pairs from 74 narrative texts and is accompanied by documented provenance, sentence-level alignment, and story identifiers that enable leakage-aware evaluation. We use this set",
+    "published": "2026-06-04T17:26:38+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "arxiv.org"
+    ],
+    "sources": [
+      "arXiv:cs.CL"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 8,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "research"
+  },
+  {
+    "source": "arXiv:cs.LG",
+    "credibility": 4,
+    "title": "A Vision-language Framework for Comparative Reasoning in Radiology",
+    "url": "http://arxiv.org/abs/2606.06407v1",
+    "domain": "arxiv.org",
+    "summary": "Medical imaging artificial intelligence has achieved strong performance in isolated image interpretation, but remains poorly aligned with radiological practice, where diagnosis and follow-up rely on comparison across prior studies and analogous reference cases. Here we formulate radiological comparison as an entity-aware cross-image reasoning problem and introduce a framework that supports both re",
+    "published": "2026-06-04T17:12:47+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "arxiv.org"
+    ],
+    "sources": [
+      "arXiv:cs.LG"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 8,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "research"
+  },
+  {
+    "source": "arXiv:cs.AI",
+    "credibility": 4,
+    "title": "Agent Memory: Characterization and System Implications of Stateful Long-Horizon Workloads",
+    "url": "http://arxiv.org/abs/2606.06448v1",
+    "domain": "arxiv.org",
+    "summary": "LLM agents are increasingly deployed on long-horizon tasks requiring sustained reasoning over extended interaction histories. Realizing this at scale requires agents to persistently store, retrieve, and update their own memory across sessions. A rich ecosystem of agent memory systems has emerged spanning flat retrieval, LLM-mediated extraction, consolidating fact stores, and agentic control flows.",
+    "published": "2026-06-04T17:44:18+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "arxiv.org"
+    ],
+    "sources": [
+      "arXiv:cs.AI"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 8,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "research"
+  },
+  {
+    "source": "arXiv:cs.CY",
+    "credibility": 4,
+    "title": "Arithmetic Pedagogy for Language Models",
+    "url": "http://arxiv.org/abs/2606.05106v1",
+    "domain": "arxiv.org",
+    "summary": "We investigate whether methods of human mathematics pedagogy can guide the training of language models toward arithmetic reasoning. Building on the GASING method -- an Indonesian pedagogy that solves basic arithmetic through a left-to-right procedure aligned with the causal order of token generation -- we operationalize each operation as a computational procedure whose execution trace is serialize",
+    "published": "2026-06-03T17:09:25+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "arxiv.org"
+    ],
+    "sources": [
+      "arXiv:cs.CY"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 8,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "research"
+  },
+  {
+    "source": "r/LocalLLaMA",
+    "credibility": 2,
+    "title": "120 tok/s on 12GB VRAM with Gemma 4 12B QAT MTP",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1typjmc/120_toks_on_12gb_vram_with_gemma_4_12b_qat_mtp/",
+    "domain": "reddit.com",
+    "summary": "Google just released the QAT (Quantization-Aware Training) variant of their Gemma 4 models, including 12B, so it was only natural for me to benchmark it on my 12GB GPU since it fits entirely in VRAM. I was pleasantly surprised with the result! By using llama.cpp patched with the Gemma 4 MTP PR, and loading Unsloth's gemma-4-12B-it-qat-GGUF quant and Google's gemma-4-12B-it-qat-q4_0-unquantized-ass",
+    "published": "2026-06-06T18:53:19+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "reddit.com"
+    ],
+    "sources": [
+      "r/LocalLLaMA"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "r/LocalLLaMA",
+    "credibility": 2,
+    "title": "5 Months Later: open-deepthink Now Has Full Knowledge Distillation Mode",
+    "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tz0zwy/5_months_later_opendeepthink_now_has_full/",
+    "domain": "reddit.com",
+    "summary": "Hey r/LocalLLaMA , Some of you might remember when I posted about this project back around September last year (it was called local-deepthink then). The core idea was to move past the usual flat multi-agent setups and instead build something that creates depth . It already ran great locally with llama.cpp or via OpenRouter, and you could export the evolved networks for reuse. But the distillation",
+    "published": "2026-06-07T03:24:48+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "reddit.com"
+    ],
+    "sources": [
+      "r/LocalLLaMA"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "r/OpenAI",
+    "credibility": 2,
+    "title": "900 Billion market cap",
+    "url": "https://www.reddit.com/r/OpenAI/comments/1tyjpfr/900_billion_market_cap/",
+    "domain": "reddit.com",
+    "summary": "submitted by /u/mark3nb [link] [comments]",
+    "published": "2026-06-06T15:07:00+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "reddit.com"
+    ],
+    "sources": [
+      "r/OpenAI"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "r/singularity",
+    "credibility": 2,
+    "title": "A 10 million document corpus takes 31 GB of RAM as float32. turbovec fits it in 4 GB - and searches it faster than FAISS.",
+    "url": "https://www.reddit.com/r/singularity/comments/1tyl46g/a_10_million_document_corpus_takes_31_gb_of_ram/",
+    "domain": "reddit.com",
+    "summary": "submitted by /u/Worldly_Evidence9113 [link] [comments]",
+    "published": "2026-06-06T16:02:26+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "reddit.com"
+    ],
+    "sources": [
+      "r/singularity"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "r/ClaudeAI",
+    "credibility": 2,
+    "title": "A Colour: a tool that names colours",
+    "url": "https://www.reddit.com/r/ClaudeAI/comments/1tyumyj/a_colour_a_tool_that_names_colours/",
+    "domain": "reddit.com",
+    "summary": "I have colour-blind people in my whānau and friend group. Colour is slippery: two people look at the same thing and name its shade differently. Both are right. For people with colour vision differences that's not just philosophy, it's daily friction. So I built A Colour. Point your phone, paste an image, or type a word; it gives you the closest colour names. Offline-first, no account, free. Claude",
+    "published": "2026-06-06T22:22:51+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "reddit.com"
+    ],
+    "sources": [
+      "r/ClaudeAI"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "r/singularity",
+    "credibility": 2,
+    "title": "A Response to Bernie's AI Wealth Fund Plan",
+    "url": "https://www.reddit.com/r/singularity/comments/1tyzqft/a_response_to_bernies_ai_wealth_fund_plan/",
+    "domain": "reddit.com",
+    "summary": "Quick take on why the mechanism is the wrong tool even though the goal is right: A one-time 50% equity grab assumes today's leaders are the permanent winners. OpenAI could be the Netscape of this era and get displaced by a lab that doesn't exist yet. It never defines what an \"AI company\" even is. Alphabet is mostly an ad business that owns a top lab, Nvidia isn't a lab but makes most of the hardwa",
+    "published": "2026-06-07T02:22:06+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "reddit.com"
+    ],
+    "sources": [
+      "r/singularity"
+    ],
+    "source_count": 1,
+    "sentiment": -1,
+    "sdot": -2,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "bsky:janoschki.bsky.social",
+    "credibility": 2,
+    "title": "Anthropic jetzt.",
+    "url": "https://bsky.app/profile/janoschki.bsky.social/post/3mnmhrnncok24",
+    "domain": "bsky.app",
+    "summary": "Anthropic jetzt.",
+    "published": "2026-06-06T10:42:31.608000+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bsky.app"
+    ],
+    "sources": [
+      "bsky:janoschki.bsky.social"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "bsky:bobbyilustra.bsky.social",
+    "credibility": 2,
+    "title": "Fun fact: WinRAR gera mais lucro anualmente que o ChatGPT/OpenAI",
+    "url": "https://bsky.app/profile/bobbyilustra.bsky.social/post/3mnn4vmuugc2i",
+    "domain": "bsky.app",
+    "summary": "Fun fact:\nWinRAR gera mais lucro anualmente que o ChatGPT/OpenAI",
+    "published": "2026-06-06T17:00:33.604000+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bsky.app"
+    ],
+    "sources": [
+      "bsky:bobbyilustra.bsky.social"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "bsky:navalairhistory.com",
+    "credibility": 2,
+    "title": "Reminder that The Guardian has a strategic partnership with OpenAI",
+    "url": "https://bsky.app/profile/navalairhistory.com/post/3mnoy5eqjcc2z",
+    "domain": "bsky.app",
+    "summary": "Reminder that The Guardian has a strategic partnership with OpenAI",
+    "published": "2026-06-07T10:40:44.278000+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bsky.app"
+    ],
+    "sources": [
+      "bsky:navalairhistory.com"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "bsky:eugenevinitsky.bsky.social",
+    "credibility": 2,
+    "title": "Time to use the LLM this hotel is using as its staff to solve some Erdos problems",
+    "url": "https://bsky.app/profile/eugenevinitsky.bsky.social/post/3mnnsanclt22m",
+    "domain": "bsky.app",
+    "summary": "Time to use the LLM this hotel is using as its staff to solve some Erdos problems",
+    "published": "2026-06-06T23:22:31.716000+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "bsky.app"
+    ],
+    "sources": [
+      "bsky:eugenevinitsky.bsky.social"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "HN",
+    "credibility": 3,
+    "title": "Anthropic, please ship an official Claude Desktop for Linux",
+    "url": "https://github.com/anthropics/claude-code/issues/65697",
+    "domain": "github.com",
+    "summary": "",
+    "published": "2026-06-07T13:06:52+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "github.com"
+    ],
+    "sources": [
+      "HN"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 6,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "HN",
+    "credibility": 3,
+    "title": "Anthropic/OpenAI may be spending more than $1000 for every $100 you pay them",
+    "url": "https://ea.rna.nl/2026/06/07/anthropic-openai-may-be-spending-more-than-1000-for-every-100-you-pay-them/",
+    "domain": "ea.rna.nl",
+    "summary": "",
+    "published": "2026-06-07T12:54:54+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "ea.rna.nl"
+    ],
+    "sources": [
+      "HN"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 6,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "HN",
+    "credibility": 3,
+    "title": "Meta confirms 1000s of Instagram accounts were hacked by abusing its AI chatbot",
+    "url": "https://this.weekinsecurity.com/meta-confirms-thousands-of-instagram-accounts-were-hacked-by-abusing-its-ai-chatbot/",
+    "domain": "this.weekinsecurity.com",
+    "summary": "",
+    "published": "2026-06-06T18:35:27+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "this.weekinsecurity.com"
+    ],
+    "sources": [
+      "HN"
+    ],
+    "source_count": 1,
+    "sentiment": -2,
+    "sdot": -6,
+    "score": 6,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "r/ArtificialInteligence",
+    "credibility": 2,
+    "title": "A lot has changed in 3 months.....",
+    "url": "https://www.reddit.com/r/ArtificialInteligence/comments/1tyi9hy/a_lot_has_changed_in_3_months/",
+    "domain": "reddit.com",
+    "summary": "The barrier is gettting more and more expensive. Just a month ago I could access and use so much in the Ai space. Now it's all $. I understand but it's kinda overwhelming to really on these things and then have $200 a month in Ai bils. submitted by /u/MatrixMix [link] [comments]",
+    "published": "2026-06-06T14:09:27+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "reddit.com"
+    ],
+    "sources": [
+      "r/ArtificialInteligence"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  },
+  {
+    "source": "r/singularity",
+    "credibility": 2,
+    "title": "A robot wearing a clown wig in China is going viral after it kicked a child in the stomach.",
+    "url": "https://www.reddit.com/r/singularity/comments/1tymvkf/a_robot_wearing_a_clown_wig_in_china_is_going/",
+    "domain": "reddit.com",
+    "summary": "submitted by /u/Itsmyoopinioon [link] [comments]",
+    "published": "2026-06-06T17:10:41+00:00",
+    "via_kagi": false,
+    "source_domains": [
+      "reddit.com"
+    ],
+    "sources": [
+      "r/singularity"
+    ],
+    "source_count": 1,
+    "sentiment": 0,
+    "sdot": 0,
+    "score": 4,
+    "flags": [],
+    "section": "more",
+    "themes": [],
+    "tier": "social"
+  }
+]
