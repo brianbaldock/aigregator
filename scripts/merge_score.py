@@ -101,6 +101,41 @@ def _item(source, cred, title, url, desc, pub, via_kagi=False):
         "via_kagi": via_kagi,
     }
 
+# Topic/hub landing-page URL pathnames the Kagi wire searches keep surfacing.
+# These get presented as if they were stories — they're not. A real wire story
+# either has a date segment (/2026/05/27/) or a long hyphenated slug ending in
+# -YYYY-MM-DD, or for AP an article id like "/article/..."-suffixed hash.
+import re as _re
+
+_DATE_SEG = _re.compile(r"/(?:19|20)\d{2}[/-]")        # /2026/ or /2026-
+_DATED_SLUG = _re.compile(r"-(?:19|20)\d{2}-\d{2}-\d{2}")  # -2026-05-27
+_AP_ARTICLE = _re.compile(r"/article/[\w-]+-?[0-9a-f]{8,}")  # AP article id
+_BLOOMBERG_ARTICLE = _re.compile(r"/news/(?:articles|features|newsletters|videos|opinion)/")
+_WSJ_ARTICLE = _re.compile(r"/(?:tech|ai|business|finance|economy|world|markets|politics)/.+-[0-9a-f]{6,}")
+
+def _looks_like_story(url: str, dom: str) -> bool:
+    """Filter out hub/landing/topic pages from wire-service URLs."""
+    path = url.split("?")[0].split("#")[0]
+    # Trim domain
+    if "://" in path:
+        path = "/" + path.split("/", 3)[-1] if path.count("/") >= 3 else "/"
+    if _DATE_SEG.search(path) or _DATED_SLUG.search(path):
+        return True
+    if dom == "apnews.com" and _AP_ARTICLE.search(path):
+        return True
+    if dom == "bloomberg.com" and _BLOOMBERG_ARTICLE.search(path):
+        return True
+    if dom == "wsj.com" and _WSJ_ARTICLE.search(path):
+        return True
+    # Path too short = almost certainly a hub: /technology/ , /ai/ , /
+    segments = [s for s in path.split("/") if s]
+    if len(segments) <= 2:
+        return False
+    # Final fallback: require a long descriptive slug (≥4 hyphens) somewhere in path
+    if any(s.count("-") >= 4 for s in segments):
+        return True
+    return False
+
 def load_kagi(indir: str):
     out = []
     for fp in sorted(glob.glob(os.path.join(indir, "kagi", "*.json"))):
@@ -118,6 +153,9 @@ def load_kagi(indir: str):
             url = r.get("url") or ""
             if not url: continue
             dom = domain_of(url)
+            # Drop hub/topic landing pages — they shouldn't appear as stories
+            if dom in WIRE_DOMAINS and not _looks_like_story(url, dom):
+                continue
             # wire credibility override
             cred = 5 if dom in WIRE_DOMAINS else cred_of(dom)
             src = "Reuters" if dom == "reuters.com" else \
@@ -237,6 +275,15 @@ def cluster_and_score(items):
         canonical = dict(group[0])
         domains = sorted({g["domain"] for g in group if g["domain"]})
         sources = sorted({g["source"] for g in group})
+        # Preserve all member URLs (one per distinct domain, prefer wire) for source citation
+        urls_by_domain = {}
+        for g in group:
+            d = g["domain"]
+            if not d: continue
+            # Keep first URL we see per domain (group is already credibility-sorted)
+            urls_by_domain.setdefault(d, g["url"])
+        canonical["source_urls"] = [{"domain": d, "url": u, "source": next((g["source"] for g in group if g["url"] == u), d)}
+                                    for d, u in urls_by_domain.items()]
         canonical["source_domains"] = domains
         canonical["sources"] = sources
         canonical["source_count"] = len(domains)
