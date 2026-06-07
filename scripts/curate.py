@@ -1,39 +1,28 @@
 #!/usr/bin/env python3
 """
-curate.py — single LLM call that produces editorial overlay for digest_items.json.
+curate.py — schema + validator for the AIgregator digest curation JSON.
 
-Reads:  /tmp/aig/digest_items.json   (output of merge_score.py + translate.py)
-Writes: /tmp/aig/curation.json       (consumed by write_digest.py)
+This script does NOT call any LLM. The curation JSON is produced by the cron
+agent itself (using its own model, e.g. GPT-5.5 via openai-codex or claude-cli
+sonnet) via the prompt template below. curate.py provides:
 
-Curation JSON shape:
-    {
-        "date": "YYYY-MM-DD",
-        "subtitle": "One-sentence editorial framing of the day's stories.",
-        "tldr_order": ["url1", "url2", ...],          # 6 URLs, ranked
-        "tldr_blurbs": {"url": "One-line editorial.", ...},  # per URL
-        "items": {
-            "url": {
-                "title": "Editorial title (cleaned, deduped).",
-                "summary": "1-2 sentence editorial blurb.",
-                "themes": ["theme1", "theme2"],
-                "section": "models"|"research"|"safety"|"projects"|"funding"|"tools"|"opensource"
-            }, ...
-        }
-    }
-
-Reads OPENAI_API_KEY from env. Uses gpt-4o (needs reasoning for blurbs).
-Idempotent via output file: re-run wipes & rewrites curation.json.
+  - The CURATION_PROMPT_TEMPLATE the cron embeds when asking its model to
+    produce the curation.
+  - validate(): cleans + validates a curation dict. Drops invalid URLs, coerces
+    unknown themes/sections, enforces voice rules (no em dashes, banned words).
+  - main(): CLI for validating a curation.json on disk in-place.
 
 Usage:
-    OPENAI_API_KEY=*** python scripts/curate.py
-    OPENAI_API_KEY=*** python scripts/curate.py --in /tmp/aig/digest_items.json --out /tmp/aig/curation.json
+    # Inside the cron agent, the agent produces /tmp/aig/curation.json directly.
+    # Then the cron runs:
+    python scripts/curate.py --validate --in /tmp/aig/curation.json --items /tmp/aig/digest_items.json
+    # Which rewrites the file in place with cleaned/validated content, exits non-zero on hard failures.
+
+    # To print the prompt template the cron should pass to its model:
+    python scripts/curate.py --print-prompt
 """
 from __future__ import annotations
-import argparse, json, os, sys, urllib.request, urllib.error
-from datetime import datetime, timezone
-
-OPENAI_URL = "https://api.openai.com/v1/chat/completions"
-MODEL = os.environ.get("AIGREGATOR_CURATE_MODEL", "gpt-4o")
+import argparse, json, os, sys
 
 CONTROLLED_THEMES = [
     "agents", "models", "evals", "safety", "policy", "alignment",
@@ -42,215 +31,258 @@ CONTROLLED_THEMES = [
     "opensource", "enterprise", "agi", "apps",
 ]
 
-# News-tier section buckets. social/research items are placed by tier directly.
 NEWS_SECTIONS = ["models", "safety", "projects", "funding", "tools", "opensource"]
 
-SYSTEM_PROMPT = f"""You are the editorial brain for the AIgregator daily AI news digest. \
-Brian writes this digest in a specific voice: dry, factual, technical, never \
-marketing-flavored. Plain prose, no em dashes, no fake enthusiasm, no \
-"unlock"/"delve"/"seamless"/"game-changing"/"revolutionize", no exclamation points, \
-no hyped framing. The reader is a senior engineer who reads many of these. \
-Surface what's actually new and what it means, not what marketing wants it to mean.
+BANNED_WORDS = [
+    "delve", "unlock", "seamless", "game-changing", "game changing",
+    "revolutionize", "revolutionise", "groundbreaking", "cutting-edge",
+    "synergy", "leverage", "robust", "navigate the",
+]
 
-Given a list of pre-scored AI news items from the last 24 hours, you write:
+CURATION_PROMPT_TEMPLATE = """\
+You are the editorial brain for the AIgregator daily AI news digest. Brian writes \
+this digest in a specific voice: dry, factual, technical, never marketing-flavored. \
+Plain prose, no em dashes, no fake enthusiasm, no exclamation points, no hyped framing. \
+The reader is a senior engineer who reads many of these. Surface what's actually new \
+and what it means, not what marketing wants it to mean.
 
-1. ONE subtitle: 2-3 sentences in Brian's voice (each separated by a period, no commas \
-joining clauses) framing the 2-3 biggest threads. Use proper names where you have them \
-(e.g. "Sriram Krishnan exits the White House", not "Trump's AI adviser resigns"). \
-Sound like a person, not a wire service. Plain prose only, no em dashes, max ~40 words.
+You have access to {items_path} (the merged item set from merge_score.py). It is a \
+JSON list. Each item has: url, title, summary, source, tier (news|social|research), \
+source_count, flags, credibility, source_domains, source_urls.
 
-2. A ranked TL;DR of EXACTLY 6 news-tier items (use exact URLs from the input). \
-Pick for newsworthiness + corroboration. Wire-service corroborated stories (source_count >= 2) \
-should generally rank first. Don't pick fluff or hub-page-shaped items.
+Read it. Then write {out_path} with a curation JSON in this EXACT shape:
 
-3. For each TL;DR pick: a one-line editorial blurb (1 sentence, max ~30 words, factual, \
-specific, no marketing words).
-
-4. For EVERY news-tier item (tier="news"), include in output.items: cleaned title, \
-1-2 sentence editorial summary, 1-3 themes from this exact vocabulary: \
-{", ".join(CONTROLLED_THEMES)}, and a news section: \
-{", ".join(NEWS_SECTIONS)} (models = model releases/launches/updates, \
-safety = responsible AI / regulation / policy / executive orders, \
-projects = cool indie / novel apps / interesting deployments, \
-funding = $$ / deals / IPOs / equity / investments / data-center buildouts, \
-tools = developer tools / demos / infrastructure, \
-opensource = open weights / GitHub trends / HF trending).
-
-COVERAGE RULE: Output ONE entry in items{{}} for EVERY news-tier URL in the input UNLESS its \
-title is obviously a hub/landing page (e.g. just "AI - Bloomberg", "Artificial Intelligence News", \
-"AI - Reuters", "Bloomberg Technology"). It is OK to be lossless - the next stage will pick the \
-top N per section. Do NOT skip stories you find duplicative; the merge layer already deduped, \
-near-duplicates are real different angles from different sources.
-
-5. For social-tier items (tier="social", reddit/bsky/hn): include them in items{{}} too. \
-Set themes=[], section="discourse", keep title as-is or lightly cleaned.
-
-6. For research-tier items (tier="research", arXiv): pick 1-2 themes (usually research-relevant: \
-training, alignment, interpretability, evals, multimodal, science), section="research".
-
-HARD RULES:
-- Use the EXACT urls provided as item keys. Do not invent or modify URLs.
-- Themes MUST come from the controlled vocabulary above.
-- Sections MUST come from the lists above ({", ".join(NEWS_SECTIONS)} for news, "discourse" for social, "research" for research).
-- No em dashes anywhere. Use plain hyphens or restructure the sentence.
-- No words like "delve", "unlock", "seamless", "game-changing", "revolutionize".
-- Plain prose. Factual. The reader is technical.
-- Skip an item ONLY if its title is hub-shaped (e.g. "AI - Bloomberg", "Artificial Intelligence News"). \
-Everything else gets an items{{}} entry.
-
-Output STRICT JSON matching this shape:
 {{
-  "subtitle": "...",
-  "tldr_order": ["url", "url", "url", "url", "url", "url"],
-  "tldr_blurbs": {{"url": "blurb", ...}},
+  "subtitle": "2-3 sentences in Brian's voice framing the day's big threads. Use proper names. Plain prose. Max ~40 words.",
+  "tldr_order": ["url1", "url2", "url3", "url4", "url5", "url6"],
+  "tldr_blurbs": {{"url1": "one-line blurb", ...}},
   "items": {{
-    "url": {{"title": "...", "summary": "...", "themes": ["..."], "section": "..."}},
+    "url1": {{"title": "cleaned title", "summary": "1-2 sentence editorial", "themes": ["theme1"], "section": "models"}},
     ...
   }}
 }}
-"""
+
+RULES:
+- Voice: dry, factual, technical. NO em dashes. NO words: delve, unlock, seamless, \
+game-changing, revolutionize, groundbreaking, cutting-edge, synergy, leverage. No \
+exclamation points. No marketing framing.
+- TLDR: EXACTLY 6 picks from tier="news", ranked by newsworthiness + corroboration. \
+Wire-corroborated stories (source_count >= 2) generally rank first. Skip hub-page \
+titles like "AI - Bloomberg", "Artificial Intelligence News", "Bloomberg Technology".
+- ITEMS: include one entry per URL for ALL items in the input UNLESS the title is \
+obviously a hub/landing page. Lossless coverage — write_digest.py will pick top N \
+per section.
+- THEMES (controlled vocabulary, pick 1-3 per item): {themes}
+- SECTIONS for news tier: {sections}
+- For social tier (reddit/bsky/hn): themes=[], section="discourse"
+- For research tier (arXiv): pick 1-2 research-relevant themes, section="research"
+
+TRANSLATION: if an item has "needs_translation": true, render its title as \
+"Original Title (English: Your Translation Here)" and write the summary in \
+English. This is how non-English wire stories appear in the digest.
+
+SECTION MEANINGS:
+- models: model releases, launches, updates, weights drops
+- safety: responsible AI, regulation, policy, executive orders, governance
+- projects: cool indie, novel apps, interesting deployments
+- funding: $$, deals, IPOs, equity, investments, data-center buildouts
+- tools: developer tools, demos, infrastructure
+- opensource: open weights, GitHub trends, HF trending
+
+USE THE EXACT URLs from the input as keys. Do not invent, modify, or reformat URLs.
+
+After you write the file, run:
+  cd ~/projects/AIgregator && source .venv/bin/activate && \\
+  python scripts/curate.py --validate --in {out_path} --items {items_path}
+
+If validate prints "OK", proceed to write_digest.py. If it prints "FAIL", fix the \
+issues it lists and re-validate."""
 
 
-def build_user_payload(items: list[dict]) -> tuple[str, int, int, int]:
-    """Build the user message: compact list of items grouped by tier.
-    Returns (payload_json, n_news, n_social, n_research)."""
-    out = {"news": [], "social": [], "research": []}
-    for it in items:
-        tier = it.get("tier", "news")
-        out[tier].append({
-            "url": it["url"],
-            "title": it.get("translated_title") or it["title"],
-            "summary": (it.get("translated_summary") or it.get("summary") or "")[:300],
-            "source": it["source"],
-            "source_count": it.get("source_count", 1),
-            "flags": it.get("flags", []),
-            "credibility": it.get("credibility", 3),
-            "via_kagi": it.get("via_kagi", False),
-        })
-    return (json.dumps(out, ensure_ascii=False, indent=2),
-            len(out["news"]), len(out["social"]), len(out["research"]))
-
-
-def call_openai(messages: list[dict], api_key: str, model: str = MODEL) -> dict | None:
-    payload = {
-        "model": model,
-        "messages": messages,
-        "temperature": 0.3,
-        "response_format": {"type": "json_object"},
-        "max_tokens": 16000,
-    }
-    req = urllib.request.Request(
-        OPENAI_URL,
-        data=json.dumps(payload).encode(),
-        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+def print_prompt(items_path: str = "/tmp/aig/digest_items.json",
+                 out_path: str = "/tmp/aig/curation.json") -> str:
+    return CURATION_PROMPT_TEMPLATE.format(
+        items_path=items_path,
+        out_path=out_path,
+        themes=", ".join(CONTROLLED_THEMES),
+        sections=", ".join(NEWS_SECTIONS),
     )
-    try:
-        with urllib.request.urlopen(req, timeout=120) as r:
-            d = json.load(r)
-        return json.loads(d["choices"][0]["message"]["content"])
-    except urllib.error.HTTPError as e:
-        print(f"[curate] HTTP {e.code}: {e.read()[:400].decode('utf-8', 'replace')}", file=sys.stderr)
-    except Exception as e:
-        print(f"[curate] error: {e}", file=sys.stderr)
-    return None
 
 
-def validate(curation: dict, items: list[dict]) -> tuple[dict, list[str]]:
-    """Validate + clean. Returns (cleaned_curation, warnings)."""
+def _strip_voice_violations(text: str) -> tuple[str, list[str]]:
+    """Strip em dashes and banned words. Returns (cleaned_text, warnings)."""
     warnings = []
+    cleaned = text
+    if "—" in cleaned:
+        cleaned = cleaned.replace("—", " - ")
+        warnings.append("em dash replaced with hyphen")
+    if "–" in cleaned:  # en-dash too
+        cleaned = cleaned.replace("–", "-")
+        warnings.append("en dash replaced with hyphen")
+    lower = cleaned.lower()
+    for word in BANNED_WORDS:
+        if word in lower:
+            warnings.append(f"banned word '{word}' detected (not auto-stripped)")
+    return cleaned, warnings
+
+
+def validate(curation: dict, items: list[dict]) -> tuple[dict, list[str], list[str]]:
+    """Validate + clean curation against the item set.
+    Returns (cleaned_curation, warnings, hard_errors).
+    If hard_errors is non-empty, the curation is not safe to use.
+    """
+    warnings: list[str] = []
+    hard_errors: list[str] = []
     item_urls = {it["url"] for it in items}
+    item_by_url = {it["url"]: it for it in items}
 
-    if "subtitle" not in curation or not curation["subtitle"]:
-        warnings.append("missing subtitle")
-        curation["subtitle"] = "Today in AI."
-    if "—" in curation["subtitle"]:
-        curation["subtitle"] = curation["subtitle"].replace("—", " - ")
-        warnings.append("em dash in subtitle, replaced")
+    # Subtitle
+    sub = curation.get("subtitle") or ""
+    if not sub.strip():
+        hard_errors.append("missing or empty subtitle")
+        sub = "Today in AI."
+    sub, sub_warn = _strip_voice_violations(sub)
+    warnings.extend(f"subtitle: {w}" for w in sub_warn)
+    if len(sub.split()) > 60:
+        warnings.append(f"subtitle is long ({len(sub.split())} words; prefer <40)")
+    curation["subtitle"] = sub.strip()
 
-    curation.setdefault("tldr_order", [])
-    curation.setdefault("tldr_blurbs", {})
-    curation.setdefault("items", {})
+    # TLDR order — must be exactly 6 valid URLs
+    raw_tldr = curation.get("tldr_order") or []
+    valid_tldr = [u for u in raw_tldr if u in item_urls and item_by_url[u].get("tier") == "news"]
+    seen = set()
+    valid_tldr = [u for u in valid_tldr if not (u in seen or seen.add(u))]  # dedup
+    if len(valid_tldr) < 4:
+        hard_errors.append(f"tldr_order has only {len(valid_tldr)} valid news-tier URLs; need at least 4")
+    elif len(valid_tldr) < 6:
+        warnings.append(f"tldr_order has {len(valid_tldr)} valid URLs; padding from top news by score")
+        news_items = sorted([i for i in items if i.get("tier") == "news"],
+                            key=lambda x: -x.get("score", 0))
+        for it in news_items:
+            if it["url"] in valid_tldr: continue
+            valid_tldr.append(it["url"])
+            if len(valid_tldr) >= 6: break
+    curation["tldr_order"] = valid_tldr[:6]
 
-    # Filter tldr_order to valid URLs only
-    curation["tldr_order"] = [u for u in curation["tldr_order"] if u in item_urls][:6]
-    if len(curation["tldr_order"]) < 4:
-        warnings.append(f"tldr_order has only {len(curation['tldr_order'])} valid urls; will pad from top news by score")
+    # TLDR blurbs — must be present for each tldr URL
+    raw_blurbs = curation.get("tldr_blurbs") or {}
+    cleaned_blurbs = {}
+    for url in curation["tldr_order"]:
+        b = raw_blurbs.get(url) or ""
+        if not b.strip():
+            warnings.append(f"missing tldr blurb for {url[:60]}; using item summary")
+            b = item_by_url[url].get("summary", "")
+        b, w = _strip_voice_violations(b)
+        for ww in w: warnings.append(f"tldr blurb: {ww}")
+        cleaned_blurbs[url] = b.strip()
+    curation["tldr_blurbs"] = cleaned_blurbs
 
-    # Filter items to valid URLs only, sanitize themes + section
+    # Items — coerce sections by tier, validate themes
+    raw_items = curation.get("items") or {}
     cleaned_items = {}
-    for url, meta in curation["items"].items():
+    for url, meta in raw_items.items():
         if url not in item_urls:
-            warnings.append(f"unknown url in items: {url[:80]}")
+            warnings.append(f"unknown URL in items, dropped: {url[:80]}")
             continue
+        item = item_by_url[url]
+        tier = item.get("tier", "news")
         themes = [t for t in (meta.get("themes") or []) if t in CONTROLLED_THEMES][:3]
-        section = meta.get("section", "")
-        # Tier-driven section enforcement
-        item = next(i for i in items if i["url"] == url)
-        if item.get("tier") == "social":
+        section = (meta.get("section") or "").strip().lower()
+        # Tier-driven section coercion
+        if tier == "social":
             section = "discourse"
-        elif item.get("tier") == "research":
+        elif tier == "research":
             section = "research"
         elif section not in NEWS_SECTIONS:
-            section = "models"  # default news bucket
-            warnings.append(f"item missing/invalid section, defaulted to models: {url[:60]}")
+            warnings.append(f"invalid/missing section for {url[:60]}, defaulting to projects")
+            section = "projects"
+        title, tw = _strip_voice_violations(meta.get("title") or item["title"])
+        summary, sw = _strip_voice_violations(meta.get("summary") or item.get("summary", ""))
+        for w in tw + sw: warnings.append(f"item {url[:40]}: {w}")
         cleaned_items[url] = {
-            "title": (meta.get("title") or item["title"]).replace("—", " - "),
-            "summary": (meta.get("summary") or "").replace("—", " - "),
+            "title": title.strip(),
+            "summary": summary.strip(),
             "themes": themes,
             "section": section,
         }
     curation["items"] = cleaned_items
-    return curation, warnings
+
+    # Coverage check (warn-only — write_digest can still render uncovered items
+    # by falling back to raw item title/summary)
+    coverage = len(cleaned_items) / max(1, len(items)) * 100
+    if coverage < 50:
+        warnings.append(f"only {coverage:.0f}% of items have curation overlays; digest will be thin")
+
+    # Translation check — items flagged needs_translation should have an
+    # English-looking title in the curation overlay
+    untranslated = []
+    for it in items:
+        if not it.get("needs_translation"): continue
+        url = it["url"]
+        overlay = cleaned_items.get(url)
+        if not overlay: continue
+        title = overlay.get("title") or ""
+        # Title still looks non-English if >25% non-ASCII alpha
+        letters = [c for c in title if c.isalpha()]
+        if letters:
+            non_ascii = sum(1 for c in letters if ord(c) > 127)
+            if non_ascii / len(letters) > 0.25 and "English:" not in title:
+                untranslated.append(url[:60])
+    if untranslated:
+        warnings.append(f"{len(untranslated)} items flagged needs_translation lack English in title: {untranslated[:3]}")
+
+    return curation, warnings, hard_errors
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--in", dest="inp", default="/tmp/aig/digest_items.json")
-    ap.add_argument("--out", dest="out", default="/tmp/aig/curation.json")
-    ap.add_argument("--date", default=datetime.now(timezone.utc).strftime("%Y-%m-%d"))
+    ap.add_argument("--validate", action="store_true",
+                    help="Validate + clean curation.json in place")
+    ap.add_argument("--print-prompt", action="store_true",
+                    help="Print the curation prompt template for the cron agent")
+    ap.add_argument("--in", dest="path", default="/tmp/aig/curation.json")
+    ap.add_argument("--items", default="/tmp/aig/digest_items.json")
     args = ap.parse_args()
 
-    key = os.environ.get("OPENAI_API_KEY")
-    if not key:
-        print("[curate] OPENAI_API_KEY not set", file=sys.stderr)
+    if args.print_prompt:
+        print(print_prompt(args.items, args.path))
+        return
+
+    if not args.validate:
+        ap.print_help()
+        sys.exit(1)
+
+    if not os.path.exists(args.path):
+        print(f"[curate] FAIL: curation file not found: {args.path}", file=sys.stderr)
+        sys.exit(2)
+    if not os.path.exists(args.items):
+        print(f"[curate] FAIL: items file not found: {args.items}", file=sys.stderr)
         sys.exit(2)
 
-    items = json.load(open(args.inp))
-    print(f"[curate] {len(items)} items in (news={sum(1 for i in items if i.get('tier')=='news')}, "
-          f"research={sum(1 for i in items if i.get('tier')=='research')}, "
-          f"social={sum(1 for i in items if i.get('tier')=='social')})")
+    try:
+        curation = json.load(open(args.path))
+    except json.JSONDecodeError as e:
+        print(f"[curate] FAIL: curation file is not valid JSON: {e}", file=sys.stderr)
+        sys.exit(2)
+    items = json.load(open(args.items))
 
-    payload, n_news, n_social, n_research = build_user_payload(items)
-    user_msg = (
-        f"DATE: {args.date}\n\n"
-        f"COUNTS: news={n_news}, social={n_social}, research={n_research}.\n"
-        f"items{{}} MUST contain ~{n_news + n_social + n_research} entries (one per URL, "
-        f"minus only hub-shaped non-stories like 'AI - Bloomberg').\n\n"
-        f"ITEMS (grouped by tier):\n{payload}\n\nReturn the curation JSON now."
-    )
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": user_msg},
-    ]
-    print(f"[curate] calling {MODEL} (~{len(payload)} char payload)…")
-    curation = call_openai(messages, key)
-    if not curation:
-        print("[curate] FAIL: no curation returned", file=sys.stderr)
-        sys.exit(3)
+    cleaned, warnings, errors = validate(curation, items)
 
-    curation["date"] = args.date
-    curation, warnings = validate(curation, items)
     for w in warnings:
         print(f"[curate] warn: {w}", file=sys.stderr)
+    for e in errors:
+        print(f"[curate] ERROR: {e}", file=sys.stderr)
 
-    os.makedirs(os.path.dirname(args.out), exist_ok=True)
-    with open(args.out, "w") as f:
-        json.dump(curation, f, ensure_ascii=False, indent=2)
-    coverage_pct = int(100 * len(curation['items']) / max(1, n_news + n_social + n_research))
-    print(f"[curate] wrote {args.out}: subtitle, {len(curation['tldr_order'])} tldr picks, "
-          f"{len(curation['items'])} item overlays ({coverage_pct}% coverage)")
-    if coverage_pct < 50:
-        print(f"[curate] WARNING: only {coverage_pct}% of items were curated; digest will be thin", file=sys.stderr)
+    if errors:
+        print(f"[curate] FAIL: {len(errors)} hard error(s); not safe to render", file=sys.stderr)
+        sys.exit(3)
+
+    # Write back cleaned version
+    with open(args.path, "w") as f:
+        json.dump(cleaned, f, ensure_ascii=False, indent=2)
+    coverage_pct = int(100 * len(cleaned["items"]) / max(1, len(items)))
+    print(f"[curate] OK: subtitle ok, {len(cleaned['tldr_order'])} tldr picks, "
+          f"{len(cleaned['items'])} item overlays ({coverage_pct}% coverage)")
 
 
 if __name__ == "__main__":

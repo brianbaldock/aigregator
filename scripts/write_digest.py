@@ -162,6 +162,77 @@ def render_citations(item: dict) -> str:
     return ", ".join(f"[{lbl}]({url})" for url, lbl in labels)
 
 
+# Stop-words we never want capitalized as the leading word of a recovered title.
+_SLUG_STOPS = {"a","an","the","of","in","on","at","to","for","and","or","but","by",
+               "is","as","with","from","over","under","into","via","up","down"}
+
+def recover_title_from_slug(url: str, original: str) -> str:
+    """If the original title looks truncated, try to reconstruct from the URL slug.
+
+    Detection: ends in '…', is shorter than 4 words after cleanup, or contains
+    an unmatched truncation marker.
+    Recovery: take last path segment, strip trailing IDs/numbers + file ext,
+    split on '-' or '_', title-case (preserving stop-word casing for non-leading).
+    Returns the longer of (original, recovered) when recovered looks reasonable;
+    otherwise returns original unchanged.
+    """
+    if not url:
+        return original
+    cleaned = re.sub(r"\s*[.…]+\s*$", "", original or "").strip()
+    looks_truncated = (
+        (original or "").rstrip().endswith("…")
+        or len(cleaned.split()) < 4
+    )
+    if not looks_truncated:
+        return original
+    # Pull last meaningful slug segment from the URL path
+    try:
+        from urllib.parse import urlparse
+        path = urlparse(url).path.rstrip("/")
+    except Exception:
+        return original
+    if not path:
+        return original
+    segments = [s for s in path.split("/") if s]
+    if not segments:
+        return original
+    slug = segments[-1]
+    # Drop trailing extensions and pure-numeric/hash IDs from common URL shapes
+    slug = re.sub(r"\.(html?|php|aspx?)$", "", slug, flags=re.I)
+    slug = re.sub(r"-\d{4}-\d{1,2}-\d{1,2}$", "", slug)   # trailing date stamp YYYY-MM-DD
+    slug = re.sub(r"-\d{4,}$", "", slug)            # trailing -123456 ID
+    slug = re.sub(r"-[a-f0-9]{8,}$", "", slug)      # trailing -deadbeef hash
+    # If the trimmed slug is itself numeric or too short, give up
+    if not slug or slug.isdigit() or len(slug) < 8:
+        return original
+    parts = re.split(r"[-_]+", slug)
+    parts = [p for p in parts if p]
+    if len(parts) < 3:
+        return original
+    # Acronym overrides — words to keep in canonical casing
+    _ACRO = {"ai":"AI","agi":"AGI","gpu":"GPU","tpu":"TPU","cpu":"CPU","llm":"LLM",
+             "gpt":"GPT","ipo":"IPO","api":"API","sdk":"SDK","cli":"CLI","sql":"SQL",
+             "ios":"iOS","mac":"Mac","usb":"USB","aws":"AWS","gcp":"GCP","ml":"ML",
+             "openai":"OpenAI","deepmind":"DeepMind","huggingface":"HuggingFace",
+             "github":"GitHub","youtube":"YouTube","linkedin":"LinkedIn",
+             "tiktok":"TikTok","facebook":"Facebook","whatsapp":"WhatsApp",
+             "nvidia":"NVIDIA","ibm":"IBM","apl":"APL","tldr":"TLDR"}
+    def cap(w: str, first: bool) -> str:
+        low = w.lower()
+        if low in _ACRO:
+            return _ACRO[low]
+        if w.isupper() and len(w) <= 5:
+            return w  # keep acronyms (AI, GPU, GPT)
+        if not first and low in _SLUG_STOPS:
+            return low
+        return w[:1].upper() + w[1:].lower()
+    recovered = " ".join(cap(p, i == 0) for i, p in enumerate(parts))
+    # Keep the longer plausible string
+    if len(recovered.split()) > len(cleaned.split()):
+        return recovered
+    return original
+
+
 def render_news_item(it: dict, overlay: dict, *, in_tldr: bool = False) -> str:
     """Render a news-tier line. Format:
     - SCORE FLAGSEMOJI SDOT ▤×N 🏷️ themes **Title.** Summary. Sources: [a](url), ...
@@ -183,6 +254,8 @@ def render_news_item(it: dict, overlay: dict, *, in_tldr: bool = False) -> str:
     if it.get("sentiment", 0) == 0: dot = "🟡"
 
     title = overlay.get("title") or it["title"]
+    # If title looks truncated, try slug-recovery from the URL
+    title = recover_title_from_slug(it.get("url", ""), title)
     # Strip trailing site name ONLY when it follows " - " or " | " from a known wire/news source.
     # Be conservative: must match start of separator + EOL.
     title = re.sub(
@@ -415,12 +488,29 @@ def main():
             else: continue   # skip uncovered news items (likely hub-shaped)
         by_section[sec].append(it)
 
-    # Apply per-section limits, sorted by score desc
+    # Apply per-section limits, sorted by score desc. Log drops for observability.
     for sec in list(by_section.keys()):
         by_section[sec].sort(key=lambda x: -x.get("score", 0))
+        considered = len(by_section[sec])
         limit = SECTION_LIMITS.get(sec, 100)  # discourse + research keep all
         if sec in SECTION_LIMITS:
             by_section[sec] = by_section[sec][:limit]
+        emitted = len(by_section[sec])
+        dropped = considered - emitted
+        if dropped > 0:
+            # Surface the dropped titles so we can spot when caps are too tight.
+            all_for_sec = sorted([i for i in items
+                                  if curation_items.get(i["url"], {}).get("section") == sec],
+                                 key=lambda x: -x.get("score", 0))
+            cut = all_for_sec[limit:]
+            cut_titles = [f"  - {it.get('score',0)} {it.get('title','')[:70]}" for it in cut[:5]]
+            print(f"[write_digest] section {sec}: considered {considered}, emitted {emitted}, "
+                  f"dropped {dropped} (top dropped):", file=sys.stderr)
+            for line in cut_titles:
+                print(line, file=sys.stderr)
+        else:
+            print(f"[write_digest] section {sec}: considered {considered}, emitted {emitted}",
+                  file=sys.stderr)
 
     # News-tier items only (for dashboard math)
     news_section_items = []
