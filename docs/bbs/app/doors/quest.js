@@ -185,7 +185,51 @@ function use(itemId) {
     out("Click. The beam sweeps the room. Useful in dark places.", "bbs-dim");
     return;
   }
+  if ((itemId === "keycard" || itemId === "card") && state.room === "datacenter") {
+    openOrSwipe(itemId);
+    return;
+  }
+  if (itemId === "badge" && state.room === "datacenter") {
+    out("You wave the BADGE at the reader. It's a dumb employee ID — no auth chip. You need a KEYCARD.", "bbs-dim");
+    return;
+  }
+  if (itemId === "laptop") {
+    out("2% battery and the fan is dead. It boots to a BIOS screen, then dies.", "bbs-dim");
+    return;
+  }
+  if (itemId === "protein-bar" || itemId === "bar") {
+    out("Chalky but edible. You feel marginally less doomed.", "bbs-dim");
+    return;
+  }
+  if (itemId === "mug") {
+    out("Empty. The grinder still says 'beans require root access'.", "bbs-dim");
+    return;
+  }
   out("Nothing obvious happens.", "bbs-dim");
+}
+
+// Open / unlock / swipe — designed for the COLD STORAGE door from the datacenter,
+// but generic enough for any future locked exits.
+function openOrSwipe(target) {
+  const r = ROOMS[state.room];
+  if (r.lockedExit) {
+    if (state.inv.includes(r.lockedExit.needs)) {
+      out("You swipe the " + r.lockedExit.needs.toUpperCase() + ". The reader chirps green. The door slides open.", "bbs-bright");
+      move(r.lockedExit.dir);
+      return;
+    }
+    out(r.lockedExit.message, "bbs-bright");
+    return;
+  }
+  if (target === "keycard" || target === "card" || target === "badge") {
+    out("There's nothing here to swipe it on.", "bbs-dim");
+    return;
+  }
+  if (target === "door" || !target) {
+    out("There's no locked door here. Try GO <direction>.", "bbs-dim");
+    return;
+  }
+  out("Nothing here works that way.", "bbs-dim");
 }
 
 function inventory() {
@@ -204,15 +248,13 @@ function examine(itemId) {
 
 function help() {
   out("Commands:", "bbs-bright");
-  out("  GO <dir>  /  N S E W U D  /  ENTER <dir>");
-  out("  LOOK  /  L");
-  out("  TAKE <item>  /  GET <item>");
-  out("  DROP <item>");
-  out("  USE <item>  (e.g. USE RADIO on the rooftop, USE DVD at exit node)");
-  out("  EXAMINE <item>  /  X <item>");
-  out("  INVENTORY  /  I");
-  out("  HELP  /  ?");
-  out("  ESC: back to door games");
+  out("  Move:   GO / WALK / RUN <dir>   |   N S E W U D   |   CLIMB UP   DESCEND");
+  out("  Look:   LOOK / L                 |   EXAMINE / READ / LOOK AT <item>");
+  out("  Items:  TAKE / GET / PICK UP <item>   |   DROP / PUT DOWN <item>   |   INVENTORY / I");
+  out("  Act:    USE <item>   |   OPEN / UNLOCK / SWIPE <door|card>   |   TURN ON <item>");
+  out("  Misc:   HELP / ?     |   QUIT     |   ESC: back to door games");
+  out("");
+  out("Tip: if you've got a keycard at a locked door, OPEN DOOR or SWIPE KEYCARD will work.", "bbs-dim");
 }
 
 // ─── Command parsing ────────────────────────────────────
@@ -223,27 +265,105 @@ const DIRS = {
   fly: "fly", dock: "dock", in: "secret", out: "secret",
 };
 
+// Verb synonyms — accept many ways to say the same thing.
+const VERBS = {
+  move:    new Set(["go","enter","walk","run","head","move","travel","proceed"]),
+  take:    new Set(["take","get","grab","pickup","snag","pocket","collect","grab-it"]),
+  drop:    new Set(["drop","discard"]),
+  use:     new Set(["use","insert","broadcast","activate","operate","apply","press","push","plug"]),
+  examine: new Set(["examine","x","inspect","read","study","check","peruse"]),
+  inv:     new Set(["inventory","i","inv","items","carrying","gear","stuff"]),
+  help:    new Set(["help","?","h","commands","hint"]),
+  quit:    new Set(["quit","q","bye","abandon"]),
+  open:    new Set(["open","unlock","swipe","tap","wave","scan","badge"]),
+  climb:   new Set(["climb","ascend"]),  // bare = up; with arg, uses arg
+  descend: new Set(["descend"]),          // bare = down
+  look:    new Set(["look","l"]),
+};
+
+// Item synonyms — common shortenings + casual names → canonical item IDs.
+// Lets "use card", "examine printout", "take dvd-r" all work as expected.
+const ITEM_ALIASES = {
+  "card": "keycard", "key": "keycard", "key-card": "keycard",
+  "id": "badge", "employee-badge": "badge",
+  "bar": "protein-bar", "snack": "protein-bar",
+  "usb": "usb-stick", "stick": "usb-stick", "thumbdrive": "usb-stick", "drive": "usb-stick",
+  "printout": "loss-curve-printout", "curve": "loss-curve-printout", "graph": "loss-curve-printout",
+  "log": "logbook", "book": "logbook",
+  "tape": "dataset-shard", "shard": "dataset-shard",
+  "torch": "flashlight", "light": "flashlight", "lamp": "flashlight",
+  "ham": "radio", "ham-radio": "radio",
+  "dvd-r": "dvd", "disc": "dvd", "disk": "dvd", "dataset": "dvd",
+  "computer": "laptop",
+  "cup": "mug", "coffee": "mug",
+  "paper": "paper", "attention": "paper",
+};
+
+function resolveItem(name) {
+  return ITEM_ALIASES[name] || name;
+}
+
 function parse(input) {
   const raw = input.trim().toLowerCase();
   if (!raw) return;
   out("> " + input, "bbs-dim");
   const parts = raw.split(/\s+/);
-  const verb = parts[0];
-  const arg = parts.slice(1).join("-");
+  let verb = parts[0];
+  let argParts = parts.slice(1);
 
-  if (DIRS[verb] && parts.length === 1) { move(DIRS[verb]); return; }
-  if ((verb === "go" || verb === "enter" || verb === "walk") && parts[1]) {
-    const d = DIRS[parts[1]] || parts[1];
+  // Multi-word verb glue — rewrite into canonical single-verb form.
+  //   "pick up X"   → take X
+  //   "put down X"  → drop X
+  //   "look at X"   → examine X (vs bare "look" which describes the room)
+  //   "look in X"   → examine X
+  //   "turn on X"   → use X
+  //   "turn off X"  → use X
+  //   "plug in X"   → use X
+  if (verb === "pick" && argParts[0] === "up") { verb = "take"; argParts.shift(); }
+  else if (verb === "put"  && argParts[0] === "down") { verb = "drop"; argParts.shift(); }
+  else if (verb === "look" && (argParts[0] === "at" || argParts[0] === "in")) { verb = "examine"; argParts.shift(); }
+  else if (verb === "turn" && (argParts[0] === "on" || argParts[0] === "off")) { verb = "use"; argParts.shift(); }
+  else if (verb === "plug" && argParts[0] === "in") { verb = "use"; argParts.shift(); }
+
+  // Bare "exit" with no noun = leave the game (matches old behavior).
+  // With a noun ("exit room") fall through to movement attempt.
+  if (verb === "exit" && argParts.length === 0) { onNavigate("/doors"); return; }
+
+  const arg = argParts.join("-");
+
+  // Bare-word direction: "n", "north", "door", "fly", etc.
+  if (DIRS[verb] && argParts.length === 0) { move(DIRS[verb]); return; }
+
+  // Movement verbs with a direction argument: "go north", "walk door".
+  if (VERBS.move.has(verb) && argParts.length > 0) {
+    const d = DIRS[argParts[0]] || argParts[0];
     move(d); return;
   }
-  if (verb === "look" || verb === "l") { look(); return; }
-  if (verb === "take" || verb === "get" || verb === "grab") { if (arg) take(arg); else out("Take what?"); return; }
-  if (verb === "drop") { if (arg) drop(arg); else out("Drop what?"); return; }
-  if (verb === "use" || verb === "insert" || verb === "broadcast") { if (arg) use(arg); else out("Use what?"); return; }
-  if (verb === "examine" || verb === "x" || verb === "inspect") { if (arg) examine(arg); else out("Examine what?"); return; }
-  if (verb === "inventory" || verb === "i" || verb === "inv") { inventory(); return; }
-  if (verb === "help" || verb === "?") { help(); return; }
-  if (verb === "quit" || verb === "exit") { onNavigate("/doors"); return; }
+  // CLIMB / ASCEND default UP, DESCEND defaults DOWN; both accept explicit dirs.
+  if (VERBS.climb.has(verb)) {
+    const d = argParts[0] ? (DIRS[argParts[0]] || argParts[0]) : "up";
+    move(d); return;
+  }
+  if (VERBS.descend.has(verb)) {
+    const d = argParts[0] ? (DIRS[argParts[0]] || argParts[0]) : "down";
+    move(d); return;
+  }
+
+  // Open / unlock / swipe — primarily for locked doors.
+  if (VERBS.open.has(verb)) { openOrSwipe(resolveItem(arg)); return; }
+
+  if (VERBS.look.has(verb) && argParts.length === 0) { look(); return; }
+  if (VERBS.take.has(verb))    { if (arg) take(resolveItem(arg));    else out("Take what?"); return; }
+  if (VERBS.drop.has(verb))    { if (arg) drop(resolveItem(arg));    else out("Drop what?"); return; }
+  if (VERBS.use.has(verb))     { if (arg) use(resolveItem(arg));     else out("Use what?"); return; }
+  if (VERBS.examine.has(verb)) { if (arg) examine(resolveItem(arg)); else out("Examine what?"); return; }
+  if (VERBS.inv.has(verb))     { inventory(); return; }
+  if (VERBS.help.has(verb))    { help(); return; }
+  if (VERBS.quit.has(verb))    { onNavigate("/doors"); return; }
+
+  // "leave" / "place" — drop synonyms only when there's an item argument.
+  if ((verb === "leave" || verb === "place") && arg) { drop(resolveItem(arg)); return; }
+
   out("I don't understand. Try HELP.", "bbs-dim");
 }
 
