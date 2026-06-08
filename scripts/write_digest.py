@@ -406,7 +406,7 @@ def section_stats_line(items: list[dict]) -> str:
 
 def dashboard_line(news_items: list[dict], all_themes_used: list[str], top_mention: tuple[str, int],
                    cross_count: int, prior_sentiments: list[float], today_mean: float,
-                   has_polymarket: bool) -> list[str]:
+                   has_polymarket: bool, top_mover: dict | None = None, n_markets: int = 0) -> list[str]:
     """Render the dashboard blockquote lines (with mandatory two trailing spaces)."""
     n_stories = len(news_items)
     # Union of all distinct domains across clusters (each item carries source_domains[])
@@ -420,10 +420,22 @@ def dashboard_line(news_items: list[dict], all_themes_used: list[str], top_menti
     theme_counter = Counter(all_themes_used)
     top_themes = ", ".join(f"{t}×{c}" for t, c in theme_counter.most_common(5))
 
+    # Market Pulse line: prefer the explicit top mover so the reader sees the
+    # actual movement summary inline (e.g. "▲22.2pp · 5 AI markets tracked").
+    if has_polymarket and top_mover:
+        q = (top_mover.get("question") or "").replace('"', "'")[:80]
+        chg = float(top_mover.get("change_24h_pp") or 0)
+        arrow = "▲" if chg > 0 else ("▼" if chg < 0 else "→")
+        market_line = f'> **📈 MARKET PULSE:** Top mover: "{q}" {arrow}{abs(chg)}pp · {n_markets} AI markets tracked  '
+    elif has_polymarket:
+        market_line = f"> **📈 MARKET PULSE:** _(see Prediction Markets section, {n_markets} markets)_  "
+    else:
+        market_line = "> **📈 MARKET PULSE:** _(quiet today)_  "
+
     lines = [
         f"> **📊 TODAY:** {n_stories} stories · {n_sources} sources · {dot} {signed(today_mean)} sentiment · 🔥 {cross_count} cross-source · **TOP MENTION:** {top_name} ×{top_cnt}  ",
         f"> **🏷️ THEMES:** {top_themes}  " if top_themes else "> **🏷️ THEMES:** _(quiet today)_  ",
-        "> **📈 MARKET PULSE:** _(quiet today)_  " if not has_polymarket else "> **📈 MARKET PULSE:** _(see Prediction Markets section)_  ",
+        market_line,
     ]
     # 7D sparkline (needs ≥5 priors)
     full_series = prior_sentiments + [today_mean]
@@ -546,13 +558,33 @@ def main():
     # ---- Render ----
     lines = []
     lines.append(f"# {args.date} :: AI DAILY DIGEST")
+    # Detect polymarket data (read once here; reused below for the section)
+    poly_path = Path("/tmp/aig/polymarket.json")
+    poly_items = []
+    if poly_path.exists():
+        try:
+            poly_items = json.load(open(poly_path))
+            if isinstance(poly_items, dict) and "markets" in poly_items:
+                poly_items = poly_items["markets"]
+        except Exception as e:
+            print(f"[write_digest] polymarket.json parse error: {e}", file=sys.stderr)
+            poly_items = []
+    # Find top mover for the dashboard market-pulse line
+    top_mover = None
+    if poly_items:
+        try:
+            top_mover = max(poly_items, key=lambda m: abs(float(m.get("change_24h_pp") or 0)))
+        except Exception:
+            top_mover = None
+
     lines.append("")
     subtitle = curation.get("subtitle", "Today in AI.").replace("—", " - ")
     lines.append(f"_{subtitle}_")
     lines.append("")
     lines.extend(dashboard_line(news_section_items, all_themes_used, top_mention,
                                 cross_count, prior_sentiments, today_mean,
-                                has_polymarket=False))
+                                has_polymarket=bool(poly_items),
+                                top_mover=top_mover, n_markets=len(poly_items)))
     lines.append("")
 
     # TL;DR
@@ -576,9 +608,47 @@ def main():
                 lines.append(render_news_item(it, overlay))
         lines.append("")
 
-    # Prediction Markets — currently always quiet (no polymarket pipeline integration here yet)
+    # Prediction Markets — read /tmp/aig/polymarket.json if present
     lines.append("## 📈 Prediction Markets")
-    lines.append("_(quiet today)_")
+    poly_path = Path("/tmp/aig/polymarket.json")
+    poly_items = []
+    if poly_path.exists():
+        try:
+            poly_items = json.load(open(poly_path))
+            # Expected shape: list of {question, yes_pct, change_24h_pp, volume_usd, url}
+            # Tolerate Polymarket Gamma API shape too: {markets: [...]} or raw [{...}]
+            if isinstance(poly_items, dict) and "markets" in poly_items:
+                poly_items = poly_items["markets"]
+        except Exception as e:
+            print(f"[write_digest] polymarket.json parse error: {e}", file=sys.stderr)
+            poly_items = []
+    if poly_items:
+        lines.append(f"_{len(poly_items)} markets · AI/policy_")
+        for m in poly_items[:5]:
+            q = m.get("question") or m.get("title") or "(unknown)"
+            yes = m.get("yes_pct") or m.get("yes_price_pct") or m.get("price_yes")
+            chg = m.get("change_24h_pp") or m.get("delta_24h") or 0
+            vol = m.get("volume_usd") or m.get("volume") or 0
+            url = m.get("url") or m.get("permalink") or ""
+            arrow = "▲" if chg > 0 else ("▼" if chg < 0 else "→")
+            chg_abs = abs(chg) if isinstance(chg, (int, float)) else chg
+            try:
+                yes_str = f"{float(yes)*100:.0f}%" if yes and float(yes) <= 1 else f"{yes}%"
+            except Exception:
+                yes_str = f"{yes}%"
+            try:
+                vol_n = float(vol)
+                if vol_n >= 1_000_000:
+                    vol_str = f"${vol_n/1_000_000:.1f}M"
+                elif vol_n >= 1_000:
+                    vol_str = f"${vol_n/1_000:.0f}K"
+                else:
+                    vol_str = f"${vol_n:.0f}"
+            except Exception:
+                vol_str = f"${vol}"
+            lines.append(f"- **{q}** - {yes_str} Yes ({arrow}{chg_abs}pp 24h, {vol_str} vol) · [Polymarket]({url})")
+    else:
+        lines.append("_(quiet today)_")
     lines.append("")
 
     # Discourse

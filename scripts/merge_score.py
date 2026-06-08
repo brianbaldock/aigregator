@@ -40,9 +40,113 @@ CRED = {
 WIRE_DOMAINS = {"reuters.com", "apnews.com", "bloomberg.com", "wsj.com"}
 
 # Stopwords for title normalization (cross-source clustering)
-STOP = set("a an the of to in on at for with and or but is are was were be been being "
+STOP = set("a an the of to in on at for for with and or but is are was were be been being "
            "this that these those it its as by from how why what who when where "
-           "new says will can may could would should has have had do does did".split())
+           "new says will can may could would should has have had do does did "
+           "ai".split())
+
+# Named entities — orgs/people that signal "same story" when shared across wires.
+# Lowercase, multi-word entries are matched as substrings of the lowercased title.
+KNOWN_ENTITIES = {
+    "anthropic", "openai", "deepmind", "google", "alphabet", "microsoft", "meta",
+    "nvidia", "amazon", "apple", "tesla", "x.ai", "mistral", "huggingface",
+    "perplexity", "character.ai", "cohere", "inflection", "stability",
+    "claude", "gpt", "gemini", "llama", "grok", "copilot", "siri",
+    "trump", "biden", "altman", "musk", "huang", "amodei", "hassabis",
+    "krishnan", "vance", "sacks", "macron", "sunak",
+    "fbi", "doj", "ftc", "sec", "eu", "ec", "ofcom", "fda", "uk", "white house",
+    "reuters", "bloomberg",  # used in title-based clustering too
+}
+
+# Action verbs — when two titles share an entity AND any of these, they're
+# almost certainly covering the same news event from different angles.
+ACTION_VERBS = {
+    "launches", "launch", "releases", "release", "announces", "announce",
+    "unveils", "unveil", "raises", "raised", "funds", "funded", "acquires",
+    "acquired", "sues", "sued", "files", "filed", "signs", "signed", "orders",
+    "ordered", "blocks", "blocked", "approves", "approved", "passes", "passed",
+    "warns", "warned", "urges", "urged", "calls", "called", "demands",
+    "demanded", "halts", "halt", "halted", "pauses", "pause", "paused",
+    "invests", "invested", "buys", "bought", "merges", "merged",
+    "ipo", "ipos", "deal", "partnership", "agreement", "lawsuit", "indicted",
+    "fired", "resigns", "exits", "joins", "hires", "hired",
+    # synonym-cluster markers below also get normalized into one of these
+    # buckets when computing match — see VERB_SYNONYMS.
+}
+
+# Verbs that mean roughly the same thing for clustering purposes. When two
+# titles share an entity AND each has a verb from the SAME synonym group,
+# they cluster. Add new groups conservatively — false-positive merges hurt
+# more than missed clusters.
+VERB_SYNONYMS = [
+    {"halt", "halts", "halted", "pause", "pauses", "paused", "stop", "stops",
+     "stopped", "slowdown", "slow", "freeze", "moratorium"},
+    {"urges", "urge", "urged", "calls", "call", "called", "demands", "demand",
+     "demanded", "warns", "warned", "warn", "tells", "told"},
+    {"launches", "launch", "launched", "releases", "release", "released",
+     "announces", "announce", "announced", "unveils", "unveiled", "ships",
+     "shipped", "rolls", "rolled", "debuts"},
+    {"raises", "raised", "funds", "funded", "secures", "secured", "closes",
+     "closed", "completes", "completed"},
+    {"acquires", "acquired", "buys", "bought", "purchases", "purchased"},
+    {"sues", "sued", "files", "filed", "lawsuit", "indicted", "charged",
+     "subpoena", "subpoenaed"},
+    {"signs", "signed", "orders", "ordered", "approves", "approved", "passes",
+     "passed", "enacts", "enacted"},
+    {"blocks", "blocked", "bans", "banned", "restricts", "restricted",
+     "prohibits", "prohibited", "rejects", "rejected"},
+    {"invests", "invested", "investment", "stakes", "stake", "deal",
+     "partnership", "agreement"},
+    {"resigns", "resigned", "exits", "exited", "departs", "departed",
+     "leaves", "left", "quits", "quit"},
+    {"hires", "hired", "joins", "joined", "names", "named", "appoints",
+     "appointed", "promotes", "promoted"},
+]
+
+
+def _verb_group(action: str) -> int:
+    """Return the synonym-group index for an action verb, or -1 if standalone."""
+    for i, group in enumerate(VERB_SYNONYMS):
+        if action in group:
+            return i
+    return -1
+
+
+def actions_match(a1: set, a2: set) -> bool:
+    """Two action sets match if they share a literal verb OR they share a
+    verb synonym group."""
+    if a1 & a2:
+        return True
+    g1 = {_verb_group(v) for v in a1 if _verb_group(v) >= 0}
+    g2 = {_verb_group(v) for v in a2 if _verb_group(v) >= 0}
+    return bool(g1 & g2)
+
+
+def extract_entities(title: str) -> set:
+    """Return the set of KNOWN_ENTITIES that appear in this title (lowercased,
+    substring match for multi-word entities)."""
+    low = (title or "").lower()
+    found = set()
+    for ent in KNOWN_ENTITIES:
+        if ent in low:
+            # require word boundary for short single-word entities to avoid
+            # 'meta' matching 'metamorphosis'
+            if " " in ent:
+                found.add(ent)
+            elif re.search(rf"\b{re.escape(ent)}\b", low):
+                found.add(ent)
+    return found
+
+
+def extract_actions(title: str) -> set:
+    """Return action verbs present in this title."""
+    low = (title or "").lower()
+    # Union of all explicit action verbs (literal list) and all synonym group members
+    all_actions = set(ACTION_VERBS)
+    for grp in VERB_SYNONYMS:
+        all_actions |= grp
+    return {v for v in all_actions if re.search(rf"\b{re.escape(v)}\b", low)}
+
 
 POS = {"breakthrough","wins","launch","launches","raises","raised","grows","beats",
        "open-source","opens","funds","invests","accelerates","approves","passes","agrees"}
@@ -136,6 +240,29 @@ def _looks_like_story(url: str, dom: str) -> bool:
         return True
     return False
 
+
+# Sponsored-content / branded-content fingerprints. These are NOT news stories
+# even when surfaced by Kagi from wire-service domains. Drop pre-cluster.
+SPONSORED_HOST_PREFIXES = ("plus.reuters.com",)  # Reuters' branded content arm
+SPONSORED_TITLE_PHRASES = (
+    "content studios",  # Reuters/Bloomberg sponsored series banner
+    "case studies",     # Reuters branded
+    "branded content",
+    "paid content",
+    "in partnership with",
+    "sponsored content",
+    "advertorial",
+)
+
+
+def _is_sponsored(url: str, title: str, summary: str) -> bool:
+    """Return True if the item is branded/sponsored content."""
+    lower_url = (url or "").lower()
+    if any(host in lower_url for host in SPONSORED_HOST_PREFIXES):
+        return True
+    text = f"{(title or '')} {(summary or '')[:400]}".lower()
+    return any(p in text for p in SPONSORED_TITLE_PHRASES)
+
 def load_kagi(indir: str):
     out = []
     for fp in sorted(glob.glob(os.path.join(indir, "kagi", "*.json"))):
@@ -155,6 +282,9 @@ def load_kagi(indir: str):
             dom = domain_of(url)
             # Drop hub/topic landing pages — they shouldn't appear as stories
             if dom in WIRE_DOMAINS and not _looks_like_story(url, dom):
+                continue
+            # Drop branded/sponsored content (KPMG Content Studios, Reuters Plus, etc.)
+            if _is_sponsored(url, r.get("title", ""), r.get("snippet", "")):
                 continue
             # wire credibility override
             cred = 5 if dom in WIRE_DOMAINS else cred_of(dom)
@@ -238,25 +368,80 @@ def load_hn(indir: str):
 
 # -------- cluster + score --------
 def cluster_and_score(items):
-    # Greedy clustering: each item joins the first existing cluster whose
-    # representative title shares ≥3 meaningful tokens (Jaccard ≥ ~0.4).
-    # Otherwise it seeds a new cluster.
-    clusters = []  # list of {"tokens": set, "items": [..]}
+    # Greedy clustering with TWO signals (an item joins a cluster if EITHER fires):
+    #   (a) Title-token overlap: >=3 shared meaningful tokens AND Jaccard >= 0.4
+    #   (b) Entity+action signal: items share at least one KNOWN_ENTITY AND
+    #       at least one ACTION_VERB (or share 2+ entities). This catches
+    #       wire stories that re-frame the same event with divergent verbs
+    #       (e.g. Anthropic "says"/"urges"/"calls"/"warns" about the same pause).
+    # Wire-to-wire pairs get the loosened (b) path. Two wires reporting on the
+    # same entity-event are almost always the same story.
+    clusters = []  # list of {"tokens": set, "entities": set, "items": [..]}
     for it in items:
         toks = title_tokens(it["title"])
+        ents = extract_entities(it["title"])
+        acts = extract_actions(it["title"])
         placed = False
-        if len(toks) >= 3:
-            for c in clusters:
-                shared = toks & c["tokens"]
-                # require 3 shared tokens AND >= 40% of smaller set
-                smaller = min(len(toks), len(c["tokens"]))
-                if len(shared) >= 3 and smaller and (len(shared) / smaller) >= 0.4:
-                    c["items"].append(it)
-                    c["tokens"] |= toks  # accrete vocabulary so chains hold
-                    placed = True
-                    break
+        is_wire = it.get("domain") in WIRE_DOMAINS
+        for c in clusters:
+            # Path (a): token-jaccard
+            shared = toks & c["tokens"]
+            smaller = min(len(toks), len(c["tokens"])) if c["tokens"] else 0
+            token_match = (len(shared) >= 3 and smaller and (len(shared) / smaller) >= 0.4)
+            # Path (b): entity+action (cross-wire only, to avoid overclustering
+            # blogs that just happen to mention the same vendor)
+            shared_ents = ents & c["entities"]
+            actions_overlap = actions_match(acts, c.get("actions", set()))
+            entity_match = False
+            c_has_wire = any(g.get("domain") in WIRE_DOMAINS for g in c["items"])
+            if is_wire and c_has_wire and shared_ents:
+                # Two wires + shared entity. Cluster if any of:
+                #   - they share an action verb or synonym (urges/calls/warns; halt/pause)
+                #   - they share 2+ entities (Anthropic+Amazon together)
+                #   - they share an entity AND a weak token signal (Jaccard >= 0.2)
+                if actions_overlap or len(shared_ents) >= 2 or (smaller and len(shared) / smaller >= 0.2):
+                    entity_match = True
+            if token_match or entity_match:
+                c["items"].append(it)
+                c["tokens"] |= toks  # accrete vocabulary so chains hold
+                c["entities"] |= ents
+                c.setdefault("actions", set()).update(acts)
+                placed = True
+                break
         if not placed:
-            clusters.append({"tokens": toks or {it["url"]}, "items": [it]})
+            clusters.append({
+                "tokens": toks or {it["url"]},
+                "entities": ents,
+                "actions": acts,
+                "items": [it],
+            })
+
+    # Second pass: merge clusters that share an entity AND an action verb
+    # (literal OR synonym group) AND both have ≥1 wire-domain item. Greedy
+    # ordering can split the same event into multiple sibling clusters when
+    # divergent vocab seeds them (Bloomberg seeds "pause", Reuters seeds
+    # "halt" — both Anthropic stories). Two wires sharing entity + verb-bucket
+    # is a strong signal.
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(clusters)):
+            if changed: break
+            for j in range(i + 1, len(clusters)):
+                ci, cj = clusters[i], clusters[j]
+                shared_ents = ci["entities"] & cj["entities"]
+                acts_overlap = actions_match(ci.get("actions", set()), cj.get("actions", set()))
+                ci_has_wire = any(g.get("domain") in WIRE_DOMAINS for g in ci["items"])
+                cj_has_wire = any(g.get("domain") in WIRE_DOMAINS for g in cj["items"])
+                if shared_ents and acts_overlap and ci_has_wire and cj_has_wire:
+                    # Merge cj into ci
+                    ci["items"].extend(cj["items"])
+                    ci["tokens"] |= cj["tokens"]
+                    ci["entities"] |= cj["entities"]
+                    ci.setdefault("actions", set()).update(cj.get("actions", set()))
+                    clusters.pop(j)
+                    changed = True
+                    break
 
     merged = []
     for c in clusters:

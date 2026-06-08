@@ -82,12 +82,15 @@ TRANSLATION: if an item has "needs_translation": true, render its title as \
 English. This is how non-English wire stories appear in the digest.
 
 SECTION MEANINGS:
-- models: model releases, launches, updates, weights drops
-- safety: responsible AI, regulation, policy, executive orders, governance
-- projects: cool indie, novel apps, interesting deployments
-- funding: $$, deals, IPOs, equity, investments, data-center buildouts
-- tools: developer tools, demos, infrastructure
-- opensource: open weights, GitHub trends, HF trending
+- models: model releases, launches, updates, weights drops. NEW model from a lab.
+- safety: responsible AI, regulation, policy, executive orders, governance, calls for moratoriums, AI safety research findings
+- projects: cool indie work, novel apps, interesting deployments, art/games, surprising research-in-the-wild. NOT essays/op-eds about AI.
+- funding: $$, deals, IPOs, equity, investments, data-center buildouts, market dynamics, M&A, infra spending
+- tools: developer tools, libraries, SDKs, frameworks, API launches, IDE plugins, demos of capabilities, infrastructure for builders. If today has no real launches, prefer the `_(quiet today)_` fallback by simply NOT assigning anything to tools rather than stretching to fill it.
+- opensource: open weights releases, GitHub trending, HuggingFace trending, open-model benchmarks
+- (research and discourse handled automatically by tier)
+
+OPINION/ANALYSIS pieces (e.g. "AI Promised a Revolution and Companies Are Still Waiting", "Hospitals Are a Proving Ground for AI", "Why Many Americans Turn to AI for Health") are NOT projects. Put them in models if they're about model capabilities/limitations, in safety if they're about governance/risk, or in funding if they're about industry/business reality. Projects should be specific things someone built.
 
 USE THE EXACT URLs from the input as keys. Do not invent, modify, or reformat URLs.
 

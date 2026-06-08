@@ -6,20 +6,21 @@
       "models",
       "enterprise",
       "science",
-      "safety",
       "funding",
+      "safety",
+      "policy",
       "hardware",
       "opensource"
     ],
     "sources": [
-      "bloomberg.com",
+      "reuters.com",
       "sj.com",
-      "apnews.com",
+      "bloomberg.com",
       "arxiv.org",
       "polymarket.com"
     ],
     "diversity_warn": false,
-    "read_min": 17
+    "read_min": 18
   },
   {
     "slug": "2026-06-07",
