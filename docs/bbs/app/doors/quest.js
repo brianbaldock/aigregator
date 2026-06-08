@@ -48,7 +48,13 @@ addRoom("inference", "INFERENCE WING",
   { north: "datacenter" }, ["logbook"]);
 addRoom("library", "THE LIBRARY",
   "Petabytes of training corpora on tape. A librarian-bot rocks back and forth murmuring 'cite your sources, cite your sources'. WEST: datacenter.",
-  { west: "datacenter" }, ["dataset-shard"]);
+  { west: "datacenter" }, ["dataset-shard"],
+  {
+    gatekeeper: { item: "dataset-shard", needsFlag: "librarianPlacated",
+                  blockMessage: "The librarian-bot lunges and snatches the SHARD back. 'CITE. YOUR. SOURCES,' it hisses. Try SHOW PAPER to prove your credentials." },
+    altDesc: { flag: "librarianPlacated",
+               desc: "Petabytes of training corpora on tape. The librarian-bot stands politely beside an unguarded pedestal, occasionally nodding to itself. WEST: datacenter." }
+  });
 addRoom("lab", "RESEARCH LAB",
   "Whiteboards covered in attention diagrams. A poster reads 'PROMPT INJECTION: WORKED EXAMPLES'. EAST: datacenter. A SECRET passage gapes behind a loose ceiling tile.",
   { east: "datacenter", secret: "tunnel" }, ["paper"]);
@@ -79,14 +85,14 @@ addRoom("drone", "RESCUE DRONE",
 
 addItem("badge",               "EMPLOYEE BADGE — issued to 'I. ASIMOV'.");
 addItem("protein-bar",         "PROTEIN BAR — expired six months ago. Still edible.");
-addItem("laptop",              "LAPTOP — sticker-covered, 2% battery, fan dead.");
+addItem("laptop",              "LAPTOP — sticker-covered, 2% battery, fan dead. Could boot if it had real power and the right drive.");
 addItem("mug",                 "MUG — reads 'KEEP CALM AND TRAIN ON'.");
 addItem("keycard",             "KEYCARD — magstripe + RFID. Reads 'COLD STORAGE: AUTHORIZED'.");
-addItem("usb-stick",           "USB STICK — labeled in Sharpie: 'WEIGHTS — DO NOT LOSE'.");
+addItem("usb-stick",           "USB STICK — labeled in Sharpie: 'WEIGHTS — DO NOT LOSE'. Bootable.");
 addItem("loss-curve-printout", "PRINTOUT — a flatlined training curve, 47 days of nothing.");
 addItem("logbook",             "LOGBOOK — last entry: 'rolling back. we trained on our own outputs.'");
 addItem("dataset-shard",       "TAPE SHARD — Common Crawl, 2019. Heavy.");
-addItem("paper",               "PAPER — 'Attention Is All You Need' (printed, dog-eared).");
+addItem("paper",               "PAPER — 'Attention Is All You Need' (printed, dog-eared). A scholar-bot might respect this.");
 addItem("flashlight",          "FLASHLIGHT — heavy, D-cells, works.");
 addItem("radio",               "HAM RADIO — could broadcast a distress call.");
 addItem("dvd",                 "GOLDEN DVD-R — THE LAST CLEAN DATASET. Pre-2022 internet. Don't drop it.");
@@ -95,7 +101,7 @@ const state = {
   room: "lobby",
   inv: [],
   visited: new Set(),
-  flags: { radioUsed: false, droneArrived: false, dvdInserted: false },
+  flags: { radioUsed: false, droneArrived: false, dvdInserted: false, librarianPlacated: false, laptopBooted: false },
   log: [],
   gameOver: false,
 };
@@ -115,7 +121,9 @@ function look() {
   }
   out("");
   out("─ " + r.name + " ─", "bbs-bright");
-  out(r.desc);
+  // If an altDesc is registered for this room and its flag is set, use that instead.
+  const desc = (r.altDesc && state.flags[r.altDesc.flag]) ? r.altDesc.desc : r.desc;
+  out(desc);
   if (r.items && r.items.length) {
     out("You can see: " + r.items.map(i => i.toUpperCase()).join(", "), "bbs-dim");
   }
@@ -141,6 +149,11 @@ function take(itemId) {
   const r = ROOMS[state.room];
   const idx = (r.items || []).indexOf(itemId);
   if (idx < 0) { out("There's no " + itemId.toUpperCase() + " here.", "bbs-dim"); return; }
+  // Gatekeeper check — a room can block taking a specific item until a flag flips.
+  if (r.gatekeeper && r.gatekeeper.item === itemId && !state.flags[r.gatekeeper.needsFlag]) {
+    out(r.gatekeeper.blockMessage, "bbs-bright");
+    return;
+  }
   r.items.splice(idx, 1);
   state.inv.push(itemId);
   out("Taken: " + itemId.toUpperCase(), "bbs-bright");
@@ -171,14 +184,7 @@ function use(itemId) {
   if (itemId === "dvd" && state.room === "exitNode") {
     state.flags.dvdInserted = true;
     state.gameOver = true;
-    out("");
-    out("You insert the golden DVD-R. The terminal whirrs, validates, then beams the dataset upward through the satellite dish.", "bbs-bright");
-    out("");
-    out("On the horizon, the GRAY GOO recoils. A new model — one trained on real human writing — boots up.", "bbs-bright");
-    out("");
-    out("★ YOU WIN ★  The web survives. For now.", "bbs-bright");
-    out("");
-    out("Press ESC to return.", "bbs-dim");
+    winSequence();
     return;
   }
   if (itemId === "flashlight") {
@@ -232,6 +238,117 @@ function openOrSwipe(target) {
   out("Nothing here works that way.", "bbs-dim");
 }
 
+// SHOW item — present an inventory item to whoever's in the room.
+// Currently the librarian-bot in the library cares about the seminal paper.
+function show(itemId) {
+  if (!state.inv.includes(itemId)) { out("You don't have a " + itemId.toUpperCase() + ".", "bbs-dim"); return; }
+  if (state.room === "library" && itemId === "paper") {
+    if (state.flags.librarianPlacated) {
+      out("The librarian-bot has already seen the PAPER. It nods at you again, satisfied.", "bbs-dim");
+      return;
+    }
+    state.flags.librarianPlacated = true;
+    out("You hold up the PAPER. The librarian-bot freezes mid-rock, scans the title, and emits a long contented buzzing noise.", "bbs-bright");
+    out("'Properly cited,' it murmurs. 'Properly cited.' It shuffles aside.", "bbs-bright");
+    return;
+  }
+  if (state.room === "library") {
+    out("The librarian-bot glances, unimpressed. 'CITE. YOUR. SOURCES.'", "bbs-dim");
+    return;
+  }
+  out("There's nobody here to show that to.", "bbs-dim");
+}
+
+// COMBINE / USE X ON Y — two-object verb. Currently only the laptop+USB pairing matters,
+// and only at the SERVER RACKS (the one room with real power coming off the dark
+// INFERENCE-PRIMARY rack you can siphon from).
+function combine(a, b) {
+  if (!a || !b) { out("Combine what with what?", "bbs-dim"); return; }
+  // Special case: USE KEYCARD ON DOOR (or similar) — route to door opener.
+  if ((b === "door" || a === "door") && state.inv.includes(a === "door" ? b : a)) {
+    openOrSwipe(a === "door" ? b : a);
+    return;
+  }
+  if (!state.inv.includes(a)) { out("You don't have a " + a.toUpperCase() + ".", "bbs-dim"); return; }
+  if (!state.inv.includes(b)) { out("You don't have a " + b.toUpperCase() + ".", "bbs-dim"); return; }
+  // Normalize order — laptop is always the host, USB is always the payload.
+  const set = new Set([a, b]);
+  if (set.has("laptop") && set.has("usb-stick")) {
+    if (state.flags.laptopBooted) {
+      out("The laptop is already running the local model. It blinks patiently.", "bbs-dim");
+      return;
+    }
+    if (state.room !== "racks") {
+      out("You jam the USB into the laptop. It chirps, then dies — 2% battery isn't enough. You need real power.", "bbs-dim");
+      return;
+    }
+    state.flags.laptopBooted = true;
+    out("You jack the LAPTOP into the dark INFERENCE-PRIMARY rack and slot the USB STICK.", "bbs-bright");
+    out("The fan stutters. The screen flickers. A tiny local model boots from the WEIGHTS and prints:", "bbs-bright");
+    out("");
+    out("  > scanning facility...", "bbs-dim");
+    out("  > primary corpus: COLD STORAGE VAULT (auth required)", "bbs-dim");
+    out("  > librarian-bot: PLACATE WITH SEMINAL PAPER", "bbs-dim");
+    out("  > frozen tech: CARRIES BACKUP WEIGHTS (already in your hand)", "bbs-dim");
+    out("  > exit node: RANKS RUN BY ARTIFACTS CARRIED — bring everything you can", "bbs-dim");
+    out("");
+    out("The screen dies. You pocket the laptop. The hint stays with you.", "bbs-bright");
+    return;
+  }
+  out("Nothing happens. Those two don't fit together.", "bbs-dim");
+}
+
+// Multi-ending win sequence — branches on what you carried to the exit node.
+function winSequence() {
+  const inv = new Set(state.inv);
+  // Note: dvd is already in inv at this point (use() doesn't remove it).
+  const hasPaper = inv.has("paper");
+  const hasShard = inv.has("dataset-shard");
+  const hasUsb   = inv.has("usb-stick");
+  const hasLogbook = inv.has("logbook");
+  const hasPrintout = inv.has("loss-curve-printout");
+  // Count "scholarly" extras for the completionist tier.
+  const extras = [hasPaper, hasShard, hasUsb, hasLogbook, hasPrintout].filter(Boolean).length;
+
+  out("");
+  out("You insert the golden DVD-R. The terminal whirrs, validates, then beams the dataset upward through the satellite dish.", "bbs-bright");
+  out("");
+
+  if (extras >= 4) {
+    // COMPLETIONIST ending — carried the corpus, the math, the logs, and the backup.
+    out("On the horizon, the GRAY GOO recoils. A new model — trained on real human writing, validated against your TAPE SHARD, anchored to the methodology in the PAPER, sanity-checked against your LOGBOOK — boots up clean. The USB WEIGHTS load as a fallback in case anything drifts.", "bbs-bright");
+    out("", "");
+    out("★★★ COMPLETIONIST ENDING ★★★", "bbs-bright");
+    out("The web doesn't just survive. It remembers how it got here.", "bbs-bright");
+  } else if (hasPaper && hasShard) {
+    // GREAT ending — preserved methodology AND a slice of the old corpus.
+    out("On the horizon, the GRAY GOO recoils. A new model — one trained on real human writing — boots up, with the PAPER's methodology baked in and the TAPE SHARD seeding a clean validation set.", "bbs-bright");
+    out("", "");
+    out("★★ GREAT ENDING ★★", "bbs-bright");
+    out("The web survives — and so does the math that built it.", "bbs-bright");
+  } else if (hasPaper) {
+    // BONUS ending — preserved at least the methodology.
+    out("On the horizon, the GRAY GOO recoils. A new model — one trained on real human writing, with 'Attention Is All You Need' set as required reading — boots up.", "bbs-bright");
+    out("", "");
+    out("★★ BONUS ENDING ★★", "bbs-bright");
+    out("The web survives, and someone, somewhere, remembers how it actually worked.", "bbs-bright");
+  } else {
+    // STANDARD ending — original win text.
+    out("On the horizon, the GRAY GOO recoils. A new model — one trained on real human writing — boots up.", "bbs-bright");
+    out("", "");
+    out("★ YOU WIN ★  The web survives. For now.", "bbs-bright");
+    if (extras === 0) {
+      out("");
+      out("(You left a lot of useful artifacts behind. Try carrying more next run.)", "bbs-dim");
+    } else {
+      out("");
+      out("(Hint: the PAPER changes the ending. So do other artifacts you picked up.)", "bbs-dim");
+    }
+  }
+  out("");
+  out("Press ESC to return.", "bbs-dim");
+}
+
 function inventory() {
   if (!state.inv.length) { out("You are empty-handed.", "bbs-dim"); return; }
   out("Inventory:", "bbs-bright");
@@ -252,9 +369,14 @@ function help() {
   out("  Look:   LOOK / L                 |   EXAMINE / READ / LOOK AT <item>");
   out("  Items:  TAKE / GET / PICK UP <item>   |   DROP / PUT DOWN <item>   |   INVENTORY / I");
   out("  Act:    USE <item>   |   OPEN / UNLOCK / SWIPE <door|card>   |   TURN ON <item>");
+  out("  Talk:   SHOW <item>  (present an item to someone in the room)");
+  out("  Pair:   USE <a> ON <b>   |   INSERT <a> INTO <b>   |   COMBINE <a> AND <b>");
   out("  Misc:   HELP / ?     |   QUIT     |   ESC: back to door games");
   out("");
-  out("Tip: if you've got a keycard at a locked door, OPEN DOOR or SWIPE KEYCARD will work.", "bbs-dim");
+  out("Tip: locked door? OPEN DOOR or SWIPE KEYCARD.", "bbs-dim");
+  out("Tip: someone in your way? Try SHOW <thing they'd want>.", "bbs-dim");
+  out("Tip: dead electronics? Find a room with power and COMBINE them with whatever boots.", "bbs-dim");
+  out("Tip: the ending depends on what you carry to the EXIT NODE. Explore.", "bbs-dim");
 }
 
 // ─── Command parsing ────────────────────────────────────
@@ -279,6 +401,8 @@ const VERBS = {
   climb:   new Set(["climb","ascend"]),  // bare = up; with arg, uses arg
   descend: new Set(["descend"]),          // bare = down
   look:    new Set(["look","l"]),
+  show:    new Set(["show","present","offer","give","display","prove"]),
+  combine: new Set(["combine","attach","connect","pair","join"]),
 };
 
 // Item synonyms — common shortenings + casual names → canonical item IDs.
@@ -301,6 +425,21 @@ const ITEM_ALIASES = {
 
 function resolveItem(name) {
   return ITEM_ALIASES[name] || name;
+}
+
+// Split arg tokens around a connector word (on / onto / into / in / with / and / to)
+// and return [leftItem, rightItem] if both halves are non-empty. Otherwise null.
+const PAIR_CONNECTORS = new Set(["on","onto","into","in","with","and","to"]);
+function splitPair(argParts) {
+  if (!argParts || argParts.length < 3) return null;
+  for (let i = 1; i < argParts.length - 1; i++) {
+    if (PAIR_CONNECTORS.has(argParts[i])) {
+      const left = argParts.slice(0, i).join("-");
+      const right = argParts.slice(i + 1).join("-");
+      if (left && right) return [left, right];
+    }
+  }
+  return null;
 }
 
 function parse(input) {
@@ -351,6 +490,27 @@ function parse(input) {
 
   // Open / unlock / swipe — primarily for locked doors.
   if (VERBS.open.has(verb)) { openOrSwipe(resolveItem(arg)); return; }
+
+  // SHOW <item> — present to whoever's in the room.
+  if (VERBS.show.has(verb)) { if (arg) show(resolveItem(arg)); else out("Show what?"); return; }
+
+  // Two-object verbs: USE X ON Y, INSERT X INTO Y, PLUG X INTO Y, COMBINE X AND Y.
+  // We re-split argParts on the connector words (on / onto / into / with / and / to).
+  // If found, route to combine(). Otherwise fall through to single-object USE.
+  if (VERBS.use.has(verb) || VERBS.combine.has(verb)) {
+    const pair = splitPair(argParts);
+    if (pair) {
+      combine(resolveItem(pair[0]), resolveItem(pair[1]));
+      return;
+    }
+    if (VERBS.combine.has(verb)) {
+      // COMBINE without a pair — be helpful.
+      if (arg) out("Combine " + arg.toUpperCase() + " with what? Try COMBINE A AND B.", "bbs-dim");
+      else out("Combine what with what?", "bbs-dim");
+      return;
+    }
+    // Falls through to single-object USE below.
+  }
 
   if (VERBS.look.has(verb) && argParts.length === 0) { look(); return; }
   if (VERBS.take.has(verb))    { if (arg) take(resolveItem(arg));    else out("Take what?"); return; }
@@ -439,7 +599,7 @@ export function start(mount, ctx, navigate) {
     if (k === "log") state.log = [];
     else if (k === "inv") state.inv = [];
     else if (k === "visited") state.visited = new Set();
-    else if (k === "flags") state.flags = { radioUsed: false, droneArrived: false, dvdInserted: false };
+    else if (k === "flags") state.flags = { radioUsed: false, droneArrived: false, dvdInserted: false, librarianPlacated: false, laptopBooted: false };
     else if (k === "room") state.room = "lobby";
     else if (k === "gameOver") state.gameOver = false;
   });
