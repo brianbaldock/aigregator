@@ -84,9 +84,9 @@ English. This is how non-English wire stories appear in the digest.
 SECTION MEANINGS:
 - models: model releases, launches, updates, weights drops. NEW model from a lab.
 - safety: responsible AI, regulation, policy, executive orders, governance, calls for moratoriums, AI safety research findings
-- projects: cool indie work, novel apps, interesting deployments, art/games, surprising research-in-the-wild. NOT essays/op-eds about AI.
+- projects: cool indie work, novel apps, interesting deployments, art/games, surprising research-in-the-wild. NOT essays/op-eds about AI. If the item is primarily a developer tool, SDK, or a demo of agent/coding capability (something builders use to build), it belongs in `tools`, NOT here. Projects are end-user-facing things someone shipped (apps, art, games).
 - funding: $$, deals, IPOs, equity, investments, data-center buildouts, market dynamics, M&A, infra spending
-- tools: developer tools, libraries, SDKs, frameworks, API launches, IDE plugins, demos of capabilities, infrastructure for builders. If today has no real launches, prefer the `_(quiet today)_` fallback by simply NOT assigning anything to tools rather than stretching to fill it.
+- tools: developer tools, libraries, SDKs, frameworks, API launches, IDE plugins, eval/benchmark harnesses, agentic-coding-in-production writeups, and concrete demos of developer or agent capabilities. This is where "someone built X with Codex/Claude/an agent", "new library/SDK/CLI", and capability demos go. Don't pad it with vendor marketing fluff, but DO populate it whenever a genuine builder-facing tool or capability demo appears in the input. On a normal AI news day there is almost always at least one.
 - opensource: open weights releases, GitHub trending, HuggingFace trending, open-model benchmarks
 - (research and discourse handled automatically by tier)
 
