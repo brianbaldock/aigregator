@@ -633,7 +633,7 @@ def main():
             arrow = "▲" if chg > 0 else ("▼" if chg < 0 else "→")
             chg_abs = abs(chg) if isinstance(chg, (int, float)) else chg
             try:
-                yes_str = f"{float(yes)*100:.0f}%" if yes and float(yes) <= 1 else f"{yes}%"
+                yes_str = f"{float(yes)*100:.0f}%" if yes and float(yes) < 1 else f"{yes}%"
             except Exception:
                 yes_str = f"{yes}%"
             try:
