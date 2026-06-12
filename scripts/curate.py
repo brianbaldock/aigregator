@@ -196,6 +196,8 @@ def validate(curation: dict, items: list[dict]) -> tuple[dict, list[str], list[s
             section = "discourse"
         elif tier == "research":
             section = "research"
+        elif tier == "opensource":
+            section = "opensource"
         elif section not in NEWS_SECTIONS:
             warnings.append(f"invalid/missing section for {url[:60]}, defaulting to projects")
             section = "projects"

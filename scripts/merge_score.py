@@ -366,6 +366,107 @@ def load_hn(indir: str):
                                  h.get("created_at") or h.get("published")))
     return out
 
+def load_opensource(indir: str):
+    """Load GitHub trending/watchlist + HuggingFace trending from opensource.json.
+
+    These are discrete repos/models, NOT news stories, so they deliberately
+    bypass cluster_and_score() (see main()): a trending repo that happens to
+    share title tokens with a news headline must not be absorbed into that news
+    cluster and silently dropped. We emit them with tier="opensource" so they
+    auto-route to the 🌱 Open Source & Emerging section without a curation
+    overlay (mirrors how tier="research" routes to Research).
+
+    Returns fully-formed canonical items (the same shape cluster_and_score
+    emits) so write_digest can render them directly.
+    """
+    fp = os.path.join(indir, "opensource.json")
+    try:
+        d = json.load(open(fp))
+    except Exception:
+        return []
+    out = []
+
+    # Conservative noise gate: GitHub's topic sweep occasionally surfaces huge
+    # general-knowledge repos that opportunistically tag themselves ai/agent
+    # (interview guides, awesome-lists, roadmaps, books). These aren't AI
+    # tooling. Skip a repo only when its name/description clearly matches a
+    # collection/guide fingerprint — keep it tight to avoid dropping real tools.
+    _NOISE_RE = re.compile(
+        r"(awesome[- ]|interview|面试|roadmap|cheat[- ]?sheet|"
+        r"\bguide\b|教程|tutorial|free[- ]?books?|学习|developer[- ]roadmap|"
+        r"system[- ]design[- ]primer|coding[- ]interview)",
+        re.I,
+    )
+
+    def _is_noise(full_name, desc):
+        blob = f"{full_name} {desc}"
+        return bool(_NOISE_RE.search(blob))
+
+    def _canon(source, cred, title, url, desc, os_kind):
+        # Build a render-ready item without going through clustering.
+        it = _item(source, cred, title, url, desc, None)
+        it["sentiment"] = 0          # repos/models are neutral; keep them out of sentiment math
+        it["sdot"] = 0
+        it["source_urls"] = [{"domain": it["domain"], "url": url, "source": source}]
+        it["source_domains"] = [it["domain"]] if it["domain"] else []
+        it["sources"] = [source]
+        it["source_count"] = 1
+        it["flags"] = []
+        it["section"] = "opensource"
+        it["themes"] = []
+        it["tier"] = "opensource"
+        it["os_kind"] = os_kind  # "watchlist" | "trending" | "hf" — drives diversity pick
+        # Score by credibility so the per-section cap keeps the strongest signals.
+        it["score"] = cred * 2
+        return it
+
+    for r in d.get("github_trending", []) if isinstance(d, dict) else []:
+        fn = r.get("full_name") or ""
+        if not fn or not r.get("url"):
+            continue
+        desc = r.get("description", "") or ""
+        if _is_noise(fn, desc):
+            continue  # skip general-knowledge/guide mega-repos
+        stars = r.get("stars", 0)
+        topics = ", ".join(r.get("topics", [])[:3])
+        meta = f"{stars:,}★ on GitHub" + (f" · {topics}" if topics else "")
+        summary = f"{desc} ({meta})." if desc else f"Trending on GitHub ({meta})."
+        out.append(_canon(f"GitHub:{fn}", 3, fn, r["url"], summary, "trending"))
+
+    for r in d.get("github_watchlist", []) if isinstance(d, dict) else []:
+        fn = r.get("full_name") or ""
+        if not fn or not r.get("url"):
+            continue
+        stars = r.get("stars", 0)
+        desc = r.get("description", "") or ""
+        summary = f"{desc} ({stars:,}★, fresh push)." if desc else f"Fresh push ({stars:,}★)."
+        # Watchlist orgs get a credibility bump so they survive the section cap.
+        out.append(_canon(f"GitHub:{fn}", 4, fn, r["url"], summary, "watchlist"))
+
+    for r in d.get("hf_trending", []) if isinstance(d, dict) else []:
+        hid = r.get("id") or ""
+        if not hid or not r.get("url"):
+            continue
+        likes = r.get("likes", 0)
+        dls = r.get("downloads", 0)
+        tag = r.get("pipeline_tag", "") or r.get("kind", "model")
+        bits = []
+        if likes: bits.append(f"{likes:,} likes")
+        if dls: bits.append(f"{dls:,} downloads")
+        meta = ", ".join(bits) or "trending"
+        summary = f"Trending on HuggingFace · {tag} ({meta})."
+        out.append(_canon(f"HF:{hid}", 3, hid, r["url"], summary, "hf"))
+
+    # Dedup by URL — a repo can surface in both watchlist and trending
+    # (e.g. a watchlist org repo also trending on stars). Keep the
+    # highest-credibility copy (watchlist > trending) so the better label wins.
+    best = {}
+    for it in out:
+        cur = best.get(it["url"])
+        if cur is None or it["credibility"] > cur["credibility"]:
+            best[it["url"]] = it
+    return list(best.values())
+
 # -------- cluster + score --------
 def cluster_and_score(items):
     # Greedy clustering with TWO signals (an item joins a cluster if EITHER fires):
@@ -507,6 +608,12 @@ def main():
     items += load_bsky(args.indir)
     items += load_hn(args.indir)
 
+    # Open-source items (GitHub/HF) are loaded separately and bypass clustering:
+    # they're discrete repos/models, not news, and must not be absorbed into a
+    # news cluster (token overlap) and silently dropped. They carry tier and
+    # section pre-set; we splice them in after news clustering below.
+    opensource = load_opensource(args.indir)
+
     # drop garbage: no title, no url, or obvious archive
     items = [i for i in items if i["title"] and i["url"] and i["domain"] not in ("web.archive.org",)]
 
@@ -518,6 +625,7 @@ def main():
     SOCIAL_QUOTA = 15   # Reddit + Bsky + HN combined
     SUB_QUOTAS = {"reddit": 6, "bsky": 4, "hn": 5}
     RESEARCH_QUOTA = 5  # arXiv
+    OPENSOURCE_QUOTA = 6  # GitHub trending/watchlist + HF trending (write_digest caps display at 4)
 
     def is_social(it):
         s = it["source"]
@@ -552,18 +660,42 @@ def main():
         social_pick.append(leftover_social.pop(0))
 
     research_pick = research[:RESEARCH_QUOTA]
+    # Open-source picks are additive (like research): reserve their seats on top
+    # of the news budget so trending repos/models never get evicted by a busy
+    # news day. They already carry tier/section/score from load_opensource.
+    # Diversity-aware selection so HuggingFace isn't crowded out by GitHub
+    # (both score similarly): take watchlist first, then interleave the rest by
+    # kind round-robin (trending / hf / ...) up to the quota.
+    def os_pick(pool, quota):
+        from collections import defaultdict as _dd
+        by_kind = _dd(list)
+        for it in sorted(pool, key=lambda x: -x.get("score", 0)):
+            by_kind[it.get("os_kind", "trending")].append(it)
+        picked = list(by_kind.pop("watchlist", []))  # always include watched orgs
+        # Round-robin across remaining kinds for source diversity
+        order = ["hf", "trending"] + [k for k in by_kind if k not in ("hf", "trending")]
+        while len(picked) < quota and any(by_kind.get(k) for k in order):
+            for k in order:
+                if by_kind.get(k):
+                    picked.append(by_kind[k].pop(0))
+                    if len(picked) >= quota:
+                        break
+        return picked[:quota]
+    opensource_pick = os_pick(opensource, OPENSOURCE_QUOTA)
     remaining = max(0, args.limit - len(social_pick) - len(research_pick))
     news_pick = news[:remaining]
 
-    # Final order: news first (already sorted by score), then research, then social
-    merged = news_pick + research_pick + social_pick
+    # Final order: news first (already sorted by score), then research, then
+    # open-source, then social.
+    merged = news_pick + research_pick + opensource_pick + social_pick
 
     # stats
     by_dom = defaultdict(int)
     for m in merged: by_dom[m["domain"]] += 1
     wire_count = sum(by_dom[d] for d in WIRE_DOMAINS)
     cross = sum(1 for m in merged if "cross_source" in m["flags"])
-    print(f"[merge_score] tiers: news={len(news_pick)} research={len(research_pick)} social={len(social_pick)}")
+    print(f"[merge_score] tiers: news={len(news_pick)} research={len(research_pick)} "
+          f"opensource={len(opensource_pick)} social={len(social_pick)}")
 
     os.makedirs(os.path.dirname(args.outfp), exist_ok=True)
     with open(args.outfp, "w") as f:

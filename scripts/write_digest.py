@@ -245,7 +245,7 @@ def render_news_item(it: dict, overlay: dict, *, in_tldr: bool = False) -> str:
         # Mark safety items with shield in body
         pass
     # Optional shield emoji for safety-tagged
-    sec = overlay.get("section", "")
+    sec = overlay.get("section", "") or it.get("section", "")
     if sec == "safety": flag_emoji += "🛡️"
     if sec == "opensource" or "opensource" in (overlay.get("themes") or []): flag_emoji += "🌱"
     if sec == "projects": flag_emoji += "🎨"
@@ -497,6 +497,7 @@ def main():
             # No curation overlay — bucket by tier
             if tier == "social": sec = "discourse"
             elif tier == "research": sec = "research"
+            elif tier == "opensource": sec = "opensource"
             else: continue   # skip uncovered news items (likely hub-shaped)
         by_section[sec].append(it)
 
@@ -527,7 +528,7 @@ def main():
     # News-tier items only (for dashboard math)
     news_section_items = []
     for sec in SECTION_ORDER:
-        if sec == "research": continue
+        if sec in ("research", "opensource"): continue
         news_section_items.extend(by_section.get(sec, []))
 
     # Dashboard math
