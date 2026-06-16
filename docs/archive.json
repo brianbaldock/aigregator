@@ -7,22 +7,22 @@
       "funding",
       "agents",
       "enterprise",
+      "opensource",
       "models",
-      "hardware",
       "science",
       "safety",
-      "opensource",
+      "hardware",
       "robotics"
     ],
     "sources": [
-      "ft.com",
       "reddit.com",
-      "bloomberg.com",
+      "ft.com",
       "arxiv.org",
+      "bloomberg.com",
       "reuters.com"
     ],
     "diversity_warn": false,
-    "read_min": 13
+    "read_min": 15
   },
   {
     "slug": "2026-06-15",
