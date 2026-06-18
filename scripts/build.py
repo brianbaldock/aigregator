@@ -671,6 +671,14 @@ BOT_WALLED_DOMAINS = {
     "news.ycombinator.com",
 }
 
+# Bot-walled by suffix (per-publication subdomains). Substack serves 403 to
+# non-browser clients on every <publication>.substack.com host while humans
+# read the post fine; AI writers publish there constantly. A genuinely dead
+# post still returns 404, so this only suppresses the false-positive 403.
+BOT_WALLED_SUFFIXES = (
+    ".substack.com",
+)
+
 
 def _check_one_url(url: str, label: str, timeout: int = 12) -> tuple[str, str | None]:
     """HEAD-then-GET fallback. Returns (url, None) on OK or (url, reason)."""
@@ -679,7 +687,7 @@ def _check_one_url(url: str, label: str, timeout: int = 12) -> tuple[str, str | 
         host = urllib.parse.urlparse(url).netloc.lower()
     except Exception:
         return url, "unparseable URL"
-    bot_walled = host in BOT_WALLED_DOMAINS
+    bot_walled = host in BOT_WALLED_DOMAINS or host.endswith(BOT_WALLED_SUFFIXES)
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (X11; Linux x86_64; rv:120.0) "
