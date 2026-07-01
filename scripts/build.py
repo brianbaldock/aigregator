@@ -668,6 +668,7 @@ BOT_WALLED_DOMAINS = {
     "stratechery.com",
     "openai.com", "www.openai.com",
     "anthropic.com", "www.anthropic.com",
+    "ai.meta.com", "meta.com", "www.meta.com",
     "news.ycombinator.com",
 }
 
@@ -715,9 +716,13 @@ def _check_one_url(url: str, label: str, timeout: int = 12) -> tuple[str, str | 
         return url, f"transient: {err}"
     if status in (200, 201, 202, 203, 204, 206, 301, 302, 303, 307, 308):
         return url, None
-    if status in (401, 403, 405, 429):
+    if status in (400, 401, 403, 405, 429):
         if bot_walled:
+            # These hosts UA-sniff or reject HEAD (Meta AI serves 400 to
+            # non-Chrome UAs; others 401/403/405/429). Real 404/410 still fails.
             return url, None
+        if status == 400:
+            return url, f"HTTP {status} unexpected"
         return url, f"HTTP {status} (possible bot wall — verify manually)"
     if status in (404, 410):
         return url, f"HTTP {status} DEAD"
