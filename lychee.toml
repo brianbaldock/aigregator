@@ -24,6 +24,12 @@ exclude = [
   '^https?://(www\.)?linkedin\.com/sharing',
   '^https?://(www\.)?twitter\.com/intent',
   '^https?://(www\.)?bsky\.app/intent',
+  # Polymarket sits behind Cloudflare and reliably fails lychee's HTTP/2
+  # negotiation ("HTTP/2 protocol error") from the CI runner even though the
+  # event pages return 200 in a browser and via curl. Same anti-bot class as
+  # the sites above, so exclude it and stop failing on valid-but-unreachable
+  # links.
+  '^https?://(www\.)?polymarket\.com/',
 ]
 
 exclude_path = ["docs/_pagefind"]
