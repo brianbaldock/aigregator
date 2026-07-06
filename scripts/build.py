@@ -232,13 +232,18 @@ def build_digest_pages() -> list[dict]:
         # Structural URL validation — catch hallucinated/malformed citations
         # (doubled paths, doubled schemes, reddit thread URLs ending in .rss).
         url_issues = validate_citation_urls(text, slug)
-        url_issues += validate_bluesky_urls(text, slug)
         # Live HEAD/GET check of every cited URL — only on the NEWEST digest
         # to keep builds fast. Older digests already passed this check when
         # they were first built and live-link rot is monitored separately
-        # by the weekly lychee cron.
+        # by the weekly lychee cron. The Bluesky AppView check is likewise a
+        # LIVE check (it hits api.bsky.app), so it is gated to newest too:
+        # otherwise a transient 400 / late NotFound on an OLD post's rkey
+        # (validated the day it shipped) would abort every future publish
+        # under AIGREGATOR_STRICT_URLS. Static structural checks
+        # (validate_citation_urls) still run on all digests.
         is_newest = (md == sorted(DIGESTS_DIR.glob("*.md"))[-1])
         if is_newest:
+            url_issues += validate_bluesky_urls(text, slug)
             url_issues += validate_links_live(text, slug)
         if url_issues:
             print(f"[{slug}] ⚠ {len(url_issues)} suspicious citation URL(s):")
