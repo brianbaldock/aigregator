@@ -4,8 +4,130 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-07-06T14:21:27Z</updated>
+  <updated>2026-07-07T14:23:41Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
+  <entry>
+    <title>2026-07-07 :: AI DAILY DIGEST</title>
+    <link href="https://aigregator.news/digests/2026-07-07.html"/>
+    <id>https://aigregator.news/digests/2026-07-07.html</id>
+    <updated>2026-07-07T00:00:00Z</updated>
+    <summary>2026-07-07 :: AI DAILY DIGEST</summary>
+    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 14 min read · 2,803 words · 📡 21 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-07-07&amp;url=https%3A//aigregator.news/digests/2026-07-07.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-07-07%20https%3A//aigregator.news/digests/2026-07-07.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-07-07.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-07-07.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-07-07-ai-daily-digest">2026-07-07 :: AI DAILY DIGEST <a class="permalink" href="#2026-07-07-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>The AI jobs panic cooled about as fast as it spiked: WSJ says Big Tech is quietly walking back its own wipeout warnings while Reuters finds executives still waiting on the revolution. Trump moved to block state AI laws, China kept walking away from Nvidia, and datacentre projects stalled from Scotland to Brick Lane.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 23 stories · 12 sources · 🔴 -0.2 sentiment · 🔥 3 cross-source · <strong>TOP MENTION:</strong> Anthropic ×3<br />
+<strong>🏷️ THEMES:</strong> policy×10, enterprise×8, opensource×6, safety×4, hardware×4<br />
+<strong>📈 MARKET PULSE:</strong> Top mover: "Will OpenAI announce earbuds or headphones in 2026?" ▲5.0pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▄▄▄▄▅▄▄ (oldest → today)  </p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">11 🛡️ 🟡 <strong>Big Tech has flipped on the AI jobs-wipeout scenario.</strong> As public opinion of AI turns negative, the same firms that warned of mass employment cuts are walking those warnings back. WSJ reads it as messaging management more than a change in the underlying forecast. (<a href="https://www.wsj.com/tech/ai/ai-workers-tech-ceos-job-losses-afc71e15">WSJ</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">11 🛡️ 🔴 <strong>Trump signs order to block state AI regulations.</strong> The executive order directs the Attorney General to stand up a task force challenging state AI laws and tasks Commerce with a federal preemption effort, setting up a fight over who governs AI. (<a href="https://apnews.com/article/trump-ai-regulation-executive-order-state-laws-9cb4dd1bc249e404260b3dc233217388">AP</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">11 🟡 <strong>OpenAI, Anthropic and SpaceX all barreling toward IPOs.</strong> Several leading AI companies are moving toward public offerings this year at valuations that would reset the market. AP frames it as the sector's first real test of public-market appetite. (<a href="https://apnews.com/article/ai-artificial-intelligence-ipo-openai-spacex-anthropic-2694431c5cf8850cad940731a38eb188">AP</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">10 🟡 <strong>Chinese AI startup DeepSeek developing its own AI chip.</strong> DeepSeek is reportedly building its own accelerator to power its AI systems, per Reuters sources, the latest sign Chinese firms are routing around US chip controls. (<a href="https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says">Bloomberg</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">11 🔥🛡️ 🟡 <strong>Secret Claude tracker caught after Anthropic's anti-surveillance stance.</strong> Anthropic, which markets itself on privacy and anti-surveillance, is accused of secretly monitoring user activity; an engineer called the tracker an experiment that is now over. Ars and Slashdot both covered the backlash. (<a href="https://arstechnica.com/tech-policy/2026/07/anthropic-outed-for-claude-tracker-that-secretly-monitored-chinese-users/">Ars</a>, <a href="https://yro.slashdot.org/story/26/07/06/1836230/secret-claude-tracker-shocks-users-after-anthropics-anti-surveillance-stance?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">yro.slashdot.org</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+<li id="story-6">16 🔥 🔴 <strong>Microsoft cuts 4,800 jobs as it shrinks Xbox, keeps spending on AI.</strong> Microsoft is shedding roughly 4,800 roles, heavily in gaming, while continuing to pour capital into AI infrastructure. The layoffs-alongside-capex pattern is now explicit corporate strategy across Big Tech. (<a href="https://www.theguardian.com/technology/2026/jul/06/microsoft-cuts-jobs-xbox-overhaul-mass-layoffs">Guardian</a>, <a href="https://www.bbc.co.uk/news/articles/c36yy27rnpeo?at_medium=RSS&amp;at_campaign=rss">BBC</a>, <a href="https://www.ft.com/content/41091f2f-0916-4532-82c9-0634ab8ff64c">FT</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>3 items · 🔴 -0.3 sentiment</em></p>
+<ul>
+<li>11 🟡 🏷️ enterprise <strong>New index ranks which S&amp;P 500 companies actually use AI.</strong> The AI-Driven Enterprise Institute published an indexed ranking of how much S&amp;P 500 firms actually deploy AI, cutting against self-reported adoption claims. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-06/new-ranking-measures-which-s-p-500-companies-are-delivering-on-ai">Bloomberg</a></li>
+<li>10 🔴 🏷️ enterprise <strong>AI productivity gains are years away, Deutsche Bank's Reid says.</strong> Deutsche Bank strategist Jim Reid argues AI will meaningfully raise productivity eventually, but the macroeconomic impact remains years out, tempering near-term expectations. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-07/ai-productivity-gains-are-years-away-deutsche-bank-s-reid-says">Bloomberg</a></li>
+<li>10 🟡 🏷️ enterprise, policy <strong>AI won't restore the era of rapid growth, Nobel economist warns.</strong> A Nobel laureate cautions that AI is unlikely to return Western economies to their earlier era of rapid productivity growth, pushing back on the most bullish macro forecasts. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-07/ai-won-t-bring-back-era-of-rapid-growth-says-nobel-prize-winner">Bloomberg</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>5 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>11 🟡 🏷️ models, training <strong>MIRA: multiplayer interactive world models with representation autoencoders.</strong> The first multiplayer world model for highly dynamic, physics-driven environments, trained on Rocket League. Notable for handling complex multi-agent physical interactions in a learned simulator. Sources: <a href="https://arxiv.org/abs/2607.05352">arXiv 2607.05352</a></li>
+<li>11 🟡 🏷️ models, inference <strong>Nemotron-Labs-3-Puzzle-75B-A9B: compressing hybrid MoE LLMs.</strong> NVIDIA presents a compressed variant of Nemotron-3-Super tuned for interactive deployment, using puzzle-style architecture search to shrink a hybrid mixture-of-experts model. Sources: <a href="https://arxiv.org/abs/2607.04371">arXiv 2607.04371</a></li>
+<li>8 🟡 🏷️ science, multimodal <strong>A deep multiscale neural network for neurological disorder detection from MRI.</strong> A multiscale network detects neurological disorders from MRI scans with real-time web deployment, aimed at accessible clinical screening. Sources: <a href="https://arxiv.org/abs/2606.29106">arXiv 2606.29106</a></li>
+<li>8 🟡 🏷️ interpretability, evals <strong>Spectral signatures of large language models.</strong> A method for systematically identifying and fingerprinting publicly available LLMs via spectral signatures, useful for provenance and model auditing across a fast-growing model zoo. Sources: <a href="https://arxiv.org/abs/2607.03377">arXiv 2607.03377</a></li>
+<li>8 🟡 🏷️ safety, multimodal <strong>Vision token manipulation attacks on cloud-edge LVLM inference.</strong> The paper demonstrates attacks that manipulate vision tokens when large vision-language model inference is split between edge devices and the cloud, exposing a new attack surface in distributed multimodal inference. Sources: <a href="https://arxiv.org/abs/2607.02819">arXiv 2607.02819</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>7 items · 🔴 -0.4 sentiment</em></p>
+<ul>
+<li>11 🛡️ 🟡 🏷️ enterprise, policy <strong>Big Tech has flipped on the AI jobs-wipeout scenario.</strong> As public opinion of AI turns negative, the same firms that warned of mass employment cuts are walking those warnings back. WSJ reads it as messaging management more than a change in the underlying forecast. Sources: <a href="https://www.wsj.com/tech/ai/ai-workers-tech-ceos-job-losses-afc71e15">WSJ</a></li>
+<li>11 🛡️ 🟡 🏷️ policy, enterprise <strong>New bipartisan nonprofit RAISE US aims to help workers displaced by AI.</strong> A new group called RAISE US wants to retrain and support Americans who lose work to AI, positioning itself as a bipartisan response to displacement. Sources: <a href="https://apnews.com/article/ai-job-losses-education-training-929986c149d415cd2ef4dc3eaf66ca8c">AP</a></li>
+<li>11 🛡️ 🟡 🏷️ policy <strong>US AI regulation outlook uncertain as government pivots to deregulation.</strong> AP reports the federal posture is shifting from prioritizing safeguards toward a more industry-friendly stance, leaving the near-term regulatory picture unsettled. Sources: <a href="https://apnews.com/article/artificial-intelligence-rules-trump-congress-republicans-1d766b1ecbc4e880b61a7dcbb291565d">AP</a></li>
+<li>11 🛡️ 🔴 🏷️ policy <strong>Trump signs order to block state AI regulations.</strong> The executive order directs the Attorney General to stand up a task force challenging state AI laws and tasks Commerce with a federal preemption effort, setting up a fight over who governs AI. Sources: <a href="https://apnews.com/article/trump-ai-regulation-executive-order-state-laws-9cb4dd1bc249e404260b3dc233217388">AP</a></li>
+<li>11 🛡️ 🔴 🏷️ policy, safety <strong>UN report sees large benefits and large risks from AI.</strong> A 40-member UN panel says AI offers major upside for countries and people worldwide but also poses significant risks, calling for coordinated governance. Sources: <a href="https://www.reuters.com/legal/litigation/un-report-sees-enormous-potential-benefits-big-risks-ai-2026-07-01/">Reuters</a></li>
+<li>11 🔥🛡️ 🟡 ▤×2 🏷️ safety, policy <strong>Secret Claude tracker caught after Anthropic's anti-surveillance stance.</strong> Anthropic, which markets itself on privacy and anti-surveillance, is accused of secretly monitoring user activity; an engineer called the tracker an experiment that is now over. Ars and Slashdot both covered the backlash. Sources: <a href="https://arstechnica.com/tech-policy/2026/07/anthropic-outed-for-claude-tracker-that-secretly-monitored-chinese-users/">Ars</a>, <a href="https://yro.slashdot.org/story/26/07/06/1836230/secret-claude-tracker-shocks-users-after-anthropics-anti-surveillance-stance?utm_source=rss1.0mainlinkanon&amp;utm_medium=feed">yro.slashdot.org</a></li>
+<li>10 🛡️ 🟡 🏷️ safety, bias <strong>AI is altering the meaning of users' drafts on abortion, climate and more.</strong> Researchers found AI writing tools subtly shift the meaning of user drafts on contentious issues, warning that small changes could compound into long-term shifts in public opinion. Sources: <a href="https://www.theguardian.com/technology/2026/jul/06/ai-altering-meaning-of-users-drafts-on-issues-from-abortion-to-climate-study-finds">Guardian</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>4 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>11 🔥🎨 🟡 ▤×2 🏷️ multimodal, apps <strong>Solos debuts lighter camera-less AirGo smart glasses with AI assistant.</strong> Solos announced a new AirGo model that drops cameras for a sleeker design and an AI assistant, pitching privacy as the differentiator against camera-equipped rivals. The Verge and Wired both covered it. Sources: <a href="https://www.theverge.com/tech/961711/solos-airgo-a6-smart-glasses-ai-assistant-privacy">The Verge</a>, <a href="https://www.wired.com/story/these-new-smart-glasses-from-solos-come-with-a-privacy-shield-for-the-cameras/">Wired</a></li>
+<li>10 🎨 🟡 🏷️ robotics, hardware <strong>Ex-Tesla scientist unveils European humanoid robot plans.</strong> A former Tesla scientist who worked on the Optimus robot revealed plans for a lightweight humanoid robot built for the European market. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-07/ex-tesla-scientist-unveils-plans-for-european-humanoid-robot">Bloomberg</a></li>
+<li>10 🎨 🟡 🏷️ video, art <strong>Australian film-maker used AI to build an impossible wildlife documentary.</strong> Jodie Heenan's award-winning short Guardians of the Burrow used AI to recreate scenes that would be impossible to film, blurring the line between documentary and synthesis. Sources: <a href="https://www.theguardian.com/film/2026/jul/07/ai-spider-documentary-guardians-of-the-burrow-australia-artificial-intelligence">Guardian</a></li>
+<li>10 🎨 🟡 🏷️ robotics <strong>Robots available for rent: but what can they do?.</strong> The BBC reports on the fast-moving robotics rental market, where renting rather than buying is starting to make sense as hardware evolves quickly. Sources: <a href="https://www.bbc.co.uk/news/articles/c4gymkg9lr2o?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>7 items · 🟡 -0.1 sentiment</em></p>
+<ul>
+<li>16 🔥 🔴 ▤×3 🏷️ enterprise, funding <strong>Microsoft cuts 4,800 jobs as it shrinks Xbox, keeps spending on AI.</strong> Microsoft is shedding roughly 4,800 roles, heavily in gaming, while continuing to pour capital into AI infrastructure. The layoffs-alongside-capex pattern is now explicit corporate strategy across Big Tech. Sources: <a href="https://www.theguardian.com/technology/2026/jul/06/microsoft-cuts-jobs-xbox-overhaul-mass-layoffs">Guardian</a>, <a href="https://www.bbc.co.uk/news/articles/c36yy27rnpeo?at_medium=RSS&amp;at_campaign=rss">BBC</a>, <a href="https://www.ft.com/content/41091f2f-0916-4532-82c9-0634ab8ff64c">FT</a></li>
+<li>11 🟡 🏷️ funding, enterprise <strong>OpenAI, Anthropic and SpaceX all barreling toward IPOs.</strong> Several leading AI companies are moving toward public offerings this year at valuations that would reset the market. AP frames it as the sector's first real test of public-market appetite. Sources: <a href="https://apnews.com/article/ai-artificial-intelligence-ipo-openai-spacex-anthropic-2694431c5cf8850cad940731a38eb188">AP</a></li>
+<li>10 🟢 🏷️ funding <strong>AI legal startup Norm valued at $1.2 billion.</strong> Norm Ai raised $120 million to automate legal services, reaching a $1.2 billion valuation as investors bet on AI reshaping legal work. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-07/ai-legal-startup-norm-valued-at-1-2-billion-in-funding-round">Bloomberg</a></li>
+<li>10 🟡 🏷️ hardware, policy <strong>Big tech's climate goals wrecked by energy-hungry AI.</strong> The Guardian reports Google and Amazon net-zero pledges are slipping out of reach as AI power demand climbs, with Meta making frantic moves to secure energy. Sources: <a href="https://www.theguardian.com/technology/2026/jul/06/ai-climate-crisis">Guardian</a></li>
+<li>10 🟡 🏷️ hardware, policy <strong>Chinese AI startup DeepSeek developing its own AI chip.</strong> DeepSeek is reportedly building its own accelerator to power its AI systems, per Reuters sources, the latest sign Chinese firms are routing around US chip controls. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says">Bloomberg</a></li>
+<li>10 🟡 🏷️ hardware, policy <strong>Chinese firms leave Nvidia for local AI suppliers, survey shows.</strong> A survey finds Chinese companies increasingly ditching Nvidia's advanced accelerators for domestic silicon, underscoring how export tensions are reshaping the chip market. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-07/chinese-firms-leave-nvidia-for-local-ai-suppliers-survey-shows">Bloomberg</a></li>
+<li>10 🔴 🏷️ funding, enterprise <strong>Masa Son's greatest gamble.</strong> The FT profiles how SoftBank's Masayoshi Son has bet the firm's future on AI, from chip infrastructure to model companies, in his largest wager yet. Sources: <a href="https://www.ft.com/content/5e411ac1-3759-4ef4-be7a-4c61adeb815c">FT</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>10 🌱 🟡 🏷️ robotics, opensource <strong>LeRobot v0.6.0 released with imagine, evaluate, improve loop.</strong> Hugging Face shipped LeRobot v0.6.0, adding tooling for imagining, evaluating and improving robot policies, aimed at builders working on real-world robot learning. Sources: <a href="https://huggingface.co/blog/lerobot-release-v060">HuggingFace</a></li>
+<li>10 🌱 🟡 🏷️ training, opensource <strong>PRX Part 4: our data strategy.</strong> Hugging Face details the data strategy behind its PRX work, walking through how it sources and structures training data for the project. Sources: <a href="https://huggingface.co/blog/Photoroom/prx-part4-data">HuggingFace</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>4 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>8 🌱 🟡 🏷️ agents, opensource <strong>NousResearch/hermes-agent.</strong> Nous Research's agent framework saw a fresh push, sitting at over 210k stars. The self-hosting agent that this digest runs on. Sources: <a href="https://github.com/NousResearch/hermes-agent">GitHub NousResearch/hermes-agent</a></li>
+<li>8 🌱 🟡 🏷️ agents, opensource <strong>openclaw/clawhub.</strong> OpenClaw's skill and plugin registry saw a fresh push, at over 9k stars. Infrastructure for distributing agent skills. Sources: <a href="https://github.com/openclaw/clawhub">GitHub openclaw/clawhub</a></li>
+<li>6 🌱 🟡 🏷️ agents, opensource <strong>affaan-m/ECC.</strong> A trending agent-harness project focused on skills, memory, security and research-first development for coding agents. Sources: <a href="https://github.com/affaan-m/ECC">GitHub affaan-m/ECC</a></li>
+<li>6 🌱 🟡 🏷️ opensource, training <strong>huggingface/transformers.</strong> The Transformers library trended again, still the default model-definition framework across text, vision, audio and multimodal models. Sources: <a href="https://github.com/huggingface/transformers">GitHub huggingface/transformers</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets · AI/policy</em></p>
+<ul>
+<li><strong>Will OpenAI announce earbuds or headphones in 2026?</strong> - 34% Yes (▲5pp 24h, $112K vol) · <a href="https://polymarket.com/event/what-kind-of-product-will-openai-announce-in-2026">Polymarket</a></li>
+<li><strong>OpenAI $1t+ IPO before 2027?</strong> - 22% Yes (▲4pp 24h, $292K vol) · <a href="https://polymarket.com/event/openai-1t-ipo-before-2027">Polymarket</a></li>
+<li><strong>Will GPT-5.6 be released on July 7, 2026?</strong> - 9% Yes (▼2pp 24h, $236K vol) · <a href="https://polymarket.com/event/gpt-5pt6-released-onptptpt-20260623051439980">Polymarket</a></li>
+<li><strong>AI model scores ≥ 90% on FrontierMath Benchmark before 2027?</strong> - 88% Yes (▲2pp 24h, $108K vol) · <a href="https://polymarket.com/event/ai-model-scores-90-on-frontiermath-benchmark-before-2027">Polymarket</a></li>
+<li><strong>OpenAI IPO closing market cap above $800B?</strong> - 84% Yes (▼2pp 24h, $103K vol) · <a href="https://polymarket.com/event/openai-ipo-closing-market-cap-above">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1up01zs/">r/LocalLLaMA: am I expecting too much from local coding models?</a> A LocalLLaMA thread on the gap between Claude Code and local coding setups, with practical advice on where open models still fall short for day-to-day dev work.</li>
+</ul>
+<h3 id="ropenai">r/OpenAI <a class="permalink" href="#ropenai" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/OpenAI/comments/1uprerk/as_ai_gets_better_at_sounding_intelligent_will/">As AI gets better at sounding intelligent, will wisdom get harder to recognize?</a> A reflective r/OpenAI thread on how fluent AI-generated argument may make it harder for readers to distinguish genuine insight from persuasive-sounding output.</li>
+</ul>
+<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://bsky.app/profile/joshchafetz.bsky.social/post/3mpyprgtbl22w">@joshchafetz</a> Anthropic accuses rivals of copying its work A Bluesky post flags the irony of Anthropic accusing other companies of unfairly copying its work, linking a New York Times report, amid the broader goodwill backlash.</li>
+</ul>
+<h3 id="hacker-news">Hacker News <a class="permalink" href="#hacker-news" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.apollo.com/wealth/insights-news/insights/daily-spark/ai-the-roi-runway-could-be-long-outside-the-tech-sector">HN</a> AI: the ROI runway could be long outside the tech sector An HN-surfaced piece argues that outside tech, AI's return on investment may take far longer to materialize than boosters claim, given integration and process friction.</li>
+<li><a href="https://www.lttlabs.com/articles/2026/07/06/amd-ryzen-ai-halo">HN</a> AMD Ryzen AI Halo: $4k AI dev kit A hands-on look at AMD's Ryzen AI Halo, a roughly $4,000 AI development kit, drew HN attention as a local-inference workstation option.</li>
+<li><a href="https://raheeljunaid.com/blog/anthropics-method-to-losing-goodwill-in-a-few-easy-steps/">HN</a> Anthropic's method to losing goodwill in a few easy steps A widely-shared HN post catalogs recent Anthropic moves, including the secret tracker, as a case study in eroding developer goodwill.</li>
+<li><a href="https://ramp.com/data/heavy-ai-adopters-hire-more">HN</a> Companies hire more after AI adoption An HN-surfaced analysis argues that firms adopting AI tend to increase hiring rather than cut it, complicating the displacement narrative dominating the news cycle.</li>
+</ul></article>]]></content>
+  </entry>
   <entry>
     <title>2026-07-06 :: AI DAILY DIGEST</title>
     <link href="https://aigregator.news/digests/2026-07-06.html"/>
@@ -3686,120 +3808,6 @@
 <li><a href="https://runtimewire.com/article/deepseek-v4-pro-beats-gpt-5-5-pro-on-precision">HN</a> DeepSeek V4 Pro beats GPT-5.5 Pro on precision</li>
 <li><a href="https://blogs.nvidia.com/blog/nvidia-and-lg-group-ai-factory/">HN</a> Nvidia partners with LG robotics to build humanoid robots in South Korea</li>
 <li><a href="https://ranpara.net/posts/perceptron-explained-from-scratch/">HN</a> The Smallest Brain You Can Build: A Perceptron in Python</li>
-</ul></article>]]></content>
-  </entry>
-  <entry>
-    <title>2026-06-07 :: AI DAILY DIGEST</title>
-    <link href="https://aigregator.news/digests/2026-06-07.html"/>
-    <id>https://aigregator.news/digests/2026-06-07.html</id>
-    <updated>2026-06-07T00:00:00Z</updated>
-    <summary>2026-06-07 :: AI DAILY DIGEST</summary>
-    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 12 min read · 2,328 words · 📡 13 unique sources</span>
-  <span class="meta-share">
-    <span class="meta-label">SHARE:</span>
-    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-06-07&amp;url=https%3A//aigregator.news/digests/2026-06-07.html" target="_blank" rel="noopener" title="Share on X">X</a>
-    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-06-07%20https%3A//aigregator.news/digests/2026-06-07.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-06-07.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
-    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-06-07.html" title="Copy link">COPY</a>
-  </span>
-</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-06-07-ai-daily-digest">2026-06-07 :: AI DAILY DIGEST <a class="permalink" href="#2026-06-07-ai-daily-digest" title="Permalink">#</a></h1>
-<p><em>Anthropic urges a global pause on frontier AI, Trump's AI policy chief Sriram Krishnan exits the White House, and the SpaceX/Anthropic/OpenAI sprint to public markets gets its set-piece tick-tock.</em></p>
-<blockquote>
-<p><strong>📊 TODAY:</strong> 28 stories · 16 sources · 🟡 +0.0 sentiment · 🔥 5 cross-source · <strong>TOP MENTION:</strong> Anthropic ×6<br />
-<strong>🏷️ THEMES:</strong> policy×8, funding×6, hardware×4, safety×4, models×3<br />
-<strong>📈 MARKET PULSE:</strong> <em>(quiet today)</em><br />
-<strong>📉 7D SENTIMENT:</strong> ▆▆▄▄▄▄▅ (oldest → today)  </p>
-</blockquote>
-<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
-<ol>
-<li id="story-1">17 🔥 🟡 <strong>Trump's AI policy chief Sriram Krishnan is leaving the White House.</strong> Former a16z partner who anchored the administration's AI agenda is stepping back; succession unclear in a week the WH is also weighing direct stakes in frontier labs. (<a href="https://www.bloomberg.com/news/articles/2026-06-06/trump-ai-policy-adviser-krishnan-is-giving-up-white-house-role">Bloomberg</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
-<li id="story-2">14 🔥 🟡 <strong>Anthropic urges a coordinated global pause on frontier AI development.</strong> Public blog post discloses internal data on rate of self-improvement; calls for an industry-wide off-switch protocol if risks rise. (<a href="https://www.wsj.com/tech/ai/anthropic-urges-global-pause-in-ai-development-flags-self-improvement-risk-99cefb73">WSJ</a>, <a href="https://www.reuters.com/business/anthropic-says-ai-labs-need-coordinated-plan-halt-development-if-risks-rise-2026-06-04/">Reuters</a>, <a href="https://apnews.com/article/anthropic-artificial-intelligence-ai-938c99158e5953601cf3322f1cec12af">AP</a>, <a href="https://www.bloomberg.com/news/articles/2026-06-05/anthropic-calls-for-ai-pause-button-to-let-humans-take-stock">Bloomberg</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
-<li id="story-3">14 🔥 🔴 <strong>SpaceX, Anthropic, and OpenAI's sprint to go public defines the AI boom's big day.</strong> WSJ tick-tock frames the simultaneous pre-IPO posturing of the three biggest private bets as the apex moment of the cycle. (<a href="https://www.wsj.com/tech/ai/spacex-anthropic-and-openais-sprint-to-go-public-defines-the-ai-booms-big-day-d462bf7b">WSJ</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
-<li id="story-4">11 🟡 <strong>US officials discuss taking direct financial stakes in AI companies.</strong> WSJ and Reuters confirm the NOTUS scoop with on-record sourcing; equity-stake mechanism floated alongside compute access deals. (<a href="https://www.wsj.com/tech/ai/u-s-officials-discuss-taking-financial-stakes-in-ai-industry-b654d41a">WSJ</a>, <a href="https://www.reuters.com/legal/transactional/us-officials-eye-government-stakes-ai-companies-notus-reports-2026-06-05/">Reuters</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
-<li id="story-5">10 🟡 <strong>Inside Apple's secret meeting that led it to finally take AI seriously.</strong> Bloomberg's WWDC 2026 curtain-raiser: iOS 27 reorg, Siri rewrite, and the internal post-mortem on shipping a "much-maligned" chatbot. (<a href="https://www.bloomberg.com/news/newsletters/2026-06-07/wwdc-2026-apple-s-secret-meeting-that-led-it-to-take-ai-seriously-ios-27">Bloomberg</a>, <a href="https://www.wsj.com/tech/ai/apples-plan-for-ai-dominance-rests-on-fixing-its-much-maligned-chatbot-9f2309cb">WSJ</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
-<li id="story-6">10 🟢 <strong>OpenAI plots biggest ChatGPT overhaul since launch.</strong> FT scoop: redesign aimed at agent-mode features and a unified canvas; rollout pegged to a near-term consumer push. (<a href="https://www.ft.com/content/ca0f5f5e-fb9a-41a0-a2a9-0127e15b7db9">FT</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
-</ol>
-<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
-<p><em>3 items · 🟢 +0.3 sentiment</em></p>
-<ul>
-<li>13 🔥 🟢 🏷️ models, open-source <strong>Open-source LLM comparison tables converge on a similar shortlist for 2026.</strong> Four independent leaderboards (ComputingForGeeks, llm-stats, llmleaderboard.in, Vellum) cross-referenced; useful baseline for anyone re-evaluating local stacks this quarter. Sources: <a href="https://computingforgeeks.com/open-source-llm-comparison/">ComputingForGeeks</a></li>
-<li>10 🟢 🏷️ models, consumer <strong>OpenAI plots biggest ChatGPT overhaul since launch.</strong> Redesign anchored on agent-mode features and a unified canvas; FT scoop pegs rollout to a near-term consumer push. Sources: <a href="https://www.ft.com/content/ca0f5f5e-fb9a-41a0-a2a9-0127e15b7db9">FT</a></li>
-<li>4 🟡 🏷️ models, open-source <strong>5 months later: open-deepthink ships full knowledge-distillation mode.</strong> Community-led distillation pipeline now end-to-end; useful template for teams compressing frontier-class teachers into local students. Sources: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1tz0zwy/5_months_later_opendeepthink_now_has_full/">r/LocalLLaMA</a></li>
-</ul>
-<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
-<p><em>5 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>8 🟡 🏷️ agents, systems <strong>Agent Memory: characterization and system implications of stateful long-horizon workloads.</strong> Profiles real agent traces to argue current inference stacks (KV-cache lifecycle, scheduler assumptions) are mismatched to multi-hour stateful sessions. Sources: <a href="http://arxiv.org/abs/2606.06448v1">arXiv 2606.06448</a></li>
-<li>8 🟡 🏷️ training, eval <strong>Arithmetic Pedagogy for Language Models.</strong> Curriculum-style training-data design borrowed from how humans teach arithmetic; reports compounding gains on multi-digit and symbolic reasoning benchmarks. Sources: <a href="http://arxiv.org/abs/2606.05106v1">arXiv 2606.05106</a></li>
-<li>8 🟡 🏷️ multimodal, healthcare <strong>A vision-language framework for comparative reasoning in radiology.</strong> Targets the prior-vs-current scan comparison case that single-image VLMs handle poorly; pairs cross-study attention with a clinician-style report decoder. Sources: <a href="http://arxiv.org/abs/2606.06407v1">arXiv 2606.06407</a></li>
-<li>8 🟡 🏷️ data, low-resource <strong>Komi-Yazva to Russian parallel corpus and zero/few-shot LLM translation protocol.</strong> First reproducible eval set for one of the lowest-resource Uralic languages; useful template for documenting endangered-language MT baselines. Sources: <a href="http://arxiv.org/abs/2606.06420v1">arXiv 2606.06420</a></li>
-<li>8 🟡 🏷️ data, dialect <strong>Auditing text corpora for Lombard.</strong> Sociolinguistic audit of how a regional Italian dialect is represented (and mislabeled) in common pre-training corpora. Sources: <a href="http://arxiv.org/abs/2606.06349v1">arXiv 2606.06349</a></li>
-</ul>
-<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
-<p><em>6 items · 🔴 -0.2 sentiment</em></p>
-<ul>
-<li>14 🔥🛡️ 🟡 🏷️ safety, policy <strong>Anthropic calls for a global coordinated pause protocol for frontier AI.</strong> Blog post plus internal data on self-improvement rate; pitches a shared off-switch governance system labs would all sign onto. Sources: <a href="https://www.wsj.com/tech/ai/anthropic-urges-global-pause-in-ai-development-flags-self-improvement-risk-99cefb73">WSJ</a>, <a href="https://www.reuters.com/business/anthropic-says-ai-labs-need-coordinated-plan-halt-development-if-risks-rise-2026-06-04/">Reuters</a>, <a href="https://apnews.com/article/anthropic-artificial-intelligence-ai-938c99158e5953601cf3322f1cec12af">AP</a></li>
-<li>11 🛡️ 🔴 🏷️ policy, federalism <strong>Trump signs order to block state AI regulations.</strong> Federal preemption move on the AI rule patchwork; states with active enforcement immediately telegraphed legal challenges. Sources: <a href="https://apnews.com/article/trump-ai-regulation-executive-order-state-laws-9cb4dd1bc249e404260b3dc233217388">AP</a>, <a href="https://www.reuters.com/business/us-house-lawmakers-release-draft-bill-regulate-ai-2026-06-04/">Reuters</a></li>
-<li>11 🛡️ 🟡 🏷️ policy, national-security <strong>Trump calls for military to accelerate use of AI; US to fast-track national-security AI.</strong> Two parallel directives this week: DoD acceleration plus an interagency push on national-security applications. Sources: <a href="https://apnews.com/article/artificial-intelligence-ai-military-trump-weapons-1078e23edada2bc16db12dba109015c0">AP</a>, <a href="https://www.reuters.com/technology/us-says-it-will-speed-development-use-ai-national-security-2026-06-05/">Reuters</a></li>
-<li>11 🛡️ 🟡 🏷️ policy, governance <strong>US officials weigh direct equity stakes in frontier AI labs.</strong> WSJ confirms the WH discussion alongside Reuters' NOTUS-sourced read; an equity-stake instrument is now an explicit option on the table. Sources: <a href="https://www.wsj.com/tech/ai/u-s-officials-discuss-taking-financial-stakes-in-ai-industry-b654d41a">WSJ</a>, <a href="https://www.reuters.com/legal/transactional/us-officials-eye-government-stakes-ai-companies-notus-reports-2026-06-05/">Reuters</a></li>
-<li>10 🛡️ 🔴 🏷️ safety, security <strong>Meta confirms thousands of Instagram accounts were hacked by abusing its AI chatbot.</strong> Prompt-injection-style takeover pathway through the in-product assistant; the canonical "AI assistant as new attack surface" case study. Sources: <a href="https://this.weekinsecurity.com/meta-confirms-thousands-of-instagram-accounts-were-hacked-by-abusing-its-ai-chatbot/">This Week in Security</a></li>
-<li>10 🛡️ 🟡 🏷️ policy, procurement <strong>Britain's questionable reliance on Palantir.</strong> FT investigation on the depth of UK-government Palantir contracts and the procurement governance gaps that let them stack. Sources: <a href="https://www.ft.com/content/e54519ad-9f88-45b3-a4e8-dd64cefceb8f">FT</a></li>
-</ul>
-<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
-<p><em>3 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>10 🟢 🏷️ security, defense <strong>NATO narrowly beats Russia-style enemy in cyber attack simulation.</strong> AI-assisted blue-team tooling closed the gap but only just; useful real-world benchmark for cyber-AI maturity. Sources: <a href="https://www.ft.com/content/cda17cca-a651-41c5-9ac7-75dcde998c66">FT</a></li>
-<li>10 🟡 🏷️ apps, consumer <strong>Grindr expanding from dating app into politics and AI.</strong> Bloomberg interview on the platform's pivot into AI-mediated features and political organizing tools for its user base. Sources: <a href="https://www.bloomberg.com/news/videos/2026-06-06/grindr-growing-from-just-dating-app-to-politics-ai-video">Bloomberg</a></li>
-<li>4 🟢 🏷️ tools, dev <strong>A Colour: a tool that names colours.</strong> Tiny utility built with Claude that produces named-palette suggestions from images; a clean example of a small, focused agent-augmented dev tool. Sources: <a href="https://www.reddit.com/r/ClaudeAI/comments/1tyumyj/a_colour_a_tool_that_names_colours/">r/ClaudeAI</a></li>
-</ul>
-<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
-<p><em>6 items · 🔴 -0.2 sentiment</em></p>
-<ul>
-<li>14 🔥 🔴 🏷️ funding, ipo <strong>SpaceX, Anthropic, and OpenAI sprint to go public.</strong> WSJ's set-piece tick-tock on the simultaneous pre-IPO posturing of the three biggest private bets; framed as the apex moment of the cycle. Sources: <a href="https://www.wsj.com/tech/ai/spacex-anthropic-and-openais-sprint-to-go-public-defines-the-ai-booms-big-day-d462bf7b">WSJ</a></li>
-<li>11 🟡 🏷️ funding, deals <strong>A guide to the circular deals underpinning the AI boom.</strong> Bloomberg graphics-led explainer maps the chip-cloud-capital loops between Nvidia, hyperscalers, and frontier labs; the cleanest single visual on counterparty concentration. Sources: <a href="https://www.bloomberg.com/graphics/2026-ai-circular-deals/">Bloomberg</a></li>
-<li>10 🔴 🏷️ funding, markets <strong>AI's mega stock deals raise the specter of more shares than buyers.</strong> Bloomberg on supply-overhang risk as labs telegraph large secondary offerings into a market already digesting the IPO pipeline. Sources: <a href="https://www.bloomberg.com/news/articles/2026-06-07/ai-s-mega-stock-deals-raise-specter-of-more-shares-than-buyers">Bloomberg</a></li>
-<li>10 🟡 🏷️ funding, macro <strong>Are we at the start of a new investment super-cycle?</strong> FT framing piece on whether the AI capex wave is durable or a 2000-style overshoot; pairs with the supply-overhang read. Sources: <a href="https://www.ft.com/content/d91cf0b4-2ed6-47b6-a9b1-46f87c52efc1">FT</a></li>
-<li>10 🟡 🏷️ funding, explainer <strong>The AI boom explained in six charts: billions spent, hypothetical returns.</strong> Guardian visual-driven primer on the gap between capex run-rate and any plausible revenue scenario. Sources: <a href="https://www.theguardian.com/technology/2026/jun/07/billions-spent-hypothetical-returns-the-ai-boom-explained-with-six-charts">Guardian</a></li>
-<li>10 🟡 🏷️ funding, hardware <strong>Elon Musk to attend ASML's private tech event to discuss Terafab.</strong> Bloomberg flags Musk's appearance as confirmation that the xAI/Terafab fab ambition is being shopped at the EUV layer. Sources: <a href="https://www.bloomberg.com/news/articles/2026-06-06/elon-musk-to-attend-asml-s-private-tech-event-to-discuss-terafab">Bloomberg</a></li>
-</ul>
-<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
-<p><em>3 items · 🟢 +0.3 sentiment</em></p>
-<ul>
-<li>10 🟡 🏷️ hardware, memory <strong>Nvidia's CEO says new Vera chip will use SK Hynix's memory chips.</strong> First on-record confirmation of the SK Hynix HBM commitment for Vera; reinforces the Korea-side dependency in the next-gen accelerator stack. Sources: <a href="https://www.bloomberg.com/news/articles/2026-06-07/nvidia-s-ceo-says-new-vera-chip-will-use-sk-hynix-s-memory-chips">Bloomberg</a></li>
-<li>4 🟢 🏷️ inference, local <strong>120 tok/s on 12GB VRAM with Gemma 4 12B QAT MTP.</strong> Practitioner benchmark on a single consumer GPU using the QAT plus MTP combo from this week's Gemma 4 drop; clean numbers for the price-performance frontier. Sources: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1typjmc/120_toks_on_12gb_vram_with_gemma_4_12b_qat_mtp/">r/LocalLLaMA</a></li>
-<li>4 🟢 🏷️ tools, retrieval <strong>turbovec: 10M-doc corpus in 4GB RAM, faster than FAISS.</strong> Compressed float8 vector index claims a ~7x memory reduction with no recall loss vs FAISS at the same dataset size. Sources: <a href="https://www.reddit.com/r/singularity/comments/1tyl46g/a_10_million_document_corpus_takes_31_gb_of_ram/">r/singularity</a></li>
-</ul>
-<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
-<p><em>2 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>6 🟡 🏷️ tools, linux <strong>"Anthropic, please ship an official Claude Desktop for Linux."</strong> Top-voted GitHub issue captures the long-running ask; useful signal on how much of the power-user base sits on Linux. Sources: <a href="https://github.com/anthropics/claude-code/issues/65697">GitHub claude-code#65697</a></li>
-<li>6 🔴 🏷️ economics, inference <strong>"Anthropic/OpenAI may be spending more than $1000 for every $100 you pay them."</strong> Independent analysis estimating unit-economics-by-tier on the consumer plans; pairs with this week's TechCrunch token-bill piece. Sources: <a href="https://ea.rna.nl/2026/06/07/anthropic-openai-may-be-spending-more-than-1000-for-every-100-you-pay-them/">ea.rna.nl</a></li>
-</ul>
-<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
-<p><em>(quiet today)</em></p>
-<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
-<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1typjmc/120_toks_on_12gb_vram_with_gemma_4_12b_qat_mtp/">120 tok/s on 12GB VRAM with Gemma 4 12B QAT MTP</a> practical price-performance benchmark on a single consumer GPU.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1tz0zwy/5_months_later_opendeepthink_now_has_full/">5 Months Later: open-deepthink now has full knowledge distillation mode</a> community distillation pipeline now end-to-end.</li>
-</ul>
-<h3 id="rsingularity-ropenai-rclaudeai">r/singularity / r/OpenAI / r/ClaudeAI <a class="permalink" href="#rsingularity-ropenai-rclaudeai" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/singularity/comments/1tyl46g/a_10_million_document_corpus_takes_31_gb_of_ram/">r/singularity: turbovec fits a 10M-doc corpus in 4GB, faster than FAISS</a> float8 vector index with claimed ~7x memory reduction.</li>
-<li><a href="https://www.reddit.com/r/singularity/comments/1tyzqft/a_response_to_bernies_ai_wealth_fund_plan/">r/singularity: A response to Bernie's AI wealth-fund plan</a> policy debate on the proposed sovereign AI fund.</li>
-<li><a href="https://www.reddit.com/r/OpenAI/comments/1tyjpfr/900_billion_market_cap/">r/OpenAI: 900 billion market cap</a> community processing the latest valuation chatter ahead of the IPO sprint coverage.</li>
-<li><a href="https://www.reddit.com/r/ArtificialInteligence/comments/1tyi9hy/a_lot_has_changed_in_3_months/">r/ArtificialInteligence: "A lot has changed in 3 months"</a> practitioner retrospective on the pace of model shipping this quarter.</li>
-</ul>
-<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://bsky.app/profile/navalairhistory.com/post/3mnoy5eqjcc2z">@navalairhistory</a> reminder that The Guardian has a strategic partnership with OpenAI; relevant context for any AI-boom coverage being amplified this week.</li>
-<li><a href="https://bsky.app/profile/eugenevinitsky.bsky.social/post/3mnnsanclt22m">@eugenevinitsky</a> "Time to use the LLM this hotel is using as its staff to solve some Erdős problems" the in-the-wild deployment surface keeps widening.</li>
-<li><a href="https://bsky.app/profile/janoschki.bsky.social/post/3mnmhrnncok24">@janoschki</a> "Anthropic now." (orig: "Anthropic jetzt.") German-language reaction to today's pause-protocol announcement.</li>
-</ul>
-<h3 id="other">Other <a class="permalink" href="#other" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://this.weekinsecurity.com/meta-confirms-thousands-of-instagram-accounts-were-hacked-by-abusing-its-ai-chatbot/">Meta confirms thousands of Instagram accounts hacked by abusing its AI chatbot</a> prompt-injection takeover via the in-product assistant.</li>
 </ul></article>]]></content>
   </entry>
 </feed>
