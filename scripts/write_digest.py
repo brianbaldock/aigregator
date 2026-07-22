@@ -477,10 +477,16 @@ def main():
     ap.add_argument("--digests-dir", default=str(Path.home() / "projects/AIgregator/digests"))
     ap.add_argument("--out", default=None,
                     help="Override output path (default: digests-dir/DATE.md)")
+    ap.add_argument("--polymarket", default=None,
+                    help="polymarket.json path (default: alongside --items)")
     args = ap.parse_args()
 
     items = json.load(open(args.items))
     curation = json.load(open(args.curation))
+    # polymarket.json lives in the same run dir as digest_items.json unless
+    # overridden. Derive it from --items so per-run gather dirs are honored.
+    poly_path = Path(args.polymarket) if args.polymarket else (
+        Path(args.items).parent / "polymarket.json")
     curation_items = curation.get("items", {})
 
     digests_dir = Path(args.digests_dir)
@@ -560,7 +566,6 @@ def main():
     lines = []
     lines.append(f"# {args.date} :: AI DAILY DIGEST")
     # Detect polymarket data (read once here; reused below for the section)
-    poly_path = Path("/tmp/aig/polymarket.json")
     poly_items = []
     if poly_path.exists():
         try:
@@ -609,9 +614,8 @@ def main():
                 lines.append(render_news_item(it, overlay))
         lines.append("")
 
-    # Prediction Markets — read /tmp/aig/polymarket.json if present
+    # Prediction Markets — read polymarket.json (derived above) if present
     lines.append("## 📈 Prediction Markets")
-    poly_path = Path("/tmp/aig/polymarket.json")
     poly_items = []
     if poly_path.exists():
         try:
