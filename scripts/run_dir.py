@@ -36,6 +36,22 @@ def resolve() -> str | None:
     return None
 
 
+def run_dir_default() -> str:
+    """Importable default for downstream scripts' argparse defaults.
+
+    Returns the resolved run dir (env override or today's date-scoped dir) if it
+    exists, else the date-scoped path (which the caller will create/use). This
+    lets merge_score/curate/write_digest default to the CURRENT run dir with NO
+    argument and NO shell command-substitution in the cron prompt — the single
+    most robust way to thread the run dir through an unattended pipeline.
+    """
+    d = resolve()
+    if d:
+        return d
+    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    return os.path.join("/tmp/aig", f"run-{day}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--require-manifest", action="store_true",

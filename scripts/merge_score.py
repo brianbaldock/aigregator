@@ -593,12 +593,25 @@ def cluster_and_score(items):
     return merged
 
 # -------- main --------
+def _run_dir():
+    """Resolve the active run dir (env / today's date dir) with no shell subst."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from run_dir import run_dir_default
+    return run_dir_default()
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--in", dest="indir", default="/tmp/aig")
-    ap.add_argument("--out", dest="outfp", default="/tmp/aig/digest_items.json")
+    ap.add_argument("--in", dest="indir", default=None,
+                    help="Input dir (default: current run dir)")
+    ap.add_argument("--out", dest="outfp", default=None,
+                    help="Output digest_items.json (default: <run dir>/digest_items.json)")
     ap.add_argument("--limit", type=int, default=80)
     args = ap.parse_args()
+    if args.indir is None:
+        args.indir = _run_dir()
+    if args.outfp is None:
+        args.outfp = os.path.join(args.indir, "digest_items.json")
 
     items = []
     items += load_kagi(args.indir)

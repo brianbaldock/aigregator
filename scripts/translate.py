@@ -33,8 +33,14 @@ def is_non_english(s: str) -> bool:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--in", dest="path", default="/tmp/aig/digest_items.json")
+    ap.add_argument("--in", dest="path", default=None,
+                    help="digest_items.json (default: current run dir)")
     args = ap.parse_args()
+    if args.path is None:
+        import os
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from run_dir import run_dir_default
+        args.path = os.path.join(run_dir_default(), "digest_items.json")
 
     items = json.load(open(args.path))
     n_flagged = 0

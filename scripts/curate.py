@@ -245,9 +245,20 @@ def main():
                     help="Validate + clean curation.json in place")
     ap.add_argument("--print-prompt", action="store_true",
                     help="Print the curation prompt template for the cron agent")
-    ap.add_argument("--in", dest="path", default="/tmp/aig/curation.json")
-    ap.add_argument("--items", default="/tmp/aig/digest_items.json")
+    ap.add_argument("--in", dest="path", default=None,
+                    help="curation.json (default: current run dir)")
+    ap.add_argument("--items", default=None,
+                    help="digest_items.json (default: current run dir)")
     args = ap.parse_args()
+
+    if args.path is None or args.items is None:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from run_dir import run_dir_default
+        rd = run_dir_default()
+        if args.path is None:
+            args.path = os.path.join(rd, "curation.json")
+        if args.items is None:
+            args.items = os.path.join(rd, "digest_items.json")
 
     if args.print_prompt:
         print(print_prompt(args.items, args.path))

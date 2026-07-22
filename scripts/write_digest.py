@@ -471,8 +471,10 @@ def extract_top_mention(items: list[dict], overlays: dict) -> tuple[str, int]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--items", default="/tmp/aig/digest_items.json")
-    ap.add_argument("--curation", default="/tmp/aig/curation.json")
+    ap.add_argument("--items", default=None,
+                    help="digest_items.json (default: current run dir)")
+    ap.add_argument("--curation", default=None,
+                    help="curation.json (default: current run dir)")
     ap.add_argument("--date", default=datetime.now(timezone.utc).strftime("%Y-%m-%d"))
     ap.add_argument("--digests-dir", default=str(Path.home() / "projects/AIgregator/digests"))
     ap.add_argument("--out", default=None,
@@ -480,6 +482,15 @@ def main():
     ap.add_argument("--polymarket", default=None,
                     help="polymarket.json path (default: alongside --items)")
     args = ap.parse_args()
+
+    if args.items is None or args.curation is None:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from run_dir import run_dir_default
+        rd = run_dir_default()
+        if args.items is None:
+            args.items = os.path.join(rd, "digest_items.json")
+        if args.curation is None:
+            args.curation = os.path.join(rd, "curation.json")
 
     items = json.load(open(args.items))
     curation = json.load(open(args.curation))

@@ -90,10 +90,16 @@ def assemble(indir: str) -> tuple[dict, list[str]]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--indir", default="/tmp/aig")
+    ap.add_argument("--indir", default=None,
+                    help="Run dir with curation_head + fragments (default: current run dir)")
     ap.add_argument("--out", default=None,
                     help="Output path (default: <indir>/curation.json)")
     args = ap.parse_args()
+
+    if args.indir is None:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from run_dir import run_dir_default
+        args.indir = run_dir_default()
 
     curation, warnings = assemble(args.indir)
     out_path = args.out or os.path.join(args.indir, "curation.json")
