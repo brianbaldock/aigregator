@@ -471,16 +471,33 @@ def extract_top_mention(items: list[dict], overlays: dict) -> tuple[str, int]:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--items", default="/tmp/aig/digest_items.json")
-    ap.add_argument("--curation", default="/tmp/aig/curation.json")
+    ap.add_argument("--items", default=None,
+                    help="digest_items.json (default: current run dir)")
+    ap.add_argument("--curation", default=None,
+                    help="curation.json (default: current run dir)")
     ap.add_argument("--date", default=datetime.now(timezone.utc).strftime("%Y-%m-%d"))
     ap.add_argument("--digests-dir", default=str(Path.home() / "projects/AIgregator/digests"))
     ap.add_argument("--out", default=None,
                     help="Override output path (default: digests-dir/DATE.md)")
+    ap.add_argument("--polymarket", default=None,
+                    help="polymarket.json path (default: alongside --items)")
     args = ap.parse_args()
+
+    if args.items is None or args.curation is None:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from run_dir import run_dir_default
+        rd = run_dir_default()
+        if args.items is None:
+            args.items = os.path.join(rd, "digest_items.json")
+        if args.curation is None:
+            args.curation = os.path.join(rd, "curation.json")
 
     items = json.load(open(args.items))
     curation = json.load(open(args.curation))
+    # polymarket.json lives in the same run dir as digest_items.json unless
+    # overridden. Derive it from --items so per-run gather dirs are honored.
+    poly_path = Path(args.polymarket) if args.polymarket else (
+        Path(args.items).parent / "polymarket.json")
     curation_items = curation.get("items", {})
 
     digests_dir = Path(args.digests_dir)
@@ -560,7 +577,6 @@ def main():
     lines = []
     lines.append(f"# {args.date} :: AI DAILY DIGEST")
     # Detect polymarket data (read once here; reused below for the section)
-    poly_path = Path("/tmp/aig/polymarket.json")
     poly_items = []
     if poly_path.exists():
         try:
@@ -609,9 +625,8 @@ def main():
                 lines.append(render_news_item(it, overlay))
         lines.append("")
 
-    # Prediction Markets — read /tmp/aig/polymarket.json if present
+    # Prediction Markets — read polymarket.json (derived above) if present
     lines.append("## 📈 Prediction Markets")
-    poly_path = Path("/tmp/aig/polymarket.json")
     poly_items = []
     if poly_path.exists():
         try:
