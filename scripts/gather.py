@@ -39,7 +39,6 @@ import os
 import signal
 import subprocess
 import sys
-import tempfile
 import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -74,10 +73,30 @@ OUTPUT_FILE = {
 }
 
 
-def _new_run_dir() -> str:
+def _run_dir_for_today() -> str:
+    """Date-scoped run dir: /tmp/aig/run-<UTC-date>/. Idempotent — a same-day
+    re-run reuses the day's dir (and its already-gathered files + curation
+    fragments), which is exactly the idempotent-recovery behavior the curate
+    phase wants. The UTC date is the session key; no random suffix, no mutable
+    'latest' pointer to race on."""
+    from datetime import datetime, timezone
     base = "/tmp/aig"
     os.makedirs(base, exist_ok=True)
-    return tempfile.mkdtemp(prefix="run-", dir=base)
+    day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    d = os.path.join(base, f"run-{day}")
+    os.makedirs(d, exist_ok=True)
+    return d
+
+
+def _write_pointer(run_dir: str) -> None:
+    """Best-effort global pointer for debugging/observability. NOT used for
+    resolution (that's date-derived) so it cannot introduce a cross-run race."""
+    try:
+        ptr = os.path.join(REPO, ".last_run_dir")
+        with open(ptr, "w") as f:
+            f.write(run_dir + "\n")
+    except Exception:
+        pass
 
 
 def _count(path: str) -> int | None:
@@ -126,15 +145,19 @@ def _kill_group(proc):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--print-run-dir", action="store_true",
-                    help="Create a fresh run dir, print it, and exit (no gather).")
+                    help="Print today's date-scoped run dir (creating it if "
+                         "needed), then exit. Idempotent: same UTC day = same dir.")
     args = ap.parse_args()
 
     if args.print_run_dir:
-        print(_new_run_dir())
+        d = _run_dir_for_today()
+        _write_pointer(d)
+        print(d)
         return
 
-    run_dir = os.environ.get("AIG_RUN_DIR") or _new_run_dir()
+    run_dir = os.environ.get("AIG_RUN_DIR") or _run_dir_for_today()
     os.environ["AIG_RUN_DIR"] = run_dir
+    _write_pointer(run_dir)
     # First stdout line is always the run dir so callers can capture it.
     print(run_dir, flush=True)
 
