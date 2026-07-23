@@ -671,6 +671,7 @@ BOT_WALLED_DOMAINS = {
     "economist.com", "www.economist.com",
     "linkedin.com", "www.linkedin.com",
     "cacm.acm.org",
+    "politico.com", "www.politico.com",
     "stratechery.com",
     "openai.com", "www.openai.com",
     "anthropic.com", "www.anthropic.com",
