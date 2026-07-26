@@ -30,6 +30,11 @@ exclude = [
   # the sites above, so exclude it and stop failing on valid-but-unreachable
   # links.
   '^https?://(www\.)?polymarket\.com/',
+  # NPR's edge fails lychee's HTTP/2 negotiation the same way Polymarket's
+  # does ("HTTP/2 protocol error"). Verified 2026-07-26: the failing article
+  # URL returns 200 via curl over both HTTP/2 and HTTP/1.1, so this is a
+  # client-side negotiation quirk, not link rot.
+  '^https?://(www\.)?npr\.org/',
 ]
 
 exclude_path = ["docs/_pagefind"]
