@@ -48,6 +48,7 @@ jobs:
           cat .lychee-inputs.txt
 
       - name: Lychee link checker
+        id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
           # --root-dir lets lychee resolve root-relative hrefs (/, /archive.html)
@@ -58,13 +59,23 @@ jobs:
             --config lychee.toml
             --root-dir ${{ github.workspace }}/docs
             $(cat .lychee-inputs.txt)
-          fail: true
-          format: markdown
-          output: ./lychee-report.md
+          # Don't fail here. lychee cannot be forced onto HTTP/1.1
+          # (lycheeverse/lychee#2264), so some live sites report a bogus
+          # "HTTP/2 protocol error". The verify step below re-checks only
+          # those over HTTP/1.1 and decides the real outcome.
+          fail: false
+          format: json
+          output: ./lychee-report.json
+
+      # Turns h2 false positives into passes WITHOUT blanket-excluding the
+      # domain, so genuine 404s on those hosts are still caught. Any non-h2
+      # error, or an h2 URL that is also dead over HTTP/1.1, fails the job.
+      - name: Verify HTTP/2 failures over HTTP/1.1
+        run: python3 scripts/verify_h2_failures.py lychee-report.json
 
       - name: Upload report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: lychee-report
-          path: lychee-report.md
+          path: lychee-report.json

@@ -26,15 +26,14 @@ exclude = [
   '^https?://(www\.)?bsky\.app/intent',
   # Polymarket sits behind Cloudflare and reliably fails lychee's HTTP/2
   # negotiation ("HTTP/2 protocol error") from the CI runner even though the
-  # event pages return 200 in a browser and via curl. Same anti-bot class as
-  # the sites above, so exclude it and stop failing on valid-but-unreachable
-  # links.
+  # event pages return 200 in a browser and via curl.
+  #
+  # NOTE: prefer NOT to add new domains here for HTTP/2 errors. The link-check
+  # workflow now re-checks h2 failures over HTTP/1.1 via
+  # scripts/verify_h2_failures.py, which clears the false positive while still
+  # catching genuine 404s on that host. Excluding a domain here gives up that
+  # coverage entirely. Reserve this list for paywalls and hard anti-bot walls.
   '^https?://(www\.)?polymarket\.com/',
-  # NPR's edge fails lychee's HTTP/2 negotiation the same way Polymarket's
-  # does ("HTTP/2 protocol error"). Verified 2026-07-26: the failing article
-  # URL returns 200 via curl over both HTTP/2 and HTTP/1.1, so this is a
-  # client-side negotiation quirk, not link rot.
-  '^https?://(www\.)?npr\.org/',
 ]
 
 exclude_path = ["docs/_pagefind"]
