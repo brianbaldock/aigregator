@@ -32,6 +32,12 @@ H2_MARKERS = (
     "stream error",
 )
 
+# When the same URL appears in more than one source file, lychee reports the
+# first occurrence with the real error text and later ones as "Error (cached)".
+# Those carry no diagnostic text, so they are classified by looking at the
+# other occurrences of the same URL rather than on their own.
+CACHED_MARKER = "(cached)"
+
 # HTTP statuses we treat as reachable. Mirrors the accept list in lychee.toml:
 # 401/403/429 are anti-bot walls, not link rot.
 OK_STATUSES = {200, 206, 301, 302, 303, 307, 308, 401, 403, 429}
@@ -139,8 +145,20 @@ def main(argv: list[str]) -> int:
         print("No errors in lychee report; nothing to re-check.")
         return 0
 
-    h2_errors = [(u, t) for u, t in errors if is_h2_error(t)]
-    other_errors = [(u, t) for u, t in errors if not is_h2_error(t)]
+    # Classify per URL, not per occurrence. A URL is treated as an h2 failure
+    # if ANY of its occurrences carries h2 error text; bare "Error (cached)"
+    # duplicates inherit that verdict instead of being mistaken for real
+    # breakage. A cached entry for a URL with no h2 evidence stays a failure.
+    h2_urls = {url for url, text in errors if is_h2_error(text)}
+
+    other_errors = [
+        (url, text)
+        for url, text in errors
+        if url not in h2_urls
+        and not (CACHED_MARKER in text.lower() and url in h2_urls)
+    ]
+
+    h2_error_urls = list(dict.fromkeys(url for url, _ in errors if url in h2_urls))
 
     if other_errors:
         print(f"{len(other_errors)} error(s) unrelated to HTTP/2 - these are real:")
@@ -150,10 +168,9 @@ def main(argv: list[str]) -> int:
     recovered: list[str] = []
     still_failing: list[tuple[str, str]] = []
 
-    if h2_errors:
-        print(f"\nRe-checking {len(h2_errors)} HTTP/2 error(s) over HTTP/1.1:")
-        # Same URL can appear once per source file; only fetch each once.
-        for url in dict.fromkeys(u for u, _ in h2_errors):
+    if h2_error_urls:
+        print(f"\nRe-checking {len(h2_error_urls)} HTTP/2 error(s) over HTTP/1.1:")
+        for url in h2_error_urls:
             reachable, detail = check_http11(url)
             if reachable:
                 print(f"  OK    {url} ({detail} over HTTP/1.1)")
