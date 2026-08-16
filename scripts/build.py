@@ -40,6 +40,14 @@ JS_FILES = [
 ]
 LOGO = DOCS_DIR / "assets" / "aigregator-logo.png"
 
+# Cookieless analytics. Set to "" to disable site-wide.
+GOATCOUNTER_URL = "https://aigregator.goatcounter.com/count"
+GOATCOUNTER_SNIPPET = (
+    f'<script data-goatcounter="{GOATCOUNTER_URL}" async src="//gc.zgo.at/count.js"></script>'
+    if GOATCOUNTER_URL
+    else ""
+)
+
 ASCII_BANNER = r"""
    _    ___  ____ ____  _____ ____    _  _____ ___  ____
   / \  |_ _|/ ___|  _ \| ____/ ___|  / \|_   _/ _ \|  _ \
@@ -58,6 +66,8 @@ def html_shell(
     canonical_path: str = "",
     og_image: str = "assets/aigregator-logo.png",
     extra_head: str = "",
+    og_type: str = "website",
+    noindex: bool = False,
 ) -> str:
     """depth=0 for pages in docs/ (index, archive, about). depth=1 for docs/digests/*."""
     prefix = "../" * depth
@@ -67,6 +77,11 @@ def html_shell(
     og_image_url = og_image if og_image.startswith("http") else f"{SITE_URL}/{og_image.lstrip('/')}"
     full_title = f"{title} :: AIGREGATOR"
     desc_escaped = description.replace('"', "&quot;")
+    robots_tag = (
+        '<meta name="robots" content="noindex, follow">'
+        if noindex
+        else '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">'
+    )
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -76,10 +91,11 @@ def html_shell(
 <meta name="description" content="{desc_escaped}">
 <meta name="author" content="Brian Baldock">
 <link rel="canonical" href="{canonical_url}">
+{robots_tag}
 <meta name="theme-color" content="#000000">
 
 <!-- Open Graph -->
-<meta property="og:type" content="article">
+<meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="AIGREGATOR">
 <meta property="og:title" content="{full_title}">
 <meta property="og:description" content="{desc_escaped}">
@@ -100,6 +116,7 @@ def html_shell(
 <link rel="manifest" href="{prefix}manifest.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="AIgregator RSS" href="{prefix}feed.xml">
 <link rel="alternate" type="application/atom+xml" title="AIgregator Atom" href="{prefix}atom.xml">
+{GOATCOUNTER_SNIPPET}
 {extra_head}
 </head>
 <body class="{page_class}" data-theme="phosphor">
@@ -313,7 +330,27 @@ def build_digest_pages() -> list[dict]:
 
         # Real subtitle for SEO description (the italic line right under # title)
         subtitle_match = re.search(r"^[*_]([^*_\n]{20,300})[*_]\s*$", text, re.MULTILINE)
-        description = subtitle_match.group(1).strip() if subtitle_match else f"AI daily digest for {slug}"
+        description = subtitle_match.group(1).strip() if subtitle_match else ""
+        # The stats line ("5 items · 🔴 -0.4 sentiment") also matches the italic
+        # pattern but is useless as a search snippet. Reject it and fall back.
+        if re.match(r"^\s*\d+\s+items?\s*[·|]", description) or len(description) < 40:
+            # Best available snippet: the top TL;DR story headlines (bold text),
+            # which are the actual topics a searcher would match on.
+            tldr_block = re.split(r"^##\s", text, flags=re.MULTILINE)
+            heads: list[str] = []
+            for blk in tldr_block:
+                if blk.lstrip().startswith("⚡ TL;DR"):
+                    heads = re.findall(r"\*\*(.+?)\.?\*\*", blk)
+                    break
+            if not heads:
+                heads = re.findall(r"\*\*(.+?)\.?\*\*", text)
+            topics = "; ".join(h.strip().rstrip(".") for h in heads[:3])
+            description = (
+                f"AI news for {slug}: {topics}."
+                if topics
+                else f"AI news digest for {slug} — scored and cited AI headlines "
+                     f"from across the industry, published by AIgregator."
+            )
         description = description[:280]
 
         # JSON-LD Article schema
@@ -343,6 +380,7 @@ def build_digest_pages() -> list[dict]:
             depth=1,
             description=description,
             canonical_path=f"digests/{slug}.html",
+            og_type="article",
             extra_head=ld_script,
         )
         out = DOCS_DIGESTS / f"{slug}.html"
@@ -1026,6 +1064,14 @@ def build_sitemap(entries: list[dict]) -> None:
     ]
     for e in entries:
         urls.append((f"{SITE_URL}/digests/{e['slug']}.html", e["slug"], "never", "0.7"))
+    # Weekly roundups: derived from the source markdown so the sitemap cannot
+    # list a page that was never rendered.
+    weekly_slugs = sorted((p.stem for p in WEEKLY_DIR.glob("*.md")), reverse=True)
+    if weekly_slugs:
+        urls.append((f"{SITE_URL}/weekly/", today, "weekly", "0.8"))
+    for ws in weekly_slugs:
+        if (DOCS_WEEKLY / f"{ws}.html").exists():
+            urls.append((f"{SITE_URL}/weekly/{ws}.html", today, "never", "0.7"))
     body = "\n".join(
         f"  <url><loc>{xml_escape(u)}</loc><lastmod>{lm}</lastmod>"
         f"<changefreq>{cf}</changefreq><priority>{pr}</priority></url>"
@@ -1073,6 +1119,7 @@ The transmission you requested either never existed or has decayed into the nois
         body=body,
         canonical_path="404.html",
         description="404 — packet not found in uplink queue.",
+        noindex=True,
     )
     (DOCS_DIR / "404.html").write_text(page, encoding="utf-8")
 
@@ -1290,6 +1337,20 @@ def build_weekly() -> list[dict]:
 [ <a href="./">ALL ROUNDUPS</a> ] &nbsp; [ <a href="../">LATEST DAILY</a> ]
 </p>
 """
+        import json as _wld
+        week_ld = _wld.dumps({
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": title,
+            "description": subtitle or f"AI Weekly Roundup for {week_label}",
+            "author": {"@type": "Person", "name": "Brian Baldock + Hermes (autonomous agent)"},
+            "publisher": {
+                "@type": "Organization",
+                "name": "AIGREGATOR",
+                "logo": {"@type": "ImageObject", "url": f"{SITE_URL}/assets/aigregator-logo.png"},
+            },
+            "url": f"{SITE_URL}/weekly/{slug}.html",
+        })
         page = html_shell(
             title=title,
             body=body,
@@ -1298,7 +1359,9 @@ def build_weekly() -> list[dict]:
             description=subtitle or f"AI Weekly Roundup for {week_label}",
             canonical_path=f"weekly/{slug}.html",
             og_image=og_img,
-            extra_head='<meta name="aig:page-type" content="weekly">',
+            og_type="article",
+            extra_head='<meta name="aig:page-type" content="weekly">'
+                       f'<script type="application/ld+json">{week_ld}</script>',
         )
         (DOCS_WEEKLY / f"{slug}.html").write_text(page, encoding="utf-8")
         entries.append({
