@@ -21,6 +21,12 @@ exclude = [
   '^https?://(www\.)?bloomberg\.com/',
   '^https?://(www\.)?reuters\.com/',
   '^https?://(www\.)?economist\.com/',
+  # Washington Post hard-blocks datacenter IPs: the h2 stream is killed with
+  # INTERNAL_ERROR (err 2) and the HTTP/1.1 retry tarpits until timeout, so
+  # verify_h2_failures.py cannot clear it either. The root domain fails the
+  # same way, which is how you tell a wall from link rot. Verified 2026-08-16
+  # against a live, correct URL (HN story 49295872 cites the identical link).
+  '^https?://(www\.)?washingtonpost\.com/',
   '^https?://(www\.)?linkedin\.com/sharing',
   '^https?://(www\.)?twitter\.com/intent',
   '^https?://(www\.)?bsky\.app/intent',
