@@ -18,7 +18,7 @@ Usage:
 from __future__ import annotations
 import argparse, glob, json, os, re, sys
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 
 # -------- credibility map (domain → 1..5) --------
@@ -184,6 +184,96 @@ def parse_pub(s) -> str:
         try: return datetime.fromtimestamp(s, tz=timezone.utc).isoformat()
         except Exception: return ""
     return str(s)
+
+# -------- recency / provenance-of-date --------
+# Layer 1: many wire results (Reuters/AP/Bloomberg/WSJ via Kagi) arrive with NO
+# `time` field — 96%+ of them, measured across archived run dirs. Their URLs
+# almost always carry the publication date in the slug, so recover it there.
+# Anything still undated is treated as second-class (layer 3), never dropped
+# blind: we don't know it's old, so we don't claim it's new either.
+
+MAX_AGE_DAYS = {"news": 3, "research": 7}   # layer 2 hard age gate
+DATE_SPREAD_DAYS = 4                        # layer 4 cluster date-spread guard
+
+_URL_DATE_SLASH = re.compile(r"/((?:19|20)\d{2})/(\d{1,2})/(\d{1,2})(?:/|$)")
+_URL_DATE_DASH = re.compile(r"[-/]((?:19|20)\d{2})-(\d{2})-(\d{2})(?:[-/.]|$)")
+
+
+def url_date(url: str):
+    """Extract a publication date from a URL slug. Returns datetime or None.
+
+    Handles /2026/07/08/ and -2026-07-08/ (and -2026-07-08.html) shapes, which
+    cover Reuters, AP dated slugs, Bloomberg and most CMS URL schemes.
+    """
+    if not url:
+        return None
+    path = url.split("?")[0].split("#")[0]
+    for rx in (_URL_DATE_SLASH, _URL_DATE_DASH):
+        m = rx.search(path)
+        if not m:
+            continue
+        try:
+            y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
+            dt = datetime(y, mo, d, tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        # Guard against version/id numbers that happen to look like dates
+        if dt > datetime.now(timezone.utc) + timedelta(days=2):
+            continue
+        return dt
+    return None
+
+
+def pub_dt(item: dict):
+    """Best-known publication datetime for an item, or None if genuinely undated."""
+    s = item.get("published") or ""
+    if s:
+        try:
+            return datetime.fromisoformat(str(s).replace("Z", "+00:00").strip())
+        except ValueError:
+            pass
+    return url_date(item.get("url") or "")
+
+
+def age_days(item: dict, now=None):
+    """Age in days, or None when the item has no recoverable date."""
+    dt = pub_dt(item)
+    if dt is None:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return ((now or datetime.now(timezone.utc)) - dt).total_seconds() / 86400.0
+
+
+def _tier_of_source(src: str) -> str:
+    s = src or ""
+    if s.startswith("r/") or s.startswith("bsky:") or s == "HN":
+        return "social"
+    if s.startswith("arXiv"):
+        return "research"
+    return "news"
+
+
+def apply_age_gate(items, now=None):
+    """Layer 2: drop items whose KNOWN publication date exceeds the tier cutoff.
+
+    Undated items survive here and are handled by layer 3 instead — we can't
+    honestly drop something for being old when we don't know that it is.
+    Social items already have hard cutoffs in their own fetchers (24-30h).
+    Returns (kept, dropped) so callers can report the gate actually fired.
+    """
+    kept, dropped = [], []
+    for it in items:
+        tier = _tier_of_source(it.get("source", ""))
+        limit = MAX_AGE_DAYS.get(tier)
+        a = age_days(it, now=now)
+        if limit is not None and a is not None and a > limit:
+            it = dict(it)
+            it["_age_days"] = round(a, 1)
+            dropped.append(it)
+        else:
+            kept.append(it)
+    return kept, dropped
 
 def sentiment(title: str, desc: str) -> int:
     text = f"{title} {desc}".lower()
@@ -558,7 +648,33 @@ def cluster_and_score(items):
             0 if x["domain"] in WIRE_DOMAINS else 1,
             -len(x["summary"] or ""),
         ))
-        canonical = dict(group[0])
+        # Layer 3 + 4: date-aware canonical selection and citation hygiene.
+        # Prefer a DATED member as canonical when one exists — an undated hub
+        # page must never be the thing a story's freshness claim rests on.
+        canon_pool = [g for g in group if pub_dt(g) is not None] or group
+        canonical = dict(canon_pool[0])
+        canon_dt = pub_dt(canonical)
+        # Layer 4: a member whose date is more than DATE_SPREAD_DAYS off the
+        # canonical is not corroboration of the same event — strip it from the
+        # cluster so it can't inflate the cross-source badge or be cited as
+        # "supporting evidence" for today's story.
+        if canon_dt is not None:
+            fresh_group, off_date = [], []
+            for g in group:
+                gdt = pub_dt(g)
+                if gdt is not None and abs((gdt - canon_dt).days) > DATE_SPREAD_DAYS:
+                    off_date.append(g)
+                else:
+                    fresh_group.append(g)
+            if off_date:
+                group = fresh_group
+        # Layer 3: undated members cannot count as corroborating sources.
+        # They stay reachable only if they're the sole member (single-source item).
+        dated_members = [g for g in group if pub_dt(g) is not None]
+        if dated_members and len(dated_members) < len(group):
+            group = dated_members
+        canonical["published"] = canon_dt.isoformat() if canon_dt else ""
+        canonical["dated"] = canon_dt is not None
         domains = sorted({g["domain"] for g in group if g["domain"]})
         sources = sorted({g["source"] for g in group})
         # Preserve all member URLs (one per distinct domain, prefer wire) for source citation
@@ -586,6 +702,12 @@ def cluster_and_score(items):
         if canonical["via_kagi"]: flags.append("kagi")
         canonical["flags"] = flags
         canonical["section"] = "top" if (len(domains) >= 2 or canonical["credibility"] >= 5) else "more"
+        # Layer 3: an undated single-source item can't hold a Top slot. We have
+        # no evidence it's news rather than an evergreen hub/reference page.
+        if not canonical.get("dated") and len(domains) < 2:
+            canonical["section"] = "more"
+            canonical["score"] = max(0, canonical["score"] - 3)
+            flags.append("undated")
         canonical["themes"] = []
         merged.append(canonical)
 
@@ -629,6 +751,15 @@ def main():
 
     # drop garbage: no title, no url, or obvious archive
     items = [i for i in items if i["title"] and i["url"] and i["domain"] not in ("web.archive.org",)]
+
+    # Layer 2: hard age gate BEFORE clustering, so a stale item can neither
+    # appear on its own nor be glued onto a fresh story as corroboration.
+    items, aged_out = apply_age_gate(items)
+    if aged_out:
+        print(f"[merge_score] age gate dropped {len(aged_out)} stale items "
+              f"(news>{MAX_AGE_DAYS['news']}d, research>{MAX_AGE_DAYS['research']}d)")
+        for it in sorted(aged_out, key=lambda x: -x["_age_days"])[:10]:
+            print(f"[merge_score]   {it['_age_days']:>6}d  {it['domain']}  {it['title'][:60]}")
 
     scored = cluster_and_score(items)
 
