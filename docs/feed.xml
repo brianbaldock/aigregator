@@ -6,7 +6,137 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Aug 2026 14:05:29 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2026 14:05:23 +0000</lastBuildDate>
+    <item>
+      <title>2026-08-20 :: AI DAILY DIGEST</title>
+      <link>https://aigregator.news/digests/2026-08-20.html</link>
+      <guid isPermaLink="true">https://aigregator.news/digests/2026-08-20.html</guid>
+      <pubDate>Thu, 20 Aug 2026 00:00:00 +0000</pubDate>
+      <description>2026-08-20 :: AI DAILY DIGEST</description>
+      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 13 min read · 2,641 words · 📡 21 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-08-20&amp;url=https%3A//aigregator.news/digests/2026-08-20.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-08-20%20https%3A//aigregator.news/digests/2026-08-20.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-08-20.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-08-20.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-08-20-ai-daily-digest">2026-08-20 :: AI DAILY DIGEST <a class="permalink" href="#2026-08-20-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Stripe's $8bn OpenRouter buy and Google's $12bn Marvell chip deal keep the AI infrastructure land grab going. Trump signed an order blocking state AI regulation. Moonshot and ZAI are closing on OpenAI and Anthropic.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 27 stories · 12 sources · 🟡 +0.0 sentiment · 🔥 3 cross-source · <strong>TOP MENTION:</strong> Google ×4<br />
+<strong>🏷️ THEMES:</strong> apps×8, models×7, safety×6, multimodal×5, policy×5<br />
+<strong>📈 MARKET PULSE:</strong> Top mover: "Will Anthropic have the best AI model at the end of December 2026?" ▲6.0pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▄▃▅▆▅▄▅ (oldest → today)  </p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">13 🔥 🟡 <strong>Stripe to buy OpenRouter in $8bn deal.</strong> Stripe's largest-ever acquisition targets OpenRouter's model-routing marketplace as the payments company pushes into AI infrastructure. (<a href="https://www.ft.com/content/6e83ce44-1bff-4a07-86ad-5355c0d240ff?syn-25a6b1a6=1">FT</a>, <a href="https://techcrunch.com/2026/08/19/stripe-didnt-really-buy-openrouter-because-of-the-singularity/">TechCrunch</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">10 🟢 <strong>Google strikes $12bn AI chip deal with Marvell.</strong> Google expanded its chip partnership with Marvell, including an option to buy shares, to secure custom AI silicon. (<a href="https://www.ft.com/content/0fdb094c-fc03-4d3c-8da6-bd11af88ff63?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">8 🛡️ 🔴 <strong>Trump signs order to block state AI regulations.</strong> President Trump signed an executive order aimed at stopping states from writing their own AI rules. (<a href="https://apnews.com/article/trump-ai-regulation-executive-order-state-laws-9cb4dd1bc249e404260b3dc233217388">AP</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">10 🟡 <strong>Moonshot and ZAI close in on OpenAI and Anthropic.</strong> Chinese models from Moonshot and ZAI can build passable websites at roughly a 75% discount to Claude, per Bloomberg. (<a href="https://www.bloomberg.com/news/newsletters/2026-08-20/moonshot-zai-close-to-openai-and-anthropic-model-performance">Bloomberg</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">11 🔥🎨 🟢 <strong>Meta AI is getting a Mac app.</strong> Meta is shipping a dedicated Mac app for its AI chatbot that can read a shared window and answer questions about on-screen content. (<a href="https://www.theverge.com/tech/982270/meta-ai-mac-app">The Verge</a>, <a href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/">TechCrunch</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+<li id="story-6">13 🔥 🟡 <strong>China's humanoid robots shift to industrial utility.</strong> At the World Robot Conference in Beijing, Unitree's founder said humanoid robots could reach commercial viability within two years as the industry pivots from demos to factory work. (<a href="https://www.bloomberg.com/news/videos/2026-08-20/china-humanoid-robots-shift-to-industrial-utility-video">Bloomberg</a>, <a href="https://www.ft.com/content/26735a23-315f-47ef-8cf2-6c6ea9713998?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>4 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>10 🟡 🏷️ models, inference <strong>LiquidAI ships LFM2.5 Q4_0 checkpoints from quantization-aware distillation.</strong> LiquidAI released quantized LFM2.5 checkpoints produced via quantization-aware distillation for cheaper on-device inference. Sources: <a href="https://huggingface.co/blog/LiquidAI/qad">HuggingFace</a></li>
+<li>10 🟡 🏷️ models, evals <strong>Moonshot and ZAI close in on OpenAI and Anthropic.</strong> Chinese models from Moonshot and ZAI can build passable websites at roughly a 75% discount to Claude, per Bloomberg. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-08-20/moonshot-zai-close-to-openai-and-anthropic-model-performance">Bloomberg</a></li>
+<li>8 🟡 🏷️ models, agi <strong>Move 37 and the moment AI changed everything.</strong> A WSJ piece revisiting AlphaGo's Move 37 as the early signal of today's AI trajectory. Sources: <a href="https://www.wsj.com/tech/ai/move-37-ai-demis-hassabis-google-deepmind-alphago-ec832a41">WSJ</a></li>
+<li>8 🟡 🏷️ models, robotics, multimodal <strong>Top developers pivot from chatbots to physical AI.</strong> Researchers frustrated by language-model limits are turning to world models and embodied AI. Sources: <a href="https://apnews.com/article/ai-world-models-physical-embodied-ai-9bab5a3febad9832f55f8ada33de57b4">AP</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>5 items · 🔴 -0.4 sentiment</em></p>
+<ul>
+<li>8 🔴 🏷️ safety, policy <strong>AI risk classification in practice.</strong> A study on whether proliferating AI risk taxonomies actually help manage real harms. Sources: <a href="https://arxiv.org/abs/2608.06831">arXiv 2608.06831</a></li>
+<li>8 🔴 🏷️ science, training <strong>Feature selection for opioid use disorder prediction from EHR codes.</strong> A comparative study of feature-selection methods for predicting opioid use disorder from EHR diagnosis codes. Sources: <a href="https://arxiv.org/abs/2608.04180">arXiv 2608.04180</a></li>
+<li>8 🟡 🏷️ inference, training <strong>A constant-competitive algorithm for dynamic MoE serving.</strong> A new algorithm improves competitive bounds for serving dynamic mixture-of-experts models. Sources: <a href="https://arxiv.org/abs/2608.16947">arXiv 2608.16947</a></li>
+<li>8 🟡 🏷️ code, evals, inference <strong>A contract-grade verifier for LLM-generated GPU kernels.</strong> The paper argues reported GPU-kernel correctness rates rely on loose tests and proposes a stricter verifier, plus a native Blackwell backward pass. Sources: <a href="https://arxiv.org/abs/2608.12700">arXiv 2608.12700</a></li>
+<li>8 🟡 🏷️ multimodal, evals <strong>Uncertainty quantification and foundation models for semantic segmentation.</strong> A critical synthesis of uncertainty quantification methods paired with foundation models for segmentation. Sources: <a href="https://arxiv.org/abs/2608.18709">arXiv 2608.18709</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>7 items · 🔴 -0.4 sentiment</em></p>
+<ul>
+<li>10 🛡️ 🔴 🏷️ policy <strong>HMRC sends 81,000 warning letters in crypto tax crackdown.</strong> An FOI request shows the number of nudge letters to crypto holders has nearly tripled since 2024. Sources: <a href="https://www.bbc.co.uk/news/articles/c0ej09nywdno?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
+<li>10 🛡️ 🟡 🏷️ safety, multimodal <strong>Did someone wearing Meta glasses film you today?.</strong> People report being covertly recorded at home, at work and at concerts, raising questions about whether smartglasses end any expectation of privacy. Sources: <a href="https://www.theguardian.com/technology/ng-interactive/2026/aug/19/meta-glasses-privacy-surveillance">Guardian</a></li>
+<li>10 🛡️ 🟡 🏷️ voice, apps <strong>Yorkshire accents baffle an AI GP receptionist.</strong> Rotherham patients are hanging up on 'Emma,' an AI receptionist that struggles with local speech despite claims it handles 17 languages. Sources: <a href="https://www.theguardian.com/society/2026/aug/20/yorkshire-rotherham-ai-gp-receptionist-cannot-understand-accent">Guardian</a></li>
+<li>10 🛡️ 🟡 🏷️ safety, policy <strong>GLP-1s may spur next wave of youth social media harm claims.</strong> Weight-loss drug messaging is flooding social apps and shaping teens' views of health, a possible next front in youth harm litigation. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-08-20/glp-1s-may-spur-next-wave-in-youth-social-media-harm-claims">Bloomberg</a></li>
+<li>10 🛡️ 🔴 🏷️ safety <strong>With AI, it is our minds that make us insecure.</strong> A Guardian essay on how humans increasingly imitate technology rather than the reverse. Sources: <a href="https://www.theguardian.com/commentisfree/2026/aug/20/bodies-ai-minds-history-technology-humans">Guardian</a></li>
+<li>10 🛡️ 🔴 🏷️ agi, safety <strong>Nick Bostrom on what happens if AI solves all problems.</strong> The philosopher who mapped AI existential risk discusses a world where AI removes most constraints. Sources: <a href="https://www.bloomberg.com/news/videos/2026-08-20/nick-bostrom-on-what-happens-if-ai-solves-all-problems-video">Bloomberg</a></li>
+<li>10 🛡️ 🟡 🏷️ safety, enterprise <strong>OpenAI offers zero data retention for frontier models.</strong> OpenAI reaffirmed zero data retention for eligible API customers and previewed Private Safety Processing. Sources: <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models">OpenAI</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>5 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>11 🔥🎨 🟢 ▤×2 🏷️ apps, multimodal <strong>Meta AI is getting a Mac app.</strong> Meta is shipping a dedicated Mac app for its AI chatbot that can read a shared window and answer questions about on-screen content. Sources: <a href="https://www.theverge.com/tech/982270/meta-ai-mac-app">The Verge</a>, <a href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/">TechCrunch</a></li>
+<li>10 🎨 🔴 🏷️ hardware <strong>Garmin Cirqa smart band review.</strong> The $200 Cirqa looks like a Whoop tracker but delivers fewer health insights, per Bloomberg's review. Sources: <a href="https://www.bloomberg.com/news/articles/2026-08-20/garmin-cirqa-smart-band-review-how-200-fitness-tracker-compares-to-whoop">Bloomberg</a></li>
+<li>8 🎨 🟡 🏷️ art <strong>Gorgeous Wildwood trailer shows a fantastical journey.</strong> Ars covers the trailer for the upcoming game Wildwood. Sources: <a href="https://arstechnica.com/culture/2026/08/a-fantastical-journey-unfolds-in-gorgeous-wildwood-trailer/">Ars</a></li>
+<li>8 🎨 🟡 🏷️ robotics, apps <strong>Amazon aims for delivery drones in 500 US neighborhoods.</strong> Amazon plans to expand Prime Air drone delivery to 500 US neighborhoods by the end of 2026. Sources: <a href="https://arstechnica.com/gadgets/2026/08/amazon-aims-for-delivery-drones-to-reach-500-us-neighborhoods-by-end-of-2026/">Ars</a></li>
+<li>8 🎨 🟡 🏷️ apps, voice <strong>Amazon makes Alexa+ free on Fire TV.</strong> Amazon is upgrading all compatible US Fire TV devices to its AI-powered Alexa+ with no Prime required. Sources: <a href="https://techcrunch.com/2026/08/19/amazon-makes-its-ai-powered-alexa-free-on-fire-tv-no-prime-required/">TechCrunch</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>7 items · 🟢 +0.4 sentiment</em></p>
+<ul>
+<li>13 🔥 🟡 ▤×2 🏷️ robotics, hardware <strong>China's humanoid robots shift to industrial utility.</strong> At the World Robot Conference in Beijing, Unitree's founder said humanoid robots could reach commercial viability within two years as the industry pivots from demos to factory work. Sources: <a href="https://www.bloomberg.com/news/videos/2026-08-20/china-humanoid-robots-shift-to-industrial-utility-video">Bloomberg</a>, <a href="https://www.ft.com/content/26735a23-315f-47ef-8cf2-6c6ea9713998?syn-25a6b1a6=1">FT</a></li>
+<li>13 🔥 🟡 ▤×2 🏷️ funding, enterprise <strong>Stripe to buy OpenRouter in $8bn deal.</strong> Stripe's largest-ever acquisition targets OpenRouter's model-routing marketplace as the payments company pushes into AI infrastructure. Sources: <a href="https://www.ft.com/content/6e83ce44-1bff-4a07-86ad-5355c0d240ff?syn-25a6b1a6=1">FT</a>, <a href="https://techcrunch.com/2026/08/19/stripe-didnt-really-buy-openrouter-because-of-the-singularity/">TechCrunch</a></li>
+<li>11 🟡 🏷️ policy, models <strong>US lead in the AI race with China is narrowing.</strong> Bloomberg's data feature argues Chinese labs are rapidly closing the capability gap with US frontier developers. Sources: <a href="https://www.bloomberg.com/graphics/2026-us-china-ai-race/">Bloomberg</a></li>
+<li>10 🟢 🏷️ funding, inference <strong>AI startup Callosum raises $100M to make AI tasks cheaper.</strong> Callosum builds software that matches specific AI tasks to the cheapest suitable models and chips, backed by the UK's public pension fund among others. Sources: <a href="https://www.bloomberg.com/news/articles/2026-08-20/ai-startup-callosum-raises-100-million-to-make-ai-tasks-cheaper">Bloomberg</a></li>
+<li>10 🟡 🏷️ funding, enterprise <strong>Alibaba profit dives 75% after AI spending hits $10bn.</strong> Alibaba's quarterly profit fell more than 75% as capital spending approached $10bn to defend its position in China's AI race. Sources: <a href="https://www.bloomberg.com/news/articles/2026-08-20/alibaba-s-revenue-climbs-9-in-testament-to-china-s-ai-boom">Bloomberg</a></li>
+<li>10 🟢 🏷️ hardware, funding <strong>Google strikes $12bn AI chip deal with Marvell.</strong> Google expanded its chip partnership with Marvell, including an option to buy shares, to secure custom AI silicon. Sources: <a href="https://www.ft.com/content/0fdb094c-fc03-4d3c-8da6-bd11af88ff63?syn-25a6b1a6=1">FT</a></li>
+<li>10 🟡 🏷️ policy, models <strong>Google's China shift and the battle over AI models.</strong> An FT feature on how Google's Asia strategy plays into the contest over which AI models dominate. Sources: <a href="https://www.ft.com/content/63781160-8d91-4e88-802c-6c8aac41d32a?syn-25a6b1a6=1">FT</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>4 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>8 🟡 🏷️ apps, enterprise <strong>Bloomberg Law leans on AI for legal intelligence.</strong> Bloomberg Law describes using AI and machine learning to surface patterns across dockets and primary sources. Sources: <a href="https://www.bloomberg.com/company/stories/bloomberg-law-blaw-uses-ai-machine-learning-prove-case/">Bloomberg</a></li>
+<li>8 🟡 🏷️ agents, apps <strong>Binance lets AI agents trade.</strong> Binance's Agent OS lets AI agents trade through tools like ChatGPT, Claude Code and Cursor, with oversight left to users. Sources: <a href="https://techcrunch.com/2026/08/20/binance-now-lets-ai-agents-trade-but-keeping-them-in-check-is-largely-up-to-users/">TechCrunch</a></li>
+<li>8 🟡 🏷️ apps, agents <strong>Calendly enters the meeting note-taker market.</strong> Calendly launched a note-taker and a scheduling assistant called Callie. Sources: <a href="https://techcrunch.com/2026/08/19/calendly-throws-its-hat-into-meeting-note-taker-circus/">TechCrunch</a></li>
+<li>8 🟡 🏷️ code <strong>Simon Willison on conceptual integrity and counting lines of code.</strong> Willison shares takeaways from a podcast on how AI is changing software development. Sources: <a href="https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/">simonwillison.net</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>4 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>8 🌱 🟡 🏷️ agents, opensource <strong>NousResearch/hermes-agent.</strong> An open agent framework from Nous Research trending on GitHub with a fresh push. Sources: <a href="https://github.com/NousResearch/hermes-agent">GitHub NousResearch/hermes-agent</a></li>
+<li>8 🌱 🟡 🏷️ opensource, apps <strong>openclaw/openclaw.</strong> A cross-platform personal AI assistant project trending on GitHub. Sources: <a href="https://github.com/openclaw/openclaw">GitHub openclaw/openclaw</a></li>
+<li>6 🌱 🟡 🏷️ models, opensource, multimodal <strong>Qwen/Qwen3.8-27B.</strong> An image-text-to-text Qwen model trending on Hugging Face. Sources: <a href="https://huggingface.co/Qwen/Qwen3.8-27B">HuggingFace</a></li>
+<li>6 🌱 🟡 🏷️ agents, opensource <strong>affaan-m/ECC.</strong> An agent-harness optimization system with skills, memory and security for Claude Code, Codex, Opencode and Cursor. Sources: <a href="https://github.com/affaan-m/ECC">GitHub affaan-m/ECC</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets · AI/policy</em></p>
+<ul>
+<li><strong>Will Anthropic have the best AI model at the end of December 2026?</strong> - 72% Yes (▲6pp 24h, $81K vol) · <a href="https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026">Polymarket</a></li>
+<li><strong>Will xAI have the best AI model at the end of December 2026?</strong> - 8% Yes (▼6pp 24h, $62K vol) · <a href="https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026">Polymarket</a></li>
+<li><strong>Will Anthropic flip BTC by December 31?</strong> - 76% Yes (▼6pp 24h, $179K vol) · <a href="https://polymarket.com/event/will-anthropic-flip-btc-by-december-31">Polymarket</a></li>
+<li><strong>Will the next Google Gemini Pro model be released on August 10, 2026?</strong> - None% Yes (▼6pp 24h, $67K vol) · <a href="https://polymarket.com/event/next-google-gemini-pro-model-released-onptptpt-20260729182045875">Polymarket</a></li>
+<li><strong>OpenAI $1t+ IPO before 2027?</strong> - 18% Yes (▼5pp 24h, $298K vol) · <a href="https://polymarket.com/event/openai-1t-ipo-before-2027">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vsqfmj/antlingve_opensourced_6_base_model_checkpoints/">AntLing open-sources 6 base model checkpoints for Ling-3.0-tiny and flash</a> An r/LocalLLaMA post announcing six open base-model checkpoints for the Ling-3.0 tiny and flash models.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vt0y1g/anyone_not_on_full_auto_when_coding_with_local/">Anyone NOT on full auto when coding with local LLMs?</a> An r/LocalLLaMA thread on who still uses manual workflows when coding with local models.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vth6n3/aurora80k_releases_a_modern_tiny_language_model/">Aurora-80K: a modern tiny language model</a> An r/LocalLLaMA release of Aurora-80K, an 80k-parameter model with a factorized vocabulary.</li>
+</ul>
+<h3 id="rmachinelearning">r/MachineLearning <a class="permalink" href="#rmachinelearning" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1vtgw1g/aigenerated_code_detection_in_cicd_looking_for/">AI-generated code detection in CI/CD: approaches and real-world experience</a> An r/MachineLearning thread on detecting AI-generated code in CI/CD using commit-level signals.</li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1vtctaz/about_the_impact_of_grouping_classes_in/">On the impact of grouping classes in multiclass classification</a> An r/MachineLearning discussion on how grouping classes affects multiclass classification.</li>
+</ul>
+<h3 id="rclaudeai">r/ClaudeAI <a class="permalink" href="#rclaudeai" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/ClaudeAI/comments/1vt2qbi/best_way_to_migrate_my_longterm_chatgpt_context/">Migrating long-term ChatGPT context and project knowledge to Claude</a> An r/ClaudeAI thread on moving long-term ChatGPT context and project knowledge to Claude.</li>
+</ul>
+<h3 id="hacker-news">Hacker News <a class="permalink" href="#hacker-news" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://sprocketfox.io/xssfox/2026/08/19/sondehub-and-war/">HN</a> A joke domain purchase turned into geopolitical warfare A blog on how a joke domain purchase entangled the author in the SondeHub radiosonde network amid war.</li>
+<li><a href="https://franciscotrindade.me/blog/the-kids-are-really-alright/">HN</a> AI didn't erase the junior engineer's value, it increased it A blog arguing AI raises rather than erases the value of junior engineers.</li>
+<li><a href="https://theremin.bizibah.com/">HN</a> Air Theremin: a browser theremin you play by waving at your webcam A browser-based theremin controlled by webcam hand tracking.</li>
+<li><a href="https://www.reuters.com/legal/litigation/australia-passes-law-levy-tech-giants-that-fail-pay-local-news-2026-08-20/">HN</a> Australia passes law to levy tech giants that fail to pay for local news Reuters reports Australia passed a law to levy tech giants that fail to pay for local news.</li>
+<li><a href="https://www.extremetech.com/computing/best-buy-repaired-a-64gb-laptop-by-making-it-32gb">HN</a> Best Buy 'repaired' a 64GB laptop by making it 32GB An ExtremeTech report on Best Buy halving a laptop's RAM during a repair.</li>
+</ul></article>]]></content:encoded>
+    </item>
     <item>
       <title>2026-08-19 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-08-19.html</link>
@@ -3599,138 +3729,6 @@
 <li><a href="https://help.trmnl.com/en/articles/14130438-ai-agent">HN</a> AI Agent - TRMNL</li>
 <li><a href="https://cacm.acm.org/opinion/ai-didnt-make-programming-easier-it-just-made-it-differently-difficult/">HN</a> AI makes programming differently difficult</li>
 <li><a href="https://www.airbus.com/en/newsroom/press-releases/2026-07-airbus-launches-new-flight-test-programme-for-wing-of-tomorrow">HN</a> Airbus Full Scale Foldable Wing Extensions</li>
-</ul></article>]]></content:encoded>
-    </item>
-    <item>
-      <title>2026-07-21 :: AI DAILY DIGEST</title>
-      <link>https://aigregator.news/digests/2026-07-21.html</link>
-      <guid isPermaLink="true">https://aigregator.news/digests/2026-07-21.html</guid>
-      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
-      <description>2026-07-21 :: AI DAILY DIGEST</description>
-      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 14 min read · 2,765 words · 📡 23 unique sources</span>
-  <span class="meta-share">
-    <span class="meta-label">SHARE:</span>
-    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-07-21&amp;url=https%3A//aigregator.news/digests/2026-07-21.html" target="_blank" rel="noopener" title="Share on X">X</a>
-    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-07-21%20https%3A//aigregator.news/digests/2026-07-21.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-07-21.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
-    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-07-21.html" title="Copy link">COPY</a>
-  </span>
-</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-07-21-ai-daily-digest">2026-07-21 :: AI DAILY DIGEST <a class="permalink" href="#2026-07-21-ai-daily-digest" title="Permalink">#</a></h1>
-<p><em>Xi Jinping used China's premier tech summit to pitch an open-source AI order as Bessent warned the US will scrutinize Chinese models for IP theft. Moonshot's Kimi K3 drew crowds, hundreds of economists called for action on AI job losses, and the EU fined AliExpress a record 550M euros.</em></p>
-<blockquote>
-<p><strong>📊 TODAY:</strong> 25 stories · 15 sources · 🟡 -0.1 sentiment · 🔥 6 cross-source · <strong>TOP MENTION:</strong> OpenAI ×4<br />
-<strong>🏷️ THEMES:</strong> policy×8, apps×7, models×6, enterprise×6, opensource×6<br />
-<strong>📈 MARKET PULSE:</strong> Top mover: "Will any AI model reach 1560 Coding Arena Score by December 31, 2026?" ▼20.0pp · 5 AI markets tracked<br />
-<strong>📉 7D SENTIMENT:</strong> ▄▄▄▄▅▅▅ (oldest → today)  </p>
-</blockquote>
-<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
-<ol>
-<li id="story-1">11 🛡️🌱 🟢 <strong>Xi pitches China as leader of a new global AI order.</strong> At China's premier tech conference, Xi promoted open-source technology and positioned Beijing as champion of global AI access. (<a href="https://www.reuters.com/world/asia-pacific/chinas-xi-promotes-chinas-commitment-ai-access-speech-shanghai-conference-2026-07-17/">Reuters</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
-<li id="story-2">11 🟡 <strong>Chinese startup Moonshot unveils powerful Kimi K3 AI model.</strong> Moonshot's Kimi K3 follows Zhipu's GLM-5.2, another sign Chinese labs are making large strides on frontier models. (<a href="https://apnews.com/article/kimi-k3-china-ai-0d8a5e268deb11a673f4d444fc597cc5">AP</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
-<li id="story-3">10 🛡️🌱 🟡 <strong>Bessent says US to scrutinize Chinese AI models for IP theft.</strong> Treasury Secretary Scott Bessent said the US will examine Chinese open-source models for signs of intellectual property theft. (<a href="https://www.bloomberg.com/news/articles/2026-07-21/bessent-says-us-will-scrutinize-chinese-ai-models-for-ip-theft">Bloomberg</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
-<li id="story-4">11 🛡️ 🟡 <strong>Hundreds of economists say 'we must act now' on AI's economic impact.</strong> An open letter from hundreds of economists warns AI could transform the economy and urges immediate policy action. (<a href="https://apnews.com/article/ai-must-act-now-job-displacement-783469467e0df1463df44518f33295ee">AP</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
-<li id="story-5">10 🛡️ 🔴 <strong>AliExpress fined record 550M euros by EU over illegal goods.</strong> The EU fined the Chinese retailer for allowing unsafe toys and counterfeit clothes to be sold on its platform. (<a href="https://www.bbc.co.uk/news/articles/cp8714286dpo?at_medium=RSS&amp;at_campaign=rss">BBC</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
-<li id="story-6">10 🟡 <strong>OpenAI's agents reach 10 million users after ChatGPT Work debut.</strong> OpenAI reports a sharp demand uptick for its AI agents following the ChatGPT Work release. (<a href="https://www.bloomberg.com/news/articles/2026-07-21/openai-s-agents-reach-10-million-users-after-chatgpt-work-debut">Bloomberg</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
-</ol>
-<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
-<p><em>5 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>11 🟡 🏷️ models <strong>AI is cannibalizing human intelligence. Here's how to stop it.</strong> A neuroscientist argues that offloading cognition to AI erodes human intelligence and outlines countermeasures. Sources: <a href="https://www.wsj.com/tech/ai/is-ai-smarter-than-humans-cyborg-956e0f0e">WSJ</a></li>
-<li>11 🟡 🏷️ models <strong>Chinese startup Moonshot unveils powerful Kimi K3 AI model.</strong> Moonshot's Kimi K3 follows Zhipu's GLM-5.2, another sign Chinese labs are making large strides on frontier models. Sources: <a href="https://apnews.com/article/kimi-k3-china-ai-0d8a5e268deb11a673f4d444fc597cc5">AP</a></li>
-<li>11 🟡 🏷️ apps <strong>Hospitals are a proving ground for what AI can and can't do.</strong> Healthcare is going all-in on AI, from reading scans to fighting insurance denials, with mixed results. Sources: <a href="https://www.wsj.com/tech/ai/hospitals-are-a-proving-ground-for-what-ai-can-do-and-what-it-cant-60e4020c">WSJ</a></li>
-<li>10 🟡 🏷️ models, funding <strong>China AI sensation Moonshot's gamble on big models pays off.</strong> Crowds at China's premier tech summit flocked to Moonshot, whose bet on large models is drawing outsized attention. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-20/chinese-ai-sensation-moonshot-s-gamble-on-big-models-pays-off">Bloomberg</a></li>
-<li>10 🟡 🏷️ models, policy <strong>Headaches for Silicon Valley as China chips away at the US AI lead.</strong> New Chinese models throw US tech dominance into question as Google's own AI efforts struggle. Sources: <a href="https://www.theguardian.com/technology/2026/jul/20/china-google-ai-race">Guardian</a></li>
-</ul>
-<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
-<p><em>5 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>14 🟡 🏷️ agents, enterprise <strong>Agentic ERP: multi-agent LLM architecture for autonomous enterprise resource planning.</strong> Proposes a multi-agent LLM architecture that moves ERP systems from record-keeping toward autonomous operational decision-making. Sources: <a href="https://arxiv.org/abs/2607.17331">arXiv 2607.17331</a></li>
-<li>8 🟡 🏷️ bias, safety <strong>'Not in my backyard': LLMs uncover social biases against homelessness.</strong> Uses LLMs to surface online and offline social biases against people experiencing homelessness. Sources: <a href="https://arxiv.org/abs/2508.13187">arXiv 2508.13187</a></li>
-<li>8 🟡 🏷️ evals, science <strong>A benchmark for early-stage Parkinson's disease detection from speech.</strong> Introduces a benchmark for detecting early Parkinson's from speech, a clinically meaningful but underexplored task. Sources: <a href="https://arxiv.org/abs/2605.14066">arXiv 2605.14066</a></li>
-<li>8 🟡 🏷️ evals, multimodal <strong>A benchmark of generative methods for zero-shot environmental sound classification.</strong> Benchmarks generative approaches to zero-shot classification of environmental sounds. Sources: <a href="https://arxiv.org/abs/2412.03771">arXiv 2412.03771</a></li>
-<li>8 🟡 🏷️ alignment, training <strong>A causal Markov condition for value.</strong> Proposes a causal independence principle for value, the value Causal Markov Condition (v-CMC). Sources: <a href="https://arxiv.org/abs/2607.16717">arXiv 2607.16717</a></li>
-</ul>
-<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
-<p><em>7 items · 🔴 -0.3 sentiment</em></p>
-<ul>
-<li>26 🔥🛡️🌱 🔴 ▤×7 🏷️ opensource, policy <strong>OpenAI is scared of open-weight models. Should the US be?.</strong> Talk of banning Chinese-made open-weight LLMs exposes the tension between AI-as-national-security and AI-as-business. Sources: <a href="https://techcrunch.com/2026/07/20/openai-is-scared-of-open-weight-models-should-the-us-be/">TechCrunch</a>, <a href="https://huggingface.co/blog/daya-shankar/open-source-llms">HuggingFace</a>, <a href="https://www.vellum.ai/open-llm-leaderboard">vellum.ai</a>, <a href="https://www.layer3labs.io/guides/best-open-source-llm">layer3labs.io</a>, <a href="https://llm-stats.com/leaderboards/open-llm-leaderboard">llm-stats.com</a></li>
-<li>14 🔥🛡️🌱 🟢 ▤×2 🏷️ policy, opensource <strong>China's Xi touts open-source AI and takes a swipe at US dominance.</strong> Xi Jinping endorsed open-source AI at the Shanghai conference, casting China as an openness champion while implicitly criticizing US chip restrictions. Sources: <a href="https://www.wsj.com/tech/ai/chinas-xi-touts-open-source-ai-and-takes-a-swipe-at-u-s-dominance-1eaa5cfe">WSJ</a>, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1v2huar/there_is_no_need_to_worry_about_trump_banning/">r/LocalLLaMA</a></li>
-<li>13 🔥🛡️ 🟡 ▤×2 🏷️ policy <strong>UK appoints first AI minister to cabinet in tech reshuffle.</strong> New PM Andy Burnham named Kanishka Narayan minister for AI, making the post cabinet-level for the first time. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-20/burnham-names-narayan-as-uk-s-first-ai-minister-to-new-cabinet">Bloomberg</a>, <a href="https://www.bbc.co.uk/news/articles/cz97x8k4zqzo?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
-<li>11 🛡️ 🟡 🏷️ safety <strong>As AI enters the operating room, reports of botched surgeries arise.</strong> Device makers are rushing AI into products while regulators field a rising number of adverse-event reports. Sources: <a href="https://www.reuters.com/investigations/ai-enters-operating-room-reports-arise-botched-surgeries-misidentified-body-2026-02-09/">Reuters</a></li>
-<li>11 🛡️ 🟡 🏷️ policy <strong>China's Xi calls for global AI rules amid US tech restrictions.</strong> Xi Jinping called for more global cooperation on AI development and governance as US restrictions bite. Sources: <a href="https://apnews.com/article/china-ai-tech-chips-xi-us-df4cfc7e1b260e765b5449b6d71a48e5">AP</a></li>
-<li>11 🛡️ 🔴 🏷️ policy <strong>America risks blowing the AI race. Seven ideas to get back in.</strong> An essay argues the window for US AI dominance is narrowing fast and offers policy prescriptions. Sources: <a href="https://www.wsj.com/tech/ai/ai-doomerism-jim-vandehei-axios-9163dfd3">WSJ</a></li>
-<li>11 🛡️ 🔴 🏷️ policy <strong>House Republicans include 10-year ban on states regulating AI.</strong> A clause in the GOP tax bill would bar states from regulating AI for a decade, angering many state governments. Sources: <a href="https://apnews.com/article/ai-regulation-state-moratorium-congress-39d1c8a0758ffe0242283bb82f66d51a">AP</a></li>
-</ul>
-<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
-<p><em>5 items · 🔴 -0.3 sentiment</em></p>
-<ul>
-<li>11 🔥🎨 🟢 ▤×2 🏷️ apps, multimodal <strong>Adobe's 'natural look' camera app embraces generative AI.</strong> Adobe's experimental Project Indigo camera app adds generative AI features, a turn from its original SLR-like natural look. Sources: <a href="https://www.theverge.com/tech/967791/adobe-indigo-camera-app-ai-playground-update">The Verge</a>, <a href="https://techcrunch.com/2026/07/20/adobe-camera-apps-new-feature-will-critique-your-photos-using-ai/">TechCrunch</a></li>
-<li>11 🔥🎨 🟡 ▤×2 🏷️ apps, multimodal <strong>Halliday's latest smart glasses feature a much-improved display.</strong> The second-gen Halliday AI glasses fix the tiny, finicky display that plagued the original. Sources: <a href="https://www.theverge.com/tech/968255/halliday-gen-2-smart-glasses-hands-on-ai-wearables">The Verge</a>, <a href="https://www.wired.com/story/halliday-new-smart-glasses-skip-the-camera/">Wired</a></li>
-<li>10 🎨 🔴 🏷️ apps <strong>Garmin debuts $200 screenless fitness band to challenge Whoop.</strong> Garmin introduced a $200 screenless tracker, entering the segment popularized by Whoop. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-21/garmin-debuts-200-screenless-fitness-band-in-challenge-to-whoop">Bloomberg</a></li>
-<li>10 🎨 🔴 🏷️ apps <strong>Pope Leo speeches declared human-authored by AI detection tool.</strong> An Australian AI-detection company certified Pope Leo's speeches as human-written. Sources: <a href="https://www.theguardian.com/world/2026/jul/21/pope-leo-speech-human-not-ai-artificial-intelligence">Guardian</a></li>
-<li>10 🎨 🟡 🏷️ apps <strong>Samsung debuts AI-powered health assistant.</strong> Samsung is rolling out a virtual health-companion assistant, joining a crowded chatbot-health market. Sources: <a href="https://www.bloomberg.com/news/articles/2026-07-21/samsung-debuts-ai-powered-health-assistant-joining-packed-market">Bloomberg</a></li>
-</ul>
-<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
-<p><em>7 items · 🟡 -0.1 sentiment</em></p>
-<ul>
-<li>11 🟡 🏷️ enterprise <strong>AI promised a revolution. Companies are still waiting.</strong> Executives still expect generative AI to transform their businesses but are reconsidering how fast that will happen. Sources: <a href="https://www.reuters.com/business/business-leaders-agree-ai-is-future-they-just-wish-it-worked-right-now-2025-12-16/">Reuters</a></li>
-<li>11 🔴 🏷️ enterprise, models <strong>AI's wider availability is good for China, not great for OpenAI and Anthropic.</strong> As capable AI becomes a cheap commodity, the economics tilt against the frontier labs that funded its development. Sources: <a href="https://www.wsj.com/tech/ai/cheaper-ai-commodity-openai-anthropic-0111da73">WSJ</a></li>
-<li>11 🟡 🏷️ funding, agents <strong>Generative AI market poised to reach $2.3 trillion by 2032.</strong> Bloomberg Intelligence projects generative AI as a $2.3T market by 2032, 22% of total tech spend, driven by agentic systems and infrastructure demand. Sources: <a href="https://www.bloomberg.com/company/press/generative-ai-market-poised-to-reach-2-3-trillion-by-2032-as-agentic-systems-proliferate-and-infrastructure-demand-surges-according-to-bloomberg-intelligence/">Bloomberg</a></li>
-<li>11 🟡 🏷️ enterprise, funding <strong>Major analyst and enterprise forecasts on the AI market.</strong> Executives expect AI to generate hundreds of billions in value, but market forecasts diverge widely on the timeline. Sources: <a href="https://www.reuters.com/business/major-analyst-enterprise-forecasts-ai-market-2025-11-13/">Reuters</a></li>
-<li>11 🟡 🏷️ policy <strong>New group aims to help people adapt to AI job losses.</strong> Bipartisan nonprofit RAISE US launches with more than $500 million for retraining workers displaced by AI. Sources: <a href="https://apnews.com/article/ai-job-losses-education-training-929986c149d415cd2ef4dc3eaf66ca8c">AP</a></li>
-<li>11 🟡 🏷️ enterprise <strong>The first class of AI natives is graduating.</strong> The most AI-native cohort of graduates is entering a workforce still figuring out how to use them. Sources: <a href="https://www.wsj.com/tech/ai/ai-natives-graduates-job-cuts-6bab8ac9">WSJ</a></li>
-<li>11 🟡 🏷️ enterprise <strong>The job AI was supposed to kill needs more humans than ever.</strong> Court reporting, long seen as ripe for automation, is instead seeing rising demand for human workers. Sources: <a href="https://www.wsj.com/tech/ai/the-job-that-ai-was-supposed-to-kill-needs-more-humans-than-ever-0771e4cf">WSJ</a></li>
-</ul>
-<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
-<p><em>1 item · 🟢 +2.0 sentiment</em></p>
-<ul>
-<li>14 🔥 🟢 ▤×2 🏷️ apps, agents <strong>OpenAI launches AI browser Atlas.</strong> OpenAI unveiled ChatGPT Atlas, an AI-powered web browser built around its chatbot, a direct challenge to Google Chrome. Sources: <a href="https://www.reuters.com/technology/openai-unveils-ai-browser-atlas-2025-10-21/">Reuters</a>, <a href="https://www.reddit.com/r/LocalLLaMA/comments/1v258lo/openai_released_gptoss_350_days_ago_will_we_ever/">r/LocalLLaMA</a></li>
-</ul>
-<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
-<p><em>4 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>10 🌱 🟡 🏷️ robotics, opensource <strong>Grabette: an open system to record robot-manipulation data.</strong> An open system for recording robot manipulation data, aimed at building better training sets for robotics. Sources: <a href="https://huggingface.co/blog/grabette">HuggingFace</a></li>
-<li>8 🌱 🟡 🏷️ agents, opensource <strong>NousResearch/hermes-agent.</strong> The agent that grows with you. Fresh push on the widely-starred agent framework. Sources: <a href="https://github.com/NousResearch/hermes-agent">GitHub NousResearch/hermes-agent</a></li>
-<li>8 🌱 🟡 🏷️ opensource <strong>openclaw/docs.</strong> OpenClaw documentation and translation repo, freshly updated. Sources: <a href="https://github.com/openclaw/docs">GitHub openclaw/docs</a></li>
-<li>6 🌱 🟡 🏷️ models, opensource <strong>zai-org/GLM-5.2.</strong> Zhipu's GLM-5.2 trending on HuggingFace with strong download and like counts. Sources: <a href="https://huggingface.co/zai-org/GLM-5.2">HuggingFace</a></li>
-</ul>
-<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
-<p><em>5 markets · AI/policy</em></p>
-<ul>
-<li><strong>Will any AI model reach 1560 Coding Arena Score by December 31, 2026?</strong> - 58% Yes (▼20pp 24h, $67K vol) · <a href="https://polymarket.com/event/will-any-ai-model-reach-coding-arena-score-by-december-31">Polymarket</a></li>
-<li><strong>Will Moonshot have the best Chinese AI model at the end of July 2026?</strong> - 14% Yes (▼18pp 24h, $95K vol) · <a href="https://polymarket.com/event/best-chinese-ai-company-end-of-july">Polymarket</a></li>
-<li><strong>Will the next Claude Opus model be released by July 24, 2026?</strong> - 44% Yes (▼16pp 24h, $53K vol) · <a href="https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232">Polymarket</a></li>
-<li><strong>Will Alibaba have the best Chinese AI model at the end of July 2026?</strong> - 79% Yes (▲14pp 24h, $109K vol) · <a href="https://polymarket.com/event/best-chinese-ai-company-end-of-july">Polymarket</a></li>
-<li><strong>Will the next Claude Opus model be released by July 22, 2026?</strong> - 4% Yes (▼13pp 24h, $68K vol) · <a href="https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232">Polymarket</a></li>
-</ul>
-<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
-<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1v1no8e/543_toks_singlerequest_qwen3635ba3b_on_one_rtx/">543 tok/s single-request Qwen3.6-35B-A3B on one RTX 5090</a> A from-scratch C++/CUDA inference engine hits 543 tok/s on a single RTX 5090 over a 65K-token decode.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1v1xh6h/according_to_agent_arena_kimi_k3_ranks_at_same/">Kimi K3 ranks alongside Opus thinking on Agent Arena</a> Agent Arena places Kimi K3 near Opus-thinking; a tester notes Opus still wins on vision tasks.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1v1xse3/american_ai_is_locked_down_and_proprietary_its/">American AI is locked down and proprietary. It's losing</a> A widely-discussed argument that closed US models are ceding ground to open Chinese releases.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1v2g9bc/ceo_of_hugging_face_banning_opensource_ai_would/">HF CEO: banning open-source AI would hurt defenders more than attackers</a> Clement Delangue argues an open-source AI ban would weaken defenders far more than attackers.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1v2duio/dram_shortage_will_last_another_10_years_warns/">DRAM shortage will last another 10 years, ADATA chairman warns</a> ADATA's chairman warns the DRAM shortage could persist a decade, with implications for AI hardware costs.</li>
-</ul>
-<h3 id="rmachinelearning">r/MachineLearning <a class="permalink" href="#rmachinelearning" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/MachineLearning/comments/1v1ukpx/acl_arr_may_2026_updating_reviewer_score_post_17/">ACL ARR May 2026: updating reviewer score after deadline?</a> A researcher asks whether reviewers still update scores when rebuttals go unacknowledged during discussion.</li>
-</ul>
-<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://bsky.app/profile/courtneymilan.com/post/3mr4aqaznoc2v">@courtneymilan.com</a> Fuck Anthropic though A blunt, widely-shared jab at Anthropic reflecting author-community frustration.</li>
-<li><a href="https://bsky.app/profile/lasrina.bsky.social/post/3mr3szhbfvs2o">@lasrina</a> On websites bait-and-switching 'live chat' to AI agents A post arguing it should be illegal to promise a live human chat then route users to an AI agent.</li>
-<li><a href="https://bsky.app/profile/numb.comfortab.ly/post/3mr3vxle7tk2a">@numb.comfortab.ly</a> The irony A wry post pointing at a Hacker News story about the World AI Conference.</li>
-<li><a href="https://bsky.app/profile/ugarles.bsky.social/post/3mr3q6seoes2i">@ugarles</a> Confident the StubHub agent isn't AI A skeptical take on a StubHub live-agent experience and whether it is actually human.</li>
-</ul>
-<h3 id="hacker-news">Hacker News <a class="permalink" href="#hacker-news" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://ludic.mataroa.blog/blog/ai-mania-is-eviscerating-global-decision-making/#fnref:3">HN</a> AI mania is eviscerating global decision-making A widely-shared essay arguing AI hype is degrading the quality of high-stakes decisions.</li>
-<li><a href="https://bamboo.kickstage.com">HN</a> Show HN: BambooGrid, open-source web UI for power grid modeling An open-source web UI for power grid modeling and power flow analysis.</li>
-<li><a href="https://thenextweb.com/news/ai-advice-suppresses-critical-thinking-wrong-answers-study">HN</a> AI advice made people less accurate but more confident, study finds A study finds AI advice suppressed critical thinking, producing more confident but less accurate answers.</li>
-<li><a href="https://rosipov.com/blog/ai-vim-and-the-illusion-of-flow/">HN</a> AI, Vim, and the illusion of flow A developer essay on how AI assistance can simulate but undercut real coding flow.</li>
-<li><a href="https://www.theregister.com/columnists/2026/07/20/airbus-takes-flight-from-aws-what-happens-next-is-critical/5274109">HN</a> Airbus takes flight from AWS A column on Airbus moving off AWS and why the migration's next steps matter.</li>
 </ul></article>]]></content:encoded>
     </item>
   </channel>
