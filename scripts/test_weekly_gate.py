@@ -300,6 +300,7 @@ SCENARIOS = [
 
 
 def main() -> int:
+    compact = "--compact" in sys.argv
     for fn in SCENARIOS:
         try:
             fn()
@@ -309,6 +310,23 @@ def main() -> int:
 
     passed = sum(1 for *_, ok, _ in RESULTS if ok)
     total = len(RESULTS)
+
+    if compact:
+        # Discord-friendly. Terse when green, loud and specific when red, so a
+        # routine ping stays one line but a real failure carries the injection
+        # that caught it. A silent pass would defeat the whole harness.
+        failures = [(s, i, d) for s, i, ok, d in RESULTS if not ok]
+        if not failures:
+            names = ", ".join(s.split()[0] for s, *_ in RESULTS)
+            print(f"🧪 Weekly gate: {passed}/{total} sabotage scenarios passed ({names})")
+        else:
+            print(f"🚨 Weekly gate: {passed}/{total} passed, {len(failures)} FAILED")
+            for scenario, injection, detail in failures:
+                print(f"   ✗ {scenario}")
+                print(f"     injected: {injection}")
+                print(f"     result:   {detail}")
+        return 0 if passed == total else 1
+
     width = max(len(s) for s, *_ in RESULTS)
     print(f"\n{'SCENARIO'.ljust(width)}  RESULT  DETAIL")
     print("-" * (width + 60))
