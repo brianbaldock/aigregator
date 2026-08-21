@@ -10,8 +10,38 @@ STEPS:
 1. Activate venv: `cd ~/projects/AIgregator && source .venv/bin/activate`. The repo is already on clean main; do not switch branches.
 2. Determine the current ISO week: run `date -u +%G-W%V` (e.g. 2026-W30). Call this <slug>. If weekly/<slug>.md ALREADY exists, print "STATUS: SKIP <slug> already exists" and stop.
 3. Read the last 7 days of daily digests: the 7 newest files in digests/*.md by date.
+   Record the EARLIEST and LATEST digest dates you actually read. Call these
+   <window_start> and <window_end>. These are the ONLY dates that may appear in
+   the title. Do NOT compute the title range from the ISO week: the cron fires
+   Thursday, so the real window is Friday..Thursday while the ISO week is
+   Monday..Sunday. Using the ISO range published "Week of Aug 17 – Aug 23" on
+   the W34 roundup whose own content covered Aug 14 – Aug 20.
+3b. Run the provenance gate and READ ITS OUTPUT before writing anything:
+      python scripts/weekly_ledger.py digests/<each of the 7 files>
+   It classifies every story as new / delta / hum / reprint by scanning the
+   whole digests/ archive for the first date each cited URL ever appeared.
+   Binding rules:
+     - reprint  = pre-window only, sporadic. NEVER present as this week's news.
+                  Omit it entirely.
+     - hum      = pre-window but still running most days. At most ONE line in
+                  a "still running" note. Never a top story.
+     - delta    = predates the window but has genuinely new reporting this
+                  week. Allowed in top stories, MAX 2, and you MUST lead with
+                  the new development and label it "ongoing since <first_seen>".
+     - new      = safe to report as this week's news.
+   If the gate says a story is a reprint and your draft calls it new, the draft
+   is wrong. This is what produced the false "Anthropic shipped Claude Opus 5
+   (Aug 16)" claim in W34: Opus 5 had already shipped weeks earlier and had
+   already been covered in the W33 roundup.
+3c. Check continuity against previous roundups. weekly_ledger.py also reports
+   which earlier weekly/*.md already cited each URL. Where a story continues a
+   thread from a prior roundup, say so and LINK the earlier roundup
+   (https://aigregator.news/weekly/<slug>.html). The site should read as one
+   evolving story, not seven disconnected Thursdays.
 4. Synthesize a weekly roundup in Brian's blog voice: plain prose, NO em dashes (use colons/commas/parentheses), no excessive emojis, sober language, NO alcohol metaphors. Structure:
-   - H1 title: "AI Weekly Roundup — Week of <Mon date> – <Sun date>"
+   - H1 title: "AI Weekly Roundup — Week of <window_start> – <window_end>" using the
+     ACTUAL earliest/latest digest dates from step 3, formatted like "Aug 14 – Aug 20".
+     Never the ISO Monday-Sunday range.
    - Subtitle one-liner
    - Dashboard stat block (total stories, sources, top outlet share) computed from the 7 digests
    - Top 5-7 news stories of the week, ranked by source diversity + cross-day mentions
