@@ -33,20 +33,44 @@ STEPS:
    is wrong. This is what produced the false "Anthropic shipped Claude Opus 5
    (Aug 16)" claim in W34: Opus 5 had already shipped weeks earlier and had
    already been covered in the W33 roundup.
-3a. VOICE, NON-NEGOTIABLE: we REPORT the news, we do not opine on it. Attribute
-   every characterization to the outlet that made it ("Bloomberg reported X",
-   "Reuters said Y"), never assert it in our own voice. Source articles carry
-   their own bias and framing; strip it, do not inherit it and do not counter
-   it. Specifically banned:
-     - editorializing about the industry ("the accelerator is pressed", "the
-       guardrails are being argued over", "the capital is the story")
-     - meta-commentary about our own pipeline or how stories reach us. When the
-       provenance gate marks something old, state the earlier date plainly
-       ("first cited Aug 2") and move on. Do NOT explain why it resurfaced or
-       comment on wire behavior. That is our internal diagnostic, not news.
-     - verdict adjectives about how significant something is ("the genuinely
-       new part", "the loudest week", "narrower than it looked")
-   Facts, dates, actors, numbers, attribution. The reader draws the conclusion.
+3a. VOICE: write in Brian's voice. Synthesis is the product. Naming the through
+   line of the week, saying which stories connect, and observing that a pattern
+   ran all seven days is exactly the job, and a roundup that refuses to do it
+   is a list, not a roundup. "The recurring story this week was capital" is
+   good writing: it is our own read of our own aggregated data.
+
+   THE LINE: our synthesis must rest on FACTS WE AGGREGATED, never on OPINION
+   WE INHERITED. Source articles are argued, angled, and sometimes wrong. Take
+   their reported facts; leave their conclusions with them.
+
+   ALLOWED (our voice over our data):
+     - "Almost every digest this week opened on a financing deal." We counted.
+     - "This appeared in all seven digests." We can prove it.
+     - "Nvidia, Stripe, and Google all moved on compute in the same week."
+       Grouping stories is our editorial judgment and it is why the roundup
+       exists.
+
+   NOT ALLOWED (inherited opinion laundered into fact):
+     - Repeating a source's characterization as though it were established.
+       WSJ arguing labs "learned to focus" is WSJ's thesis. If it earns a
+       mention, attribute it: "WSJ argued that...". Do not write "the labs
+       learned to focus."
+     - Adopting a source's loaded framing: "closed the gap", "fell behind",
+       "rattled markets", "sharp criticism". Report the measurable thing (a
+       benchmark score, a download count, who said what) and let it stand.
+     - Predicting, or asserting what something proves about the future.
+     - Taking a side in a contested policy fight. Report what each party did.
+     - Passing along an unattributed claim from a single outlet as fact.
+
+   ALSO NOT ALLOWED: meta-commentary about our own pipeline. When the
+   provenance gate marks an item old, state the earlier date plainly ("first
+   cited Aug 2") and move on. Do not explain why it resurfaced or comment on
+   wire behavior. That is our internal diagnostic, not news.
+
+   Test each sentence: could a reader check this against the cited sources? If
+   it is our count, our grouping, or our observation about the week's data,
+   keep it. If it is somebody else's conclusion wearing our voice, attribute it
+   or cut it.
 3c. Check continuity against previous roundups. weekly_ledger.py also reports
    which earlier weekly/*.md already cited each URL. Where a story continues a
    thread from a prior roundup, say so and LINK the earlier roundup
