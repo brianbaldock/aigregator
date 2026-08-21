@@ -33,6 +33,20 @@ STEPS:
    is wrong. This is what produced the false "Anthropic shipped Claude Opus 5
    (Aug 16)" claim in W34: Opus 5 had already shipped weeks earlier and had
    already been covered in the W33 roundup.
+3a. VOICE, NON-NEGOTIABLE: we REPORT the news, we do not opine on it. Attribute
+   every characterization to the outlet that made it ("Bloomberg reported X",
+   "Reuters said Y"), never assert it in our own voice. Source articles carry
+   their own bias and framing; strip it, do not inherit it and do not counter
+   it. Specifically banned:
+     - editorializing about the industry ("the accelerator is pressed", "the
+       guardrails are being argued over", "the capital is the story")
+     - meta-commentary about our own pipeline or how stories reach us. When the
+       provenance gate marks something old, state the earlier date plainly
+       ("first cited Aug 2") and move on. Do NOT explain why it resurfaced or
+       comment on wire behavior. That is our internal diagnostic, not news.
+     - verdict adjectives about how significant something is ("the genuinely
+       new part", "the loudest week", "narrower than it looked")
+   Facts, dates, actors, numbers, attribution. The reader draws the conclusion.
 3c. Check continuity against previous roundups. weekly_ledger.py also reports
    which earlier weekly/*.md already cited each URL. Where a story continues a
    thread from a prior roundup, say so and LINK the earlier roundup
