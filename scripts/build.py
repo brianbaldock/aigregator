@@ -1186,6 +1186,17 @@ def build_sitemap(entries: list[dict]) -> None:
         encoding="utf-8",
     )
 
+    # IndexNow ownership proof. Generated from the SAME constant the pinger
+    # sends, imported rather than duplicated, so the key and the file it is
+    # verified against structurally cannot drift apart.
+    sys.path.insert(0, str(ROOT / "tools"))
+    try:
+        from indexnow_ping import INDEXNOW_KEY
+    finally:
+        sys.path.pop(0)
+    (DOCS_DIR / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
+    print(f"built robots.txt + IndexNow key file {INDEXNOW_KEY}.txt")
+
 
 def build_404() -> None:
     """Custom 404 in the AIgregator terminal aesthetic."""
