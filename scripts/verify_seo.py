@@ -97,6 +97,67 @@ def check_page(path: Path) -> None:
         if not blocks:
             fail(f"{rel}: article page has no JSON-LD")
 
+    # Shell pages carry the site-level WebSite/Person graph. Without this the
+    # homepage shipped ZERO structured data while the gate reported green,
+    # because the JSON-LD requirement only covered article pages.
+    if rel in ("index.html", "archive.html", "about.html", "weekly/index.html"):
+        if not blocks:
+            fail(f"{rel}: shell page has no JSON-LD (expected the WebSite graph)")
+        types = set()
+        for b in blocks:
+            try:
+                types.add(json.loads(b).get("@type"))
+            except json.JSONDecodeError:
+                pass
+        if "WebSite" not in types:
+            fail(f"{rel}: no WebSite JSON-LD block (got {sorted(t for t in types if t)})")
+
+    # --- og:image dimension declarations must match the real asset ---
+    # "existence is not correctness": a square 1.5MB logo passes a is_file()
+    # check and previews cropped on every platform. Check the decoded image.
+    if ogimg:
+        declared = {}
+        for dim in ("width", "height"):
+            m = re.search(rf'<meta property="og:image:{dim}" content="(\d+)"', html)
+            if not m:
+                fail(f"{rel}: missing og:image:{dim}")
+            else:
+                declared[dim] = int(m.group(1))
+        if not re.search(r'<meta property="og:image:alt" content="[^"]{10,}"', html):
+            fail(f"{rel}: missing or trivial og:image:alt")
+
+        asset = DOCS / ogimg.group(1)[len(SITE) + 1:]
+        if not asset.is_file():
+            fail(f"{rel}: og:image {asset.name} does not exist on disk")
+        else:
+            # An unavailable check is NOT a passing check.
+            try:
+                from PIL import Image
+            except ImportError:
+                fail("Pillow is required to verify og:image dimensions (pip install Pillow)")
+                return
+            with Image.open(asset) as im:
+                real_w, real_h = im.size
+            if declared.get("width") != real_w or declared.get("height") != real_h:
+                fail(
+                    f"{rel}: og:image declares {declared.get('width')}x{declared.get('height')} "
+                    f"but {asset.name} decodes to {real_w}x{real_h}"
+                )
+            ratio = real_w / real_h
+            if not (1.85 <= ratio <= 1.97):
+                fail(
+                    f"{rel}: og:image {asset.name} ratio {ratio:.2f} is outside the "
+                    f"1.91:1 social-card range (will crop or letterbox)"
+                )
+            size = asset.stat().st_size
+            if size > 300_000:
+                fail(f"{rel}: og:image {asset.name} is {size:,}B, over the 300KB budget")
+
+    # twitter:image must equal og:image -- a stale one previews the wrong art.
+    twimg = re.search(r'<meta name="twitter:image" content="([^"]+)"', html)
+    if ogimg and twimg and twimg.group(1) != ogimg.group(1):
+        fail(f"{rel}: twitter:image does not match og:image")
+
 
 def check_sitemap_and_robots() -> None:
     sm = DOCS / "sitemap.xml"
