@@ -27,6 +27,15 @@ if [[ -n "$(git status --porcelain)" ]]; then
   git commit -m "Hermes: daily digest ${DATE}"
   GIT_SSH_COMMAND="ssh -i ${KEY} -o IdentitiesOnly=yes" git push origin main
   echo "published ${DATE}"
+
+  # Tell IndexNow (Bing, Yandex, Seznam, Naver, ...) the new pages exist, so a
+  # daily publication is crawled in minutes instead of days. Google does not
+  # participate -- sitemap lastmod is the only lever there.
+  #
+  # Deliberately AFTER the push (the URLs must be live before an engine fetches
+  # them) and best-effort: `set -e` is active, so a network blip or a 429 must
+  # never fail a publish that already succeeded.
+  "${REPO}/.venv/bin/python" tools/indexnow_ping.py || echo "indexnow: skipped (failed)"
 else
   echo "no changes to publish"
 fi
