@@ -39,6 +39,16 @@ CRED = {
 
 WIRE_DOMAINS = {"reuters.com", "apnews.com", "bloomberg.com", "wsj.com"}
 
+# Layer 5: social platforms are not independent corroboration of a news event.
+# An r/singularity thread ABOUT an openai.com announcement is a reaction to the
+# same single source, not a second outlet that confirmed it. Letting these count
+# toward source_count inflates the cross-source score bonus, renders a bogus ▤×N
+# badge, and cites a subreddit alongside wire services in the news sections.
+SOCIAL_DOMAINS = {
+    "reddit.com", "old.reddit.com", "bsky.app", "news.ycombinator.com",
+    "x.com", "twitter.com", "mastodon.social", "threads.net",
+}
+
 # Stopwords for title normalization (cross-source clustering)
 STOP = set("a an the of to in on at for for with and or but is are was were be been being "
            "this that these those it its as by from how why what who when where "
@@ -635,6 +645,7 @@ def cluster_and_score(items):
                     break
 
     merged = []
+    social_evicted = []
     for c in clusters:
         group = c["items"]
         # dedup by URL within cluster
@@ -675,6 +686,19 @@ def cluster_and_score(items):
             group = dated_members
         canonical["published"] = canon_dt.isoformat() if canon_dt else ""
         canonical["dated"] = canon_dt is not None
+        # Layer 5: when the canonical is a real news source, social members of
+        # the cluster are reactions to it, not corroboration. Strip them so they
+        # cannot inflate source_count / cross_source or be cited as a news
+        # source. They remain independently available in the social tier, where
+        # their own cluster carries them.
+        if canonical["domain"] not in SOCIAL_DOMAINS:
+            non_social = [g for g in group if g["domain"] not in SOCIAL_DOMAINS]
+            if non_social and len(non_social) < len(group):
+                # Re-emit the evicted social posts as standalone items so the
+                # social tier still sees them. Without this they would vanish:
+                # only the canonical of a cluster survives into `merged`.
+                social_evicted.extend(g for g in group if g["domain"] in SOCIAL_DOMAINS)
+                group = non_social
         domains = sorted({g["domain"] for g in group if g["domain"]})
         sources = sorted({g["source"] for g in group})
         # Preserve all member URLs (one per distinct domain, prefer wire) for source citation
@@ -710,6 +734,30 @@ def cluster_and_score(items):
             flags.append("undated")
         canonical["themes"] = []
         merged.append(canonical)
+
+    # Layer 5 tail: evicted social posts re-enter as single-source items so the
+    # social tier keeps its inputs. Skip any whose URL already made it in.
+    have = {m["url"] for m in merged}
+    for g in social_evicted:
+        if g["url"] in have:
+            continue
+        have.add(g["url"])
+        it = dict(g)
+        gdt = pub_dt(it)
+        it["published"] = gdt.isoformat() if gdt else it.get("published", "")
+        it["dated"] = gdt is not None
+        it["source_urls"] = [{"domain": it["domain"], "url": it["url"], "source": it["source"]}]
+        it["source_domains"] = [it["domain"]] if it["domain"] else []
+        it["sources"] = [it["source"]]
+        it["source_count"] = 1
+        s = sentiment(it["title"], it["summary"])
+        it["sentiment"] = s
+        it["sdot"] = s * it["credibility"]
+        it["score"] = it["credibility"] * 2
+        it["flags"] = []
+        it["section"] = "more"
+        it["themes"] = []
+        merged.append(it)
 
     merged.sort(key=lambda x: (-x["score"], -x["credibility"], x["title"]))
     return merged
