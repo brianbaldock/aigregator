@@ -3,23 +3,23 @@
     "slug": "2026-09-18",
     "title": "2026-09-18 :: AI DAILY DIGEST",
     "themes": [
-      "policy",
-      "funding",
-      "agents",
-      "science",
       "safety",
-      "models",
+      "funding",
+      "policy",
       "robotics",
-      "training",
       "opensource",
-      "enterprise"
+      "science",
+      "training",
+      "agents",
+      "hardware",
+      "models"
     ],
     "sources": [
-      "ft.com",
-      "theguardian.com",
       "bloomberg.com",
+      "theguardian.com",
       "reddit.com",
-      "arxiv.org"
+      "arxiv.org",
+      "ft.com"
     ],
     "diversity_warn": false,
     "read_min": 14
