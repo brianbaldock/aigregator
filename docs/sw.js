@@ -1,5 +1,5 @@
 // AIgregator service worker — minimal cache-first for assets, network-first for HTML
-const CACHE = "aigregator-176c9aefef";
+const CACHE = "aigregator-02dc037a3e";
 const ASSETS = [
   "./",
   "./index.html",
