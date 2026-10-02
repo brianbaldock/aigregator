@@ -799,7 +799,8 @@ def validate_bluesky_urls(md_text: str, slug: str = "") -> list[str]:
 BOT_WALLED_DOMAINS = {
     "reddit.com", "old.reddit.com", "www.reddit.com",
     "x.com", "twitter.com", "www.twitter.com",
-    "ft.com", "www.ft.com",
+    "ft.com", "www.ft.com", "ig.ft.com",
+    "apnews.com", "www.apnews.com",
     "wsj.com", "www.wsj.com", "deloitte.wsj.com",
     "nytimes.com", "www.nytimes.com",
     "bloomberg.com", "www.bloomberg.com",
