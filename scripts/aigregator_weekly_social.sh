@@ -35,7 +35,7 @@ chmod 700 "$WORK_DIR" "$WORKSPACE"
   --worker-arg=-p \
   --worker-arg="Read $BRIEF and execute it exactly. Prepare only the local artifacts specified there; do not invoke SimplePost, Buffer, or social distribution." \
   --worker-arg=--model \
-  --worker-arg=gpt-5.6-terra \
+  --worker-arg=claude-opus-4.8 \
   --worker-arg=--reasoning-effort \
   --worker-arg=medium \
   --worker-arg=--max-ai-credits \
