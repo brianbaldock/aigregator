@@ -14,7 +14,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 HELPER = REPO / "scripts" / "simplepost_weekly_handoff.py"
-SIMPLEPOST = Path("/home/brian/projects/simplepost")
+SIMPLEPOST = Path(os.environ.get("AIG_SIMPLEPOST_TEST_ROOT", str(Path.home() / "projects" / "simplepost"))).expanduser()
 WRAPPER = REPO / "scripts" / "aigregator_weekly_social.sh"
 
 
@@ -30,7 +30,8 @@ class WeeklyHandoffTests(unittest.TestCase):
         self.work = self.base / "work"
         self.work.mkdir()
         self.workspace = self.base / "workspace"
-        self.producer_cwd = SIMPLEPOST
+        self.producer_cwd = self.base / "producer"
+        self.producer_cwd.mkdir()
         self.source = self.base / "weekly"
         self.source.mkdir()
         self.review = self.base / "review"
@@ -74,6 +75,14 @@ for platform, text in {
     def write_source(self, slug="2026-W39", content="weekly source"):
         (self.source / (slug + ".md")).write_text(content, encoding="utf-8")
 
+    def use_simplepost(self):
+        # Only real producer integration needs the separate checkout.
+        if not SIMPLEPOST.is_dir():
+            if SIMPLEPOST.exists() or "AIG_SIMPLEPOST_TEST_ROOT" in os.environ:
+                self.fail("AIG_SIMPLEPOST_TEST_ROOT is not a usable SimplePost directory")
+            self.skipTest("requires separate SimplePost checkout; set AIG_SIMPLEPOST_TEST_ROOT")
+        self.producer_cwd = SIMPLEPOST
+
     def invoke(self, *extra):
         return subprocess.run(
             [
@@ -88,6 +97,7 @@ for platform, text in {
         )
 
     def test_imports_exact_pdf_title_copy_and_reports_no_jobs(self):
+        self.use_simplepost()
         result = self.invoke()
         self.assertEqual(result.returncode, 0, result.stderr)
         report = json.loads(result.stdout)
@@ -107,6 +117,7 @@ for platform, text in {
         self.assertNotIn("weekly-review", wrapper)
 
     def test_two_editions_share_workspace_without_packet_conflict(self):
+        self.use_simplepost()
         first = self.invoke()
         self.assertEqual(first.returncode, 0, first.stderr)
         self.write_handoff(slug="2026-W40", url="https://aigregator.news/weekly/2026-W40.html")
@@ -118,6 +129,7 @@ for platform, text in {
         self.assertTrue((self.workspace / "2026-W40.json").exists())
 
     def test_existing_approved_packet_is_held_before_worker_runs(self):
+        self.use_simplepost()
         first = self.invoke()
         self.assertEqual(first.returncode, 0, first.stderr)
         with sqlite3.connect(self.review / "state.sqlite3") as db:
@@ -128,6 +140,7 @@ for platform, text in {
         self.assertIn("manual reconciliation", result.stderr)
 
     def test_copy_readback_preserves_crlf_bytes(self):
+        self.use_simplepost()
         self.worker.write_text(
             """\
 import os
@@ -148,6 +161,7 @@ url = os.environ["AIG_WEEKLY_URL"]
         self.assertTrue(packet["posts"]["bluesky"].endswith("\r\n"))
 
     def test_tampered_stored_pdf_asset_fails_byte_readback(self):
+        self.use_simplepost()
         result = self.invoke()
         self.assertEqual(result.returncode, 0, result.stderr)
         with sqlite3.connect(self.review / "state.sqlite3") as db:
@@ -229,6 +243,7 @@ url = os.environ["AIG_WEEKLY_URL"]
         self.assertIn("worker exited 7", result.stderr)
 
     def test_replay_is_idempotent_and_skips_worker_when_artifacts_complete(self):
+        self.use_simplepost()
         first = self.invoke()
         self.assertEqual(first.returncode, 0, first.stderr)
         self.worker.write_text("raise SystemExit(99)\n", encoding="utf-8")
@@ -237,6 +252,7 @@ url = os.environ["AIG_WEEKLY_URL"]
         self.assertFalse(json.loads(second.stdout)["imported"])
 
     def test_rejects_legacy_weekly_edition_after_candidate_is_prepared(self):
+        self.use_simplepost()
         self.work.mkdir(exist_ok=True)
         legacy = self.base / "legacy"
         legacy.mkdir()
