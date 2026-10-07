@@ -20,8 +20,9 @@ Usage:
 from __future__ import annotations
 import argparse, json, os, re, sys, glob
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from market_rules import filter_markets
 
 # Per-section limits — controls how many items appear in each block of the digest
 SECTION_LIMITS = {
@@ -72,14 +73,14 @@ def sparkline_char(v: float) -> str:
     return "█"
 
 
-def read_prior_sentiments(digests_dir: Path, exclude_date: str, lookback: int = 7) -> list[float]:
+def read_prior_sentiments(digests_dir: Path, exclude_date: str, lookback: int = 6) -> list[float]:
     """Parse prior digests' dashboard lines for '+0.X sentiment' values.
     Returns at most `lookback` values, oldest first."""
     pattern = re.compile(r"([+-]?\d+\.\d+)\s*sentiment", re.I)
+    earliest = (datetime.fromisoformat(exclude_date) - timedelta(days=lookback)).date().isoformat()
     paths = sorted(p for p in digests_dir.glob("*.md")
-                   if re.match(r"\d{4}-\d{2}-\d{2}\.md", p.name)
-                   and p.stem != exclude_date)
-    paths = paths[-lookback:]
+                   if re.fullmatch(r"\d{4}-\d{2}-\d{2}\.md", p.name)
+                   and earliest <= p.stem < exclude_date)
     out = []
     for p in paths:
         try:
@@ -294,6 +295,8 @@ def render_news_item(it: dict, overlay: dict, *, in_tldr: bool = False) -> str:
         line = f"{score} {flag_emoji} {dot} **{title}.** {summary} {cit}"
         return re.sub(r" +", " ", line)
     body = f"- {score} {flag_emoji} {dot} {src_tag}{theme_str}**{title}.** {summary} Sources: {render_news_sources(it)}"
+    if it.get("discovery_url"):
+        body += f" · Discovered via [{it['discovery_source']}]({it['discovery_url']})"
     return re.sub(r" +", " ", body)
 
 
@@ -313,7 +316,7 @@ def render_news_sources(it: dict) -> str:
     """Body item sources line — cite all cluster URLs (one per distinct domain)."""
     src_urls = it.get("source_urls") or [{"url": it["url"], "source": "", "domain": ""}]
     parts = []
-    for s in src_urls[:5]:  # cap at 5
+    for s in src_urls:  # every counted source remains inspectable in the body
         url = s["url"]
         label = domain_short(url)
         parts.append(f"[{label}]({url})")
@@ -334,7 +337,17 @@ def render_research_item(it: dict, overlay: dict) -> str:
     themes = overlay.get("themes") or []
     theme_str = f"🏷️ {', '.join(themes)} " if themes else ""
     label = arxiv_label(it["url"])
-    return f"- {score} {dot} {theme_str}**{title}.** {summary} Sources: [{label}]({it['url']})"
+    return f"- {score} {dot} {theme_str}**{title}.** {summary} Sources: {render_news_sources(it)}"
+
+
+def social_group(item):
+    source = item["source"]
+    if source.startswith("r/"):
+        major = {"LocalLLaMA", "MachineLearning", "OpenAI", "ClaudeAI", "singularity", "ArtificialInteligence"}
+        return source if source[2:] in major else "r/other"
+    if source.startswith("bsky:"):
+        return "Bluesky"
+    return "Hacker News" if source == "HN" else "Other"
 
 
 def render_discourse(items_in_section: list[dict], curation_items: dict) -> str:
@@ -343,20 +356,7 @@ def render_discourse(items_in_section: list[dict], curation_items: dict) -> str:
     """
     by_group: dict[str, list[dict]] = defaultdict(list)
     for it in items_in_section:
-        src = it["source"]
-        if src.startswith("r/"):
-            sub = src[2:]  # strip r/
-            # Group major local-LLM/AI subs separately, lump others
-            if sub in ("LocalLLaMA", "MachineLearning", "OpenAI", "ClaudeAI", "singularity", "ArtificialInteligence"):
-                group_key = src
-            else:
-                group_key = "r/other"
-        elif src.startswith("bsky:"):
-            group_key = "Bluesky"
-        elif src == "HN":
-            group_key = "Hacker News"
-        else:
-            group_key = "Other"
+        group_key = social_group(it)
         by_group[group_key].append(it)
 
     out = []
@@ -372,7 +372,7 @@ def render_discourse(items_in_section: list[dict], curation_items: dict) -> str:
         members = by_group[group_key]
         if not members: continue
         out.append(f"\n### {group_key}")
-        for it in members[:5]:  # cap each subgroup at 5
+        for it in members:  # caps already applied to the final selection
             overlay = curation_items.get(it["url"], {})
             title = (overlay.get("title") or it["title"]).replace("—", " - ").strip()
             blurb = (overlay.get("summary") or "").replace("—", " - ").strip()
@@ -439,7 +439,7 @@ def dashboard_line(news_items: list[dict], all_themes_used: list[str], top_menti
     ]
     # 7D sparkline (needs ≥5 priors)
     full_series = prior_sentiments + [today_mean]
-    if len(prior_sentiments) >= 5:
+    if len(prior_sentiments) == 6:
         spark = "".join(sparkline_char(v) for v in full_series[-7:])
         lines.append(f"> **📉 7D SENTIMENT:** {spark} (oldest → today)  ")
     return lines
@@ -469,6 +469,70 @@ def extract_top_mention(items: list[dict], overlays: dict) -> tuple[str, int]:
     return cnt.most_common(1)[0]
 
 
+def select_items(items, curation):
+    """Choose the body once; TLDR picks reserve slots rather than vanishing."""
+    by_section = defaultdict(list)
+    excluded = curation.get("exclusions", {})
+    for item in items:
+        if item["url"] in excluded:
+            continue
+        section = curation["items"][item["url"]]["section"]
+        by_section[section].append(item)
+    tldr = set(curation["tldr_order"])
+    for section, pool in by_section.items():
+        ranked = sorted(pool, key=lambda item: -item["score"])
+        if section == "discourse":
+            groups = Counter()
+            kept = []
+            for item in ranked:
+                group = social_group(item)
+                if groups[group] < 5:
+                    kept.append(item)
+                    groups[group] += 1
+            by_section[section] = kept
+            continue
+        reserved = [item for item in ranked if item["url"] in tldr]
+        limit = max(SECTION_LIMITS.get(section, len(ranked)), len(reserved))
+        rest = [item for item in ranked if item["url"] not in tldr]
+        keep = {item["url"] for item in reserved + rest[:limit - len(reserved)]}
+        by_section[section] = [item for item in ranked if item["url"] in keep]
+    return dict(by_section)
+
+
+def render_market_section(markets, has_omissions=False):
+    lines = []
+    if has_omissions:
+        lines.append('_Market data unavailable or invalid/expired records omitted; counts cover displayed markets only._')
+    if not markets:
+        return lines + ['_(quiet today)_']
+    lines.append(f'_{len(markets)} markets · AI/policy_')
+    for market in markets:
+        delta, volume = market['change_24h_pp'], market['volume_usd']
+        arrow = '▲' if delta > 0 else '▼' if delta < 0 else '→'
+        volume_text = (f'${volume/1_000_000:.1f}M' if volume >= 1_000_000
+                       else f'${volume/1_000:.0f}K' if volume >= 1_000 else f'${volume:.0f}')
+        lines.append(f"- **{market['question']}** - {market['yes_pct']:g}% Yes "
+                     f"({arrow}{abs(delta)}pp 24h, {volume_text} vol) · [Polymarket]({market['url']})")
+    return lines
+
+
+def source_health_note(manifest):
+    if manifest is None:
+        return ''
+    if not isinstance(manifest, dict):
+        raise ValueError('source manifest must be an object')
+    labels = {'arxiv': 'arXiv', 'bsky': 'Bluesky', 'hn': 'Hacker News', 'kagi': 'Kagi',
+              'opensource': 'Open-source feeds', 'polymarket': 'Polymarket', 'reddit': 'Reddit', 'rss': 'RSS'}
+    failed = []
+    for name, entry in sorted(manifest.items()):
+        if (name not in labels or not isinstance(entry, dict)
+                or entry.get('status') not in {'OK', 'EMPTY', 'FAIL', 'TIMEOUT', 'GLOBAL_DEADLINE'}):
+            raise ValueError('invalid source status in manifest')
+        if entry['status'] not in {'OK', 'EMPTY'}:
+            failed.append(labels[name])
+    return f"_Collection gaps: {', '.join(failed)} unavailable; these sources are omitted._" if failed else ''
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--items", default=None,
@@ -492,8 +556,24 @@ def main():
         if args.curation is None:
             args.curation = os.path.join(rd, "curation.json")
 
-    items = json.load(open(args.items))
-    curation = json.load(open(args.curation))
+    with open(args.items, encoding='utf-8') as source:
+        items = json.load(source)
+    with open(args.curation, encoding='utf-8') as source:
+        curation = json.load(source)
+    manifest_path = Path(args.items).parent / 'gather_manifest.json'
+    source_manifest = None
+    if manifest_path.exists():
+        with manifest_path.open(encoding='utf-8') as source:
+            source_manifest = json.load(source)
+    coverage_note = source_health_note(source_manifest)
+    from curate import validate
+    curation, warnings, errors = validate(curation, items)
+    for warning in warnings:
+        print(f"[write_digest] warn: {warning}", file=sys.stderr)
+    if errors:
+        for error in errors:
+            print(f"[write_digest] FAIL: {error}", file=sys.stderr)
+        raise SystemExit(3)
     # polymarket.json lives in the same run dir as digest_items.json unless
     # overridden. Derive it from --items so per-run gather dirs are honored.
     poly_path = Path(args.polymarket) if args.polymarket else (
@@ -503,50 +583,15 @@ def main():
     digests_dir = Path(args.digests_dir)
     out_path = Path(args.out) if args.out else (digests_dir / f"{args.date}.md")
 
-    # Group by section using curation overlay; fall back to tier for items
-    # that the curator didn't cover (those get put in their tier's default bucket).
-    by_section: dict[str, list[dict]] = defaultdict(list)
-    for it in items:
-        tier = it.get("tier", "news")
-        overlay = curation_items.get(it["url"], {})
-        sec = overlay.get("section")
-        if not sec:
-            # No curation overlay — bucket by tier
-            if tier == "social": sec = "discourse"
-            elif tier == "research": sec = "research"
-            elif tier == "opensource": sec = "opensource"
-            else: continue   # skip uncovered news items (likely hub-shaped)
-        by_section[sec].append(it)
-
-    # Apply per-section limits, sorted by score desc. Log drops for observability.
-    for sec in list(by_section.keys()):
-        by_section[sec].sort(key=lambda x: -x.get("score", 0))
-        considered = len(by_section[sec])
-        limit = SECTION_LIMITS.get(sec, 100)  # discourse + research keep all
-        if sec in SECTION_LIMITS:
-            by_section[sec] = by_section[sec][:limit]
-        emitted = len(by_section[sec])
-        dropped = considered - emitted
-        if dropped > 0:
-            # Surface the dropped titles so we can spot when caps are too tight.
-            all_for_sec = sorted([i for i in items
-                                  if curation_items.get(i["url"], {}).get("section") == sec],
-                                 key=lambda x: -x.get("score", 0))
-            cut = all_for_sec[limit:]
-            cut_titles = [f"  - {it.get('score',0)} {it.get('title','')[:70]}" for it in cut[:5]]
-            print(f"[write_digest] section {sec}: considered {considered}, emitted {emitted}, "
-                  f"dropped {dropped} (top dropped):", file=sys.stderr)
-            for line in cut_titles:
-                print(line, file=sys.stderr)
-        else:
-            print(f"[write_digest] section {sec}: considered {considered}, emitted {emitted}",
-                  file=sys.stderr)
+    by_section = select_items(items, curation)
+    for section, picked in by_section.items():
+        considered = sum(1 for overlay in curation_items.values() if overlay["section"] == section)
+        print(f"[write_digest] section {section}: considered {considered}, emitted {len(picked)}", file=sys.stderr)
 
     # News-tier items only (for dashboard math)
     news_section_items = []
     for sec in SECTION_ORDER:
-        if sec in ("research", "opensource"): continue
-        news_section_items.extend(by_section.get(sec, []))
+        news_section_items.extend(item for item in by_section.get(sec, []) if item["tier"] == "news")
 
     # Dashboard math
     total_w = sum(it.get("credibility", 3) for it in news_section_items) or 1
@@ -576,23 +621,19 @@ def main():
     # ---- Render ----
     lines = []
     lines.append(f"# {args.date} :: AI DAILY DIGEST")
-    # Detect polymarket data (read once here; reused below for the section)
-    poly_items = []
-    if poly_path.exists():
-        try:
-            poly_items = json.load(open(poly_path))
-            if isinstance(poly_items, dict) and "markets" in poly_items:
-                poly_items = poly_items["markets"]
-        except Exception as e:
-            print(f"[write_digest] polymarket.json parse error: {e}", file=sys.stderr)
-            poly_items = []
-    # Find top mover for the dashboard market-pulse line
-    top_mover = None
-    if poly_items:
-        try:
-            top_mover = max(poly_items, key=lambda m: abs(float(m.get("change_24h_pp") or 0)))
-        except Exception:
-            top_mover = None
+    # Optional markets are validated ONCE before both dashboard and body.
+    clock = datetime.now(timezone.utc)
+    if args.date != clock.date().isoformat():
+        clock = datetime.fromisoformat(args.date).replace(tzinfo=timezone.utc)
+    poly_items, market_issues = [], []
+    try:
+        with poly_path.open() as source:
+            poly_items, market_issues = filter_markets(json.load(source), clock)
+    except (OSError, ValueError):
+        market_issues = ["market data unavailable or malformed"]
+    for issue in market_issues:
+        print(f"[write_digest] omitted {issue}", file=sys.stderr)
+    top_mover = max(poly_items, key=lambda m: abs(m["change_24h_pp"]), default=None)
 
     lines.append("")
     subtitle = curation.get("subtitle", "Today in AI.").replace("—", " - ")
@@ -602,6 +643,8 @@ def main():
                                 cross_count, prior_sentiments, today_mean,
                                 has_polymarket=bool(poly_items),
                                 top_mover=top_mover, n_markets=len(poly_items)))
+    if coverage_note:
+        lines.append(coverage_note)
     lines.append("")
 
     # TL;DR
@@ -625,46 +668,9 @@ def main():
                 lines.append(render_news_item(it, overlay))
         lines.append("")
 
-    # Prediction Markets — read polymarket.json (derived above) if present
+    # Render only the normalized, retained market selection.
     lines.append("## 📈 Prediction Markets")
-    poly_items = []
-    if poly_path.exists():
-        try:
-            poly_items = json.load(open(poly_path))
-            # Expected shape: list of {question, yes_pct, change_24h_pp, volume_usd, url}
-            # Tolerate Polymarket Gamma API shape too: {markets: [...]} or raw [{...}]
-            if isinstance(poly_items, dict) and "markets" in poly_items:
-                poly_items = poly_items["markets"]
-        except Exception as e:
-            print(f"[write_digest] polymarket.json parse error: {e}", file=sys.stderr)
-            poly_items = []
-    if poly_items:
-        lines.append(f"_{len(poly_items)} markets · AI/policy_")
-        for m in poly_items[:5]:
-            q = m.get("question") or m.get("title") or "(unknown)"
-            yes = m.get("yes_pct") or m.get("yes_price_pct") or m.get("price_yes")
-            chg = m.get("change_24h_pp") or m.get("delta_24h") or 0
-            vol = m.get("volume_usd") or m.get("volume") or 0
-            url = m.get("url") or m.get("permalink") or ""
-            arrow = "▲" if chg > 0 else ("▼" if chg < 0 else "→")
-            chg_abs = abs(chg) if isinstance(chg, (int, float)) else chg
-            try:
-                yes_str = f"{float(yes)*100:.0f}%" if yes and float(yes) < 1 else f"{yes}%"
-            except Exception:
-                yes_str = f"{yes}%"
-            try:
-                vol_n = float(vol)
-                if vol_n >= 1_000_000:
-                    vol_str = f"${vol_n/1_000_000:.1f}M"
-                elif vol_n >= 1_000:
-                    vol_str = f"${vol_n/1_000:.0f}K"
-                else:
-                    vol_str = f"${vol_n:.0f}"
-            except Exception:
-                vol_str = f"${vol}"
-            lines.append(f"- **{q}** - {yes_str} Yes ({arrow}{chg_abs}pp 24h, {vol_str} vol) · [Polymarket]({url})")
-    else:
-        lines.append("_(quiet today)_")
+    lines.extend(render_market_section(poly_items, bool(market_issues)))
     lines.append("")
 
     # Discourse
@@ -676,8 +682,16 @@ def main():
         lines.append("_(quiet today)_")
     lines.append("")
 
+    markdown = "\n".join(lines)
+    from validate_digest import validate_artifact
+    report = validate_artifact(items, curation, poly_items, markdown, args.date, now=clock,
+                               prior_sentiments=prior_sentiments, source_manifest=source_manifest, market_issues=market_issues)
+    if report["errors"]:
+        for error in report["errors"]:
+            print(f"[write_digest] FAIL: {error}", file=sys.stderr)
+        raise SystemExit(4)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text("\n".join(lines))
+    out_path.write_text(markdown)
     n_chars = out_path.stat().st_size
     print(f"[write_digest] wrote {out_path} ({n_chars} chars, {len(news_section_items)} news + {len(by_section.get('research', []))} research + {len(social_items)} social)")
 

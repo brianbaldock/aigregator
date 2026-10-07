@@ -1,41 +1,72 @@
 #!/usr/bin/env bash
-# AIgregator publisher: build site, commit today's digest, push to GitHub Pages.
-# Called by the cron job after it writes digests/YYYY-MM-DD.md
+# Offline-gated publisher with post-push publication verification.
 set -euo pipefail
 
-REPO="${HOME}/projects/AIgregator"
-KEY="${HOME}/.ssh/ai_daily_digest_deploy"
-DATE="${1:-$(date -u +%Y-%m-%d)}"
+REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PYTHON="${AIG_PYTHON:-$REPO/.venv/bin/python}"
+DATE="$(date -u +%Y-%m-%d)"
+RUN_DIR=""
+DRY_RUN=0
+HISTORICAL=0
 
+while (($#)); do
+  case "$1" in
+    --dry-run) DRY_RUN=1 ;;
+    --historical-replay) HISTORICAL=1 ;;
+    --run-dir) RUN_DIR="$2"; shift ;;
+    --run-dir=*) RUN_DIR="${1#*=}" ;;
+    --*) echo "unknown option: $1" >&2; exit 2 ;;
+    *) DATE="$1" ;;
+  esac
+  shift
+done
+if ((HISTORICAL && !DRY_RUN)); then
+  echo "--historical-replay is allowed only with --dry-run" >&2
+  exit 2
+fi
 cd "$REPO"
+[[ "$("$PYTHON" -c 'import sys; print(sys.executable)' 2>/dev/null)" ]] || {
+  echo "Python interpreter is unavailable: $PYTHON" >&2; exit 1; }
+if ((!DRY_RUN)); then
+  [[ "$(git branch --show-current)" == "main" ]] || { echo "publication requires main" >&2; exit 1; }
+fi
 
-# Set local git identity (so commits don't depend on global config)
-git config user.name "brianbaldock"
-git config user.email "brian@aigregator.local"
+if ((!DRY_RUN)); then
+  # A publisher must not absorb unrelated work. The named digest is the sole
+  # permitted pre-existing change; docs are generated only after validation.
+  while IFS= read -r changed; do
+    path="${changed:3}"
+    [[ "$path" == "digests/$DATE.md" ]] || { echo "unrelated source change: $path" >&2; exit 1; }
+  done < <(git status --porcelain)
+fi
 
-# Build
-AIGREGATOR_STRICT_URLS=1 "${REPO}/.venv/bin/python" scripts/build.py
+gate=( "$PYTHON" "$REPO/scripts/validate_digest.py" --date "$DATE" )
+[[ -n "$RUN_DIR" ]] && gate+=(--run-dir "$RUN_DIR")
+((HISTORICAL)) && gate+=(--historical-replay)
+"${gate[@]}"
 
-# Pagefind search index — best-effort, never fails the publish
+AIGREGATOR_STRICT_URLS=1 "$PYTHON" "$REPO/scripts/build.py"
+"${gate[@]}" --docs "$REPO/docs"
+"$PYTHON" "$REPO/scripts/verify_seo.py"
+
+if ((DRY_RUN)); then
+  echo "dry run passed; no Git writes, indexing pings, or remote state changes"
+  exit 0
+fi
+
+# Pagefind is best effort but pinned to the reviewed release. It must run only
+# after all publication gates have accepted the generated content.
 if command -v npx >/dev/null 2>&1; then
-  npx --yes pagefind --site docs --output-subdir _pagefind 2>&1 | tail -5 || echo "pagefind: skipped (failed)"
+  npx --yes pagefind@1.5.2 --site docs --output-subdir _pagefind 2>&1 | tail -5 || echo "pagefind: skipped (failed)"
 fi
 
-# Commit + push if there are changes
-if [[ -n "$(git status --porcelain)" ]]; then
-  git add -A
-  git commit -m "Hermes: daily digest ${DATE}"
-  GIT_SSH_COMMAND="ssh -i ${KEY} -o IdentitiesOnly=yes" git push origin main
-  echo "published ${DATE}"
-
-  # Tell IndexNow (Bing, Yandex, Seznam, Naver, ...) the new pages exist, so a
-  # daily publication is crawled in minutes instead of days. Google does not
-  # participate -- sitemap lastmod is the only lever there.
-  #
-  # Deliberately AFTER the push (the URLs must be live before an engine fetches
-  # them) and best-effort: `set -e` is active, so a network blip or a 429 must
-  # never fail a publish that already succeeded.
-  "${REPO}/.venv/bin/python" tools/indexnow_ping.py || echo "indexnow: skipped (failed)"
+git add -- "digests/$DATE.md" docs
+if git diff --cached --quiet; then
+  echo "no new publication changes; retrying push and verification"
 else
-  echo "no changes to publish"
+  git -c user.name="brianbaldock" -c user.email="brian@aigregator.local" commit -m "Hermes: daily digest ${DATE}"
 fi
+GIT_SSH_COMMAND="ssh -i ${HOME}/.ssh/ai_daily_digest_deploy -o IdentitiesOnly=yes" git push origin main
+"$PYTHON" "$REPO/scripts/verify_publication.py" --date "$DATE" --docs "$REPO/docs"
+"$PYTHON" "$REPO/tools/indexnow_ping.py" || echo "indexnow: skipped (failed)"
+echo "published ${DATE}"

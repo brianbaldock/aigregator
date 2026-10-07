@@ -1,0 +1,35 @@
+name: Validation
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/validation.yml'
+      - 'requirements-validation.txt'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/validation.yml'
+      - 'requirements-validation.txt'
+
+permissions:
+  contents: read
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements-validation.txt
+      - run: |
+          python -m unittest discover -s tests -v
+          python scripts/test_recency.py
+          python scripts/test_social_corroboration.py
+          python scripts/test_weekly_gate.py --compact

@@ -43,8 +43,8 @@ PHASE 3 — CURATE (your editorial judgement — the ONE creative step)
 That prints a self-contained prompt: exact JSON shape, voice rules, controlled vocabulary, section taxonomy, needs_translation handling. To read the input items, run `python scripts/run_dir.py` to get today's run dir path, then read <run dir>/digest_items.json.
 
 Write the curation into the run dir, in SMALL BATCHES (never one giant file — a single ~85KB write can fail mid-stream):
-  a. Write <run dir>/curation_head.json with three keys: subtitle (2-3 sentences, Brian's voice, proper names, NO em dashes, no marketing language), tldr_order (exactly 6 news-tier URLs), tldr_blurbs (one line per tldr url).
-  b. Write per-URL overlays in batches of AT MOST 25 items into <run dir>/curation_items_01.json, _02.json, _03.json, ... Each is a flat {url: {title, summary, themes, section}}. Cover EVERY url in digest_items.json. Build overlay keys from the FULL urls in digest_items.json — never from a truncated/display copy (truncated keys silently drop from coverage). Do NOT exceed 25 items per file.
+  a. Write <run dir>/curation_head.json with subtitle (2-3 factual sentences, Brian's voice, proper names, no em dashes or marketing language), tldr_order (up to 6 distinct news-tier URLs, never padded), tldr_blurbs (one line per chosen URL), and exclusions (exact input URL to specific exclusion reason).
+  b. Write per-URL overlays in batches of AT MOST 25 items into <run dir>/curation_items_01.json, _02.json, _03.json, ... Each is a flat {url: {title, summary, themes, section}}. Account for EVERY URL in digest_items.json with either an overlay or a head exclusion, never both. For tier=projects, follow the explicit ai_relevance review requirement from curate.py --print-prompt; Reddit discovery is not news corroboration. Build overlay keys from the FULL urls in digest_items.json, never from a truncated/display copy (truncated keys silently drop from coverage). Do NOT exceed 25 items per file.
   c. Assemble (auto-resolves the run dir): python scripts/assemble_curation.py
   d. Validate (auto-resolves): python scripts/curate.py --validate
      "OK" -> proceed. "FAIL" with hard errors -> fix the offending batch fragment, re-run assemble, re-validate. stderr warnings are fine; only "FAIL" blocks.
@@ -56,25 +56,23 @@ PHASE 4 — RENDER
 ═══════════════════════════════════════════
   python scripts/write_digest.py
 
-It auto-resolves the run dir, reads digest_items.json + curation.json + polymarket.json from it, and writes ~/projects/AIgregator/digests/<today>.md. Verify the last stderr line says `wrote .../YYYY-MM-DD.md (N chars, X news + Y research + Z social)` and the file is >5KB. Per-section drop-logs are FYI, not failures. If the file is missing or the script errors, print "STATUS: FAIL write_digest <reason>". Do NOT hand-write a digest.
+It auto-resolves the run dir, reads digest_items.json + curation.json + polymarket.json from it, and writes ~/projects/AIgregator/digests/<today>.md. Verify the last stderr line says `wrote .../YYYY-MM-DD.md (N chars, X news + Y research + Z social)` and the final-artifact validator passes. A quiet edition can be short: never pad to satisfy a byte quota. Per-section cap logs are FYI; missing curation decisions are failures. If the file is missing or the script errors, print "STATUS: FAIL write_digest <reason>". Do NOT hand-write a digest.
 
 ═══════════════════════════════════════════
 PHASE 5 — PUBLISH
 ═══════════════════════════════════════════
-  AIGREGATOR_STRICT_URLS=1 python scripts/build.py
   bash scripts/publish.sh
 
-build.py validates all citation URLs (strict). If it FAILS on a dead/blocked citation in an OLD digest or a secondary cluster member: run `python scripts/run_dir.py` to get the run dir, drop that ONE offending citation from <run dir>/digest_items.json and <run dir>/curation.json, re-run Phase 4 (render), then re-run this phase. NEVER blanket-unset STRICT_URLS. publish.sh commits + pushes to main; confirm it prints "published YYYY-MM-DD" (non-zero exit = failure -> print STATUS: FAIL with the error).
+publish.sh runs the offline content/provenance gate, strict build, built-surface comparison and SEO before any Git writes. If it FAILS on a dead/blocked citation in an OLD digest or a secondary cluster member: run `python scripts/run_dir.py` to get the run dir, drop that ONE offending citation from <run dir>/digest_items.json and <run dir>/curation.json, re-run Phase 4 (render), then re-run this phase. NEVER blanket-unset STRICT_URLS. publish.sh commits and pushes only after its gates pass. A push is not proof of live content; Phase 6 must verify the exact current artifact before reporting success. A nonzero exit is a failure, even if an earlier phase wrote a local file.
 
 ═══════════════════════════════════════════
 PHASE 6 — VERIFY + REPORT (one line)
 ═══════════════════════════════════════════
-Confirm the digest is actually live before claiming success. Type today's UTC date (YYYY-MM-DD) as a LITERAL string:
-  sleep 90
-  curl -sL -o /dev/null -w "%{http_code}\n" "https://brianbaldock.github.io/aigregator/digests/<today>.html"
+Confirm all five public surfaces match the validated local build before claiming success. Type today's UTC date (YYYY-MM-DD) as a LITERAL string:
+  python scripts/verify_publication.py --date YYYY-MM-DD --docs docs
 
-That URL 301-redirects to aigregator.news; -L follows it and a healthy publish returns 200 (allow the 90s for Pages to rebuild; if still not 200, wait another 60s and retry ONCE). Then your final one-line report:
-- 200 -> "STATUS: OK published YYYY-MM-DD with N stories https://brianbaldock.github.io/aigregator/digests/YYYY-MM-DD.html"  (fill YYYY-MM-DD and N from the render output)
-- not 200 after the retry -> "STATUS: FAIL published commit but URL not live (HTTP <code>)"
+The verifier compares the homepage, dated digest, RSS, Atom and archive with local bytes, with bounded retries for Pages propagation. HTTP 200 alone is not success. Then your final one-line report:
+- Exit 0 and 5/5 matched -> "STATUS: OK published YYYY-MM-DD with N stories https://aigregator.news/digests/YYYY-MM-DD.html" (fill YYYY-MM-DD and N from the render output)
+- Nonzero exit or fewer than 5/5 matched -> "STATUS: FAIL published artifacts did not match the validated build"
 
 Do NOT write debug/inspect/dump scripts. If a script fails, read its error and either apply the ONE documented recovery (strict-URL single-citation drop) or print STATUS: FAIL. Do not iterate on fetchers — that is gather.py's job.

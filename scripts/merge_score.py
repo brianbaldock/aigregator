@@ -20,6 +20,8 @@ import argparse, glob, json, os, re, sys
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
+from project_discovery import load_projects, PROJECT_SUB
+import scoring_policy as scoring
 
 # -------- credibility map (domain → 1..5) --------
 CRED = {
@@ -426,6 +428,8 @@ def load_reddit(indir: str):
     out = []
     for r in json.load(open(fp)):
         sub = r.get("subreddit") or r.get("sub","")
+        if sub == PROJECT_SUB:
+            continue  # repository discovery is not a second news source or social duplicate
         out.append(_item(f"r/{sub}", r.get("credibility", 2),
                          r.get("title"), r.get("url",""),
                          r.get("summary",""), r.get("published")))
@@ -517,7 +521,7 @@ def load_opensource(indir: str):
         it["tier"] = "opensource"
         it["os_kind"] = os_kind  # "watchlist" | "trending" | "hf" — drives diversity pick
         # Score by credibility so the per-section cap keeps the strongest signals.
-        it["score"] = cred * 2
+        it["score"] = scoring.score_item(it)
         return it
 
     for r in d.get("github_trending", []) if isinstance(d, dict) else []:
@@ -719,7 +723,7 @@ def cluster_and_score(items):
         canonical["sdot"] = s * canonical["credibility"]
         # base score: credibility + cross-source bonus + freshness placeholder
         cross = max(0, len(domains) - 1)
-        canonical["score"] = canonical["credibility"] * 2 + cross * 3 + (1 if canonical["via_kagi"] and canonical["domain"] in WIRE_DOMAINS else 0)
+        canonical["score"] = scoring.score_item(canonical)
         flags = []
         if len(domains) >= 2: flags.append("cross_source")
         if canonical["domain"] in WIRE_DOMAINS: flags.append("wire")
@@ -730,8 +734,8 @@ def cluster_and_score(items):
         # no evidence it's news rather than an evergreen hub/reference page.
         if not canonical.get("dated") and len(domains) < 2:
             canonical["section"] = "more"
-            canonical["score"] = max(0, canonical["score"] - 3)
             flags.append("undated")
+            canonical["score"] = scoring.score_item(canonical)
         canonical["themes"] = []
         merged.append(canonical)
 
@@ -753,7 +757,7 @@ def cluster_and_score(items):
         s = sentiment(it["title"], it["summary"])
         it["sentiment"] = s
         it["sdot"] = s * it["credibility"]
-        it["score"] = it["credibility"] * 2
+        it["score"] = scoring.score_item(it)
         it["flags"] = []
         it["section"] = "more"
         it["themes"] = []
@@ -796,6 +800,7 @@ def main():
     # news cluster (token overlap) and silently dropped. They carry tier and
     # section pre-set; we splice them in after news clustering below.
     opensource = load_opensource(args.indir)
+    projects = load_projects(args.indir)
 
     # drop garbage: no title, no url, or obvious archive
     items = [i for i in items if i["title"] and i["url"] and i["domain"] not in ("web.archive.org",)]
@@ -879,7 +884,12 @@ def main():
 
     # Final order: news first (already sorted by score), then research, then
     # open-source, then social.
-    merged = news_pick + research_pick + opensource_pick + social_pick
+    merged = []
+    used_urls = set()
+    for item in news_pick + research_pick + projects + opensource_pick + social_pick:
+        if item["url"] not in used_urls:
+            merged.append(item)
+            used_urls.add(item["url"])
 
     # stats
     by_dom = defaultdict(int)

@@ -40,7 +40,8 @@ def assemble(indir: str) -> tuple[dict, list[str]]:
         print(f"[assemble] FAIL: head file not found: {head_path}", file=sys.stderr)
         sys.exit(2)
     try:
-        head = json.load(open(head_path))
+        with open(head_path) as stream:
+            head = json.load(stream)
     except json.JSONDecodeError as e:
         print(f"[assemble] FAIL: head file is not valid JSON: {e}", file=sys.stderr)
         sys.exit(2)
@@ -62,7 +63,8 @@ def assemble(indir: str) -> tuple[dict, list[str]]:
     items: dict = {}
     for fp in frag_paths:
         try:
-            frag = json.load(open(fp))
+            with open(fp) as stream:
+                frag = json.load(stream)
         except json.JSONDecodeError as e:
             print(f"[assemble] FAIL: fragment {os.path.basename(fp)} is not valid JSON: {e}",
                   file=sys.stderr)
@@ -83,6 +85,7 @@ def assemble(indir: str) -> tuple[dict, list[str]]:
         "subtitle": subtitle,
         "tldr_order": tldr_order,
         "tldr_blurbs": tldr_blurbs,
+        "exclusions": head.get("exclusions", {}),
         "items": items,
     }
     return curation, warnings

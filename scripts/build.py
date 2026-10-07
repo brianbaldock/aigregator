@@ -23,6 +23,8 @@ except ImportError:
     print("ERROR: pip install markdown", file=sys.stderr)
     sys.exit(1)
 
+import scoring_policy as scoring
+
 ROOT = Path(__file__).resolve().parent.parent
 DIGESTS_DIR = ROOT / "digests"
 WEEKLY_DIR = ROOT / "weekly"
@@ -1278,24 +1280,23 @@ Generated each morning at 0700 Pacific by an autonomous Hermes agent.</p>
 <h3>HOW IT WORKS</h3>
 <ul>
 <li>Agent scours primary lab blogs, reputable press, social signal, and arXiv every morning.</li>
-<li>Each item is scored 1 through 8 based on source credibility and cross-source corroboration.</li>
-<li>Higher score equals more independent reputable sources covering the same story.</li>
-<li>Social-only claims (X, Reddit) are isolated to the Discourse section and never used as the sole source for a hard claim.</li>
+<li>Scores are a ranking heuristic based on assigned source credibility and retained source domains, not a probability that a claim is true.</li>
+<li>Social discussion stays in Discourse. Repository links discovered on r/BestGitHubRepos can appear in Cool Projects after an explicit AI-fit review, with the discussion attributed separately.</li>
+<li>Reddit recommendations do not increase news corroboration counts. Multiple domains alone do not prove independent confirmation or that a summary is accurate.</li>
 </ul>
 
 <h3>SCORING KEY</h3>
 <ul>
-<li><span class="score">01</span> to <span class="score">02</span> : social signal only</li>
-<li><span class="score">03</span> : aggregator or single-source press</li>
-<li><span class="score">04</span> : tier-2 outlet (Ars Technica, The Verge, Wired, named analyst)</li>
-<li><span class="score fresh">05</span> : primary source (lab blog, Reuters, AP, FT)</li>
-<li><span class="score fresh">06</span> : primary + one corroborating source</li>
-<li><span class="score hot">07</span> to <span class="score hot">08</span> : multi-source, cross-cited story</li>
+<li>Base: <code>{scoring.BASE_WEIGHT} × credibility</code>, using an assigned credibility weight from 1 to 5.</li>
+<li>Add {scoring.CORROBORATION_BONUS} per additional retained source domain in a cluster.</li>
+<li>Add {scoring.WIRE_SEARCH_BONUS} for a Reuters, AP, Bloomberg or WSJ canonical item discovered through wire search.</li>
+<li>Subtract {scoring.UNDATED_PENALTY} for an undated single-source cluster, with a floor of zero.</li>
+<li>Discrete repositories and models use the base score only. There is no eight-point ceiling.</li>
 </ul>
 
 <h3>TAGS</h3>
 <ul>
-<li>FIRE: cross-source story, multiple independent outlets</li>
+<li>FIRE: two or more retained source domains in a cluster, not proof of independent confirmation</li>
 <li>SEEDLING: open-source or non-frontier-lab item</li>
 </ul>
 

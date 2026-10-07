@@ -1,0 +1,53 @@
+{
+  "scope": "Daily validation, rendering, static build and publication changes. Unchanged optional media utilities are outside this release audit.",
+  "validated_on": "2026-10-07",
+  "status": "active",
+  "python_packages": [
+    {
+      "distribution": "Markdown",
+      "version": "3.10.2",
+      "registry": "https://pypi.org/pypi/Markdown/3.10.2/json",
+      "source": "https://github.com/Python-Markdown/markdown",
+      "publisher": "Manfred Stienstra, Yuri Takhteyev",
+      "license": "BSD-3-Clause",
+      "imports": ["markdown"],
+      "required_api": {"markdown.markdown": "(text: 'str', **kwargs: 'Any') -> 'str'"},
+      "wheel_sha256": "e91464b71ae3ee7afd3017d9f358ef0baf158fd9a298db92f1d4761133824c36",
+      "validation": "Official registry metadata, isolated pinned import/API inspection and resolved pip-audit. No runtime dependencies."
+    },
+    {
+      "distribution": "Pillow",
+      "version": "12.3.0",
+      "registry": "https://pypi.org/pypi/Pillow/12.3.0/json",
+      "source": "https://github.com/python-pillow/Pillow",
+      "publisher": "Jeffrey 'Alex' Clark",
+      "license": "MIT-CMU",
+      "imports": ["PIL", "PIL.Image"],
+      "required_api": {"PIL.Image.open": "(fp, mode='r', formats=None)"},
+      "linux_x64_cp313_wheel_sha256": "0847a763afefb695bc912d7c131e7e0632d4edc1d8698f58ddabec8e46b8b6d3",
+      "validation": "Official registry metadata, isolated pinned import/API inspection and resolved pip-audit. No runtime dependencies."
+    }
+  ],
+  "build_cli": [
+    {
+      "package": "pagefind",
+      "version": "1.5.2",
+      "registry": "https://registry.npmjs.org/pagefind/1.5.2",
+      "source": "https://github.com/Pagefind/pagefind",
+      "publisher": "Pagefind; GitHub Actions trusted publisher; maintainer bglw",
+      "license": "MIT",
+      "integrity": "sha512-XTUaK0hXMCu2jszWE584JGQT7y284TmMV9l/HX3rnG5uo3rHI/uHU56XTyyyPFjeWEBxECbAi0CaFDJOONtG0Q==",
+      "required_command": "pagefind --site docs --output-subdir _pagefind",
+      "validation": "Registry metadata, isolated pinned npm install with scripts disabled, resolved npm audit, CLI version and real docs indexing. Platform binary is pinned to the same version."
+    }
+  ],
+  "ci_actions": [
+    {"source": "https://github.com/actions/checkout", "revision": "11d5960a326750d5838078e36cf38b85af677262"},
+    {"source": "https://github.com/actions/setup-python", "revision": "a26af69be951a213d495a4c3e4e4022e16d87065"}
+  ],
+  "limitations": [
+    "Registry identity and advisory scans do not prove the absence of vulnerabilities.",
+    "Tests use no live-network dependency; live source and publication probes are separate evidence.",
+    "New source, curation and publication validators use Python standard-library and project-local modules."
+  ]
+}

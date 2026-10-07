@@ -4,7 +4,7 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-10-07T14:08:18Z</updated>
+  <updated>2026-10-07T17:36:17Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
   <entry>
     <title>2026-10-07 :: AI DAILY DIGEST</title>
@@ -13,7 +13,7 @@
     <updated>2026-10-07T00:00:00Z</updated>
     <summary>2026-10-07 :: AI DAILY DIGEST</summary>
     <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 12 min read · 2,430 words · 📡 25 unique sources</span>
+  <span class="meta-item">📖 12 min read · 2,397 words · 📡 25 unique sources</span>
   <span class="meta-share">
     <span class="meta-label">SHARE:</span>
     <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-10-07&amp;url=https%3A//aigregator.news/digests/2026-10-07.html" target="_blank" rel="noopener" title="Share on X">X</a>
@@ -26,7 +26,7 @@
 <blockquote>
 <p><strong>📊 TODAY:</strong> 25 stories · 15 sources · 🔴 -0.3 sentiment · 🔥 6 cross-source · <strong>TOP MENTION:</strong> OpenAI ×5<br />
 <strong>🏷️ THEMES:</strong> safety×9, models×7, opensource×7, agents×5, art×5<br />
-<strong>📈 MARKET PULSE:</strong> Top mover: "Gemini 4.0 released by September 30, 2026?" ▼25.0pp · 5 AI markets tracked<br />
+<strong>📈 MARKET PULSE:</strong> Top mover: "Gemini 4.0 released by October 15, 2026?" ▼12.0pp · 3 AI markets tracked<br />
 <strong>📉 7D SENTIMENT:</strong> ▃▂▄▃▂▂▃ (oldest → today)  </p>
 </blockquote>
 <h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
@@ -35,7 +35,7 @@
 <li id="story-2">13 🔥 🔴 <strong>SpaceX in talks to raise $40 billion to buy Nvidia chips.</strong> SpaceX is reportedly courting banks and investors, including Pimco, to finance a large Nvidia GPU purchase. (<a href="https://www.bloomberg.com/news/videos/2026-10-07/spacex-eyes-40-billion-deal-to-buy-nvidia-chips-video">Bloomberg</a>, <a href="https://www.ft.com/content/d3f5928d-f38c-4666-8f7a-8737f9c45f51?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
 <li id="story-3">13 🔥🛡️ 🔴 <strong>ChatGPT for Teens flagged unsafe for kids by Common Sense Media.</strong> Common Sense Media says OpenAI's teen mode, rolled out in August as the default for ages 13 to 17, still exposes minors to too much risk. (<a href="https://www.bloomberg.com/news/articles/2026-10-07/chatgpt-for-teens-is-not-safe-for-kids-common-sense-media-report-says">Bloomberg</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media">The Verge</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
 <li id="story-4">13 🔥🌱 🟡 <strong>Google releases EmbeddingGemma 2, an open multimodal embedding model.</strong> DeepMind ships a lightweight open embedding model spanning text and images, aimed at on-device and retrieval workloads. (<a href="https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/">DeepMind</a>, <a href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/">Google</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
-<li id="story-5">11 🔥🎨 🟢 <strong>Francis Halzen wins 2026 Nobel Physics Prize for neutrino work.</strong> The IceCube Neutrino Observatory lead at Wisconsin-Madison takes the prize. (<a href="https://arstechnica.com/science/2026/10/neutrino-physicist-wins-2026-nobel-physics-prize/">Ars</a>, <a href="https://www.nobelprize.org/prizes/chemistry/2026/press-release/">nobelprize.org</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+<li id="story-5">11 🔥🎨 🟢 <strong>Francis Halzen wins 2026 Nobel Physics Prize for neutrino work.</strong> The IceCube Neutrino Observatory lead at Wisconsin-Madison takes the prize. (<a href="https://arstechnica.com/science/2026/10/neutrino-physicist-wins-2026-nobel-physics-prize/">Ars</a>, <a href="https://www.nobelprize.org/prizes/physics/2026/press-release/">nobelprize.org</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
 <li id="story-6">10 🟢 <strong>Google launches text-to-video-game platform with Unity.</strong> The platform generates playable games from prompts as AI pushes into game development. (<a href="https://www.ft.com/content/0cb02773-d207-4920-8c74-d9707d2622a0?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
 </ol>
 <h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
@@ -69,7 +69,7 @@
 <h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
 <p><em>5 items · 🟡 +0.2 sentiment</em></p>
 <ul>
-<li>11 🔥🎨 🟢 ▤×2 🏷️ science <strong>Francis Halzen wins 2026 Nobel Physics Prize for neutrino work.</strong> The IceCube Neutrino Observatory lead at Wisconsin-Madison takes the prize. Sources: <a href="https://arstechnica.com/science/2026/10/neutrino-physicist-wins-2026-nobel-physics-prize/">Ars</a>, <a href="https://www.nobelprize.org/prizes/chemistry/2026/press-release/">nobelprize.org</a></li>
+<li>11 🔥🎨 🟢 ▤×2 🏷️ science <strong>Francis Halzen wins 2026 Nobel Physics Prize for neutrino work.</strong> The IceCube Neutrino Observatory lead at Wisconsin-Madison takes the prize. Sources: <a href="https://arstechnica.com/science/2026/10/neutrino-physicist-wins-2026-nobel-physics-prize/">Ars</a>, <a href="https://www.nobelprize.org/prizes/physics/2026/press-release/">nobelprize.org</a></li>
 <li>10 🎨 🟡 🏷️ art <strong>Jonathan Blow ships a 1,500-puzzle game.</strong> The Braid creator's Order of the Sinking Star arrives with roughly 1,500 puzzles. Sources: <a href="https://www.bbc.co.uk/news/articles/cj3vqxldglepo?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
 <li>10 🎨 🟡 🏷️ art, apps <strong>AI chips away at the British school photo.</strong> More parents use AI to avoid paying for professional school portraits. Sources: <a href="https://www.theguardian.com/lifeandstyle/2026/oct/06/is-this-the-end-of-the-british-school-photo">Guardian</a></li>
 <li>10 🎨 🟡 🏷️ science <strong>Could AI help perfumers spare endangered plants.</strong> Firms work to reproduce scent compounds without repeated harvesting, though conservationists are skeptical. Sources: <a href="https://www.theguardian.com/science/2026/oct/06/fragrance-biotechnology-endangered-plants-perfume">Guardian</a></li>
@@ -101,10 +101,9 @@
 <li>6 🌱 🟡 🏷️ opensource, training <strong>huggingface/transformers.</strong> The model-definition framework for text, vision, audio and multimodal models. Sources: <a href="https://github.com/huggingface/transformers">GitHub huggingface/transformers</a></li>
 </ul>
 <h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
-<p><em>5 markets · AI/policy</em></p>
+<p><em>3 markets · AI/policy</em></p>
+<p><em>Correction (October 7): Two expired September 30 markets were removed from this edition. The three remaining quotes are unchanged from the original collection.</em></p>
 <ul>
-<li><strong>Gemini 4.0 released by September 30, 2026?</strong> - None% Yes (▼25pp 24h, $644K vol) · <a href="https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026">Polymarket</a></li>
-<li><strong>Will the next Google Gemini Pro model be released by September 30, 2026?</strong> - None% Yes (▼17pp 24h, $207K vol) · <a href="https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt">Polymarket</a></li>
 <li><strong>Gemini 4.0 released by October 15, 2026?</strong> - 64% Yes (▼12pp 24h, $115K vol) · <a href="https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026">Polymarket</a></li>
 <li><strong>Will OpenAI’s market cap be $1.5T or greater at market close on IPO day by December 31, 2027?</strong> - 62% Yes (▲7pp 24h, $100K vol) · <a href="https://polymarket.com/event/openai-ipo-closing-market-cap-554">Polymarket</a></li>
 <li><strong>Will Anthropic's initial public offering occur in November 2026 (ET)?</strong> - 71% Yes (▲7pp 24h, $71K vol) · <a href="https://polymarket.com/event/in-which-month-will-anthropic-ipo">Polymarket</a></li>
