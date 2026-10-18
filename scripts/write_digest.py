@@ -350,6 +350,19 @@ def social_group(item):
     return "Hacker News" if source == "HN" else "Other"
 
 
+_REDDIT_FLAIR = re.compile(r"\s*\[[A-Za-z]{1,4}\]\s*$")
+
+
+def safe_link_text(title: str) -> str:
+    """Make a source title safe inside markdown link text.
+
+    Reddit titles carry flair tags like "[P]" / "[D]"; raw brackets inside
+    [text](url) break link parsing and the validator's link count.
+    """
+    t = _REDDIT_FLAIR.sub("", title).strip()
+    return t.replace("[", "(").replace("]", ")")
+
+
 def render_discourse(items_in_section: list[dict], curation_items: dict) -> str:
     """Group social items by subreddit / platform, then render.
     items_in_section: items where tier=='social'
@@ -374,7 +387,7 @@ def render_discourse(items_in_section: list[dict], curation_items: dict) -> str:
         out.append(f"\n### {group_key}")
         for it in members:  # caps already applied to the final selection
             overlay = curation_items.get(it["url"], {})
-            title = (overlay.get("title") or it["title"]).replace("—", " - ").strip()
+            title = safe_link_text((overlay.get("title") or it["title"]).replace("—", " - "))
             blurb = (overlay.get("summary") or "").replace("—", " - ").strip()
             if blurb and not blurb.endswith("."): blurb += "."
             # Bluesky labeling
