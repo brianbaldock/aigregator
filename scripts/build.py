@@ -576,6 +576,59 @@ def build_index(entries: list[dict]) -> None:
     (DOCS_DIR / "index.html").write_text(page, encoding="utf-8")
 
 
+ARCHIVE_HOT_YEARS = 2
+_MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+
+
+def _archive_tree(entries: list[dict], link_prefix: str, open_first: bool = True) -> str:
+    """Render entries (newest first) as Year > Month > file, FTP-listing style.
+
+    Months are <details> so collapsing needs no JS. Each file is still a
+    tr[data-themes] row so the live filter keeps working unchanged.
+    """
+    out: list[str] = []
+    cur_year = cur_month = None
+    first = True
+    for e in entries:
+        y, m = e["slug"][:4], e["slug"][5:7]
+        if y != cur_year:
+            if cur_month is not None:
+                out.append("</tbody></table></details>")
+                cur_month = None
+            if cur_year is not None:
+                out.append("</div>")
+            n_year = sum(1 for x in entries if x["slug"][:4] == y)
+            out.append(f'<div class="arch-year" data-year="{y}"><div class="arch-dir">drwxr-xr-x  {y}/ '
+                       f'<span class="arch-count">({n_year} files)</span></div>')
+            cur_year = y
+        if m != cur_month:
+            if cur_month is not None:
+                out.append("</tbody></table></details>")
+            n_month = sum(1 for x in entries if x["slug"][:7] == e["slug"][:7])
+            label = f"{m}-{_MONTHS[int(m) - 1]}"
+            attr = " open" if (first and open_first) else ""
+            out.append(f'<details class="arch-month" data-month="{y}-{m}"{attr}>'
+                       f'<summary>drwxr-xr-x  {label}/ <span class="arch-count">({n_month} files)</span></summary>'
+                       f'<table><tbody>')
+            cur_month = m
+            first = False
+        themes_attr = ",".join(e["meta"]["themes"].keys())
+        warn_html = ' <span class="diversity-tag" title="thin signal">⚠</span>' if e["meta"]["diversity_warn"] else ""
+        out.append(
+            f'<tr data-themes="{themes_attr}" data-slug="{e["slug"]}">'
+            f'<td><span class="arch-perm">-rw-r--r--</span> {e["slug"]}</td>'
+            f'<td><a href="{link_prefix}digests/{e["slug"]}.html">{e["title"]}</a>'
+            f'{warn_html}'
+            f' <span class="archive-meta">📖 {e["read_min"]}m · 📡 {e["meta"]["total_sources"]}</span></td>'
+            f'</tr>'
+        )
+    if cur_month is not None:
+        out.append("</tbody></table></details>")
+    if cur_year is not None:
+        out.append("</div>")
+    return "\n".join(out)
+
+
 def build_archive(entries: list[dict]) -> None:
     # Build archive.json sidecar for client-side filtering
     import json
@@ -592,10 +645,19 @@ def build_archive(entries: list[dict]) -> None:
     ]
     (DOCS_DIR / "archive.json").write_text(json.dumps(archive_data, indent=2), encoding="utf-8")
 
+    # Year split keeps archive.html bounded (~2 years of rows) however old the
+    # site gets. Older years move to archive/YYYY.html, one page per year.
+    by_year: dict[str, list[dict]] = {}
+    for e in entries:
+        by_year.setdefault(e["slug"][:4], []).append(e)
+    years = sorted(by_year, reverse=True)
+    hot_years, older_years = years[:ARCHIVE_HOT_YEARS], years[ARCHIVE_HOT_YEARS:]
+    hot = [e for e in entries if e["slug"][:4] in hot_years]
+
     # Collect all themes for filter chips
     from collections import Counter
     all_themes: Counter = Counter()
-    for e in entries:
+    for e in hot:
         for t in e["meta"]["themes"]:
             all_themes[t] += 1
     theme_chips = "".join(
@@ -603,21 +665,16 @@ def build_archive(entries: list[dict]) -> None:
         for t, c in all_themes.most_common(20)
     )
 
-    rows_list = []
-    for e in entries:
-        themes_attr = ",".join(e["meta"]["themes"].keys())
-        warn_html = ' <span class="diversity-tag" title="thin signal">⚠</span>' if e["meta"]["diversity_warn"] else ""
-        rows_list.append(
-            f'<tr data-themes="{themes_attr}" data-slug="{e["slug"]}">'
-            f'<td>{e["slug"]}</td>'
-            f'<td><a href="digests/{e["slug"]}.html">{e["title"]}</a>'
-            f'{warn_html}'
-            f' <span class="archive-meta">📖 {e["read_min"]}m · 📡 {e["meta"]["total_sources"]}</span></td>'
-            f'</tr>'
+    rows = _archive_tree(hot, link_prefix="")
+    if older_years:
+        rows += "\n" + "\n".join(
+            f'<div class="arch-year arch-year-link">drwxr-xr-x  '
+            f'<a href="archive/{y}.html">{y}/</a> '
+            f'<span class="arch-count">({len(by_year[y])} files)</span></div>'
+            for y in older_years
         )
-    rows = "\n".join(rows_list)
-    if not rows:
-        rows = '<tr><td colspan="2"><em>// no transmissions logged yet</em></td></tr>'
+    if not entries:
+        rows = '<p><em>// no transmissions logged yet</em></p>'
     pagefind_ui = """  <details class="fulltext-search">
     <summary>🔎 full-text search across all digests</summary>
     <link rel="stylesheet" href="_pagefind/pagefind-ui.css">
@@ -632,6 +689,8 @@ def build_archive(entries: list[dict]) -> None:
     </script>
   </details>"""
 
+    older_note = (f" · live filter covers {', '.join(hot_years)}; use full-text search for every year"
+                  if older_years else "")
     body = f"""
 <article class="archive">
 <h2 style="font-family:'VT323',monospace;color:var(--amber);font-size:28px;margin-top:0;">// ARCHIVE.DIR</h2>
@@ -642,14 +701,12 @@ def build_archive(entries: list[dict]) -> None:
     <button class="filter-chip filter-clear" data-theme="">all</button>
     {theme_chips}
   </div>
-  <div class="archive-stats"><span id="archive-count">{len(entries)}</span> / {len(entries)} transmissions</div>
+  <div class="archive-stats"><span id="archive-count">{len(hot)}</span> / {len(hot)} transmissions shown{older_note}</div>
 </div>
-<table>
-<thead><tr><th>DATE</th><th>TRANSMISSION</th></tr></thead>
-<tbody id="archive-body">
+<div class="arch-path">/pub/aigregator/archive/</div>
+<div id="archive-body" class="arch-tree">
 {rows}
-</tbody>
-</table>
+</div>
 </article>
 """
     page = html_shell(
@@ -683,6 +740,45 @@ def build_archive(entries: list[dict]) -> None:
         ]),
     )
     (DOCS_DIR / "archive.html").write_text(page, encoding="utf-8")
+
+    (DOCS_DIR / "archive").mkdir(exist_ok=True)
+    for stale in (DOCS_DIR / "archive").glob("*.html"):
+        if stale.stem not in older_years:
+            stale.unlink()
+    for y in older_years:
+        ys = by_year[y]
+        ybody = f"""
+<article class="archive">
+<h2 style="font-family:'VT323',monospace;color:var(--amber);font-size:28px;margin-top:0;">// ARCHIVE.DIR/{y}</h2>
+<div class="arch-path">/pub/aigregator/archive/{y}/</div>
+<div class="arch-tree">
+<div class="arch-year arch-year-link">drwxr-xr-x  <a href="../archive.html">../</a></div>
+{_archive_tree(ys, link_prefix="../", open_first=False)}
+</div>
+</article>
+"""
+        ypage = html_shell(
+            title=f"archive {y}",
+            body=ybody,
+            depth=1,
+            canonical_path=f"archive/{y}.html",
+            description=f"Every AIgregator daily AI news digest published in {y}, organized by month.",
+            extra_head=_site_ld([{
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                "url": f"{SITE_URL}/archive/{y}.html",
+                "name": f"AIgregator archive {y}",
+                "isPartOf": {"@id": f"{SITE_URL}/#website"},
+                "mainEntity": {"@type": "ItemList", "numberOfItems": len(ys)},
+            }]),
+        )
+        (DOCS_DIR / "archive" / f"{y}.html").write_text(ypage, encoding="utf-8")
+
+
+def archive_older_years(entries: list[dict]) -> list[str]:
+    """Years that live on archive/YYYY.html instead of archive.html."""
+    years = sorted({e["slug"][:4] for e in entries}, reverse=True)
+    return years[ARCHIVE_HOT_YEARS:]
 
 
 SITE_URL = "https://aigregator.news"
@@ -1163,6 +1259,8 @@ def build_sitemap(entries: list[dict]) -> None:
         (f"{SITE_URL}/archive.html", today, "daily", "0.8"),
         (f"{SITE_URL}/about.html", today, "monthly", "0.5"),
     ]
+    for y in archive_older_years(entries):
+        urls.append((f"{SITE_URL}/archive/{y}.html", today, "yearly", "0.5"))
     for e in entries:
         urls.append((f"{SITE_URL}/digests/{e['slug']}.html", e["slug"], "never", "0.7"))
     # Weekly roundups: derived from the source markdown so the sitemap cannot

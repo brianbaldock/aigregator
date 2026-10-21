@@ -415,6 +415,24 @@ pre.ascii {
 }
 tr.hidden { display: none; }
 
+/* Archive folder tree (FTP listing) */
+.arch-path { color: var(--green-dim); font-family: 'Share Tech Mono', monospace; font-size: 13px; margin-bottom: 8px; }
+.arch-tree { font-family: 'Share Tech Mono', monospace; font-size: 14px; }
+.arch-tree .hidden { display: none; }
+.arch-dir, .arch-year-link { color: var(--amber); padding: 4px 0; white-space: pre; }
+.arch-month { margin-left: 2ch; }
+.arch-month > summary {
+  color: var(--amber); cursor: pointer; padding: 3px 0; white-space: pre;
+  list-style: none;
+}
+.arch-month > summary::-webkit-details-marker { display: none; }
+.arch-month > summary::before { content: "[+] "; color: var(--green-dim); }
+.arch-month[open] > summary::before { content: "[-] "; }
+.arch-month > summary:hover { color: var(--green); }
+.arch-month table { margin-left: 4ch; width: calc(100% - 4ch); }
+.arch-count { color: var(--green-dim); font-size: 11px; }
+.arch-perm { color: var(--green-dim); font-size: 11px; }
+
 /* Sentiment sparkline */
 .sparkline-wrap {
   border: 1px solid var(--green-dim);
@@ -562,6 +580,8 @@ tr.hidden { display: none; }
     border: none;
   }
   .archive td:first-child { color: var(--amber); font-size: 12px; }
+  .arch-perm { display: none; }
+  .arch-month table { margin-left: 1ch; width: calc(100% - 1ch); }
 
   /* Permalinks visible on touch (no hover) */
   .permalink, .story-link { opacity: 0.5; }

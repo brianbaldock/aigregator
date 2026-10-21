@@ -716,6 +716,18 @@
         if (show) visible++;
       });
       if (countEl) countEl.textContent = visible;
+      // Folder view: while filtering, open every month with a hit and hide
+      // empty ones; clearing the filter restores the default (newest open).
+      const filtering = !!(activeTheme || activeQuery);
+      body.querySelectorAll("details.arch-month").forEach((d, i) => {
+        const hits = d.querySelectorAll("tr[data-themes]:not(.hidden)").length;
+        d.classList.toggle("hidden", filtering && !hits);
+        d.open = filtering ? hits > 0 : i === 0;
+      });
+      body.querySelectorAll(".arch-year[data-year]").forEach(y => {
+        const hits = y.querySelectorAll("tr[data-themes]:not(.hidden)").length;
+        y.classList.toggle("hidden", filtering && !hits);
+      });
     }
 
     search.addEventListener("input", e => {

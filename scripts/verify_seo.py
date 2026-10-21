@@ -13,7 +13,7 @@ GC = "https://aigregator.goatcounter.com/count"
 
 # Pages built by html_shell(). BBS and scene are hand-authored standalone apps.
 SHELL_PAGES = sorted(
-    set(DOCS.glob("*.html")) | set(DOCS.glob("digests/*.html")) | set(DOCS.glob("weekly/*.html"))
+    set(DOCS.glob("*.html")) | set(DOCS.glob("digests/*.html")) | set(DOCS.glob("weekly/*.html")) | set(DOCS.glob("archive/*.html"))
 )
 
 failures: list[str] = []
