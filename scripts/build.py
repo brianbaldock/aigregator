@@ -152,6 +152,7 @@ def html_shell(
 <link rel="manifest" href="{prefix}manifest.webmanifest">
 <link rel="alternate" type="application/rss+xml" title="AIgregator RSS" href="{prefix}feed.xml">
 <link rel="alternate" type="application/atom+xml" title="AIgregator Atom" href="{prefix}atom.xml">
+<link rel="alternate" type="application/feed+json" title="AIgregator per-story JSON Feed" href="{prefix}feed.json">
 {GOATCOUNTER_SNIPPET}
 {extra_head}
 </head>
@@ -1398,6 +1399,25 @@ Generated each morning at 0700 Pacific by an autonomous Hermes agent.</p>
 <li>SEEDLING: open-source or non-frontier-lab item</li>
 </ul>
 
+<h3>AGENTS &amp; FEEDS</h3>
+<p>AIgregator is built to be read by people and by agents. Start with
+<a href="llms.txt">llms.txt</a>.</p>
+<ul>
+<li><a href="feed.json">feed.json</a>: one item per story, last 7 editions, with our summary, section, themes, score and the original source URLs (JSON Feed 1.1)</li>
+<li><a href="feed.xml">RSS</a> / <a href="atom.xml">Atom</a>: one item per daily edition, full text, last 30 editions</li>
+<li><a href="weekly/feed.xml">Weekly roundup RSS</a> and <a href="archive.json">archive.json</a></li>
+</ul>
+<p>A new edition publishes around 14:00 UTC. Fetch once a day after that, with conditional requests. Cite the original source for facts; cite AIgregator for our summaries and selection.</p>
+
+<h3>LICENSE</h3>
+<p>AIgregator's headlines, summaries, scores and editorial organization are licensed under
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.
+Credit "AIgregator (aigregator.news)" and link to the edition or story.
+Linked articles belong to their publishers and are not covered by this license; read and cite them at the source.
+Prediction-market data is from Polymarket and remains subject to its terms.
+Summaries are machine-assisted and curated, and may contain errors. The linked source is authoritative.
+Site code is MIT-licensed.</p>
+
 <h3>COLOPHON</h3>
 <p>Built with Python, markdown, and questionable aesthetic decisions.
 Source: <a href="https://github.com/brianbaldock/AIgregator">github.com/brianbaldock/AIgregator</a></p>
@@ -1667,6 +1687,10 @@ def main() -> int:
     build_about(entries)
     build_404()
     build_feeds(entries)
+    import agent_feeds
+    n_items = agent_feeds.build_json_feed(DIGESTS_DIR, DOCS_DIR / "feed.json", SITE_URL)
+    (DOCS_DIR / "llms.txt").write_text(agent_feeds.llms_txt(SITE_URL), encoding="utf-8")
+    print(f"built feed.json ({n_items} stories) + llms.txt")
     weekly_entries = build_weekly()
     build_sitemap(entries)
     build_pwa()

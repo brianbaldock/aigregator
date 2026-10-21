@@ -1,0 +1,34 @@
+# AIgregator
+
+> Daily AI news digest. Each morning we gather AI news from wires, lab blogs,
+> arXiv, GitHub, Hugging Face and social sources, cluster duplicate coverage,
+> score it, and write short summaries that link to the original reporting.
+> We point you to the right source; the source is the authority.
+
+## Feeds for agents
+
+- [Per-story JSON Feed](https://aigregator.news/feed.json): JSON Feed 1.1, one item per story, last 7 editions. Each item has title, our summary, section, themes, score, source_count and the original source URLs. Use this first.
+- [RSS](https://aigregator.news/feed.xml) / [Atom](https://aigregator.news/atom.xml): one item per daily edition, full HTML, last 30 editions.
+- [Weekly roundup RSS](https://aigregator.news/weekly/feed.xml)
+- [Archive index](https://aigregator.news/archive.json): every edition with slug, title, themes and top source domains.
+- [Sitemap](https://aigregator.news/sitemap.xml)
+
+Edition URLs follow `https://aigregator.news/digests/YYYY-MM-DD.html`.
+
+## How to use it well
+
+- A new edition publishes once a day around 14:00 UTC. Fetch once a day after that. Use conditional requests (ETag / If-Modified-Since); do not poll every few minutes.
+- Cite the original source for facts. Cite AIgregator for our synthesis: the summary wording, grouping, scores and selection.
+- `score` and `source_count` are our own ranking. `source_count` counts distinct outlets that covered a story; it is not independent fact-checking.
+- Summaries are machine-assisted and curated, and may contain errors. When it matters, read the linked article.
+
+## License
+
+- AIgregator's headlines, summaries, scores and editorial organization: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit "AIgregator (aigregator.news)" and link to the edition or story.
+- Linked articles belong to their publishers and are not covered by this license. Read and cite them at the source.
+- Prediction-market data is from Polymarket and remains subject to its terms.
+- Site code is MIT-licensed: https://github.com/brianbaldock/AIgregator
+
+## About
+
+- [About and methodology](https://aigregator.news/about.html)
