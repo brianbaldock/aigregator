@@ -47,7 +47,7 @@ def _fetch(url: str, timeout: float) -> bytes:
     return body
 
 
-def verify(docs: Path, edition: str, *, timeout: float = 10, retries: int = 6, delay: float = 15):
+def verify(docs: Path, edition: str, *, timeout: float = 10, retries: int = 16, delay: float = 15):
     """Return comparison rows and failures for all required public surfaces."""
     edition = _edition(edition)
     from build import SITE_URL
@@ -90,7 +90,7 @@ def main() -> int:
     parser.add_argument("--date", required=True, type=_edition)
     parser.add_argument("--docs", required=True, type=Path)
     parser.add_argument("--timeout", type=float, default=10)
-    parser.add_argument("--retries", type=int, default=6)
+    parser.add_argument("--retries", type=int, default=16)
     parser.add_argument("--delay", type=float, default=15)
     args = parser.parse_args()
     if args.timeout <= 0 or args.retries < 1 or args.delay < 0:

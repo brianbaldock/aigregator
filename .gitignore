@@ -220,3 +220,6 @@ __marimo__/
 
 # gather.py run-dir pointer (debug/observability only)
 .last_run_dir
+
+# Pagefind index: built in CI by .github/workflows/pages.yml, never committed
+docs/_pagefind/

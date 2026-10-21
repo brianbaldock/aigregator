@@ -54,11 +54,8 @@ if ((DRY_RUN)); then
   exit 0
 fi
 
-# Pagefind is best effort but pinned to the reviewed release. It must run only
-# after all publication gates have accepted the generated content.
-if command -v npx >/dev/null 2>&1; then
-  npx --yes pagefind@1.5.2 --site docs --output-subdir _pagefind 2>&1 | tail -5 || echo "pagefind: skipped (failed)"
-fi
+# Pagefind index is built by .github/workflows/pages.yml at deploy time and is
+# gitignored, so nothing to do here.
 
 git add -- "digests/$DATE.md" docs
 if git diff --cached --quiet; then
