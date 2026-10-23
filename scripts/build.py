@@ -913,6 +913,8 @@ BOT_WALLED_DOMAINS = {
     "anthropic.com", "www.anthropic.com",
     "ai.meta.com", "meta.com", "www.meta.com",
     "news.ycombinator.com",
+    # PerimeterX px-captcha 403 to non-browser clients (2026-10-23).
+    "seekingalpha.com", "www.seekingalpha.com",
 }
 
 # Bot-walled by suffix (per-publication subdomains). Substack serves 403 to
