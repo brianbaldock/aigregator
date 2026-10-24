@@ -20,7 +20,7 @@ from pathlib import Path
 try:
     import markdown  # type: ignore
 except ImportError:
-    print("ERROR: pip install markdown", file=sys.stderr)
+    print(f"ERROR: pip install markdown (interpreter {sys.executable}, prefix {sys.prefix})", file=sys.stderr)
     sys.exit(1)
 
 import scoring_policy as scoring
