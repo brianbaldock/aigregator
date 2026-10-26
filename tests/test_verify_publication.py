@@ -10,6 +10,7 @@ import unittest
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "scripts"))
 import build
+import site_config
 import verify_publication
 
 
@@ -42,11 +43,11 @@ class VerifyPublicationTests(unittest.TestCase):
         self.server = ThreadingHTTPServer(("127.0.0.1", 0), PublicationHandler)
         self.thread = threading.Thread(target=self.server.serve_forever)
         self.thread.start()
-        self.previous_site_url = build.SITE_URL
-        build.SITE_URL = f"http://127.0.0.1:{self.server.server_port}"
+        self.previous_site_url = site_config.SITE_URL
+        site_config.SITE_URL = f"http://127.0.0.1:{self.server.server_port}"
 
     def tearDown(self):
-        build.SITE_URL = self.previous_site_url
+        site_config.SITE_URL = self.previous_site_url
         self.server.shutdown()
         self.thread.join()
         self.server.server_close()

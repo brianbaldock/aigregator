@@ -297,7 +297,7 @@ def check_docs(docs: str | Path, digest: str | Path, edition: str):
             text[path.name] = path.read_text(encoding="utf-8")
     if report["errors"]:
         return report
-    from build import SITE_URL
+    from site_config import SITE_URL
     expected_url = f'{SITE_URL}/digests/{edition}.html'
     try:
         daily = _digest_article(text[f'{edition}.html'])

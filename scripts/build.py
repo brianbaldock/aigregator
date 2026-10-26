@@ -782,7 +782,7 @@ def archive_older_years(entries: list[dict]) -> list[str]:
     return years[ARCHIVE_HOT_YEARS:]
 
 
-SITE_URL = "https://aigregator.news"
+from site_config import SITE_URL  # noqa: E402  single source of truth
 
 # Domains where a bare URL (root path only) is almost certainly a "I couldn't
 # find the deep link" placeholder rather than a real citation.
@@ -915,6 +915,8 @@ BOT_WALLED_DOMAINS = {
     "news.ycombinator.com",
     # PerimeterX px-captcha 403 to non-browser clients (2026-10-23).
     "seekingalpha.com", "www.seekingalpha.com",
+    # SEC EDGAR 403s undeclared browser UAs; 200 with a contact UA (2026-10-26).
+    "sec.gov", "www.sec.gov",
 }
 
 # Bot-walled by suffix (per-publication subdomains). Substack serves 403 to

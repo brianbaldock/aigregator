@@ -50,7 +50,7 @@ def _fetch(url: str, timeout: float) -> bytes:
 def verify(docs: Path, edition: str, *, timeout: float = 10, retries: int = 16, delay: float = 15):
     """Return comparison rows and failures for all required public surfaces."""
     edition = _edition(edition)
-    from build import SITE_URL
+    from site_config import SITE_URL
 
     origin = SITE_URL.rstrip("/")
     rows, failures = [], []

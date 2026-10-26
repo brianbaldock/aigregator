@@ -86,8 +86,11 @@ class DailyWrapperTests(unittest.TestCase):
         marker = '\nif __name__ == "__main__":'
         self.assertEqual(original.count(marker), 1)
         origin = f"http://127.0.0.1:{self.server.server_port}"
-        modified = original.replace('SITE_URL = "https://aigregator.news"', f'SITE_URL = "{origin}"', 1)
-        modified = modified.replace(marker, marker + "\n    validate_links_live = lambda *a, **k: []\n    validate_bluesky_urls = lambda *a, **k: []", 1)
+        site_config = repo / "scripts" / "site_config.py"
+        site_text = site_config.read_text()
+        self.assertEqual(site_text.count('SITE_URL = "https://aigregator.news"'), 1)
+        site_config.write_text(site_text.replace('SITE_URL = "https://aigregator.news"', f'SITE_URL = "{origin}"', 1))
+        modified = original.replace(marker, marker + "\n    validate_links_live = lambda *a, **k: []\n    validate_bluesky_urls = lambda *a, **k: []", 1)
         self.assertNotEqual(modified, original)
         build.write_text(modified)
         built = subprocess.run([sys.executable, str(build)], cwd=repo, text=True, capture_output=True)
