@@ -21,7 +21,7 @@ if [ -n "$(git status --porcelain)" ] || [ ! -f "$BRIEF" ]; then
 fi
 
 timeout 3600 "$COPILOT" -p "Read the file scripts/copilot_digest_brief.md in this repository and execute every phase in it exactly as written. End with the single STATUS line it specifies." \
-  --model claude-opus-4.8 --effort medium --allow-all-tools --allow-all-paths --no-color >"$LOG" 2>&1
+  --model gpt-6-sol --effort medium --allow-all-tools --allow-all-paths --no-color >"$LOG" 2>&1
 COPILOT_EC=$?
 STATUS_MATCHES="$(grep -ac '^STATUS:' "$LOG" 2>/dev/null)" || STATUS_MATCHES=0
 STATUS_LINE="$(grep -a '^STATUS:' "$LOG" 2>/dev/null | tail -1)"
