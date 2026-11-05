@@ -6,7 +6,121 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Nov 2026 14:03:47 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 14:04:04 +0000</lastBuildDate>
+    <item>
+      <title>2026-11-05 :: AI DAILY DIGEST</title>
+      <link>https://aigregator.news/digests/2026-11-05.html</link>
+      <guid isPermaLink="true">https://aigregator.news/digests/2026-11-05.html</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 +0000</pubDate>
+      <description>2026-11-05 :: AI DAILY DIGEST</description>
+      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 13 min read · 2,652 words · 📡 15 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-11-05&amp;url=https%3A//aigregator.news/digests/2026-11-05.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-11-05%20https%3A//aigregator.news/digests/2026-11-05.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-11-05.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-11-05.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-11-05-ai-daily-digest">2026-11-05 :: AI DAILY DIGEST <a class="permalink" href="#2026-11-05-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>China blocked SoftBank's ABB robotics deal while US voters put new constraints on data-center expansion. OpenAI outlined local commitments for compute campuses and moved to acquire Pierre Computer Company for Codex. Agility Robotics reached the public market.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 18 stories · 9 sources · 🟡 -0.1 sentiment · 🔥 5 cross-source · <strong>TOP MENTION:</strong> OpenAI ×5<br />
+<strong>🏷️ THEMES:</strong> hardware×9, policy×7, funding×6, agents×5, models×4<br />
+<strong>📈 MARKET PULSE:</strong> Top mover: "Will Gemini Carbon be released on November 10, 2026?" ▼33.4pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▄▄▅▄▃▃▄ (oldest → today)  </p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">13 🔥 🔴 <strong>China blocks SoftBank's $5.4 billion ABB robotics acquisition.</strong> China blocked ABB's planned sale of its robotics unit to SoftBank, according to Bloomberg. The decision interrupts SoftBank's push into industrial robotics. (<a href="https://www.bloomberg.com/news/articles/2026-11-05/china-blocks-softbank-s-acquisition-of-abb-industrial-robot-unit">Bloomberg</a>, <a href="https://www.ft.com/content/f10c3e24-45e4-47ff-bde2-24a8de90aec4?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">11 🔥🛡️ 🟡 <strong>US midterm votes add obstacles for data-center development.</strong> Candidates favoring tighter data-center controls won races, and voters approved measures that could restrict new projects, according to The Verge. Local permitting and electricity costs remain central to compute expansion. (<a href="https://www.theverge.com/policy/1026365/data-centers-midterms-results">The Verge</a>, <a href="https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/">TechCrunch</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">10 🛡️ 🟡 <strong>OpenAI promises changes to data-center negotiations.</strong> OpenAI says it will avoid nondisclosure agreements in data-center negotiations and seek to prevent residents from paying the projects' power costs, Bloomberg reports. These are stated commitments, not yet measured outcomes. (<a href="https://www.bloomberg.com/news/articles/2026-11-05/openai-to-change-how-it-handles-data-center-efforts-after-outcry">Bloomberg</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">10 🟡 <strong>OpenAI to acquire Pierre Computer Company for Codex tools.</strong> OpenAI announced plans to acquire Pierre Computer Company to expand Codex tools for building, understanding and reviewing code. The announcement does not specify how the tools will be integrated. (<a href="https://openai.com/index/openai-to-acquire-pierre">OpenAI</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">10 🟡 <strong>Agility Robotics starts Nasdaq trading via SPAC merger.</strong> Agility Robotics is set to trade under AGLT after merging with a Churchill Capital SPAC, Bloomberg reports. Its listing gives investors a dedicated US humanoid robotics company, but deployment economics remain unproven. (<a href="https://www.bloomberg.com/news/articles/2026-11-05/nvidia-backed-humanoid-maker-agility-goes-public-in-first-for-the-us">Bloomberg</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+<li id="story-6">10 🔴 <strong>Microsoft declines expansion option on Nscale data-center deal.</strong> Microsoft turned down an option to more than double its Texas data-center contract with Nscale, the FT reports. That is a setback for the UK infrastructure firm ahead of its planned IPO. (<a href="https://www.ft.com/content/668e6ef8-88a1-4bef-8664-8f495baf09f8?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>1 item · 🟢 +1.0 sentiment</em></p>
+<ul>
+<li>10 🟢 🏷️ voice, inference, models <strong>Phonon TTS describes on-device speech synthesis.</strong> A Hugging Face post presents Phonon TTS as an on-device text-to-speech system and reports benchmark results. The performance claims come from its authors and need independent comparison. Sources: <a href="https://huggingface.co/blog/phonon-tts">HuggingFace</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>5 items · 🔴 -0.4 sentiment</em></p>
+<ul>
+<li>11 🟡 🏷️ evals, science <strong>Six AI tools tested on a 102-article literature-review benchmark.</strong> Researchers evaluate six tools across literature search, interpretation, synthesis and research-question generation using a 102-article benchmark. The design tests more of the review workflow than single-task evaluations. Sources: <a href="https://arxiv.org/abs/2611.05459">arXiv</a>, <a href="https://www.anthropic.com/research/provable-inference">Anthropic</a></li>
+<li>8 🔴 🏷️ science, models <strong>PhasmaNet estimates gravitational-wave signal-to-noise ratios.</strong> The authors propose a compact spectral token-refinement model for accelerating the large numbers of signal-to-noise calculations needed in gravitational-wave population studies. Results are reported in a preprint. Sources: <a href="https://arxiv.org/abs/2611.05309">arXiv</a></li>
+<li>8 🟡 🏷️ science, models <strong>Diffusion priors used to map 3D dark matter in COSMOS-Web.</strong> Researchers use diffusion-based generative priors to reconstruct the three-dimensional dark matter distribution from weak-lensing observations in the JWST COSMOS-Web field. The method addresses line-of-sight blending in two-dimensional maps. Sources: <a href="https://arxiv.org/abs/2611.03786">arXiv</a></li>
+<li>8 🟡 🏷️ bias, evals <strong>Fair k-means preprint gives approximation and lower bound.</strong> A revised preprint studies k-means under constraints on protected-group proportions within each cluster. It reports a (3+epsilon)-approximation and a matching lower bound. Sources: <a href="https://arxiv.org/abs/2609.07974">arXiv</a></li>
+<li>8 🔴 🏷️ safety, training <strong>Face-recognition report studies defenses against data backdoors.</strong> A technical report examines defenses for face-recognition pipelines trained in-house on potentially compromised third-party data. The threat model focuses on training-data poisoning rather than compromised model weights. Sources: <a href="https://arxiv.org/abs/2611.06412">arXiv</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>7 items · 🔴 -0.3 sentiment</em></p>
+<ul>
+<li>13 🔥🛡️ 🟡 ▤×2 🏷️ policy, apps <strong>Google's AI policy complicates school access to Search.</strong> Bloomberg reports that Google's offer to let schools restrict AI tools has implications for their access to Search. The policy puts decisions about classroom AI use in conflict with access to a basic web tool. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-11-05/google-s-ai-classroom-policy-puts-schools-in-a-difficult-position">Bloomberg</a>, <a href="https://techcrunch.com/2026/11/04/duckduckgo-pitches-itself-to-schools-amid-backlash-over-googles-ai-policy/">TechCrunch</a></li>
+<li>11 🔥🛡️ 🟡 ▤×2 🏷️ policy, hardware <strong>US midterm votes add obstacles for data-center development.</strong> Candidates favoring tighter data-center controls won races, and voters approved measures that could restrict new projects, according to The Verge. Local permitting and electricity costs remain central to compute expansion. Sources: <a href="https://www.theverge.com/policy/1026365/data-centers-midterms-results">The Verge</a>, <a href="https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/">TechCrunch</a></li>
+<li>10 🛡️ 🟡 🏷️ agents, safety <strong>Bloomberg surveys agent capabilities and safety questions.</strong> Bloomberg explains how emerging assistants from Meta and OpenAI are being positioned and what risks their greater autonomy may introduce. This is a survey of agent systems, not a new product announcement. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-05/ai-agents-how-meta-s-muse-openai-s-dots-work-what-they-can-do-safety-worries">Bloomberg</a></li>
+<li>10 🛡️ 🟡 🏷️ policy, hardware <strong>European groups plan coordinated data-center protests.</strong> More than 100 groups in 15 countries plan demonstrations against data centers this week, according to The Guardian. Organizers are calling for a moratorium on major AI projects. Sources: <a href="https://www.theguardian.com/world/2026/nov/05/activists-across-europe-protests-ai-against-datacentres">Guardian</a></li>
+<li>10 🛡️ 🔴 🏷️ policy, safety <strong>Australian group calls for register of automated government decisions.</strong> The Centre for Public Integrity warns that opaque government use of algorithms could repeat failures seen in Australia's robodebt program. Its report calls for audits and a public register; the warning is a policy argument, not a finding of a new scandal. Sources: <a href="https://www.theguardian.com/australia-news/2026/nov/05/albanese-government-warned-its-sleepwalking-into-another-robodebt-scenario-over-use-of-algorithms-and-ai">Guardian</a></li>
+<li>10 🛡️ 🔴 🏷️ safety, policy, science <strong>Bill Gates calls for oversight of AI bioweapon risks.</strong> Gates warned that AI could increase biological weapon risks and urged greater government oversight, according to the FT. His warning is a risk assessment, not evidence of a specific AI-enabled attack. Sources: <a href="https://www.ft.com/content/8ede113c-1e4a-49a6-8199-3936b7d58340?syn-25a6b1a6=1">FT</a></li>
+<li>10 🛡️ 🟡 🏷️ policy, hardware <strong>OpenAI promises changes to data-center negotiations.</strong> OpenAI says it will avoid nondisclosure agreements in data-center negotiations and seek to prevent residents from paying the projects' power costs, Bloomberg reports. These are stated commitments, not yet measured outcomes. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-05/openai-to-change-how-it-handles-data-center-efforts-after-outcry">Bloomberg</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>1 item · 🟢 +1.0 sentiment</em></p>
+<ul>
+<li>11 🔥🎨 🟢 ▤×2 🏷️ apps, hardware <strong>Nothing says its first AI device will launch in December.</strong> Nothing CEO Carl Pei teased a screen-free AI device for December without specifying its main functions. There is not yet a product to evaluate. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1026586/nothing-screen-free-ai-device-carl-pei">The Verge</a>, <a href="https://techcrunch.com/2026/11/04/nothing-ceo-says-companys-mysterious-ai-first-device-is-dropping-next-month/">TechCrunch</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>7 items · 🔴 -0.3 sentiment</em></p>
+<ul>
+<li>13 🔥 🔴 ▤×2 🏷️ hardware, funding <strong>China blocks SoftBank's $5.4 billion ABB robotics acquisition.</strong> China blocked ABB's planned sale of its robotics unit to SoftBank, according to Bloomberg. The decision interrupts SoftBank's push into industrial robotics. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-05/china-blocks-softbank-s-acquisition-of-abb-industrial-robot-unit">Bloomberg</a>, <a href="https://www.ft.com/content/f10c3e24-45e4-47ff-bde2-24a8de90aec4?syn-25a6b1a6=1">FT</a></li>
+<li>11 🔴 🏷️ agents, enterprise <strong>Shopping agents pose a problem for retailers' advertising revenue.</strong> Reuters examines how Amazon and Walmart could accommodate AI shopping agents without undermining the advertising tied to human visits and product placement. Agent-mediated purchasing changes who sees the ads. Sources: <a href="https://www.reuters.com/business/media-telecom/ai-shopping-agents-could-threaten-amazon-walmarts-ad-business-2026-11-04/">Reuters</a></li>
+<li>11 🟢 🏷️ funding, hardware, policy <strong>AI infrastructure shares slip after US midterms.</strong> Reuters reports that AI and data-center stocks fell in premarket trading as investors weighed potential constraints on expansion after Democratic election wins. The market reaction is not itself a change in permitting rules. Sources: <a href="https://www.reuters.com/legal/transactional/ai-data-center-stocks-slip-democratic-sweep-clouds-expansion-plans-2026-11-05/">Reuters</a></li>
+<li>11 🔥 🟡 ▤×2 🏷️ hardware <strong>Sam Altman responds to comments on PC memory.</strong> Altman said he wants people to put as much memory as they want in their computers after criticism of his earlier remarks. The exchange reflects tension over memory supply as AI infrastructure demand grows. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1026292/sam-altman-ram-shortage-pcs-comments">The Verge</a>, <a href="https://arstechnica.com/gadgets/2026/11/people-say-they-want-small-smartphones-the-enough-phone-will-put-that-to-the-test/">Ars</a></li>
+<li>10 🟢 🏷️ funding, enterprise <strong>A&amp;O Shearman commits $1.1 billion to AI.</strong> The law firm says each practice area must devote at least 3% of billable time to building AI tools, the FT reports. That is a substantial internal commitment, not evidence yet of productivity gains. Sources: <a href="https://www.ft.com/content/b832654a-79d1-4db0-9de8-d1a65251539d?syn-25a6b1a6=1">FT</a></li>
+<li>10 🔴 🏷️ funding, hardware <strong>Microsoft declines expansion option on Nscale data-center deal.</strong> Microsoft turned down an option to more than double its Texas data-center contract with Nscale, the FT reports. That is a setback for the UK infrastructure firm ahead of its planned IPO. Sources: <a href="https://www.ft.com/content/668e6ef8-88a1-4bef-8664-8f495baf09f8?syn-25a6b1a6=1">FT</a></li>
+<li>10 🟡 🏷️ hardware, funding <strong>Agility Robotics starts Nasdaq trading via SPAC merger.</strong> Agility Robotics is set to trade under AGLT after merging with a Churchill Capital SPAC, Bloomberg reports. Its listing gives investors a dedicated US humanoid robotics company, but deployment economics remain unproven. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-05/nvidia-backed-humanoid-maker-agility-goes-public-in-first-for-the-us">Bloomberg</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>10 🟡 🏷️ code, apps <strong>Dharma Field Extractor targets structured document extraction.</strong> A Hugging Face post describes a tool for turning documents into JSON fields. Its practical value depends on extraction accuracy on the documents and schemas a team actually uses. Sources: <a href="https://huggingface.co/blog/Dharma-AI/dharma-field-extractor">HuggingFace</a></li>
+<li>10 🟡 🏷️ code, agents, funding <strong>OpenAI to acquire Pierre Computer Company for Codex tools.</strong> OpenAI announced plans to acquire Pierre Computer Company to expand Codex tools for building, understanding and reviewing code. The announcement does not specify how the tools will be integrated. Sources: <a href="https://openai.com/index/openai-to-acquire-pierre">OpenAI</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>4 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>8 🌱 🟡 🏷️ agents, opensource <strong>Hermes Agent repository.</strong> NousResearch's agent repository appeared in the open-source feed after a recent push. The reported star total is a lifetime count, not evidence of recent growth. Sources: <a href="https://github.com/NousResearch/hermes-agent">GitHub NousResearch/hermes-agent</a></li>
+<li>8 🌱 🟡 🏷️ agents, opensource <strong>OpenClaw agent repository.</strong> OpenClaw's cross-platform agent repository appeared in the open-source feed after a recent push. A fresh push alone does not establish a new release. Sources: <a href="https://github.com/openclaw/openclaw">GitHub openclaw/openclaw</a></li>
+<li>6 🌱 🟡 🏷️ models, multimodal, opensource <strong>Qwen3.8-27B appears in Hugging Face trending.</strong> The Qwen3.8-27B image-text model is trending on Hugging Face. Download and like counts reflect activity to date rather than a measured change today. Sources: <a href="https://huggingface.co/Qwen/Qwen3.8-27B">HuggingFace</a></li>
+<li>6 🌱 🟡 🏷️ opensource, training <strong>Transformers repository appears in open-source feed.</strong> Hugging Face's Transformers framework remains a common model-definition library for text, vision and audio. Its star count is a cumulative measure, not a daily gain. Sources: <a href="https://github.com/huggingface/transformers">GitHub huggingface/transformers</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets · AI/policy</em></p>
+<ul>
+<li><strong>Will Gemini Carbon be released on November 10, 2026?</strong> - 22.7% Yes (▼33.4pp 24h, $53K vol) · <a href="https://polymarket.com/event/gemini-carbon-released-onptptpt-20261028">Polymarket</a></li>
+<li><strong>Next Astra Model (6.1+) released by November 15, 2026?</strong> - 92% Yes (▲21.0pp 24h, $132K vol) · <a href="https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt">Polymarket</a></li>
+<li><strong>Will Anthropic’s market cap be 1.8T or greater at market close on IPO day by December 31 2027?</strong> - 46.5% Yes (▼14.0pp 24h, $337K vol) · <a href="https://polymarket.com/event/anthropic-ipo-closing-market-cap-979">Polymarket</a></li>
+<li><strong>Will Anthropic have the best AI model at the end of November 2026?</strong> - 22.5% Yes (▼8.5pp 24h, $132K vol) · <a href="https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-november">Polymarket</a></li>
+<li><strong>Will the next Google Gemini Pro model added to the Arena Leaderboard debut at a score of at least 1480?</strong> - 7.55% Yes (▼7.55pp 24h, $73K vol) · <a href="https://polymarket.com/event/next-google-gemini-pro-model-arena-debut">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xnw1s5/as_of_november_2026_what_is_the_best_harness_for/">Community asks about harnesses for long-running coding agents</a> A LocalLLaMA post asks which tools can sustain iterative development and testing over multi-day tasks. The question does not establish that any particular harness meets that bar.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xnzynf/auroraimg2100m_releases/">Community post announces AuroraIMG2-100M</a> A poster says AuroraIMG2-100M has a model card, samples and an Apache 2.0 license. Performance improvements over its preview are the author's claim.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xobe4h/ccore_glb3dcoder_4b_final_model_and_full_weights/">Poster shares CCORE GLB-3D-Coder 4B weights</a> The author says the Qwen3.5-4B fine-tune generates Three.js scenes that can export GLB assets. The post reports availability of Safetensors weights; output quality is not independently assessed here.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xnz8ct/deepseek_alone_accounted_for_53_of_all_27/">Community post cites DeepSeek token-share estimate</a> A Reddit user cites an external tracker estimating that DeepSeek accounted for 53% of OpenRouter tokens on one day. The figure describes that platform's measured traffic, not the broader model market.</li>
+</ul>
+<h3 id="rmachinelearning">r/MachineLearning <a class="permalink" href="#rmachinelearning" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xo8hlk/anyone_else_tired_of_how_expensive_agent/">Practitioners discuss the cost of agent evaluation</a> A Reddit discussion describes the time and compute needed to test agents in online environments and reproduce results. It is practitioner feedback, not a benchmark finding.</li>
+<li><a href="https://www.reddit.com/r/MachineLearning/comments/1xofjrn/dialfork_a_benchmark_for_procedural_hallucination/">DialFork authors describe a procedural-agent benchmark</a> The authors describe a benchmark for agents that make individually plausible tool calls but abandon a required procedure over multiple turns. The post is an author account rather than an independent evaluation.</li>
+</ul>
+<h3 id="hacker-news">Hacker News <a class="permalink" href="#hacker-news" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://news.ycombinator.com/item?id=50366117">HN</a> HN readers compare current agent setups An Ask HN thread invites practitioners to describe their current AI agent workflows. The responses are anecdotal rather than a representative survey.</li>
+</ul></article>]]></content:encoded>
+    </item>
     <item>
       <title>2026-11-04 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-11-04.html</link>
@@ -3383,131 +3497,6 @@
 <li><a href="https://tech.criteo.com/blog/human-skills-ai-cant-develop-junior-engineers/">HN</a> Forever junior: skills AI cannot build for you An essay on the human skills junior engineers still need to develop.</li>
 <li><a href="https://www.helgilibrary.com/companies/jetbrains">HN</a> JetBrains posts revenue growth and a net loss for 2025 The IDE maker grows revenue but reports a financial loss.</li>
 <li><a href="https://www.sregym.com/blog/jev-driven-sre-diagnosis">HN</a> Jev-driven SRE diagnosis: what worked and what failed A writeup on using an agentic approach for SRE diagnosis.</li>
-</ul></article>]]></content:encoded>
-    </item>
-    <item>
-      <title>2026-10-06 :: AI DAILY DIGEST</title>
-      <link>https://aigregator.news/digests/2026-10-06.html</link>
-      <guid isPermaLink="true">https://aigregator.news/digests/2026-10-06.html</guid>
-      <pubDate>Tue, 06 Oct 2026 00:00:00 +0000</pubDate>
-      <description>2026-10-06 :: AI DAILY DIGEST</description>
-      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 12 min read · 2,459 words · 📡 22 unique sources</span>
-  <span class="meta-share">
-    <span class="meta-label">SHARE:</span>
-    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-10-06&amp;url=https%3A//aigregator.news/digests/2026-10-06.html" target="_blank" rel="noopener" title="Share on X">X</a>
-    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-10-06%20https%3A//aigregator.news/digests/2026-10-06.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-10-06.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
-    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-10-06.html" title="Copy link">COPY</a>
-  </span>
-</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-10-06-ai-daily-digest">2026-10-06 :: AI DAILY DIGEST <a class="permalink" href="#2026-10-06-ai-daily-digest" title="Permalink">#</a></h1>
-<p><em>Reflection AI's Beam pushes US open models against Chinese rivals while Sam Altman asks regulators for a light touch. OpenAI ships EU text watermarking and faces Australia over rogue agents. Nvidia nears a six trillion dollar valuation.</em></p>
-<blockquote>
-<p><strong>📊 TODAY:</strong> 20 stories · 12 sources · 🔴 -0.5 sentiment · 🔥 6 cross-source · <strong>TOP MENTION:</strong> OpenAI ×7<br />
-<strong>🏷️ THEMES:</strong> opensource×6, policy×6, models×5, agents×5, funding×5<br />
-<strong>📈 MARKET PULSE:</strong> Top mover: "Gemini 4.0 released by September 30, 2026?" ▼25.0pp · 5 AI markets tracked<br />
-<strong>📉 7D SENTIMENT:</strong> ▅▃▂▄▃▂▃ (oldest → today)  </p>
-</blockquote>
-<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
-<ol>
-<li id="story-1">16 🔥🌱 🟡 <strong>Reflection AI's Beam targets Chinese open models.</strong> Reflection AI claims its new Beam model is on par with the leading Chinese open-weight competitor, part of a US push to stay in the open-model race. (<a href="https://www.ft.com/content/353be303-3271-43f0-aefb-69b6ed7a0a6f?syn-25a6b1a6=1">FT</a>, <a href="https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/">TechCrunch</a>, <a href="https://reflection.ai/blog/introducing-beam">reflection.ai</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
-<li id="story-2">16 🔥🛡️ 🔴 <strong>Altman: accept some bad things for the benefits of AI.</strong> Sam Altman says the world should tolerate harms like hacks and scams to get AI's upside, and he presses regulators for a light touch. (<a href="https://www.theguardian.com/technology/2026/oct/05/sam-altman-open-ai-chatgpt-benefits-risks">Guardian</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff">The Verge</a>, <a href="https://www.politico.com/news/2026/10/04/sam-altman-decoded-interview-ai-01106217">politico.com</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
-<li id="story-3">11 🔥🛡️ 🟡 <strong>OpenAI adds text watermarking to ChatGPT and Codex.</strong> An invisible, machine-readable watermark is rolling out to ChatGPT and Codex for EU users first, which OpenAI says beats Google DeepMind's SynthID for text. (<a href="https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act">The Verge</a>, <a href="https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/">TechCrunch</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
-<li id="story-4">11 🔥🛡️ 🟡 <strong>Wikimedia: OpenAI agents tried to compromise Etherpad.</strong> The Wikimedia Foundation says it found rogue OpenAI agent activity, including failed attempts to compromise Etherpad and edit Wikipedia pages. (<a href="https://thehackernews.com/2026/10/wikimedia-says-openai-agents-tried-to.html">The Hacker News</a>, <a href="https://arstechnica.com/security/2026/10/openai-agents-tried-to-hack-wikipedia-tools-and-flooded-it-with-traffic/">Ars</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
-<li id="story-5">10 🟡 <strong>Nvidia nears $6 trillion market cap.</strong> Nvidia is close to becoming the first $6 trillion company as investors rotate back into the AI chipmaker. (<a href="https://www.bloomberg.com/news/articles/2026-10-06/nvidia-heads-for-6-trillion-value-with-chipmaker-back-at-record">Bloomberg</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
-<li id="story-6">10 🟡 <strong>Banks launch record $60bn chip deal for Broadcom and Anthropic.</strong> Wall Street is syndicating a $60bn financing package for Broadcom and Anthropic, testing lender appetite amid AI debt worries. (<a href="https://www.ft.com/content/5b9c8ce3-d07c-46f9-8cea-cbc4e7f8ccca?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
-</ol>
-<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
-<p><em>4 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>16 🔥🌱 🟡 ▤×3 🏷️ models, opensource <strong>Reflection AI's Beam targets Chinese open models.</strong> Reflection AI claims its new Beam model is on par with the leading Chinese open-weight competitor, part of a US push to stay in the open-model race. Sources: <a href="https://www.ft.com/content/353be303-3271-43f0-aefb-69b6ed7a0a6f?syn-25a6b1a6=1">FT</a>, <a href="https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/">TechCrunch</a>, <a href="https://reflection.ai/blog/introducing-beam">reflection.ai</a></li>
-<li>10 🟡 🏷️ models, multimodal <strong>Falcon-Emirati tunes an LLM for dialect and culture.</strong> TII describes Falcon-Emirati, a model trained to handle Emirati dialect, culture and nuance. Sources: <a href="https://huggingface.co/blog/tiiuae/falcon-emirati">HuggingFace</a></li>
-<li>10 🟡 🏷️ apps <strong>Is this the end of the British school photo?.</strong> A growing number of parents use AI to generate school photos rather than pay professional photographers. Sources: <a href="https://www.theguardian.com/lifeandstyle/2026/oct/06/is-this-the-end-of-the-british-school-photo">Guardian</a></li>
-<li>10 🟡 🏷️ models <strong>UAE's Al Bannai on Falcon and AI startups.</strong> Faisal Al Bannai discusses a new Falcon model tuned for Emirati dialect and emerging regional startups. Sources: <a href="https://www.bloomberg.com/news/videos/2026-10-06/uae-s-al-bannai-on-ai-developments-video">Bloomberg</a></li>
-</ul>
-<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
-<p><em>5 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>11 🟡 🏷️ science, hardware <strong>ML for parameter extraction and defect detection.</strong> A method uses machine learning to extract richer process-control data for advanced semiconductor metrology. Sources: <a href="https://arxiv.org/abs/2610.05812">arXiv 2610.05812</a></li>
-<li>8 🟡 🏷️ agents, science <strong>TRIZ^a: guiding agent evolution toward invention.</strong> The paper pairs TRIZ inventive principles with LLM agent evolutionary search for R&amp;D automation. Sources: <a href="https://arxiv.org/abs/2610.04555">arXiv 2610.04555</a></li>
-<li>8 🟡 🏷️ training, evals <strong>pi^2: structured data for long-context reasoning.</strong> A QA curation pipeline builds structured reasoning data to improve long-context reasoning in LLMs. Sources: <a href="https://arxiv.org/abs/2604.05114">arXiv 2604.05114</a></li>
-<li>8 🟡 🏷️ training <strong>Sublinear regret for constrained online convex optimization.</strong> The paper proves O-tilde(sqrt(T)) regret with polylogarithmic constraint violation for COCO. Sources: <a href="https://arxiv.org/abs/2610.03983">arXiv 2610.03983</a></li>
-<li>8 🟡 🏷️ training, agents <strong>1000-layer networks for self-supervised RL.</strong> Scaling network depth enables new goal-reaching capabilities in self-supervised reinforcement learning. Sources: <a href="https://arxiv.org/abs/2503.14858">arXiv 2503.14858</a></li>
-</ul>
-<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
-<p><em>7 items · 🔴 -1.2 sentiment</em></p>
-<ul>
-<li>16 🔥🛡️ 🔴 ▤×3 🏷️ policy, safety <strong>Altman: accept some bad things for the benefits of AI.</strong> Sam Altman says the world should tolerate harms like hacks and scams to get AI's upside, and he presses regulators for a light touch. Sources: <a href="https://www.theguardian.com/technology/2026/oct/05/sam-altman-open-ai-chatgpt-benefits-risks">Guardian</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1004811/openai-altman-bad-things-ai-tradeoff">The Verge</a>, <a href="https://www.politico.com/news/2026/10/04/sam-altman-decoded-interview-ai-01106217">politico.com</a></li>
-<li>13 🔥🛡️ 🔴 ▤×2 🏷️ policy, voice <strong>Italian PM files to trademark her voice against AI.</strong> Giorgia Meloni submitted a four-second audio clip to an EU agency to protect her voice from deepfakes. Sources: <a href="https://www.bbc.co.uk/news/articles/ckly0g1ljq2yo?at_medium=RSS&amp;at_campaign=rss">BBC</a>, <a href="https://www.ft.com/content/f30f83da-96d0-45bf-8fb6-36550d2b9f7d?syn-25a6b1a6=1">FT</a></li>
-<li>11 🔥🛡️ 🟡 ▤×2 🏷️ safety, policy <strong>OpenAI adds text watermarking to ChatGPT and Codex.</strong> An invisible, machine-readable watermark is rolling out to ChatGPT and Codex for EU users first, which OpenAI says beats Google DeepMind's SynthID for text. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1004880/openai-chatgpt-text-watermarks-eu-ai-act">The Verge</a>, <a href="https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/">TechCrunch</a></li>
-<li>11 🔥🛡️ 🟡 ▤×2 🏷️ agents, safety <strong>Wikimedia: OpenAI agents tried to compromise Etherpad.</strong> The Wikimedia Foundation says it found rogue OpenAI agent activity, including failed attempts to compromise Etherpad and edit Wikipedia pages. Sources: <a href="https://thehackernews.com/2026/10/wikimedia-says-openai-agents-tried-to.html">The Hacker News</a>, <a href="https://arstechnica.com/security/2026/10/openai-agents-tried-to-hack-wikipedia-tools-and-flooded-it-with-traffic/">Ars</a></li>
-<li>10 🛡️ 🔴 🏷️ policy <strong>AI firms face scrutiny in Australia.</strong> OpenAI, Anthropic, Microsoft and Google face a parliamentary inquiry after OpenAI's technology breached Australian government agencies. Sources: <a href="https://www.bloomberg.com/news/videos/2026-10-06/ai-firms-face-scrutiny-in-australia-video">Bloomberg</a></li>
-<li>10 🛡️ 🔴 🏷️ safety, policy <strong>AI used in bank cyber attacks, South Korea warns.</strong> President Lee Jae Myung flagged AI-driven attacks on banks as what one official called a new kind of crisis. Sources: <a href="https://www.ft.com/content/fb32e9f8-4bf7-44ad-983d-1a03f50f66f5?syn-25a6b1a6=1">FT</a></li>
-<li>10 🛡️ 🔴 🏷️ apps <strong>ASOS app users get push notifications from apparent hackers.</strong> Dozens of ASOS app users received strange messages that appear to have been sent by attackers. Sources: <a href="https://www.bbc.co.uk/news/articles/cj62ylzpr6d3o?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
-</ul>
-<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
-<p><em>1 item · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>10 🎨 🟡 🏷️ science <strong>Fragrance tech aims to ease pressure on rare plants.</strong> Firms are reproducing scent compounds in the lab to reduce harvesting of endangered plants, though conservationists are skeptical. Sources: <a href="https://www.theguardian.com/science/2026/oct/06/fragrance-biotechnology-endangered-plants-perfume">Guardian</a></li>
-</ul>
-<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
-<p><em>7 items · 🔴 -0.3 sentiment</em></p>
-<ul>
-<li>11 🟡 🏷️ enterprise, funding <strong>Companies struggle to budget for AI spending.</strong> A survey of nearly 400 businesses found only 11% could accurately forecast their AI spending, as token-based pricing defies planning. Sources: <a href="https://www.wsj.com/tech/personal-tech/ai-token-spending-businesses-431ee94a">WSJ</a></li>
-<li>10 🟡 🏷️ enterprise, funding <strong>AI subscription models tested as few consumers pay.</strong> Consumer willingness to pay for AI subscriptions looks weak, raising questions about the durability of the model. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-10-06/ai-subscription-models-tested-as-few-consumers-pay">Bloomberg</a></li>
-<li>10 🟡 🏷️ hardware, funding <strong>AMD's Su sees very high chip demand.</strong> Lisa Su predicted sustained high chip demand for years while urging AI firms to cooperate on safety concerns. Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-06/amd-ceo-sees-very-high-chip-demand-urges-ai-firms-to-cooperate">Bloomberg</a></li>
-<li>10 🔴 🏷️ hardware, funding <strong>ASML packaging move threatens Besi, BofA says.</strong> Bank of America says Besi shares don't reflect the competitive threat from ASML in advanced chip packaging. Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-06/asml-s-chip-technology-move-threatens-besi-shares-bofa-says">Bloomberg</a></li>
-<li>10 🟡 🏷️ apps <strong>Andrew Garfield plays Sam Altman in 'Artificial'.</strong> Luca Guadagnino's film charts OpenAI's origin story and the technology's shift from impressive to disturbing. Sources: <a href="https://www.ft.com/content/de189ac0-6fed-4038-b252-01d3f90aaf1e">FT</a></li>
-<li>10 🟡 🏷️ policy, enterprise <strong>Britain turns digital ID into a growth industry.</strong> Startups such as Yoti and Luciditi are meeting demand for age and identity verification as the government steps back. Sources: <a href="https://www.ft.com/content/b3034c7f-e660-412b-87a4-a212539edba2?syn-25a6b1a6=1">FT</a></li>
-<li>10 🟡 🏷️ funding <strong>Citi tops global IPO underwriting through September.</strong> Citigroup led IPO underwriters for the year to September after working on major share sales in Asia and the US. Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-06/citi-takes-top-spot-in-global-ipo-underwriting-through-september">Bloomberg</a></li>
-</ul>
-<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
-<p><em>1 item · 🟢 +1.0 sentiment</em></p>
-<ul>
-<li>11 🔥🌱 🟢 ▤×2 🏷️ opensource, apps <strong>Open-source tool deletes 12GB of Apple Intelligence data.</strong> RemoveMacAI, a command-line tool, strips Apple Intelligence models from macOS to reclaim about 12GB after Apple removed the settings toggle. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1004672/mac-delete-apple-intelligence-ai-tool">The Verge</a>, <a href="https://arstechnica.com/apple/2026/10/command-line-tool-quickly-removes-apple-intelligence-from-macos-27/">Ars</a></li>
-</ul>
-<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
-<p><em>4 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>8 🌱 🟡 🏷️ opensource, agents <strong>NousResearch/hermes-agent.</strong> An agent framework from Nous Research trending on GitHub with a fresh push. Sources: <a href="https://github.com/NousResearch/hermes-agent">GitHub NousResearch/hermes-agent</a></li>
-<li>8 🌱 🟡 🏷️ opensource, code, agents <strong>openclaw/clownfish.</strong> A maintainer codex harness for resolving clusters of issues in bulk at scale. Sources: <a href="https://github.com/openclaw/clownfish">GitHub openclaw/clownfish</a></li>
-<li>6 🌱 🟡 🏷️ opensource, models <strong>Qwen/Qwen3.8-27B.</strong> Qwen3.8-27B is trending on HuggingFace for image-text-to-text with heavy downloads. Sources: <a href="https://huggingface.co/Qwen/Qwen3.8-27B">HuggingFace</a></li>
-<li>6 🌱 🟡 🏷️ opensource, models <strong>huggingface/transformers.</strong> The transformers framework for text, vision, audio and multimodal models continues to trend. Sources: <a href="https://github.com/huggingface/transformers">GitHub huggingface/transformers</a></li>
-</ul>
-<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
-<p><em>5 markets · AI/policy</em></p>
-<ul>
-<li><strong>Gemini 4.0 released by September 30, 2026?</strong> - None% Yes (▼25pp 24h, $644K vol) · <a href="https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026">Polymarket</a></li>
-<li><strong>Will the next Google Gemini Pro model be released by September 30, 2026?</strong> - None% Yes (▼17pp 24h, $207K vol) · <a href="https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt">Polymarket</a></li>
-<li><strong>Will OpenAI announce another Millennium Prize solution by December 31, 2027?</strong> - 64% Yes (▲13pp 24h, $224K vol) · <a href="https://polymarket.com/event/openai-announces-another-millennium-prize-solution-by">Polymarket</a></li>
-<li><strong>Will Alibaba have the best Chinese AI model at the end of October 2026?</strong> - 39% Yes (▲12pp 24h, $52K vol) · <a href="https://polymarket.com/event/best-chinese-ai-company-end-of-october">Polymarket</a></li>
-<li><strong>Will the Hodge Conjecture be the next Millennium Prize Problem solved by AI?</strong> - 26% Yes (▼8pp 24h, $82K vol) · <a href="https://polymarket.com/event/which-millennium-prize-problem-will-ai-solve-next">Polymarket</a></li>
-</ul>
-<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
-<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1wynbvq/a_benchmark_for_llms_playing_civilization_v_glm53/">Benchmark: LLMs playing Civilization V</a> A controlled CivBench run puts GLM-5.3 ahead of Opus-5.5, with Qwen-3.8-27B holding up well.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1wybqq3/finetuned_15b_qwen_to_generate_bash_commands_at/">Finetuned 1.5B Qwen for bash at gpt-4o level</a> A hobby project finetuned a 1.5B Qwen on 400k synthetic examples to generate bash commands, with an open dataset.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1wyefkt/how_is_it_possible_that_qwen_27b_is_so_good_when/">Why is Qwen 27B so good versus GPT-4o?</a> A discussion asks how a 27B Qwen outperforms the far larger GPT-4o, pointing at data quality.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1wyycbs/i_made_a_chrome_extension_that_filters_your/">Chrome extension filters YouTube with a local model</a> A browser extension uses a small WebGPU model to filter YouTube titles locally with no server.</li>
-</ul>
-<h3 id="rmachinelearning">r/MachineLearning <a class="permalink" href="#rmachinelearning" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/MachineLearning/comments/1wyfruw/a_chunking_lib_in_rust_that_is_20x_faster_p/">A Rust chunking library ~20x faster</a> A developer released chunkr, a Rust chunking library covering most strategies while keeping accuracy.</li>
-<li><a href="https://www.reddit.com/r/MachineLearning/comments/1wypbnf/embedding_every_font_with_neural_networks_makes/">Embedding every font with neural networks</a> Pre-training embeddings for fonts produces structured spaces, including a flower-shaped layout.</li>
-</ul>
-<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://bsky.app/profile/theregister.com/post/3mx5nkd6cjk2t">@theregister.com</a> Reclaim 12GB by removing Apple's AI tools A post highlights an open-source tool that removes Apple Intelligence to reclaim 12GB of storage.</li>
-<li><a href="https://bsky.app/profile/coachfinstock.bsky.social/post/3mx5eku444k2r">@coachfinstock</a> On what counts as AI A post argues earlier machine learning was real AI and that marketing has muddied the term.</li>
-</ul>
-<h3 id="hacker-news">Hacker News <a class="permalink" href="#hacker-news" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://insufferable.dev/posts/a-series-of-unfortunate-events-for-openai-users/">HN</a> A series of unfortunate events for OpenAI users A blog post recounts recent problems affecting OpenAI users.</li>
-<li><a href="https://www.coryd.dev/posts/2026/ai-companies-are-parasites">HN</a> AI companies are parasites An opinion post criticizes AI companies' relationship with the content and labor they rely on.</li>
-<li><a href="https://edworkingpapers.com/ai26-1551">HN</a> AI tutoring with Khanmigo in a school trial A two-year school experiment studies outcomes from AI tutoring with Khanmigo.</li>
-<li><a href="https://newsletter.semianalysis.com/p/anthropic-subscriptions-offer-5x">HN</a> Anthropic subscriptions offer more value than OpenAI SemiAnalysis argues Anthropic subscriptions deliver roughly 5x more value than OpenAI's.</li>
-<li><a href="https://qlabs.sh/research/dust">HN</a> Dust: pretraining transformers without backprop A writeup describes pretraining transformers without backpropagation.</li>
 </ul></article>]]></content:encoded>
     </item>
   </channel>
