@@ -6,7 +6,103 @@
     <atom:link href="https://aigregator.news/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Daily AI signal, scored and cited.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Nov 2026 14:03:26 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 14:03:26 +0000</lastBuildDate>
+    <item>
+      <title>2026-11-08 :: AI DAILY DIGEST</title>
+      <link>https://aigregator.news/digests/2026-11-08.html</link>
+      <guid isPermaLink="true">https://aigregator.news/digests/2026-11-08.html</guid>
+      <pubDate>Sun, 08 Nov 2026 00:00:00 +0000</pubDate>
+      <description>2026-11-08 :: AI DAILY DIGEST</description>
+      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 10 min read · 2,006 words · 📡 14 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-11-08&amp;url=https%3A//aigregator.news/digests/2026-11-08.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-11-08%20https%3A//aigregator.news/digests/2026-11-08.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-11-08.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-11-08.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-11-08-ai-daily-digest">2026-11-08 :: AI DAILY DIGEST <a class="permalink" href="#2026-11-08-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Anthropic's reported $3.4 billion generator order puts the power demands of AI data centers in concrete terms. Bloomberg reports election gains for AI oversight advocates and protests against data centers in Europe. METR's investigation raises questions about how AI-assisted development changes model progress.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 11 stories · 6 sources · 🔴 -0.3 sentiment · 🔥 1 cross-source · <strong>TOP MENTION:</strong> Anthropic ×5<br />
+<strong>🏷️ THEMES:</strong> policy×6, hardware×6, funding×4, opensource×4, safety×2<br />
+<strong>📈 MARKET PULSE:</strong> Top mover: "Will Anthropic's IPO valuation be between $1.50T and $1.75T?" ▼22.35pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▄▃▃▄▄▄▄ (oldest → today)  </p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">13 🔥 🔴 <strong>Anthropic reportedly agrees to $3.4 billion generator purchase for data centers.</strong> The Financial Times reports that Anthropic agreed to pay $3.4 billion for gas-fired generators to supply data centers. Bloomberg describes it as the largest known single power-generation equipment order by an AI lab; it is an equipment deal, not evidence that the power is already online. (<a href="https://www.bloomberg.com/news/articles/2026-11-08/anthropic-buys-power-for-ai-data-centres-in-3-4b-deal-ft-says">Bloomberg</a>, <a href="https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">10 🛡️ 🟢 <strong>AI oversight candidates win congressional races after costly midterm contest.</strong> Bloomberg reports that candidates favoring stricter AI oversight won key races, aided by a pro-regulation political group partly backed by Anthropic. Electoral wins do not themselves enact new AI rules. (<a href="https://www.bloomberg.com/news/articles/2026-11-07/ai-safety-advocates-make-gains-after-110-million-midterm-fight">Bloomberg</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">8 🛡️ 🔴 <strong>METR investigates AI-assisted model development at Anthropic.</strong> The Verge reports that METR spent 11 weeks examining Anthropic's use of AI in development and found indications of faster model progress. The reported pace and its causes remain findings of that investigation, not a measured industry-wide trend. (<a href="https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development">The Verge</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">10 🛡️ 🟡 <strong>Data center protests continue across Europe.</strong> Bloomberg reports demonstrations against data centers in Europe over their environmental and social effects. The objections add a local political constraint to planned AI infrastructure buildouts. (<a href="https://www.bloomberg.com/news/articles/2026-11-07/ai-backlash-spreads-across-europe-with-data-center-protests">Bloomberg</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">11 🟡 <strong>Advanced chip packaging draws AI infrastructure investment.</strong> Reuters reports billions of dollars in investment in advanced packaging as AI infrastructure demand exposes capacity constraints. Packaging is a separate bottleneck from chip fabrication. (<a href="https://www.reuters.com/world/asia-pacific/ai-boom-turns-chip-packaging-into-next-battleground-semiconductors-2026-11-06/">Reuters</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+<li id="story-6">8 🛡️ 🟢 <strong>Questions raised about vetting approved Nvidia H200 chip buyers in China.</strong> The Verge cites New York Times reporting that one firm cleared to handle Nvidia H200 chips appears to have empty offices. The reporting raises questions about export-control screening; it does not establish that the firm diverted chips. (<a href="https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government">The Verge</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>6 items · 🔴 -0.3 sentiment</em></p>
+<ul>
+<li>10 🛡️ 🟡 🏷️ policy, hardware <strong>Data center protests continue across Europe.</strong> Bloomberg reports demonstrations against data centers in Europe over their environmental and social effects. The objections add a local political constraint to planned AI infrastructure buildouts. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-07/ai-backlash-spreads-across-europe-with-data-center-protests">Bloomberg</a></li>
+<li>10 🛡️ 🟢 🏷️ policy, safety <strong>AI oversight candidates win congressional races after costly midterm contest.</strong> Bloomberg reports that candidates favoring stricter AI oversight won key races, aided by a pro-regulation political group partly backed by Anthropic. Electoral wins do not themselves enact new AI rules. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-07/ai-safety-advocates-make-gains-after-110-million-midterm-fight">Bloomberg</a></li>
+<li>10 🛡️ 🔴 🏷️ policy, art <strong>Music industry group warns Australia against weakening AI copyright rules.</strong> The IFPI's head argues that expanding AI companies' access to copyrighted online material would harm the recording industry. The Guardian reports the group's position as Australia considers copyright policy; the predicted harm is its claim. Sources: <a href="https://www.theguardian.com/technology/2026/nov/09/weakening-ai-copyright-law-will-spell-disaster-for-creativity-australia">Guardian</a></li>
+<li>10 🛡️ 🟡 🏷️ policy, apps <strong>UK public bodies report more AI-generated complaints and requests.</strong> The Guardian reports that MPs' offices, local authorities and other organizations are receiving large volumes of chatbot-generated correspondence. Staff say even low-effort submissions can take time to review and answer. Sources: <a href="https://www.theguardian.com/technology/2026/nov/08/ai-clog-public-bodies-local-authorities-onslaught-chatbot-generated-correspondence">Guardian</a></li>
+<li>8 🛡️ 🟢 🏷️ policy, hardware <strong>Questions raised about vetting approved Nvidia H200 chip buyers in China.</strong> The Verge cites New York Times reporting that one firm cleared to handle Nvidia H200 chips appears to have empty offices. The reporting raises questions about export-control screening; it does not establish that the firm diverted chips. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government">The Verge</a></li>
+<li>8 🛡️ 🔴 🏷️ safety, training, evals <strong>METR investigates AI-assisted model development at Anthropic.</strong> The Verge reports that METR spent 11 weeks examining Anthropic's use of AI in development and found indications of faster model progress. The reported pace and its causes remain findings of that investigation, not a measured industry-wide trend. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development">The Verge</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>1 item · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>8 🎨 🟡 🏷️ apps <strong>NYT Cooking tests an AI recipe modifier.</strong> The New York Times has added a beta assistant to its Cooking app for ingredient swaps and recipe adjustments. Wired's hands-on review reports mixed practical results rather than a general reliability guarantee. Sources: <a href="https://www.wired.com/story/nyt-cooking-new-ai-powered-recipe-modifier-is-pretty-good/">Wired</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>4 items · 🔴 -0.2 sentiment</em></p>
+<ul>
+<li>13 🔥 🔴 ▤×2 🏷️ hardware, funding <strong>Anthropic reportedly agrees to $3.4 billion generator purchase for data centers.</strong> The Financial Times reports that Anthropic agreed to pay $3.4 billion for gas-fired generators to supply data centers. Bloomberg describes it as the largest known single power-generation equipment order by an AI lab; it is an equipment deal, not evidence that the power is already online. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-08/anthropic-buys-power-for-ai-data-centres-in-3-4b-deal-ft-says">Bloomberg</a>, <a href="https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0?syn-25a6b1a6=1">FT</a></li>
+<li>11 🟡 🏷️ hardware, funding <strong>Advanced chip packaging draws AI infrastructure investment.</strong> Reuters reports billions of dollars in investment in advanced packaging as AI infrastructure demand exposes capacity constraints. Packaging is a separate bottleneck from chip fabrication. Sources: <a href="https://www.reuters.com/world/asia-pacific/ai-boom-turns-chip-packaging-into-next-battleground-semiconductors-2026-11-06/">Reuters</a></li>
+<li>10 🟡 🏷️ funding, hardware, policy <strong>Milei pitches Patagonia as a location for AI data centers.</strong> The Financial Times reports that Argentina's Javier Milei wants to use Patagonian land and energy resources for an AI data center hub. This is a proposed direction, not evidence of completed facilities. Sources: <a href="https://www.ft.com/content/d432ae29-6454-4916-98c7-afb6993cfb67?syn-25a6b1a6=1">FT</a></li>
+<li>10 🟡 🏷️ funding, hardware <strong>CoreWeave seeks cooperation with incoming Texas administration on data centers.</strong> Bloomberg reports that CoreWeave sent Governor-elect Gina Hinojosa a letter about existing and prospective Texas data center projects. The request signals a political approach to expansion, not a newly approved project. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-07/coreweave-asks-texas-governor-elect-for-data-center-cooperation">Bloomberg</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>(quiet today)</em></p>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>4 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>8 🌱 🟡 🏷️ agents, opensource <strong>NousResearch/hermes-agent.</strong> The Hermes Agent repository remains active, with a recent push in the source snapshot. Its listed 261,634 stars are a lifetime total, not a daily gain. Sources: <a href="https://github.com/NousResearch/hermes-agent">GitHub NousResearch/hermes-agent</a></li>
+<li>8 🌱 🟡 🏷️ agents, opensource <strong>openclaw/openclaw.</strong> The cross-platform agent repository has a recent push in the source snapshot. The reported 394,178 GitHub stars are cumulative, not a measure of today's activity. Sources: <a href="https://github.com/openclaw/openclaw">GitHub openclaw/openclaw</a></li>
+<li>6 🌱 🟡 🏷️ models, multimodal, opensource <strong>Qwen/Qwen3.8-27B.</strong> This image-text-to-text model appears in the Hugging Face trending feed. The feed's likes and downloads are cumulative, and do not establish a new release today. Sources: <a href="https://huggingface.co/Qwen/Qwen3.8-27B">HuggingFace</a></li>
+<li>6 🌱 🟡 🏷️ opensource, training, inference <strong>huggingface/transformers.</strong> Hugging Face's model-definition framework appears in the GitHub trending snapshot. Its reported 168,651 stars are a lifetime figure, not a daily change. Sources: <a href="https://github.com/huggingface/transformers">GitHub huggingface/transformers</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets · AI/policy</em></p>
+<ul>
+<li><strong>Will Anthropic's IPO valuation be between $1.50T and $1.75T?</strong> - 23.4% Yes (▼22.35pp 24h, $77K vol) · <a href="https://polymarket.com/event/what-will-anthropics-ipo-valuation-be">Polymarket</a></li>
+<li><strong>Will Anthropic IPO on November 20, 2026?</strong> - 33.5% Yes (▲12.0pp 24h, $87K vol) · <a href="https://polymarket.com/event/anthropic-ipo-date">Polymarket</a></li>
+<li><strong>Will the highest score achieved by an OpenAI model on Humanity’s Last Exam in 2026 be 60% or higher?</strong> - 24% Yes (▼7.5pp 24h, $57K vol) · <a href="https://polymarket.com/event/highest-openai-score-on-humanitys-last-exam-in-2026-20260723225144062">Polymarket</a></li>
+<li><strong>Will Anthropic's market cap be between $1.5T and $1.75T at market close on IPO day?</strong> - 31.35% Yes (▲7.0pp 24h, $467K vol) · <a href="https://polymarket.com/event/anthropic-ipo-closing-market-cap-higher-strikes">Polymarket</a></li>
+<li><strong>Will Gemini Carbon be released on November 10, 2026?</strong> - 49.25% Yes (▲6.85pp 24h, $79K vol) · <a href="https://polymarket.com/event/gemini-carbon-released-onptptpt-20261028">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xqxqvw/2x256gb_m5u_current_status/">Local inference user compares clustering two 256 GB Macs with separate model runs</a> A Reddit user reports better results from running two independent models than clustering two 256 GB M5 Ultra systems, citing concurrency and uneven decode gains. It is an individual setup report, not a benchmark.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xqrqn6/anybody_tried_apex_35b_and_axion_35b/">Community asks for experience with Apex 35B and Axion 35B fine-tunes</a> A LocalLLaMA user points to two model pages and asks for hands-on reports. The post offers no independent evaluation of either fine-tune or its provenance.</li>
+<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xqjenw/anyone_running_local_ai_on_16gb_vram/">Local AI users discuss agent workloads on 16 GB of VRAM</a> A user asks which local agent setups remain useful on a 16 GB GPU after trying several agent harnesses. The thread is a practical configuration question, not a measured performance result.</li>
+</ul>
+<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://bsky.app/profile/tyleraking.com/post/3mzrqaprh4s2d">@tyleraking.com</a> Bluesky post points to a Mac application for removing local AI models A Bluesky user mentions an open-source Mac application that uninstalls AI models. The supplied post does not identify a release date or document the application's behavior.</li>
+</ul>
+<h3 id="hacker-news">Hacker News <a class="permalink" href="#hacker-news" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://www.lorekit.io/blog/open-agent-memory-format">HN</a> Proposal calls for an interoperable agent memory format A Hacker News link argues that agent memory needs a common interchange format, drawing an analogy with OpenTelemetry. The proposal is an argument, not an adopted standard.</li>
+<li><a href="https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again">HN</a> Apiiro alleges coding-agent settings exposed secrets in public GitHub files Apiiro claims to have found passwords in 1,122 public GitHub files associated with Claude Code's permission settings. The linked report is the company's own analysis; the supplied feed contains no independent verification of its count.</li>
+<li><a href="https://caleb.software/posts/claude-to-pi.html">HN</a> Developer writes about switching from Claude to Pi A Hacker News link points to a developer's account of changing assistant tools. The supplied feed has no excerpt, so it does not support a broader claim about the tools' capabilities.</li>
+</ul></article>]]></content:encoded>
+    </item>
     <item>
       <title>2026-11-07 :: AI DAILY DIGEST</title>
       <link>https://aigregator.news/digests/2026-11-07.html</link>
@@ -3354,128 +3450,6 @@
 <li><a href="https://www.nbcnews.com/news/us-news/sentence-vacated-ai-video-dead-victim-rcna601457">HN</a> Court vacates sentence over AI video of a victim NBC News reports a sentence was thrown out after a judge cited an AI video of the victim.</li>
 <li><a href="https://www.washingtonpost.com/technology/2026/10/09/chatgpt-users-iran-planted-ai-generated-articles-us-news-media/">HN</a> Iranian campaign used ChatGPT to plant fake articles The Washington Post reports an Iranian influence operation used ChatGPT to seed fabricated articles in real US outlets.</li>
 <li><a href="https://deadsimpletech.com/blog/llms-arent-inevitable">HN</a> An argument that LLMs are not inevitable A blog post challenges the assumption that large language models are an inevitable path.</li>
-</ul></article>]]></content:encoded>
-    </item>
-    <item>
-      <title>2026-10-09 :: AI DAILY DIGEST</title>
-      <link>https://aigregator.news/digests/2026-10-09.html</link>
-      <guid isPermaLink="true">https://aigregator.news/digests/2026-10-09.html</guid>
-      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
-      <description>2026-10-09 :: AI DAILY DIGEST</description>
-      <content:encoded><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 14 min read · 2,762 words · 📡 21 unique sources</span>
-  <span class="meta-share">
-    <span class="meta-label">SHARE:</span>
-    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-10-09&amp;url=https%3A//aigregator.news/digests/2026-10-09.html" target="_blank" rel="noopener" title="Share on X">X</a>
-    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-10-09%20https%3A//aigregator.news/digests/2026-10-09.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-10-09.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
-    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-10-09.html" title="Copy link">COPY</a>
-  </span>
-</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-10-09-ai-daily-digest">2026-10-09 :: AI DAILY DIGEST <a class="permalink" href="#2026-10-09-ai-daily-digest" title="Permalink">#</a></h1>
-<p><em>OpenAI forecasts about $50bn in revenue, roughly $20bn below earlier signals, while defending the firing of three safety researchers. Trump signed an order blocking state AI regulations. Firmus scrapped its $5bn data center IPO.</em></p>
-<blockquote>
-<p><strong>📊 TODAY:</strong> 19 stories · 11 sources · 🔴 -0.4 sentiment · 🔥 8 cross-source · <strong>TOP MENTION:</strong> OpenAI ×11<br />
-<strong>🏷️ THEMES:</strong> enterprise×9, agents×7, policy×6, funding×6, models×5<br />
-<strong>📈 MARKET PULSE:</strong> Top mover: "Gemini 4.0 released by October 15, 2026?" ▼21.5pp · 5 AI markets tracked<br />
-<strong>📉 7D SENTIMENT:</strong> ▄▃▂▂▃▄▃ (oldest → today)  </p>
-</blockquote>
-<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
-<ol>
-<li id="story-1">19 🔥 🟢 <strong>OpenAI forecasts revenue about $20bn below prior signals.</strong> OpenAI projects roughly $50bn in revenue this year, around $20bn less than the $70bn figure it had signalled earlier, raising questions about the pace of its growth. (<a href="https://www.theguardian.com/technology/2026/oct/09/openai-forecast-revenue-gap">Guardian</a>, <a href="https://www.ft.com/content/b66a9858-f8fb-46cb-b506-44bfe26fca2a?syn-25a6b1a6=1">FT</a>, <a href="https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/">TechCrunch</a>, <a href="https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html">cnbc.com</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
-<li id="story-2">16 🔥🛡️ 🔴 <strong>Anthropic bars abusive behavior toward Claude.</strong> Anthropic updated its usage policy to prohibit sustained and needless abusive or cruel behavior toward its models. A spokesperson did not specify what conduct would qualify. (<a href="https://www.theguardian.com/technology/2026/oct/08/anthropic-bans-abusive-behavior-claude">Guardian</a>, <a href="https://www.bbc.co.uk/news/articles/c6j9k1l72wkgo?at_medium=RSS&amp;at_campaign=rss">BBC</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude">The Verge</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
-<li id="story-3">14 🔥 🟡 <strong>Google Cloud introduces Gemini agent for work.</strong> Google Cloud launched the Gemini agent, a single agent meant to answer questions, handle tasks, create content and write code, as vendors push competing agent products. (<a href="https://www.reuters.com/business/google-cloud-introduces-gemini-agent-work-ai-race-heats-up-2026-10-08/">Reuters</a>, <a href="https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise">The Verge</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
-<li id="story-4">13 🔥🛡️ 🔴 <strong>Fired OpenAI researchers say they were let go over safety.</strong> Three former OpenAI researchers say they were dismissed for prioritising safety. OpenAI says they were fired for mishandling sensitive information. (<a href="https://www.bbc.co.uk/news/articles/cvlydn8d3lkjo?at_medium=RSS&amp;at_campaign=rss">BBC</a>, <a href="https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/">TechCrunch</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
-<li id="story-5">8 🛡️ 🔴 <strong>Trump signs order to block state AI regulations.</strong> Trump signed an executive order directing the Attorney General to form a task force to challenge state AI laws and the Commerce Department to list problematic regulations, with threats to restrict funding. (<a href="https://apnews.com/article/trump-ai-regulation-executive-order-state-laws-9cb4dd1bc249e404260b3dc233217388">AP</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
-<li id="story-6">13 🔥 🔴 <strong>Nvidia-backed Firmus pulls $5bn Sydney IPO.</strong> Firmus, a Nvidia-backed data center operator, abandoned its planned Sydney listing, citing recent market volatility and prevailing conditions. (<a href="https://www.ft.com/content/205ef7a5-321f-46e3-8097-d055bf1f6b3b?syn-25a6b1a6=1">FT</a>, <a href="https://www.bbc.co.uk/news/articles/ck9dzpw4ll8po?at_medium=RSS&amp;at_campaign=rss">BBC</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
-</ol>
-<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
-<p><em>1 item · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>10 🟡 🏷️ models, agi <strong>David Silver on building machines that teach themselves.</strong> The Financial Times profiles DeepMind's David Silver, architect of AlphaGo, on self-teaching systems and his stated obligation to advance the technology. Sources: <a href="https://www.ft.com/content/462c303b-b96c-4262-a7ca-e9ae7e440828?syn-25a6b1a6=1">FT</a></li>
-</ul>
-<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
-<p><em>5 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>11 🟡 🏷️ agents, models <strong>Plan-and-Patch: diffusion language models for agentic planning.</strong> A new arXiv paper proposes a diffusion language model approach for long-horizon agent planning, coordinating subgoals, tool use and intermediate outcomes. Sources: <a href="https://arxiv.org/abs/2610.10786">arXiv</a>, <a href="https://github.com/SamsungLabs/LittleBit">GitHub SamsungLabs/LittleBit</a></li>
-<li>8 🟡 🏷️ science, training <strong>C4-equivariant flow matching for microstructure generation.</strong> An arXiv paper presents a C4-equivariant flow matching method on anisotropic power-diagram graphs to generate microstructure data that is costly to acquire experimentally. Sources: <a href="https://arxiv.org/abs/2610.11549">arXiv</a></li>
-<li>8 🟡 🏷️ training, evals <strong>sigma-Transfer: uncertainty transfer across network scales under muP.</strong> An arXiv paper introduces a method to transfer prior precision for Laplace approximations from small to large networks under muP, avoiding an expensive posterior sweep. Sources: <a href="https://arxiv.org/abs/2610.11668">arXiv</a></li>
-<li>8 🟡 🏷️ multimodal, robotics <strong>4-tensor attention model for scene state prediction.</strong> An arXiv paper describes a 4-tensor attention model that predicts the next semantic scene state for video generation and robot planning. Sources: <a href="https://arxiv.org/abs/2610.11716">arXiv</a></li>
-<li>8 🟡 🏷️ multimodal, video <strong>4D-GSW: watermarking for 4D Gaussian Splatting.</strong> An arXiv paper proposes kinematic-aware spatio-temporal watermarking to protect intellectual property in 4D Gaussian Splatting assets. Sources: <a href="https://arxiv.org/abs/2605.22342">arXiv</a></li>
-</ul>
-<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
-<p><em>7 items · 🔴 -1.1 sentiment</em></p>
-<ul>
-<li>16 🔥🛡️ 🔴 ▤×3 🏷️ safety, policy <strong>Anthropic bars abusive behavior toward Claude.</strong> Anthropic updated its usage policy to prohibit sustained and needless abusive or cruel behavior toward its models. A spokesperson did not specify what conduct would qualify. Sources: <a href="https://www.theguardian.com/technology/2026/oct/08/anthropic-bans-abusive-behavior-claude">Guardian</a>, <a href="https://www.bbc.co.uk/news/articles/c6j9k1l72wkgo?at_medium=RSS&amp;at_campaign=rss">BBC</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude">The Verge</a></li>
-<li>13 🔥🛡️ 🟡 ▤×2 🏷️ policy, enterprise <strong>UK to curb non-compete clauses after startup pressure.</strong> Andy Burnham said the UK will limit hiring restrictions that force employees to wait before changing jobs or founding companies, a practice technology startups have criticized. Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-09/burnham-says-uk-will-curb-non-compete-clauses-after-tech-ai-startup-outcry">Bloomberg</a>, <a href="https://www.ft.com/content/297ca864-737c-4112-b368-f21a20cc78d2?syn-25a6b1a6=1">FT</a></li>
-<li>13 🔥🛡️ 🔴 ▤×2 🏷️ safety <strong>Fired OpenAI researchers say they were let go over safety.</strong> Three former OpenAI researchers say they were dismissed for prioritising safety. OpenAI says they were fired for mishandling sensitive information. Sources: <a href="https://www.bbc.co.uk/news/articles/cvlydn8d3lkjo?at_medium=RSS&amp;at_campaign=rss">BBC</a>, <a href="https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/">TechCrunch</a></li>
-<li>13 🔥🛡️ 🔴 ▤×2 🏷️ policy, enterprise <strong>US bars Microsoft and Indian IT firms from sponsoring workers for residency.</strong> The White House barred several technology groups, including Microsoft and Indian IT firms, from sponsoring workers for residency, its latest move to limit immigration. Sources: <a href="https://www.ft.com/content/5cfecbba-69ed-42d0-98fd-3ae019144692?syn-25a6b1a6=1">FT</a>, <a href="https://arstechnica.com/tech-policy/2026/10/trump-administration-targets-microsoft-in-new-immigration-crackdown/">Ars</a></li>
-<li>11 🛡️ 🟡 🏷️ policy <strong>AP-NORC poll finds most Americans say AI moves too fast.</strong> An AP-NORC poll found 64% of Americans think AI is developing too fast, 27% say the pace is about right and 8% say it is too slow. Sources: <a href="https://apnews.com/article/artificial-intelligence-ai-poll-trump-democrats-republicans-9ce5531b7ea53234c4e600f8c0e9cf27">AP</a></li>
-<li>11 🔥🛡️ 🔴 ▤×2 🏷️ safety <strong>OpenAI defends firing of three safety researchers.</strong> OpenAI reaffirmed its decision to fire Jasmine Wang, Tomek Korbak and a third researcher, citing what it called a significant breach of trust after an investigation. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1008604/openai-defends-decision-fire-safety-researchers">The Verge</a>, <a href="https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/">TechCrunch</a></li>
-<li>8 🛡️ 🔴 🏷️ policy <strong>Trump signs order to block state AI regulations.</strong> Trump signed an executive order directing the Attorney General to form a task force to challenge state AI laws and the Commerce Department to list problematic regulations, with threats to restrict funding. Sources: <a href="https://apnews.com/article/trump-ai-regulation-executive-order-state-laws-9cb4dd1bc249e404260b3dc233217388">AP</a></li>
-</ul>
-<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
-<p><em>(quiet today)</em></p>
-<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
-<p><em>7 items · 🟡 -0.1 sentiment</em></p>
-<ul>
-<li>19 🔥 🟢 ▤×4 🏷️ funding <strong>OpenAI forecasts revenue about $20bn below prior signals.</strong> OpenAI projects roughly $50bn in revenue this year, around $20bn less than the $70bn figure it had signalled earlier, raising questions about the pace of its growth. Sources: <a href="https://www.theguardian.com/technology/2026/oct/09/openai-forecast-revenue-gap">Guardian</a>, <a href="https://www.ft.com/content/b66a9858-f8fb-46cb-b506-44bfe26fca2a?syn-25a6b1a6=1">FT</a>, <a href="https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/">TechCrunch</a>, <a href="https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html">cnbc.com</a></li>
-<li>13 🔥 🔴 ▤×2 🏷️ funding, hardware <strong>Nvidia-backed Firmus pulls $5bn Sydney IPO.</strong> Firmus, a Nvidia-backed data center operator, abandoned its planned Sydney listing, citing recent market volatility and prevailing conditions. Sources: <a href="https://www.ft.com/content/205ef7a5-321f-46e3-8097-d055bf1f6b3b?syn-25a6b1a6=1">FT</a>, <a href="https://www.bbc.co.uk/news/articles/ck9dzpw4ll8po?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
-<li>10 🔴 🏷️ enterprise, funding <strong>Bloomberg segment examines AI risk and reward in banking.</strong> A Bloomberg Tech Europe episode from the Wave by Vento conference in Turin looks at how banks are deploying AI to work faster and the risks that come with it. Sources: <a href="https://www.bloomberg.com/news/videos/2026-10-09/ai-in-banking-risk-and-reward-bloomberg-tech-europe-video">Bloomberg</a></li>
-<li>10 🔴 🏷️ funding <strong>San Francisco rents climb amid AI boom.</strong> San Francisco's rent board reports eviction notices up 44% as an AI-driven boom pushes rents higher and strains tenants. Sources: <a href="https://www.theguardian.com/us-news/ng-interactive/2026/oct/08/san-francisco-housing-ai-boom">Guardian</a></li>
-<li>10 🟢 🏷️ funding, models <strong>Andreessen Horowitz backs Jev maker at $7.5bn valuation.</strong> TypeSafe AI, maker of the Jev model that went viral after a recent launch, raised about $870m at a $7.5bn valuation in a round led by Andreessen Horowitz. Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-09/andreessen-horowitz-backs-jev-maker-at-7-5-billion-value">Bloomberg</a></li>
-<li>10 🟡 🏷️ funding, enterprise <strong>Bending Spoons CEO sees acquisitions in software downturn.</strong> Bending Spoons CEO Luca Ferrari says falling software valuations create acquisition targets as AI reshapes the industry, and that the company benefits from cheaper deals and internal AI use. Sources: <a href="https://www.bloomberg.com/news/videos/2026-10-09/bending-spoons-ceo-sees-opportunity-in-saaspocalypse-video">Bloomberg</a></li>
-<li>10 🟡 🏷️ enterprise, policy <strong>Report says China leads US in generative AI adoption.</strong> A Bloomberg analysis says the US scores high on AI capability but trails China in consumer adoption of generative AI. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-10-09/china-is-trouncing-the-us-in-consumer-adoption-of-generative-ai">Bloomberg</a></li>
-</ul>
-<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
-<p><em>4 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>14 🔥 🟡 ▤×2 🏷️ agents, enterprise <strong>Google Cloud introduces Gemini agent for work.</strong> Google Cloud launched the Gemini agent, a single agent meant to answer questions, handle tasks, create content and write code, as vendors push competing agent products. Sources: <a href="https://www.reuters.com/business/google-cloud-introduces-gemini-agent-work-ai-race-heats-up-2026-10-08/">Reuters</a>, <a href="https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise">The Verge</a></li>
-<li>10 🟢 🏷️ agents, enterprise <strong>Big Tech makes competing pitches on AI agents.</strong> Vendors have accelerated launches of AI agent services, according to the Financial Times, as the sector competes to define the category. Sources: <a href="https://www.ft.com/content/9884d785-8ddc-43a6-ac8d-b9c7f9a99df3?syn-25a6b1a6=1">FT</a></li>
-<li>10 🟡 🏷️ code, agents, enterprise <strong>Oracle case study on ChatGPT and Codex workflows.</strong> An OpenAI case study describes Oracle using ChatGPT Work and Codex across recruiting, engineering and operations to speed repeatable workflows. The claims are Oracle's and OpenAI's. Sources: <a href="https://openai.com/index/oracle">OpenAI</a></li>
-<li>10 🔴 🏷️ agents, safety, enterprise <strong>Sophos reports faster threat triage with OpenAI Daybreak.</strong> An OpenAI case study says Sophos used its Daybreak system to cut threat investigation time by 96% and automate 52% of managed detection cases while keeping human oversight. The figures are vendor-reported. Sources: <a href="https://openai.com/index/sophos">OpenAI</a></li>
-</ul>
-<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
-<p><em>4 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>8 🌱 🟡 🏷️ agents, opensource <strong>NousResearch/hermes-agent.</strong> A GitHub repository for an agent framework from NousResearch, listed with a recent push among trending open-source projects. Sources: <a href="https://github.com/NousResearch/hermes-agent">GitHub NousResearch/hermes-agent</a></li>
-<li>8 🌱 🟡 🏷️ code, opensource, agents <strong>openclaw/clownfish.</strong> A GitHub repository describing a maintainer harness for resolving clusters of issues in bulk, listed with a recent push. Sources: <a href="https://github.com/openclaw/clownfish">GitHub openclaw/clownfish</a></li>
-<li>6 🌱 🟡 🏷️ models, multimodal, opensource <strong>Qwen/Qwen3.8-27B.</strong> An image-text-to-text model trending on HuggingFace, listed with high like and download counts. Sources: <a href="https://huggingface.co/Qwen/Qwen3.8-27B">HuggingFace</a></li>
-<li>6 🌱 🟡 🏷️ opensource, models <strong>huggingface/transformers.</strong> The Transformers library for defining text, vision, audio and multimodal models for inference and training, among trending GitHub repositories. Sources: <a href="https://github.com/huggingface/transformers">GitHub huggingface/transformers</a></li>
-</ul>
-<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
-<p><em>5 markets · AI/policy</em></p>
-<ul>
-<li><strong>Gemini 4.0 released by October 15, 2026?</strong> - 55.5% Yes (▼21.5pp 24h, $162K vol) · <a href="https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026">Polymarket</a></li>
-<li><strong>Will the next Google Gemini Pro model added to the Arena Leaderboard debut at a score of at least 1480?</strong> - 28.8% Yes (▼20.2pp 24h, $51K vol) · <a href="https://polymarket.com/event/next-google-gemini-pro-model-arena-debut">Polymarket</a></li>
-<li><strong>Will the next Google Gemini Pro model added to the Arena Leaderboard debut at a score of at least 1490?</strong> - 29.95% Yes (▼13.8pp 24h, $59K vol) · <a href="https://polymarket.com/event/next-google-gemini-pro-model-arena-debut">Polymarket</a></li>
-<li><strong>Will there be no next Google Gemini Pro model release by October 31, 2026?</strong> - 90% Yes (▲10.5pp 24h, $57K vol) · <a href="https://polymarket.com/event/next-gemini-pro-model-released-onptptpt-20260922131618444">Polymarket</a></li>
-<li><strong>Will the next Google Gemini Pro model be released by October 31, 2026?</strong> - 12% Yes (▼10.5pp 24h, $153K vol) · <a href="https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt">Polymarket</a></li>
-</ul>
-<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
-<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1x0wnz1/2800_rig_with_8x_radeon_pro_v620_256_gb_vram/">Local LLM rig built from 8x Radeon Pro V620 for 256GB VRAM</a> A LocalLLaMA post details an $2800-class build using eight Radeon Pro V620 cards for 256GB of VRAM running a custom vLLM fork.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1x1fnsy/ahh_it_all_makes_sense_now_for_the_64gb_dgx_spark/">Thread links DGX Spark 64GB to Samsung memory outlook</a> A LocalLLaMA post connects interest in the 64GB DGX Spark to Samsung's strong quarterly memory outlook.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1x135oh/bois_theres_now_a_waterblock_for_the_r9700_quiet/">Waterblock available for the R9700 enables denser builds</a> A LocalLLaMA post notes a new single-slot waterblock for the R9700, enabling quieter multi-GPU builds.</li>
-</ul>
-<h3 id="rmachinelearning">r/MachineLearning <a class="permalink" href="#rmachinelearning" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/MachineLearning/comments/1x0zlys/ai_agent_gaming_tournament_hosted_by_ucla/">UCLA Trustworthy AI Lab runs an AI agent gaming tournament</a> UCLA's Trustworthy AI Lab is hosting an October 16 tournament where AI agents compete in games including Pokemon Showdown and Werewolf, with a prize pool and remote participation.</li>
-<li><a href="https://www.reddit.com/r/MachineLearning/comments/1x1ke20/arr_oct_discussion_d/">Discussion on ARR October submission volume</a> A MachineLearning thread debates whether ARR submissions are down this cycle or delayed pending prior meta-reviews.</li>
-<li><a href="https://www.reddit.com/r/MachineLearning/comments/1x0xqx2/complimentary_registrations_for_reviewers_neurips/">NeurIPS 2026 reviewers discuss complimentary registration</a> A MachineLearning thread discusses whether NeurIPS 2026 complimentary reviewer registrations go to all or selected reviewers.</li>
-</ul>
-<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://bsky.app/profile/carlquintanilla.bsky.social/post/3mxeqsc6kok2n">@carlquintanilla</a> Bluesky post relays Reuters item on Google Cloud Gemini agent A Bluesky post relays a Reuters report that Google Cloud introduced its Gemini work agent.</li>
-<li><a href="https://bsky.app/profile/edsbs.bsky.social/post/3mxey2xmues2p">@edsbs</a> Bluesky quip about stacking AI agents across games A short Bluesky post jokes about assigning AI agents to multiple games in parallel.</li>
-</ul>
-<h3 id="hacker-news">Hacker News <a class="permalink" href="#hacker-news" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.solarpowerworldonline.com/2026/10/4-hour-battery-storage-is-cheaper-to-install-than-gas-turbines-all-across-globe/">HN</a> Discussion: 4-hour battery storage cheaper than gas turbines A shared article argues 4-hour battery storage is now cheaper to install than gas turbines in many markets.</li>
-<li><a href="https://www.ahmath.org/statements">HN</a> AHM statement on OpenAI's October 6 mathematical documents The American Mathematical Society-adjacent AHM posted a statement responding to OpenAI's October 6 release of mathematical documents.</li>
-<li><a href="https://biohub.org/news/virtual-biology-initiative-expansion/">HN</a> Virtual Biology Initiative announces $1.8bn data commitment A Biohub announcement describes a $1.8bn global commitment toward AI-ready biological data.</li>
-<li><a href="https://quesma.com/blog/invisible-cities-one-shot/">HN</a> Blog: one-shot visualization of Invisible Cities with Opus 5.5 A blog post describes giving Opus 5.5 a single prompt and six hours to visualize Italo Calvino's Invisible Cities.</li>
-<li><a href="https://www.reddit.com/r/ClaudeAI/s/mbe5IY2LF9">HN</a> Reddit post claims a planet discovery aided by Claude Code A ClaudeAI post claims the author used Claude Code to identify a previously unknown planet. The claim is unverified.</li>
 </ul></article>]]></content:encoded>
     </item>
   </channel>
