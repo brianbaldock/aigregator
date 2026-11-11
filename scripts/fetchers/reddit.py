@@ -19,7 +19,6 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _common import out_path, atomic_write_json, log  # noqa: E402
 
 NOW = datetime.now(timezone.utc)
-CUTOFF = NOW - timedelta(hours=24)
 PROXY = "http://100.92.96.88:8888"
 UA = "script:aigregator:v1.0 (by /u/brianbaldock)"
 SUBS = ["LocalLLaMA", "MachineLearning", "AICircle", "singularity",
@@ -152,7 +151,7 @@ def parse_atom(body, sub):
             dt = parse_date(published_el.text if published_el is not None else "")
             if not project_date_is_current(dt):
                 continue
-        elif dt is not None and dt < CUTOFF:
+        elif dt is not None and dt < NOW - timedelta(hours=24):  # derived from NOW at use, not import
             continue
         body_txt = clean(content_html)
         m = re.search(r"(\d+)\s+points?", body_txt)
