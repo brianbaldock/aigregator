@@ -168,15 +168,40 @@ def parse_atom(body, sub):
     return items
 
 
+RATE_LIMIT_WAIT_MAX = 20   # seconds; cap on honoring Reddit's Retry-After
+FETCH_BUDGET_SECS = 75     # gather.py kills a source at 90s; leave room to write
+
+
+def _retry_after(ex):
+    """Seconds Reddit asked us to wait on a 429, capped; None if not a 429."""
+    if getattr(ex, "code", None) != 429:
+        return None
+    raw = (getattr(ex, "headers", None) or {}).get("Retry-After", "") if hasattr(ex, "headers") else ""
+    try:
+        wait = float(raw)
+    except (TypeError, ValueError):
+        wait = 10.0
+    return max(1.0, min(wait, RATE_LIMIT_WAIT_MAX))
+
+
 def main():
     all_items = []
     proxy_alive = False
     failed_feeds = 0
-    attempted_subs = [*SUBS, PROJECT_SUB]
+    # The project-discovery sub goes FIRST: Reddit starts returning 429 after a
+    # few requests, and when it was last it failed on every run for weeks.
+    attempted_subs = [PROJECT_SUB, *SUBS]
+    started = time.monotonic()
     for i, sub in enumerate(attempted_subs):
+        if time.monotonic() - started > FETCH_BUDGET_SECS:
+            skipped = attempted_subs[i:]
+            log(f"time budget reached; skipped {', '.join('r/' + s for s in skipped)}")
+            failed_feeds += len(skipped)
+            break
         url = f"https://www.reddit.com/r/{sub}/top.rss?t=day"
         body = None
         order = [(i % 2 == 0), (i % 2 != 0)]
+        rate_limit_retried = False
         for up in order:
             try:
                 body = fetch(url, up)
@@ -188,6 +213,22 @@ def main():
             except Exception as ex:
                 log(f"r/{sub} egress proxy={up} ERR={str(ex)[:60]}")
                 body = None
+                wait = _retry_after(ex)
+                if wait is not None and not rate_limit_retried:
+                    # One polite wait-and-retry per sub on 429, same egress.
+                    rate_limit_retried = True
+                    log(f"r/{sub} rate limited; waiting {wait:.0f}s then retrying once")
+                    time.sleep(wait)
+                    try:
+                        body = fetch(url, up)
+                        if valid_feed(body):
+                            if up:
+                                proxy_alive = True
+                            break
+                        body = None
+                    except Exception as ex2:
+                        log(f"r/{sub} retry proxy={up} ERR={str(ex2)[:60]}")
+                        body = None
             time.sleep(1)
         if body and valid_feed(body):
             items = parse_atom(body, sub)

@@ -21,6 +21,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 from project_discovery import load_projects, PROJECT_SUB
+import novelty
 import scoring_policy as scoring
 
 # -------- credibility map (domain → 1..5) --------
@@ -543,9 +544,16 @@ def load_opensource(indir: str):
             continue
         stars = r.get("stars", 0)
         desc = r.get("description", "") or ""
-        summary = f"{desc} ({stars:,}★, fresh push)." if desc else f"Fresh push ({stars:,}★)."
+        tag = r.get("release_tag") or ""
+        if tag:
+            summary = (f"{desc} New release {tag} ({stars:,}★)." if desc
+                       else f"New release {tag} ({stars:,}★).")
+            kind = "release"
+        else:  # legacy opensource.json shape (fresh push, no release)
+            summary = f"{desc} ({stars:,}★, fresh push)." if desc else f"Fresh push ({stars:,}★)."
+            kind = "watchlist"
         # Watchlist orgs get a credibility bump so they survive the section cap.
-        out.append(_canon(f"GitHub:{fn}", 4, fn, r["url"], summary, "watchlist"))
+        out.append(_canon(f"GitHub:{fn}", 4, fn, r["url"], summary, kind))
 
     for r in d.get("hf_trending", []) if isinstance(d, dict) else []:
         hid = r.get("id") or ""
@@ -802,6 +810,22 @@ def main():
     opensource = load_opensource(args.indir)
     projects = load_projects(args.indir)
 
+    # Novelty gate: a repo/model cited in the last 14 digests is not news again
+    # unless it shipped a release. Run date comes from the run dir name so
+    # backfills and re-renders judge against the right window.
+    _m = re.search(r"run-(\d{4}-\d{2}-\d{2})", os.path.basename(os.path.normpath(args.indir)))
+    _run_date = (datetime.strptime(_m.group(1), "%Y-%m-%d").date() if _m
+                 else datetime.now(timezone.utc).date())
+    _seen = novelty.recent_identities(_run_date)
+    _seen_week = novelty.recent_identities(_run_date, days=novelty.RELEASE_COOLDOWN_DAYS)
+    _before = (len(opensource), len(projects))
+    _log = lambda msg: print(f"[merge_score] {msg}")
+    opensource = novelty.filter_novel(opensource, _seen, _log, _seen_week)
+    projects = novelty.filter_novel(projects, _seen, _log, _seen_week)
+    print(f"[merge_score] novelty gate: opensource {_before[0]}->{len(opensource)}, "
+          f"projects {_before[1]}->{len(projects)} ({len(_seen)} repos/models cited in last "
+          f"{novelty.NOVELTY_DAYS}d)")
+
     # drop garbage: no title, no url, or obvious archive
     items = [i for i in items if i["title"] and i["url"] and i["domain"] not in ("web.archive.org",)]
 
@@ -868,7 +892,7 @@ def main():
         by_kind = _dd(list)
         for it in sorted(pool, key=lambda x: -x.get("score", 0)):
             by_kind[it.get("os_kind", "trending")].append(it)
-        picked = list(by_kind.pop("watchlist", []))  # always include watched orgs
+        picked = list(by_kind.pop("release", [])) + list(by_kind.pop("watchlist", []))  # always include watched-org releases
         # Round-robin across remaining kinds for source diversity
         order = ["hf", "trending"] + [k for k in by_kind if k not in ("hf", "trending")]
         while len(picked) < quota and any(by_kind.get(k) for k in order):

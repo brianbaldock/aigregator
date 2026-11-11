@@ -27,10 +27,12 @@ NOW = datetime.now(timezone.utc)
 TOKEN = os.environ.get("GITHUB_TOKEN", "").strip()
 OUT = os.environ.get("AIG_OPENSOURCE_OUT", "/tmp/aig/opensource.json")
 
-# Orgs we explicitly watch for fresh, non-trivial pushes regardless of trending rank.
+# Orgs we watch for RELEASES (not mere pushes) regardless of trending rank.
 WATCH_ORGS = ["NousResearch", "openclaw"]
-# Topic sweep for trending repos pushed in the last week.
+# Topic sweep for newly created repos that are gaining stars.
 TRENDING_TOPICS = ["llm", "agent", "rag", "fine-tuning", "inference", "vector-database"]
+NEW_REPO_DAYS = 14
+MIN_NEW_REPO_STARS = 50
 
 
 def gh_get(url, timeout=25):
@@ -59,10 +61,13 @@ def parse_dt(s):
 
 
 def github_trending():
-    week_ago = (NOW - timedelta(days=7)).strftime("%Y-%m-%d")
+    # Rising, not established: repos CREATED in the last two weeks, ranked by
+    # stars. The old query (pushed this week, sorted by lifetime stars) returned
+    # the same giant repos (transformers, etc.) every day.
+    created_after = (NOW - timedelta(days=NEW_REPO_DAYS)).strftime("%Y-%m-%d")
     cand = {}
     for t in TRENDING_TOPICS:
-        q = f"topic:{t} pushed:>{week_ago}"
+        q = f"topic:{t} created:>{created_after}"
         try:
             qq = urllib.parse.quote(q)
             url = f"https://api.github.com/search/repositories?q={qq}&sort=stars&order=desc&per_page=15"
@@ -76,10 +81,11 @@ def github_trending():
                 # Require a description and a real OSS license; skip vanity/empty repos.
                 if not desc or not lic or lic == "NOASSERTION":
                     continue
-                if stars < 100:
+                if stars < MIN_NEW_REPO_STARS:
                     continue
                 # forks/stars ratio filters star-farmed repos with no real engagement.
-                if stars and (forks / stars) < 0.15:
+                # New repos fork slowly, so the bar is lower than for mature ones.
+                if stars and (forks / stars) < 0.05:
                     continue
                 if not pushed or pushed < (NOW - timedelta(days=7)):
                     continue
@@ -96,7 +102,8 @@ def github_trending():
         except Exception as ex:
             print(f"[gh] topic:{t} ERR={str(ex)[:100]}", file=sys.stderr)
         time.sleep(7 if not TOKEN else 1)
-    # watchlist orgs — surface at most one fresh, non-trivial repo per org
+    # watchlist orgs: surface a repo only when it published a RELEASE in the
+    # last 48h. A fresh push alone used to guarantee these orgs a slot every day.
     watch = []
     for org in WATCH_ORGS:
         try:
@@ -105,15 +112,29 @@ def github_trending():
             for repo in (d if isinstance(d, list) else []):
                 pushed = parse_dt(repo.get("pushed_at", ""))
                 stars = repo.get("stargazers_count", 0)
-                if pushed and pushed >= (NOW - timedelta(hours=48)) and stars >= 25:
-                    watch.append({
-                        "full_name": repo["full_name"],
-                        "description": (repo.get("description") or "")[:200],
-                        "url": repo["html_url"], "stars": stars,
-                        "pushed_at": repo.get("pushed_at", ""),
-                        "kind": "watchlist",
-                    })
-                    break  # at most one per org
+                if not (pushed and pushed >= (NOW - timedelta(hours=48)) and stars >= 25):
+                    continue
+                fn = repo["full_name"]
+                try:
+                    rels = gh_get(f"https://api.github.com/repos/{fn}/releases?per_page=1")
+                except Exception as ex:
+                    print(f"[gh] releases {fn} ERR={str(ex)[:80]}", file=sys.stderr)
+                    continue
+                rel = rels[0] if isinstance(rels, list) and rels else None
+                rel_at = parse_dt((rel or {}).get("published_at") or "")
+                if not rel or rel.get("draft") or not rel_at or rel_at < (NOW - timedelta(hours=48)):
+                    continue
+                watch.append({
+                    "full_name": fn,
+                    "description": (repo.get("description") or "")[:200],
+                    "url": repo["html_url"], "stars": stars,
+                    "pushed_at": repo.get("pushed_at", ""),
+                    "release_tag": (rel.get("tag_name") or "")[:40],
+                    "release_url": rel.get("html_url", ""),
+                    "release_published_at": rel.get("published_at", ""),
+                    "kind": "release",
+                })
+                break  # at most one per org
             print(f"[gh] watchlist {org}: ok")
         except Exception as ex:
             print(f"[gh] watchlist {org} ERR={str(ex)[:100]}", file=sys.stderr)
