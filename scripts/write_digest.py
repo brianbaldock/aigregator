@@ -47,6 +47,11 @@ SECTION_HEADERS = {
 
 SECTION_ORDER = ["models", "research", "safety", "projects", "funding", "tools", "opensource"]
 
+# projects-tier repository discoveries (r/BestGitHubRepos) score 4 as single-source
+# items and lose the section to multi-source news at 10-11; this many projects slots
+# are guaranteed for GitHub-sourced survivors of the curation AI-relevance review.
+PROJECT_GITHUB_RESERVE = 2
+
 
 def sentiment_dot(value: float) -> str:
     """Map a credibility-weighted mean sentiment to colored dot."""
@@ -482,6 +487,11 @@ def extract_top_mention(items: list[dict], overlays: dict) -> tuple[str, int]:
     return cnt.most_common(1)[0]
 
 
+def is_github_project(item):
+    """True for repository discoveries, whose source label is 'GitHub:owner/repo'."""
+    return item.get("source", "").startswith("GitHub:")
+
+
 def select_items(items, curation):
     """Choose the body once; TLDR picks reserve slots rather than vanishing."""
     by_section = defaultdict(list)
@@ -506,8 +516,22 @@ def select_items(items, curation):
             continue
         reserved = [item for item in ranked if item["url"] in tldr]
         limit = max(SECTION_LIMITS.get(section, len(ranked)), len(reserved))
-        rest = [item for item in ranked if item["url"] not in tldr]
-        keep = {item["url"] for item in reserved + rest[:limit - len(reserved)]}
+        if section == "projects":
+            # Repository discoveries score 4 (single Reddit discovery source) and
+            # lose every slot to multi-source news at 10-11, so the
+            # r/BestGitHubRepos stream never rendered on a normal news day
+            # (2026-11-11: 25 discovered, 3 passed the AI-relevance review, 0
+            # rendered). Reserve projects slots for GitHub-sourced items that
+            # survived curation; a TLDR pick that is itself a GitHub project
+            # counts toward the reserve. Never filler: fewer repos, fewer kept.
+            gh_reserved = [item for item in reserved if is_github_project(item)]
+            room = max(0, min(PROJECT_GITHUB_RESERVE - len(gh_reserved),
+                              limit - len(reserved)))
+            reserved += [item for item in ranked if item["url"] not in tldr
+                         and is_github_project(item)][:room]
+        reserved_urls = {item["url"] for item in reserved}
+        rest = [item for item in ranked if item["url"] not in reserved_urls]
+        keep = reserved_urls | {item["url"] for item in rest[:limit - len(reserved)]}
         by_section[section] = [item for item in ranked if item["url"] in keep]
     return dict(by_section)
 
