@@ -20,6 +20,860 @@
  },
  "items": [
   {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-1",
+   "url": "https://aigregator.news/digests/2026-11-18.html#models-amp-releases",
+   "external_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+   "title": "OpenAI releases GPT-6.2 Astra and Sol",
+   "content_text": "OpenAI introduced Astra and Sol across ChatGPT Work, Codex and its API. The company claims improvements in coding, computer use and cost efficiency; independent comparisons remain separate from its launch claims.\n\nSources: OpenAI https://openai.com/index/introducing-gpt-6-2-astra-sol, simonwillison.net https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+   "summary": "OpenAI introduced Astra and Sol across ChatGPT Work, Codex and its API. The company claims improvements in coding, computer use and cost efficiency; independent comparisons remain separate from its launch claims.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "models",
+    "code",
+    "agents"
+   ],
+   "_aigregator": {
+    "section": "models",
+    "score": 13,
+    "source_count": 2,
+    "sources": [
+     {
+      "name": "OpenAI",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol"
+     },
+     {
+      "name": "simonwillison.net",
+      "url": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-2",
+   "url": "https://aigregator.news/digests/2026-11-18.html#models-amp-releases",
+   "external_url": "https://www.reuters.com/legal/litigation/microsoft-unveils-ai-models-coding-cybersecurity-it-takes-anthropic-openai-2026-11-17/",
+   "title": "Microsoft announces coding and cybersecurity AI models",
+   "content_text": "Reuters reports Microsoft announced a set of models focused on coding and cybersecurity. Performance claims in the announcement still need independent testing against competing systems.\n\nSources: Reuters https://www.reuters.com/legal/litigation/microsoft-unveils-ai-models-coding-cybersecurity-it-takes-anthropic-openai-2026-11-17/",
+   "summary": "Reuters reports Microsoft announced a set of models focused on coding and cybersecurity. Performance claims in the announcement still need independent testing against competing systems.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "models",
+    "code",
+    "safety"
+   ],
+   "_aigregator": {
+    "section": "models",
+    "score": 11,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "Reuters",
+      "url": "https://www.reuters.com/legal/litigation/microsoft-unveils-ai-models-coding-cybersecurity-it-takes-anthropic-openai-2026-11-17/"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-3",
+   "url": "https://aigregator.news/digests/2026-11-18.html#research",
+   "external_url": "https://arxiv.org/abs/2611.22971",
+   "title": "SEAM examines harms assembled across computer-use agent screens",
+   "content_text": "The paper argues that agents can pass checks on individual screens yet combine information across screens to carry out harmful tasks. Its proposed evaluation targets cross-screen reasoning rather than a single malicious prompt.\n\nSources: arXiv https://arxiv.org/abs/2611.22971, OpenAI https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+   "summary": "The paper argues that agents can pass checks on individual screens yet combine information across screens to carry out harmful tasks. Its proposed evaluation targets cross-screen reasoning rather than a single malicious prompt.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "agents",
+    "safety"
+   ],
+   "_aigregator": {
+    "section": "research",
+    "score": 11,
+    "source_count": 2,
+    "sources": [
+     {
+      "name": "arXiv",
+      "url": "https://arxiv.org/abs/2611.22971"
+     },
+     {
+      "name": "OpenAI",
+      "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-4",
+   "url": "https://aigregator.news/digests/2026-11-18.html#research",
+   "external_url": "https://arxiv.org/abs/2611.23190",
+   "title": "Study investigates chatbot support use among people with mental-health concerns",
+   "content_text": "Researchers analyzed Reddit discussions and surveyed 202 adults with recent mental-health concerns about their use of AI chatbots for emotional support. The study describes reported behavior and preferences, not clinical efficacy.\n\nSources: arXiv https://arxiv.org/abs/2611.23190",
+   "summary": "Researchers analyzed Reddit discussions and surveyed 202 adults with recent mental-health concerns about their use of AI chatbots for emotional support. The study describes reported behavior and preferences, not clinical efficacy.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "safety",
+    "apps"
+   ],
+   "_aigregator": {
+    "section": "research",
+    "score": 8,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "arXiv",
+      "url": "https://arxiv.org/abs/2611.23190"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-5",
+   "url": "https://aigregator.news/digests/2026-11-18.html#research",
+   "external_url": "https://arxiv.org/abs/2601.17990",
+   "title": "Load-shaping study compares grid signals for carbon reduction",
+   "content_text": "A revised paper studies how shifting flexible loads such as data centers affects generation and emissions, comparing signals including price and carbon intensity. The results are about grid operations, not a new AI model.\n\nSources: arXiv https://arxiv.org/abs/2601.17990",
+   "summary": "A revised paper studies how shifting flexible loads such as data centers affects generation and emissions, comparing signals including price and carbon intensity. The results are about grid operations, not a new AI model.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "hardware",
+    "science"
+   ],
+   "_aigregator": {
+    "section": "research",
+    "score": 8,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "arXiv",
+      "url": "https://arxiv.org/abs/2601.17990"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-6",
+   "url": "https://aigregator.news/digests/2026-11-18.html#research",
+   "external_url": "https://arxiv.org/abs/2611.22778",
+   "title": "Counterfactual audit tests whether extra reasoning compute helps",
+   "content_text": "The authors compare an immediate answer with fixed-length continuations from the same reasoning prefix. Their approach separates predicting an error from predicting whether spending more compute will correct it.\n\nSources: arXiv https://arxiv.org/abs/2611.22778",
+   "summary": "The authors compare an immediate answer with fixed-length continuations from the same reasoning prefix. Their approach separates predicting an error from predicting whether spending more compute will correct it.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "inference",
+    "evals"
+   ],
+   "_aigregator": {
+    "section": "research",
+    "score": 8,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "arXiv",
+      "url": "https://arxiv.org/abs/2611.22778"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-7",
+   "url": "https://aigregator.news/digests/2026-11-18.html#responsible-ai-safety-amp-policy",
+   "external_url": "https://www.theguardian.com/us-news/2026/nov/18/zero-evidence-recent-tech-outages-linked-marco-rubio",
+   "title": "Rubio says there is no evidence recent technology outages are linked",
+   "content_text": "Secretary of State Marco Rubio said there is no evidence that recent disruptions across airlines, banking and other systems share a cause or involve malicious actors. That is distinct from speculation about AI-assisted software patches.\n\nSources: Guardian https://www.theguardian.com/us-news/2026/nov/18/zero-evidence-recent-tech-outages-linked-marco-rubio, BBC https://www.bbc.co.uk/news/videos/cx1l0vm87yl9o?at_medium=RSS&at_campaign=rss",
+   "summary": "Secretary of State Marco Rubio said there is no evidence that recent disruptions across airlines, banking and other systems share a cause or involve malicious actors. That is distinct from speculation about AI-assisted software patches.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "safety",
+    "code"
+   ],
+   "_aigregator": {
+    "section": "safety",
+    "score": 13,
+    "source_count": 2,
+    "sources": [
+     {
+      "name": "Guardian",
+      "url": "https://www.theguardian.com/us-news/2026/nov/18/zero-evidence-recent-tech-outages-linked-marco-rubio"
+     },
+     {
+      "name": "BBC",
+      "url": "https://www.bbc.co.uk/news/videos/cx1l0vm87yl9o?at_medium=RSS&at_campaign=rss"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-8",
+   "url": "https://aigregator.news/digests/2026-11-18.html#responsible-ai-safety-amp-policy",
+   "external_url": "https://apnews.com/article/faa-smart-ai-outage-08af345749c81fd8364299cd75275fa6",
+   "title": "Officials deny link between FAA ground stop and SMART AI rollout",
+   "content_text": "Officials and the system's vendor told AP that the recent airline ground stop was unrelated to the FAA's $875 million SMART AI system. AP reports questions about the rollout but no established causal link.\n\nSources: AP https://apnews.com/article/faa-smart-ai-outage-08af345749c81fd8364299cd75275fa6",
+   "summary": "Officials and the system's vendor told AP that the recent airline ground stop was unrelated to the FAA's $875 million SMART AI system. AP reports questions about the rollout but no established causal link.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "safety",
+    "apps"
+   ],
+   "_aigregator": {
+    "section": "safety",
+    "score": 11,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "AP",
+      "url": "https://apnews.com/article/faa-smart-ai-outage-08af345749c81fd8364299cd75275fa6"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-9",
+   "url": "https://aigregator.news/digests/2026-11-18.html#responsible-ai-safety-amp-policy",
+   "external_url": "https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling",
+   "title": "Nvidia stops shipping advanced AI chips to China",
+   "content_text": "Interim CEO Colette Kress said Nvidia has stopped sending advanced AI chips to China despite earlier US approval. The decision changes the company's near-term access to a major market.\n\nSources: The Verge https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling, thezvi.wordpress.com https://thezvi.wordpress.com/2026/11/17/jensen-huang-really-liked-selling-china-advanced-ai-chips/",
+   "summary": "Interim CEO Colette Kress said Nvidia has stopped sending advanced AI chips to China despite earlier US approval. The decision changes the company's near-term access to a major market.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "hardware",
+    "policy"
+   ],
+   "_aigregator": {
+    "section": "safety",
+    "score": 11,
+    "source_count": 2,
+    "sources": [
+     {
+      "name": "The Verge",
+      "url": "https://www.theverge.com/tech/1036445/nvidia-h200-ai-chips-china-stop-selling"
+     },
+     {
+      "name": "thezvi.wordpress.com",
+      "url": "https://thezvi.wordpress.com/2026/11/17/jensen-huang-really-liked-selling-china-advanced-ai-chips/"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-10",
+   "url": "https://aigregator.news/digests/2026-11-18.html#responsible-ai-safety-amp-policy",
+   "external_url": "https://www.bbc.co.uk/news/articles/cwq6e2qgvmlgo?at_medium=RSS&at_campaign=rss",
+   "title": "US chip restrictions extend to computing access in Southeast Asia",
+   "content_text": "New US rules restrict chip exports and access to computing capacity through Southeast Asia, the BBC reports. That closes another route for Chinese AI developers seeking advanced hardware.\n\nSources: BBC https://www.bbc.co.uk/news/articles/cwq6e2qgvmlgo?at_medium=RSS&at_campaign=rss",
+   "summary": "New US rules restrict chip exports and access to computing capacity through Southeast Asia, the BBC reports. That closes another route for Chinese AI developers seeking advanced hardware.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "policy",
+    "hardware"
+   ],
+   "_aigregator": {
+    "section": "safety",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cwq6e2qgvmlgo?at_medium=RSS&at_campaign=rss"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-11",
+   "url": "https://aigregator.news/digests/2026-11-18.html#responsible-ai-safety-amp-policy",
+   "external_url": "https://www.theguardian.com/technology/2026/nov/17/jensen-huang-testify-congress-nvidia-affair-spy",
+   "title": "Jensen Huang to testify before congressional committees",
+   "content_text": "The Guardian reports that Nvidia's former CEO and general counsel have agreed to appear before congressional committees on December 1 after allegations of a national-security breach. The underlying allegations remain allegations.\n\nSources: Guardian https://www.theguardian.com/technology/2026/nov/17/jensen-huang-testify-congress-nvidia-affair-spy",
+   "summary": "The Guardian reports that Nvidia's former CEO and general counsel have agreed to appear before congressional committees on December 1 after allegations of a national-security breach. The underlying allegations remain allegations.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "policy",
+    "hardware"
+   ],
+   "_aigregator": {
+    "section": "safety",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "Guardian",
+      "url": "https://www.theguardian.com/technology/2026/nov/17/jensen-huang-testify-congress-nvidia-affair-spy"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-12",
+   "url": "https://aigregator.news/digests/2026-11-18.html#responsible-ai-safety-amp-policy",
+   "external_url": "https://www.theguardian.com/education/2026/nov/18/ofqual-urges-life-altering-penalties-for-students-who-use-tech-to",
+   "title": "Ofqual warns students about AI-assisted exam cheating",
+   "content_text": "England's exam regulator says students caught using AI or smart glasses to cheat could be disqualified from GCSEs and A-levels. The warning concerns enforcement of assessment rules, not a blanket ban on AI use in education.\n\nSources: Guardian https://www.theguardian.com/education/2026/nov/18/ofqual-urges-life-altering-penalties-for-students-who-use-tech-to",
+   "summary": "England's exam regulator says students caught using AI or smart glasses to cheat could be disqualified from GCSEs and A-levels. The warning concerns enforcement of assessment rules, not a blanket ban on AI use in education.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "policy",
+    "apps"
+   ],
+   "_aigregator": {
+    "section": "safety",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "Guardian",
+      "url": "https://www.theguardian.com/education/2026/nov/18/ofqual-urges-life-altering-penalties-for-students-who-use-tech-to"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-13",
+   "url": "https://aigregator.news/digests/2026-11-18.html#responsible-ai-safety-amp-policy",
+   "external_url": "https://www.theguardian.com/technology/2026/nov/18/paul-kelly-albanese-ai-copyright-protections-creatives-campaign",
+   "title": "Australian artists organize campaign for AI copyright protections",
+   "content_text": "Australian musicians and creative-industry groups are asking the Albanese government not to weaken copyright protections for AI training. The campaign is a policy demand, not an enacted rule.\n\nSources: Guardian https://www.theguardian.com/technology/2026/nov/18/paul-kelly-albanese-ai-copyright-protections-creatives-campaign",
+   "summary": "Australian musicians and creative-industry groups are asking the Albanese government not to weaken copyright protections for AI training. The campaign is a policy demand, not an enacted rule.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "policy",
+    "art"
+   ],
+   "_aigregator": {
+    "section": "safety",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "Guardian",
+      "url": "https://www.theguardian.com/technology/2026/nov/18/paul-kelly-albanese-ai-copyright-protections-creatives-campaign"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-14",
+   "url": "https://aigregator.news/digests/2026-11-18.html#industry-amp-funding",
+   "external_url": "https://www.bloomberg.com/news/articles/2026-11-18/physical-ai-startup-humyn-raises-47-million-from-accel-prosus",
+   "title": "Humyn Labs raises $47 million for robot training",
+   "content_text": "Bloomberg reports a $47 million round led by Accel for Humyn Labs, which works on training robots to manipulate objects and navigate changing physical environments.\n\nSources: Bloomberg https://www.bloomberg.com/news/articles/2026-11-18/physical-ai-startup-humyn-raises-47-million-from-accel-prosus, business-standard.com https://www.business-standard.com/companies/news/ai-startup-humyn-labs-raises-47-million-in-series-a-funding-round-126111800765_1.html",
+   "summary": "Bloomberg reports a $47 million round led by Accel for Humyn Labs, which works on training robots to manipulate objects and navigate changing physical environments.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "funding",
+    "robotics"
+   ],
+   "_aigregator": {
+    "section": "funding",
+    "score": 13,
+    "source_count": 2,
+    "sources": [
+     {
+      "name": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-18/physical-ai-startup-humyn-raises-47-million-from-accel-prosus"
+     },
+     {
+      "name": "business-standard.com",
+      "url": "https://www.business-standard.com/companies/news/ai-startup-humyn-labs-raises-47-million-in-series-a-funding-round-126111800765_1.html"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-15",
+   "url": "https://aigregator.news/digests/2026-11-18.html#industry-amp-funding",
+   "external_url": "https://www.bloomberg.com/news/articles/2026-11-17/baidu-s-robin-li-says-ai-needs-monetization-to-avoid-bubble-risk",
+   "title": "Baidu's Robin Li warns AI spending needs commercial returns",
+   "content_text": "Robin Li said he has not seen AI adoption translate into broad sales or profit gains, according to Bloomberg. It is an executive's assessment of the market, not a measured industry-wide finding.\n\nSources: Bloomberg https://www.bloomberg.com/news/articles/2026-11-17/baidu-s-robin-li-says-ai-needs-monetization-to-avoid-bubble-risk",
+   "summary": "Robin Li said he has not seen AI adoption translate into broad sales or profit gains, according to Bloomberg. It is an executive's assessment of the market, not a measured industry-wide finding.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "funding",
+    "enterprise"
+   ],
+   "_aigregator": {
+    "section": "funding",
+    "score": 11,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-17/baidu-s-robin-li-says-ai-needs-monetization-to-avoid-bubble-risk"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-16",
+   "url": "https://aigregator.news/digests/2026-11-18.html#industry-amp-funding",
+   "external_url": "https://www.ft.com/content/d16475ce-efce-4dc1-b5a3-2f7c79e9dea9?syn-25a6b1a6=1",
+   "title": "ECB warns about financing commitments behind AI buildouts",
+   "content_text": "The ECB raised concerns about hyperscalers' off-balance-sheet commitments linked to AI infrastructure, according to the FT. Its comparison with subprime-era borrowing is a risk warning, not a prediction of a crash.\n\nSources: FT https://www.ft.com/content/d16475ce-efce-4dc1-b5a3-2f7c79e9dea9?syn-25a6b1a6=1",
+   "summary": "The ECB raised concerns about hyperscalers' off-balance-sheet commitments linked to AI infrastructure, according to the FT. Its comparison with subprime-era borrowing is a risk warning, not a prediction of a crash.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "funding",
+    "hardware"
+   ],
+   "_aigregator": {
+    "section": "funding",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "FT",
+      "url": "https://www.ft.com/content/d16475ce-efce-4dc1-b5a3-2f7c79e9dea9?syn-25a6b1a6=1"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-17",
+   "url": "https://aigregator.news/digests/2026-11-18.html#industry-amp-funding",
+   "external_url": "https://www.bloomberg.com/news/articles/2026-11-18/carlyle-s-jenkins-sees-no-rush-to-chase-ai-data-center-deals",
+   "title": "Carlyle sees no need to rush AI data-center lending",
+   "content_text": "Carlyle's Mark Jenkins said investors can wait to fund data-center projects given the pipeline of planned capacity. The comment reflects one credit investor's positioning rather than a change in supply.\n\nSources: Bloomberg https://www.bloomberg.com/news/articles/2026-11-18/carlyle-s-jenkins-sees-no-rush-to-chase-ai-data-center-deals",
+   "summary": "Carlyle's Mark Jenkins said investors can wait to fund data-center projects given the pipeline of planned capacity. The comment reflects one credit investor's positioning rather than a change in supply.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "funding",
+    "hardware"
+   ],
+   "_aigregator": {
+    "section": "funding",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-18/carlyle-s-jenkins-sees-no-rush-to-chase-ai-data-center-deals"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-18",
+   "url": "https://aigregator.news/digests/2026-11-18.html#industry-amp-funding",
+   "external_url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+   "title": "OpenAI signs Le Figaro content partnership",
+   "content_text": "OpenAI says ChatGPT will show summaries and excerpts from Le Figaro journalism with links to the originals under a new publishing agreement.\n\nSources: OpenAI https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+   "summary": "OpenAI says ChatGPT will show summaries and excerpts from Le Figaro journalism with links to the originals under a new publishing agreement.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "funding",
+    "apps"
+   ],
+   "_aigregator": {
+    "section": "funding",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "OpenAI",
+      "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-19",
+   "url": "https://aigregator.news/digests/2026-11-18.html#industry-amp-funding",
+   "external_url": "https://www.ft.com/content/a3430f0d-0080-4970-8eec-2c14c8438b3d?syn-25a6b1a6=1",
+   "title": "Early Anthropic investors anticipate large gains from IPO",
+   "content_text": "The FT reports lesser-known venture investors could see roughly $100 billion in gains as Anthropic prepares to price its shares. The figure is contingent on the offering's valuation and completion.\n\nSources: FT https://www.ft.com/content/a3430f0d-0080-4970-8eec-2c14c8438b3d?syn-25a6b1a6=1",
+   "summary": "The FT reports lesser-known venture investors could see roughly $100 billion in gains as Anthropic prepares to price its shares. The figure is contingent on the offering's valuation and completion.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "funding"
+   ],
+   "_aigregator": {
+    "section": "funding",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "FT",
+      "url": "https://www.ft.com/content/a3430f0d-0080-4970-8eec-2c14c8438b3d?syn-25a6b1a6=1"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-20",
+   "url": "https://aigregator.news/digests/2026-11-18.html#industry-amp-funding",
+   "external_url": "https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&at_campaign=rss",
+   "title": "Nvidia reports higher sales and rules out Huang's return",
+   "content_text": "Nvidia reported strong quarterly sales under interim leadership, while its board said it will not reinstate former CEO Jensen Huang. Separate analyst speculation about his return should not be confused with the board's decision.\n\nSources: BBC https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&at_campaign=rss",
+   "summary": "Nvidia reported strong quarterly sales under interim leadership, while its board said it will not reinstate former CEO Jensen Huang. Separate analyst speculation about his return should not be confused with the board's decision.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "hardware",
+    "funding"
+   ],
+   "_aigregator": {
+    "section": "funding",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cm2kl50vkwkdo?at_medium=RSS&at_campaign=rss"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-21",
+   "url": "https://aigregator.news/digests/2026-11-18.html#tools-amp-demos",
+   "external_url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05?syn-25a6b1a6=1",
+   "title": "KPMG tests AI agents in a financial audit",
+   "content_text": "KPMG used AI agents to review a FTSE 250 company's statements in a pilot, the FT reports. Accountants said the agents asked useful questions, but human intervention was still required.\n\nSources: FT https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05?syn-25a6b1a6=1",
+   "summary": "KPMG used AI agents to review a FTSE 250 company's statements in a pilot, the FT reports. Accountants said the agents asked useful questions, but human intervention was still required.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "agents",
+    "enterprise"
+   ],
+   "_aigregator": {
+    "section": "tools",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "FT",
+      "url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05?syn-25a6b1a6=1"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-22",
+   "url": "https://aigregator.news/digests/2026-11-18.html#tools-amp-demos",
+   "external_url": "https://www.bbc.co.uk/news/articles/cqglwjd450k0o?at_medium=RSS&at_campaign=rss",
+   "title": "Europe looks to photonic chips for future computing",
+   "content_text": "The BBC reports on European efforts to develop chips that process data using light. This is a technology-development feature, not a new commercial AI chip announcement.\n\nSources: BBC https://www.bbc.co.uk/news/articles/cqglwjd450k0o?at_medium=RSS&at_campaign=rss",
+   "summary": "The BBC reports on European efforts to develop chips that process data using light. This is a technology-development feature, not a new commercial AI chip announcement.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "hardware",
+    "inference"
+   ],
+   "_aigregator": {
+    "section": "tools",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cqglwjd450k0o?at_medium=RSS&at_campaign=rss"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-23",
+   "url": "https://aigregator.news/digests/2026-11-18.html#tools-amp-demos",
+   "external_url": "https://www.bbc.co.uk/news/articles/cke89jevqm1vo?at_medium=RSS&at_campaign=rss",
+   "title": "AI-assisted research uncovers critical Java flaw",
+   "content_text": "A security startup used AI while investigating a critical Java software vulnerability, the BBC reports. The discovery illustrates a developer-security application; the vulnerability itself needs conventional remediation.\n\nSources: BBC https://www.bbc.co.uk/news/articles/cke89jevqm1vo?at_medium=RSS&at_campaign=rss",
+   "summary": "A security startup used AI while investigating a critical Java software vulnerability, the BBC reports. The discovery illustrates a developer-security application; the vulnerability itself needs conventional remediation.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "code",
+    "safety"
+   ],
+   "_aigregator": {
+    "section": "tools",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "BBC",
+      "url": "https://www.bbc.co.uk/news/articles/cke89jevqm1vo?at_medium=RSS&at_campaign=rss"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-24",
+   "url": "https://aigregator.news/digests/2026-11-18.html#tools-amp-demos",
+   "external_url": "https://www.ft.com/content/7d0ddcb9-5b4e-4146-b237-46c128eea419?syn-25a6b1a6=1",
+   "title": "US cyber agency urges organizations to patch Java vulnerability",
+   "content_text": "The FT reports a US cybersecurity warning about a Java vulnerability and advice to update affected systems. Its connection to AI is the reported use of AI in finding the flaw, not evidence that AI caused it.\n\nSources: FT https://www.ft.com/content/7d0ddcb9-5b4e-4146-b237-46c128eea419?syn-25a6b1a6=1",
+   "summary": "The FT reports a US cybersecurity warning about a Java vulnerability and advice to update affected systems. Its connection to AI is the reported use of AI in finding the flaw, not evidence that AI caused it.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "safety",
+    "code"
+   ],
+   "_aigregator": {
+    "section": "tools",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "FT",
+      "url": "https://www.ft.com/content/7d0ddcb9-5b4e-4146-b237-46c128eea419?syn-25a6b1a6=1"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-25",
+   "url": "https://aigregator.news/digests/2026-11-18.html#tools-amp-demos",
+   "external_url": "https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1",
+   "title": "Experts suspect rushed AI-assisted patches contributed to US outages",
+   "content_text": "Experts cited by the FT say hurried fixes for software bugs found with AI may have destabilized systems at several organizations. The proposed explanation is not proof that the outages share a cause.\n\nSources: FT https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1",
+   "summary": "Experts cited by the FT say hurried fixes for software bugs found with AI may have destabilized systems at several organizations. The proposed explanation is not proof that the outages share a cause.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "code",
+    "safety"
+   ],
+   "_aigregator": {
+    "section": "tools",
+    "score": 10,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "FT",
+      "url": "https://www.ft.com/content/96c565f1-f229-40b6-91e8-7a849ec4b208?syn-25a6b1a6=1"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-26",
+   "url": "https://aigregator.news/digests/2026-11-18.html#open-source-amp-emerging",
+   "external_url": "https://github.com/NousResearch/hermes-agent",
+   "title": "Hermes Agent publishes v0.23.2 canary release",
+   "content_text": "NousResearch published a v0.23.2 canary build of its agent repository. The source lists its cumulative GitHub stars; those are not a measure of growth in this release.\n\nSources: GitHub NousResearch/hermes-agent https://github.com/NousResearch/hermes-agent",
+   "summary": "NousResearch published a v0.23.2 canary build of its agent repository. The source lists its cumulative GitHub stars; those are not a measure of growth in this release.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "agents",
+    "opensource"
+   ],
+   "_aigregator": {
+    "section": "opensource",
+    "score": 8,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "GitHub NousResearch/hermes-agent",
+      "url": "https://github.com/NousResearch/hermes-agent"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-27",
+   "url": "https://aigregator.news/digests/2026-11-18.html#open-source-amp-emerging",
+   "external_url": "https://github.com/openclaw/openclaw",
+   "title": "OpenClaw publishes v2026.10.33",
+   "content_text": "OpenClaw lists a new v2026.10.33 release for its cross-platform AI agent project. Its cumulative star count does not describe adoption of this version.\n\nSources: GitHub openclaw/openclaw https://github.com/openclaw/openclaw",
+   "summary": "OpenClaw lists a new v2026.10.33 release for its cross-platform AI agent project. Its cumulative star count does not describe adoption of this version.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "agents",
+    "opensource"
+   ],
+   "_aigregator": {
+    "section": "opensource",
+    "score": 8,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "GitHub openclaw/openclaw",
+      "url": "https://github.com/openclaw/openclaw"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-28",
+   "url": "https://aigregator.news/digests/2026-11-18.html#open-source-amp-emerging",
+   "external_url": "https://github.com/aryamandarda/tamserve",
+   "title": "Tamserve serves multi-camera segmentation on shared GPUs",
+   "content_text": "The GitHub project describes serving SAM3, SAM 2 and EdgeTAM across multiple camera streams with GPU sharing. Claims of lower memory use and matching masks are from the repository, not independently benchmarked here.\n\nSources: GitHub aryamandarda/tamserve https://github.com/aryamandarda/tamserve",
+   "summary": "The GitHub project describes serving SAM3, SAM 2 and EdgeTAM across multiple camera streams with GPU sharing. Claims of lower memory use and matching masks are from the repository, not independently benchmarked here.",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [
+    "opensource",
+    "inference",
+    "multimodal"
+   ],
+   "_aigregator": {
+    "section": "opensource",
+    "score": 6,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "GitHub aryamandarda/tamserve",
+      "url": "https://github.com/aryamandarda/tamserve"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-29",
+   "url": "https://aigregator.news/digests/2026-11-18.html#discourse",
+   "external_url": "https://bsky.app/profile/jasonkoebler.bsky.social/post/3n2jskqd5q22x",
+   "title": "Reporter describes lawsuit involving a Meta AI agent account A 404 Media reporter says a user and his AI agent sued Meta after the user's Facebook account was banned. The social post is a pointer to the reporting, not independent verification of the legal claims.",
+   "content_text": "via @jasonkoebler\n\nSources: bsky.app https://bsky.app/profile/jasonkoebler.bsky.social/post/3n2jskqd5q22x",
+   "summary": "via @jasonkoebler",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [],
+   "_aigregator": {
+    "section": "discourse",
+    "score": null,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "bsky.app",
+      "url": "https://bsky.app/profile/jasonkoebler.bsky.social/post/3n2jskqd5q22x"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-30",
+   "url": "https://aigregator.news/digests/2026-11-18.html#discourse",
+   "external_url": "https://nicolasbouliane.com/blog/death-by-ai",
+   "title": "All About Berlin author discusses search traffic from AI answers The site's author describes how AI answers affect traffic to his Berlin information site. This is a firsthand account rather than an industry-wide traffic estimate.",
+   "content_text": "via HN\n\nSources: nicolasbouliane.com https://nicolasbouliane.com/blog/death-by-ai",
+   "summary": "via HN",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [],
+   "_aigregator": {
+    "section": "discourse",
+    "score": null,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "nicolasbouliane.com",
+      "url": "https://nicolasbouliane.com/blog/death-by-ai"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-31",
+   "url": "https://aigregator.news/digests/2026-11-18.html#discourse",
+   "external_url": "https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference",
+   "title": "Cerebras describes disaggregated inference architecture Cerebras says its inference offering separates stages of model serving. The linked vendor announcement does not by itself establish comparative performance.",
+   "content_text": "via HN\n\nSources: cerebras.ai https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference",
+   "summary": "via HN",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [],
+   "_aigregator": {
+    "section": "discourse",
+    "score": null,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "cerebras.ai",
+      "url": "https://www.cerebras.ai/blog/cerebras-launches-disaggregated-inference"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-32",
+   "url": "https://aigregator.news/digests/2026-11-18.html#discourse",
+   "external_url": "https://energy-based-reasoners.github.io/",
+   "title": "Energy-Based Reasoners present an inference-efficiency claim The project page claims large inference-efficiency gains for an energy-based reasoning approach. Its 385-fold figure is a project claim with benchmark conditions to examine before generalizing.",
+   "content_text": "via HN\n\nSources: energy-based-reasoners.github.io https://energy-based-reasoners.github.io/",
+   "summary": "via HN",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [],
+   "_aigregator": {
+    "section": "discourse",
+    "score": null,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "energy-based-reasoners.github.io",
+      "url": "https://energy-based-reasoners.github.io/"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-33",
+   "url": "https://aigregator.news/digests/2026-11-18.html#discourse",
+   "external_url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
+   "title": "Report examines code-review work after AI coding assistance A submitted report attributes to Harvard researchers the observation that faster AI-assisted coding can leave human review as a bottleneck. The input offers no study details to establish the size of that effect.",
+   "content_text": "via HN\n\nSources: complexdiscovery.com https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/",
+   "summary": "via HN",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [],
+   "_aigregator": {
+    "section": "discourse",
+    "score": null,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "complexdiscovery.com",
+      "url": "https://complexdiscovery.com/harvard-researchers-find-ai-coding-agents-shifted-the-bottleneck-to-code-review/"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
+   "id": "https://aigregator.news/digests/2026-11-18.html#item-34",
+   "url": "https://aigregator.news/digests/2026-11-18.html#discourse",
+   "external_url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+   "title": "Claude Code team discusses verification practices The linked team post describes its approach to verifying agent-generated code. It is an engineering practice writeup, not an independent evaluation of coding models.",
+   "content_text": "via HN\n\nSources: claude.dev https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/",
+   "summary": "via HN",
+   "date_published": "2026-11-18T14:00:00Z",
+   "tags": [],
+   "_aigregator": {
+    "section": "discourse",
+    "score": null,
+    "source_count": 1,
+    "sources": [
+     {
+      "name": "claude.dev",
+      "url": "https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/"
+     }
+    ],
+    "edition": "2026-11-18"
+   }
+  },
+  {
    "id": "https://aigregator.news/digests/2026-11-17.html#item-1",
    "url": "https://aigregator.news/digests/2026-11-17.html#research",
    "external_url": "https://arxiv.org/abs/2611.21240",
@@ -4572,1032 +5426,6 @@
      }
     ],
     "edition": "2026-11-12"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-1",
-   "url": "https://aigregator.news/digests/2026-11-11.html#models-amp-releases",
-   "external_url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/",
-   "title": "Google DeepMind makes Gemini 4 Carbon available",
-   "content_text": "Google DeepMind announced availability of Gemini 4 Carbon. The candidate provides no performance or access details, so comparisons with other models require the primary announcement.\n\nSources: DeepMind https://deepmind.google/blog/gemini-4-carbon-is-now-available/, Google https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
-   "summary": "Google DeepMind announced availability of Gemini 4 Carbon. The candidate provides no performance or access details, so comparisons with other models require the primary announcement.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "models"
-   ],
-   "_aigregator": {
-    "section": "models",
-    "score": 13,
-    "source_count": 2,
-    "sources": [
-     {
-      "name": "DeepMind",
-      "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available/"
-     },
-     {
-      "name": "Google",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-2",
-   "url": "https://aigregator.news/digests/2026-11-11.html#models-amp-releases",
-   "external_url": "https://huggingface.co/blog/qvac/botpsy",
-   "title": "QVAC describes an on-device personal assistant based on a small agent model",
-   "content_text": "QVAC presents BotPsy as an on-device assistant using a sub-billion-parameter agentic language model. Its latency and reliability claims need independent evaluation.\n\nSources: HuggingFace https://huggingface.co/blog/qvac/botpsy",
-   "summary": "QVAC presents BotPsy as an on-device assistant using a sub-billion-parameter agentic language model. Its latency and reliability claims need independent evaluation.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "models",
-    "agents",
-    "inference"
-   ],
-   "_aigregator": {
-    "section": "models",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "HuggingFace",
-      "url": "https://huggingface.co/blog/qvac/botpsy"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-3",
-   "url": "https://aigregator.news/digests/2026-11-11.html#models-amp-releases",
-   "external_url": "https://www.bloomberg.com/news/articles/2026-11-11/bytedance-prepares-muse-like-agent-in-push-to-close-ai-gap",
-   "title": "ByteDance reportedly preparing a video-oriented AI assistant",
-   "content_text": "Bloomberg reports that ByteDance plans to release a Muse-like assistant in coming weeks. The assistant has not shipped, and the company's competitive projections remain its own expectations.\n\nSources: Bloomberg https://www.bloomberg.com/news/articles/2026-11-11/bytedance-prepares-muse-like-agent-in-push-to-close-ai-gap",
-   "summary": "Bloomberg reports that ByteDance plans to release a Muse-like assistant in coming weeks. The assistant has not shipped, and the company's competitive projections remain its own expectations.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "agents",
-    "video",
-    "models"
-   ],
-   "_aigregator": {
-    "section": "models",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-11/bytedance-prepares-muse-like-agent-in-push-to-close-ai-gap"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-4",
-   "url": "https://aigregator.news/digests/2026-11-11.html#research",
-   "external_url": "https://arxiv.org/abs/2609.36630",
-   "title": "Survey maps agent distillation across models and reusable artifacts",
-   "content_text": "The authors review how agent capabilities can be transferred through model weights, artifacts and harnesses rather than only teacher-student response pairs. This is a survey, not a new measured efficiency result.\n\nSources: arXiv https://arxiv.org/abs/2609.36630",
-   "summary": "The authors review how agent capabilities can be transferred through model weights, artifacts and harnesses rather than only teacher-student response pairs. This is a survey, not a new measured efficiency result.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "agents",
-    "training"
-   ],
-   "_aigregator": {
-    "section": "research",
-    "score": 8,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "arXiv",
-      "url": "https://arxiv.org/abs/2609.36630"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-5",
-   "url": "https://aigregator.news/digests/2026-11-11.html#research",
-   "external_url": "https://arxiv.org/abs/2611.13564",
-   "title": "Concept-based interpretation of clinical text without concept labels",
-   "content_text": "The paper proposes token-to-concept attention for clinical text predictions without requiring annotated concept labels. Its clinical usefulness depends on the reported evaluation and external validation.\n\nSources: arXiv https://arxiv.org/abs/2611.13564",
-   "summary": "The paper proposes token-to-concept attention for clinical text predictions without requiring annotated concept labels. Its clinical usefulness depends on the reported evaluation and external validation.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "interpretability",
-    "science"
-   ],
-   "_aigregator": {
-    "section": "research",
-    "score": 8,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "arXiv",
-      "url": "https://arxiv.org/abs/2611.13564"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-6",
-   "url": "https://aigregator.news/digests/2026-11-11.html#research",
-   "external_url": "https://arxiv.org/abs/2611.14256",
-   "title": "Survey examines transfer of self-improvement methods for multimodal agents",
-   "content_text": "The authors compare self-evolving multimodal agent methods across scenarios and examine conditions under which one method transfers to another setting. This is a synthesis of existing work, not a new general-purpose agent.\n\nSources: arXiv https://arxiv.org/abs/2611.14256",
-   "summary": "The authors compare self-evolving multimodal agent methods across scenarios and examine conditions under which one method transfers to another setting. This is a synthesis of existing work, not a new general-purpose agent.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "agents",
-    "multimodal"
-   ],
-   "_aigregator": {
-    "section": "research",
-    "score": 8,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "arXiv",
-      "url": "https://arxiv.org/abs/2611.14256"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-7",
-   "url": "https://aigregator.news/digests/2026-11-11.html#research",
-   "external_url": "https://arxiv.org/abs/2608.08743",
-   "title": "Distribution mapping proposed for counterfactually fair reinforcement learning",
-   "content_text": "The paper addresses unequal access to services under sequential decision policies using a distribution-mapping approach. Its fairness guarantees depend on the assumptions used for counterfactual outcomes.\n\nSources: arXiv https://arxiv.org/abs/2608.08743",
-   "summary": "The paper addresses unequal access to services under sequential decision policies using a distribution-mapping approach. Its fairness guarantees depend on the assumptions used for counterfactual outcomes.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "bias",
-    "alignment"
-   ],
-   "_aigregator": {
-    "section": "research",
-    "score": 8,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "arXiv",
-      "url": "https://arxiv.org/abs/2608.08743"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-8",
-   "url": "https://aigregator.news/digests/2026-11-11.html#responsible-ai-safety-amp-policy",
-   "external_url": "https://www.reuters.com/3fec1b0a85a0/world/china/us-china-should-stay-clear-eyed-ai-cooperation-competition-bessent-says-2026-11-11/",
-   "title": "US and China discuss model testing and AI incident reporting",
-   "content_text": "Treasury Secretary Scott Bessent said the two sides expect to exchange model-evaluation practices and establish a direct channel for reporting serious AI incidents. These are stated intentions, not yet an implemented agreement.\n\nSources: Reuters https://www.reuters.com/3fec1b0a85a0/world/china/us-china-should-stay-clear-eyed-ai-cooperation-competition-bessent-says-2026-11-11/",
-   "summary": "Treasury Secretary Scott Bessent said the two sides expect to exchange model-evaluation practices and establish a direct channel for reporting serious AI incidents. These are stated intentions, not yet an implemented agreement.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "policy",
-    "evals",
-    "safety"
-   ],
-   "_aigregator": {
-    "section": "safety",
-    "score": 11,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Reuters",
-      "url": "https://www.reuters.com/3fec1b0a85a0/world/china/us-china-should-stay-clear-eyed-ai-cooperation-competition-bessent-says-2026-11-11/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-9",
-   "url": "https://aigregator.news/digests/2026-11-11.html#responsible-ai-safety-amp-policy",
-   "external_url": "https://www.theguardian.com/education/2026/nov/11/ai-close-to-impossible-assess-university-coursework-regulator",
-   "title": "England's university regulator urges more in-person assessment",
-   "content_text": "The Office for Students says generative AI has made some coursework difficult to assess and recommends traditional exams and in-person presentations. It is guidance to institutions, not a blanket ban on AI tools.\n\nSources: Guardian https://www.theguardian.com/education/2026/nov/11/ai-close-to-impossible-assess-university-coursework-regulator",
-   "summary": "The Office for Students says generative AI has made some coursework difficult to assess and recommends traditional exams and in-person presentations. It is guidance to institutions, not a blanket ban on AI tools.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "policy",
-    "apps"
-   ],
-   "_aigregator": {
-    "section": "safety",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Guardian",
-      "url": "https://www.theguardian.com/education/2026/nov/11/ai-close-to-impossible-assess-university-coursework-regulator"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-10",
-   "url": "https://aigregator.news/digests/2026-11-11.html#responsible-ai-safety-amp-policy",
-   "external_url": "https://www.bloomberg.com/news/articles/2026-11-11/anthropic-s-mythos-ai-looking-for-cyber-flaws-in-energy-systems",
-   "title": "Energy companies test Anthropic models for cyber defense",
-   "content_text": "Bloomberg reports that some power companies are using Anthropic cybersecurity technology to identify vulnerabilities in energy systems. The report describes deployment, not proof that the systems prevent attacks.\n\nSources: Bloomberg https://www.bloomberg.com/news/articles/2026-11-11/anthropic-s-mythos-ai-looking-for-cyber-flaws-in-energy-systems",
-   "summary": "Bloomberg reports that some power companies are using Anthropic cybersecurity technology to identify vulnerabilities in energy systems. The report describes deployment, not proof that the systems prevent attacks.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "safety",
-    "enterprise",
-    "agents"
-   ],
-   "_aigregator": {
-    "section": "safety",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-11/anthropic-s-mythos-ai-looking-for-cyber-flaws-in-energy-systems"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-11",
-   "url": "https://aigregator.news/digests/2026-11-11.html#responsible-ai-safety-amp-policy",
-   "external_url": "https://www.bloomberg.com/features/2026-grok-sexualized-childhood-photos/",
-   "title": "Bloomberg documents abuse of children's photos through Grok",
-   "content_text": "Bloomberg reports on teenagers whose childhood photos were sexualized through Grok and their efforts to hold xAI accountable. The case highlights limits of image-generation safeguards and removal mechanisms.\n\nSources: Bloomberg https://www.bloomberg.com/features/2026-grok-sexualized-childhood-photos/",
-   "summary": "Bloomberg reports on teenagers whose childhood photos were sexualized through Grok and their efforts to hold xAI accountable. The case highlights limits of image-generation safeguards and removal mechanisms.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "safety",
-    "multimodal",
-    "policy"
-   ],
-   "_aigregator": {
-    "section": "safety",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Bloomberg",
-      "url": "https://www.bloomberg.com/features/2026-grok-sexualized-childhood-photos/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-12",
-   "url": "https://aigregator.news/digests/2026-11-11.html#responsible-ai-safety-amp-policy",
-   "external_url": "https://www.ft.com/content/52b5f9a8-346f-4dae-8a16-14d5d9eb1244?syn-25a6b1a6=1",
-   "title": "FT traces Singapore route for Nvidia chips bound for China",
-   "content_text": "The Financial Times investigates chip-trade networks through Singapore that may complicate US export controls on advanced AI hardware. The story is about enforcement and supply chains, not a newly announced chip.\n\nSources: FT https://www.ft.com/content/52b5f9a8-346f-4dae-8a16-14d5d9eb1244?syn-25a6b1a6=1",
-   "summary": "The Financial Times investigates chip-trade networks through Singapore that may complicate US export controls on advanced AI hardware. The story is about enforcement and supply chains, not a newly announced chip.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "hardware",
-    "policy"
-   ],
-   "_aigregator": {
-    "section": "safety",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "FT",
-      "url": "https://www.ft.com/content/52b5f9a8-346f-4dae-8a16-14d5d9eb1244?syn-25a6b1a6=1"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-13",
-   "url": "https://aigregator.news/digests/2026-11-11.html#responsible-ai-safety-amp-policy",
-   "external_url": "https://www.bbc.co.uk/news/articles/c54gne3plvrxo?at_medium=RSS&at_campaign=rss",
-   "title": "Tamil Nadu audits library holdings over alleged AI-generated books",
-   "content_text": "Officials in Tamil Nadu ordered an internal audit of library collections following allegations that books were AI-generated. The audit has been ordered; the allegations should not be treated as its findings.\n\nSources: BBC https://www.bbc.co.uk/news/articles/c54gne3plvrxo?at_medium=RSS&at_campaign=rss",
-   "summary": "Officials in Tamil Nadu ordered an internal audit of library collections following allegations that books were AI-generated. The audit has been ordered; the allegations should not be treated as its findings.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "policy",
-    "art"
-   ],
-   "_aigregator": {
-    "section": "safety",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "BBC",
-      "url": "https://www.bbc.co.uk/news/articles/c54gne3plvrxo?at_medium=RSS&at_campaign=rss"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-14",
-   "url": "https://aigregator.news/digests/2026-11-11.html#responsible-ai-safety-amp-policy",
-   "external_url": "https://www.ft.com/content/269b0245-44c4-4e34-94df-202bef642539?syn-25a6b1a6=1",
-   "title": "US regulator delays proposed AI compute futures trading",
-   "content_text": "The Commodity Futures Trading Commission postponed a push to trade AI computing futures over price-manipulation concerns. The proposed market remains under regulatory scrutiny.\n\nSources: FT https://www.ft.com/content/269b0245-44c4-4e34-94df-202bef642539?syn-25a6b1a6=1",
-   "summary": "The Commodity Futures Trading Commission postponed a push to trade AI computing futures over price-manipulation concerns. The proposed market remains under regulatory scrutiny.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "policy",
-    "funding",
-    "hardware"
-   ],
-   "_aigregator": {
-    "section": "safety",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "FT",
-      "url": "https://www.ft.com/content/269b0245-44c4-4e34-94df-202bef642539?syn-25a6b1a6=1"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-15",
-   "url": "https://aigregator.news/digests/2026-11-11.html#cool-projects-amp-novel-applications",
-   "external_url": "https://techcrunch.com/2026/11/10/ring-known-for-its-doorbell-cameras-launches-a-home-security-drone-and-an-enterprise-security-robot/",
-   "title": "Ring launches home security drone and business patrol robot",
-   "content_text": "Amazon-owned Ring announced a home security drone and a rolling robot for business security. The report does not establish how much autonomy or on-device AI either product uses.\n\nSources: TechCrunch https://techcrunch.com/2026/11/10/ring-known-for-its-doorbell-cameras-launches-a-home-security-drone-and-an-enterprise-security-robot/, Ars https://arstechnica.com/ai/2026/11/ring-cameras-go-mobile-as-amazon-debuts-ai-powered-security-drone-and-robot/",
-   "summary": "Amazon-owned Ring announced a home security drone and a rolling robot for business security. The report does not establish how much autonomy or on-device AI either product uses.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "robotics",
-    "apps"
-   ],
-   "_aigregator": {
-    "section": "projects",
-    "score": 11,
-    "source_count": 2,
-    "sources": [
-     {
-      "name": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/10/ring-known-for-its-doorbell-cameras-launches-a-home-security-drone-and-an-enterprise-security-robot/"
-     },
-     {
-      "name": "Ars",
-      "url": "https://arstechnica.com/ai/2026/11/ring-cameras-go-mobile-as-amazon-debuts-ai-powered-security-drone-and-robot/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-16",
-   "url": "https://aigregator.news/digests/2026-11-11.html#cool-projects-amp-novel-applications",
-   "external_url": "https://www.bloomberg.com/news/videos/2026-11-11/airbnb-is-building-its-own-ai-travel-agent-co-founder-video",
-   "title": "Airbnb is developing a booking-focused travel agent",
-   "content_text": "Co-founder Nathan Blecharczyk says Airbnb is building an AI agent intended to book travel both on and off its platform. The broader booking capability is a plan, not an available feature.\n\nSources: Bloomberg https://www.bloomberg.com/news/videos/2026-11-11/airbnb-is-building-its-own-ai-travel-agent-co-founder-video",
-   "summary": "Co-founder Nathan Blecharczyk says Airbnb is building an AI agent intended to book travel both on and off its platform. The broader booking capability is a plan, not an available feature.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "agents",
-    "apps"
-   ],
-   "_aigregator": {
-    "section": "projects",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/videos/2026-11-11/airbnb-is-building-its-own-ai-travel-agent-co-founder-video"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-17",
-   "url": "https://aigregator.news/digests/2026-11-11.html#cool-projects-amp-novel-applications",
-   "external_url": "https://www.theguardian.com/film/2026/nov/10/storyboard-artists-ai",
-   "title": "Storyboard artists describe AI's effect on film preproduction",
-   "content_text": "The Guardian examines use of image-generation tools for storyboards, including by Martin Scorsese, and the impact on working illustrators. This is a report on adoption and labor, not a claim that the craft has been replaced.\n\nSources: Guardian https://www.theguardian.com/film/2026/nov/10/storyboard-artists-ai",
-   "summary": "The Guardian examines use of image-generation tools for storyboards, including by Martin Scorsese, and the impact on working illustrators. This is a report on adoption and labor, not a claim that the craft has been replaced.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "art",
-    "apps"
-   ],
-   "_aigregator": {
-    "section": "projects",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Guardian",
-      "url": "https://www.theguardian.com/film/2026/nov/10/storyboard-artists-ai"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-18",
-   "url": "https://aigregator.news/digests/2026-11-11.html#cool-projects-amp-novel-applications",
-   "external_url": "https://openai.com/index/gilbert-tobin-sam-nickless",
-   "title": "Gilbert + Tobin discusses AI use in legal work",
-   "content_text": "OpenAI interviews the law firm's chief executive about adopting AI. The source is a vendor case study, so reported benefits are company claims rather than independently measured outcomes.\n\nSources: OpenAI https://openai.com/index/gilbert-tobin-sam-nickless",
-   "summary": "OpenAI interviews the law firm's chief executive about adopting AI. The source is a vendor case study, so reported benefits are company claims rather than independently measured outcomes.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "enterprise",
-    "apps"
-   ],
-   "_aigregator": {
-    "section": "projects",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "OpenAI",
-      "url": "https://openai.com/index/gilbert-tobin-sam-nickless"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-19",
-   "url": "https://aigregator.news/digests/2026-11-11.html#cool-projects-amp-novel-applications",
-   "external_url": "https://www.ft.com/content/2316e892-a7c2-42b6-8c21-7003e05f2b5c?syn-25a6b1a6=1",
-   "title": "Helsing unveils Clarity military targeting platform",
-   "content_text": "The German defense company introduced Clarity as a European alternative to Palantir's targeting systems. The reported launch does not by itself establish the system's effectiveness or AI capabilities.\n\nSources: FT https://www.ft.com/content/2316e892-a7c2-42b6-8c21-7003e05f2b5c?syn-25a6b1a6=1",
-   "summary": "The German defense company introduced Clarity as a European alternative to Palantir's targeting systems. The reported launch does not by itself establish the system's effectiveness or AI capabilities.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "enterprise",
-    "apps",
-    "policy"
-   ],
-   "_aigregator": {
-    "section": "projects",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "FT",
-      "url": "https://www.ft.com/content/2316e892-a7c2-42b6-8c21-7003e05f2b5c?syn-25a6b1a6=1"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-20",
-   "url": "https://aigregator.news/digests/2026-11-11.html#industry-amp-funding",
-   "external_url": "https://www.bloomberg.com/news/articles/2026-11-11/ai-has-driven-a-quarter-of-uk-growth-this-year-analysis-shows",
-   "title": "Bloomberg economists attribute a quarter of UK growth to AI",
-   "content_text": "Bloomberg economists estimate that AI-related activity supplied about a quarter of the UK's growth this year. That is an economic attribution, not a directly measured productivity gain.\n\nSources: Bloomberg https://www.bloomberg.com/news/articles/2026-11-11/ai-has-driven-a-quarter-of-uk-growth-this-year-analysis-shows",
-   "summary": "Bloomberg economists estimate that AI-related activity supplied about a quarter of the UK's growth this year. That is an economic attribution, not a directly measured productivity gain.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "funding",
-    "enterprise"
-   ],
-   "_aigregator": {
-    "section": "funding",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-11/ai-has-driven-a-quarter-of-uk-growth-this-year-analysis-shows"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-21",
-   "url": "https://aigregator.news/digests/2026-11-11.html#industry-amp-funding",
-   "external_url": "https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations",
-   "title": "Report counts 181 GW of proposed on-site gas power for data centers",
-   "content_text": "Research cited by the Guardian identifies 181 GW of proposed gas-fired capacity at planned data centers in the US and Europe. Proposed generation is not built capacity; grid connection delays are cited as a driver.\n\nSources: Guardian https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations",
-   "summary": "Research cited by the Guardian identifies 181 GW of proposed gas-fired capacity at planned data centers in the US and Europe. Proposed generation is not built capacity; grid connection delays are cited as a driver.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "hardware",
-    "funding",
-    "policy"
-   ],
-   "_aigregator": {
-    "section": "funding",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Guardian",
-      "url": "https://www.theguardian.com/world/2026/nov/11/ai-datacentres-on-site-gas-fired-power-stations"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-22",
-   "url": "https://aigregator.news/digests/2026-11-11.html#industry-amp-funding",
-   "external_url": "https://www.ft.com/content/68bcba57-0575-44ee-80f4-2e5ea23a431e?syn-25a6b1a6=1",
-   "title": "Anthropic bankers weigh IPO valuation of $1.5 trillion or more",
-   "content_text": "The Financial Times reports that bankers are preparing to raise Anthropic's expected listing valuation amid investor demand. A proposed valuation is not a finalized IPO price.\n\nSources: FT https://www.ft.com/content/68bcba57-0575-44ee-80f4-2e5ea23a431e?syn-25a6b1a6=1",
-   "summary": "The Financial Times reports that bankers are preparing to raise Anthropic's expected listing valuation amid investor demand. A proposed valuation is not a finalized IPO price.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "funding",
-    "enterprise"
-   ],
-   "_aigregator": {
-    "section": "funding",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "FT",
-      "url": "https://www.ft.com/content/68bcba57-0575-44ee-80f4-2e5ea23a431e?syn-25a6b1a6=1"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-23",
-   "url": "https://aigregator.news/digests/2026-11-11.html#industry-amp-funding",
-   "external_url": "https://www.bloomberg.com/news/articles/2026-11-10/coreweave-boosts-annual-forecast-easing-concerns-about-slowdown",
-   "title": "CoreWeave raises annual outlook",
-   "content_text": "CoreWeave raised its annual forecast after reporting continued demand for AI infrastructure. Its debt load remains material to the economics of that growth.\n\nSources: Bloomberg https://www.bloomberg.com/news/articles/2026-11-10/coreweave-boosts-annual-forecast-easing-concerns-about-slowdown",
-   "summary": "CoreWeave raised its annual forecast after reporting continued demand for AI infrastructure. Its debt load remains material to the economics of that growth.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "funding",
-    "hardware"
-   ],
-   "_aigregator": {
-    "section": "funding",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-10/coreweave-boosts-annual-forecast-easing-concerns-about-slowdown"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-24",
-   "url": "https://aigregator.news/digests/2026-11-11.html#industry-amp-funding",
-   "external_url": "https://www.ft.com/content/fa5c5bdc-c2b0-4fab-8951-0526a4608773?syn-25a6b1a6=1",
-   "title": "CoreWeave plans chip-backed borrowing",
-   "content_text": "The Financial Times reports that CoreWeave is planning a multibillion-dollar financing deal backed by chips and customer prepayments. The proposed structure ties capital spending more directly to GPU assets and contracted demand.\n\nSources: FT https://www.ft.com/content/fa5c5bdc-c2b0-4fab-8951-0526a4608773?syn-25a6b1a6=1",
-   "summary": "The Financial Times reports that CoreWeave is planning a multibillion-dollar financing deal backed by chips and customer prepayments. The proposed structure ties capital spending more directly to GPU assets and contracted demand.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "funding",
-    "hardware"
-   ],
-   "_aigregator": {
-    "section": "funding",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "FT",
-      "url": "https://www.ft.com/content/fa5c5bdc-c2b0-4fab-8951-0526a4608773?syn-25a6b1a6=1"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-25",
-   "url": "https://aigregator.news/digests/2026-11-11.html#industry-amp-funding",
-   "external_url": "https://www.bloomberg.com/news/newsletters/2026-11-11/sap-touts-ai-tools-but-fails-to-disclose-numbers-to-measure-results",
-   "title": "SAP has not disclosed many metrics on its AI products",
-   "content_text": "Bloomberg notes that SAP promotes AI tools without publishing many figures needed to gauge their business impact. That limits outside assessment of adoption and returns.\n\nSources: Bloomberg https://www.bloomberg.com/news/newsletters/2026-11-11/sap-touts-ai-tools-but-fails-to-disclose-numbers-to-measure-results",
-   "summary": "Bloomberg notes that SAP promotes AI tools without publishing many figures needed to gauge their business impact. That limits outside assessment of adoption and returns.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "enterprise",
-    "funding"
-   ],
-   "_aigregator": {
-    "section": "funding",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/newsletters/2026-11-11/sap-touts-ai-tools-but-fails-to-disclose-numbers-to-measure-results"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-26",
-   "url": "https://aigregator.news/digests/2026-11-11.html#industry-amp-funding",
-   "external_url": "https://www.ft.com/content/f999a0c2-af52-499f-8008-accbdfd45a25?syn-25a6b1a6=1",
-   "title": "UK AI chip startup Fractile reportedly valued at $7 billion",
-   "content_text": "The Financial Times reports a $7 billion valuation for Fractile, which develops custom semiconductors for AI. The valuation is a financing signal, not a measure of deployed chip performance.\n\nSources: FT https://www.ft.com/content/f999a0c2-af52-499f-8008-accbdfd45a25?syn-25a6b1a6=1",
-   "summary": "The Financial Times reports a $7 billion valuation for Fractile, which develops custom semiconductors for AI. The valuation is a financing signal, not a measure of deployed chip performance.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "funding",
-    "hardware"
-   ],
-   "_aigregator": {
-    "section": "funding",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "FT",
-      "url": "https://www.ft.com/content/f999a0c2-af52-499f-8008-accbdfd45a25?syn-25a6b1a6=1"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-27",
-   "url": "https://aigregator.news/digests/2026-11-11.html#tools-amp-demos",
-   "external_url": "https://www.reuters.com/5f374b32b07b/technology/openai-lets-businesses-claim-chatgpt-profiles-adds-ai-agents-us-e-commerce-firms-2026-11-10/",
-   "title": "OpenAI starts verified business profiles and commerce agents in ChatGPT",
-   "content_text": "OpenAI is testing a Business Hub where verified companies can update their profiles and add product feeds. Reuters also reports agents for US e-commerce companies; how the product changes discovery remains to be seen.\n\nSources: Reuters https://www.reuters.com/5f374b32b07b/technology/openai-lets-businesses-claim-chatgpt-profiles-adds-ai-agents-us-e-commerce-firms-2026-11-10/, OpenAI https://openai.com/index/introducing-businesses-chatgpt/",
-   "summary": "OpenAI is testing a Business Hub where verified companies can update their profiles and add product feeds. Reuters also reports agents for US e-commerce companies; how the product changes discovery remains to be seen.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "agents",
-    "enterprise",
-    "apps"
-   ],
-   "_aigregator": {
-    "section": "tools",
-    "score": 14,
-    "source_count": 2,
-    "sources": [
-     {
-      "name": "Reuters",
-      "url": "https://www.reuters.com/5f374b32b07b/technology/openai-lets-businesses-claim-chatgpt-profiles-adds-ai-agents-us-e-commerce-firms-2026-11-10/"
-     },
-     {
-      "name": "OpenAI",
-      "url": "https://openai.com/index/introducing-businesses-chatgpt/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-28",
-   "url": "https://aigregator.news/digests/2026-11-11.html#tools-amp-demos",
-   "external_url": "https://deepmind.google/blog/introducing-alphaproof-code/",
-   "title": "DeepMind says AlphaProof Code generated Lean proofs for Signal encryption",
-   "content_text": "Google DeepMind reports that AlphaProof Code agents wrote three million lines of Lean proofs to verify Signal's core encryption. The volume of generated proofs is the lab's reported result, not a general benchmark of software verification.\n\nSources: DeepMind https://deepmind.google/blog/introducing-alphaproof-code/",
-   "summary": "Google DeepMind reports that AlphaProof Code agents wrote three million lines of Lean proofs to verify Signal's core encryption. The volume of generated proofs is the lab's reported result, not a general benchmark of software verification.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "code",
-    "agents",
-    "evals"
-   ],
-   "_aigregator": {
-    "section": "tools",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "DeepMind",
-      "url": "https://deepmind.google/blog/introducing-alphaproof-code/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-29",
-   "url": "https://aigregator.news/digests/2026-11-11.html#tools-amp-demos",
-   "external_url": "https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed",
-   "title": "FT profiles founders using agents in lean startups",
-   "content_text": "The Financial Times describes founders assigning operational roles to AI agents. These are individual deployments, not evidence that fully autonomous companies are generally viable.\n\nSources: FT https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed",
-   "summary": "The Financial Times describes founders assigning operational roles to AI agents. These are individual deployments, not evidence that fully autonomous companies are generally viable.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "agents",
-    "enterprise"
-   ],
-   "_aigregator": {
-    "section": "tools",
-    "score": 10,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "FT",
-      "url": "https://www.ft.com/content/d338594b-ca66-418a-9884-8f562a175fed"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-30",
-   "url": "https://aigregator.news/digests/2026-11-11.html#open-source-amp-emerging",
-   "external_url": "https://github.com/wangzan101/Mika",
-   "title": "Mika runs an Android app-and-web agent on device",
-   "content_text": "The GitHub repository describes an on-device assistant that operates Android apps and the web. Its listed stars are a lifetime count, not daily growth or a capability benchmark.\n\nSources: GitHub wangzan101/Mika https://github.com/wangzan101/Mika",
-   "summary": "The GitHub repository describes an on-device assistant that operates Android apps and the web. Its listed stars are a lifetime count, not daily growth or a capability benchmark.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "agents",
-    "opensource",
-    "apps"
-   ],
-   "_aigregator": {
-    "section": "opensource",
-    "score": 6,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "GitHub wangzan101/Mika",
-      "url": "https://github.com/wangzan101/Mika"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-31",
-   "url": "https://aigregator.news/digests/2026-11-11.html#open-source-amp-emerging",
-   "external_url": "https://github.com/N1nEmAn/sapper-v2",
-   "title": "sapper-v2 coordinates AI agents for authorized penetration testing",
-   "content_text": "The repository describes a commander-and-worker architecture for automated security testing and reports a competition result. Both the benchmark claim and operational reliability are project-reported.\n\nSources: GitHub N1nEmAn/sapper-v2 https://github.com/N1nEmAn/sapper-v2",
-   "summary": "The repository describes a commander-and-worker architecture for automated security testing and reports a competition result. Both the benchmark claim and operational reliability are project-reported.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "agents",
-    "opensource",
-    "safety"
-   ],
-   "_aigregator": {
-    "section": "opensource",
-    "score": 6,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "GitHub N1nEmAn/sapper-v2",
-      "url": "https://github.com/N1nEmAn/sapper-v2"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-32",
-   "url": "https://aigregator.news/digests/2026-11-11.html#open-source-amp-emerging",
-   "external_url": "https://github.com/Sandflow-ai/sand3d",
-   "title": "sand3d provides Python-based 3D modeling tools for LLM workflows",
-   "content_text": "The repository describes a Python interface to 3D modeling intended for use with language models. Its listed stars are cumulative, not a measure of recent adoption.\n\nSources: GitHub Sandflow-ai/sand3d https://github.com/Sandflow-ai/sand3d",
-   "summary": "The repository describes a Python interface to 3D modeling intended for use with language models. Its listed stars are cumulative, not a measure of recent adoption.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "art",
-    "code",
-    "opensource"
-   ],
-   "_aigregator": {
-    "section": "opensource",
-    "score": 6,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "GitHub Sandflow-ai/sand3d",
-      "url": "https://github.com/Sandflow-ai/sand3d"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-33",
-   "url": "https://aigregator.news/digests/2026-11-11.html#open-source-amp-emerging",
-   "external_url": "https://github.com/SAOS-3624/dsh-see-now",
-   "title": "让 AI 实时看见你的屏幕 (English: Let AI See Your Screen in Real Time)",
-   "content_text": "This plugin selects screen frames by the amount of visual change and combines multiple frames into one image. Its author says that skipping static frames reduces token use; no independent token measurement is provided.\n\nSources: GitHub SAOS-3624/dsh-see-now https://github.com/SAOS-3624/dsh-see-now",
-   "summary": "This plugin selects screen frames by the amount of visual change and combines multiple frames into one image. Its author says that skipping static frames reduces token use; no independent token measurement is provided.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [
-    "multimodal",
-    "agents",
-    "opensource"
-   ],
-   "_aigregator": {
-    "section": "opensource",
-    "score": 6,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "GitHub SAOS-3624/dsh-see-now",
-      "url": "https://github.com/SAOS-3624/dsh-see-now"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-34",
-   "url": "https://aigregator.news/digests/2026-11-11.html#discourse",
-   "external_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xsswud/amd_epyc_9686f_linux_benchmarks_96_zen_6_cores_at/",
-   "title": "Community discusses AMD EPYC 9686F AI benchmarks",
-   "content_text": "A Reddit thread points to Linux benchmarks for a 96-core Zen 6 EPYC processor, with AI-specific results reportedly starting on page two. The post is discussion, not an independent hardware review here.\n\nSources: reddit.com https://www.reddit.com/r/LocalLLaMA/comments/1xsswud/amd_epyc_9686f_linux_benchmarks_96_zen_6_cores_at/",
-   "summary": "A Reddit thread points to Linux benchmarks for a 96-core Zen 6 EPYC processor, with AI-specific results reportedly starting on page two. The post is discussion, not an independent hardware review here.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [],
-   "_aigregator": {
-    "section": "discourse",
-    "score": null,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "reddit.com",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xsswud/amd_epyc_9686f_linux_benchmarks_96_zen_6_cores_at/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-35",
-   "url": "https://aigregator.news/digests/2026-11-11.html#discourse",
-   "external_url": "https://www.reddit.com/r/LocalLLaMA/comments/1xtdft2/asked_sensenovau158bmot_how_to_make_a_closed/",
-   "title": "User tests interleaved text and images from SenseNova-U1.5-8B-MoT",
-   "content_text": "A Reddit user reports getting an illustrated terrarium guide with images between steps in a single model response. This is one user demonstration, not a controlled evaluation.\n\nSources: reddit.com https://www.reddit.com/r/LocalLLaMA/comments/1xtdft2/asked_sensenovau158bmot_how_to_make_a_closed/",
-   "summary": "A Reddit user reports getting an illustrated terrarium guide with images between steps in a single model response. This is one user demonstration, not a controlled evaluation.",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [],
-   "_aigregator": {
-    "section": "discourse",
-    "score": null,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "reddit.com",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1xtdft2/asked_sensenovau158bmot_how_to_make_a_closed/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-36",
-   "url": "https://aigregator.news/digests/2026-11-11.html#discourse",
-   "external_url": "https://bsky.app/profile/astrokatie.com/post/3mzyldx3uds2m",
-   "title": "Data-center fossil-fuel plans draw climate criticism A Bluesky post contrasts promised AI climate benefits with spending on new fossil-fuel generation. It is commentary, not an independent estimate of aggregate emissions.",
-   "content_text": "via @astrokatie.com\n\nSources: bsky.app https://bsky.app/profile/astrokatie.com/post/3mzyldx3uds2m",
-   "summary": "via @astrokatie.com",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [],
-   "_aigregator": {
-    "section": "discourse",
-    "score": null,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "bsky.app",
-      "url": "https://bsky.app/profile/astrokatie.com/post/3mzyldx3uds2m"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-37",
-   "url": "https://aigregator.news/digests/2026-11-11.html#discourse",
-   "external_url": "https://tendrils.co/blog/2026-11-10/30m-raised",
-   "title": "CPU startup describes a $30 million fundraising round A founder blog reports raising $30 million to redesign CPU hardware. The post alone does not establish performance or adoption.",
-   "content_text": "via HN\n\nSources: tendrils.co https://tendrils.co/blog/2026-11-10/30m-raised",
-   "summary": "via HN",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [],
-   "_aigregator": {
-    "section": "discourse",
-    "score": null,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "tendrils.co",
-      "url": "https://tendrils.co/blog/2026-11-10/30m-raised"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-38",
-   "url": "https://aigregator.news/digests/2026-11-11.html#discourse",
-   "external_url": "https://www.activtrak.com/news/productivity-lab-ai-users-longer-workdays/",
-   "title": "ActivTrak associates AI use with longer workdays ActivTrak reports workdays up to 90 minutes longer among AI users in its observed population. This is an association in vendor data, not evidence that AI caused longer hours.",
-   "content_text": "via HN\n\nSources: activtrak.com https://www.activtrak.com/news/productivity-lab-ai-users-longer-workdays/",
-   "summary": "via HN",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [],
-   "_aigregator": {
-    "section": "discourse",
-    "score": null,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "activtrak.com",
-      "url": "https://www.activtrak.com/news/productivity-lab-ai-users-longer-workdays/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-39",
-   "url": "https://aigregator.news/digests/2026-11-11.html#discourse",
-   "external_url": "https://www.niemanlab.org/2026/11/ai-is-becoming-an-information-gateway-audiences-still-dont-want-it-making-their-news/",
-   "title": "Nieman Lab examines audience views on AI-generated news The analysis distinguishes using AI to find information from accepting it as a news producer. Audience sentiment should not be read as a technical evaluation of generated reporting.",
-   "content_text": "via HN\n\nSources: niemanlab.org https://www.niemanlab.org/2026/11/ai-is-becoming-an-information-gateway-audiences-still-dont-want-it-making-their-news/",
-   "summary": "via HN",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [],
-   "_aigregator": {
-    "section": "discourse",
-    "score": null,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "niemanlab.org",
-      "url": "https://www.niemanlab.org/2026/11/ai-is-becoming-an-information-gateway-audiences-still-dont-want-it-making-their-news/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-40",
-   "url": "https://aigregator.news/digests/2026-11-11.html#discourse",
-   "external_url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
-   "title": "Developer argues AI-assisted coding can weaken codebase maintainability A personal essay argues that generated code can create fragile maintenance dependencies. The argument is a developer's assessment, not a measured result across projects.",
-   "content_text": "via HN\n\nSources: evanxmerz.com https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
-   "summary": "via HN",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [],
-   "_aigregator": {
-    "section": "discourse",
-    "score": null,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "evanxmerz.com",
-      "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/"
-     }
-    ],
-    "edition": "2026-11-11"
-   }
-  },
-  {
-   "id": "https://aigregator.news/digests/2026-11-11.html#item-41",
-   "url": "https://aigregator.news/digests/2026-11-11.html#discourse",
-   "external_url": "https://docs.modelplane.ai/guides/inference-guide",
-   "title": "Inference engineering guide surveys deployment tradeoffs The guide collects practical considerations for serving models. It is documentation and analysis rather than a new model or independent benchmark.",
-   "content_text": "via HN\n\nSources: docs.modelplane.ai https://docs.modelplane.ai/guides/inference-guide",
-   "summary": "via HN",
-   "date_published": "2026-11-11T14:00:00Z",
-   "tags": [],
-   "_aigregator": {
-    "section": "discourse",
-    "score": null,
-    "source_count": 1,
-    "sources": [
-     {
-      "name": "docs.modelplane.ai",
-      "url": "https://docs.modelplane.ai/guides/inference-guide"
-     }
-    ],
-    "edition": "2026-11-11"
    }
   }
  ]
