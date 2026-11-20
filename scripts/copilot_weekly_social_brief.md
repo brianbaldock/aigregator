@@ -2,8 +2,9 @@
 
 The roundup is already written and published by a separate step. This task prepares
 only the local artifacts consumed by `scripts/simplepost_weekly_handoff.py`. It does
-not authorize, schedule, publish, send, or create any Buffer post. Do not use Buffer,
-its helpers, credentials, API, exports, or fallbacks.
+not authorize, schedule, publish, send, or create any Buffer post. Do not use Buffer's
+API, credentials, `bq.py`, exports, or fallbacks. The carousel renderer below lives in
+the buffer-publish skill directory but is a local PDF renderer only; it is allowed.
 
 The wrapper has validated `/tmp/aig-weekly-handoff.json` and supplied these values:
 
@@ -76,9 +77,14 @@ report failure rather than claiming completion.
 
 ## Produce the locked review artifacts
 
-1. Read `weekly/<slug>.md` for substance and use the existing approved carousel
-   generator unchanged. Generate the five-page PDF at
-   `$AIG_WEEKLY_WORK_DIR/<slug>-carousel.pdf`; it must be nonempty, openable, and
+1. Read `weekly/<slug>.md` for substance and generate the five-page PDF with the
+   approved carousel generator, unchanged, run from the repository root:
+
+       python3 ~/.hermes/skills/social-media/buffer-publish/scripts/carousel.py \
+         weekly/<slug>.md <url> "$AIG_WEEKLY_WORK_DIR/<slug>-carousel.pdf" \
+         --logo docs/assets/themes/weekly/weekly-roundup-phosphor.png
+
+   Do not use any other carousel template. The PDF must be nonempty, openable, and
    derived from the current source. Preserve the approved carousel design.
 2. Write three exact UTF-8 copy files. Every copy must contain the exact weekly URL.
    LinkedIn is exactly one line:
