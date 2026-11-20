@@ -193,7 +193,7 @@ def s5_window_from_digests():
     if iso_mon != "2026-08-17":
         return record("S5 window from digests", inj, False,
                       f"PROBE BROKEN: ISO W34 Monday is {iso_mon}, fixture assumes 2026-08-17")
-    ok = (start, end) == ("2026-08-14", "2026-08-20") and title == "Aug 14 – Aug 20"
+    ok = (start, end) == ("2026-08-14", "2026-08-20") and title == "Aug 14 to Aug 20"
     record("S5 window from digests", inj, ok,
            f"derived '{title}' (ISO W34 would have said Aug 17 – Aug 23)")
 
