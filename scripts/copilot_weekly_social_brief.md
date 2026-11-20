@@ -80,7 +80,7 @@ report failure rather than claiming completion.
 1. Read `weekly/<slug>.md` for substance and generate the five-page PDF with the
    approved carousel generator, unchanged, run from the repository root:
 
-       python3 ~/.hermes/skills/social-media/buffer-publish/scripts/carousel.py \
+       .venv/bin/python ~/.hermes/skills/social-media/buffer-publish/scripts/carousel.py \
          weekly/<slug>.md <url> "$AIG_WEEKLY_WORK_DIR/<slug>-carousel.pdf" \
          --logo docs/assets/themes/weekly/weekly-roundup-phosphor.png
 
