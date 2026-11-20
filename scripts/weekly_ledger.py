@@ -249,11 +249,14 @@ def window_from_digests(paths: list[str]) -> tuple[str, str]:
 def format_window_title(start: str, end: str) -> str:
     a = dt.date.fromisoformat(start)
     b = dt.date.fromisoformat(end)
-    return f"{a.strftime('%b %-d')} – {b.strftime('%b %-d')}"
+    return f"{a.strftime('%b %-d')} to {b.strftime('%b %-d')}"
 
 
 if __name__ == "__main__":
     import sys, json
+    if any(arg in ("-h", "--help") for arg in sys.argv[1:]):
+        print("usage: weekly_ledger.py [digests/YYYY-MM-DD.md ...]  (default: 7 newest digests)")
+        sys.exit(0)
     repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     all_digests = sorted(glob.glob(os.path.join(repo, "digests", "*.md")))
     window = sys.argv[1:] or all_digests[-7:]

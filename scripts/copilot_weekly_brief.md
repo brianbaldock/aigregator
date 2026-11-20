@@ -18,6 +18,7 @@ STEPS:
    the W34 roundup whose own content covered Aug 14 – Aug 20.
 3b. Run the provenance gate and READ ITS OUTPUT before writing anything:
       python scripts/weekly_ledger.py digests/<each of the 7 files>
+   (It takes only digest paths as arguments; there is no --help.)
    It classifies every story as new / delta / hum / reprint by scanning the
    whole digests/ archive for the first date each cited URL ever appeared.
    Binding rules:
@@ -77,8 +78,9 @@ STEPS:
    (https://aigregator.news/weekly/<slug>.html). The site should read as one
    evolving story, not seven disconnected Thursdays.
 4. Synthesize a weekly roundup in Brian's blog voice: plain prose, NO em dashes (use colons/commas/parentheses), no excessive emojis, sober language, NO alcohol metaphors. Structure:
-   - H1 title: "AI Weekly Roundup — Week of <window_start> – <window_end>" using the
-     ACTUAL earliest/latest digest dates from step 3, formatted like "Aug 14 – Aug 20".
+   - H1 title: "# <slug> :: AI Weekly Roundup: Week of <window_start> to <window_end>" using the
+     ACTUAL earliest/latest digest dates from step 3, formatted like "Aug 14 to Aug 20".
+     The "<slug> :: " prefix is required (the carousel parser reads it). No em or en dashes.
      Never the ISO Monday-Sunday range.
    - Subtitle one-liner
    - Dashboard stat block (total stories, sources, top outlet share) computed from the 7 digests
