@@ -25,7 +25,7 @@ Status rules:
 If $DISCORD_WEBHOOK_KAGI_HEALTH is set (in secrets.env or env), posts a
 short alert on yellow or red. Steady-state green posts nothing.
 
-Cost: 6 v1 search calls per run = ~$0.03/day worst case.
+Cost: 6 v1 search calls per run = ~$0.072 at the published $12/1k rate.
 Designed to run unattended ~02:00 UTC (19:00 PDT / 18:00 PST), the
 evening before the 14:00 UTC digest, so Brian has waking hours to fix
 anything that's broken before the morning drop.
@@ -76,7 +76,7 @@ def search(token: str, query: str, limit: int = 10) -> dict:
     req = urllib.request.Request(
         url,
         data=body,
-        headers={"Authorization": f"Bot {token}", "Content-Type": "application/json"},
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
         method="POST",
     )
     t0 = time.time()

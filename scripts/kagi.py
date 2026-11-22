@@ -50,10 +50,11 @@ def _post(base: str, path: str, body: dict, token_key: str) -> dict:
     if not token:
         print(json.dumps({"error": "no_token", "msg": f"missing {token_key} in {SECRETS}"}))
         sys.exit(2)
+    # v1 Search and Extract use Bearer. The legacy v0 summarizer in _get uses Bot.
     req = urllib.request.Request(
         f"{base}{path}",
         data=json.dumps(body).encode("utf-8"),
-        headers={"Authorization": f"Bot {token}", "Content-Type": "application/json"},
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
         method="POST",
     )
     try:
