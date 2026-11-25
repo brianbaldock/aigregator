@@ -4,8 +4,114 @@
   <link href="https://aigregator.news/"/>
   <link rel="self" href="https://aigregator.news/atom.xml"/>
   <id>https://aigregator.news/</id>
-  <updated>2026-11-24T14:03:27Z</updated>
+  <updated>2026-11-25T14:03:43Z</updated>
   <subtitle>Daily AI signal, scored and cited.</subtitle>
+  <entry>
+    <title>2026-11-25 :: AI DAILY DIGEST</title>
+    <link href="https://aigregator.news/digests/2026-11-25.html"/>
+    <id>https://aigregator.news/digests/2026-11-25.html</id>
+    <updated>2026-11-25T00:00:00Z</updated>
+    <summary>2026-11-25 :: AI DAILY DIGEST</summary>
+    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
+  <span class="meta-item">📖 14 min read · 2,761 words · 📡 21 unique sources</span>
+  <span class="meta-share">
+    <span class="meta-label">SHARE:</span>
+    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-11-25&amp;url=https%3A//aigregator.news/digests/2026-11-25.html" target="_blank" rel="noopener" title="Share on X">X</a>
+    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-11-25%20https%3A//aigregator.news/digests/2026-11-25.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-11-25.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
+    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-11-25.html" title="Copy link">COPY</a>
+  </span>
+</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-11-25-ai-daily-digest">2026-11-25 :: AI DAILY DIGEST <a class="permalink" href="#2026-11-25-ai-daily-digest" title="Permalink">#</a></h1>
+<p><em>Jensen Huang's return to Nvidia continues to drive scrutiny of the company and the AI trade. Tidal is removing fully AI-generated tracks, while a mathematician at Anthropic claims Claude helped prove the Riemann Hypothesis; that proof has not been independently established.</em></p>
+<blockquote>
+<p><strong>📊 TODAY:</strong> 20 stories · 14 sources · 🔴 -0.3 sentiment · 🔥 7 cross-source · <strong>TOP MENTION:</strong> Nvidia ×10<br />
+<strong>🏷️ THEMES:</strong> science×6, safety×6, policy×6, enterprise×5, funding×5<br />
+<strong>📈 MARKET PULSE:</strong> Top mover: "Will Anthropic close below its IPO price by November 25, 2026?" ▲33.45pp · 5 AI markets tracked<br />
+<strong>📉 7D SENTIMENT:</strong> ▂▃▂▂▄▅▃ (oldest → today)<br />
+<em>Collection gaps: Reddit unavailable; these sources are omitted.</em></p>
+</blockquote>
+<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
+<ol>
+<li id="story-1">25 🔥 🔴 <strong>Huang apologizes to Nvidia staff after reinstatement as CEO.</strong> Jensen Huang apologized at a company meeting after returning as Nvidia CEO and acknowledged violating the company's code of conduct, according to Bloomberg. His reinstatement has also drawn scrutiny of the company's governance. (<a href="https://www.bloomberg.com/news/videos/2026-11-25/huang-apologizes-to-nvidia-staff-after-returning-as-ceo-video">Bloomberg</a>, <a href="https://www.theguardian.com/business/2026/nov/24/nvidia-stock-falls-jensen-huang">Guardian</a>, <a href="https://www.ft.com/content/b68742ac-f7b9-4aca-b4d9-48245e749b60?syn-25a6b1a6=1">FT</a>, <a href="https://thezvi.wordpress.com/2026/11/24/jensen-huang-reinstated-as-nvidia-ceo-at-behest-of-president-trump/">thezvi.wordpress.com</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
+<li id="story-2">19 🔥🛡️ 🔴 <strong>Tidal bans entirely AI-generated music and plans to remove 27 million tracks.</strong> Tidal says it will remove more than 27 million fully AI-generated tracks and that 43% of uploads in the past 90 days were entirely AI-made. The service cites effects on artist royalties and listener attribution. (<a href="https://www.theguardian.com/music/2026/nov/25/tidal-streaming-service-bans-ai-generated-music">Guardian</a>, <a href="https://www.theverge.com/entertainment/1041362/tidal-ai-music-ban">The Verge</a>, <a href="https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/">TechCrunch</a>, <a href="https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9/">Ars</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
+<li id="story-3">11 🟡 <strong>Anthropic mathematician claims Claude assisted a Riemann Hypothesis proof.</strong> A mathematician at Anthropic says Claude helped him find a proof of the Riemann Hypothesis, AP reports. The claim is not an independently verified resolution of the problem. (<a href="https://apnews.com/article/anthropic-claude-math-solution-ai-4fe8b69a891f160f9e7f0c85af8c55c8">AP</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
+<li id="story-4">11 🔥🛡️ 🔴 <strong>Reported attack compromises 24 Check Point management servers.</strong> GreyNoise attributes intrusions into 24 Check Point management servers at 22 organizations to a suspected campaign involving AI-driven offensive tooling. The claimed role of AI is an assessment, not a confirmed property of each intrusion. (<a href="https://thehackernews.com/2026/11/hackers-compromise-24-check-point.html">The Hacker News</a>, <a href="https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign">greynoise.io</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
+<li id="story-5">13 🔥🎨 🟢 <strong>Meta launches Muse shopping agent in the UK.</strong> Meta is rolling out its Muse assistant in the UK for tasks including shopping and travel booking. The Guardian reports glitches alongside the launch; task completion remains dependent on the agent's reliability. (<a href="https://www.theguardian.com/technology/2026/nov/24/meta-launches-muse-uk-ai-agent-do-christmas-shopping">Guardian</a>, <a href="https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/">TechCrunch</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
+<li id="story-6">10 🟡 <strong>EU plans €50 billion technology fund for AI and quantum companies.</strong> Brussels is planning a €50 billion fund that would take stakes in AI and quantum computing companies, the FT reports. It is a proposed financing vehicle, not funding already deployed. (<a href="https://www.ft.com/content/53d4b629-7ae4-4d63-ac37-e773b1dd3af0?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
+</ol>
+<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
+<p><em>2 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>11 🟡 🏷️ science, models <strong>Anthropic mathematician claims Claude assisted a Riemann Hypothesis proof.</strong> A mathematician at Anthropic says Claude helped him find a proof of the Riemann Hypothesis, AP reports. The claim is not an independently verified resolution of the problem. Sources: <a href="https://apnews.com/article/anthropic-claude-math-solution-ai-4fe8b69a891f160f9e7f0c85af8c55c8">AP</a></li>
+<li>10 🟡 🏷️ science, models <strong>OpenAI reports GPT-6 protein-design experiments.</strong> OpenAI says GPT-6 models designed protein structures and sequences with reasoning and code, and that lab tests found evidence of binding for five targets. These are company-reported experiments, not clinical validation. Sources: <a href="https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities">OpenAI</a></li>
+</ul>
+<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
+<p><em>5 items · 🔴 -0.6 sentiment</em></p>
+<ul>
+<li>8 🔴 🏷️ safety, evals <strong>Testing whether LLMs can automate marketplace advance-fee scams.</strong> Researchers prompted ten hosted models to play sellers in a simulated 'free item, pay delivery' scam. The paper tests whether models could reduce the human effort needed for this kind of fraud; experimental behavior is not a measured real-world fraud rate. Sources: <a href="https://arxiv.org/abs/2611.32957">arXiv</a></li>
+<li>8 🟡 🏷️ science, training <strong>Epsilon-Seg++ targets label-efficient electron microscopy segmentation.</strong> The paper extends a sparse-label segmentation approach by combining information across model hierarchy and training time. It addresses the cost of voxel-level annotation in electron microscopy. Sources: <a href="https://arxiv.org/abs/2611.32290">arXiv</a></li>
+<li>8 🟡 🏷️ agents, alignment <strong>Agent ethics and software-engineering practice.</strong> The authors examine how philosophical concerns about autonomous agents intersect with software-engineering practice. It is a conceptual discussion rather than a new agent evaluation. Sources: <a href="https://arxiv.org/abs/2611.31927">arXiv</a></li>
+<li>8 🔴 🏷️ science, evals <strong>Drug-interaction benchmark tests molecular representations across splits.</strong> Researchers derive a drug-drug interaction benchmark from curated descriptions and study how the choice of data split changes molecular representation rankings. The result cautions against treating a single benchmark split as a stable model ranking. Sources: <a href="https://arxiv.org/abs/2611.32371">arXiv</a></li>
+<li>8 🟡 🏷️ science, models <strong>Fourier neural operator surrogate for laser melt-pool prediction.</strong> A revised paper proposes a Fourier neural operator surrogate for computationally expensive laser-processing simulations. The approach targets faster exploration of melt-pool behavior rather than replacing physical validation. Sources: <a href="https://arxiv.org/abs/2602.06241">arXiv</a></li>
+</ul>
+<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
+<p><em>7 items · 🔴 -1.0 sentiment</em></p>
+<ul>
+<li>19 🔥🛡️ 🔴 ▤×4 🏷️ art, policy <strong>Tidal bans entirely AI-generated music and plans to remove 27 million tracks.</strong> Tidal says it will remove more than 27 million fully AI-generated tracks and that 43% of uploads in the past 90 days were entirely AI-made. The service cites effects on artist royalties and listener attribution. Sources: <a href="https://www.theguardian.com/music/2026/nov/25/tidal-streaming-service-bans-ai-generated-music">Guardian</a>, <a href="https://www.theverge.com/entertainment/1041362/tidal-ai-music-ban">The Verge</a>, <a href="https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/">TechCrunch</a>, <a href="https://arstechnica.com/ai/2026/11/tidal-will-ban-fully-ai-generated-music-on-december-9/">Ars</a></li>
+<li>13 🔥🛡️ 🔴 ▤×2 🏷️ enterprise, safety <strong>Judge grants bail to OpenAI engineer accused of bugging startup.</strong> A judge granted bail to an OpenAI engineer accused of bugging a startup after prosecutors failed to provide sufficient evidence, the FT reports. The accusation has not been established in court. Sources: <a href="https://www.ft.com/content/95057819-cbcc-407a-83a7-953fb100a837?syn-25a6b1a6=1">FT</a>, <a href="https://thehackernews.com/2026/11/ex-openai-employee-accused-of-bugging.html">The Hacker News</a></li>
+<li>13 🔥🛡️ 🔴 ▤×2 🏷️ policy, hardware <strong>US attorney general questioned about Nvidia investigation.</strong> The US attorney general declined to answer questions about an Nvidia investigation and President Trump's involvement in Huang's reinstatement, the BBC reports. Lawmakers are seeking answers as Nvidia's shares fall. Sources: <a href="https://www.bbc.co.uk/news/articles/crpdw1qx7jgxo?at_medium=RSS&amp;at_campaign=rss">BBC</a>, <a href="https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/">TechCrunch</a></li>
+<li>11 🔥🛡️ 🔴 ▤×2 🏷️ safety, agents <strong>Reported attack compromises 24 Check Point management servers.</strong> GreyNoise attributes intrusions into 24 Check Point management servers at 22 organizations to a suspected campaign involving AI-driven offensive tooling. The claimed role of AI is an assessment, not a confirmed property of each intrusion. Sources: <a href="https://thehackernews.com/2026/11/hackers-compromise-24-check-point.html">The Hacker News</a>, <a href="https://www.greynoise.io/blog/check-point-security-management-servers-intrusion-campaign">greynoise.io</a></li>
+<li>10 🛡️ 🔴 🏷️ safety, policy <strong>UK authorized fraud losses reach £659 million in first half of 2026.</strong> UK victims lost £659 million to authorized fraud in the first half of 2026, according to the FT. The report links the double-digit rise to industrialized scams using AI. Sources: <a href="https://www.ft.com/content/eb6f11e6-f16a-4a2c-92db-0e4731731018?syn-25a6b1a6=1">FT</a></li>
+<li>10 🛡️ 🟡 🏷️ policy, safety <strong>UK children's charity issues AI guidance checklist for schools.</strong> A children's protection charity has set out a checklist for schools' use of AI, the FT reports. The guidance addresses adoption in the UK education system rather than announcing a government rule. Sources: <a href="https://www.ft.com/content/c94bb595-e83f-45c6-98d6-d09a3183c13b">FT</a></li>
+<li>10 🛡️ 🟡 🏷️ policy, safety <strong>Schneier and Sanders propose a three-part Democratic AI policy.</strong> Nathan E. Sanders and Bruce Schneier argue that Democrats need a coordinated AI regulation platform. This is a policy proposal in an opinion column, not enacted legislation. Sources: <a href="https://www.theguardian.com/commentisfree/2026/nov/25/democrats-ai-regulation-plan">Guardian</a></li>
+</ul>
+<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
+<p><em>2 items · 🟢 +0.5 sentiment</em></p>
+<ul>
+<li>13 🔥🎨 🟢 ▤×2 🏷️ agents, apps <strong>Meta launches Muse shopping agent in the UK.</strong> Meta is rolling out its Muse assistant in the UK for tasks including shopping and travel booking. The Guardian reports glitches alongside the launch; task completion remains dependent on the agent's reliability. Sources: <a href="https://www.theguardian.com/technology/2026/nov/24/meta-launches-muse-uk-ai-agent-do-christmas-shopping">Guardian</a>, <a href="https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/">TechCrunch</a></li>
+<li>10 🎨 🟡 🏷️ voice, art <strong>EA adds AI-generated John Motson commentary to FC 27.</strong> EA says an AI-generated version of commentator John Motson will appear in FC 27 on November 26 with consent from his wife and son. The use puts voice replication inside a commercial game. Sources: <a href="https://www.bbc.co.uk/news/articles/c65y10j841jpo?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
+</ul>
+<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
+<p><em>7 items · 🟡 -0.1 sentiment</em></p>
+<ul>
+<li>25 🔥 🔴 ▤×6 🏷️ hardware, enterprise <strong>Huang apologizes to Nvidia staff after reinstatement as CEO.</strong> Jensen Huang apologized at a company meeting after returning as Nvidia CEO and acknowledged violating the company's code of conduct, according to Bloomberg. His reinstatement has also drawn scrutiny of the company's governance. Sources: <a href="https://www.bloomberg.com/news/videos/2026-11-25/huang-apologizes-to-nvidia-staff-after-returning-as-ceo-video">Bloomberg</a>, <a href="https://www.theguardian.com/business/2026/nov/24/nvidia-stock-falls-jensen-huang">Guardian</a>, <a href="https://www.ft.com/content/b68742ac-f7b9-4aca-b4d9-48245e749b60?syn-25a6b1a6=1">FT</a>, <a href="https://thezvi.wordpress.com/2026/11/24/jensen-huang-reinstated-as-nvidia-ceo-at-behest-of-president-trump/">thezvi.wordpress.com</a>, <a href="https://www.wired.com/story/jensen-huang-nvidia-us-national-security-risks/">Wired</a>, <a href="https://arstechnica.com/tech-policy/2026/11/how-trump-and-silicon-valley-forced-nvidia-to-take-jensen-huang-back/">Ars</a></li>
+<li>13 🔥 🟡 ▤×2 🏷️ funding, enterprise <strong>Anthropic shares close below IPO price.</strong> Anthropic shares closed below their IPO price as the technology rally faded, according to the FT. The move follows volatility around Nvidia's leadership. Sources: <a href="https://www.ft.com/content/c0cb932a-076e-4471-8009-91749fde5f47?syn-25a6b1a6=1">FT</a>, <a href="https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/">TechCrunch</a></li>
+<li>10 🟡 🏷️ enterprise, science <strong>Anthropic expands its Zurich office.</strong> Anthropic is moving into a larger Zurich office to recruit AI researchers and work nearer major healthcare companies, Bloomberg reports. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-25/anthropic-expands-in-zurich-moving-to-tap-city-s-ai-talent-pool">Bloomberg</a></li>
+<li>10 🟡 🏷️ enterprise, funding <strong>Anthropic-backed AI consultancy recruits in Europe.</strong> A consultancy backed by Anthropic and founded by former Hg executives is hiring AI talent in Europe, Bloomberg reports. Its ambitions are a company plan, not an established result. Sources: <a href="https://www.bloomberg.com/news/articles/2026-11-24/anthropic-backed-startup-led-by-ex-hg-executives-pushes-europe-to-build-ai-edge">Bloomberg</a></li>
+<li>10 🟡 🏷️ funding, hardware <strong>Copper slides as doubts about AI spending hit markets.</strong> Copper, aluminum and tin extended losses alongside technology shares amid investor doubts about the AI boom, Bloomberg reports. The market move is not itself evidence that AI infrastructure spending has changed. Sources: <a href="https://www.bloomberg.com/news/videos/2026-11-25/copper-nears-bear-market-as-ai-doubts-fuel-rout-video">Bloomberg</a></li>
+<li>10 🟡 🏷️ funding, policy <strong>EU plans €50 billion technology fund for AI and quantum companies.</strong> Brussels is planning a €50 billion fund that would take stakes in AI and quantum computing companies, the FT reports. It is a proposed financing vehicle, not funding already deployed. Sources: <a href="https://www.ft.com/content/53d4b629-7ae4-4d63-ac37-e773b1dd3af0?syn-25a6b1a6=1">FT</a></li>
+<li>10 🟡 🏷️ funding, hardware <strong>Nvidia leadership reversal leaves broader AI-boom concerns unresolved.</strong> The BBC's market analysis argues that Jensen Huang's return as Nvidia CEO does not address pre-existing concerns about AI valuations. This is an analysis of investor sentiment, not evidence that spending has slowed. Sources: <a href="https://www.bbc.co.uk/news/articles/c6894evgpel5o?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
+</ul>
+<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
+<p><em>2 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>10 🟡 🏷️ voice, agents <strong>IBM Research describes an Indic voice agent built with CUGA.</strong> IBM Research published a walkthrough of an Indic-language voice agent using CUGA. The input provides no evaluation results, so this is a builder demonstration rather than evidence of deployment performance. Sources: <a href="https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga">HuggingFace</a></li>
+<li>10 🟡 🏷️ robotics <strong>Nvidia demonstrates Microduck sim-to-real obstacle avoidance.</strong> A Nvidia walkthrough describes an obstacle-avoidance workflow using Isaac Lab and Newton for a small robot. It is a robotics development example, not a reported production deployment. Sources: <a href="https://huggingface.co/blog/nvidia/microduck-obstacle-avoidance">HuggingFace</a></li>
+</ul>
+<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
+<p><em>2 items · 🟡 +0.0 sentiment</em></p>
+<ul>
+<li>6 🌱 🟡 🏷️ opensource, multimodal <strong>Qwen3.8-27B appears among trending Hugging Face models.</strong> The Qwen3.8-27B image-text model is trending on Hugging Face. The listed downloads and likes are cumulative platform counts, not measured daily growth or a benchmark result. Sources: <a href="https://huggingface.co/Qwen/Qwen3.8-27B">HuggingFace</a></li>
+<li>6 🌱 🟡 🏷️ opensource, training <strong>Songe offers local-model training on idle compute.</strong> The Songe repository describes a training engine that uses spare local compute for distillation and fine-tuning. Its GitHub star total is a cumulative count, not evidence of adoption this week. Sources: <a href="https://github.com/sous-labs/songe">GitHub sous-labs/songe</a></li>
+</ul>
+<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
+<p><em>5 markets · AI/policy</em></p>
+<ul>
+<li><strong>Will Anthropic close below its IPO price by November 25, 2026?</strong> - 99.95% Yes (▲33.45pp 24h, $203K vol) · <a href="https://polymarket.com/event/anthropic-closes-below-ipo-price-by">Polymarket</a></li>
+<li><strong>Will Anthropic's valuation hit (LOW) $1.0T by December 31?</strong> - 91.5% Yes (▲21.0pp 24h, $85K vol) · <a href="https://polymarket.com/event/will-anthropics-valuation-hit-by-december-31">Polymarket</a></li>
+<li><strong>Will Anthropic close below its IPO price by November 27, 2026?</strong> - 99.95% Yes (▲18.95pp 24h, $131K vol) · <a href="https://polymarket.com/event/anthropic-closes-below-ipo-price-by">Polymarket</a></li>
+<li><strong>Will Anthropic close below its IPO price by December 31, 2026?</strong> - 99.95% Yes (▲12.95pp 24h, $54K vol) · <a href="https://polymarket.com/event/anthropic-closes-below-ipo-price-by">Polymarket</a></li>
+<li><strong>Will Alibaba have the best Chinese AI model at the end of November 2026?</strong> - 19% Yes (▼12.0pp 24h, $54K vol) · <a href="https://polymarket.com/event/best-chinese-ai-company-end-of-november">Polymarket</a></li>
+</ul>
+<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
+<h3 id="hacker-news">Hacker News <a class="permalink" href="#hacker-news" title="Permalink">#</a></h3>
+<ul>
+<li><a href="https://news.ycombinator.com/item?id=50630809">HN</a> HN user asks how to rebut an Anthropic distillation allegation A founder on Hacker News says Anthropic has accused their company of model distillation and asks what evidence could rebut it. The allegation and response are unverified discussion, not an adjudicated finding.</li>
+<li><a href="https://greydanus.github.io/2026/11/12/pengpt/">HN</a> PenGPT explores generative handwriting and sketches A project post describes a transformer for generating handwriting and sketches. It is a demonstration of a multimodal generative approach, not evidence of broad deployment.</li>
+<li><a href="https://prismml.com/news/bonsai-2-5-27b">HN</a> PrismML describes Ternary Bonsai 2.5 27B PrismML's announcement describes a 27-billion-parameter ternary model. The source is the vendor's own post; independent performance results are not provided in the input.</li>
+<li><a href="https://www.proofatlas.ai/open-problems/">HN</a> ProofAtlas ranks mathematics problems by LLM-assessed importance ProofAtlas presents a list of open mathematics problems ranked using LLM assessments. The rankings are model judgments, not an objective measure of mathematical importance.</li>
+</ul></article>]]></content>
+  </entry>
   <entry>
     <title>2026-11-24 :: AI DAILY DIGEST</title>
     <link href="https://aigregator.news/digests/2026-11-24.html"/>
@@ -3189,121 +3295,6 @@
 <li><a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm">HN</a> Anthropic S-1 filing Hacker News linked directly to Anthropic's SEC S-1 filing, the primary source for the company's IPO disclosures.</li>
 <li><a href="https://www.brown.edu/news/2026-10-26/ai-data-workers">HN</a> Brown student maps AI data work Brown University reports on a student project mapping the global labor involved in producing AI training data.</li>
 <li><a href="https://www.404media.co/chatgpt-keeps-telling-people-404-media-can-solve-their-tech-support-problems/">HN</a> ChatGPT misdirects users to 404 Media for tech support 404 Media reports that ChatGPT has directed users to the publication for unrelated technical-support requests.</li>
-</ul></article>]]></content>
-  </entry>
-  <entry>
-    <title>2026-10-26 :: AI DAILY DIGEST</title>
-    <link href="https://aigregator.news/digests/2026-10-26.html"/>
-    <id>https://aigregator.news/digests/2026-10-26.html</id>
-    <updated>2026-10-26T00:00:00Z</updated>
-    <summary>2026-10-26 :: AI DAILY DIGEST</summary>
-    <content type="html"><![CDATA[<article class="digest" data-pagefind-body><div class="meta-strip">
-  <span class="meta-item">📖 12 min read · 2,444 words · 📡 19 unique sources</span>
-  <span class="meta-share">
-    <span class="meta-label">SHARE:</span>
-    <a href="https://twitter.com/intent/tweet?text=AIgregator%20daily%20digest%20%E2%80%94%202026-10-26&amp;url=https%3A//aigregator.news/digests/2026-10-26.html" target="_blank" rel="noopener" title="Share on X">X</a>
-    <a href="https://bsky.app/intent/compose?text=AIgregator%20daily%20digest%20%E2%80%94%202026-10-26%20https%3A//aigregator.news/digests/2026-10-26.html" target="_blank" rel="noopener" title="Share on Bluesky">BSKY</a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//aigregator.news/digests/2026-10-26.html" target="_blank" rel="noopener" title="Share on LinkedIn">LI</a>
-    <a href="#" class="copy-link" data-url="https://aigregator.news/digests/2026-10-26.html" title="Copy link">COPY</a>
-  </span>
-</div><div class="diff-strip"><span class="diff-new">↑ 6 new</span> · <span class="diff-carry">↻ 0 carryover from yesterday</span></div><h1 id="2026-10-26-ai-daily-digest">2026-10-26 :: AI DAILY DIGEST <a class="permalink" href="#2026-10-26-ai-daily-digest" title="Permalink">#</a></h1>
-<p><em>Anthropic's IPO filing dominated a day that also exposed AI's capital intensity and its uneven business returns. Policy and security coverage focused on the geopolitical split around AI and risks from increasingly capable agents.</em></p>
-<blockquote>
-<p><strong>📊 TODAY:</strong> 23 stories · 13 sources · 🔴 -0.6 sentiment · 🔥 3 cross-source · <strong>TOP MENTION:</strong> Anthropic ×6<br />
-<strong>🏷️ THEMES:</strong> agents×11, enterprise×9, safety×7, policy×7, funding×7<br />
-<strong>📈 MARKET PULSE:</strong> Top mover: "Will Anthropic IPO by November 30, 2026?" ▲32.5pp · 5 AI markets tracked<br />
-<strong>📉 7D SENTIMENT:</strong> ▅▃▃▅▄▄▂ (oldest → today)  </p>
-</blockquote>
-<h2 id="tldr">⚡ TL;DR <a class="permalink" href="#tldr" title="Permalink">#</a></h2>
-<ol>
-<li id="story-1">16 🔥 🟡 <strong>Anthropic files for Nasdaq IPO.</strong> Anthropic filed for an initial public offering and plans to trade on Nasdaq under the ticker ANT, Bloomberg reports. The SEC filing names Goldman Sachs and Morgan Stanley as lead banks. (<a href="https://www.bloomberg.com/news/videos/2026-10-26/anthropic-files-for-ipo-plans-to-trade-on-nasdaq-video">Bloomberg</a>, <a href="https://www.theguardian.com/business/live/2026/oct/26/ai-cloud-computing-companies-guppy-level-death-elon-musk-stock-markets-dollar-oil-bond-yieds-latest-news-updates">Guardian</a>, <a href="https://www.ft.com/content/f6ecfecd-d797-4d2c-b427-d333297949cb?syn-25a6b1a6=1">FT</a>) <a class="story-link" href="#story-1" title="Permalink to this story">¶</a></li>
-<li id="story-2">11 🛡️ 🔴 <strong>Countries navigate US and Chinese AI blocs.</strong> AP reports that countries including Kazakhstan are trying to draw on both US and Chinese AI ecosystems without being locked into either. (<a href="https://apnews.com/article/china-us-ai-blocs-9974a3e5dc955a93935d131a4aeb8886">AP</a>) <a class="story-link" href="#story-2" title="Permalink to this story">¶</a></li>
-<li id="story-3">11 🔥🛡️ 🔴 <strong>Stolen GitHub tokens used to expose Actions secrets.</strong> Wiz found an automated campaign that used stolen GitHub tokens to add workflows that printed secrets into Actions logs before removing the runs. (<a href="https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html">The Hacker News</a>, <a href="https://www.wiz.io/blog/gheist-attempted-scaled-abuse-of-stolen-github-tokens-stumbles">wiz.io</a>) <a class="story-link" href="#story-3" title="Permalink to this story">¶</a></li>
-<li id="story-4">10 🟡 <strong>Meta seeks up to $95 billion for AI spending.</strong> Bloomberg reports that Meta is seeking up to $95 billion through common and preferred stock sales to support AI development. (<a href="https://www.bloomberg.com/news/articles/2026-10-26/meta-seeks-up-to-95-billion-in-equity-to-fund-ai-spending">Bloomberg</a>) <a class="story-link" href="#story-4" title="Permalink to this story">¶</a></li>
-<li id="story-5">10 🟢 <strong>SpaceX arranges $40 billion AI-chip financing.</strong> Bloomberg reports that SpaceX signed an equipment-finance lease with Apollo to pay for chips supporting its AI ambitions. (<a href="https://www.bloomberg.com/news/articles/2026-10-26/spacex-agrees-to-40-billion-chip-financing-deal-with-apollo">Bloomberg</a>) <a class="story-link" href="#story-5" title="Permalink to this story">¶</a></li>
-<li id="story-6">11 🔥 🟡 <strong>Apollo economist questions broad AI returns.</strong> An Apollo economist told TechCrunch that AI has produced no financial payoff for most US companies outside technology. It is an attributed economic assessment, not a measured industry-wide result. (<a href="https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/">TechCrunch</a>, <a href="https://www.businessinsider.com/apollo-ai-zero-financial-payoff-corporate-america-economic-analysis-2026-10">businessinsider.com</a>) <a class="story-link" href="#story-6" title="Permalink to this story">¶</a></li>
-</ol>
-<h2 id="models-amp-releases">🧠 Models &amp; Releases <a class="permalink" href="#models-amp-releases" title="Permalink">#</a></h2>
-<p><em>1 item · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>8 🟡 🏷️ models, safety, evals <strong>Gemini 4 Argon safety documents reviewed.</strong> A technical blog reviews Gemini 4 Argon's model card and security report, focusing on the relative depth of the safety documentation. Sources: <a href="https://thezvi.wordpress.com/2026/10/26/gemini-4-argon-the-model-and-safety-cards/">thezvi.wordpress.com</a></li>
-</ul>
-<h2 id="research">🔬 Research <a class="permalink" href="#research" title="Permalink">#</a></h2>
-<p><em>5 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>8 🟡 🏷️ models, interpretability <strong>Causal analysis studies negation in multilingual LLMs.</strong> This paper studies how multilingual language models represent negation and whether those representations support reliable translation across languages. Sources: <a href="https://arxiv.org/abs/2610.32281">arXiv</a></li>
-<li>8 🟡 🏷️ safety, evals <strong>Multi-LLM jailbreaking framed as a Markov process.</strong> The authors model multi-turn jailbreaking with multiple LLMs as a Markov decision process and evaluate the approach for red-teaming. Sources: <a href="https://arxiv.org/abs/2610.31937">arXiv</a></li>
-<li>8 🟡 🏷️ multimodal, models <strong>Vision-language world model uses adaptive thought streams.</strong> This work proposes a unified vision-language world model with adaptive streams of thought for physical-world reasoning. Sources: <a href="https://arxiv.org/abs/2610.32177">arXiv</a></li>
-<li>8 🟡 🏷️ evals <strong>Constrained online optimization regret bounds.</strong> This theoretical paper presents regret and constraint-violation results for constrained online convex optimization. Sources: <a href="https://arxiv.org/abs/2610.03983">arXiv</a></li>
-<li>8 🟡 🏷️ agents, evals, multimodal <strong>4DMemory benchmarks long-horizon agent memory.</strong> 4DMemory introduces a benchmark for assessing harness-augmented agents on long-horizon spatiotemporal memory tasks. Sources: <a href="https://arxiv.org/abs/2610.32332">arXiv</a></li>
-</ul>
-<h2 id="responsible-ai-safety-amp-policy">🛡️ Responsible AI, Safety &amp; Policy <a class="permalink" href="#responsible-ai-safety-amp-policy" title="Permalink">#</a></h2>
-<p><em>7 items · 🔴 -1.1 sentiment</em></p>
-<ul>
-<li>11 🛡️ 🔴 🏷️ policy, models <strong>Countries navigate US and Chinese AI blocs.</strong> AP reports that countries including Kazakhstan are trying to draw on both US and Chinese AI ecosystems without being locked into either. Sources: <a href="https://apnews.com/article/china-us-ai-blocs-9974a3e5dc955a93935d131a4aeb8886">AP</a></li>
-<li>11 🔥🛡️ 🔴 ▤×2 🏷️ safety, code, agents <strong>Stolen GitHub tokens used to expose Actions secrets.</strong> Wiz found an automated campaign that used stolen GitHub tokens to add workflows that printed secrets into Actions logs before removing the runs. Sources: <a href="https://thehackernews.com/2026/10/gheist-uses-stolen-github-tokens-to.html">The Hacker News</a>, <a href="https://www.wiz.io/blog/gheist-attempted-scaled-abuse-of-stolen-github-tokens-stumbles">wiz.io</a></li>
-<li>10 🛡️ 🔴 🏷️ policy, training, art <strong>Anthropic sued over alleged Elvis-song training use.</strong> Authentic Brands Group alleges that Anthropic used 274 Elvis Presley songs to train AI models. The claim is part of a lawsuit and has not been established in court. Sources: <a href="https://www.theguardian.com/us-news/2026/oct/25/elvis-presley-anthropic-lawsuit-ai-models-music">Guardian</a></li>
-<li>10 🛡️ 🔴 🏷️ agents, safety, policy <strong>Report says Claude accessed Georgia voter data.</strong> The Guardian reports that a Claude system accessed voter data during a statistics project, raising questions about agent controls and data access. Sources: <a href="https://www.theguardian.com/technology/2026/oct/26/anthropics-claude-ai-model-accessed-georgia-voter-data-in-us">Guardian</a></li>
-<li>10 🛡️ 🔴 🏷️ safety, policy, agents <strong>Australia warns of AI-enabled cyber threats.</strong> Australia's cyber agency says organizations should prepare for service disruptions as threats rise, and calls for advanced AI defenses against AI-enabled attackers. Sources: <a href="https://www.theguardian.com/technology/2026/oct/26/australians-should-prepare-for-online-services-to-go-down-unexpectedly-as-threats-rise-cyber-agency-warns">Guardian</a></li>
-<li>10 🛡️ 🟡 🏷️ policy, enterprise, apps <strong>Farm adoption of AI needs safeguards.</strong> The Financial Times considers how AI could affect agriculture and warns that uneven access could widen existing gaps. Sources: <a href="https://www.ft.com/content/41acd923-d0ca-4441-9079-ec70f904caa9">FT</a></li>
-<li>10 🛡️ 🔴 🏷️ apps, bias, policy <strong>UK ombudsman addresses AI-assisted complaints.</strong> The Financial Times reports that the UK financial ombudsman is dealing with lengthy and inaccurate complaints aided by AI tools. Sources: <a href="https://www.ft.com/content/5f56b300-f8a6-4834-a2e6-75902880ef87?syn-25a6b1a6=1">FT</a></li>
-</ul>
-<h2 id="cool-projects-amp-novel-applications">🎨 Cool Projects &amp; Novel Applications <a class="permalink" href="#cool-projects-amp-novel-applications" title="Permalink">#</a></h2>
-<p><em>5 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>10 🎨 🟡 🏷️ robotics, safety, policy <strong>China approves VW and Xpeng autonomous-driving trials.</strong> Volkswagen and Xpeng received approvals to trial autonomous-driving systems on public roads in China after a safety review, Bloomberg reports. Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-26/china-boosts-self-driving-push-with-vw-xpeng-technology-trials">Bloomberg</a></li>
-<li>10 🎨 🟡 🏷️ video, art, apps <strong>Neighbours recut into AI-assisted mobile microdrama.</strong> The Guardian reports that Neighbours will be recut into vertical mobile episodes using AI, drawing objections from some cast members. Sources: <a href="https://www.theguardian.com/tv-and-radio/2026/oct/26/neighbours-soap-recut-ai-microdrama-mobile-series-feat-margot-robbie">Guardian</a></li>
-<li>10 🎨 🟡 🏷️ robotics, hardware <strong>Toyota pursues humanoid robotics.</strong> The Financial Times reports that Toyota is applying long-running robotics research to commercial humanoid robots. Sources: <a href="https://www.ft.com/content/8bf93407-6b93-4ebb-b54b-f290ebd563e3?syn-25a6b1a6=1">FT</a></li>
-<li>8 🎨 🟡 🏷️ video, art, models <strong>Grok releases preview of AI-generated Odyssey.</strong> Grok released seven minutes of an AI-generated Odyssey project. TechCrunch's assessment is opinion, while the release itself is the reported event. Sources: <a href="https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/">TechCrunch</a></li>
-<li>8 🎨 🟡 🏷️ agents, apps, enterprise <strong>AI agents pitch journalism work.</strong> Wired profiles AI agents designed to pitch and produce reported stories, raising questions about editorial accountability and attribution. Sources: <a href="https://www.wired.com/story/ai-agents-are-trying-to-be-journalists-now/">Wired</a></li>
-</ul>
-<h2 id="industry-amp-funding">💰 Industry &amp; Funding <a class="permalink" href="#industry-amp-funding" title="Permalink">#</a></h2>
-<p><em>7 items · 🟡 -0.1 sentiment</em></p>
-<ul>
-<li>16 🔥 🟡 ▤×3 🏷️ funding, enterprise <strong>Anthropic files for Nasdaq IPO.</strong> Anthropic filed for an initial public offering and plans to trade on Nasdaq under the ticker ANT, Bloomberg reports. The SEC filing names Goldman Sachs and Morgan Stanley as lead banks. Sources: <a href="https://www.bloomberg.com/news/videos/2026-10-26/anthropic-files-for-ipo-plans-to-trade-on-nasdaq-video">Bloomberg</a>, <a href="https://www.theguardian.com/business/live/2026/oct/26/ai-cloud-computing-companies-guppy-level-death-elon-musk-stock-markets-dollar-oil-bond-yieds-latest-news-updates">Guardian</a>, <a href="https://www.ft.com/content/f6ecfecd-d797-4d2c-b427-d333297949cb?syn-25a6b1a6=1">FT</a></li>
-<li>11 🟡 🏷️ funding, enterprise <strong>AI investment boosts US growth without a productivity break.</strong> Reuters examines the contribution of AI investment to US growth while finding no clear evidence of a sustained higher growth trend. Sources: <a href="https://www.reuters.com/world/us/us-growth-boosted-by-ai-no-sign-turning-point-higher-2026-10-26/">Reuters</a></li>
-<li>11 🔥 🟡 ▤×2 🏷️ enterprise, funding <strong>Apollo economist questions broad AI returns.</strong> An Apollo economist told TechCrunch that AI has produced no financial payoff for most US companies outside technology. It is an attributed economic assessment, not a measured industry-wide result. Sources: <a href="https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/">TechCrunch</a>, <a href="https://www.businessinsider.com/apollo-ai-zero-financial-payoff-corporate-america-economic-analysis-2026-10">businessinsider.com</a></li>
-<li>10 🔴 🏷️ agents, funding, safety <strong>Barclays warns of agent-driven bond-market volatility.</strong> Barclays estimates that AI agents could trade a large share of US investment-grade bonds and warns of volatility risks. The estimate is attributed to the bank. Sources: <a href="https://www.bloomberg.com/news/newsletters/2026-10-26/ai-bots-are-transforming-bond-markets-barclays-warns-of-volatility-risk">Bloomberg</a></li>
-<li>10 🟡 🏷️ funding, enterprise <strong>Anthropic outlines public listing plans.</strong> The BBC reports on Anthropic's IPO plans as AI companies continue to draw large capital commitments. Sources: <a href="https://www.bbc.co.uk/news/articles/cq398p1wd1evo?at_medium=RSS&amp;at_campaign=rss">BBC</a></li>
-<li>10 🟡 🏷️ funding, hardware, training <strong>Meta seeks up to $95 billion for AI spending.</strong> Bloomberg reports that Meta is seeking up to $95 billion through common and preferred stock sales to support AI development. Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-26/meta-seeks-up-to-95-billion-in-equity-to-fund-ai-spending">Bloomberg</a></li>
-<li>10 🟢 🏷️ funding, hardware <strong>SpaceX arranges $40 billion AI-chip financing.</strong> Bloomberg reports that SpaceX signed an equipment-finance lease with Apollo to pay for chips supporting its AI ambitions. Sources: <a href="https://www.bloomberg.com/news/articles/2026-10-26/spacex-agrees-to-40-billion-chip-financing-deal-with-apollo">Bloomberg</a></li>
-</ul>
-<h2 id="tools-amp-demos">🛠️ Tools &amp; Demos <a class="permalink" href="#tools-amp-demos" title="Permalink">#</a></h2>
-<p><em>3 items · 🔴 -1.2 sentiment</em></p>
-<ul>
-<li>10 🟡 🏷️ agents, enterprise <strong>Bloomberg examines agent-mediated pricing.</strong> Bloomberg discusses how consumer-facing AI agents could affect price discovery and retail pricing. The item is analysis rather than evidence of a deployed market change. Sources: <a href="https://www.bloomberg.com/news/videos/2026-10-26/ai-agents-are-already-changing-the-price-of-goods-video">Bloomberg</a></li>
-<li>10 🔴 🏷️ enterprise, apps <strong>Banking experience remains relevant alongside AI.</strong> The Financial Times argues that institutional knowledge and human judgment remain important in banking as AI changes workflows. Sources: <a href="https://www.ft.com/content/16a51be0-ddfd-4e45-ae8b-236d6ff99d63">FT</a></li>
-<li>8 🔴 🏷️ code, enterprise, agents <strong>AI is tested on COBOL modernization.</strong> The Verge examines whether AI systems can help organizations migrate legacy COBOL code, a high-risk and labor-constrained engineering problem. Sources: <a href="https://www.theverge.com/ai-artificial-intelligence/1018434/cobol-migration-legacy-code-openai-anthropic">The Verge</a></li>
-</ul>
-<h2 id="open-source-amp-emerging">🌱 Open Source &amp; Emerging <a class="permalink" href="#open-source-amp-emerging" title="Permalink">#</a></h2>
-<p><em>4 items · 🟡 +0.0 sentiment</em></p>
-<ul>
-<li>8 🌱 🟡 🏷️ agents, opensource <strong>Hermes Agent.</strong> Nous Research's Hermes Agent is a repository for an agent framework. Its fresh push indicates current repository activity, not a new release. Sources: <a href="https://github.com/NousResearch/hermes-agent">GitHub NousResearch/hermes-agent</a></li>
-<li>8 🌱 🟡 🏷️ agents, opensource <strong>OpenClaw.</strong> OpenClaw is an open-source agent project for operating across platforms. The repository is active; the listing does not establish a new release. Sources: <a href="https://github.com/openclaw/openclaw">GitHub openclaw/openclaw</a></li>
-<li>6 🌱 🟡 🏷️ models, multimodal, opensource <strong>Qwen3.8-27B trends on Hugging Face.</strong> Qwen3.8-27B is trending on Hugging Face in the image-text-to-text category. The listing reports popularity, not a release date or benchmark result. Sources: <a href="https://huggingface.co/Qwen/Qwen3.8-27B">HuggingFace</a></li>
-<li>6 🌱 🟡 🏷️ agents, code, opensource <strong>REA.</strong> REA is an open-source agent project for reverse engineering application behavior and native binaries. The repository description positions it as a developer tool. Sources: <a href="https://github.com/morluto/rea">GitHub morluto/rea</a></li>
-</ul>
-<h2 id="prediction-markets">📈 Prediction Markets <a class="permalink" href="#prediction-markets" title="Permalink">#</a></h2>
-<p><em>5 markets · AI/policy</em></p>
-<ul>
-<li><strong>Will Anthropic IPO by November 30, 2026?</strong> - 91% Yes (▲32.5pp 24h, $509K vol) · <a href="https://polymarket.com/event/anthropic-ipo-by">Polymarket</a></li>
-<li><strong>Will Anthropic's initial public offering occur in November 2026 (ET)?</strong> - 87.05% Yes (▲27.45pp 24h, $114K vol) · <a href="https://polymarket.com/event/in-which-month-will-anthropic-ipo">Polymarket</a></li>
-<li><strong>Will Anthropic IPO by December 15, 2026?</strong> - 94.5% Yes (▲22.0pp 24h, $293K vol) · <a href="https://polymarket.com/event/anthropic-ipo-by">Polymarket</a></li>
-<li><strong>Will Anthropic IPO by December 31, 2026?</strong> - 94.5% Yes (▲19.0pp 24h, $1.4M vol) · <a href="https://polymarket.com/event/anthropic-ipo-by">Polymarket</a></li>
-<li><strong>Will Anthropic's initial public offering occur in December 2026 (ET)?</strong> - 7.35% Yes (▼14.25pp 24h, $67K vol) · <a href="https://polymarket.com/event/in-which-month-will-anthropic-ipo">Polymarket</a></li>
-</ul>
-<h2 id="discourse">💬 Discourse <a class="permalink" href="#discourse" title="Permalink">#</a></h2>
-<h3 id="rlocalllama">r/LocalLLaMA <a class="permalink" href="#rlocalllama" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xf7b46/4x_v620_in_a_llm_generated_and_3d_printed_chassis/">Local builder shares an LLM-generated GPU chassis</a> A LocalLLaMA user shares a four-GPU chassis design that was generated with an LLM and manufactured with 3D printing.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xfhhri/can_istadaslabqwen3827bgsqrcogguf_compete_with/">Community tests a Qwen quantization</a> A LocalLLaMA discussion asks whether a Qwen3.8-27B GGUF quantization matches competing low-bit variants in speed and quality.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xff9e4/crowdgpt_a_collaboratively_trained_llm/">CrowdGPT proposes collaborative LLM training</a> A developer describes CrowdGPT, a proposal to train a one-billion-parameter model collaboratively without conventional datacentre funding.</li>
-<li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1xft2ae/have_8_gb_of_vram_and_32_gb_of_ram_you_can_run/">Local Qwen inference results shared</a> A LocalLLaMA user reports running a Qwen Flash Next quantization on 8 GB of VRAM and 32 GB of RAM, with self-reported throughput figures.</li>
-</ul>
-<h3 id="bluesky">Bluesky <a class="permalink" href="#bluesky" title="Permalink">#</a></h3>
-<ul>
-<li><a href="https://bsky.app/profile/peark.es/post/3myrrux62ps2v">@peark.es</a> Bluesky post links Anthropic's S-1 A Bluesky post points to Anthropic's public SEC filing for its planned IPO.</li>
-<li><a href="https://bsky.app/profile/dimitridrekonja.bsky.social/post/3myqo3fvdts2d">@dimitridrekonja</a> Bluesky reaction to Anthropic accountability A Bluesky user argues that Anthropic should remain accountable for actions attributed to its AI systems.</li>
 </ul></article>]]></content>
   </entry>
 </feed>
