@@ -17,6 +17,11 @@ MAX_HANDOFF_BYTES = 16 * 1024
 MAX_SOURCE_BYTES = 4 * 1024 * 1024
 MAX_COPY_BYTES = 4096
 MAX_PDF_BYTES = 20 * 1024 * 1024
+VAULT_GIT_TIMEOUT = 60
+VAULT_INDEX_NAME = "AIGregator Weekly.md"
+DEFAULT_VAULT_REL = "Projects/LinkedIn Posts/AIgregator Weekly"
+# A plain branch ref, never an option: the ref is spliced into `git show <ref>:<path>`.
+VAULT_REF = re.compile(r"[A-Za-z0-9_][A-Za-z0-9._/-]*")
 WEEK = re.compile(r"^[0-9]{4}-W[0-9]{2}$")
 PLATFORMS = ("linkedin", "bluesky", "x")
 
@@ -82,6 +87,74 @@ def artifact_paths(work, slug):
         platform: work / ("%s-%s.txt" % (slug, platform))
         for platform in PLATFORMS
     } | {"pdf": work / ("%s-carousel.pdf" % slug)}
+
+
+def vault_git(vault_dir, *args, timeout=VAULT_GIT_TIMEOUT):
+    command = ["git", "-C", str(vault_dir), *args]
+    env = dict(os.environ, GIT_TERMINAL_PROMPT="0")
+    process = subprocess.Popen(
+        command, env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True
+    )
+    try:
+        stdout, stderr = process.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid, signal.SIGTERM)
+        try:
+            process.communicate(timeout=5)
+        except subprocess.TimeoutExpired:
+            os.killpg(process.pid, signal.SIGKILL)
+            process.communicate()
+        raise HandoffError("vault git %s timed out after %ss" % (args[0], timeout))
+    if process.returncode:
+        raise HandoffError("vault git %s failed: %s" % (args[0], stderr.decode("utf-8", "replace").strip()))
+    return stdout
+
+
+def verify_vault_bundle(vault_dir, vault_rel, vault_ref, slug, url, paths):
+    """Prove the edition bundle is on the vault REMOTE, byte-exact, and return its commit.
+
+    The social worker is an LLM: prose cannot make a half-finished vault sync exit
+    nonzero, and a staged-but-unpushed bundle is invisible to every other device.
+    So read the remote-tracking ref after a fresh fetch, never the local worktree.
+    """
+    if not VAULT_REF.fullmatch(vault_ref):
+        raise HandoffError("vault ref is not a plain branch ref")
+    if not vault_dir.is_dir():
+        raise HandoffError("vault directory is unavailable")
+    vault_git(vault_dir, "fetch", "--quiet", "origin")
+    base = vault_rel.strip("/")
+
+    def blob(name):
+        try:
+            return vault_git(vault_dir, "show", "%s:%s/%s" % (vault_ref, base, name))
+        except HandoffError as error:
+            raise HandoffError("%s is missing from the vault: %s" % (name, error)) from error
+
+    reviewed_pdf = read_bounded(paths["pdf"], MAX_PDF_BYTES, "pdf artifact")
+    if hashlib.sha256(blob("%s-carousel.pdf" % slug)).digest() != hashlib.sha256(reviewed_pdf).digest():
+        raise HandoffError("vault carousel PDF differs from the reviewed artifact")
+    if blob("%s-linkedin.md" % slug) != read_bounded(paths["linkedin"], MAX_COPY_BYTES, "linkedin artifact"):
+        raise HandoffError("vault LinkedIn copy differs from the reviewed artifact")
+    edition = blob("%s.md" % slug).decode("utf-8", "replace")
+    if ("\nedition: %s\n" % slug) not in edition or url not in edition:
+        raise HandoffError("vault edition note lacks its edition slug or published URL")
+    index = blob(VAULT_INDEX_NAME).decode("utf-8", "replace")
+    if index.count("[[%s/%s|%s]]" % (base, slug, slug)) != 1:
+        raise HandoffError("vault weekly index must link %s exactly once" % slug)
+    return vault_git(vault_dir, "rev-parse", "--short", vault_ref).decode("utf-8").strip()
+
+
+def verify_vault(args, handoff, paths, imported=False):
+    if args.vault_dir is None:
+        return {}
+    try:
+        commit = verify_vault_bundle(
+            args.vault_dir, args.vault_rel, args.vault_ref, handoff["slug"], handoff["url"], paths
+        )
+    except HandoffError as error:
+        lead = "review cards were imported, but " if imported else ""
+        raise HandoffError("%sthe vault bundle is not verified on %s: %s" % (lead, args.vault_ref, error)) from error
+    return {"vault": commit}
 
 
 def read_bounded(path, limit, label):
@@ -297,6 +370,9 @@ def main(argv=None):
     parser.add_argument("--repo-root", type=Path, default=Path.cwd())
     parser.add_argument("--worker-timeout", type=int, default=1800)
     parser.add_argument("--producer-timeout", type=int, default=60)
+    parser.add_argument("--vault-dir", type=Path, help="enable the vault-remote gate for this Obsidian vault")
+    parser.add_argument("--vault-rel", default=DEFAULT_VAULT_REL)
+    parser.add_argument("--vault-ref", default="origin/main")
     args = parser.parse_args(argv)
     try:
         args.repo_root = args.repo_root.resolve()
@@ -311,11 +387,13 @@ def main(argv=None):
         source = args.source_dir / (handoff["slug"] + ".md")
         read_bounded(source, MAX_SOURCE_BYTES, "weekly source")
         packet_id = "aigregator-%s-v1" % handoff["slug"]
+        paths = artifact_paths(args.work_dir, handoff["slug"])
         existing = existing_packet(args.review_root, packet_id, handoff["url"])
         if existing:
+            # A replay is also the cheap way to re-verify: the vault gate still runs.
+            existing.update(verify_vault(args, handoff, paths))
             print(json.dumps(existing, sort_keys=True))
             return 0
-        paths = artifact_paths(args.work_dir, handoff["slug"])
         # Artifacts alone cannot attest vault preflight/sync or source freshness.
         # Run the bounded worker unless the review store already proves this edition.
         run_worker(args, handoff, source)
@@ -327,9 +405,11 @@ def main(argv=None):
         write_manifest(args.workspace, handoff["slug"], source, paths)
         result = run_producer(args, handoff, paths)
         cards, jobs = readback(args.review_root, result["id"], paths, handoff["slug"])
+        report = {"id": result["id"], "imported": result["imported"], "cards": cards, "jobs": jobs}
+        report.update(verify_vault(args, handoff, paths, imported=True))
     except HandoffError as error:
         return fail(str(error))
-    print(json.dumps({"id": result["id"], "imported": result["imported"], "cards": cards, "jobs": jobs}, sort_keys=True))
+    print(json.dumps(report, sort_keys=True))
     return 0
 
 

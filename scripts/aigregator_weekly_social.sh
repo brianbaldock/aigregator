@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Candidate replacement for the deployed social wrapper. It is not installed here.
+# Social-tail wrapper for the weekly roundup. Cron runs the DEPLOYED copy at
+# ~/.hermes/scripts/aigregator_weekly_social.sh; keep it byte-identical to this file.
+# Success means: review cards imported AND the Obsidian bundle verified on the vault remote.
 set -euo pipefail
 
 REPO="/home/brian/projects/AIgregator"
@@ -9,6 +11,7 @@ REVIEW_ROOT="/home/brian/.local/share/simplepost"
 HANDOFF="/tmp/aig-weekly-handoff.json"
 WORK_DIR="/home/brian/.local/share/simplepost/weekly-producer/artifacts"
 WORKSPACE="/home/brian/.local/share/simplepost/weekly-producer"
+VAULT="/home/brian/Documents/Obsidian Vault"
 BRIEF="scripts/copilot_weekly_social_brief.md"
 LOG="/tmp/aig-copilot-weekly-simplepost.log"
 
@@ -31,23 +34,23 @@ chmod 700 "$WORK_DIR" "$WORKSPACE"
   --producer-cwd "$SIMPLEPOST_ROOT" \
   --python "$PYTHON" \
   --repo-root "$REPO" \
+  --vault-dir "$VAULT" \
   --worker copilot \
   --worker-arg=-p \
   --worker-arg="Read $BRIEF and execute it exactly. Prepare only the local artifacts specified there; do not invoke SimplePost, Buffer, or social distribution." \
   --worker-arg=--model \
-  --worker-arg=claude-opus-4.8 \
+  --worker-arg=gpt-6.1-terra \
   --worker-arg=--reasoning-effort \
   --worker-arg=medium \
   --worker-arg=--max-ai-credits \
   --worker-arg=80 \
-  --worker-arg=--no-remote \
-  --worker-arg=--no-remote-export \
   --worker-arg=--disable-builtin-mcps \
   --worker-arg=--allow-all-tools \
   --worker-arg=--allow-all-paths \
   --worker-arg=--no-color \
-  >"$LOG" 2>&1 || fail "validated producer handoff failed (see $LOG)"
+  >"$LOG" 2>&1 || fail "validated producer handoff failed: $(tail -n 1 "$LOG") (see $LOG)"
 
 RESULT="$(tail -n 1 "$LOG")"
 emit "AIgregator weekly SimplePost review packet imported: $RESULT"
+emit "Obsidian bundle verified on the vault remote (commit in the result above)."
 emit "Unapproved Discord review cards only; no Buffer drafts, scheduling, or publishing occurred."

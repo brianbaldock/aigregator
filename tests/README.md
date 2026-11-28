@@ -8,6 +8,8 @@ python -m unittest discover -s tests -v
 
 `test_simplepost_weekly_handoff.py` also contains real cross-project integration tests. They use a separate SimplePost checkout, defaulting to `~/projects/simplepost`. If that optional directory is absent, only the tests that invoke the real producer are explicitly skipped. The handoff's local worker, timeout, malformed-input and wrapper checks still run.
 
+`test_weekly_vault_gate.py` proves the handoff's Obsidian gate against real Git repositories (a bare remote plus clones), so it needs only `git`, not SimplePost. Set `AIG_HANDOFF_UNDER_TEST` to a mutated copy of `scripts/simplepost_weekly_handoff.py` to confirm the tests can fail.
+
 To require the full integration coverage and select its checkout:
 
 ```sh

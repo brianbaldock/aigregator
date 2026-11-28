@@ -75,6 +75,17 @@ commit after confirming it belongs to this run. Re-fetch and verify `HEAD` equal
 `origin/main`; preserve unrelated dirty work. On conflict or unverifiable sync,
 report failure rather than claiming completion.
 
+Whitespace checks: run `git diff --cached --check` only on the three text paths (copy,
+companion, index), never on the PDF. The renderer ASCII-encodes its streams, so Git
+treats the PDF as text and reports false "trailing whitespace" on its xref table; that
+report is not a failure. Verify the PDF by comparing its SHA-256 with the work-dir
+artifact instead.
+
+Do not stop at staging. The wrapper independently reads the vault remote after you
+finish and fails the run unless the committed, pushed bundle matches the work-dir
+artifacts byte for byte. A bundle that is only staged or committed is a failed run:
+finish the commit and push.
+
 ## Produce the locked review artifacts
 
 1. Read `weekly/<slug>.md` for substance and generate the five-page PDF with the

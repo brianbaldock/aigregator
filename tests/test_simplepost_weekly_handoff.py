@@ -24,6 +24,13 @@ class WeeklyHandoffTests(unittest.TestCase):
         self.assertIn("--worker-arg=--max-ai-credits", wrapper)
         self.assertNotIn("--worker-arg=--max-credits", wrapper)
 
+    def test_wrapper_gates_on_the_vault_remote_and_drops_removed_copilot_flags(self):
+        wrapper = WRAPPER.read_text(encoding="utf-8")
+        self.assertIn('VAULT="/home/brian/Documents/Obsidian Vault"', wrapper)
+        self.assertIn('--vault-dir "$VAULT"', wrapper)
+        # Copilot CLI 1.0.105 removed --no-remote; passing it killed the W44 social tail at startup.
+        self.assertNotIn("--no-remote", wrapper)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.base = Path(self.temp.name)
